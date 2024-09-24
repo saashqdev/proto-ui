@@ -23,9 +23,9 @@
 <u-input type="password" maxlength="12" placeholder="请输入密码"></u-input>
 ```
 
-### 双向绑定
+### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行双向绑定。
+使用`v-model`或`:value.sync`进行Two-Way Binding。
 
 提示：如果需要绑定的值自动转换为 number 类型，可以使用`number`修饰符。
 

@@ -2,34 +2,34 @@
 
 ``` html
 <m-multiplex>
-    <m-multiplex-item>水杯</m-multiplex-item>
-    <m-multiplex-item>咖啡</m-multiplex-item>
-    <m-multiplex-item>坚果</m-multiplex-item>
-    <m-multiplex-item>毛巾</m-multiplex-item>
-    <m-multiplex-item>沙发</m-multiplex-item>
+    <m-multiplex-item>Water Cup</m-multiplex-item>
+    <m-multiplex-item>Coffee</m-multiplex-item>
+    <m-multiplex-item>Nut</m-multiplex-item>
+    <m-multiplex-item>Towel</m-multiplex-item>
+    <m-multiplex-item>Sofa</m-multiplex-item>
 </m-multiplex>
 ```
 
-### 双向绑定
+### Two-Way Binding
 
-可以使用`v-model`或`:value.sync`两种方式进行双向绑定。
+Two-Way Binding can be performed using `v-model` or `:value.sync`.
 
 ``` vue
 <template>
 <u-linear-layout direction="vertical" gap="small">
     <m-multiplex v-model="values">
-        <m-multiplex-item value="cup">水杯</m-multiplex-item>
-        <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-        <m-multiplex-item value="nut">坚果</m-multiplex-item>
-        <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-        <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+        <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+        <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+        <m-multiplex-item value="nut">Nut</m-multiplex-item>
+        <m-multiplex-item value="towel">Towel</m-multiplex-item>
+        <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
     </m-multiplex>
     <m-multiplex :value.sync="values">
-        <m-multiplex-item value="cup">水杯</m-multiplex-item>
-        <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-        <m-multiplex-item value="nut">坚果</m-multiplex-item>
-        <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-        <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+        <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+        <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+        <m-multiplex-item value="nut">Nut</m-multiplex-item>
+        <m-multiplex-item value="towel">Towel</m-multiplex-item>
+        <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
     </m-multiplex>
 </u-linear-layout>
 </template>
@@ -44,16 +44,16 @@ export default {
 </script>
 ```
 
-#### selected 单向绑定
+#### Selected One-Way Binding
 
 ``` vue
 <template>
 <m-multiplex>
-    <m-multiplex-item value="cup">水杯</m-multiplex-item>
-    <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-    <m-multiplex-item value="nut" selected>坚果</m-multiplex-item>
-    <m-multiplex-item value="towel" selected>毛巾</m-multiplex-item>
-    <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+    <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+    <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+    <m-multiplex-item value="nut" selected>Nut</m-multiplex-item>
+    <m-multiplex-item value="towel" selected>Towel</m-multiplex-item>
+    <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
 </m-multiplex>
 </template>
 <script>
@@ -67,7 +67,7 @@ export default {
 </script>
 ```
 
-#### selected 双向绑定
+#### Selected Two-Way Binding
 
 ``` vue
 <template>
@@ -82,11 +82,11 @@ export default {
     data() {
         return {
             list: [
-                { text: '水杯', value: 'cup', selected: false },
-                { text: '咖啡', value: 'coffee', selected: false },
-                { text: '坚果', value: 'nut', selected: true },
-                { text: '毛巾', value: 'towel', selected: true },
-                { text: '沙发', value: 'sofa', selected: false },
+                { text: 'Water Cup', value: 'cup', selected: false },
+                { text: 'Coffee', value: 'coffee', selected: false },
+                { text: 'Nut', value: 'nut', selected: true },
+                { text: 'Towel', value: 'towel', selected: true },
+                { text: 'Sofa', value: 'sofa', selected: false },
             ],
         };
     },
@@ -94,24 +94,24 @@ export default {
 </script>
 ```
 
-### 保持顺序
+### Keep Order
 
 ``` vue
 <template>
 <u-linear-layout direction="vertical" gap="small">
     <m-multiplex v-model="values1">
-        <m-multiplex-item value="cup">水杯</m-multiplex-item>
-        <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-        <m-multiplex-item value="nut">坚果</m-multiplex-item>
-        <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-        <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+        <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+        <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+        <m-multiplex-item value="nut">Nut</m-multiplex-item>
+        <m-multiplex-item value="towel">Towel</m-multiplex-item>
+        <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
     </m-multiplex>
     <m-multiplex v-model="values2" keep-order>
-        <m-multiplex-item value="cup">水杯</m-multiplex-item>
-        <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-        <m-multiplex-item value="nut">坚果</m-multiplex-item>
-        <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-        <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+        <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+        <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+        <m-multiplex-item value="nut">Nut</m-multiplex-item>
+        <m-multiplex-item value="towel">Towel</m-multiplex-item>
+        <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
     </m-multiplex>
 </u-linear-layout>
 </template>
@@ -127,41 +127,41 @@ export default {
 </script>
 ```
 
-### 只读、禁用、禁用某一项
+### Read Only, Disable, Disable an Item
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="4">
         <m-multiplex :value="['nut', 'towel']" readonly>
-            <m-multiplex-item value="cup">水杯</m-multiplex-item>
-            <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-            <m-multiplex-item value="nut">坚果</m-multiplex-item>
-            <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-            <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+            <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+            <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+            <m-multiplex-item value="nut">Nut</m-multiplex-item>
+            <m-multiplex-item value="towel">Towel</m-multiplex-item>
+            <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
         </m-multiplex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-multiplex :value="['nut', 'towel']" disabled>
-            <m-multiplex-item value="cup">水杯</m-multiplex-item>
-            <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-            <m-multiplex-item value="nut">坚果</m-multiplex-item>
-            <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-            <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+            <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+            <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+            <m-multiplex-item value="nut">Nut</m-multiplex-item>
+            <m-multiplex-item value="towel">Towel</m-multiplex-item>
+            <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
         </m-multiplex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-multiplex :value="['nut', 'towel']">
-            <m-multiplex-item value="cup">水杯</m-multiplex-item>
-            <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-            <m-multiplex-item value="nut" disabled>坚果</m-multiplex-item>
-            <m-multiplex-item value="towel" disabled>毛巾</m-multiplex-item>
-            <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+            <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+            <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+            <m-multiplex-item value="nut" disabled>Nut</m-multiplex-item>
+            <m-multiplex-item value="towel" disabled>Towel</m-multiplex-item>
+            <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
         </m-multiplex>
     </u-grid-layout-column>
 </u-grid-layout>
 ```
 
-#### 更新列表
+#### Update List
 
 ``` vue
 <template>
@@ -169,7 +169,7 @@ export default {
     <m-multiplex v-model="values">
         <m-multiplex-item v-for="item in list" :key="item.value" :value="item.value">{{ item.text }}</m-multiplex-item>
     </m-multiplex>
-    <u-button @click="updateList">更新列表</u-button>
+    <u-button @click="updateList">Update List</u-button>
 </div>
 </template>
 <script>
@@ -177,11 +177,11 @@ export default {
     data() {
         return {
             list: [
-                { value: 'cup', text: '水杯' },
-                { value: 'coffee', text: '咖啡' },
-                { value: 'nut', text: '坚果' },
-                { value: 'towel', text: '毛巾' },
-                { value: 'sofa', text: '沙发' },
+                { value: 'cup', text: 'Water Cup' },
+                { value: 'coffee', text: 'Coffee' },
+                { value: 'nut', text: 'Nut' },
+                { value: 'towel', text: 'Towel' },
+                { value: 'sofa', text: 'Sofa' },
             ],
             values: ['nut', 'towel', 'toothbrush'],
         };
@@ -189,10 +189,10 @@ export default {
     methods: {
         updateList() {
             this.list = [
-                { value: 'cup', text: '水杯' },
-                { value: 'coffee', text: '咖啡' },
-                { value: 'nut', text: '坚果' },
-                { value: 'toothbrush', text: '牙刷' },
+                { value: 'cup', text: 'Water Cup' },
+                { value: 'coffee', text: 'Coffee' },
+                { value: 'nut', text: 'Nut' },
+                { value: 'toothbrush', text: 'Toothbrush' },
             ];
         },
     },

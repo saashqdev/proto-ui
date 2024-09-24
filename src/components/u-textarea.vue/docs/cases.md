@@ -6,9 +6,9 @@
 <u-textarea placeholder="Details" autofocus></u-textarea>
 ```
 
-### 双向绑定
+### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行双向绑定。
+使用`v-model`或`:value.sync`进行Two-Way Binding。
 
 ``` vue
 <template>

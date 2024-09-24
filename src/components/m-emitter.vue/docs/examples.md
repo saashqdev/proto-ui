@@ -1,6 +1,6 @@
-``` vue
+```vue
 <template>
-<div>这个例子中，该组件给上级添加了蓝色阴影。</div>
+<div>In this example, the component adds a blue shadow to its parent. </div>
 </template>
 <script>
 import { MEmitter } from '@@';

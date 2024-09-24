@@ -45,7 +45,7 @@ export const MSinglex = {
         itemVMs(itemVMs) {
             if (!itemVMs.includes(this.selectedVM)) {
                 if (!this.router) {
-                    // 更新列表之后，原来的选择可能已不存在，这里暂存然后重新查找一遍
+                    // Update List之后，原来的选择可能已不存在，这里暂存然后重新查找一遍
                     const value = this.selectedVM ? this.selectedVM.value : this.value;
                     this.selectedVM = undefined;
                     this.watchValue(value);

@@ -15,12 +15,12 @@ export default {
     data() {
         return {
             source: [
-                { text: '水杯', value: 'cup' },
-                { text: '坚果', value: 'nut' },
-                { text: '毛巾', value: 'towel' },
-                { text: '沙发', value: 'sofa' },
-                { text: '牙刷', value: 'toothbrush' },
-                { text: '碗', value: 'bowl' },
+                { text: 'Water Cup', value: 'cup' },
+                { text: 'Nut', value: 'nut' },
+                { text: 'Towel', value: 'towel' },
+                { text: 'Sofa', value: 'sofa' },
+                { text: 'Toothbrush', value: 'toothbrush' },
+                { text: 'Bowl', value: 'bowl' },
             ],
             target: [],
         };
@@ -41,12 +41,12 @@ export default {
     data() {
         return {
             source: [
-                { text: '水杯', value: 'cup' },
-                { text: '坚果', value: 'nut' },
-                { text: '毛巾', value: 'towel' },
-                { text: '沙发', value: 'sofa', disabled: true },
-                { text: '牙刷', value: 'toothbrush', disabled: true },
-                { text: '碗', value: 'bowl' },
+                { text: 'Water Cup', value: 'cup' },
+                { text: 'Nut', value: 'nut' },
+                { text: 'Towel', value: 'towel' },
+                { text: 'Sofa', value: 'sofa', disabled: true },
+                { text: 'Toothbrush', value: 'toothbrush', disabled: true },
+                { text: 'Bowl', value: 'bowl' },
             ],
             target: [],
         };

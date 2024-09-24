@@ -79,7 +79,7 @@ export const UListView = {
         this.currentDataSource = this.normalizeDataSource(this.dataSource || this.data);
         if (this.currentDataSource && this.initialLoad) {
             this.load().then(() => {
-                // 更新列表之后，原来的选择可能已不存在，这里暂存然后重新查找一遍
+                // Update List之后，原来的选择可能已不存在，这里暂存然后重新查找一遍
                 MComplex.watch.itemVMs.handler.call(this, this.itemVMs);
             });
         }
@@ -89,7 +89,7 @@ export const UListView = {
             // @TODO: undefined or null
             this.currentDataSource = this.normalizeDataSource(this.dataSource || this.data);
             this.load().then(() => {
-                // 更新列表之后，原来的选择可能已不存在，这里暂存然后重新查找一遍
+                // Update List之后，原来的选择可能已不存在，这里暂存然后重新查找一遍
                 MComplex.watch.itemVMs.handler.call(this, this.itemVMs);
             });
         },

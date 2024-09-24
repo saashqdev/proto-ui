@@ -118,7 +118,7 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 ]"></u-tree-view>
 ```
 
-### 只读、禁用、禁用某一项
+### Read Only, Disable, Disable an Item
 
 #### Tag 方式
 
@@ -326,7 +326,7 @@ Tag 方式中可以使用`v-show`，Data 方式中可以使用`hidden`属性
 
 通过`checkable`属性开启多选模式。
 
-控制多选有两种方式，一种是设置数据各项的`checked`属性，该属性会与多项选择框进行双向绑定。`disabled`属性可以禁用多项选择框。
+控制多选有两种方式，一种是设置数据各项的`checked`属性，该属性会与多项选择框进行Two-Way Binding。`disabled`属性可以禁用多项选择框。
 
 ``` vue
 <template>
@@ -356,7 +356,7 @@ export default {
 </script>
 ```
 
-另一种是通过`:values.sync`对选择值进行双向绑定，该方法要求每项有`value`作为唯一值。`values`只会收集叶子节点的值。
+另一种是通过`:values.sync`对选择值进行Two-Way Binding，该方法要求每项有`value`作为唯一值。`values`只会收集叶子节点的值。
 
 ``` vue
 <template>

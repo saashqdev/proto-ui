@@ -1,80 +1,80 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# MDynamic 动态列表
+# MDynamic dynamic list
 
 ## API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| data | Array |  |  | 数据 |
-| dynamic | boolean |  | `true` | 是否可以动态添加/删除项 |
-| get-default-item | Function |  |  | 传入获取默认项的方法 |
-| initial-add | boolean |  | `true` | 是否自动补充项，如果初始时`data`中的项目数少于`min-count` |
-| min-count | number |  | `1` | 最小项目数 |
-| max-count | number |  | `Infinity` | 最大项目数 |
+| data | Array | | | data |
+| dynamic | boolean | | `true` | Whether items can be added/removed dynamically |
+| get-default-item | Function | | | Pass in the method to get the default item |
+| initial-add | boolean | | `true` | Whether to automatically add items if the initial number of items in `data` is less than `min-count` |
+| min-count | number | | `1` | Minimum number of items |
+| max-count | number | | `Infinity` | Maximum number of items |
 
 ### Slots
 
 #### (default)
 
-添加文本或 HTML。
+Add text or HTML.
 
 ### Events
 
 #### @before-add
 
-添加前触发
+Trigger before adding
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 添加的项 |
-| $event.index | number | 添加的索引 |
-| $event.data | Array | 当前数据 |
-| $event.preventDefault | Function | 阻止添加流程 |
-| senderVM | MDynamic | 发送事件实例 |
+| $event.item | any | Added items |
+| $event.index | number | Added index |
+| $event.data | Array | Current data |
+| $event.preventDefault | Function | Prevent adding process |
+| senderVM | MDynamic | Send event instance |
 
 #### @add
 
-添加时触发
+Triggered when added
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 添加的项 |
-| $event.index | number | 添加的索引 |
-| $event.data | Array | 当前数据 |
-| senderVM | MDynamic | 发送事件实例 |
+| $event.item | any | Added items |
+| $event.index | number | Added index |
+| $event.data | Array | Current data |
+| senderVM | MDynamic | Send event instance |
 
 #### @before-remove
 
-删除前触发
+Triggered before deletion
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 删除的项 |
-| $event.index | number | 删除的索引 |
-| $event.data | Array | 当前数据 |
-| $event.preventDefault | Function | 阻止删除流程 |
-| senderVM | MDynamic | 发送事件实例 |
+| $event.item | any | Deleted item |
+| $event.index | number | Deleted index |
+| $event.data | Array | Current data |
+| $event.preventDefault | Function | Prevent deletion process |
+| senderVM | MDynamic | Send event instance |
 
 #### @remove
 
-删除时触发
+Triggered when deleted
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 删除的项 |
-| $event.index | number | 删除的索引 |
-| $event.data | Array | 当前数据 |
-| senderVM | MDynamic | 发送事件实例 |
+| $event.item | any | Deleted item |
+| $event.index | number | Deleted index |
+| $event.data | Array | Current data |
+| senderVM | MDynamic | Send event instance |
 
 #### @splice
 
-数量变更（添加/删除）时触发
+Triggered when quantity changes (add/delete)
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 变更的项 |
-| $event.index | number | 变更的索引 |
-| $event.data | Array | 当前数据 |
-| senderVM | MDynamic | 发送事件实例 |
+| $event.item | any | Changed item |
+| $event.index | number | Changed index |
+| $event.data | Array | Current data |
+| senderVM | MDynamic | Send event instance |

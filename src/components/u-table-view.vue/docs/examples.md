@@ -482,7 +482,7 @@ UTableView 中内置了一些特殊的列，通过设置`type`来开启。
 
 也可以添加一个`type="radio"`的`<u-table-view-column>`，这个列中会显示单项选择框，专门用于单选操作。
 
-通过`value-field`属性指定数据中唯一值的字段，然后`v-model`或`:value.sync`对选择值进行双向绑定。
+通过`value-field`属性指定数据中唯一值的字段，然后`v-model`或`:value.sync`对选择值进行Two-Way Binding。
 
 ``` vue
 <template>
@@ -516,7 +516,7 @@ export default {
 
 添加一个`type="checkbox"`的`<u-table-view-column>`，这个列中会显示多项选择框，用于多选操作。
 
-控制多选有两种方式，一种是设置数据对应行的`checked`属性，该属性会与多项选择框进行双向绑定。`disabled`属性可以禁用多项选择框。
+控制多选有两种方式，一种是设置数据对应行的`checked`属性，该属性会与多项选择框进行Two-Way Binding。`disabled`属性可以禁用多项选择框。
 
 ``` vue
 <template>
@@ -545,7 +545,7 @@ export default {
 </script>
 ```
 
-另一种是通过`value-field`属性指定数据中唯一值的字段，再通过`:values.sync`对选择值进行双向绑定。
+另一种是通过`value-field`属性指定数据中唯一值的字段，再通过`:values.sync`对选择值进行Two-Way Binding。
 
 ``` vue
 <template>
@@ -653,7 +653,7 @@ export default {
 </script>
 ```
 
-使用`accordion`属性开启手风琴模式，在展开一项的同时会收起其他项。
+使用`accordion`属性开启Accordian Mode，在展开一项的同时会收起其他项。
 
 ``` vue
 <template>

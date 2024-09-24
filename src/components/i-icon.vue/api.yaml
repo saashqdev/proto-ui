@@ -1,8 +1,8 @@
 - name: i-icon
-  title: 图标
-  labels: [图标组件, 行内展示]
+  title: Icon
+  labels: [icon component, inline display]
   attrs:
     - name: name
       type: string
       default: null
-      description: 图标名称
+      description: Icon name

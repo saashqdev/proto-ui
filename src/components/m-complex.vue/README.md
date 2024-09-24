@@ -1,38 +1,38 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# MComplex 复合模式
+# MComplex Composite Mode
 
-一个组件中，通过`multiple`属性切换单选还是多选的模式。
+In a component, use the `multiple` attribute to switch between single selection and Multiple Selection Mode.
 
 ## Example
 ### Basic Usage
 
-下面展示了复合模式的一些基本特性。
+Some basic features of composite patterns are shown below.
 
 ``` html
 <m-complex>
-    <m-complex-item>水杯</m-complex-item>
-    <m-complex-item>咖啡</m-complex-item>
-    <m-complex-item disabled>坚果</m-complex-item>
-    <m-complex-item>毛巾</m-complex-item>
-    <m-complex-item>沙发</m-complex-item>
+    <m-complex-item>Water Cup</m-complex-item>
+    <m-complex-item>Coffee</m-complex-item>
+    <m-complex-item disabled>Nut</m-complex-item>
+    <m-complex-item>Towel</m-complex-item>
+    <m-complex-item>Sofa</m-complex-item>
 </m-complex>
 ```
 
-### 选项值
+### Option value
 
-绑定`value`属性，可以用`v-model`或`:value.sync`。
+To bind the `value` attribute, you can use `v-model` or `:value.sync`.
 
-#### 单选模式
+#### Radio Selection Mode
 
 ``` vue
 <template>
 <m-complex v-model="value">
-    <m-complex-item value="cup">水杯</m-complex-item>
-    <m-complex-item value="coffee">咖啡</m-complex-item>
-    <m-complex-item value="nut">坚果</m-complex-item>
-    <m-complex-item value="towel">毛巾</m-complex-item>
-    <m-complex-item value="sofa">沙发</m-complex-item>
+    <m-complex-item value="cup">Water Cup</m-complex-item>
+    <m-complex-item value="coffee">Coffee</m-complex-item>
+    <m-complex-item value="nut">Nut</m-complex-item>
+    <m-complex-item value="towel">Towel</m-complex-item>
+    <m-complex-item value="sofa">Sofa</m-complex-item>
 </m-complex>
 </template>
 <script>
@@ -51,11 +51,11 @@ export default {
 ``` vue
 <template>
 <m-complex multiple v-model="values">
-    <m-complex-item value="cup">水杯</m-complex-item>
-    <m-complex-item value="coffee">咖啡</m-complex-item>
-    <m-complex-item value="nut">坚果</m-complex-item>
-    <m-complex-item value="towel">毛巾</m-complex-item>
-    <m-complex-item value="sofa">沙发</m-complex-item>
+    <m-complex-item value="cup">Water Cup</m-complex-item>
+    <m-complex-item value="coffee">Coffee</m-complex-item>
+    <m-complex-item value="nut">Nut</m-complex-item>
+    <m-complex-item value="towel">Towel</m-complex-item>
+    <m-complex-item value="sofa">Sofa</m-complex-item>
 </m-complex>
 </template>
 <script>
@@ -69,175 +69,175 @@ export default {
 </script>
 ```
 
-### 只读、禁用、禁用某一项
+### Read Only, Disable, Disable an Item
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="4">
         <m-complex value="towel" readonly>
-            <m-complex-item value="cup">水杯</m-complex-item>
-            <m-complex-item value="coffee">咖啡</m-complex-item>
-            <m-complex-item value="nut">坚果</m-complex-item>
-            <m-complex-item value="towel">毛巾</m-complex-item>
-            <m-complex-item value="sofa">沙发</m-complex-item>
+            <m-complex-item value="cup">Water Cup</m-complex-item>
+            <m-complex-item value="coffee">Coffee</m-complex-item>
+            <m-complex-item value="nut">Nut</m-complex-item>
+            <m-complex-item value="towel">Towel</m-complex-item>
+            <m-complex-item value="sofa">Sofa</m-complex-item>
         </m-complex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-complex value="towel" disabled>
-            <m-complex-item value="cup">水杯</m-complex-item>
-            <m-complex-item value="coffee">咖啡</m-complex-item>
-            <m-complex-item value="nut">坚果</m-complex-item>
-            <m-complex-item value="towel">毛巾</m-complex-item>
-            <m-complex-item value="sofa">沙发</m-complex-item>
+            <m-complex-item value="cup">Water Cup</m-complex-item>
+            <m-complex-item value="coffee">Coffee</m-complex-item>
+            <m-complex-item value="nut">Nut</m-complex-item>
+            <m-complex-item value="towel">Towel</m-complex-item>
+            <m-complex-item value="sofa">Sofa</m-complex-item>
         </m-complex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-complex value="towel">
-            <m-complex-item value="cup">水杯</m-complex-item>
-            <m-complex-item value="coffee">咖啡</m-complex-item>
-            <m-complex-item value="nut" disabled>坚果</m-complex-item>
-            <m-complex-item value="towel" disabled>毛巾</m-complex-item>
-            <m-complex-item value="sofa">沙发</m-complex-item>
+            <m-complex-item value="cup">Water Cup</m-complex-item>
+            <m-complex-item value="coffee">Coffee</m-complex-item>
+            <m-complex-item value="nut" disabled>Nut</m-complex-item>
+            <m-complex-item value="towel" disabled>Towel</m-complex-item>
+            <m-complex-item value="sofa">Sofa</m-complex-item>
         </m-complex>
     </u-grid-layout-column>
 </u-grid-layout>
 ```
 
-其它与 [MSinglex](../m-singlex) 和 [MMultiplex](../m-multiplex) 相同的。
+Others are the same as [MSinglex](../m-singlex) and [MMultiplex](../m-multiplex).
 
 ## MComplex API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | any |  |  | 当前选择的值 |
-| auto-select | boolean |  | `false` | 是否自动选择第一个非禁用的项 |
-| cancelable | boolean |  | `false` | 是否可以取消选择 |
-| multiple | boolean |  | `false` | 是否切换为多选模式 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value.sync, v-model | any | | | Currently selected value |
+| auto-select | boolean | | `false` | Whether to automatically select the first non-disabled item |
+| cancelable | boolean | | `false` | Whether the selection can be canceled |
+| multiple | boolean | | `false` | Whether to switch to multiple selection mode |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入`<m-complex-item>`子组件。
+Insert `<m-complex-item>` subcomponent.
 
 ### Events
 
 #### @before-select
 
-选择某一项前触发
+Trigger before selecting an item
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.itemVM | MComplexItem | 选择项子组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | MComplex | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.itemVM | MComplexItem | Selection subcomponent |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | MComplex | Send event instance |
 
 #### @input
 
-选择某一项时触发，仅在单选模式中生效
+Triggered when an item is selected, only effective in single selection mode
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | any | 选择项的值 |
-| senderVM | MComplex | 发送事件实例 |
+| $event | any | Value of selection |
+| senderVM | MComplex | Send event instance |
 
 #### @select
 
-选择某一项时触发。单选模式中：
+Triggered when an item is selected. In radio selection mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 改变后的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | MComplexItem | 选择项子组件 |
-| $event.oldVM | MComplexItem | 旧的选择项子组件 |
-| senderVM | MComplex | 发送事件实例 |
+| $event.value | any | Changed value |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.oldItem | object | Old selection related object |
+| $event.itemVM | MComplexItem | Selection subcomponent |
+| $event.oldVM | MComplexItem | Old selection subcomponent |
+| senderVM | MComplex | Send event instance |
 
 #### @select
 
-选择某一项时触发。多选模式中：
+Triggered when an item is selected. In multi-select mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.selected | boolean | 选中还是取消 |
-| $event.item | boolean | 该选中项相关对象 |
-| $event.itemVM | boolean | 该选中项子组件 |
-| $event.value | Array | 改变后的值 |
-| $event.oldValue | Array | 旧的值 |
-| $event.items | Array\<object\> | 所有选中项相关对象的数组 |
-| $event.oldItems | Array\<object\> | 旧的所有选中项相关对象的数组 |
-| $event.itemVMs | Array\<MComplexItem\> | 所有选中项子组件的数组 |
-| $event.oldVMs | Array\<MComplexItem\> | 旧的所有选中项子组件的数组 |
-| senderVM | MComplex | 发送事件实例 |
+| $event.selected | boolean | Select or cancel |
+| $event.item | boolean | Object related to the selected item |
+| $event.itemVM | boolean | The selected item subcomponent |
+| $event.value | Array | Changed value |
+| $event.oldValue | Array | Old value |
+| $event.items | Array\<object\> | Array of objects related to all selected items |
+| $event.oldItems | Array\<object\> | Array of objects related to all old selected items |
+| $event.itemVMs | Array\<MComplexItem\> | Array of all selected item subcomponents |
+| $event.oldVMs | Array\<MComplexItem\> | Array of all old selected item subcomponents |
+| senderVM | MComplex | Send event instance |
 
 #### @change
 
-选择值改变时触发。单选模式中：
+Fires when the selection value changes. In radio selection mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | MComplexItem | 选择项子组件 |
-| $event.oldVM | MComplexItem | 旧的选择项子组件 |
-| senderVM | MComplex | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.oldItem | object | Old selection related object |
+| $event.itemVM | MComplexItem | Selection subcomponent |
+| $event.oldVM | MComplexItem | Old selection subcomponent |
+| senderVM | MComplex | Send event instance |
 
 #### @change
 
-选择值改变时触发。多选模式中：
+Fires when the selection value changes. In multi-select mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Array | 所有选中项的值 |
-| $event.items | Array\<object\> | 所有选中项相关对象的数组 |
-| $event.itemVMs | Array\<MComplexItem\> | 所有选中项子组件的数组 |
-| senderVM | MComplex | 发送事件实例 |
+| $event.value | Array | Values   of all selected items |
+| $event.items | Array\<object\> | Array of objects related to all selected items |
+| $event.itemVMs | Array\<MComplexItem\> | Array of all selected item subcomponents |
+| senderVM | MComplex | Send event instance |
 
 ## MComplexItem API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | any |  |  | 此项的值 |
-| selected | boolean |  | `false` | 是否选中此项 |
-| disabled | boolean |  | `false` | 禁用此项 |
-| item | object |  |  | 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发 |
+| value | any | | | The value of this item |
+| selected | boolean | | `false` | Whether to select this item |
+| disabled | boolean | | `false` | Disable this |
+| item | object | | | Related objects. When this is selected, the event thrown will pass the object, making it easier to develop |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @click
 
-点击此项时触发，与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。
+Fires when this item is clicked. Unlike the native click event, it will only fire when it is not read-only and disabled.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | MouseEvent | 鼠标事件对象 |
-| senderVM | MComplexItem | 发送事件实例 |
+| $event | MouseEvent | Mouse event object |
+| senderVM | MComplexItem | Send event instance |
 
 #### @before-select
 
-选择此项前触发
+Trigger before selecting this
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 此项的值 |
-| $event.item | object | 此项的相关对象 |
-| $event.itemVM | MComplexItem | 此组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | MComplexItem | 发送事件实例 |
+| $event.value | any | The value of this item |
+| $event.item | object | The related object of this item |
+| $event.itemVM | MComplexItem | This component |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | MComplexItem | Send event instance |

@@ -1,13 +1,13 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# MEmitter 发送器
+# MEmitter Sender
 
-该 Mixin 集成了一些发送事件相关的方法。继承之后直接使用方法即可。
+This Mixin integrates some methods related to sending events. You can use the method directly after inheriting.
 
 ## Example
-``` vue
+```vue
 <template>
-<div>这个例子中，该组件给上级添加了蓝色阴影。</div>
+<div>In this example, the component adds a blue shadow to its parent. </div>
 </template>
 <script>
 import { MEmitter } from '@@';
@@ -33,40 +33,40 @@ export default {
 
 #### $contact(condition, callback)
 
-联系符合条件的上级组件。
+Contact the qualified parent component.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| condition | string, Function\<$parent, boolean\> |  | 查找条件。如果为字符串，则根据上级组件的`name`是否与之相同来判断；如果为函数，传入上级组件实例，根据返回的布尔值判断。 |
-| callback | Function\<$parent\> |  | 联系成功时的回调函数。 |
+| condition | string, Function\<$parent, boolean\> | | Search condition. If it is a string, it will be judged based on whether the `name` of the upper-level component is the same as it; if it is a function, the upper-level component instance will be passed in and it will be judged based on the returned Boolean value. |
+| callback | Function\<$parent\> | | Callback function when contact is successful. |
 
 #### $dispatch(condition, eventName, ...args)
 
-向符合条件的上级组件发送事件。
+Send events to qualified parent components.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| condition | string, Function\<$parent, boolean\> |  | 查找条件。如果为字符串，则根据上级组件的`name`是否与之相同来判断；如果为函数，传入上级组件实例，根据返回的布尔值判断。 |
-| eventName | string |  | 发送的事件名称。 |
-| ...args | Array\<any\> |  | 发送的事件参数。 |
+| condition | string, Function\<$parent, boolean\> | | Search condition. If it is a string, it will be judged based on whether the `name` of the upper-level component is the same as it; if it is a function, the upper-level component instance will be passed in and it will be judged based on the returned Boolean value. |
+| eventName | string | | The name of the event sent. |
+| ...args | Array\<any\> | | Event arguments sent. |
 
 #### $broadcast(condition, eventName, ...args)
 
-向下级组件广播事件。
+Broadcast events to lower-level components.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| condition | string, Function\<$parent, boolean\> |  | 查找条件。如果为字符串，则根据上级组件的`name`是否与之相同来判断；如果为函数，传入上级组件实例，根据返回的布尔值判断。 |
-| eventName | string |  | 发送的事件名称。 |
-| ...args | Array\<any\> |  | 发送的事件参数。 |
+| condition | string, Function\<$parent, boolean\> | | Search condition. If it is a string, it will be judged based on whether the `name` of the upper-level component is the same as it; if it is a function, the upper-level component instance will be passed in and it will be judged based on the returned Boolean value. |
+| eventName | string | | The name of the event sent. |
+| ...args | Array\<any\> | | Event arguments sent. |
 
 #### $emitPrevent(name, $event, senderVM, ...args)
 
-抛出一个包含`preventDefault`方法的事件。
+Throws an event containing the `preventDefault` method.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| name | string |  | 事件名称 |
-| $event | object |  | 事件对象 |
-| senderVM | Vue |  | 发送事件的组件实例 |
-| ...args | Array\<any\> |  | 其他参数 |
+| name | string | | Event name |
+| $event | object | | Event object |
+| senderVM | Vue | | Component instance that sends events |
+| ...args | Array\<any\> | | Other parameters |

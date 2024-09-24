@@ -2,48 +2,48 @@
 
 ``` html
 <m-singlex>
-    <m-singlex-item>水杯</m-singlex-item>
-    <m-singlex-item>咖啡</m-singlex-item>
-    <m-singlex-item>坚果</m-singlex-item>
-    <m-singlex-item>毛巾</m-singlex-item>
-    <m-singlex-item>沙发</m-singlex-item>
+    <m-singlex-item>Water Cup</m-singlex-item>
+    <m-singlex-item>Coffee</m-singlex-item>
+    <m-singlex-item>Nut</m-singlex-item>
+    <m-singlex-item>Towel</m-singlex-item>
+    <m-singlex-item>Sofa</m-singlex-item>
 </m-singlex>
 ```
 
 ### 选项值
 
-#### 单向绑定
+#### One-Way Binding
 
 ``` html
 <m-singlex value="towel">
-    <m-singlex-item value="cup">水杯</m-singlex-item>
-    <m-singlex-item value="coffee">咖啡</m-singlex-item>
-    <m-singlex-item value="nut">坚果</m-singlex-item>
-    <m-singlex-item value="towel">毛巾</m-singlex-item>
-    <m-singlex-item value="sofa">沙发</m-singlex-item>
+    <m-singlex-item value="cup">Water Cup</m-singlex-item>
+    <m-singlex-item value="coffee">Coffee</m-singlex-item>
+    <m-singlex-item value="nut">Nut</m-singlex-item>
+    <m-singlex-item value="towel">Towel</m-singlex-item>
+    <m-singlex-item value="sofa">Sofa</m-singlex-item>
 </m-singlex>
 ```
 
-#### 双向绑定
+#### Two-Way Binding
 
-可以使用`v-model`或`:value.sync`两种方式进行双向绑定。
+Two-Way Binding can be performed using `v-model` or `:value.sync`.
 
 ``` vue
 <template>
 <u-linear-layout direction="vertical" gap="small">
     <m-singlex v-model="value">
-        <m-singlex-item value="cup">水杯</m-singlex-item>
-        <m-singlex-item value="coffee">咖啡</m-singlex-item>
-        <m-singlex-item value="nut">坚果</m-singlex-item>
-        <m-singlex-item value="towel">毛巾</m-singlex-item>
-        <m-singlex-item value="sofa">沙发</m-singlex-item>
+        <m-singlex-item value="cup">Water Cup</m-singlex-item>
+        <m-singlex-item value="coffee">Coffee</m-singlex-item>
+        <m-singlex-item value="nut">Nut</m-singlex-item>
+        <m-singlex-item value="towel">Towel</m-singlex-item>
+        <m-singlex-item value="sofa">Sofa</m-singlex-item>
     </m-singlex>
     <m-singlex :value.sync="value">
-        <m-singlex-item value="cup">水杯</m-singlex-item>
-        <m-singlex-item value="coffee">咖啡</m-singlex-item>
-        <m-singlex-item value="nut">坚果</m-singlex-item>
-        <m-singlex-item value="towel">毛巾</m-singlex-item>
-        <m-singlex-item value="sofa">沙发</m-singlex-item>
+        <m-singlex-item value="cup">Water Cup</m-singlex-item>
+        <m-singlex-item value="coffee">Coffee</m-singlex-item>
+        <m-singlex-item value="nut">Nut</m-singlex-item>
+        <m-singlex-item value="towel">Towel</m-singlex-item>
+        <m-singlex-item value="sofa">Sofa</m-singlex-item>
     </m-singlex>
 </u-linear-layout>
 </template>
@@ -84,35 +84,35 @@ export default {
 </m-singlex>
 ```
 
-### 只读、禁用、禁用某一项
+### Read Only, Disable, Disable an Item
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="4">
         <m-singlex value="towel" readonly>
-            <m-singlex-item value="cup">水杯</m-singlex-item>
-            <m-singlex-item value="coffee">咖啡</m-singlex-item>
-            <m-singlex-item value="nut">坚果</m-singlex-item>
-            <m-singlex-item value="towel">毛巾</m-singlex-item>
-            <m-singlex-item value="sofa">沙发</m-singlex-item>
+            <m-singlex-item value="cup">Water Cup</m-singlex-item>
+            <m-singlex-item value="coffee">Coffee</m-singlex-item>
+            <m-singlex-item value="nut">Nut</m-singlex-item>
+            <m-singlex-item value="towel">Towel</m-singlex-item>
+            <m-singlex-item value="sofa">Sofa</m-singlex-item>
         </m-singlex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-singlex value="towel" disabled>
-            <m-singlex-item value="cup">水杯</m-singlex-item>
-            <m-singlex-item value="coffee">咖啡</m-singlex-item>
-            <m-singlex-item value="nut">坚果</m-singlex-item>
-            <m-singlex-item value="towel">毛巾</m-singlex-item>
-            <m-singlex-item value="sofa">沙发</m-singlex-item>
+            <m-singlex-item value="cup">Water Cup</m-singlex-item>
+            <m-singlex-item value="coffee">Coffee</m-singlex-item>
+            <m-singlex-item value="nut">Nut</m-singlex-item>
+            <m-singlex-item value="towel">Towel</m-singlex-item>
+            <m-singlex-item value="sofa">Sofa</m-singlex-item>
         </m-singlex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-singlex value="towel">
-            <m-singlex-item value="cup">水杯</m-singlex-item>
-            <m-singlex-item value="coffee">咖啡</m-singlex-item>
-            <m-singlex-item value="nut" disabled>坚果</m-singlex-item>
-            <m-singlex-item value="towel" disabled>毛巾</m-singlex-item>
-            <m-singlex-item value="sofa">沙发</m-singlex-item>
+            <m-singlex-item value="cup">Water Cup</m-singlex-item>
+            <m-singlex-item value="coffee">Coffee</m-singlex-item>
+            <m-singlex-item value="nut" disabled>Nut</m-singlex-item>
+            <m-singlex-item value="towel" disabled>Towel</m-singlex-item>
+            <m-singlex-item value="sofa">Sofa</m-singlex-item>
         </m-singlex>
     </u-grid-layout-column>
 </u-grid-layout>
@@ -124,11 +124,11 @@ export default {
 
 ``` html
 <m-singlex value="towel" cancelable>
-    <m-singlex-item value="cup">水杯</m-singlex-item>
-    <m-singlex-item value="coffee">咖啡</m-singlex-item>
-    <m-singlex-item value="nut" disabled>坚果</m-singlex-item>
-    <m-singlex-item value="towel">毛巾</m-singlex-item>
-    <m-singlex-item value="sofa">沙发</m-singlex-item>
+    <m-singlex-item value="cup">Water Cup</m-singlex-item>
+    <m-singlex-item value="coffee">Coffee</m-singlex-item>
+    <m-singlex-item value="nut" disabled>Nut</m-singlex-item>
+    <m-singlex-item value="towel">Towel</m-singlex-item>
+    <m-singlex-item value="sofa">Sofa</m-singlex-item>
 </m-singlex>
 ```
 
@@ -138,15 +138,15 @@ export default {
 
 ``` html
 <m-singlex auto-select>
-    <m-singlex-item value="cup" disabled>水杯</m-singlex-item>
-    <m-singlex-item value="coffee" disabled>咖啡</m-singlex-item>
-    <m-singlex-item value="nut">坚果</m-singlex-item>
-    <m-singlex-item value="towel">毛巾</m-singlex-item>
-    <m-singlex-item value="sofa">沙发</m-singlex-item>
+    <m-singlex-item value="cup" disabled>Water Cup</m-singlex-item>
+    <m-singlex-item value="coffee" disabled>Coffee</m-singlex-item>
+    <m-singlex-item value="nut">Nut</m-singlex-item>
+    <m-singlex-item value="towel">Towel</m-singlex-item>
+    <m-singlex-item value="sofa">Sofa</m-singlex-item>
 </m-singlex>
 ```
 
-### 更新列表
+### Update List
 
 ``` vue
 <template>
@@ -155,7 +155,7 @@ export default {
         <m-singlex-item v-for="item in list" :key="item.value" :value="item.value">{{ item.text }}</m-singlex-item>
     </m-singlex>
     <span>value: {{ value }}</span>
-    <u-button @click="updateList">更新列表</u-button>
+    <u-button @click="updateList">Update List</u-button>
 </div>
 </template>
 <script>
@@ -163,11 +163,11 @@ export default {
     data() {
         return {
             list: [
-                { value: 'cup', text: '水杯' },
-                { value: 'coffee', text: '咖啡' },
-                { value: 'nut', text: '坚果' },
-                { value: 'towel', text: '毛巾' },
-                { value: 'sofa', text: '沙发' },
+                { value: 'cup', text: 'Water Cup' },
+                { value: 'coffee', text: 'Coffee' },
+                { value: 'nut', text: 'Nut' },
+                { value: 'towel', text: 'Towel' },
+                { value: 'sofa', text: 'Sofa' },
             ],
             value: 'toothbrush',
         };
@@ -175,10 +175,10 @@ export default {
     methods: {
         updateList() {
             this.list = [
-                { value: 'cup', text: '水杯' },
-                { value: 'coffee', text: '咖啡' },
-                { value: 'nut', text: '坚果' },
-                { value: 'toothbrush', text: '牙刷' },
+                { value: 'cup', text: 'Water Cup' },
+                { value: 'coffee', text: 'Coffee' },
+                { value: 'nut', text: 'Nut' },
+                { value: 'toothbrush', text: 'Toothbrush' },
             ];
         },
     },
@@ -195,7 +195,7 @@ export default {
         <m-singlex-item v-for="item in list" :key="item.value" :value="item.value">{{ item.text }}</m-singlex-item>
     </m-singlex>
     <span>value: {{ value }}</span>
-    <u-button @click="updateList">更新列表</u-button>
+    <u-button @click="updateList">Update List</u-button>
 </div>
 </template>
 <script>
@@ -203,17 +203,17 @@ export default {
     data() {
         return {
             list: [
-                { value: 'cup', text: '水杯' },
-                { value: 'coffee', text: '咖啡' },
-                { value: 'nut', text: '坚果' },
+                { value: 'cup', text: 'Water Cup' },
+                { value: 'coffee', text: 'Coffee' },
+                { value: 'nut', text: 'Nut' },
             ],
             value: 'toothbrush',
         };
     },
     methods: {
         updateList() {
-            this.list.unshift({ value: 'towel', text: '毛巾' });
-            this.list.unshift({ value: 'sofa', text: '沙发' });
+            this.list.unshift({ value: 'towel', text: 'Towel' });
+            this.list.unshift({ value: 'sofa', text: 'Sofa' });
         },
     },
 };

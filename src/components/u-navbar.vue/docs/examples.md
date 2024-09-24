@@ -32,7 +32,7 @@
 
 #### value 模式
 
-将`router`属性设置为`false`时，导航条的选择项则由`value`属性来控制。类似于常用的`<u-select>`操作，`value`可以用`v-model`或`.sync`进行双向绑定。
+将`router`属性设置为`false`时，导航条的选择项则由`value`属性来控制。类似于常用的`<u-select>`操作，`value`可以用`v-model`或`.sync`进行Two-Way Binding。
 
 ``` html
 <u-navbar value="Concepts" :router="false">

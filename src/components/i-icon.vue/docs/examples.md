@@ -1,10 +1,10 @@
-### 使用方法
+### How to Use
 
 ``` html
 <i-icon name="arrow-up"></i-icon>
 ```
 
-## 所有图标
+## All Icons
 
 <u-icon-example name="arrow-up"></u-icon-example>
 <u-icon-example name="arrow-down"></u-icon-example>

@@ -8,7 +8,7 @@
 </u-collapse>
 ```
 
-### 手风琴模式
+### Accordian Mode
 
 ``` html
 <u-collapse accordion>

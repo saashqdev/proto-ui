@@ -1,38 +1,38 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# MGroupParent 分组模式
+# MGroupParent Grouping Mode
 
-在父子组件的模式中，有时会遇到对子组件进行分组和折叠场景。MGroup 对这种模式进行了抽象，用于快速开发和代码借鉴。
+In the pattern of parent-child components, you sometimes encounter scenarios of grouping and collapsing child components. MGroup abstracts this pattern for rapid development and code reference.
 
-### 用法
+### Usage
 
-- 继承 MParent 的组件，同时要继承 MGroupParent，补充声明分组组件的 `groupName`字段
-- 在继承 MChild 的组件 Options 中，补充声明分组组件的 `groupName`字段
-- 在继承 MGroup 的组件 Options 中，补充声明父组件的 `parentName`字段，补充声明父组件的 `childName`字段
+- Components that inherit MParent must also inherit MGroupParent and supplement the `groupName` field of the declared group component
+- In the component Options that inherits MChild, add the `groupName` field of the grouped component.
+- In the Options of the component that inherits MGroup, add the `parentName` field of the parent component and add the `childName` field of the parent component.
 
-父组件会将多个分组组件收集在`groupVMs`数组中，分组组件会将多个子组件收集在`itemVMs`数组中，同时将父组件标记为`parentVM`变量。这段过程发生在组件的`created`阶段。在`destroyed`阶段回收这些数据。
+The parent component will collect multiple grouped components in the `groupVMs` array, and the grouped component will collect multiple child components in the `itemVMs` array, and mark the parent component as a `parentVM` variable. This process occurs in the `created` phase of the component. This data is recovered during the `destroyed` phase.
 
 ## Example
 
-### 分组
+### Group
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-row>
         <u-grid-layout-column :span="4">
-            <p>默认，无折叠功能</p>
+            <p>Default, No Folding Function</p>
             <m-parent>
-                <m-group title="洗具">
-                    <m-child>毛巾</m-child>
-                    <m-child>牙刷</m-child>
+                <m-group title="Washing Utensils">
+                    <m-child>Towel</m-child>
+                    <m-child>Toothbrush</m-child>
                 </m-group>
-                <m-group title="杯具">
-                    <m-child>牙缸</m-child>
-                    <m-child>水杯</m-child>
+                <m-group title="Cups">
+                    <m-child>Dental Cylinder</m-child>
+                    <m-child>Water Cup</m-child>
                 </m-group>
-                <m-group title="餐具">
-                    <m-child>筷子</m-child>
-                    <m-child>碗</m-child>
+                <m-group title="Tableware">
+                    <m-child>Chopsticks</m-child>
+                    <m-child>Bowl</m-child>
                 </m-group>
             </m-parent>
         </u-grid-layout-column>
@@ -45,108 +45,108 @@
 
 | Option | Type | Default | Description |
 | ------ | ---- | ------- | ----------- |
-| groupName | string | `'m-group'` | 分组组件的名称 |
+| groupName | string | `'m-group'` | The name of the group component |
 
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| collapsible | boolean |  | `false` | 分组是否可以折叠 |
-| accordion | boolean |  | `false` | 是否每次只会展开一个分组 |
-| expand-trigger | string |  | `'click'` | 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发 |
+| collapsible | boolean | | `false` | Whether the group can be collapsed |
+| accordion | boolean | | `false` | Whether to expand only one group at a time |
+| expand-trigger | string | | `'click'` | The trigger method for expand/collapse. Optional values: `'click'` means that the entire row can be triggered when clicked, `'click-expander'` means that it is triggered only when the small arrow is clicked |
 
 ### Data
 
 | Data | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| groupVMs | Array\<MGroup\> | `[]` | 分组组件集合 |
+| groupVMs | Array\<MGroup\> | `[]` | Grouped component collection |
 
 ### Events
 
 #### @toggle
 
-展开/折叠某分组时触发
+Triggered when a group is expanded/collapsed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.expanded | boolean | 展开/折叠状态 |
-| $event.groupVM | MGroup | 分组组件 |
-| senderVM | MGroupParent | 发送事件实例 |
+| $event.expanded | boolean | Expanded/collapsed state |
+| $event.groupVM | MGroup | Group component |
+| senderVM | MGroupParent | Send event instance |
 
 ### Methods
 
 #### toggleAll(expanded)
 
-展开/折叠所有分组
+Expand/collapse all groups
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| expanded | boolean |  | 展开/折叠 |
+| expanded | boolean | | Expand/collapse |
 
-## MGroup API
+##MGroupAPI
 ### Options
 
 | Option | Type | Default | Description |
 | ------ | ---- | ------- | ----------- |
-| parentName | string | `'m-parent'` | 父组件的名称 |
-| childName | string | `'m-child'` | 子组件的名称 |
+| parentName | string | `'m-parent'` | The name of the parent component |
+| childName | string | `'m-child'` | The name of the child component |
 
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 显示的标题 |
-| collapsible | boolean |  |  | `false` |
-| expanded.sync | boolean |  | `false` | 展开/折叠状态 |
-| disabled | boolean |  | `false` | 是否禁用。禁用时无法展开/折叠 |
+| title | string | | | Displayed title |
+| collapsible | boolean | | | `false` |
+| expanded.sync | boolean | | `false` | Expanded/collapsed state |
+| disabled | boolean | | `false` | Whether to disable. Cannot expand/collapse when disabled |
 
 ### Data
 
 | Data | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| parentVM | MParent |  | 父组件实例 |
-| itemVMs | Array\<MChild\> | `[]` | 子组件集合 |
+| parentVM | MParent | | Parent component instance |
+| itemVMs | Array\<MChild\> | `[]` | Collection of subcomponents |
 
 ### Slots
 
 #### (default)
 
-插入`<m-child>`子组件。
+Insert `<m-child>` child component.
 
-#### title
+#### Title
 
-自定义标题文本。
+Custom title text.
 
-#### extra
+#### Extra
 
-在右侧可以附加内容。
+On the right side you can attach content.
 
 ### Events
 
 #### @before-toggle
 
-展开/折叠此分组前触发
+Triggered before expanding/collapsing this group
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.expanded | boolean | 展开/折叠状态 |
-| $event.groupVM | MGroup | 分组组件 |
-| $event.preventDefault | Function | 阻止展开/折叠流程 |
-| senderVM | MGroup | 发送事件实例 |
+| $event.expanded | boolean | Expanded/collapsed state |
+| $event.groupVM | MGroup | Group component |
+| $event.preventDefault | Function | Prevent the expand/collapse process |
+| senderVM | MGroup | Send event instance |
 
 #### @toggle
 
-展开/折叠某分组时触发
+Triggered when a group is expanded/collapsed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.expanded | boolean | 展开/折叠状态 |
-| $event.groupVM | MGroup | 分组组件 |
-| senderVM | MGroup | 发送事件实例 |
+| $event.expanded | boolean | Expanded/collapsed state |
+| $event.groupVM | MGroup | Group component |
+| senderVM | MGroup | Send event instance |
 
 ## MChild API
 ### Options
 
 | Option | Type | Default | Description |
 | ------ | ---- | ------- | ----------- |
-| groupName | string | `'m-group'` | 分组组件的名称 |
+| groupName | string | `'m-group'` | The name of the group component |

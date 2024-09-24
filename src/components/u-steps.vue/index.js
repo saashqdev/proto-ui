@@ -15,7 +15,7 @@ export const USteps = {
         itemVMs: {
             override: true,
             handler() {
-                // 更新列表之后，原来的选择可以已不存在，这里暂存然后重新查找一遍
+                // Update List之后，原来的选择可以已不存在，这里暂存然后重新查找一遍
                 const value = this.selectedVM ? this.selectedVM.index : this.value;
                 this.selectedVM = undefined;
                 this.watchValue(value);

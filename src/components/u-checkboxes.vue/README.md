@@ -11,7 +11,7 @@
 <u-checkbox>多选框</u-checkbox>
 ```
 
-### 双向绑定
+### Two-Way Binding
 
 ``` vue
 <template>
@@ -52,10 +52,10 @@ export default {
 <template>
 <div>
     <u-checkboxes v-model="checkedList">
-        <u-checkbox label="水杯">水杯</u-checkbox>
-        <u-checkbox label="坚果">坚果</u-checkbox>
-        <u-checkbox label="毛巾">毛巾</u-checkbox>
-        <u-checkbox label="沙发">沙发</u-checkbox>
+        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
+        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Towel">Towel</u-checkbox>
+        <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
     {{ checkedList }}
 </div>
@@ -64,7 +64,7 @@ export default {
 export default {
     data() {
         return {
-            checkedList: ['毛巾', '沙发'],
+            checkedList: ['Towel', 'Sofa'],
         };
     },
 };
@@ -79,10 +79,10 @@ export default {
 <template>
 <div>
     <u-checkboxes :min="1" :max="2" v-model="checkedList">
-        <u-checkbox label="水杯">水杯</u-checkbox>
-        <u-checkbox label="坚果">坚果</u-checkbox>
-        <u-checkbox label="毛巾">毛巾</u-checkbox>
-        <u-checkbox label="沙发">沙发</u-checkbox>
+        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
+        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Towel">Towel</u-checkbox>
+        <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
     {{ checkedList }}
 </div>
@@ -91,12 +91,12 @@ export default {
 export default {
     data() {
         return {
-            checkedList: ['毛巾', '沙发'],
+            checkedList: ['Towel', 'Sofa'],
         };
     },
     methods: {
         add() {
-            this.checkedList.push('水杯');
+            this.checkedList.push('Water Cup');
         },
     },
 };
@@ -110,10 +110,10 @@ export default {
 <div>
     <u-checkbox v-model="allChecked" @check="checkAll($event.value)">全选</u-checkbox>
     <u-checkboxes v-model="checkedList" @check="onCheck($event.value)">
-        <u-checkbox label="水杯">水杯</u-checkbox>
-        <u-checkbox label="坚果">坚果</u-checkbox>
-        <u-checkbox label="毛巾">毛巾</u-checkbox>
-        <u-checkbox label="沙发">沙发</u-checkbox>
+        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
+        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Towel">Towel</u-checkbox>
+        <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
     {{ checkedList }}
 </div>
@@ -128,7 +128,7 @@ export default {
     },
     methods: {
         checkAll(checked) {
-            this.checkedList = checked ? ['水杯', '坚果', '毛巾', '沙发'] : [];
+            this.checkedList = checked ? ['Water Cup', 'Nut', 'Towel', 'Sofa'] : [];
         },
         onCheck(value) {
             if (this.checkedList.length === 4)

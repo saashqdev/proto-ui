@@ -20,7 +20,7 @@
 </u-sidebar>
 ```
 
-### 只读、禁用、禁用某一项
+### Read Only, Disable, Disable an Item
 
 ``` html
 <u-grid-layout>
@@ -54,13 +54,13 @@
 </u-sidebar>
 ```
 
-### 分组
+### Group
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-row>
         <u-grid-layout-column :span="4">
-            <p>默认，无折叠功能</p>
+            <p>Default, No Folding Function</p>
             <u-sidebar>
                 <u-sidebar-group title="Basic">
                     <u-sidebar-item>链接</u-sidebar-item>
@@ -81,7 +81,7 @@
             </u-sidebar>
         </u-grid-layout-column>
         <u-grid-layout-column :span="4">
-            <p>开启折叠功能</p>
+            <p>Turn On the Folding Function</p>
             <u-sidebar collapsible>
                 <u-sidebar-group title="Basic">
                     <u-sidebar-item>链接</u-sidebar-item>
@@ -102,7 +102,7 @@
             </u-sidebar>
         </u-grid-layout-column>
         <u-grid-layout-column :span="4">
-            <p>手风琴模式</p>
+            <p>Accordian Mode</p>
             <u-sidebar collapsible accordion>
                 <u-sidebar-group title="Basic">
                     <u-sidebar-item>链接</u-sidebar-item>
@@ -125,7 +125,7 @@
     </u-grid-layout-row>
     <u-grid-layout-row>
         <u-grid-layout-column :span="4">
-            <p>触发方式：整行点击均可触发（默认）</p>
+            <p>Trigger Method: Click on the Entire Row can Trigger (default)</p>
             <u-sidebar collapsible expand-trigger="click">
                 <u-sidebar-group title="Basic">
                     <u-sidebar-item>链接</u-sidebar-item>
@@ -140,7 +140,7 @@
             </u-sidebar>
         </u-grid-layout-column>
         <u-grid-layout-column :span="4">
-            <p>触发方式：仅点击小箭头时触发</p>
+            <p>Trigger Method: Only Triggered when the Small Arrow is Clicked</p>
             <u-sidebar collapsible expand-trigger="click-expander">
                 <u-sidebar-group title="Basic">
                     <u-sidebar-item>链接</u-sidebar-item>

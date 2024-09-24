@@ -1,74 +1,74 @@
 - name: m-group-parent
-  title: 分组模式
-  description: 在父子组件的模式中，有时会遇到对子组件进行分组和折叠场景。MGroup 对这种模式进行了抽象，用于快速开发和代码借鉴。
+  title: Grouping Mode
+  description: In the parent-child component pattern, sometimes you may encounter scenarios where child components need to be grouped and folded. MGroup abstracts this pattern for rapid development and code reference.
   options:
     - name: groupName
       type: string
       default: m-group
-      description: 分组组件的名称
+      description: The name of the grouped component
   data:
     - name: groupVMs
       type: Array<MGroup>
       default: []
-      description: 分组组件集合
+      description: Grouping component collection
   attrs:
     - name: collapsible
       type: boolean
       default: false
-      description: 分组是否可以折叠
+      description: Whether the group can be collapsed
     - name: accordion
       type: boolean
       default: false
-      description: 是否每次只会展开一个分组
+      description: Whether to expand only one group at a time
     - name: expand-trigger
       type: string
       default: click
-      description: 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发
+      description: The triggering method of expanding/collapse. Optional values - `'click'` means that the entire row can be triggered, and `'click-expander'` means that it is triggered only when the small arrow is clicked
   events:
     - name: toggle
-      description: 展开/折叠某分组时触发
+      description: Triggered when a group is expanded/collapsed
       params:
         - name: $event.expanded
           type: boolean
-          description: 展开/折叠状态
+          description: Expand/collapse state
         - name: $event.groupVM
           type: MGroup
-          description: 分组组件
+          description: Grouping components
         - name: senderVM
           type: MGroupParent
-          description: 发送事件实例
+          description: Send event instance
   methods:
     - name: toggleAll(expanded)
-      description: 展开/折叠所有分组
+      description: Expand/collapse all groups
       params:
         - name: expanded
           type: boolean
-          description: 展开/折叠
+          description: Expand/collapse
 - name: m-group
   mixins: m-emitter
   options:
     - name: parentName
       type: string
       default: m-parent
-      description: 父组件的名称
+      description: The name of the parent component
     - name: childName
       type: string
       default: m-child
-      description: 子组件的名称
+      description: The name of the subcomponent
   data:
     - name: parentVM
       type: MParent
       default: null
-      description: 父组件实例
+      description: Parent component instance
     - name: itemVMs
       type: Array<MChild>
       default: []
-      description: 子组件集合
+      description: Subcomponent collection
   attrs:
     - name: title
       type: string
       default: null
-      description: 显示的标题
+      description: The displayed title
     - name: collapsible
       type: boolean
       default: null
@@ -76,49 +76,49 @@
     - name: expanded.sync
       type: boolean
       default: false
-      description: 展开/折叠状态
+      description: Expand/collapse state
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用。禁用时无法展开/折叠
+      description: Whether to disable. When disabled, it cannot be expanded/collapsed.
   slots:
     - name: default
-      description: 插入`<m-child>`子组件。
+      description: Inserts a `<m-child>` child component.
     - name: title
-      description: 自定义标题文本。
+      description: Custom title text.
     - name: extra
-      description: 在右侧可以附加内容。
+      description: Additional content can be added on the right.
   events:
     - name: before-toggle
-      description: 展开/折叠此分组前触发
+      description: Triggered before expanding/collapse this group
       params:
         - name: $event.expanded
           type: boolean
-          description: 展开/折叠状态
+          description: Expand/collapse state
         - name: $event.groupVM
           type: MGroup
-          description: 分组组件
+          description: Grouping components
         - name: $event.preventDefault
           type: Function
-          description: 阻止展开/折叠流程
+          description: Prevents the expand/collapse process
         - name: senderVM
           type: MGroup
-          description: 发送事件实例
+          description: Send event instance
     - name: toggle
-      description: 展开/折叠某分组时触发
+      description: Triggered when a group is expanded/collapsed
       params:
         - name: $event.expanded
           type: boolean
-          description: 展开/折叠状态
+          description: Expand/collapse state
         - name: $event.groupVM
           type: MGroup
-          description: 分组组件
+          description: Grouping components
         - name: senderVM
           type: MGroup
-          description: 发送事件实例
+          description: Send event instance
 - name: m-child
   options:
     - name: groupName
       type: string
       default: m-group
-      description: 分组组件的名称
+      description: The name of the grouped component

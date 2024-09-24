@@ -1,52 +1,52 @@
 - name: m-emitter
-  title: 发送器
-  description: 该 Mixin 集成了一些发送事件相关的方法。继承之后直接使用方法即可。
+  title: Transmitter
+  description: This Mixin integrates some methods related to sending events. You can use the methods directly after inheritance.
   methods:
     - name: $contact(condition, callback)
-      description: 联系符合条件的上级组件。
+      description: Contact the upper-level component that meets the conditions.
       params:
         - name: condition
           type: string, Function<$parent, boolean>
-          description: 查找条件。如果为字符串，则根据上级组件的`name`是否与之相同来判断；如果为函数，传入上级组件实例，根据返回的布尔值判断。
+          description: Search condition. If it is a string, it is judged based on whether the `name` of the parent component is the same as it; if it is a function, the parent component instance is passed in and the judgment is based on the returned Boolean value.
         - name: callback
           type: Function<$parent>
-          description: 联系成功时的回调函数。
+          description: Callback function when the connection is successful.
     - name: $dispatch(condition, eventName, ...args)
-      description: 向符合条件的上级组件发送事件。
+      description: Sends an event to the upper-level component that meets the conditions.
       params:
         - name: condition
           type: string, Function<$parent, boolean>
-          description: 查找条件。如果为字符串，则根据上级组件的`name`是否与之相同来判断；如果为函数，传入上级组件实例，根据返回的布尔值判断。
+          description: Search condition. If it is a string, it is judged based on whether the `name` of the parent component is the same as it; if it is a function, the parent component instance is passed in and the judgment is based on the returned Boolean value.
         - name: eventName
           type: string
-          description: 发送的事件名称。
+          description: The name of the event sent.
         - name: ...args
           type: Array<any>
-          description: 发送的事件参数。
+          description: The event parameters sent.
     - name: $broadcast(condition, eventName, ...args)
-      description: 向下级组件广播事件。
+      description: Broadcasts events to subordinate components.
       params:
         - name: condition
           type: string, Function<$parent, boolean>
-          description: 查找条件。如果为字符串，则根据上级组件的`name`是否与之相同来判断；如果为函数，传入上级组件实例，根据返回的布尔值判断。
+          description: Search condition. If it is a string, it is judged based on whether the `name` of the parent component is the same as it; if it is a function, the parent component instance is passed in and the judgment is based on the returned Boolean value.
         - name: eventName
           type: string
-          description: 发送的事件名称。
+          description: The name of the event sent.
         - name: ...args
           type: Array<any>
-          description: 发送的事件参数。
+          description: The event parameters sent.
     - name: $emitPrevent(name, $event, senderVM, ...args)
-      description: 抛出一个包含`preventDefault`方法的事件。
+      description: Throws an event that contains a `preventDefault` method.
       params:
         - name: name
           type: string
-          description: 事件名称
+          description: Event name
         - name: $event
           type: object
-          description: 事件对象
+          description: Event object
         - name: senderVM
-          type: Vue
-          description: 发送事件的组件实例
+          type: View
+          description: The component instance that sent the event
         - name: ...args
           type: Array<any>
-          description: 其他参数
+          description: Other parameters

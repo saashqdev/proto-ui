@@ -5,38 +5,38 @@
 ``` html
 <u-linear-layout>
     <u-select>
-        <u-select-item>水杯</u-select-item>
-        <u-select-item>咖啡</u-select-item>
-        <u-select-item>坚果</u-select-item>
+        <u-select-item>Water Cup</u-select-item>
+        <u-select-item>Coffee</u-select-item>
+        <u-select-item>Nut</u-select-item>
     </u-select>
     <u-select placeholder="设置占位符">
-        <u-select-item>水杯</u-select-item>
-        <u-select-item>咖啡</u-select-item>
-        <u-select-item>坚果</u-select-item>
+        <u-select-item>Water Cup</u-select-item>
+        <u-select-item>Coffee</u-select-item>
+        <u-select-item>Nut</u-select-item>
     </u-select>
 </u-linear-layout>
 ```
 
-### 双向绑定
+### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行双向绑定。
+使用`v-model`或`:value.sync`进行Two-Way Binding。
 
 ``` vue
 <template>
 <u-linear-layout>
     <u-select v-model="value">
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee">咖啡</u-select-item>
-        <u-select-item value="nut">坚果</u-select-item>
-        <u-select-item value="towel">毛巾</u-select-item>
-        <u-select-item value="sofa">沙发</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="nut">Nut</u-select-item>
+        <u-select-item value="towel">Towel</u-select-item>
+        <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
     <u-select :value.sync="value">
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee">咖啡</u-select-item>
-        <u-select-item value="nut">坚果</u-select-item>
-        <u-select-item value="towel">毛巾</u-select-item>
-        <u-select-item value="sofa">沙发</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="nut">Nut</u-select-item>
+        <u-select-item value="towel">Towel</u-select-item>
+        <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
 </u-linear-layout>
 </template>
@@ -52,24 +52,24 @@ export default {
 </script>
 ```
 
-### 只读、禁用、禁用某一项
+### Read Only, Disable, Disable an Item
 
 ``` html
 <u-linear-layout>
     <u-select value="nut" readonly>
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee">咖啡</u-select-item>
-        <u-select-item value="nut">坚果</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="nut">Nut</u-select-item>
     </u-select>
     <u-select value="nut" disabled>
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee">咖啡</u-select-item>
-        <u-select-item value="nut">坚果</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="nut">Nut</u-select-item>
     </u-select>
     <u-select value="nut">
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee" disabled>咖啡</u-select-item>
-        <u-select-item value="nut">坚果</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee" disabled>Coffee</u-select-item>
+        <u-select-item value="nut">Nut</u-select-item>
     </u-select>
 </u-linear-layout>
 ```
@@ -86,30 +86,30 @@ export default {
 
 ``` html
 <u-select value="nut">
-    <u-select-item value="cup">水杯</u-select-item>
-    <u-select-item value="toothbrush">牙刷</u-select-item>
+    <u-select-item value="cup">Water Cup</u-select-item>
+    <u-select-item value="toothbrush">Toothbrush</u-select-item>
     <u-select-divider></u-select-divider>
-    <u-select-item value="nut">坚果</u-select-item>
-    <u-select-item value="towel">毛巾</u-select-item>
-    <u-select-item value="sofa">沙发</u-select-item>
+    <u-select-item value="nut">Nut</u-select-item>
+    <u-select-item value="towel">Towel</u-select-item>
+    <u-select-item value="sofa">Sofa</u-select-item>
 </u-select>
 ```
 
-### 分组
+### Group
 
 ``` html
 <u-select>
-    <u-select-group title="洗具">
-        <u-select-item>毛巾</u-select-item>
-        <u-select-item>牙刷</u-select-item>
+    <u-select-group title="Washing Utensils">
+        <u-select-item>Towel</u-select-item>
+        <u-select-item>Toothbrush</u-select-item>
     </u-select-group>
-    <u-select-group title="杯具">
-        <u-select-item>牙缸</u-select-item>
-        <u-select-item>水杯</u-select-item>
+    <u-select-group title="Cups">
+        <u-select-item>Dental Cylinder</u-select-item>
+        <u-select-item>Water Cup</u-select-item>
     </u-select-group>
-    <u-select-group title="餐具">
-        <u-select-item>筷子</u-select-item>
-        <u-select-item>碗</u-select-item>
+    <u-select-group title="Tableware">
+        <u-select-item>Chopsticks</u-select-item>
+        <u-select-item>Bowl</u-select-item>
     </u-select-group>
 </u-select>
 ```
@@ -118,24 +118,24 @@ export default {
 
 ``` html
 <u-select value="coffee" clearable>
-    <u-select-item value="cup">水杯</u-select-item>
-    <u-select-item value="coffee">咖啡</u-select-item>
-    <u-select-item value="nut">坚果</u-select-item>
+    <u-select-item value="cup">Water Cup</u-select-item>
+    <u-select-item value="coffee">Coffee</u-select-item>
+    <u-select-item value="nut">Nut</u-select-item>
 </u-select>
 ```
 
 ### 多选模式
 
-通过`multiple`属性开启多选模式。可以使用`v-model`或`:value.sync`两种方式进行双向绑定。
+通过`multiple`属性开启多选模式。Two-Way Binding can be performed using `v-model` or `:value.sync`.
 
 ``` vue
 <template>
 <u-select multiple v-model="values">
-    <u-select-item value="cup">水杯</u-select-item>
-    <u-select-item value="coffee">咖啡</u-select-item>
-    <u-select-item value="nut">坚果</u-select-item>
-    <u-select-item value="towel">毛巾</u-select-item>
-    <u-select-item value="sofa">沙发</u-select-item>
+    <u-select-item value="cup">Water Cup</u-select-item>
+    <u-select-item value="coffee">Coffee</u-select-item>
+    <u-select-item value="nut">Nut</u-select-item>
+    <u-select-item value="towel">Towel</u-select-item>
+    <u-select-item value="sofa">Sofa</u-select-item>
 </u-select>
 </template>
 <script>
@@ -157,25 +157,25 @@ Tags 过多时如何显示。
 <template>
 <u-linear-layout>
     <u-select multiple tags-overflow="hidden" v-model="value" placeholder="过多时省略">
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee">咖啡</u-select-item>
-        <u-select-item value="nut">坚果</u-select-item>
-        <u-select-item value="towel">毛巾</u-select-item>
-        <u-select-item value="sofa">沙发</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="nut">Nut</u-select-item>
+        <u-select-item value="towel">Towel</u-select-item>
+        <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
     <u-select multiple tags-overflow="collapse" v-model="value" placeholder="过多时收缩">
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee">咖啡</u-select-item>
-        <u-select-item value="nut">坚果</u-select-item>
-        <u-select-item value="towel">毛巾</u-select-item>
-        <u-select-item value="sofa">沙发</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="nut">Nut</u-select-item>
+        <u-select-item value="towel">Towel</u-select-item>
+        <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
     <u-select multiple tags-overflow="visible" v-model="value" placeholder="过多时显示">
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee">咖啡</u-select-item>
-        <u-select-item value="nut">坚果</u-select-item>
-        <u-select-item value="towel">毛巾</u-select-item>
-        <u-select-item value="sofa">沙发</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="nut">Nut</u-select-item>
+        <u-select-item value="towel">Towel</u-select-item>
+        <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
 </u-linear-layout>
 </template>
@@ -198,11 +198,11 @@ export default {
 ``` vue
 <template>
 <u-select multiple duplicated v-model="values">
-    <u-select-item value="cup">水杯</u-select-item>
-    <u-select-item value="coffee">咖啡</u-select-item>
-    <u-select-item value="nut">坚果</u-select-item>
-    <u-select-item value="towel">毛巾</u-select-item>
-    <u-select-item value="sofa">沙发</u-select-item>
+    <u-select-item value="cup">Water Cup</u-select-item>
+    <u-select-item value="coffee">Coffee</u-select-item>
+    <u-select-item value="nut">Nut</u-select-item>
+    <u-select-item value="towel">Towel</u-select-item>
+    <u-select-item value="sofa">Sofa</u-select-item>
 </u-select>
 </template>
 <script>

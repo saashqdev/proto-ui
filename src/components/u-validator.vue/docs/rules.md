@@ -31,10 +31,10 @@
 ``` html
 <u-validator label="列表" rules="notEmpty">
     <u-checkboxes>
-        <u-checkbox label="水杯">水杯</u-checkbox>
-        <u-checkbox label="坚果">坚果</u-checkbox>
-        <u-checkbox label="毛巾">毛巾</u-checkbox>
-        <u-checkbox label="沙发">沙发</u-checkbox>
+        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
+        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Towel">Towel</u-checkbox>
+        <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
 </u-validator>
 ```
@@ -46,10 +46,10 @@
 ``` html
 <u-validator label="列表" rules="empty">
     <u-checkboxes>
-        <u-checkbox label="水杯">水杯</u-checkbox>
-        <u-checkbox label="坚果">坚果</u-checkbox>
-        <u-checkbox label="毛巾">毛巾</u-checkbox>
-        <u-checkbox label="沙发">沙发</u-checkbox>
+        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
+        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Towel">Towel</u-checkbox>
+        <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
 </u-validator>
 ```
@@ -195,12 +195,12 @@
 ```
 
 ``` html
-<u-validator label="列表" rules="equals(['水杯', '坚果']) @bi">
+<u-validator label="列表" rules="equals(['Water Cup', 'Nut']) @bi">
     <u-checkboxes>
-        <u-checkbox label="水杯">水杯</u-checkbox>
-        <u-checkbox label="坚果">坚果</u-checkbox>
-        <u-checkbox label="毛巾">毛巾</u-checkbox>
-        <u-checkbox label="沙发">沙发</u-checkbox>
+        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
+        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Towel">Towel</u-checkbox>
+        <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
 </u-validator>
 ```
@@ -218,12 +218,12 @@
 ```
 
 ``` html
-<u-validator label="列表" rules="notEquals(['水杯', '坚果']) @bi">
+<u-validator label="列表" rules="notEquals(['Water Cup', 'Nut']) @bi">
     <u-checkboxes>
-        <u-checkbox label="水杯">水杯</u-checkbox>
-        <u-checkbox label="坚果">坚果</u-checkbox>
-        <u-checkbox label="毛巾">毛巾</u-checkbox>
-        <u-checkbox label="沙发">沙发</u-checkbox>
+        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
+        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Towel">Towel</u-checkbox>
+        <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
 </u-validator>
 ```
@@ -262,12 +262,12 @@ export default {
 验证值为数组，必须包含参数中的项。
 
 ``` html
-<u-validator label="列表" rules="includes('水杯', '坚果')">
+<u-validator label="列表" rules="includes('Water Cup', 'Nut')">
     <u-checkboxes>
-        <u-checkbox label="水杯">水杯</u-checkbox>
-        <u-checkbox label="坚果">坚果</u-checkbox>
-        <u-checkbox label="毛巾">毛巾</u-checkbox>
-        <u-checkbox label="沙发">沙发</u-checkbox>
+        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
+        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Towel">Towel</u-checkbox>
+        <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
 </u-validator>
 ```
@@ -277,12 +277,12 @@ export default {
 验证值为数组，不能包含参数中的项。
 
 ``` html
-<u-validator label="列表" rules="excludes('水杯', '坚果')">
+<u-validator label="列表" rules="excludes('Water Cup', 'Nut')">
     <u-checkboxes>
-        <u-checkbox label="水杯">水杯</u-checkbox>
-        <u-checkbox label="坚果">坚果</u-checkbox>
-        <u-checkbox label="毛巾">毛巾</u-checkbox>
-        <u-checkbox label="沙发">沙发</u-checkbox>
+        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
+        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Towel">Towel</u-checkbox>
+        <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
 </u-validator>
 ```
@@ -292,12 +292,12 @@ export default {
 必须为参数中的某一个值。
 
 ``` html
-<u-validator label="列表" rules="included('水杯', '坚果')">
+<u-validator label="列表" rules="included('Water Cup', 'Nut')">
     <u-select>
-        <u-select-item value="水杯">水杯</u-select-item>
-        <u-select-item value="坚果">坚果</u-select-item>
-        <u-select-item value="毛巾">毛巾</u-select-item>
-        <u-select-item value="沙发">沙发</u-select-item>
+        <u-select-item value="Water Cup">Water Cup</u-select-item>
+        <u-select-item value="Nut">Nut</u-select-item>
+        <u-select-item value="Towel">Towel</u-select-item>
+        <u-select-item value="Sofa">Sofa</u-select-item>
     </u-select>
 </u-validator>
 ```
@@ -307,12 +307,12 @@ export default {
 不能为参数中的任一个值。
 
 ``` html
-<u-validator label="列表" rules="excluded('水杯', '坚果')">
+<u-validator label="列表" rules="excluded('Water Cup', 'Nut')">
     <u-select>
-        <u-select-item value="水杯">水杯</u-select-item>
-        <u-select-item value="坚果">坚果</u-select-item>
-        <u-select-item value="毛巾">毛巾</u-select-item>
-        <u-select-item value="沙发">沙发</u-select-item>
+        <u-select-item value="Water Cup">Water Cup</u-select-item>
+        <u-select-item value="Nut">Nut</u-select-item>
+        <u-select-item value="Towel">Towel</u-select-item>
+        <u-select-item value="Sofa">Sofa</u-select-item>
     </u-select>
 </u-validator>
 ```
@@ -348,11 +348,11 @@ export default {
 ``` html
 <u-validator label="选项" rules="noDuplicates">
     <u-select multiple>
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee">咖啡</u-select-item>
-        <u-select-item value="cup">水杯</u-select-item>
-        <u-select-item value="coffee">咖啡</u-select-item>
-        <u-select-item value="towel">毛巾</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="cup">Water Cup</u-select-item>
+        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="towel">Towel</u-select-item>
     </u-select>
 </u-validator>
 ```

@@ -24,7 +24,7 @@ export const MMultiplex = {
             if (!Array.isArray(value))
                 throw new Error('`value` should be an Array!');
 
-            // @TODO: 因为是同一个数组。。没有好的剪枝方法
+            // @TODO: Because it's the same array. . There's no good way to prune it
             // if (value !== oldValue && value.length === oldValue.length
             //     && value.every((val, index) => val === oldValue[index]))
             //     return;
@@ -35,7 +35,7 @@ export const MMultiplex = {
             // const oldValue = oldVMs.map((itemVM) => itemVM.value);
             const value = selectedVMs.map((itemVM) => itemVM.value);
 
-            // @TODO: 因为是同一个数组。。没有好的剪枝方法
+            // @TODO: Because it's the same array. . There's no good way to prune it
             // if (value.length === oldValue.length && value.every((val, index) => val === oldValue[index]))
             //     return;
 
@@ -49,7 +49,7 @@ export const MMultiplex = {
         },
         // This method just run once after pushing many itemVMs
         itemVMs() {
-            // 更新列表之后，原来的选择可能已不存在，这里需要重新查找一遍
+            // After updating the list, the original selection may no longer exist, so you need to search again
             this.watchValue(this.value);
         },
     },
@@ -73,7 +73,7 @@ export const MMultiplex = {
                             selectedVMs.push(itemVM);
                     });
                 }
-                // 必须单独指定一遍，因为有取消掉的
+                // Must be specified separately because some are cancelled
                 this.itemVMs.forEach((itemVM) => itemVM.currentSelected = value.includes(itemVM.value));
             } else {
                 this.itemVMs.forEach((itemVM) => itemVM.currentSelected && selectedVMs.push(itemVM));

@@ -166,13 +166,13 @@
 </u-menu>
 ```
 
-### 分组
+### Group
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-row>
         <u-grid-layout-column :span="4">
-            <p>默认，无折叠功能</p>
+            <p>Default, No Folding Function</p>
             <u-menu>
                 <u-menu-group title="Basic">
                     <u-menu-item>链接</u-menu-item>

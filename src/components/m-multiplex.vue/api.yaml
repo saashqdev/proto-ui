@@ -1,154 +1,154 @@
 - name: m-multiplex
-  title: 多选模式
-  description: 常见的多选模式。
+  title: Multiple Selection Mode
+  description: Common multiple selection mode.
   extends: m-parent
   attrs:
     - name: value.sync, v-model
       type: Array
       default: null
-      description: 所有选中项的值
+      description: The value of all selected items
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Whether it is read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
   slots:
     - name: default
-      description: 插入`<m-multiplex-item>`子组件。
+      description: Inserts a `<m-multiplex-item>` subcomponent.
   events:
     - name: before-select
-      description: 选择某一项前触发
+      description: Triggered before selecting an item
       params:
         - name: $event.selected
           type: boolean
-          description: 选中还是取消
+          description: Select or cancel
         - name: $event.item
           type: boolean
-          description: 该选中项相关对象
+          description: The object related to the selected item
         - name: $event.itemVM
           type: boolean
-          description: 该选中项子组件
+          description: The selected item subcomponent
         - name: $event.oldValue
           type: Array
-          description: 旧的所有选中项的值
+          description: The old value of all selected items
         - name: $event.oldItems
           type: Array<object>
-          description: 旧的所有选中项相关对象的数组
+          description: An array of all old selected items related objects
         - name: $event.oldVMs
           type: Array<MMultiplexItem>
-          description: 旧的所有选中项子组件的数组
+          description: An array of all old selected item subcomponents
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: MMultiplex
-          description: 发送事件实例
+          description: Send event instance
     - name: input
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event
           type: Array
-          description: 所有选中项的值
+          description: The value of all selected items
         - name: senderVM
           type: MMultiplex
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event.selected
           type: boolean
-          description: 选中还是取消
+          description: Select or cancel
         - name: $event.item
           type: boolean
-          description: 该选中项相关对象
+          description: The object related to the selected item
         - name: $event.itemVM
           type: boolean
-          description: 该选中项子组件
+          description: The selected item subcomponent
         - name: $event.value
           type: Array
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: Array
-          description: 旧的值
+          description: Old value
         - name: $event.items
           type: Array<object>
-          description: 所有选中项相关对象的数组
+          description: An array of all selected items related objects
         - name: $event.oldItems
           type: Array<object>
-          description: 旧的所有选中项相关对象的数组
+          description: An array of all old selected items related objects
         - name: $event.itemVMs
           type: Array<MMultiplexItem>
-          description: 所有选中项子组件的数组
+          description: An array of all selected item subcomponents
         - name: $event.oldVMs
           type: Array<MMultiplexItem>
-          description: 旧的所有选中项子组件的数组
+          description: An array of all old selected item subcomponents
         - name: senderVM
           type: MMultiplex
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 选择值改变时触发
+      description: Triggered when the selected value changes
       params:
         - name: $event.value
           type: Array
-          description: 所有选中项的值
+          description: The value of all selected items
         - name: $event.items
           type: Array<object>
-          description: 所有选中项相关对象的数组
+          description: An array of all selected items related objects
         - name: $event.itemVMs
           type: Array<MMultiplexItem>
-          description: 所有选中项子组件的数组
+          description: An array of all selected item subcomponents
         - name: senderVM
           type: MMultiplex
-          description: 发送事件实例
+          description: Send event instance
 - name: m-multiplex-item
   attrs:
     - name: value
       type: any
       default: null
-      description: 此项的值
+      description: The value of this item
     - name: selected
       type: boolean
       default: false
-      description: 是否选择此项
+      description: Whether to select this option
     - name: disabled
       type: boolean
       default: false
-      description: 禁用此项
+      description: Disable this option
     - name: item
       type: object
       default: null
-      description: 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发
+      description: Related object. When this option is selected, the thrown event will pass this object, which is convenient for development
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.
   events:
     - name: click
-      description: 点击此项时触发。与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。
+      description: Fired when this item is clicked. Unlike the native click event, it will only fire when the item is not read-only and disabled.
       params:
         - name: $event
           type: MouseEvent
-          description: 鼠标事件对象
+          description: Mouse event object
         - name: senderVM
           type: MMultiplexItem
-          description: 发送事件实例
+          description: Send event instance
     - name: before-select
-      description: 选择此项前触发
+      description: Triggered before selecting this item
       params:
         - name: $event.value
           type: any
-          description: 此项的值
+          description: The value of this item
         - name: $event.item
           type: object
-          description: 此项的相关对象
+          description: The object associated with this item
         - name: $event.itemVM
           type: MMultiplexItem
-          description: 此组件
+          description: This component
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: MMultiplexItem
-          description: 发送事件实例
+          description: Send event instance

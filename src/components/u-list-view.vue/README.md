@@ -7,10 +7,10 @@
 
 ``` html
 <u-list-view>
-    <u-list-view-item>水杯</u-list-view-item>
-    <u-list-view-item>坚果</u-list-view-item>
-    <u-list-view-item>毛巾</u-list-view-item>
-    <u-list-view-item>沙发</u-list-view-item>
+    <u-list-view-item>Water Cup</u-list-view-item>
+    <u-list-view-item>Nut</u-list-view-item>
+    <u-list-view-item>Towel</u-list-view-item>
+    <u-list-view-item>Sofa</u-list-view-item>
 </u-list-view>
 ```
 
@@ -18,39 +18,39 @@
 
 ``` html
 <u-list-view value="towel">
-    <u-list-view-item value="cup">水杯</u-list-view-item>
-    <u-list-view-item value="nut">坚果</u-list-view-item>
-    <u-list-view-item value="towel">毛巾</u-list-view-item>
-    <u-list-view-item value="sofa">沙发</u-list-view-item>
+    <u-list-view-item value="cup">Water Cup</u-list-view-item>
+    <u-list-view-item value="nut">Nut</u-list-view-item>
+    <u-list-view-item value="towel">Towel</u-list-view-item>
+    <u-list-view-item value="sofa">Sofa</u-list-view-item>
 </u-list-view>
 ```
 
-### 只读、禁用、禁用某一项
+### Read Only, Disable, Disable an Item
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="4">
         <u-list-view value="towel" readonly>
-            <u-list-view-item value="cup">水杯</u-list-view-item>
-            <u-list-view-item value="nut">坚果</u-list-view-item>
-            <u-list-view-item value="towel">毛巾</u-list-view-item>
-            <u-list-view-item value="sofa">沙发</u-list-view-item>
+            <u-list-view-item value="cup">Water Cup</u-list-view-item>
+            <u-list-view-item value="nut">Nut</u-list-view-item>
+            <u-list-view-item value="towel">Towel</u-list-view-item>
+            <u-list-view-item value="sofa">Sofa</u-list-view-item>
         </u-list-view>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <u-list-view value="towel" disabled>
-            <u-list-view-item value="cup">水杯</u-list-view-item>
-            <u-list-view-item value="nut">坚果</u-list-view-item>
-            <u-list-view-item value="towel">毛巾</u-list-view-item>
-            <u-list-view-item value="sofa">沙发</u-list-view-item>
+            <u-list-view-item value="cup">Water Cup</u-list-view-item>
+            <u-list-view-item value="nut">Nut</u-list-view-item>
+            <u-list-view-item value="towel">Towel</u-list-view-item>
+            <u-list-view-item value="sofa">Sofa</u-list-view-item>
         </u-list-view>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <u-list-view value="towel">
-            <u-list-view-item value="cup">水杯</u-list-view-item>
-            <u-list-view-item value="nut" disabled>坚果</u-list-view-item>
-            <u-list-view-item value="towel">毛巾</u-list-view-item>
-            <u-list-view-item value="sofa">沙发</u-list-view-item>
+            <u-list-view-item value="cup">Water Cup</u-list-view-item>
+            <u-list-view-item value="nut" disabled>Nut</u-list-view-item>
+            <u-list-view-item value="towel">Towel</u-list-view-item>
+            <u-list-view-item value="sofa">Sofa</u-list-view-item>
         </u-list-view>
     </u-grid-layout-column>
 </u-grid-layout>
@@ -60,96 +60,96 @@
 
 ``` html
 <u-list-view value="nut">
-    <u-list-view-item value="cup">水杯</u-list-view-item>
-    <u-list-view-item value="toothbrush">牙刷</u-list-view-item>
+    <u-list-view-item value="cup">Water Cup</u-list-view-item>
+    <u-list-view-item value="toothbrush">Toothbrush</u-list-view-item>
     <u-list-view-divider></u-list-view-divider>
-    <u-list-view-item value="nut">坚果</u-list-view-item>
-    <u-list-view-item value="towel">毛巾</u-list-view-item>
-    <u-list-view-item value="sofa">沙发</u-list-view-item>
+    <u-list-view-item value="nut">Nut</u-list-view-item>
+    <u-list-view-item value="towel">Towel</u-list-view-item>
+    <u-list-view-item value="sofa">Sofa</u-list-view-item>
 </u-list-view>
 ```
 
-### 分组
+### Group
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-row>
         <u-grid-layout-column :span="4">
-            <p>默认，无折叠功能</p>
+            <p>Default, No Folding Function</p>
             <u-list-view>
-                <u-list-view-group title="洗具">
-                    <u-list-view-item>毛巾</u-list-view-item>
-                    <u-list-view-item>牙刷</u-list-view-item>
+                <u-list-view-group title="Washing Utensils">
+                    <u-list-view-item>Towel</u-list-view-item>
+                    <u-list-view-item>Toothbrush</u-list-view-item>
                 </u-list-view-group>
-                <u-list-view-group title="杯具">
-                    <u-list-view-item>牙缸</u-list-view-item>
-                    <u-list-view-item>水杯</u-list-view-item>
+                <u-list-view-group title="Cups">
+                    <u-list-view-item>Dental Cylinder</u-list-view-item>
+                    <u-list-view-item>Water Cup</u-list-view-item>
                 </u-list-view-group>
-                <u-list-view-group title="餐具">
-                    <u-list-view-item>筷子</u-list-view-item>
-                    <u-list-view-item>碗</u-list-view-item>
+                <u-list-view-group title="Tableware">
+                    <u-list-view-item>Chopsticks</u-list-view-item>
+                    <u-list-view-item>Bowl</u-list-view-item>
                 </u-list-view-group>
             </u-list-view>
         </u-grid-layout-column>
         <u-grid-layout-column :span="4">
-            <p>开启折叠功能</p>
+            <p>Turn On the Folding Function</p>
             <u-list-view collapsible>
-                <u-list-view-group title="洗具">
-                    <u-list-view-item>毛巾</u-list-view-item>
-                    <u-list-view-item>牙刷</u-list-view-item>
+                <u-list-view-group title="Washing Utensils">
+                    <u-list-view-item>Towel</u-list-view-item>
+                    <u-list-view-item>Toothbrush</u-list-view-item>
                 </u-list-view-group>
-                <u-list-view-group title="杯具" expanded disabled>
-                    <u-list-view-item>牙缸</u-list-view-item>
-                    <u-list-view-item>水杯</u-list-view-item>
+                <u-list-view-group title="Cups" expanded disabled>
+                    <u-list-view-item>Dental Cylinder</u-list-view-item>
+                    <u-list-view-item>Water Cup</u-list-view-item>
                 </u-list-view-group>
-                <u-list-view-group title="餐具" :collapsible="false">
-                    <u-list-view-item>筷子</u-list-view-item>
-                    <u-list-view-item>碗</u-list-view-item>
+                <u-list-view-group title="Tableware" :collapsible="false">
+                    <u-list-view-item>Chopsticks</u-list-view-item>
+                    <u-list-view-item>Bowl</u-list-view-item>
                 </u-list-view-group>
             </u-list-view>
         </u-grid-layout-column>
         <u-grid-layout-column :span="4">
-            <p>手风琴模式</p>
+            <p>Accordian Mode</p>
             <u-list-view collapsible accordion value="cup">
-                <u-list-view-group title="洗具">
-                    <u-list-view-item value="towel">毛巾</u-list-view-item>
-                    <u-list-view-item value="toothbrush">牙刷</u-list-view-item>
+                <u-list-view-group title="Washing Utensils">
+                    <u-list-view-item value="towel">Towel</u-list-view-item>
+                    <u-list-view-item value="toothbrush">Toothbrush</u-list-view-item>
                 </u-list-view-group>
-                <u-list-view-group title="杯具">
-                    <u-list-view-item value="toothcup">牙缸</u-list-view-item>
-                    <u-list-view-item value="cup">水杯</u-list-view-item>
+                <u-list-view-group title="Cups">
+                    <u-list-view-item value="toothcup">Dental Cylinder</u-list-view-item>
+                    <u-list-view-item value="cup">Water Cup</u-list-view-item>
                 </u-list-view-group>
-                <u-list-view-group title="餐具">
-                    <u-list-view-item value="chopsticks">筷子</u-list-view-item>
-                    <u-list-view-item value="bowl">碗</u-list-view-item>
+                <u-list-view-group title="Tableware">
+                    <u-list-view-item value="chopsticks">Chopsticks</u-list-view-item>
+                    <u-list-view-item value="bowl">Bowl</u-list-view-item>
                 </u-list-view-group>
             </u-list-view>
         </u-grid-layout-column>
     </u-grid-layout-row>
     <u-grid-layout-row>
         <u-grid-layout-column :span="4">
-            <p>触发方式：整行点击均可触发（默认）</p>
+            <p>Trigger Method: Click on the Entire Row can Trigger (default)</p>
             <u-list-view collapsible expand-trigger="click">
-                <u-list-view-group title="洗具">
-                    <u-list-view-item>毛巾</u-list-view-item>
-                    <u-list-view-item>牙刷</u-list-view-item>
+                <u-list-view-group title="Washing Utensils">
+                    <u-list-view-item>Towel</u-list-view-item>
+                    <u-list-view-item>Toothbrush</u-list-view-item>
                 </u-list-view-group>
-                <u-list-view-group title="杯具">
-                    <u-list-view-item>牙缸</u-list-view-item>
-                    <u-list-view-item>水杯</u-list-view-item>
+                <u-list-view-group title="Cups">
+                    <u-list-view-item>Dental Cylinder</u-list-view-item>
+                    <u-list-view-item>Water Cup</u-list-view-item>
                 </u-list-view-group>
             </u-list-view>
         </u-grid-layout-column>
         <u-grid-layout-column :span="4">
-            <p>触发方式：仅点击小箭头时触发</p>
+            <p>Trigger Method: Only Triggered when the Small Arrow is Clicked</p>
             <u-list-view collapsible expand-trigger="click-expander">
-                <u-list-view-group title="洗具">
-                    <u-list-view-item>毛巾</u-list-view-item>
-                    <u-list-view-item>牙刷</u-list-view-item>
+                <u-list-view-group title="Washing Utensils">
+                    <u-list-view-item>Towel</u-list-view-item>
+                    <u-list-view-item>Toothbrush</u-list-view-item>
                 </u-list-view-group>
-                <u-list-view-group title="杯具">
-                    <u-list-view-item>牙缸</u-list-view-item>
-                    <u-list-view-item>水杯</u-list-view-item>
+                <u-list-view-group title="Cups">
+                    <u-list-view-item>Dental Cylinder</u-list-view-item>
+                    <u-list-view-item>Water Cup</u-list-view-item>
                 </u-list-view-group>
             </u-list-view>
         </u-grid-layout-column>
@@ -163,24 +163,24 @@
 
 ``` html
 <u-list-view value="towel" cancelable>
-    <u-list-view-item value="cup">水杯</u-list-view-item>
-    <u-list-view-item value="nut">坚果</u-list-view-item>
-    <u-list-view-item value="towel">毛巾</u-list-view-item>
-    <u-list-view-item value="sofa">沙发</u-list-view-item>
+    <u-list-view-item value="cup">Water Cup</u-list-view-item>
+    <u-list-view-item value="nut">Nut</u-list-view-item>
+    <u-list-view-item value="towel">Towel</u-list-view-item>
+    <u-list-view-item value="sofa">Sofa</u-list-view-item>
 </u-list-view>
 ```
 
 ### 多项选择
 
-可以使用`v-model`或`:value.sync`两种方式进行双向绑定。
+Two-Way Binding can be performed using `v-model` or `:value.sync`.
 
 ``` vue
 <template>
 <u-list-view multiple v-model="values">
-    <u-list-view-item value="cup">水杯</u-list-view-item>
-    <u-list-view-item value="nut">坚果</u-list-view-item>
-    <u-list-view-item value="towel">毛巾</u-list-view-item>
-    <u-list-view-item value="sofa">沙发</u-list-view-item>
+    <u-list-view-item value="cup">Water Cup</u-list-view-item>
+    <u-list-view-item value="nut">Nut</u-list-view-item>
+    <u-list-view-item value="towel">Towel</u-list-view-item>
+    <u-list-view-item value="sofa">Sofa</u-list-view-item>
 </u-list-view>
 </template>
 

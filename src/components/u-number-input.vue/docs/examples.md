@@ -7,7 +7,7 @@
 </u-linear-layout>
 ```
 
-### 双向绑定
+### Two-Way Binding
 
 ``` vue
 <template>

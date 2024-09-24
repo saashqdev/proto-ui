@@ -1,44 +1,44 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# MMultiplex 多选模式
+# MMultiplex Multiple Selection Mode
 
-常见的多选模式。
+Common multi-select mode.
 
 ## Example
 ### Basic Usage
 
-下面展示了多选模式的一些基本特性，选择和禁用等功能。
+The following shows some basic features of multi-select mode, selection and disabling functions.
 
 ``` html
 <m-multiplex>
-    <m-multiplex-item>水杯</m-multiplex-item>
-    <m-multiplex-item>咖啡</m-multiplex-item>
-    <m-multiplex-item disabled>坚果</m-multiplex-item>
-    <m-multiplex-item>毛巾</m-multiplex-item>
-    <m-multiplex-item>沙发</m-multiplex-item>
+    <m-multiplex-item>Water Cup</m-multiplex-item>
+    <m-multiplex-item>Coffee</m-multiplex-item>
+    <m-multiplex-item disabled>Nut</m-multiplex-item>
+    <m-multiplex-item>Towel</m-multiplex-item>
+    <m-multiplex-item>Sofa</m-multiplex-item>
 </m-multiplex>
 ```
 
-### 双向绑定
+### Two-Way Binding
 
-可以使用`v-model`或`:value.sync`两种方式进行双向绑定。
+Two-Way Binding can be performed using `v-model` or `:value.sync`.
 
 ``` vue
 <template>
 <u-linear-layout direction="vertical" gap="small">
     <m-multiplex v-model="values">
-        <m-multiplex-item value="cup">水杯</m-multiplex-item>
-        <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-        <m-multiplex-item value="nut">坚果</m-multiplex-item>
-        <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-        <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+        <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+        <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+        <m-multiplex-item value="nut">Nut</m-multiplex-item>
+        <m-multiplex-item value="towel">Towel</m-multiplex-item>
+        <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
     </m-multiplex>
     <m-multiplex :value.sync="values">
-        <m-multiplex-item value="cup">水杯</m-multiplex-item>
-        <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-        <m-multiplex-item value="nut">坚果</m-multiplex-item>
-        <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-        <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+        <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+        <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+        <m-multiplex-item value="nut">Nut</m-multiplex-item>
+        <m-multiplex-item value="towel">Towel</m-multiplex-item>
+        <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
     </m-multiplex>
 </u-linear-layout>
 </template>
@@ -53,9 +53,9 @@ export default {
 </script>
 ```
 
-#### selected 双向绑定
+#### Selected Two-Way Binding
 
-也可以通过每一项的 selected 属性进行双向绑定。
+Two-Way Binding can also be performed through the selected attribute of each item.
 
 ``` vue
 <template>
@@ -70,11 +70,11 @@ export default {
     data() {
         return {
             list: [
-                { text: '水杯', value: 'cup', selected: false },
-                { text: '咖啡', value: 'coffee', selected: false },
-                { text: '坚果', value: 'nut', selected: true },
-                { text: '毛巾', value: 'towel', selected: true },
-                { text: '沙发', value: 'sofa', selected: false },
+                { text: 'Water Cup', value: 'cup', selected: false },
+                { text: 'Coffee', value: 'coffee', selected: false },
+                { text: 'Nut', value: 'nut', selected: true },
+                { text: 'Towel', value: 'towel', selected: true },
+                { text: 'Sofa', value: 'sofa', selected: false },
             ],
         };
     },
@@ -82,35 +82,35 @@ export default {
 </script>
 ```
 
-### 只读、禁用、禁用某一项
+### Read Only, Disable, Disable an Item
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="4">
         <m-multiplex :value="['nut', 'towel']" readonly>
-            <m-multiplex-item value="cup">水杯</m-multiplex-item>
-            <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-            <m-multiplex-item value="nut">坚果</m-multiplex-item>
-            <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-            <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+            <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+            <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+            <m-multiplex-item value="nut">Nut</m-multiplex-item>
+            <m-multiplex-item value="towel">Towel</m-multiplex-item>
+            <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
         </m-multiplex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-multiplex :value="['nut', 'towel']" disabled>
-            <m-multiplex-item value="cup">水杯</m-multiplex-item>
-            <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-            <m-multiplex-item value="nut">坚果</m-multiplex-item>
-            <m-multiplex-item value="towel">毛巾</m-multiplex-item>
-            <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+            <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+            <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+            <m-multiplex-item value="nut">Nut</m-multiplex-item>
+            <m-multiplex-item value="towel">Towel</m-multiplex-item>
+            <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
         </m-multiplex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-multiplex :value="['nut', 'towel']">
-            <m-multiplex-item value="cup">水杯</m-multiplex-item>
-            <m-multiplex-item value="coffee">咖啡</m-multiplex-item>
-            <m-multiplex-item value="nut" disabled>坚果</m-multiplex-item>
-            <m-multiplex-item value="towel" disabled>毛巾</m-multiplex-item>
-            <m-multiplex-item value="sofa">沙发</m-multiplex-item>
+            <m-multiplex-item value="cup">Water Cup</m-multiplex-item>
+            <m-multiplex-item value="coffee">Coffee</m-multiplex-item>
+            <m-multiplex-item value="nut" disabled>Nut</m-multiplex-item>
+            <m-multiplex-item value="towel" disabled>Towel</m-multiplex-item>
+            <m-multiplex-item value="sofa">Sofa</m-multiplex-item>
         </m-multiplex>
     </u-grid-layout-column>
 </u-grid-layout>
@@ -121,105 +121,105 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | Array |  |  | 所有选中项的值 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value.sync, v-model | Array | | | Values   of all selected items |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入`<m-multiplex-item>`子组件。
+Insert `<m-multiplex-item>` subcomponent.
 
 ### Events
 
 #### @before-select
 
-选择某一项前触发
+Trigger before selecting an item
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.selected | boolean | 选中还是取消 |
-| $event.item | boolean | 该选中项相关对象 |
-| $event.itemVM | boolean | 该选中项子组件 |
-| $event.oldValue | Array | 旧的所有选中项的值 |
-| $event.oldItems | Array\<object\> | 旧的所有选中项相关对象的数组 |
-| $event.oldVMs | Array\<MMultiplexItem\> | 旧的所有选中项子组件的数组 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | MMultiplex | 发送事件实例 |
+| $event.selected | boolean | Select or cancel |
+| $event.item | boolean | Object related to the selected item |
+| $event.itemVM | boolean | The selected item subcomponent |
+| $event.oldValue | Array | The old value of all selected items |
+| $event.oldItems | Array\<object\> | Array of objects related to all old selected items |
+| $event.oldVMs | Array\<MMultiplexItem\> | Array of all old selected item subcomponents |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | MMultiplex | Send event instance |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | Array | 所有选中项的值 |
-| senderVM | MMultiplex | 发送事件实例 |
+| $event | Array | Values of all selected items |
+| senderVM | MMultiplex | Send event instance |
 
 #### @select
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.selected | boolean | 选中还是取消 |
-| $event.item | boolean | 该选中项相关对象 |
-| $event.itemVM | boolean | 该选中项子组件 |
-| $event.value | Array | 改变后的值 |
-| $event.oldValue | Array | 旧的值 |
-| $event.items | Array\<object\> | 所有选中项相关对象的数组 |
-| $event.oldItems | Array\<object\> | 旧的所有选中项相关对象的数组 |
-| $event.itemVMs | Array\<MMultiplexItem\> | 所有选中项子组件的数组 |
-| $event.oldVMs | Array\<MMultiplexItem\> | 旧的所有选中项子组件的数组 |
-| senderVM | MMultiplex | 发送事件实例 |
+| $event.selected | boolean | Select or cancel |
+| $event.item | boolean | Object related to the selected item |
+| $event.itemVM | boolean | The selected item subcomponent |
+| $event.value | Array | Changed value |
+| $event.oldValue | Array | Old value |
+| $event.items | Array\<object\> | Array of objects related to all selected items |
+| $event.oldItems | Array\<object\> | Array of objects related to all old selected items |
+| $event.itemVMs | Array\<MMultiplexItem\> | Array of all selected item subcomponents |
+| $event.oldVMs | Array\<MMultiplexItem\> | Array of all old selected item subcomponents |
+| senderVM | MMultiplex | Send event instance |
 
 #### @change
 
-选择值改变时触发
+Fires when the selection value changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Array | 所有选中项的值 |
-| $event.items | Array\<object\> | 所有选中项相关对象的数组 |
-| $event.itemVMs | Array\<MMultiplexItem\> | 所有选中项子组件的数组 |
-| senderVM | MMultiplex | 发送事件实例 |
+| $event.value | Array | Values of all selected items |
+| $event.items | Array\<object\> | Array of objects related to all selected items |
+| $event.itemVMs | Array\<MMultiplexItem\> | Array of all selected item subcomponents |
+| senderVM | MMultiplex | Send event instance |
 
 ## MMultiplexItem API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | any |  |  | 此项的值 |
-| selected | boolean |  | `false` | 是否选择此项 |
-| disabled | boolean |  | `false` | 禁用此项 |
-| item | object |  |  | 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发 |
+| value | any | | | The value of this item |
+| selected | boolean | | `false` | Whether to select this item |
+| disabled | boolean | | `false` | Disable this |
+| item | object | | | Related objects. When this is selected, the event thrown will pass the object, making it easier to develop |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @click
 
-点击此项时触发。与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。
+Fires when this item is clicked. Unlike the native click event, it will only fire when it is not read-only and disabled.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | MouseEvent | 鼠标事件对象 |
-| senderVM | MMultiplexItem | 发送事件实例 |
+| $event | MouseEvent | Mouse event object |
+| senderVM | MMultiplexItem | Send event instance |
 
 #### @before-select
 
-选择此项前触发
+Trigger before selecting this
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 此项的值 |
-| $event.item | object | 此项的相关对象 |
-| $event.itemVM | MMultiplexItem | 此组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | MMultiplexItem | 发送事件实例 |
+| $event.value | any | The value of this item |
+| $event.item | object | The related object of this item |
+| $event.itemVM | MMultiplexItem | This component |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | MMultiplexItem | Send event instance |

@@ -1,7 +1,7 @@
-### 用法
+### Usage
 
-- 继承 MParent 的组件，同时要继承 MGroupParent，补充声明分组组件的 `groupName`字段
-- 在继承 MChild 的组件 Options 中，补充声明分组组件的 `groupName`字段
-- 在继承 MGroup 的组件 Options 中，补充声明父组件的 `parentName`字段，补充声明父组件的 `childName`字段
+- Components that inherit MParent must also inherit MGroupParent and supplement the `groupName` field of the declared group component
+- In the component Options that inherits MChild, add the `groupName` field of the grouped component.
+- In the Options of the component that inherits MGroup, add the `parentName` field of the parent component and add the `childName` field of the parent component.
 
-父组件会将多个分组组件收集在`groupVMs`数组中，分组组件会将多个子组件收集在`itemVMs`数组中，同时将父组件标记为`parentVM`变量。这段过程发生在组件的`created`阶段。在`destroyed`阶段回收这些数据。
+The parent component will collect multiple grouped components in the `groupVMs` array, and the grouped component will collect multiple child components in the `itemVMs` array, and mark the parent component as a `parentVM` variable. This process occurs in the `created` phase of the component. This data is recovered during the `destroyed` phase.

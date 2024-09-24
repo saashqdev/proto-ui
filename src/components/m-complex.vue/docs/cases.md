@@ -2,26 +2,26 @@
 
 ``` html
 <m-complex>
-    <m-complex-item>水杯</m-complex-item>
-    <m-complex-item>咖啡</m-complex-item>
-    <m-complex-item>坚果</m-complex-item>
-    <m-complex-item>毛巾</m-complex-item>
-    <m-complex-item>沙发</m-complex-item>
+    <m-complex-item>Water Cup</m-complex-item>
+    <m-complex-item>Coffee</m-complex-item>
+    <m-complex-item>Nut</m-complex-item>
+    <m-complex-item>Towel</m-complex-item>
+    <m-complex-item>Sofa</m-complex-item>
 </m-complex>
 ```
 
-### 选项值
+### Option Value
 
-#### 单选模式
+#### Single Selection Mode
 
-``` vue
+``` view
 <template>
 <m-complex v-model="value">
-    <m-complex-item value="cup">水杯</m-complex-item>
-    <m-complex-item value="coffee">咖啡</m-complex-item>
-    <m-complex-item value="nut">坚果</m-complex-item>
-    <m-complex-item value="towel">毛巾</m-complex-item>
-    <m-complex-item value="sofa">沙发</m-complex-item>
+    <m-complex-item value="cup">Water Cup</m-complex-item>
+    <m-complex-item value="coffee">Coffee</m-complex-item>
+    <m-complex-item value="nut">Nut</m-complex-item>
+    <m-complex-item value="towel">Towel</m-complex-item>
+    <m-complex-item value="sofa">Sofa</m-complex-item>
 </m-complex>
 </template>
 <script>
@@ -35,16 +35,16 @@ export default {
 </script>
 ```
 
-#### 多选模式
+#### Multiple Selection Mode
 
-``` vue
+``` view
 <template>
 <m-complex multiple v-model="values">
-    <m-complex-item value="cup">水杯</m-complex-item>
-    <m-complex-item value="coffee">咖啡</m-complex-item>
-    <m-complex-item value="nut">坚果</m-complex-item>
-    <m-complex-item value="towel">毛巾</m-complex-item>
-    <m-complex-item value="sofa">沙发</m-complex-item>
+    <m-complex-item value="cup">Water Cup</m-complex-item>
+    <m-complex-item value="coffee">Coffee</m-complex-item>
+    <m-complex-item value="nut">Nut</m-complex-item>
+    <m-complex-item value="towel">Towel</m-complex-item>
+    <m-complex-item value="sofa">Sofa</m-complex-item>
 </m-complex>
 </template>
 <script>
@@ -58,64 +58,64 @@ export default {
 </script>
 ```
 
-### 只读、禁用、禁用某一项
+### Read-Only, Disable, Disable a Certain Item
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="4">
         <m-complex value="towel" readonly>
-            <m-complex-item value="cup">水杯</m-complex-item>
-            <m-complex-item value="coffee">咖啡</m-complex-item>
-            <m-complex-item value="nut">坚果</m-complex-item>
-            <m-complex-item value="towel">毛巾</m-complex-item>
-            <m-complex-item value="sofa">沙发</m-complex-item>
+            <m-complex-item value="cup">Water Cup</m-complex-item>
+            <m-complex-item value="coffee">Coffee</m-complex-item>
+            <m-complex-item value="nut">Nut</m-complex-item>
+            <m-complex-item value="towel">Towel</m-complex-item>
+            <m-complex-item value="sofa">Sofa</m-complex-item>
         </m-complex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-complex value="towel" disabled>
-            <m-complex-item value="cup">水杯</m-complex-item>
-            <m-complex-item value="coffee">咖啡</m-complex-item>
-            <m-complex-item value="nut">坚果</m-complex-item>
-            <m-complex-item value="towel">毛巾</m-complex-item>
-            <m-complex-item value="sofa">沙发</m-complex-item>
+            <m-complex-item value="cup">Water Cup</m-complex-item>
+            <m-complex-item value="coffee">Coffee</m-complex-item>
+            <m-complex-item value="nut">Nut</m-complex-item>
+            <m-complex-item value="towel">Towel</m-complex-item>
+            <m-complex-item value="sofa">Sofa</m-complex-item>
         </m-complex>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <m-complex value="towel">
-            <m-complex-item value="cup">水杯</m-complex-item>
-            <m-complex-item value="coffee">咖啡</m-complex-item>
-            <m-complex-item value="nut" disabled>坚果</m-complex-item>
-            <m-complex-item value="towel" disabled>毛巾</m-complex-item>
-            <m-complex-item value="sofa">沙发</m-complex-item>
+            <m-complex-item value="cup">Water Cup</m-complex-item>
+            <m-complex-item value="coffee">Coffee</m-complex-item>
+            <m-complex-item value="nut" disabled>Nut</m-complex-item>
+            <m-complex-item value="towel" disabled>Towel</m-complex-item>
+            <m-complex-item value="sofa">Sofa</m-complex-item>
         </m-complex>
     </u-grid-layout-column>
 </u-grid-layout>
 ```
 
-### 可取消
+### Cancelable
 
-尝试在同一个选项上点击两次。
+Try clicking on the same option twice.
 
 ``` html
 <m-complex value="towel" cancelable>
-    <m-complex-item value="cup">水杯</m-complex-item>
-    <m-complex-item value="coffee" disabled>咖啡</m-complex-item>
-    <m-complex-item value="nut">坚果</m-complex-item>
-    <m-complex-item value="towel">毛巾</m-complex-item>
-    <m-complex-item value="sofa">沙发</m-complex-item>
+    <m-complex-item value="cup">Water Cup</m-complex-item>
+    <m-complex-item value="coffee" disabled>Coffee</m-complex-item>
+    <m-complex-item value="nut">Nut</m-complex-item>
+    <m-complex-item value="towel">Towel</m-complex-item>
+    <m-complex-item value="sofa">Sofa</m-complex-item>
 </m-complex>
 ```
 
-### 自动选择
+### Automatic Selection
 
-自动选择第一个非禁用的项。
+Automatically selects the first non-disabled item.
 
 ``` html
 <m-complex auto-select>
-    <m-complex-item value="cup" disabled>水杯</m-complex-item>
-    <m-complex-item value="coffee" disabled>咖啡</m-complex-item>
-    <m-complex-item value="nut">坚果</m-complex-item>
-    <m-complex-item value="towel">毛巾</m-complex-item>
-    <m-complex-item value="sofa">沙发</m-complex-item>
+    <m-complex-item value="cup" disabled>Water Cup</m-complex-item>
+    <m-complex-item value="coffee" disabled>Coffee</m-complex-item>
+    <m-complex-item value="nut">Nut</m-complex-item>
+    <m-complex-item value="towel">Towel</m-complex-item>
+    <m-complex-item value="sofa">Sofa</m-complex-item>
 </m-complex>
 ```

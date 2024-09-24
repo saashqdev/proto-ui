@@ -147,7 +147,7 @@
 
 ### 多选的问题
 
-另一种是通过`value-field`属性指定数据中唯一值的字段，再通过`:values.sync`对选择值进行双向绑定。
+另一种是通过`value-field`属性指定数据中唯一值的字段，再通过`:values.sync`对选择值进行Two-Way Binding。
 
 ``` vue
 <template>
