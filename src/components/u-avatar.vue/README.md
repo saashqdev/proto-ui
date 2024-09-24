@@ -6,8 +6,8 @@
 
 顶部导航栏或页面中局部使用的用户头像。
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-avatar></u-avatar> 王小明

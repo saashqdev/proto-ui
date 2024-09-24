@@ -6,8 +6,8 @@
 
 本组件用于在表单中使用表单验证、动态数据等复杂功能。
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` vue
 <template>

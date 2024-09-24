@@ -1,6 +1,6 @@
 # Typography 排版
 
-## 示例
+## Example
 ### 标题
 
 ``` html

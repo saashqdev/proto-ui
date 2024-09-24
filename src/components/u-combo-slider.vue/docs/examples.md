@@ -1,4 +1,4 @@
-### 基本用法
+### Basic Usage
 
 ``` html
 <u-combo-slider></u-combo-slider>

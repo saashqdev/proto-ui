@@ -1,4 +1,4 @@
-### 基本用法
+### Basic Usage
 
 ``` html
 <p>消息 <u-badge :value="3"></u-badge></p>

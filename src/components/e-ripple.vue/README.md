@@ -1,17 +1,17 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# ERipple 波纹
+# ERipple Ripple
 
-**特效组件**
+**Special Effects Component**
 
-波纹，插入到需要添加波纹的元素或组件内部
+Ripple, inserted inside the element or component where the ripple needs to be added
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-button>
-    按钮
+    Button
     <e-ripple></e-ripple>
 </u-button>
 <u-pagination>
@@ -24,4 +24,4 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| color | enum | `'light'`, `'dark'` | `'light'` | 波纹颜色 |
+| color | enum | `'light'`, `'dark'` | `'light'` | Ripple color |

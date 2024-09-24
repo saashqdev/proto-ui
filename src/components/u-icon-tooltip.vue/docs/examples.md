@@ -1,6 +1,6 @@
 图标与`<u-tooltip>`的组合。
 
-### 基本用法
+### Basic Usage
 
 ``` html
 文字旁的提示 <u-icon-tooltip>这是提示内容</u-icon-tooltip>

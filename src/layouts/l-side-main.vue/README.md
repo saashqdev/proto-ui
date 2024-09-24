@@ -2,14 +2,14 @@
 
 # LSideMain 左侧栏固定布局
 
-## 示例
+## Example
 只有左侧栏固定的通用布局。
 
 可以与 LPage 配合使用。因为有时需要路由分发，顶级页面使用 LPage，子页面可以使用该组件布局或其他组件布局。
 
-滚动区域设置在了全局，内容会随窗口自适应。（下面的示例暂时体现不出现滚动效果）
+滚动区域设置在了全局，内容会随窗口自适应。（下面的Example暂时体现不出现滚动效果）
 
-### 基本用法
+### Basic Usage
 
 ``` html
 <div style="position: relative; z-index: 1; height: 500px; overflow: hidden;">

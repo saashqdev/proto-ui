@@ -11,8 +11,8 @@
 
 父组件会将多个子组件收集在`itemVMs`数组中，子组件将父组件标记为`parentVM`变量。这段过程发生在组件的`created`阶段。在`destroyed`阶段回收这些数据。
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <m-parent>

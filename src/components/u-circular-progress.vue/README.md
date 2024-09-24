@@ -2,8 +2,8 @@
 
 # UCircularProgress 圆形进度条
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-circular-progress :percent="36"></u-circular-progress>

@@ -2,7 +2,7 @@
 
 # UCheckbox 多选框
 
-## 示例
+## Example
 ### Basic
 
 ``` html

@@ -2,8 +2,8 @@
 
 # MPopper 弹出层
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 将需要弹出的内容用`<m-popper>`包裹起来，并插入到触发事件的元素中。
 

@@ -1,4 +1,4 @@
-### 基本用法
+### Basic Usage
 
 ``` html
 <u-button>按钮</u-button>

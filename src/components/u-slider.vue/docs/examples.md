@@ -1,4 +1,4 @@
-### 基本用法
+### Basic Usage
 
 ``` html
 <u-slider :value="36"></u-slider>

@@ -585,7 +585,7 @@
   },
   "u-combo-slider/formatter": {
     "type": "string, object",
-    "description": "格式化字符串，具体参见示例。也可以传入一个包含`get`和`set`方法的格式化对象。"
+    "description": "格式化字符串，具体参见Example。也可以传入一个包含`get`和`set`方法的格式化对象。"
   },
   "u-combo-slider/sync-on": {
     "type": "string",
@@ -1352,7 +1352,7 @@
   },
   "u-number-input/formatter": {
     "type": "string, object",
-    "description": "格式化字符串，具体参见示例。也可以传入一个包含`get`和`set`方法的格式化对象。"
+    "description": "格式化字符串，具体参见Example。也可以传入一个包含`get`和`set`方法的格式化对象。"
   },
   "u-number-input/placeholder": {
     "type": "string",

@@ -1,15 +1,15 @@
 - name: e-watermark
-  title: 水印
+  title: Watermark
   attrs:
     - name: text
       type: string
       default: ''
-      description: 水印文本
+      description: Watermark text
     - name: image
       type: CanvasImageSource
       default: null
-      description: 水印图案。如果没有，则默认按文本绘制
+      description: Watermark pattern. If not, defaults to drawing by text
     - name: opacity
       type: number
       default: 0.1
-      description: 透明度
+      description: Transparency

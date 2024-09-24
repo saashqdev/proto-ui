@@ -4,8 +4,8 @@
 
 常见文档网站中顶部栏和左侧栏固定的布局，如本文档页。
 
-## 示例
-滚动区域设置在了全局，内容会随窗口自适应。（下面的示例暂时体现不出现滚动效果）
+## Example
+滚动区域设置在了全局，内容会随窗口自适应。（下面的Example暂时体现不出现滚动效果）
 
 ``` html
 <div style="position: relative; z-index: 1; height: 500px; overflow: hidden;">

@@ -2,8 +2,8 @@
 
 # UToast 吐司提示
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ```html
 <u-button @click="$refs.toast.show()">组件</u-button>

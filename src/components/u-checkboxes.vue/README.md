@@ -4,8 +4,8 @@
 
 **UI 组件**, **表单控件**, **块级展示**
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-checkbox>多选框</u-checkbox>

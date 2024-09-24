@@ -1,9 +1,9 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# EWatermark 水印
+# EWatermark Watermark
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <e-watermark text="Watermark"></e-watermark>
@@ -14,6 +14,6 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| text | string |  | `''` | 水印文本 |
-| image | CanvasImageSource |  |  | 水印图案。如果没有，则默认按文本绘制 |
-| opacity | number |  | `0.1` | 透明度 |
+| text | string | | `''` | Watermark text |
+| image | CanvasImageSource | | | Watermark pattern. If not, defaults to drawing by text |
+| opacity | number | | `0.1` | Transparency |

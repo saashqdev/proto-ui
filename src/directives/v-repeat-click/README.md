@@ -2,11 +2,11 @@
 
 浏览器原生的 click 事件在点击元素时，只能触发一次。
 
-该指令实现了在按下元素时，能够重复调用方法。常见示例比如 [UNumberInput](../../components/u-number-input) 的上下点击按钮。
+该指令实现了在按下元素时，能够重复调用方法。常见Example比如 [UNumberInput](../../components/u-number-input) 的上下点击按钮。
 
 初始会有一个等待时长。
 
-## 示例
+## Example
 
 ``` vue
 <template>

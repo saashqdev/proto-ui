@@ -6,8 +6,8 @@
 
 在 UPagination 的基础上，添加了显示总页数、切换每页大小、页面跳转等功能。
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 使用`show-total`、`show-sizer`、`show-jumper`这几个属性，可以对应开启的显示总页数、切换每页大小、页面跳转功能。
 

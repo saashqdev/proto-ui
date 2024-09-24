@@ -2,8 +2,8 @@
 
 # UTransfer 穿梭框
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` vue
 <template>

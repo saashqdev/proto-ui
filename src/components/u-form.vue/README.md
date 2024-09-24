@@ -30,9 +30,9 @@ MField 作为各种表单域（表单控件）的基类，用于触发 UValidato
 
 如：`<u-form-table-view>`和`<u-dynamic-cards>`
 
-## 示例
+## Example
 ## 表单布局
-### 基本用法
+### Basic Usage
 
 ``` html
 <u-form gap="large">

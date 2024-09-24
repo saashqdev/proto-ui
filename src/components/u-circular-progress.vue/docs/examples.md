@@ -1,4 +1,4 @@
-### 基本用法
+### Basic Usage
 
 ``` html
 <u-circular-progress :percent="36"></u-circular-progress>

@@ -1,6 +1,6 @@
 {
   "name": "@proto-ui/s-logo.vue",
-  "description": "常见的网站标识。",
+  "description": "Common website logos.",
   "version": "0.6.1",
   "author": "Kubeworkz <kubeworkz@gmail.com>",
   "main": "./index.js",
@@ -33,8 +33,8 @@
   },
   "kubevue": {
     "type": "component",
-    "title": "标识",
-    "team": "网易云计算前端",
+    "title": "logo",
+    "team": "Kubeworkz Cloud Computing Front End",
     "access": "public",
     "screenshots": [
       "https://unpkg.com/@proto-ui/s-logo.vue@0.6.1/screenshots/0.png",

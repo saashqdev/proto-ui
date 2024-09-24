@@ -4,8 +4,8 @@
 
 与文字大小相同，一般在行内直接使用。
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-spinner></u-spinner> 正在加载中...

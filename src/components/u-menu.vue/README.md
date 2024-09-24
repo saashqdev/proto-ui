@@ -6,8 +6,8 @@
 
 菜单组件支持路由、触发关闭、多级菜单等功能。
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 可以结合 Popup 或 Popper 弹出菜单。
 

@@ -4,8 +4,8 @@
 
 **UI 组件**, **路由链接**, **行内展示**
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-link href="#">链接</u-link>&nbsp;<u-link href="#">查看详情</u-link>

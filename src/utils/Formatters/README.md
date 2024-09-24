@@ -4,7 +4,7 @@
 
 <u-h2-tabs router>
     <u-h2-tab title="通用介绍" to="/misc/Formatters/introduction"></u-h2-tab>
-    <u-h2-tab title="基础示例" to="/misc/Formatters/examples"></u-h2-tab>
+    <u-h2-tab title="基础Example" to="/misc/Formatters/examples"></u-h2-tab>
 </u-h2-tabs>
 
 <router-view></router-view>

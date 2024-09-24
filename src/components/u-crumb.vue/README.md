@@ -4,8 +4,8 @@
 
 **UI 组件**, **路由链接**, **块级展示**
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-crumb>

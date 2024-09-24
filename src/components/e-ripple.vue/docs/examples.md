@@ -1,8 +1,8 @@
-### 基本用法
+### Basic Usage
 
 ``` html
 <u-button>
-    按钮
+    Button
     <e-ripple></e-ripple>
 </u-button>
 <u-pagination>

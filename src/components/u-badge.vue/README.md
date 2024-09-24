@@ -4,8 +4,8 @@
 
 **UI 组件**, **行内展示**
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <p>消息 <u-badge :value="3"></u-badge></p>

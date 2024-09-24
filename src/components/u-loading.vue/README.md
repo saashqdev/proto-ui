@@ -2,8 +2,8 @@
 
 # ULoading 加载中
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-loading></u-loading>

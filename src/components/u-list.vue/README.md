@@ -6,8 +6,8 @@
 
 对列表样式做了简单的修饰。如果需要选择、分页等更多的功能，请使用 [UListView](../u-list-view)。
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-list>

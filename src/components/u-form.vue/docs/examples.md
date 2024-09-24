@@ -1,5 +1,5 @@
 ## 表单布局
-### 基本用法
+### Basic Usage
 
 ``` html
 <u-form gap="large">

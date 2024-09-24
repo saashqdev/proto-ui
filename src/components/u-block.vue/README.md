@@ -2,8 +2,8 @@
 
 # UBlock 块
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-block>Block</u-block>

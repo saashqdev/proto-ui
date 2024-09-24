@@ -10,8 +10,8 @@
 - 给需要添加动画的节点在 CSS 中添加针对`height`、`padding-top`和`padding-bottom`几个属性的`transition`动画；
 - 使用`v-show`或`v-if`控制节点的显示/隐藏。
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` vue
 <template>

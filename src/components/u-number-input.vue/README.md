@@ -4,8 +4,8 @@
 
 **UI 组件**, **表单控件**, **行内展示**
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-linear-layout>
@@ -92,7 +92,7 @@ export default {
 | max | number |  | `Infinity` | 最大值 |
 | step | number |  | `1` | 间隔，表示点击按钮或按上下键所增加或减少的量 |
 | precision | number |  | `1` | 精度，表示数字要保留的最小单位，整数、小数均可 |
-| formatter | string, object |  |  | 格式化字符串，具体参见示例。也可以传入一个包含`get`和`set`方法的格式化对象。 |
+| formatter | string, object |  |  | 格式化字符串，具体参见Example。也可以传入一个包含`get`和`set`方法的格式化对象。 |
 | placeholder | string |  |  | 原生属性 |
 | autofocus | boolean |  |  | 原生属性 |
 | hide-buttons | boolean |  | `false` | 是否隐藏按钮 |

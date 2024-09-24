@@ -6,7 +6,7 @@
 <div><router-view></router-view></div>
 ```
 
-### 基本用法
+### Basic Usage
 
 ``` js
 import { LWrapper } from 'proto-ui.kubevue';

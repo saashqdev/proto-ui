@@ -1,4 +1,4 @@
-### 基本用法
+### Basic Usage
 
 ``` html
 <u-linear-progress :percent="36"></u-linear-progress>

@@ -4,8 +4,8 @@
 
 **UI 组件**, **表单控件**, **块级展示**
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-combo-slider></u-combo-slider>
@@ -114,7 +114,7 @@
 | step | number |  | `1` | 间隔。`0`表示连续 |
 | precision | number |  | `1` | 精度，表示数字要保留的最小单位，整数、小数均可 |
 | range | Array |  | `[]` | 进一步对`value`限制，通常传入一个数组，第一个值表示范围开始值，第二个值表示范围的结束值。 |
-| formatter | string, object |  |  | 格式化字符串，具体参见示例。也可以传入一个包含`get`和`set`方法的格式化对象。 |
+| formatter | string, object |  |  | 格式化字符串，具体参见Example。也可以传入一个包含`get`和`set`方法的格式化对象。 |
 | sync-on | string |  | `'input'` | 输入后何时同步值到`<u-slider>`组件中。可选值：`'input'`表示在输入时同步，`'blur'`表示在失焦时同步 |
 | hide-buttons | boolean |  | `false` | 是否隐藏按钮 |
 | readonly | boolean |  | `false` | 是否只读 |

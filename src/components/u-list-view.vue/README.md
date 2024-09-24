@@ -2,8 +2,8 @@
 
 # UListView 列表视图
 
-## 基础示例
-### 基本用法
+## 基础Example
+### Basic Usage
 
 ``` html
 <u-list-view>
@@ -196,7 +196,7 @@ export default {
 ## 数据相关
 ### 数据和数据源
 
-基础示例中采用的是标签形式添加数据，适合数据量小、数据操作简单或对模板有定制化的场景。
+基础Example中采用的是标签形式添加数据，适合数据量小、数据操作简单或对模板有定制化的场景。
 
 如果数据量较大，或要使用一些高级功能时，推荐使用`data`或`data-source`属性。`data`属性的格式为`Array<{ text, value }>`，下面简写为`Array<Item>`；`data-source`属性一般接受一个`load`函数，用于异步加载。
 

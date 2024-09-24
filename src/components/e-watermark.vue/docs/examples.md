@@ -1,4 +1,4 @@
-### 基本用法
+### Basic Usage
 
 ``` html
 <e-watermark text="Watermark"></e-watermark>

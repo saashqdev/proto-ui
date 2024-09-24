@@ -1,7 +1,7 @@
 
 ## 单选模式
 
-### 基本用法
+### Basic Usage
 
 默认为单选模式。可以通过`placeholder`属性设置占位符。
 
@@ -133,7 +133,7 @@ export default {
 
 ## 多选模式
 
-### 基本用法
+### Basic Usage
 
 ``` html
 <u-linear-layout>

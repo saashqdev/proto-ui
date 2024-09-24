@@ -2,8 +2,8 @@
 
 # ULinearProgress 线型进度条
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-linear-progress :percent="36"></u-linear-progress>

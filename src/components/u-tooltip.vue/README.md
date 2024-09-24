@@ -2,8 +2,8 @@
 
 # UTooltip 工具提示
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-linear-layout>

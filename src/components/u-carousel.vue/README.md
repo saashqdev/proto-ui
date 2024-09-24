@@ -2,8 +2,8 @@
 
 # UCarousel 幻灯片
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-carousel>

@@ -1,6 +1,6 @@
-滚动区域设置在了全局，内容会随窗口自适应。（下面的示例暂时体现不出现滚动效果）
+滚动区域设置在了全局，内容会随窗口自适应。（下面的Example暂时体现不出现滚动效果）
 
-### 基本用法
+### Basic Usage
 
 ``` html
 <div style="position: relative; z-index: 1; height: 500px; overflow: hidden;">
@@ -47,7 +47,7 @@
 
 使用`<l-page-center>`可以将内容限制在居中区域。
 
-下面的示例为了方便展示，设置了`size="small"`属性。
+下面的Example为了方便展示，设置了`size="small"`属性。
 
 ``` html
 <div style="position: relative; z-index: 1; height: 500px; overflow: hidden;">

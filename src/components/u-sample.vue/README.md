@@ -2,7 +2,7 @@
 
 # USample 样本
 
-## 示例
+## Example
 ### Basic
 
 ``` html

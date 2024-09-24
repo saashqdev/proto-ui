@@ -6,8 +6,8 @@
 
 对表格样式做了简单的修饰。如果需要横向滚动、固定列、分页、排序、过滤等更多功能，请使用 [UTableView](../u-table-view)。
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` html
 <u-table>

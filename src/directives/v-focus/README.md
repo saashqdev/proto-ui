@@ -6,7 +6,7 @@
 
 业务中请直接使用`<u-input>`和`<u-textarea>`组件的`autofocus`属性。
 
-## 示例
+## Example
 
 ``` html
 输入框：<input v-focus>

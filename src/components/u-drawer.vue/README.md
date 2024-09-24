@@ -2,8 +2,8 @@
 
 # UDrawer 抽屉
 
-## 示例
-### 基本用法
+## Example
+### Basic Usage
 
 ``` vue
 <template>
