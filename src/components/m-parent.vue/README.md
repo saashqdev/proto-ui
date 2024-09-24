@@ -1,15 +1,15 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# MParent 父子模式
+#MParent parent-child mode
 
-本对 Mixin：MParent 和 MChild，对常见的类似`<u-tabs>`和`<u-tab>`一对嵌套父子组件的场景进行了抽象，用于快速开发和代码借鉴。
+This pair of Mixins: MParent and MChild abstracts common scenarios like a pair of nested parent-child components like `<u-tabs>` and `<u-tab>` for rapid development and code reference.
 
-### 用法
+### Usage
 
-- 在继承 MParent 的组件 Options 中，补充声明子组件的 `childName`字段
-- 在继承 MChild 的组件 Options 中，补充声明父组件的 `parentName`字段
+- In the component Options that inherits MParent, additionally declare the `childName` field of the child component
+- In the component Options that inherits MChild, additionally declare the `parentName` field of the parent component
 
-父组件会将多个子组件收集在`itemVMs`数组中，子组件将父组件标记为`parentVM`变量。这段过程发生在组件的`created`阶段。在`destroyed`阶段回收这些数据。
+The parent component will collect multiple child components in the `itemVMs` array, and the child component will mark the parent component as the `parentVM` variable. This process occurs in the `created` phase of the component. This data is recovered during the `destroyed` phase.
 
 ## Example
 ### Basic Usage
@@ -27,35 +27,35 @@
 
 | Option | Type | Default | Description |
 | ------ | ---- | ------- | ----------- |
-| childName | string | `'m-child'` | 子组件的名称 |
+| childName | string | `'m-child'` | The name of the child component |
 
 ### Data
 
 | Data | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| itemVMs | Array\<MChild\> | `[]` | 子组件集合 |
+| itemVMs | Array\<MChild\> | `[]` | Collection of subcomponents |
 
 ### Slots
 
 #### (default)
 
-插入`<m-child>`子组件。
+Insert `<m-child>` child component.
 
 ## MChild API
 ### Options
 
 | Option | Type | Default | Description |
 | ------ | ---- | ------- | ----------- |
-| parentName | string | `'m-parent'` | 父组件的名称 |
+| parentName | string | `'m-parent'` | The name of the parent component |
 
 ### Data
 
 | Data | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| parentVM | MParent |  | 父组件实例 |
+| parentVM | MParent | | Parent component instance |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.

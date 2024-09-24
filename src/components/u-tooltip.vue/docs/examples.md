@@ -232,7 +232,7 @@ export default {
 </u-linear-layout>
 ```
 
-### 禁用
+### Disable
 
 ``` html
 <u-button disabled>

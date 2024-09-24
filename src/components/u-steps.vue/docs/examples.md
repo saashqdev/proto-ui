@@ -51,7 +51,7 @@
 </u-steps>
 ```
 
-### 禁用
+### Disable
 
 ``` html
 <u-steps :value="0" :readonly="false">

@@ -11,7 +11,7 @@
 <u-link href="#">链接</u-link>&nbsp;<u-link href="#">查看详情</u-link>
 ```
 
-### 禁用
+### Disable
 
 ``` html
 <u-link href="#" disabled>禁用</u-link>

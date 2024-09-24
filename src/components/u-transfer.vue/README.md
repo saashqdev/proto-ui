@@ -29,7 +29,7 @@ export default {
 </script>
 ```
 
-### 禁用某一项
+### Disable某一项
 
 ``` vue
 <template>

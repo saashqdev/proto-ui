@@ -1,37 +1,37 @@
-### a in a
+### Popper
 
 ``` html
-<u-button>click
+<u-button>Click
     <m-popper>
-        <a href="/" target="_blank">popper</a>
+        <a href="/" target="_blank">Popper</a>
     </m-popper>
 </u-button>
-<u-button><a href="/" target="_blank">abc</a></u-button>
-<u-button><div><a href="/" target="_blank">abc</a></div></u-button>
-<a><div><a href="/" target="_blank">abc</a></div></a>
+<u-button><a href="/" target="_blank">ABC</a></u-button>
+<u-button><div><a href="/" target="_blank">ABC</a></div></u-button>
+<a><div><a href="/" target="_blank">ABC</a></div></a>
 ```
 
-### 跟随鼠标测试
+### Follow the Mouse Test
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-button>
-            click
+            Click
             <m-popper trigger="click" placement="top-start" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            top
+            Top
             <m-popper trigger="double-click" placement="top-start" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            right-click
+            Right-Click
             <m-popper trigger="right-click" placement="top-start" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>

@@ -1,8 +1,8 @@
-本对 Mixin：MParent 和 MChild，对常见的类似`<u-tabs>`和`<u-tab>`一对嵌套父子组件的场景进行了抽象，用于快速开发和代码借鉴。
+This pair of Mixins: MParent and MChild abstracts common scenarios like a pair of nested parent-child components like `<u-tabs>` and `<u-tab>` for rapid development and code reference.
 
-### 用法
+### Usage
 
-- 在继承 MParent 的组件 Options 中，补充声明子组件的 `childName`字段
-- 在继承 MChild 的组件 Options 中，补充声明父组件的 `parentName`字段
+- In the component Options that inherits MParent, additionally declare the `childName` field of the child component
+- In the component Options that inherits MChild, additionally declare the `parentName` field of the parent component
 
-父组件会将多个子组件收集在`itemVMs`数组中，子组件将父组件标记为`parentVM`变量。这段过程发生在组件的`created`阶段。在`destroyed`阶段回收这些数据。
+The parent component will collect multiple child components in the `itemVMs` array, and the child component will mark the parent component as the `parentVM` variable. This process occurs in the `created` phase of the component. This data is recovered during the `destroyed` phase.

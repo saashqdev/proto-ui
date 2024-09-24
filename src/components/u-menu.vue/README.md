@@ -132,7 +132,7 @@
 </u-linear-layout>
 ```
 
-### 禁用、禁用某一项
+### Disable、禁用某一项
 
 ``` html
 <u-grid-layout>

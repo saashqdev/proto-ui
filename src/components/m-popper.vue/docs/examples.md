@@ -1,59 +1,59 @@
 ### Basic Usage
 
-将需要弹出的内容用`<m-popper>`包裹起来，并插入到触发事件的元素中。
+Wrap the content that needs to pop up with `<m-popper>` and insert it into the element that triggers the event.
 
 ``` html
 <u-button>
-    click
+    Click
     <m-popper>
-        <u-block>popper</u-block>
+        <u-block>Popper</u-block>
     </m-popper>
 </u-button>
 ```
 
-### 触发方式
+### Trigger Method
 
-#### 自动触发
+#### Automatically Trigger
 
 ``` html
 <u-linear-layout>
     <u-button>
-        click（默认）
+        Click (default)
         <m-popper trigger="click">
-            <u-block>popper</u-block>
+            <u-block>Popper</u-block>
         </m-popper>
     </u-button>
     <u-button>
-        hover
+        Hover
         <m-popper trigger="hover">
-            <u-block>popper</u-block>
+            <u-block>Popper</u-block>
         </m-popper>
     </u-button>
     <u-button>
-        right-click
+        Right-Click
         <m-popper trigger="right-click">
-            <u-block>popper</u-block>
+            <u-block>Popper</u-block>
         </m-popper>
     </u-button>
     <u-button>
-        double-click
+        Double-Click
         <m-popper trigger="double-click">
-            <u-block>popper</u-block>
+            <u-block>Popper</u-block>
         </m-popper>
     </u-button>
 </u-linear-layout>
 ```
 
-#### 手动触发
+#### Manual Trigger
 
-也可以手动触发弹出层的弹出/关闭：
+You can also manually trigger the popup/close of the popup layer:
 
-``` vue
+```vue
 <template>
 <u-button @click="opened = !opened">
-    {{ opened ? '隐藏' : '弹出' }}
+    {{ opened ? 'hide' : 'pop' }}
     <m-popper trigger="manual" :opened.sync="opened">
-        <u-block>popper</u-block>
+        <u-block>Popper</u-block>
     </m-popper>
 </u-button>
 </template>
@@ -69,208 +69,208 @@ export default {
 </script>
 ```
 
-#### Hover 的显隐时间
+#### Hover’s Appearance and Disappearance Time
 
 ``` html
 <u-button>
-    hover
+    Hover
     <m-popper trigger="hover" :hover-delay="200" :hide-delay="1000">
-        <u-block>popper</u-block>
+        <u-block>Popper</u-block>
     </m-popper>
 </u-button>
 ```
 
-### 弹出方位
+### Pop-Up Directions
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-button>
-            top-start
+            Top-Start
             <m-popper placement="top-start">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            top
+            Top
             <m-popper placement="top">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            top-end
+            Top-End
             <m-popper placement="top-end">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            left-start
+            Left-Start
             <m-popper placement="left-start">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            left
+            Left
             <m-popper placement="left">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            left-end
+            Left-End
             <m-popper placement="left-end">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            right-start
+            Right-Start
             <m-popper placement="right-start">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            right
+            Right
             <m-popper placement="right">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            right-end
+            Right-End
             <m-popper placement="right-end">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            bottom-start
+            Bottom-Start
             <m-popper placement="bottom-start">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            bottom
+            Bottom
             <m-popper placement="bottom">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            bottom-end
+            Bottom-End
             <m-popper placement="bottom-end">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>
 </u-linear-layout>
 ```
 
-### 跟随鼠标
+### Follow the Mouse
 
-将`'follow-cursor'`属性设置为`true`可以跟随鼠标。也可以传一个数字或对象调整位置偏移。
+Set the `'follow-cursor'` property to `true` to follow the mouse. You can also pass a number or object to adjust the position offset.
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-button>
-            top-start
+            Top-Start
             <m-popper trigger="hover" placement="top-start" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            top
+            Top
             <m-popper trigger="hover" placement="top" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            top-end
+            Top-End
             <m-popper trigger="hover" placement="top-end" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            left-start
+            Left-Start
             <m-popper trigger="hover" placement="left-start" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            left
+            Left
             <m-popper trigger="hover" placement="left" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            left-end
+            Left-End
             <m-popper trigger="hover" placement="left-end" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            right-start
+            Right-Start
             <m-popper trigger="hover" placement="right-start" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            right
+            Right
             <m-popper trigger="hover" placement="right" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            right-end
+            Right-End
             <m-popper trigger="hover" placement="right-end" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            bottom-start
+            Bottom-Start
             <m-popper trigger="hover" placement="bottom-start" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            bottom
+            Bottom
             <m-popper trigger="hover" placement="bottom" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
         <u-button>
-            bottom-end
+            Bottom-End
             <m-popper trigger="hover" placement="bottom-end" follow-cursor>
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            custom
+            Custom
             <m-popper trigger="hover" placement="bottom-start" :follow-cursor="50">
-                <u-block>popper</u-block>
+                <u-block>Popper</u-block>
             </m-popper>
         </u-button>
     </u-linear-layout>
 </u-linear-layout>
 ```
 
-### 禁用
+### Disable
 
 ``` html
 <u-button disabled>
-    disabled
+    Disabled
     <m-popper disabled>
-        <u-block>popper</u-block>
+        <u-block>Popper</u-block>
     </m-popper>
 </u-button>
 ```

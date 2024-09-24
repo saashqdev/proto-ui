@@ -24,7 +24,7 @@
 </u-uploader>
 ```
 
-### 禁用
+### Disable
 
 ``` html
 <u-uploader url="/api/upload" disabled>

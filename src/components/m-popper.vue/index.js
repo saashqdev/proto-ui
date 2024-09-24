@@ -43,9 +43,9 @@ export const MPopper = {
         return {
             currentOpened: this.opened,
             referenceEl: undefined,
-            triggers: [], // 所有的触发器，为了方便，第一项始终为默认的
+            triggers: [], // For all triggers, for convenience, the first item is always the default
             // popper: undefined,
-            // 在出现滚动条的时候 需要特殊处理下
+            // Special handling is required when the scroll bar appears.
             offEvents: [],
         };
     },
@@ -83,7 +83,7 @@ export const MPopper = {
             this.currentOpened = opened;
         },
         currentOpened(currentOpened) {
-            // 不直接用样式的显隐，而是用 popper 的 create 和 destroy，是因为 popper 有可能是从不同的地方触发的，reference 对象会变
+            // Instead of using the style display directly, use popper's create and destroy because popper may be triggered from different places and the reference object will change.
             if (currentOpened) {
                 this.createPopper();
                 this.$emit('open', undefined, this);
@@ -94,9 +94,9 @@ export const MPopper = {
         },
         reference() {
             /**
-            * 问题：现在的 popper 不支持动态改变 reference，导致 popper 的位置显示有问题
-            * 解决方法：暂时在 popper.js 文档中未找到理想的解决方案，采取先删除 popper，再新创建 popper 的方法修复位置问题，
-            * 后面需要研究下 popper.js 的源码
+            * Problem: The current popper does not support dynamically changing the reference, causing problems with the popper's position display.
+            * Solution: The ideal solution has not been found in the popper.js document for the time being. Please delete the popper first and then create a new popper to fix the location problem.
+            * We need to study the source code create and destroy of popper.js later because popper may be triggered from different places and the reference object will change.
             */
             this.destroyPopper();
             this.referenceEl = this.getReferenceEl();
@@ -104,7 +104,7 @@ export const MPopper = {
         },
     },
     mounted() {
-        // 字符串类型的 reference 只有首次获取是有效的，因为之后节点会被插到别的地方
+        // The reference of string type is only valid for the first time, because the node will be inserted elsewhere later.
         this.referenceEl = this.getReferenceEl();
         const triggerEl = this.getTriggerEl(this.referenceEl);
         this.addTrigger(triggerEl, this.trigger);
@@ -113,7 +113,7 @@ export const MPopper = {
     },
     beforeDestroy() {
         this.destroyPopper();
-        // 取消绑定事件
+        // Unbind event
         this.offEvents.forEach((off) => off());
         this.timers.forEach((timer) => {
             clearTimeout(timer);
@@ -125,7 +125,7 @@ export const MPopper = {
                 placement: this.placement,
             });
 
-            // 自定义options 传入offset值情况
+            // Customize options and pass in offset value
             if (!options.modifiers.offset && this.offset) {
                 options.modifiers.offset = {
                     offset: this.offset,
@@ -150,11 +150,11 @@ export const MPopper = {
                 else if (this.reference === '$parent')
                     return this.$parent.$el;
                 else if (this.reference === 'context-parent') {
-                    // 求上下文中的 parent
+                    // Find parent in context
                     if (this.$parent === this.$vnode.context)
                         return this.$el.parentElement;
 
-                    // Vue 的 vnode.parent 没有连接起来，需要自己找，不知道有没有更好的方法
+                    // Vue's vnode.parent is not connected. You need to find it yourself. I don't know if there is a better way.
                     let parentVNode = this.$parent._vnode;
                     while (parentVNode && !parentVNode.children.includes(this.$vnode))
                         parentVNode = parentVNode.children.find((child) => child.elm.contains(this.$el));
@@ -162,7 +162,7 @@ export const MPopper = {
                     if (parentVNode.context === this.$vnode.context)
                         return parentVNode.elm;
 
-                    // 否则，找第一个上下文一致的组件
+                    // Otherwise, find the first contextually consistent component
                     let parentVM = this.$parent;
                     while (parentVM && parentVM.$vnode.context !== this.$vnode.context)
                         parentVM = parentVM.$parent;
@@ -182,7 +182,7 @@ export const MPopper = {
                 return this.triggerElement(referenceEl);
         },
         /**
-         * 添加触发器时，绑定事件
+         * When adding a trigger, bind the event
          */
         addTrigger(el, event) {
             const popperEl = this.$el;
@@ -192,10 +192,10 @@ export const MPopper = {
 
             this.triggers.push({ el, event });
 
-            // 收集 setTimeout
+            //Collect setTimeout
             this.timers = this.timers || [];
 
-            // 绑定事件
+            // Binding event
             this.followCursor && this.offEvents.push(
                 single.on('m-popper-proto', {
                     el,
@@ -251,7 +251,7 @@ export const MPopper = {
                     this.followCursor && this.$nextTick(() => this.updatePositionByCursor(e, el));
                 }));
             }
-            // @TODO: 有没有必要搞 focus-in
+            // @TODO: Is it necessary to do focus-in?
             this.offEvents.push(
                 single.on('m-popper-proto', {
                     el,
@@ -293,7 +293,7 @@ export const MPopper = {
             this.popper = undefined;
         },
         updatePositionByCursor(e, el) {
-            // @TODO: 两种 offset 属性有些冗余
+            //@TODO: The two offset properties are somewhat redundant
             if (e.target !== el || !this.popper)
                 return;
 

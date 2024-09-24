@@ -4,7 +4,7 @@
 <u-button>按钮</u-button>
 ```
 
-### 禁用
+### Disable
 
 ``` html
 <u-button disabled>禁用</u-button>
