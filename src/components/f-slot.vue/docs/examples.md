@@ -1,6 +1,6 @@
-有时在模板中需要其他组件的`slot`。常用的方法是把整个模板用`slot`函数重写，或者局部再写个组件，这些方法的成本都较高。
+Sometimes you need `slot` for other components in the template. Commonly used methods are to rewrite the entire template using the `slot` function, or to write a partial component. These methods are more expensive.
 
-`<f-slot>`比`<f-render>`更方便，支持向作用域插槽传入属性，支持对作用域插槽、普通插槽、后备内容的判断。
+`<f-slot>` is more convenient than `<f-render>`. It supports passing attributes to scope slots and supports the judgment of scope slots, ordinary slots, and backup content.
 
 ``` htm
 <f-slot name="cell" :vm="columnVM" :props="{ item, value, index }">

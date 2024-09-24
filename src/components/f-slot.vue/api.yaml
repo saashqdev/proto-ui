@@ -1,19 +1,19 @@
 - name: f-slot
-  title: 便捷插槽
+  title: Convenience Slot
   attrs:
     - name: vm
       type: Vue
       default: null
-      description: 实例
+      description: Instance
     - name: name
       type: string
       default: null
-      description: Slot 名称
+      description: Slot name
     - name: props
       type: object
       default: null
-      description: 需要传给作用域插槽的属性
+      description: The attributes that need to be passed to the scope slot
     - name: catchError
       type: boolean
       default: true
-      description: 是否捕获异常，防止报错终止整体渲染
+      description: Whether to capture exceptions to prevent errors from terminating the overall rendering

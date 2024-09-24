@@ -1,74 +1,74 @@
 - name: f-forbidden
-  title: 禁用
-  description: 禁用浏览器的一些默认功能和快捷键。
+  title: Disable
+  description: Disable some default functions and shortcut keys of the browser.
   attrs:
     - name: contextmenu
       type: boolean
       default: false
-      description: 是否禁止弹出右键菜单
+      description: Whether to disable the right-click menu
     - name: select
       type: boolean
       default: false
-      description: 是否禁止选择文本
+      description: Whether to prohibit text selection
     - name: copy
       type: boolean
       default: false
-      description: 是否禁止复制
+      description: Whether to prohibit copying
     - name: save-key
       type: boolean
       default: false
-      description: 是否禁止另存为键
+      description: Whether to prohibit saving as key
     - name: devtools-key
       type: boolean
       default: false
-      description: 是否禁止开发者工具键
+      description: Whether to disable the developer tool key
     - name: senderVM
       type: FForbidden
-      default: 发送事件实例
+      default: send event instance
       description: ""
   events:
     - name: contextmenu
-      description: 弹出右键菜单时触发
+      description: Triggered when the right-click menu pops up
       params:
         - name: $event
           type: MouseEvent
-          description: 鼠标事件对象
+          description: Mouse event object
         - name: senderVM
           type: FForbidden
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择文本时触发
+      description: Triggered when text is selected
       params:
         - name: $event
           type: FocusEvent
-          description: 聚焦事件对象
+          description: Focus event object
         - name: senderVM
           type: FForbidden
-          description: 发送事件实例
+          description: Send event instance
     - name: copy
-      description: 复制时触发
+      description: Triggered when copying
       params:
         - name: $event
           type: ClipboardEvent
-          description: 剪贴板事件对象
+          description: Clipboard event object
         - name: senderVM
           type: FForbidden
-          description: 发送事件实例
+          description: Send event instance
     - name: save-key
-      description: 按保存键时触发
+      description: Triggered when the Save button is pressed
       params:
         - name: $event
           type: KeyboardEvent
-          description: 键盘事件对象
+          description: Keyboard event object
         - name: senderVM
           type: FForbidden
-          description: 发送事件实例
+          description: Send event instance
     - name: devtools-key
-      description: 按开发人员工具键时触发
+      description: Triggered when the developer tools key is pressed
       params:
         - name: $event
           type: KeyboardEvent
-          description: 键盘事件对象
+          description: Keyboard event object
         - name: senderVM
           type: FForbidden
-          description: 发送事件实例
+          description: Send event instance

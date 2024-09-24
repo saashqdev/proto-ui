@@ -46,8 +46,8 @@ export const FDragger = {
         onMouseMoveStart(e) {
             const transferEl = this.getTransferEl();
 
-            // 代理元素的位置从MouseMoveStart开始算，这样在MouseDown中也可以预先处理位置
-            // 获取初始的left和top值
+            // The position of the proxy element is calculated starting from MouseMoveStart, so that the position can also be pre-processed in MouseDown.
+            // Get the initial left and top values
             let style = transferEl ? window.getComputedStyle(transferEl) : {};
             style = { left: style.left, top: style.top };
             if (!style.left || style.left === 'auto')
@@ -102,7 +102,7 @@ export const FDragger = {
                 top: params.startTop + params.dragY,
             };
 
-            // 范围约束
+            // Range constraints
             if (params.range) {
                 if (this.rangeMode === 'inside') {
                     next.left = Math.min(Math.max(params.range.left, next.left), params.range.right - manager.transferEl.offsetWidth);
@@ -116,12 +116,12 @@ export const FDragger = {
                 }
             }
 
-            // 网格约束
+            // Grid constraints
             const grid = this.grid;
             grid.x && (next.left = Math.round(next.left / grid.x) * grid.x);
             grid.y && (next.top = Math.round(next.top / grid.y) * grid.y);
 
-            // 轴向约束
+            // Axial constraints
             if (this.axis === 'vertical')
                 next.left = params.startLeft;
             if (this.axis === 'horizontal')

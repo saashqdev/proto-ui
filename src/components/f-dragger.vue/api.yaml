@@ -20,7 +20,7 @@
     - name: value
       type: any
       default: null
-      description: the value to be passed
+      description: The value to be passed
     - name: transfer
       type: string, Element
       default: self
@@ -32,7 +32,7 @@
     - name: disabled
       type: boolean
       default: false
-      description: whether to disable
+      description: Whether to disable
   slots:
     - name: default
       description: Insert the element to be dragged, only one.
@@ -44,7 +44,7 @@
       params:
         - name: $event.originVM
           type: VueComponent
-          description: drag source, the current `<f-draggable>`
+          description: Drag source, the current `<f-draggable>`
         - name: $event.sourceEl
           type: Element
           description: Drag the starting element
@@ -53,7 +53,7 @@
           description: Drag and move elements
         - name: $event.value
           type: any
-          description: the value to be passed
+          description: The value to be passed
         - name: $event.screenX
           type: number
           description: The horizontal coordinate of the mouse pointer relative to the screen
@@ -107,7 +107,7 @@
       params:
         - name: $event.originVM
           type: VueComponent
-          description: drag source, the current `<f-draggable>`
+          description: Drag source, the current `<f-draggable>`
         - name: $event.sourceEl
           type: Element
           description: Drag the starting element
@@ -116,7 +116,7 @@
           description: Drag and move elements
         - name: $event.value
           type: any
-          description: the value to be passed
+          description: The value to be passed
         - name: $event.screenX
           type: number
           description: The horizontal coordinate of the mouse pointer relative to the screen
@@ -170,7 +170,7 @@
       params:
         - name: $event.originVM
           type: VueComponent
-          description: drag source, the current `<f-draggable>`
+          description: Drag source, the current `<f-draggable>`
         - name: $event.sourceEl
           type: Element
           description: Drag the starting element
@@ -179,7 +179,7 @@
           description: Drag and move elements
         - name: $event.value
           type: any
-          description: the value to be passed
+          description: The value to be passed
         - name: senderVM
           type: FDragger
           description: Send event instance

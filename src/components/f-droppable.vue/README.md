@@ -1,6 +1,6 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- This README.md is automatically generated based on api.yaml and docs/*.md for easy reference on GitHub and NPM. If you need to modify it, please view the source file -->
 
-# FDroppable 放置
+# FDroppable Placement
 
 ## Example
 ### Basic Usage
@@ -9,17 +9,17 @@
 <template>
 <div>
     <f-draggable value="primary">
-        <u-block size="normal" color="primary" inline>拖我</u-block>
+        <u-block size="normal" color="primary" inline>Drag me</u-block>
     </f-draggable>
     <f-draggable value="success">
-        <u-block size="normal" color="success" inline>拖我</u-block>
+        <u-block size="normal" color="success" inline>Drag me</u-block>
     </f-draggable>
     <f-draggable value="error">
-        <u-block size="normal" color="error" inline>拖我</u-block>
+        <u-block size="normal" color="error" inline>Drag me</u-block>
     </f-draggable>
     <p></p>
     <f-droppable @drop="color = $event.value">
-        <u-block size="normal" :color="color">放到这里</u-block>
+        <u-block size="normal" :color="color">Drop it here</u-block>
     </f-droppable>
 </div>
 </template>
@@ -36,148 +36,148 @@ export default {
 ```
 
 ## API
-### Props/Attrs
+Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| disabled | boolean |  | `false` | 是否禁用 |
+| disabled | boolean | | `false` | Disabled |
 
 ### Slots
 
 #### (default)
 
-插入可以放置的元素，仅一个。
+Inserts an element that can be placed, only one.
 
 ### Events
 
 #### @transfer
 
-自定义的移动元素。
+Customizable mobile elements.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
 
 #### @dragenter
 
-拖拽进入该元素时触发
+Triggered when dragging into the element
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.originVM | VueComponent | 拖拽源，为当前的`<f-draggable>` |
-| $event.sourceEl | Element | 拖拽起始元素 |
-| $event.transferEl | Element | 拖拽移动元素 |
-| $event.targetEl | Element | 放置目标元素 |
-| $event.value | any | 需要传递的值 |
-| $event.screenX | number | 鼠标指针相对于屏幕的水平坐标 |
-| $event.screenY | number | 鼠标指针相对于屏幕的垂直坐标 |
-| $event.clientX | number | 鼠标指针相对于浏览器的水平坐标 |
-| $event.clientY | number | 鼠标指针相对于浏览器的垂直坐标 |
-| $event.pageX | number | 鼠标指针相对于页面的水平坐标 |
-| $event.pageY | number | 鼠标指针相对于页面的垂直坐标 |
-| $event.startX | number | 拖拽开始时鼠标指针的水平坐标 |
-| $event.startY | number | 拖拽开始时鼠标指针的垂直坐标 |
-| $event.dragX | number | 拖拽时鼠标指针相对于起始坐标的水平位移 |
-| $event.dragY | number | 拖拽时鼠标指针相对于起始坐标的垂直位移 |
-| $event.startLeft | number | 拖拽开始时代理元素的left值 |
-| $event.startTop | number | 拖拽开始时代理元素的top值 |
-| $event.left | number | 拖拽时代理元素的left值 |
-| $event.top | number | 拖拽时代理元素的top值 |
-| $event.preventDefault | Function | 阻止拖拽流程 |
-| senderVM | FDroppable | 发送事件实例 |
+| $event.originVM | VueComponent | Drag source, current `<f-draggable>` |
+| $event.sourceEl | Element | Drag start element |
+| $event.transferEl | Element | Drag to move element |
+| $event.targetEl | Element | Place target element |
+| $event.value | any | The value to be passed |
+| $event.screenX | number | The horizontal coordinate of the mouse pointer relative to the screen |
+| $event.screenY | number | The vertical coordinate of the mouse pointer relative to the screen |
+| $event.clientX | number | The horizontal coordinate of the mouse pointer relative to the browser |
+| $event.clientY | number | The vertical coordinate of the mouse pointer relative to the browser |
+| $event.pageX | number | The horizontal coordinate of the mouse pointer relative to the page |
+| $event.pageY | number | The vertical coordinate of the mouse pointer relative to the page |
+| $event.startX | number | The horizontal coordinate of the mouse pointer when dragging starts |
+| $event.startY | number | The vertical coordinate of the mouse pointer when dragging starts |
+| $event.dragX | number | Horizontal displacement of the mouse pointer relative to the starting coordinates during dragging |
+| $event.dragY | number | The vertical displacement of the mouse pointer relative to the starting coordinates during dragging |
+| $event.startLeft | number | The left value of the proxy element when dragging starts |
+| $event.startTop | number | The top value of the proxy element when dragging starts |
+| $event.left | number | The left value of the proxy element during dragging |
+| $event.top | number | The top value of the proxy element during dragging |
+| $event.preventDefault | Function | Prevent the drag process |
+| senderVM | FDroppable | Sending event instance |
 
 #### @dragleave
 
-拖拽离开该元素时触发
+Triggered when dragging leaves the element
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.originVM | VueComponent | 拖拽源，为当前的`<f-draggable>` |
-| $event.sourceEl | Element | 拖拽起始元素 |
-| $event.transferEl | Element | 拖拽移动元素 |
-| $event.targetEl | Element | 放置目标元素 |
-| $event.value | any | 需要传递的值 |
-| $event.screenX | number | 鼠标指针相对于屏幕的水平坐标 |
-| $event.screenY | number | 鼠标指针相对于屏幕的垂直坐标 |
-| $event.clientX | number | 鼠标指针相对于浏览器的水平坐标 |
-| $event.clientY | number | 鼠标指针相对于浏览器的垂直坐标 |
-| $event.pageX | number | 鼠标指针相对于页面的水平坐标 |
-| $event.pageY | number | 鼠标指针相对于页面的垂直坐标 |
-| $event.startX | number | 拖拽开始时鼠标指针的水平坐标 |
-| $event.startY | number | 拖拽开始时鼠标指针的垂直坐标 |
-| $event.dragX | number | 拖拽时鼠标指针相对于起始坐标的水平位移 |
-| $event.dragY | number | 拖拽时鼠标指针相对于起始坐标的垂直位移 |
-| $event.startLeft | number | 拖拽开始时代理元素的left值 |
-| $event.startTop | number | 拖拽开始时代理元素的top值 |
-| $event.left | number | 拖拽时代理元素的left值 |
-| $event.top | number | 拖拽时代理元素的top值 |
-| $event.preventDefault | Function | 阻止拖拽流程 |
-| senderVM | FDroppable | 发送事件实例 |
+| $event.originVM | VueComponent | Drag source, current `<f-draggable>` |
+| $event.sourceEl | Element | Drag start element |
+| $event.transferEl | Element | Drag to move element |
+| $event.targetEl | Element | Place target element |
+| $event.value | any | The value to be passed |
+| $event.screenX | number | The horizontal coordinate of the mouse pointer relative to the screen |
+| $event.screenY | number | The vertical coordinate of the mouse pointer relative to the screen |
+| $event.clientX | number | The horizontal coordinate of the mouse pointer relative to the browser |
+| $event.clientY | number | The vertical coordinate of the mouse pointer relative to the browser |
+| $event.pageX | number | The horizontal coordinate of the mouse pointer relative to the page |
+| $event.pageY | number | The vertical coordinate of the mouse pointer relative to the page |
+| $event.startX | number | The horizontal coordinate of the mouse pointer when dragging starts |
+| $event.startY | number | The vertical coordinate of the mouse pointer when dragging starts |
+| $event.dragX | number | Horizontal displacement of the mouse pointer relative to the starting coordinates during dragging |
+| $event.dragY | number | The vertical displacement of the mouse pointer relative to the starting coordinates during dragging |
+| $event.startLeft | number | The left value of the proxy element when dragging starts |
+| $event.startTop | number | The top value of the proxy element when dragging starts |
+| $event.left | number | The left value of the proxy element during dragging |
+| $event.top | number | The top value of the proxy element during dragging |
+| $event.preventDefault | Function | Prevent the drag process |
+| senderVM | FDroppable | Sending event instance |
 
 #### @dragover
 
-拖拽在该元素上方时触发
+Triggered when dragging over this element
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.originVM | VueComponent | 拖拽源，为当前的`<f-draggable>` |
-| $event.sourceEl | Element | 拖拽起始元素 |
-| $event.transferEl | Element | 拖拽移动元素 |
-| $event.targetEl | Element | 放置目标元素 |
-| $event.value | any | 需要传递的值 |
-| $event.ratioX | number | 鼠标指针相对于接收元素所占的长度比 |
-| $event.ratioY | number | 鼠标指针相对于接收元素所占的高度比 |
-| $event.screenX | number | 鼠标指针相对于屏幕的水平坐标 |
-| $event.screenY | number | 鼠标指针相对于屏幕的垂直坐标 |
-| $event.clientX | number | 鼠标指针相对于浏览器的水平坐标 |
-| $event.clientY | number | 鼠标指针相对于浏览器的垂直坐标 |
-| $event.pageX | number | 鼠标指针相对于页面的水平坐标 |
-| $event.pageY | number | 鼠标指针相对于页面的垂直坐标 |
-| $event.startX | number | 拖拽开始时鼠标指针的水平坐标 |
-| $event.startY | number | 拖拽开始时鼠标指针的垂直坐标 |
-| $event.dragX | number | 拖拽时鼠标指针相对于起始坐标的水平位移 |
-| $event.dragY | number | 拖拽时鼠标指针相对于起始坐标的垂直位移 |
-| $event.startLeft | number | 拖拽开始时代理元素的left值 |
-| $event.startTop | number | 拖拽开始时代理元素的top值 |
-| $event.left | number | 拖拽时代理元素的left值 |
-| $event.top | number | 拖拽时代理元素的top值 |
-| $event.preventDefault | Function | 阻止拖拽流程 |
-| senderVM | FDroppable | 发送事件实例 |
+| $event.originVM | VueComponent | Drag source, current `<f-draggable>` |
+| $event.sourceEl | Element | Drag start element |
+| $event.transferEl | Element | Drag to move element |
+| $event.targetEl | Element | Place target element |
+| $event.value | any | The value to be passed |
+| $event.ratioX | number | The ratio of the length of the mouse pointer to the receiving element |
+| $event.ratioY | number | The ratio of the height of the mouse pointer relative to the receiving element |
+| $event.screenX | number | The horizontal coordinate of the mouse pointer relative to the screen |
+| $event.screenY | number | The vertical coordinate of the mouse pointer relative to the screen |
+| $event.clientX | number | The horizontal coordinate of the mouse pointer relative to the browser |
+| $event.clientY | number | The vertical coordinate of the mouse pointer relative to the browser |
+| $event.pageX | number | The horizontal coordinate of the mouse pointer relative to the page |
+| $event.pageY | number | The vertical coordinate of the mouse pointer relative to the page |
+| $event.startX | number | The horizontal coordinate of the mouse pointer when dragging starts |
+| $event.startY | number | The vertical coordinate of the mouse pointer when dragging starts |
+| $event.dragX | number | Horizontal displacement of the mouse pointer relative to the starting coordinates during dragging |
+| $event.dragY | number | The vertical displacement of the mouse pointer relative to the starting coordinates during dragging |
+| $event.startLeft | number | The left value of the proxy element when dragging starts |
+| $event.startTop | number | The top value of the proxy element when dragging starts |
+| $event.left | number | The left value of the proxy element during dragging |
+| $event.top | number | The top value of the proxy element during dragging |
+| $event.preventDefault | Function | Prevent the drag process |
+| senderVM | FDroppable | Sending event instance |
 
 #### @drop
 
-拖拽放置时触发
+Triggered when dragging and dropping
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.originVM | VueComponent | 拖拽源，为当前的`<f-draggable>` |
-| $event.sourceEl | Element | 拖拽起始元素 |
-| $event.transferEl | Element | 拖拽移动元素 |
-| $event.targetEl | Element | 放置目标元素 |
-| $event.value | any | 需要传递的值 |
-| $event.ratioX | number | 鼠标指针相对于接收元素所占的长度比 |
-| $event.ratioY | number | 鼠标指针相对于接收元素所占的高度比 |
-| $event.screenX | number | 鼠标指针相对于屏幕的水平坐标 |
-| $event.screenY | number | 鼠标指针相对于屏幕的垂直坐标 |
-| $event.clientX | number | 鼠标指针相对于浏览器的水平坐标 |
-| $event.clientY | number | 鼠标指针相对于浏览器的垂直坐标 |
-| $event.pageX | number | 鼠标指针相对于页面的水平坐标 |
-| $event.pageY | number | 鼠标指针相对于页面的垂直坐标 |
-| $event.startX | number | 拖拽开始时鼠标指针的水平坐标 |
-| $event.startY | number | 拖拽开始时鼠标指针的垂直坐标 |
-| $event.dragX | number | 拖拽时鼠标指针相对于起始坐标的水平位移 |
-| $event.dragY | number | 拖拽时鼠标指针相对于起始坐标的垂直位移 |
-| $event.startLeft | number | 拖拽开始时代理元素的left值 |
-| $event.startTop | number | 拖拽开始时代理元素的top值 |
-| $event.left | number | 拖拽时代理元素的left值 |
-| $event.top | number | 拖拽时代理元素的top值 |
-| $event.preventDefault | Function | 阻止拖拽流程 |
-| senderVM | FDroppable | 发送事件实例 |
+| $event.originVM | VueComponent | Drag source, current `<f-draggable>` |
+| $event.sourceEl | Element | Drag start element |
+| $event.transferEl | Element | Drag to move element |
+| $event.targetEl | Element | Place target element |
+| $event.value | any | The value to be passed |
+| $event.ratioX | number | The ratio of the length of the mouse pointer to the receiving element |
+| $event.ratioY | number | The ratio of the height of the mouse pointer relative to the receiving element |
+| $event.screenX | number | The horizontal coordinate of the mouse pointer relative to the screen |
+| $event.screenY | number | The vertical coordinate of the mouse pointer relative to the screen |
+| $event.clientX | number | The horizontal coordinate of the mouse pointer relative to the browser |
+| $event.clientY | number | The vertical coordinate of the mouse pointer relative to the browser |
+| $event.pageX | number | The horizontal coordinate of the mouse pointer relative to the page |
+| $event.pageY | number | The vertical coordinate of the mouse pointer relative to the page |
+| $event.startX | number | The horizontal coordinate of the mouse pointer when dragging starts |
+| $event.startY | number | The vertical coordinate of the mouse pointer when dragging starts |
+| $event.dragX | number | Horizontal displacement of the mouse pointer relative to the starting coordinates during dragging |
+| $event.dragY | number | The vertical displacement of the mouse pointer relative to the starting coordinates during dragging |
+| $event.startLeft | number | The left value of the proxy element when dragging starts |
+| $event.startTop | number | The top value of the proxy element when dragging starts |
+| $event.left | number | The left value of the proxy element during dragging |
+| $event.top | number | The top value of the proxy element during dragging |
+| $event.preventDefault | Function | Prevent the drag process |
+| senderVM | FDroppable | Sending event instance |
 
 ### Methods
 
 #### cancel()
 
-取消拖拽。
+Cancel the drag.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |

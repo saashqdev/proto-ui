@@ -1,6 +1,6 @@
-有时在模板中需要动态渲染一部分`vnode`的节点，比如别的组件的`slot`。常用的方法是把整个模板用`render`函数重写，或者局部再写个组件，这些方法的成本都较高。
+Sometimes it is necessary to dynamically render some `vnode` nodes in the template, such as `slot` of other components. Commonly used methods are to rewrite the entire template using the `render` function, or to write a partial component. These methods are more expensive.
 
-`<f-render>`可以方便解决这类问题。
+`<f-render>` can easily solve this kind of problem.
 
 ``` htm
 <f-render :vnode="$slots.title"></f-render>

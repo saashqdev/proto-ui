@@ -1,73 +1,73 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- This README.md is automatically generated based on api.yaml and docs/*.md for easy reference on GitHub and NPM. If you need to modify it, please view the source file -->
 
-# FForbidden 禁用
+# FForbidden Disable
 
-禁用浏览器的一些默认功能和快捷键。
+Disable some of the browser's default functions and shortcut keys.
 
 ## Example
 ### Basic Usage
 
-下面的例子中，禁用了右键菜单、选择文本、复制功能、另存为键和开发者工具键。
+In the following example, the right-click menu, text selection, copy function, Save As key, and Developer Tools key are disabled.
 
 ``` html
 <f-forbidden contextmenu select copy save-key devtools-key></f-forbidden>
 ```
 
 ## API
-### Props/Attrs
+Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| contextmenu | boolean |  | `false` | 是否禁止弹出右键菜单 |
-| select | boolean |  | `false` | 是否禁止选择文本 |
-| copy | boolean |  | `false` | 是否禁止复制 |
-| save-key | boolean |  | `false` | 是否禁止另存为键 |
-| devtools-key | boolean |  | `false` | 是否禁止开发者工具键 |
-| senderVM | FForbidden |  | `'发送事件实例'` |  |
+| contextmenu | boolean | | `false` | Whether to disable the pop-up right-click menu |
+| select | boolean | | `false` | Whether to prohibit text selection |
+| copy | boolean | | `false` | Whether to prohibit copying |
+| save-key | boolean | | `false` | Whether to prohibit saving as key |
+| devtools-key | boolean | | `false` | Whether to disable the developer tools key |
+| senderVM | FForbidden | | `'Send event instance'` | |
 
 ### Events
 
 #### @contextmenu
 
-弹出右键菜单时触发
+Triggered when the right-click menu pops up
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | MouseEvent | 鼠标事件对象 |
-| senderVM | FForbidden | 发送事件实例 |
+| $event | MouseEvent | Mouse event object |
+| senderVM | FForbidden | Sending event instance |
 
 #### @select
 
-选择文本时触发
+Fires when text is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | FocusEvent | 聚焦事件对象 |
-| senderVM | FForbidden | 发送事件实例 |
+| $event | FocusEvent | Focus event object |
+| senderVM | FForbidden | Sending event instance |
 
 #### @copy
 
-复制时触发
+Triggered when copying
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | ClipboardEvent | 剪贴板事件对象 |
-| senderVM | FForbidden | 发送事件实例 |
+| $event | ClipboardEvent | Clipboard event object |
+| senderVM | FForbidden | Sending event instance |
 
 #### @save-key
 
-按保存键时触发
+Triggered when the Save button is pressed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | KeyboardEvent | 键盘事件对象 |
-| senderVM | FForbidden | 发送事件实例 |
+| $event | KeyboardEvent | Keyboard event object |
+| senderVM | FForbidden | Sending event instance |
 
 #### @devtools-key
 
-按开发人员工具键时触发
+Fired when the developer tools key is pressed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | KeyboardEvent | 键盘事件对象 |
-| senderVM | FForbidden | 发送事件实例 |
+| $event | KeyboardEvent | Keyboard event object |
+| senderVM | FForbidden | Sending event instance |

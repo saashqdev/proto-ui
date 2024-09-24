@@ -9,7 +9,7 @@ export const FSlot = {
     },
     render(h, context) {
         let { vm, name, props, catchError } = context.props;
-        vm = vm || vm.context.parent; // @TODO: 可能不太对，需要验证一下
+        vm = vm || vm.context.parent; // @TODO: It may not be right, you need to verify it
 
         const scopedSlot = vm.$scopedSlots[name];
         const slot = vm.$slots[name];
