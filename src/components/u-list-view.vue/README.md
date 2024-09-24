@@ -14,7 +14,7 @@
 </u-list-view>
 ```
 
-### 选项值
+### Option Value
 
 ``` html
 <u-list-view value="towel">
@@ -157,7 +157,7 @@
 </u-grid-layout>
 ```
 
-### 可取消
+### Cancel
 
 尝试在同一个选项上点击两次。
 

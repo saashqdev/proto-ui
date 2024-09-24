@@ -23,7 +23,7 @@ export const MSinglex = {
     },
     watch: {
         value(value) {
-            // 无需剪枝
+            // No pruning required
             this.watchValue(value);
         },
         selectedVM(selectedVM, oldVM) {
@@ -45,7 +45,7 @@ export const MSinglex = {
         itemVMs(itemVMs) {
             if (!itemVMs.includes(this.selectedVM)) {
                 if (!this.router) {
-                    // Update List之后，原来的选择可能已不存在，这里暂存然后重新查找一遍
+                    // After Update List, the original selection may no longer exist. Save it temporarily and search again.
                     const value = this.selectedVM ? this.selectedVM.value : this.value;
                     this.selectedVM = undefined;
                     this.watchValue(value);
@@ -62,7 +62,7 @@ export const MSinglex = {
     // },
     methods: {
         watchValue(value) {
-            if (this.selectedVM && this.selectedVM.value === value) // 下面需要走 value === undefined
+            if (this.selectedVM && this.selectedVM.value === value) // Next you need to go value === undefined
                 return;
             if (value === undefined) {
                 if (this.autoSelect)

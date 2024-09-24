@@ -10,7 +10,7 @@
 </m-singlex>
 ```
 
-### 选项值
+### Option Value
 
 #### One-Way Binding
 
@@ -58,7 +58,7 @@ export default {
 </script>
 ```
 
-### 路由模式
+### Routing Mode
 
 ``` html
 <m-singlex router>
@@ -118,9 +118,9 @@ export default {
 </u-grid-layout>
 ```
 
-### 可取消
+### Cancel
 
-`cancelable`属性开启时，在同一个选项上点击两次，会取消原来的选择。
+When the `cancelable` attribute is turned on, clicking twice on the same option will cancel the original selection.
 
 ``` html
 <m-singlex value="towel" cancelable>
@@ -132,9 +132,9 @@ export default {
 </m-singlex>
 ```
 
-### 自动选择
+### Automatic Selection
 
-在初始化或选项变更时，自动选择第一个非禁用的项。
+On initialization or option change, automatically selects the first non-disabled item.
 
 ``` html
 <m-singlex auto-select>
@@ -186,7 +186,7 @@ export default {
 </script>
 ```
 
-### 同步顺序
+### Synchronization Sequence
 
 ``` vue
 <template>

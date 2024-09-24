@@ -1,11 +1,11 @@
 
-### 使用方法
+### How to Use
 
-下面的例子中展示了，如何将一个实例中的数据或状态，通过发布订阅者模式，传递到另一个实例中。
+The following example shows how to pass data or status in one instance to another instance through the publish-subscriber pattern.
 
-``` vue
+```vue
 <template>
-<u-button @click="onClick">发布</u-button>
+<u-button @click="onClick">Publish</u-button>
 </template>
 <script>
 import { MPublisher } from '@@';
@@ -56,14 +56,13 @@ export default {
 </style>
 ```
 
-### 使用 Option
+### Using Option
 
-下面的例子中展示了，如何将一个实例中的数据或状态，通过发布订阅者模式，传递到另一个实例中。
+The following example shows how to pass data or status in one instance to another instance through the publish-subscriber pattern.
 
-``` vue
+```vue
 <template>
-<u-button @click="onClick">发布</u-button>
-</template>
+<u-button @click="onClick">Publish</u-button></template>
 <script>
 import { MPublisher } from '@@';
 

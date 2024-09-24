@@ -1,8 +1,8 @@
-本对 Mixin：MRoot 和 MNode，对常见的类似`<u-tree-view>`和`<u-tree-view-node>`多级组件嵌套的场景进行了抽象，用于快速开发和代码借鉴。
+This pair of Mixins: MRoot and MNode abstracts common multi-level component nesting scenarios like `<u-tree-view>` and `<u-tree-view-node>` for rapid development and coding. Learn from.
 
-### 用法
+### Usage
 
-- 在继承 MRoot 的组件 Options 中，补充声明子组件的 `nodeName`字段
-- 在继承 MNode 的组件 Options 中，补充声明父组件的 `rootName`字段
+- In the component Options that inherits MRoot, additionally declare the `nodeName` field of the sub-component
+- In the component Options that inherits MNode, additionally declare the `rootName` field of the parent component
 
-父组件会将多个子组件收集在`nodeVMs`数组中，子组件将父组件标记为`parentVM`变量，将根组件标记为`rootVM`。这段过程发生在组件的`created`阶段。在`destroyed`阶段回收这些数据。
+The parent component will collect multiple child components in the `nodeVMs` array, and the child component will mark the parent component as the `parentVM` variable and the root component as `rootVM`. This process occurs in the `created` phase of the component. This data is recovered during the `destroyed` phase.

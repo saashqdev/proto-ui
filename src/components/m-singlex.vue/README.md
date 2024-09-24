@@ -1,15 +1,13 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# MSinglex 单选模式
+# MSinglex Radio Selection Mode
 
-常见的单项选择模式，用于快速派生出像`<u-navbar>`、`<u-tabs>`这样的组件。
-
-常见的单项选择模式，用于快速派生出像`<u-navbar>`、`<u-tabs>`这样的组件。
+Common single-item selection mode, used to quickly derive components like `<u-navbar>` and `<u-tabs>`.
 
 ## Example
 ### Basic Usage
 
-下面展示了单选模式的一些基本特性，选择和禁用等功能。
+The following shows some basic features of the radio mode, including selection and disabling functions.
 
 ``` html
 <m-singlex>
@@ -89,9 +87,9 @@ export default {
 </u-grid-layout>
 ```
 
-### 可取消
+### Cancel
 
-`cancelable`属性开启时，在同一个选项上点击两次，会取消原来的选择。
+When the `cancelable` attribute is turned on, clicking twice on the same option will cancel the original selection.
 
 ``` html
 <m-singlex value="towel" cancelable>
@@ -103,9 +101,9 @@ export default {
 </m-singlex>
 ```
 
-### 自动选择
+### Automatic Selection
 
-在初始化或选项变更时，自动选择第一个非禁用的项。
+On initialization or option change, automatically selects the first non-disabled item.
 
 ``` html
 <m-singlex auto-select>
@@ -122,107 +120,107 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | any |  |  | 当前选择的值 |
-| auto-select | boolean |  | `false` | 是否自动选择第一个非禁用的项 |
-| cancelable | boolean |  | `false` | 是否可以取消选择 |
-| router | boolean |  | `false` | 是否开启路由模式 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value.sync, v-model | any | | | Currently selected value |
+| auto-select | boolean | | `false` | Whether to automatically select the first non-disabled item |
+| cancelable | boolean | | `false` | Whether the selection can be canceled |
+| router | boolean | | `false` | Whether to enable routing mode |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入`<m-singlex-item>`子组件。
+Insert `<m-singlex-item>` subcomponent.
 
 ### Events
 
 #### @before-select
 
-选择某一项前触发
+Trigger before selecting an item
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | MSinglexItem | 选择项子组件 |
-| $event.oldVM | MSinglexItem | 旧的选择项子组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | MSinglex | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.oldItem | object | Old selection related object |
+| $event.itemVM | MSinglexItem | Selection subcomponent |
+| $event.oldVM | MSinglexItem | Old selection subcomponent |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | MSinglex | Send event instance |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | any | 选择项的值 |
-| senderVM | MSinglex | 发送事件实例 |
+| $event | any | value of selection |
+| senderVM | MSinglex | Send event instance |
 
 #### @select
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 改变后的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | MSinglexItem | 选择项子组件 |
-| $event.oldVM | MSinglexItem | 旧的选择项子组件 |
-| senderVM | MSinglex | 发送事件实例 |
+| $event.value | any | Changed value |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.oldItem | object | Old selection related object |
+| $event.itemVM | MSinglexItem | Selection subcomponent |
+| $event.oldVM | MSinglexItem | Old selection subcomponent |
+| senderVM | MSinglex | Send event instance |
 
 #### @change
 
-选择值改变时触发
+Fires when the selection value changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | MSinglexItem | 选择项子组件 |
-| $event.oldVM | MSinglexItem | 旧的选择项子组件 |
-| senderVM | MSinglex | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.oldItem | object | Old selection related object |
+| $event.itemVM | MSinglexItem | Selection subcomponent |
+| $event.oldVM | MSinglexItem | Old selection subcomponent |
+| senderVM | MSinglex | Send event instance |
 
 ## MSinglexItem API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | any |  |  | 此项的值 |
-| disabled | boolean |  | `false` | 禁用此项 |
-| item | object |  |  | 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发 |
+| value | any | | | The value of this item |
+| disabled | boolean | | `false` | Disable this |
+| item | object | | | Related objects. When this is selected, the event thrown will pass the object, making it easier to develop |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @click
 
-点击此项时触发。与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。
+Fires when this item is clicked. Unlike the native click event, it will only fire when it is not read-only and disabled.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | MouseEvent | 鼠标事件对象 |
-| senderVM | MSinglexItem | 发送事件实例 |
+| $event | MouseEvent | Mouse event object |
+| senderVM | MSinglexItem | Send event instance |
 
 #### @before-select
 
-选择此项前触发
+Trigger before selecting this
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 此项的值 |
-| $event.item | object | 此项的相关对象 |
-| $event.itemVM | MSinglexItem | 此组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | MSinglexItem | 发送事件实例 |
+| $event.value | any | The value of this item |
+| $event.item | object | The related object of this item |
+| $event.itemVM | MSinglexItem | This component |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | MSinglexItem | Send event instance |

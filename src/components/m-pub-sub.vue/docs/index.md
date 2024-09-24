@@ -1,9 +1,9 @@
-在 Vue 原生的功能中，不管是`$emit`和`$on`，还是`provide`和`inject`，在组件间传递变量都有些局限，特别是在两个不相关的组件之间。
+In Vue's native functions, whether it is `$emit` and `$on`, or `provide` and `inject`, there are some limitations in passing variables between components, especially between two unrelated components.
 
-本组件包含了两个 Mixins：MPublisher 和 MSubscriber，用于在任意两个组件之间通过发布订阅模式传递数据。
+This component contains two Mixins: MPublisher and MSubscriber, which are used to transfer data between any two components through the publish-subscribe mode.
 
-一种用法是，直接使用 Mixin 之后的四个方法`$publish`、`$unpublish`、`$subscribe`和`$unsubscribe`。
+One usage is to directly use the four methods `$publish`, `$unpublish`, `$subscribe` and `$unsubscribe` after Mixin.
 
-另一种用法是，Mixin 支持选项`publish`为一个对象，键为需要发布的主题，值为需要监听的表达式或函数。在 Mixin MSubscriber 时，选项`subscribe`为一个对象，键为需要订阅的主题，值为订阅时执行的方法。
+Another usage is that Mixin supports the option `publish` as an object, the key is the topic that needs to be published, and the value is the expression or function that needs to be listened to. When Mixin MSubscriber, the option `subscribe` is an object, the key is the topic to be subscribed, and the value is the method to be executed when subscribing.
 
-> 注意：这对 Mixins 和普通的发布订阅模式有一点区别是，订阅时会执行上一次发布的结果，方便一些异步订阅的场景。
+> Note: The difference between this pair of Mixins and the ordinary publish-subscribe model is that the result of the last publish will be executed when subscribing, which is convenient for some asynchronous subscription scenarios.

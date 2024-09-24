@@ -1,6 +1,6 @@
 ### Basic Usage
 
-下面展示了单选模式的一些基本特性，选择和禁用等功能。
+The following shows some basic features of the radio mode, including selection and disabling functions.
 
 ``` html
 <m-singlex>
@@ -80,9 +80,9 @@ export default {
 </u-grid-layout>
 ```
 
-### 可取消
+### Cancel
 
-`cancelable`属性开启时，在同一个选项上点击两次，会取消原来的选择。
+When the `cancelable` attribute is turned on, clicking twice on the same option will cancel the original selection.
 
 ``` html
 <m-singlex value="towel" cancelable>
@@ -94,9 +94,9 @@ export default {
 </m-singlex>
 ```
 
-### 自动选择
+### Automatic Selection
 
-在初始化或选项变更时，自动选择第一个非禁用的项。
+On initialization or option change, automatically selects the first non-disabled item.
 
 ``` html
 <m-singlex auto-select>

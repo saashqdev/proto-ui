@@ -20,7 +20,7 @@ export const MNode = {
             this.rootVM = parentVM.rootVM;
             parentVM.nodeVMs.push(this);
         });
-        // 顺序不能换
+        // The order cannot be changed
         !this.parentVM && this.$contact(this.$options.rootName, (rootVM) => {
             this.rootVM = rootVM;
             rootVM.nodeVMs.push(this);

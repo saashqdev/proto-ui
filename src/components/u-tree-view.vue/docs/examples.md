@@ -74,7 +74,7 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 
 但`text`作用域插槽只支持扩展 text 文本内容，如果你的需求更加复杂，建议直接通过继承 UTreeView 相关组件来实现。
 
-### 选项值
+### Option Value
 
 #### Tag 方式
 
@@ -278,7 +278,7 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 </u-grid-layout>
 ```
 
-### 可取消
+### Cancel
 
 ``` html
 <u-tree-view cancelable>

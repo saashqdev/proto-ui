@@ -1,1 +1,1 @@
-常见的单项选择模式，用于快速派生出像`<u-navbar>`、`<u-tabs>`这样的组件。
+Common single-item selection mode, used to quickly derive components like `<u-navbar>` and `<u-tabs>`.

@@ -1,50 +1,50 @@
 - name: m-root
-  title: 根节点模式
+  title: Root Node Mode
   options:
     - name: nodeName
       type: string
       default: m-node
-      description: 节点组件的名称
+      description: The name of the node component
   data:
     - name: nodeVMs
       type: Array<MNode>
       default: []
-      description: 首层节点组件集合
+      description: A collection of first-level node components
   slots:
     - name: default
-      description: 插入`<m-node>`子组件。
+      description: Inserts a `<m-node>` child component.
   methods:
     - name: walk(func)
-      description: 广度优先遍历树。当`func`函数有返回值时，停止遍历。
+      description: Breadth-first traversal of the tree. When the `func` function returns a value, stop traversal.
       params:
         - name: func
           type: Function
-          description: 遍历的处理函数
+          description: Traversal processing function
     - name: find(func)
-      description: 查找节点实例。
+      description: Find a node instance.
       params:
         - name: func
           type: Function
-          description: 查找函数。找到第一个返回值为`true`的实例。
+          description: Find function. Find the first instance that returns true.
 - name: m-node
   options:
     - name: rootName
       type: string
       default: m-root
-      description: 根组件的名称
+      description: The name of the root component
   data:
     - name: rootVM
       type: MRoot
       default: null
-      description: 根组件实例
+      description: Root component instance
     - name: parentVM
       type: MNode
       default: null
-      description: 父节点实例
+      description: Parent node instance
     - name: nodeVMs
       type: Array<MNode>
       default: []
-      description: 子节点组件集合
+      description: Sub-node component collection
   slots:
     - name: default
-      description: 插入`<m-node>`子组件。
+      description: Inserts a `<m-node>` child component.
