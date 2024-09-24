@@ -1,0 +1,8 @@
+<div :class="$style.root" v-show="currentOpened && ($slots.default || content)">
+    <div :class="$style.arrow"></div><!-- popper在某些场景下可以移动该元素 -->
+    <div :class="[$style.body, $style.wrap]">
+        <slot name="body">
+            <slot>{{ content }}</slot>
+        </slot>
+    </div>
+</div>

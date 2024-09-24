@@ -1,0 +1,10 @@
+.root {}
+
+.sizer {
+    text-align: left;
+    width: var(--combo-pagination-sizer-width);
+}
+
+.jumper {
+    width: var(--combo-pagination-jumper-width);
+}

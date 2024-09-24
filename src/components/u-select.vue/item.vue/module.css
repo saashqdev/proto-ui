@@ -1,0 +1,5 @@
+@extend;
+
+.root:hover {
+    background: var(--select-item-hover);
+}

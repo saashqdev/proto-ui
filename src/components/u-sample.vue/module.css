@@ -1,0 +1,5 @@
+.root {}
+
+.root[color="primary"] {
+    color: var(--brand-primary);
+}

@@ -1,0 +1,11 @@
+.root {}
+
+.slider {
+    display: inline-block;
+    width: var(--combo-slider-slider-width);
+}
+
+.input {
+    margin-left: var(--combo-slider-input-left);
+    width: var(--combo-slider-input-width);
+}

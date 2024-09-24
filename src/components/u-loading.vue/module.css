@@ -1,0 +1,54 @@
+.root {
+    display: inline-block;
+    text-align: center;
+    color: var(--loading-color);
+}
+
+.root[size="small"] .icon {
+    font-size: var(--loading-font-size-small);
+}
+.root .icon {
+    font-size: var(--loading-font-size-base);
+    vertical-align: -4px;
+}
+.root[size="large"] .icon {
+    font-size: var(--loading-font-size-large);
+}
+
+.root[display="block"] {
+    display: block;
+}
+
+.root[display="full"] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+    background: var(--loading-full-background);
+}
+
+.root[display="full"] .body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.root[display="fullWindow"] {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: var(--z-index-loading);
+    background: var(--loading-fullWindow-background);
+}
+
+.root[display="fullWindow"] .body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

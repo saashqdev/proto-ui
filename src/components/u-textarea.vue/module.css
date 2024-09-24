@@ -1,0 +1,40 @@
+@extend;
+
+.root {
+    width: var(--textarea-width);
+    height: var(--textarea-height);
+    min-width: var(--textarea-width-mini);
+    min-height: var(--textarea-min-height);
+    padding: var(--textarea-padding);
+    line-height: inherit;
+}
+
+.input {
+    resize: none;
+}
+
+.clearable::before {
+    top: 2px;
+    right: 4px;
+}
+
+.handle {
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+    cursor: default;
+}
+
+.handle::before {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 12px;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    transform: rotate(-45deg) translate(-2px, 2px);
+}

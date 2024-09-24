@@ -1,0 +1,6 @@
+@extend;
+
+.root {
+    background: var(--menu-background);
+    border: 1px solid var(--menu-border-color);
+}

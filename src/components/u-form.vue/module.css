@@ -1,0 +1,21 @@
+.root {}
+
+.root[layout="inline"] .item {
+    display: inline-block;
+}
+
+.root[layout="inline"] .item:not(:last-child) {
+    margin-right: var(--form-inline-item-space);
+}
+
+.root[layout="block"] .item:not(:last-child) {
+    margin-bottom: var(--form-item-space);
+}
+
+.root[layout="inline"]::after {
+    display: block;
+    content: '.';
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}

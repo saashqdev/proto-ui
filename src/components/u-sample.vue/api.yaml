@@ -1,0 +1,9 @@
+- name: u-sample
+  title: 样本
+  attrs:
+    - name: color
+      type: string
+      default: null
+      description: Try 'primary'
+  slots:
+    - name: default

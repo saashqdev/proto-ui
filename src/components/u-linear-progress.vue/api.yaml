@@ -1,0 +1,10 @@
+- name: u-linear-progress
+  title: 线型进度条
+  attrs:
+    - name: percent
+      type: number
+      default: 0
+      description: 百分比
+  slots:
+    - name: default
+      description: 插入文本或 HTML。

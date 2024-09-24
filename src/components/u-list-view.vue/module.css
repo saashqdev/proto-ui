@@ -1,0 +1,20 @@
+.root {
+    /* @Private */
+    user-select: none;
+    overflow: auto;
+    position: relative;
+
+    /* @Public */
+    background: var(--list-view-background);
+    border: 1px solid var(--list-view-border-color);
+}
+
+.root:focus {
+    border-color: var(--list-view-border-color-focus);
+    outline: var(--focus-outline);
+}
+
+.status {
+    color: var(--list-view-status-color);
+    text-align: center;
+}

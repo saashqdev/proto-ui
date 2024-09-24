@@ -1,0 +1,34 @@
+@extend;
+
+.root {
+    border: none;
+    height: var(--navbar-height);
+    line-height: var(--navbar-height);
+    padding-left: var(--navbar-select-padding-left);
+    padding-right: var(--navbar-select-padding-right);
+    width: var(--navbar-select-width);
+    vertical-align: top;
+}
+
+.root:not(:last-child) {
+    margin-right: var(--navbar-item-space);
+}
+
+.root::before {
+    font-size: var(--navbar-select-font-size);
+    line-height: var(--navbar-height);
+}
+
+.root::after {
+    line-height: var(--navbar-height);
+    height: auto;
+}
+
+.placeholder {
+    font-size: var(--navbar-select-font-size);
+}
+
+.text {
+    font-size: var(--navbar-select-font-size);
+    line-height: var(--navbar-height);
+}
