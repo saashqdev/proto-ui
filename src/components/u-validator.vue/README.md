@@ -146,7 +146,7 @@ interface Rule {
 type Validator = (value: any, ...args: any[]) => boolean | Promise<boolean>;
 ```
 
-参见[内置的验证器](https://github.com/vusion/atom-validator/blob/master/src/builtIn/validators.ts)。
+参见[内置的验证器](https://github.com/saashqdev/atom-validator/blob/master/src/builtIn/validators.ts)。
 
 验证函数（ValidateFunc）是验证规则需要即时调用的函数，常用于处理同步或异步方法。与验证器有所不同，它的结构如下：
 
@@ -1502,12 +1502,12 @@ export default {
 
 输入内容是否为合法的手机号。
 
-- `locale`：所在地区，例如`zh-CN`、`ja-JP`等。可以是一个字符串或数组。如果不填，则尝试自动匹配所有地区。
+- `locale`：所在地区，例如`en-US`、`ja-JP`等。可以是一个字符串或数组。如果不填，则尝试自动匹配所有地区。
 
 - `strict`：是否检验国家代号。如果为`true`，则必须以`+`和国家代码开头。
 
 ``` html
-<u-validator label="手机" rules="mobile('zh-CN')">
+<u-validator label="手机" rules="mobile('en-US')">
     <u-input placeholder="请输入手机号码"></u-input>
 </u-validator>
 ```

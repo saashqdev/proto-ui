@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { mapComponents } from 'vusion-utils';
+import { mapComponents } from 'kubevue-utils';
 
 export const createElement = () => {
     const elem = document.createElement('div');

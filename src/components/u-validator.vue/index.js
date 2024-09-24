@@ -1,5 +1,5 @@
 import MEmitter from '../m-emitter.vue';
-import Validator from 'vusion-async-validator';
+import Validator from 'kubevue-async-validator';
 import { AtomValidator } from 'atom-validator';
 import VueAtomValidator from 'atom-validator/VuePlugin';
 import debounce from 'lodash/debounce';

@@ -15,7 +15,7 @@
 使用`href`和`target`属性，可以直接实现`<a>`元素对应的功能。使用`to`、`replace`和`append`需要引入vue-router，它们与`<router-link>`组件中对应属性的功能相同。
 
 ``` html
-<u-link href="https://vusion.github.io" target="_blank">href</u-link>&nbsp;
+<u-link href="https://kubevue.github.io" target="_blank">href</u-link>&nbsp;
 <u-link to="/proto-ui/u-button">router</u-link>
 ```
 

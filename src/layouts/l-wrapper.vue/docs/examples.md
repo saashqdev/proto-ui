@@ -9,7 +9,7 @@
 ### 基本用法
 
 ``` js
-import { LWrapper } from 'proto-ui.vusion';
+import { LWrapper } from 'proto-ui.kubevue';
 
 { path: 'blog', component: LWrapper, children: [
     { path: 'list', component: import(/* webpackChunkName: blog */ './list') },

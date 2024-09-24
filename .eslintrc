@@ -1,5 +1,5 @@
 {
-    "extends": "vusion/all",
+    "extends": "kubevue/all",
     "env": {
         "browser": true,
         "node": true

@@ -2,7 +2,7 @@
 
 body {
     color: var(--color-base);
-    font: 14px/1.6 var(--font-family-zh-CN);
+    font: 14px/1.6 var(--font-family-en-US);
     -webkit-font-smoothing: antialiased;
 }
 

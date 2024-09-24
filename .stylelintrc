@@ -1,5 +1,5 @@
 {
-  "extends": "stylelint-config-vusion",
+  "extends": "stylelint-config-kubevue",
   "rules": {
     "length-zero-no-unit": null
   }

@@ -1,4 +1,4 @@
-import { ULink } from 'proto-ui.vusion';
+import { ULink } from 'proto-ui.kubevue';
 
 export const SLogo = {
     name: 's-logo',

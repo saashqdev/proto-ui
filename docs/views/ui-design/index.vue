@@ -2,24 +2,24 @@
     <div>
         <div :class="$style.side">
             <u-sidebar :class="$style.sidebar">
-                <u-sidebar-group title="规范">
-                    <u-sidebar-item to="/components/u-base" disabled>事件设计</u-sidebar-item>
-                    <u-sidebar-item to="/components/u-base" disabled>API设计</u-sidebar-item>
+                <u-sidebar-group title="Specification">
+                    <u-sidebar-item to="/components/u-base" disabled>Event Design</u-sidebar-item>
+                    <u-sidebar-item to="/components/u-base" disabled>API Design</u-sidebar-item>
                 </u-sidebar-group>
-                <u-sidebar-group title="模式">
-                    <u-sidebar-item to="/components/u-base" disabled>父子模式</u-sidebar-item>
-                    <u-sidebar-item to="/components/u-base" disabled>父组子模式</u-sidebar-item>
-                    <u-sidebar-item to="/components/u-base" disabled>根节点模式</u-sidebar-item>
+                <u-sidebar-group title="Mode">
+                    <u-sidebar-item to="/components/u-base" disabled>Parent-Child Mode</u-sidebar-item>
+                    <u-sidebar-item to="/components/u-base" disabled>Parent Group Child Mode</u-sidebar-item>
+                    <u-sidebar-item to="/components/u-base" disabled>Root Node Mode</u-sidebar-item>
                 </u-sidebar-group>
-                <u-sidebar-group title="系列">
-                    <u-sidebar-item to="/components/u-base" disabled>列表系列</u-sidebar-item>
-                    <u-sidebar-item to="/components/u-link" disabled>路由系列</u-sidebar-item>
-                    <u-sidebar-item to="/ui-design/form">表单系列</u-sidebar-item>
-                    <u-sidebar-item to="/components/u-badge" disabled>递归系列</u-sidebar-item>
-                    <u-sidebar-item to="/ui-design/popper">弹出层系列</u-sidebar-item>
-                    <u-sidebar-item to="/components/u-tag" disabled>布局系列</u-sidebar-item>
-                    <u-sidebar-item to="/components/u-tag" disabled>图表系列</u-sidebar-item>
-                    <!-- <u-sidebar-item to="/components/u-label">数值范围系列</u-sidebar-item> -->
+                <u-sidebar-group title="Series">
+                    <u-sidebar-item to="/components/u-base" disabled>List Series</u-sidebar-item>
+                    <u-sidebar-item to="/components/u-link" disabled>Routing Series</u-sidebar-item>
+                    <u-sidebar-item to="/ui-design/form">Form Series</u-sidebar-item>
+                    <u-sidebar-item to="/components/u-badge" disabled>Recursive Series</u-sidebar-item>
+                    <u-sidebar-item to="/ui-design/popper">Pop-up Layer Series</u-sidebar-item>
+                    <u-sidebar-item to="/components/u-tag" disabled>Layout Series</u-sidebar-item>
+                    <u-sidebar-item to="/components/u-tag" disabled>Chart Series</u-sidebar-item>
+                    <!-- <u-sidebar-item to="/components/u-label">Value Range Series</u-sidebar-item> -->
                 </u-sidebar-group>
             </u-sidebar>
         </div>

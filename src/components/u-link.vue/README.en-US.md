@@ -17,7 +17,7 @@
 ### `href` vs `to`
 
 ``` html
-<u-link href="https://github.com/vusion/vusion" target="_blank">href</u-link>&nbsp;
+<u-link href="https://github.com/saashqdev/kubevue" target="_blank">href</u-link>&nbsp;
 <u-link to="/some/router/path">to</u-link>
 ```
 

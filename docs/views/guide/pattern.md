@@ -1,57 +1,57 @@
-# Pattern 设计模式
+# Pattern - Design pattern
 
-为了尽可能保证开发者使用和扩展组件的一致性，我们将各种组件相似的地方归纳成一套组件模式，罗列在这里，可以帮助你快速了解 Vusion 组件的设计理念，并且在实际开发中更高效合理地使用这套组件库。同时，也希望你在项目中自行设计组件时，也尽量参照这套模式。
+In order to ensure that developers use and extend components as consistently as possible, we have summarized the similarities of various components into a set of component patterns. Listing them here can help you quickly understand the design concept of Kubevue components and be more efficient in actual development. Use this component library wisely. At the same time, I also hope that you will try to refer to this set of patterns when designing your own components in the project.
 
-## 命名
+## Naming
 
-### 前缀
+### Prefix
 
-由于 Vusion 体系包含了多种多样的组件，为了与原生 HTML 元素区分，也为了识别方便，组件名前都加了一个表示类型的字母：
+Since the kubevue system contains a variety of components, in order to distinguish them from native HTML elements and for easy identification, a letter indicating the type is added before the component name:
 
-- 一般的组件，以`u-`开头（UI，也是 Vusion 的第二个字母）
-- 业务中的组件，以`s-`开头（specific）
-- 希望被 mixin 的组件，可以认为是抽象组件的，以`m-`开头（mixin）
-- 字体图标组件，以`i-`开头（icon）
-- 功能组件，以`f-`开头（functional），一般没有模板
-- 动效组件，以`e-`开头（effect）
-- 第三方库封装的复杂组件，以`x-`开头（extension）
+- General components, starting with `u-` (UI, also the second letter of kubevue)
+- Components in the business, starting with `s-` (specific)
+- Components that are expected to be mixin can be considered as abstract components, starting with `m-` (mixin)
+- Font icon component, starting with `i-` (icon)
+- Functional components, starting with `f-` (functional), generally do not have templates
+- Animation component, starting with `e-` (effect)
+- Complex components encapsulated by third-party libraries, starting with `x-` (extension)
 
-## 样式
+## Style
 
-### 标准化
+### Standardization
 
-以 [normalize.css](http://necolas.github.io/normalize.css) 为基础，使初始样式在各个浏览器下保持统一，然后对一些 HTML 元素的默认样式作了进一步优化。
+Based on [normalize.css](http://necolas.github.io/normalize.css), the initial style is unified across browsers, and then the default styles of some HTML elements are further optimized.
 
-类似 [Bootstrap](https://getbootstrap.com)，将`box-sizing: border-box`应用到所有元素，于是元素的宽高不会受到`padding`的影响，更容易控制。
+Similar to [Bootstrap](https://getbootstrap.com), apply `box-sizing: border-box` to all elements, so the width and height of the elements will not be affected by `padding` and are easier to control.
 
-使用 Vue 的`preserveWhitespace: false`，将所有元素之间空格清除，这样在`inline-block`的元素之间不会有空隙。
+Use Vue's `preserveWhitespace: false` to clear the spaces between all elements, so that there will be no gaps between `inline-block` elements.
 
-### 边距与布局
+### Margins and Layout
 
-每个 Vusion 组件最外层都是不带的 margin，因为它们的边距在实际场景中不是很确定。
+The outermost layer of each kubevue component has no margin, because their margins are not very certain in actual scenarios.
 
-在业务中可以使用`<u-linear-layout>`与`<u-grid-layout>`来控制组件的边距。有时也可以使用`class`和`style`临时调整，这个在下面环节会详述。
+In business, you can use `<u-linear-layout>` and `<u-grid-layout>` to control the margins of components. Sometimes you can also use `class` and `style` to make temporary adjustments, which will be detailed in the following link.
 
-这样的好处是，针对各个组件的 margin 样式只需要从0设置，避免出现令人摸不清头脑的样式覆盖。
+The advantage of this is that the margin style of each component only needs to be set from 0, avoiding confusing style overrides.
 
 ``` html
 <u-linear-layout>
     <u-input></u-input>
-    <u-button color="primary">搜索</u-button>
-    <u-link style="margin-left: 60px;">设置</u-link>
-    <u-link>删除</u-link>
+    <u-button color="primary">Search</u-button>
+    <u-link style="margin-left: 60px;">Settings</u-link>
+    <u-link>Delete</u-link>
 </u-linear-layout>
 ```
 
-## 常见属性
+## Common Attributes
 
-下面列举组件的一些常见属性，提前有个印象。
+Listed below are some common properties of components to get an impression in advance.
 
-### 颜色扩展
+### Color Extension
 
-通常用`color`属性来设置组件的颜色扩展，常见的值有：`default`, `primary`, `info`, `success`, `warning`, `error`, `disabled`, `muted`，默认为`default`。
+The `color` attribute is usually used to set the color extension of the component. Common values     are: `default`, `primary`, `info`, `success`, `warning`, `error`, `disabled`, `muted`, The default is `default`.
 
-如果有特殊情况，可以使用`class`或`style`作临时调整。
+If there are special circumstances, you can use `class` or `style` to make temporary adjustments.
 
 ``` html
 <u-linear-layout>
@@ -62,11 +62,11 @@
 </u-linear-layout>
 ```
 
-### 大小扩展
+### Size Expansion
 
-通常用`size`属性来设置组件的大小扩展。常见的值有：`mini`, `small`, `normal`, `large`, `huge`，默认为`normal`。
+Usually the `size` attribute is used to set the size extension of the component. Common values   are: `mini`, `small`, `normal`, `large`, `huge`, and the default is `normal`.
 
-项目中一般有这5个级别就够了，过多的分类反而容易造成混乱，其他尺寸建议用`class`或`style`作临时调整。
+Generally these 5 levels are enough in a project. Too many categories can easily cause confusion. For other sizes, it is recommended to use `class` or `style` for temporary adjustment.
 
 ``` html
 <u-linear-layout>
@@ -77,7 +77,7 @@
 </u-linear-layout>
 ```
 
-`size`也支持传两个值，前者表示高度，后者表示宽度。
+`size` also supports passing two values, the former represents the height and the latter represents the width.
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -99,57 +99,56 @@
 </u-linear-layout>
 ```
 
-在设计组件时，不推荐专门设置`width`和`height`属性，`size`和`style`已经够用。
+When designing components, it is not recommended to specifically set the `width` and `height` properties. `size` and `style` are sufficient.
 
-### 展示方式
+### Display Method
 
-大家都熟知大部分 HTML 元素有行内和块级两种展示方式。我们根据组件的一些常见情况，归纳整理了几种展示方式，可以用`display`属性来设置，这个和 CSS 的`display`有所不同，但主要依赖 CSS 的`display`和`position`属性。
+Everyone is familiar with the fact that most HTML elements can be displayed in two ways: inline and block level. Based on some common situations of components, we have summarized several display methods, which can be set using the `display` attribute. This is different from the `display` of CSS, but mainly relies on the `display` and `position` properties of CSS.
 
-常见的值有：`inline`、`block`、`full`、`fullWindow`、`fullScreen`，每个组件并不一定支持所有的值，但一定以其中一个作为默认值。
+Common values   include: `inline`, `block`, `full`, `fullWindow`, `fullScreen`. Each component does not necessarily support all values, but one of them must be used as the default value.
 
-- `inline`：行内展示，对应 CSS 的`inline`或`inline-block`。在设计时尽量与周围文字基线对齐。
-- `block`：块级展示，对应 CSS 的 `block`，主要特性为占据整行。
-- `full`：填满父元素，将会填满定位父元素（offsetParent）并覆盖在上面，如`<u-loading>`可以覆盖在表格上加载等。
-- `fullWindow`：填满全窗口，如`u-modal`的默认行为。
-- `fullScreen`：填满全屏幕，会调用浏览器的`fullScreen`的 API。
+- `inline`: Inline display, corresponding to CSS `inline` or `inline-block`. When designing, try to align it with the surrounding text baseline.
+- `block`: Block-level display, corresponding to CSS `block`, its main feature is to occupy the entire line.
+- `full`: Filling the parent element will fill the positioning parent element (offsetParent) and cover it. For example, `<u-loading>` can cover the loading on the table, etc.
+- `fullWindow`: fill the full window, like the default behavior of `u-modal`.
+- `fullScreen`: fills the entire screen and calls the browser's `fullScreen` API.
 
-可以参见[`<u-loading>`](u-loading)的例子。
+See the example of [`<u-loading>`](u-loading).
 
-### 临时调整
+### Temporary Adjustment
 
-前面的例子也可以看到，在实际业务开发中，组件暴露的属性可以满足大部分需求，但总是会遇到一些要临时调整样式的情况，比如自定义宽高、临时调整边距、修改边框样式、偶尔添加阴影等。
+As can be seen from the previous example, in actual business development, the properties exposed by components can meet most needs, but there are always situations where the style needs to be temporarily adjusted, such as customizing width and height, temporarily adjusting margins, modifying Border styles, adding occasional shadows, etc.
 
-这时可以利用 Vue 的透传机制，它可以将一些常用的属性或事件从标签上透传到组件内部的根元素上，如`class`、`style`或其他自定义属性。
+At this time, you can use Vue's transparent transmission mechanism, which can transparently transmit some commonly used attributes or events from the label to the root element inside the component, such as `class`, `style` or other custom attributes.
 
-下面是一个临时扩展`<u-select>`组件样式的例子：
-
+Here is an example of temporarily extending the style of the `<u-select>` component:
 ``` html
 <u-select style="width: 200px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-    <u-select-item>苹果</u-select-item>
-    <u-select-item>香蕉</u-select-item>
-    <u-select-item>蛋糕</u-select-item>
+    <u-select-item>Apple</u-select-item>
+    <u-select-item>Banana</u-select-item>
+    <u-select-item>Cake</u-select-item>
 </u-select>
 ```
 
-为了防止 class 重名的问题，Vusion 组件的样式都使用 CSS Modules 技术做了局域化处理，封装在了组件内部。透传只是针对根元素，其它内部元素不对外开放，主要是为了维护组件的一个封闭性。如果遇到需要对内部元素做修改的情况，往往是因为这个组件有了新的特性或者原来封装的并不完善，建议扩展整个组件然后作补充或者重新修改这个组件本身。
+In order to prevent the problem of duplicate class names, the styles of kubevue components are localized using CSS Modules technology and encapsulated inside the components. Transparent transmission is only for the root element, and other internal elements are not open to the outside world. This is mainly to maintain the closure of the component. If you encounter the need to modify internal elements, it is often because the component has new features or the original encapsulation is not perfect. It is recommended to extend the entire component and then supplement or re-modify the component itself.
 
-## 事件
+## Event
 
-### 事件名
+### Event Name
 
-表单控件会抛出部分下面的事件：
+Form controls throw some of the following events:
 
-- `input`：用于`v-model`的双向绑定
-- `update:value`：用于`.sync`的双向绑定
-- `change`：监听`value`改变时触发
-- `focus`和`blur`：控件聚焦和失焦时会触发
-- 有一个单纯由用户触发的事件，比如`select`、`toggle`、`slide`等
-- 针对上面用户触发的事件，会提前抛出一个可以阻止的`before-`事件，比如`before-select`、`before-toggle`等
-- `change`事件和用户触发事件不同的地方是，`change`事件只根据数据是否变化来判断，有时在组件创建阶段也会触发。而用户触发事件只会由用户操作或者方法手动调用来触发。
+- `input`: two-way binding for `v-model`
+- `update:value`: two-way binding for `.sync`
+- `change`: triggered when monitoring `value` changes
+- `focus` and `blur`: triggered when the control is focused or out of focus
+- There is an event triggered purely by the user, such as `select`, `toggle`, `slide`, etc.
+- For the above user-triggered events, a preventable `before-` event will be thrown in advance, such as `before-select`, `before-toggle`, etc.
+- The difference between the `change` event and the user-triggered event is that the `change` event is only judged based on whether the data has changed, and sometimes it is also triggered during the component creation phase. User-triggered events will only be triggered by user operations or manual method calls.
 
-### 传递数据
+### Pass Data
 
-通常事件都会统一抛出一个数据对象（$event）和当前实例（senderVM）。
+Usually events will throw out a data object ($event) and the current instance (senderVM).
 
 ``` js
 this.$emit('select', {
@@ -165,7 +164,7 @@ this.$emit('change', {
 ```
 
 
-`input`和`update:*`事件比较特殊，为了适应`v-model`和`.sync`，$event 为一个单一的值。
+`input` and `update:*` events are special. In order to adapt to `v-model` and `.sync`, $event is a single value.
 
 ``` js
 this.$emit('input', value, this);

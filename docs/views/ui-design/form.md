@@ -1,152 +1,152 @@
-# 表单系列
+# Form Series
 
-一般来说，表单是Web应用中最常见，最重要，也是最复杂的交互形式之一，表单系列组件设计的好坏很大程度决定了整个应用实现的质量。
+Generally speaking, forms are one of the most common, important, and complex forms of interaction in Web applications. The quality of the design of the form series components largely determines the quality of the entire application implementation.
 
-表单的布局样式比较统一，但会有许多如规则验证、数据比较、数据缓存等复杂的通用逻辑。由于原生表单元素样式简陋，功能单薄，对SPA不友好，不具备处理这些复杂问题的能力，因此必须在原生元素基础上作一层封装。
+The layout style of the form is relatively uniform, but there will be many complex common logics such as rule validation, data comparison, data caching, etc. Since the native form elements are simple in style and thin in function, they are not friendly to SPA and do not have the ability to handle these complex problems, so a layer of encapsulation must be made based on the native elements.
 
-## 相关组件
+## Related Components
 
-### 示例
+### Example
 
-比如下面的例子是一个简单的填写个人信息的表单：
+For example, the following example is a simple form for filling in personal information:
 
 ``` html
 <u-form>
-    <u-form-item label="性别">
-        <u-radios value="男">
-            <u-radio label="男">男</u-radio>
-            <u-radio label="女">女</u-radio>
+    <u-form-item label="Gender">
+        <u-radios value="Male">
+            <u-radio label="Male">Male</u-radio>
+            <u-radio label="female">Female</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="昵称" required>
-        <u-input maxlength="20" placeholder="不得超过20个字符"></u-input>
+    <u-form-item label="Nickname" required>
+        <u-input maxlength="20" placeholder="No more than 20 characters"></u-input>
     </u-form-item>
-    <u-form-item label="手机" required>
-        <u-input maxlength="11" placeholder="请输入手机号"></u-input>
+    <u-form-item label="Mobile phone" required>
+        <u-input maxlength="11" placeholder="Please enter your phone number"></u-input>
     </u-form-item>
-    <u-form-item label="自我介绍">
+    <u-form-item label="Self-introduction">
         <u-textarea></u-textarea>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary">提交</u-button>
+        <u-button color="primary">Submit</u-button>
     </u-form-item>
 </u-form>
 ```
 
-根据日常经验，我们可以归纳出与表单相关的组件有以下几种：
+Based on daily experience, we can summarize the following components related to forms:
 
-#### 表单 [Form](/proto-ui/u-form)
+#### Form [Form](/proto-ui/u-form)
 
-用于整体布局，集中设置属性，统一暴露事件和方法。
+Used for overall layout, centralized property setting, and uniform exposure of events and methods.
 
-#### 表单组 FormGroup
+#### FormGroup
 
-针对表单项进行分组，主要用于布局，可能会有分组组件常见的折叠功能。
+Group form items. This is mainly used for layout. It may have the folding function common to grouped components.
 
-#### 表单项 FormItem
+#### FormItem
 
-用于排列表单标签与控件的位置，必选提示，规则验证等。
+Used to arrange the positions of form labels and controls, required prompts, rule validation, etc.
 
-#### 表单域（表单控件） Field
+#### Form Fields (form controls) Field
 
-作为各种表单域（表单控件）的基类，用于触发FormItem的验证等功能。
+As the base class of various form fields (form controls), it is used to trigger FormItem validation and other functions.
 
-比如常见的：`<u-input>`、`<u-select>`、`<u-radios>`、`<u-date-picker>`等。
+For example, common ones are: `<u-input>`, `<u-select>`, `<u-radios>`, `<u-date-picker>`, etc.
 
-页面上有很多组件，通常我们可以认为：
+There are many components on the page, usually we can think of:
 
-> 如果一个组件可以通过表单对后端数据进行读写操作的，那么它就是一个**表单控件**。
+> If a component can read and write backend data through a form, then it is a **form control**.
 
-## 功能设计
+## Functional Design
 
-### 布局
+### Layout
 
-表单除了一般上面的纵向布局，某些情况也会有行内布局。
+In addition to the general vertical layout above, forms may also have inline layout in some cases.
 
 ``` html
 <u-form layout="inline" label-size="auto">
-    <u-form-item label="状态">
+    <u-form-item label="status">
         <u-select>
-            <u-select-item>创建中</u-select-item>
-            <u-select-item>成功</u-select-item>
-            <u-select-item>失败</u-select-item>
+            <u-select-item>Creating</u-select-item>
+            <u-select-item>Success</u-select-item>
+            <u-select-item>Failed</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="用户名">
-        <u-input maxlength="20" placeholder="请输入用户名"></u-input>
+    <u-form-item label="Username">
+        <u-input maxlength="20" placeholder="Please enter your username"></u-input>
     </u-form-item>
-    <u-form-item label="手机">
-        <u-input maxlength="11" placeholder="请输入手机"></u-input>
+    <u-form-item label="Mobile">
+        <u-input maxlength="11" placeholder="Please enter your phone number"></u-input>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary">查询</u-button>
+        <u-button color="primary">Query</u-button>
     </u-form-item>
 </u-form>
 ```
 
-`<u-form>`提供了一个`layout`属性，它有两个可选值：`block`和`inline`，以后还可能有其它的值。
+`<u-form>` provides a `layout` property, which has two possible values: `block` and `inline`, and other values   may be added in the future.
 
-### 验证
+### Verify
 
-表单验证是表单的核心功能。我们希望各个表单控件都可以统一走表单的验证流程，而不是额外编写代码。因此，设计组件的时候需考虑得尽可能通用和全面，它至少要包含以下功能：
+Form validation is the core function of a form. We hope that each form control can follow the form validation process in a unified way, rather than writing additional code. Therefore, when designing a component, it should be as general and comprehensive as possible, and it should at least include the following functions:
 
-- 规则列表
-- 规则扩充
-- 异步验证
-- 触发方式
+- Rules List
+- Rules expansion
+- Asynchronous Validation
+- Trigger method
 
-下面一一展开。
+Let’s expand on them one by one below.
 
-#### 规则列表
+#### Rule List
 
-一个表单项的验证规则用一个对象来表示是不够的，因为往往不同的验证情况会有不同的提示消息和不同的触发方式。
+It is not enough to represent the validation rules of a form item with one object, because different validation situations often have different prompt messages and different triggering methods.
 
-比如下面的例子，一个用户名输入框的验证规则：
+For example, the following example shows the validation rules for a username input box:
 
-1. 必须输入用户名，失焦验证
-2. 以字母开头，实时验证
-3. 字母、数字或中划线组成，实时验证
-4. 以字母或数字结尾，失焦验证
-5. 4~12个字符，失焦验证
+1. Username is required, out of focus verification
+2. Start with a letter, real-time verification
+3. Letters, numbers or hyphens, real-time verification
+4. Ending with letters or numbers, out of focus verification
+5. 4~12 characters, out-of-focus verification
 
-我们必须用一个有序列表`rules`来表示，列表中包含若干条验证规则对象。结构如下：
+We must use an ordered list `rules` to represent it, which contains several validation rule objects. The structure is as follows:
 
-``` javascript
+```javascript
 [{ type: 'string', required: true, ... }, { type: 'email', ... }, { type: 'string', pattern: ... }, ...]
 ```
 
-每条规则对象通常有以下几个参数：
-- `type`：数据类型
-- `trigger`：触发方式
-- `message`：验证不通过时的消息提示
+Each rule object usually has the following parameters:
+- `type`: data type
+- `trigger`: trigger method
+- `message`: message prompt when verification fails
 - ...
 
-上面提到的例子可以用下面的规则列表来表示：
+The example mentioned above can be expressed using the following list of rules:
 
 ``` html
-<u-form-item label="用户名" :rules="[
-    { type: 'string', required: true, trigger: 'blur', message: '请输入用户名' },
-    { type: 'string', pattern: /^[a-zA-Z]/, trigger: 'input+blur', message: '以字母开头' },
-    { type: 'string', pattern: /^[a-zA-Z0-9-]+$/, trigger: 'input+blur', message: '字母、数字或中划线组成' },
-    { type: 'string', pattern: /[a-zA-Z0-9]$/, trigger: 'blur', message: '以字母或数字结尾' },
-    { type: 'string', min: 4, trigger: 'blur', message: '不得少于4个字符' },
+<u-form-item label="Username" :rules="[
+    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your username' },
+    { type: 'string', pattern: /^[a-zA-Z]/, trigger: 'input+blur', message: 'Starts with a letter' },
+    { type: 'string', pattern: /^[a-zA-Z0-9-]+$/, trigger: 'input+blur', message: 'Letters, numbers or hyphens' },
+    { type: 'string', pattern: /[a-zA-Z0-9]$/, trigger: 'blur', message: 'Ends with a letter or number' },
+    { type: 'string', min: 4, trigger: 'blur', message: 'Must contain at least 4 characters' },
 ]">
-    <u-input maxlength="112" placeholder="4~12位字母、数字或中划线组成"></u-input>
+    <u-input maxlength="112" placeholder="4 to 12 letters, numbers or hyphens"></u-input>
 </u-form-item>
 ```
 
-##### 多字段的规则列表
+##### Multi-Field Rule List
 
-一个表单经常需要给的多个字段添加规则列表。为了方便，我们支持在`<u-form>`中汇总传入，通过`<u-form-item>`的`name`属性来区别。
+A form often needs to add a list of rules for multiple fields. For convenience, we support summarizing and passing them in `<u-form>`, and distinguishing them by the `name` attribute of `<u-form-item>`.
 
 ``` vue
 <template>
 <u-form :rules="rules">
-    <u-form-item label="用户名" name="username">
-        <u-input maxlength="12" placeholder="4~12个字符"></u-input>
+    <u-form-item label="Username" name="username">
+        <u-input maxlength="12" placeholder="4~12 characters"></u-input>
     </u-form-item>
-    <u-form-item label="邮箱" name="email">
-        <u-input maxlength="24" placeholder="请输入邮箱"></u-input>
+    <u-form-item label="Email" name="email">
+        <u-input maxlength="24" placeholder="Please enter your email address"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -155,14 +155,14 @@
 export default {
     data() {
         return {
-            rules: {
+            rules:
                 username: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入用户名' },
-                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: '请输入4~12个字符' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your username' },
+                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: 'Please enter 4 to 12 characters' },
                 ],
                 email: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入邮箱' },
-                    { type: 'email', trigger: 'blur', message: '邮箱格式不正确' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your email address' },
+                    { type: 'email', trigger: 'blur', message: 'The email format is incorrect' },
                 ],
             },
         };
@@ -171,23 +171,23 @@ export default {
 </script>
 ```
 
-#### 规则扩充和异步验证
+#### Rule Expansion and Asynchronous Validation
 
-我们使用了[async-validator](https://github.com/yiminghe/async-validator)这个库，基本可以满足这两项功能。
+We used the [async-validator](https://github.com/yiminghe/async-validator) library, which can basically meet these two functions.
 
-比如下面的例子是关于自定义规则的，判断两次输入的密码是否一致：
+For example, the following example is about custom rules, which determines whether the passwords entered twice are consistent:
 
 ``` vue
 <template>
 <u-form :rules="rules">
-    <u-form-item label="密码" name="password">
-        <u-input type="password" v-model="model.password" maxlength="12" placeholder="6~12个字符"></u-input>
+    <u-form-item label="Password" name="password">
+        <u-input type="password" v-model="model.password" maxlength="12" placeholder="6~12 characters"></u-input>
     </u-form-item>
-    <u-form-item label="确认密码" name="confirm">
-        <u-input type="password" v-model="model.confirm" maxlength="12" placeholder="6~12个字符"></u-input>
+    <u-form-item label="Confirm Password" name="confirm">
+        <u-input type="password" v-model="model.confirm" maxlength="12" placeholder="6~12 characters"></u-input>
     </u-form-item>
     <u-form-item>
-        <u-button>设置</u-button>
+        <u-button>Settings</u-button>
     </u-form-item>
 </u-form>
 </template>
@@ -200,13 +200,13 @@ export default {
                 password: '',
                 confirm: '',
             },
-            rules: {
+            rules:
                 password: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入密码' },
-                    { type: 'string', min: 6, max: 12, trigger: 'blur', message: '6~12个字符' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your password' },
+                    { type: 'string', min: 6, max: 12, trigger: 'blur', message: '6~12 characters' },
                 ],
                 confirm: [
-                    { type: 'string', required: true, trigger: 'blur', message: '两次输入的密码不一致', validator: (rule, value, callback) => {
+                    { type: 'string', required: true, trigger: 'blur', message: 'The two entered passwords are inconsistent', validator: (rule, value, callback) => {
                         value === this.model.password ? callback() : callback(new Error());
                     } },
                 ],
@@ -217,13 +217,13 @@ export default {
 </script>
 ```
 
-下面的例子是关于异步验证的，判断用户名是否已被使用，尝试输入“aaaa”：
+The following example is about asynchronous verification. It determines whether the username has been used and tries to enter "aaaa":
 
 ``` vue
 <template>
 <u-form :rules="rules">
-    <u-form-item label="用户名" name="username">
-        <u-input maxlength="12" placeholder="4~12个字符"></u-input>
+    <u-form-item label="Username" name="username">
+        <u-input maxlength="12" placeholder="4~12 characters"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -232,7 +232,7 @@ export default {
 const checkUsername = function (username) {
     return new Promise((resolve, reject) => {
         if (['aaaa', 'abcd', '1234'].includes(username))
-            reject('该用户名已被使用');
+            reject('This user name has been used');
         else
             resolve();
     });
@@ -241,11 +241,11 @@ const checkUsername = function (username) {
 export default {
     data() {
         return {
-            rules: {
+            rules:
                 username: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入用户名' },
-                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: '请输入4~12个字符' },
-                    { type: 'string', required: true, trigger: 'blur', message: '该用户名已被使用', validator: (rule, value, callback) => {
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your username' },
+                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: 'Please enter 4 to 12 characters' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'This username has been used', validator: (rule, value, callback) => {
                         checkUsername(value)
                             .then(() => callback())
                             .catch((err) => callback(new Error(err)));
@@ -258,28 +258,28 @@ export default {
 </script>
 ```
 
-#### 触发方式
+#### Trigger Method
 
-表单验证行为按照实时性通常可以分为三种：提交验证、失焦验证、实时验证，分别对应验证规则`trigger`的三种触发方式：`submit`, `blur`, `input`，规则中默认为`submit`。
+Form validation behaviors can usually be divided into three types according to real-time performance: submission validation, out-of-focus validation, and real-time validation, which correspond to the three triggering methods of the validation rule `trigger`: `submit`, `blur`, `input`. The default in the rule is `submit`.
 
-另外还有一种行为叫表单限制，不属于表单验证，但通常与之配合使用。
+There is another behavior called form restriction, which is not part of form validation but is usually used in conjunction with it.
 
 
-##### 提交验证
+##### Submit Verification
 
-点击表单提交按钮时才对表单中所有控件进行验证，通常对应submit按钮的`click`事件。示例如下：
+All controls in the form are validated only when the form submit button is clicked, which usually corresponds to the `click` event of the submit button. The following is an example:
 
 ``` vue
 <template>
 <u-form ref="form" :rules="rules">
-    <u-form-item label="用户名" name="username">
-        <u-input maxlength="12" placeholder="4~12个字符"></u-input>
+    <u-form-item label="Username" name="username">
+        <u-input maxlength="12" placeholder="4~12 characters"></u-input>
     </u-form-item>
-    <u-form-item label="邮箱" name="email">
-        <u-input maxlength="24" placeholder="请输入邮箱"></u-input>
+    <u-form-item label="Email" name="email">
+        <u-input maxlength="24" placeholder="Please enter your email address"></u-input>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary" @click="submit()">提交</u-button>
+        <u-button color="primary" @click="submit()">Submit</u-button>
     </u-form-item>
 </u-form>
 </template>
@@ -288,14 +288,14 @@ export default {
 export default {
     data() {
         return {
-            rules: {
+            rules:
                 username: [
-                    { type: 'string', required: true, message: '请输入用户名' },
-                    { type: 'string', min: 4, max: 12, message: '请输入4~12个字符' },
+                    { type: 'string', required: true, message: 'Please enter your username' },
+                    { type: 'string', min: 4, max: 12, message: 'Please enter 4 to 12 characters' },
                 ],
                 email: [
-                    { type: 'string', required: true, message: '请输入邮箱' },
-                    { type: 'email', message: '邮箱格式不正确' },
+                    { type: 'string', required: true, message: 'Please enter your email address' },
+                    { type: 'email', message: 'The email format is incorrect' },
                 ],
             },
         };
@@ -303,7 +303,7 @@ export default {
     methods: {
         submit() {
             this.$refs.form.validate()
-                .then(() => alert('提交成功'))
+                .then(() => alert('Submission successful'))
                 .catch(() => { /* noop */ });
         },
     },
@@ -311,18 +311,18 @@ export default {
 </script>
 ```
 
-##### 失焦验证
+###### Loss of Focus Verification
 
-在表单控件失去焦点时对该控件进行验证，通常对应表单控件的`blur`事件。示例如下：
+Validate the form control when it loses focus, usually corresponding to the `blur` event of the form control. The following is an example:
 
 ``` vue
 <template>
 <u-form ref="form" :rules="rules">
-    <u-form-item label="用户名" name="username">
-        <u-input maxlength="12" placeholder="4~12个字符"></u-input>
+    <u-form-item label="Username" name="username">
+        <u-input maxlength="12" placeholder="4~12 characters"></u-input>
     </u-form-item>
-    <u-form-item label="邮箱" name="email">
-        <u-input maxlength="24" placeholder="请输入邮箱"></u-input>
+    <u-form-item label="Email" name="email">
+        <u-input maxlength="24" placeholder="Please enter your email address"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -331,14 +331,14 @@ export default {
 export default {
     data() {
         return {
-            rules: {
+            rules:
                 username: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入用户名' },
-                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: '请输入4~12个字符' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your username' },
+                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: 'Please enter 4 to 12 characters' },
                 ],
                 email: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入邮箱' },
-                    { type: 'email', trigger: 'blur', message: '邮箱格式不正确' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your email address' },
+                    { type: 'email', trigger: 'blur', message: 'The email format is incorrect' },
                 ],
             },
         };
@@ -347,20 +347,20 @@ export default {
 </script>
 ```
 
-##### 实时验证
+##### Real-Time Verification
 
-在表单控件的值实时输入改变时，对该控件进行验证，通常对应表单的`input`事件。当只激活实时验证时，失焦验证会跳过此规则并且覆盖原来的结果，因此通常我们需要采用实时与失焦叠加的方式`input+blur`。
+When the value of a form control changes in real-time input, the control is validated, usually corresponding to the form's `input` event. When only real-time validation is activated, out-of-focus validation will skip this rule and overwrite the original result, so we usually need to use the real-time and out-of-focus superposition method `input+blur`.
 
-下面的例子中，对用户名长度和邮箱格式的判断为实时验证。其中邮箱的验证没有采用实时与失焦叠加的方式，可以发现这种方式不是很合理。
+In the following example, the username length and email format are verified in real time. The email verification does not use the real-time and out-of-focus superposition method, which is not very reasonable.
 
 ``` vue
 <template>
 <u-form ref="form" :rules="rules">
-    <u-form-item label="用户名" name="username">
-        <u-input maxlength="12" placeholder="4~12个字符"></u-input>
+    <u-form-item label="Username" name="username">
+        <u-input maxlength="12" placeholder="4~12 characters"></u-input>
     </u-form-item>
-    <u-form-item label="邮箱" name="email">
-        <u-input maxlength="24" placeholder="请输入邮箱"></u-input>
+    <u-form-item label="Email" name="email">
+        <u-input maxlength="24" placeholder="Please enter your email address"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -369,14 +369,14 @@ export default {
 export default {
     data() {
         return {
-            rules: {
+            rules:
                 username: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入用户名' },
-                    { type: 'string', min: 4, max: 12, trigger: 'input+blur', message: '请输入4~12个字符' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your username' },
+                    { type: 'string', min: 4, max: 12, trigger: 'input+blur', message: 'Please enter 4 to 12 characters' },
                 ],
                 email: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入邮箱' },
-                    { type: 'email', trigger: 'input', message: '邮箱格式不正确' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your email address' },
+                    { type: 'email', trigger: 'input', message: 'The email format is incorrect' },
                 ],
             },
         };
@@ -385,38 +385,38 @@ export default {
 </script>
 ```
 
-##### 表单限制
+##### Form Restrictions
 
-在表单控件的值改变时，对该值限制在规定的长度、范围或者格式内，如`<input>`控件的部分`type`和`maxlength`的限制行为等：
+When the value of a form control changes, the value is restricted to a specified length, range, or format, such as the partial `type` and `maxlength` restrictions of the `<input>` control:
 
 ``` html
 <u-form>
-    <u-form-item label="用户名">
-        <u-input maxlength="4" placeholder="不超过4个字符"></u-input>
+    <u-form-item label="Username">
+        <u-input maxlength="4" placeholder="No more than 4 characters"></u-input>
     </u-form-item>
 </u-form>
 ```
 
-关于限制格式，我们之后计划给`<u-input>`实现一个`format`属性。
+Regarding format constraints, we plan to implement a `format` attribute for `<u-input>` in the future.
 
 
-### 数据比较
+### Data Comparison
 
-### 数据缓存
+### Data Cache
 
-## 扩充控件
+## Expand Controls
 
-`<u-form>`、`<u-form-group>`、`<u-form>`三种组件构成一个基本的表单体系，在大部分场景可以直接使用，不需要做扩展。而表单控件在业务中是多样的，原型组件库不可能完全覆盖，有很多需要自行设计。
+The three components of `<u-form>`, `<u-form-group>`, and `<u-form>` constitute a basic form system, which can be used directly in most scenarios without expansion. However, form controls are diverse in business, and the prototype component library cannot fully cover them, and many need to be designed by yourself.
 
-下面会讲述，如何设计表单控件，接入到Vusion的表单体系中，从而可以统一走表单的规则验证、事件处理等通道，无需额外处理。
+The following will describe how to design form controls and connect them to Vusion's form system, so that the form's rule validation, event handling and other channels can be unified without additional processing.
 
-### 简单示例
+### Simple Example
 
-我们先拿一个最简单的表单控件——复选框`<e-checkbox>`来举例。
+Let's take the simplest form control - checkbox `<e-checkbox>` as an example.
 
-#### 结构和样式
+#### Structure and Style
 
-首先可以很快实现它的结构和样式。
+First of all, its structure and style can be achieved quickly.
 
 ``` vue
 <template>
@@ -443,25 +443,25 @@ export default {
 </style>
 ```
 
-#### 属性
+#### Properties
 
-每个表单控件总有一个核心属性，通常用于绑定数据，比如：
+Each form control always has a core property, which is usually used to bind data, such as:
 
-- `<u-checkbox>`可以有一个表示选中状态的`checked`属性
-- `<u-date-picker>`可以有一个表示日期的`date`属性
-- `<u-number-input>`可以有一个表示数字的`number`属性
+- `<u-checkbox>` can have a `checked` attribute to indicate the selected state
+- `<u-date-picker>` can have a `date` attribute representing a date
+- `<u-number-input>` can have a `number` attribute representing a number
 
-但在Vusion中，我们推荐统一使用`value`属性来处理，因为：
+But in Vusion, we recommend using the `value` attribute uniformly because:
 
-- 经常有对表单控件做统一处理的情形，比如有的时候你可能需要遍历：`form.fields.map((field) => field.value)`
-- 为了与Vue的`v-model`保持一致（虽然它也支持自定义）
-- 有时实在想不出什么好的名字，不如直接用`value`也不显得混乱
+- There are often situations where form controls need to be processed uniformly. For example, sometimes you may need to traverse: `form.fields.map((field) => field.value)`
+- To be consistent with Vue's `v-model` (although it also supports customization)
+- Sometimes you can't think of a good name, so it's better to just use `value` without being confusing.
 
-因此，我们给上面的示例添加属性：
+So, we add the following properties to the example above:
 
 ``` vue
 <template>
-<div :class="$style.root" @click="value = !value">{{ value ? '✓' : '&nbsp;' }}</div>
+<div :class="$style.root" @click="value = !value">{{ value ? '✓' : ' ' }}</div>
 </template>
 
 <script>
@@ -487,19 +487,19 @@ export default {
 </style>
 ```
 
-#### 单向流与双向绑定
+#### One-Way Flow and Two-Way Binding
 
-熟悉Vue的童鞋都知道，Vue2.x为了保证单向数据流，放弃了1.x的双向绑定机制。这是好事，因为不用担心内部组件悄悄地改变父组件的状态。
+Those who are familiar with Vue know that Vue2.x abandons the two-way binding mechanism of 1.x to ensure one-way data flow. This is a good thing, because there is no need to worry about internal components quietly changing the state of the parent component.
 
-但与此同时，也给我们的组件设计稍微带来点不便：对于一个属性，我们往往需要两个变量来维护。
+But at the same time, it also brings a little inconvenience to our component design: for one attribute, we often need two variables to maintain.
 
-比如在上面的例子中，我们只有一个prop，当点击复选框时，Vue却不允许修改这个属性。所以我们还需要一个data变量来维护实际的内部状态。
+For example, in the example above, we only have one prop, but Vue does not allow us to modify this property when the checkbox is clicked. So we also need a data variable to maintain the actual internal state.
 
-##### 命名规范
+##### Naming Conventions
 
-这里就牵扯到一个命名规范了。prop中一个`value`，data中一个`value`，名字重复，怎么定义比较好？
+This involves a naming convention. There is a `value` in prop and a `value` in data. How should we define it better?
 
-``` javascript
+```javascript
 {
     props: {
         value: { type: Boolean, default: true },
@@ -510,19 +510,19 @@ export default {
 }
 ```
 
-首先，`value`和`_value`是不行的，因为Vue不会对`_`开头的变量做依赖管理。然后，有的组件库中是用`initValue`或者`defaultValue`来表示prop，用`value`来表示data，我认为这样也不合理，因为prop也是会变的，不一定是一个默认值或初始值。
+First of all, `value` and `_value` are not acceptable, because Vue does not manage dependencies for variables starting with `_`. Then, some component libraries use `initValue` or `defaultValue` to represent props, and `value` to represent data. I think this is not reasonable either, because props can also change, and are not necessarily a default value or initial value.
 
-我们更倾向组件暴露的API简洁友好，所以还是决定对data下手。Vusion中规定与prop相关的那个data变量，在前面加上`current`前缀，表示当前的一种状态。比如`currentValue`变量对应`value`属性，`currentPage`变量对应`page`属性，`currentExpanded`变量对应`expanded`属性等。
+We prefer the API exposed by the component to be concise and friendly, so we decided to start with data. Vusion stipulates that the data variable related to prop is prefixed with `current` to indicate the current state. For example, the `currentValue` variable corresponds to the `value` attribute, the `currentPage` variable corresponds to the `page` attribute, the `currentExpanded` variable corresponds to the `expanded` attribute, etc.
 
-##### 监听属性
+###### Monitoring Properties
 
-这里需要注意的是，当变成两个变量的时候，外部传入的状态与内部状态分离，也就是说内部状态不会响应外部状态的变更。这时需要一个额外的watcher来处理。
+It should be noted here that when it becomes two variables, the external state is separated from the internal state, which means that the internal state will not respond to changes in the external state. At this time, an additional watcher is needed to handle it.
 
-考虑到这几点，示例修改为下面的形式：
+Taking these points into consideration, the example is modified to the following form:
 
 ``` vue
 <template>
-<div :class="$style.root" @click="currentValue = !currentValue">{{ currentValue ? '✓' : '&nbsp;' }}</div>
+<div :class="$style.root" @click="currentValue = !currentValue">{{ currentValue ? '✓' : ' ' }}</div>
 </template>
 
 <script>
@@ -536,7 +536,7 @@ export default {
             currentValue: this.value,
         };
     },
-    watch: {
+    watch:
         value(value) {
             this.currentValue = value;
         },
@@ -558,25 +558,25 @@ export default {
 </style>
 ```
 
-##### 双向绑定
+##### Two-Way Binding
 
-最后，为了让组件使用起来更方便，Vue2提供了`v-model`和`.sync`两种双向绑定语法糖，只需添加两个事件即可。
+Finally, in order to make components more convenient to use, Vue2 provides two two-way binding syntax sugars, `v-model` and `.sync`. You only need to add two events.
 
-*下面的例子为了让大家更好地观察双向绑定，将`<e-checkbox>`组件的代码放入了components中。*
+*In order to let you better observe the two-way binding, the following example puts the code of the `<e-checkbox>` component into components. *
 
 ``` vue
 <template>
 <div>
-    <div>复选框：<e-checkbox :class="$style.checkbox" v-model="checked"></e-checkbox></div>
-    <div>绑定值：{{ checked }}</div>
+    <div>Checkbox: <e-checkbox :class="$style.checkbox" v-model="checked"></e-checkbox></div>
+    <div>Binding value: {{ checked }}</div>
 </div>
 </template>
 
 <script>
 export default {
-    components: {
+    components:
         'e-checkbox': {
-            template: `<div @click="check()">{{ currentValue ? '✓' : '&nbsp;' }}</div>`,
+            template: `<div @click="check()">{{ currentValue ? '✓' : ' ' }}</div>`,
             props: {
                 value: { type: Boolean, default: false },
             },
@@ -585,7 +585,7 @@ export default {
                     currentValue: this.value,
                 };
             },
-            watch: {
+            watch:
                 value(value) {
                     this.currentValue = value;
                 },
@@ -619,21 +619,21 @@ export default {
 </style>
 ```
 
-#### 继承 MField
+#### Inheriting MField
 
-到目前为止，我们仅仅是描述了如何按规范实现了一个表单控件，但还没有与Vusion的表单体系联系在一起。
+So far, we have only described how to implement a form control according to the specification, but have not yet connected it with the Vusion form system.
 
-有关触发验证等功能已经封装在`<m-field>`这个基类组件（或叫Mixin）中了，我们要做的只需继承一下它即可。
+The functions related to triggering validation have been encapsulated in the base class component (or Mixin) `<m-field>`. All we have to do is inherit it.
 
-下面是一个很简单的复选框与表单验证相关的例子——验证是否同意了服务条款。
+Below is a very simple example of checkboxes and form validation - verifying whether the terms of service are agreed.
 
 ``` vue
 <template>
 <u-form ref="form">
-    <u-form-item label="复选框" required :rules="rules">
-        <e-checkbox :class="$style.checkbox"></e-checkbox> 同意并遵守服务条款
+    <u-form-item label="Checkbox" required :rules="rules">
+        <e-checkbox :class="$style.checkbox"></e-checkbox> Agree and abide by the terms of service
     </u-form-item>
-    <u-form-item><u-button color="primary" @click="$refs.form.validate()">提交</u-button></u-form-item>
+    <u-form-item><u-button color="primary" @click="$refs.form.validate()">Submit</u-button></u-form-item>
 </u-form>
 </template>
 
@@ -641,10 +641,10 @@ export default {
 import { MField } from '@@';
 
 export default {
-    components: {
+    components:
         'e-checkbox': {
             mixins: [MField],
-            template: `<div @click="check()">{{ currentValue ? '✓' : '&nbsp;' }}</div>`,
+            template: `<div @click="check()">{{ currentValue ? '✓' : ' ' }}</div>`,
             props: {
                 value: { type: Boolean, default: false },
             },
@@ -653,7 +653,7 @@ export default {
                     currentValue: this.value,
                 };
             },
-            watch: {
+            watch:
                 value(value) {
                     this.currentValue = value;
                 },
@@ -669,8 +669,8 @@ export default {
     },
     data() {
         return {
-            rules: [
-                { type: 'boolean', required: true, trigger: 'input', message: '您还未接受服务条款', validator(rule, value, callback) {
+            rules:
+                { type: 'boolean', required: true, trigger: 'input', message: 'You have not accepted the terms of service', validator(rule, value, callback) {
                     value ? callback() : callback(new Error(false));
                 } },
             ],
@@ -693,11 +693,11 @@ export default {
 </style>
 ```
 
-#### 事件
+#### Event
 
-上面我们只抛了一个`input`事件。为了保证功能实现的完整性与一致性，对于一个表单控件，我们最好暴露这4种事件：`input`、`change`、`focus`和`blur`。
+In the above, we only throw an `input` event. In order to ensure the completeness and consistency of the function implementation, for a form control, we'd better expose these four events: `input`, `change`, `focus` and `blur`.
 
-对于组件中有focusable的元素，我们照着抛出来就行；如果没有的话，我们可以用`tabindex`来设置。
+For focusable elements in the component, we just throw them out; if not, we can use `tabindex` to set them.
 
 ``` vue
 <template>
@@ -705,7 +705,7 @@ export default {
     @click="check()"
     tabindex="0" @keydown.space.prevent @keyup.space.prevent="check()"
     @focus="onFocus" @blur="onBlur">
-    {{ currentValue ? '✓' : '&nbsp;' }}</div>
+    {{ currentValue ? '✓' : ' ' }}</div>
 </template>
 
 <script>
@@ -722,7 +722,7 @@ export default {
             currentValue: this.value,
         };
     },
-    watch: {
+    watch:
         value(value) {
             this.currentValue = value;
         },
@@ -757,13 +757,13 @@ export default {
 </style>
 ```
 
-### 复杂示例
+### Complex Example
 
-再举一个复杂一点的例子，假设我们需要一个用户填写IP的表单控件`<e-ip-input>`，表单提交时要求验证IP格式的正确性。
+To give a more complex example, suppose we need a form control `<e-ip-input>` for users to fill in their IP addresses, and when the form is submitted, we need to verify the correctness of the IP format.
 
-#### 结构和样式
+#### Structure and Style
 
-同样，可以很快产出这个组件的结构和样式。
+Similarly, the structure and style of this component can be quickly generated.
 
 ``` vue
 <template>
@@ -790,9 +790,9 @@ export default {
 </style>
 ```
 
-#### 属性
+#### Properties
 
-根据之前的约定，核心属性我们取`value`而不是`ip`。
+According to the previous agreement, we use `value` instead of `ip` for the core attribute.
 
 ``` vue
 <template>
@@ -815,7 +815,7 @@ export default {
             parts: [],
         };
     },
-    watch: {
+    watch:
         value(value) {
             this.parts = value.split('.');
         },
@@ -832,21 +832,21 @@ export default {
 </style>
 ```
 
-#### 单向流与双向绑定
+#### One-Way Flow and Two-Way Binding
 
-*下面的例子为了让大家更好地观察双向绑定，将`<e-checkbox>`组件的代码放入了components中。*
+*In order to let you better observe the two-way binding, the following example puts the code of the `<e-checkbox>` component into components. *
 
 ``` vue
 <template>
 <div>
-    <div>IP框：<e-ip-input v-model="ip"></e-ip-input></div>
-    <div>绑定值：{{ ip }}</div>
+    <div>IP box: <e-ip-input v-model="ip"></e-ip-input></div>
+    <div>Binding value: {{ ip }}</div>
 </div>
 </template>
 
 <script>
 export default {
-    components: {
+    components:
         'e-ip-input': {
             template: `<div style="display: inline-block">
                 <u-input maxlength="3" v-model="parts[0]" @input="onInput()" style="width: 60px"></u-input> .
@@ -862,7 +862,7 @@ export default {
                     parts: [],
                 };
             },
-            watch: {
+            watch:
                 value(value) {
                     this.parts = value.split('.');
                 },
@@ -884,15 +884,15 @@ export default {
 </script>
 ```
 
-#### 继承Field并补全事件
+#### Inherit Field and Complete Events
 
 ``` vue
 <template>
 <u-form ref="form">
-    <u-form-item label="IP地址" required :rules="rules">
+    <u-form-item label="IP address" required :rules="rules">
         <e-ip-input v-model="model.ip"></e-ip-input>
     </u-form-item>
-    <u-form-item><u-button color="primary" @click="$refs.form.validate().catch(() => { /* noop */ })">提交</u-button></u-form-item>
+    <u-form-item><u-button color="primary" @click="$refs.form.validate().catch(() => { /* noop */ })">Submit</u- button></u-form-item>
 </u-form>
 </template>
 
@@ -900,7 +900,7 @@ export default {
 import { MField } from '@@';
 
 export default {
-    components: {
+    components:
         'e-ip-input': {
             mixins: [MField],
             template: `<div style="display: inline-block">
@@ -929,7 +929,7 @@ export default {
                     parts: [],
                 };
             },
-            watch: {
+            watch:
                 value(value) {
                     this.parts = value.split('.');
                 },
@@ -961,17 +961,17 @@ export default {
             model: {
                 ip: undefined,
             },
-            rules: [
-                { type: 'string', required: true, trigger: 'blur', message: '请填写IP' },
-                { type: 'string', required: true, message: '请填写完整的IP', validator(rule, value, callback) {
+            rules:
+                { type: 'string', required: true, trigger: 'blur', message: 'Please fill in the IP' },
+                { type: 'string', required: true, message: 'Please fill in the complete IP', validator(rule, value, callback) {
                     const parts = value.split('.');
                     parts.length === 4 ? callback() : callback(new Error(''));
                 } },
-                { type: 'string', required: true, trigger: 'input+blur', message: '请填写数字', validator(rule, value, callback) {
+                { type: 'string', required: true, trigger: 'input+blur', message: 'Please fill in the number', validator(rule, value, callback) {
                     const parts = value.split('.');
                     parts.every((part) => !isNaN(part) && part !== '') ? callback() : callback(new Error());
                 } },
-                { type: 'string', required: true, trigger: 'input+blur', message: '请填写0-255的数字', validator(rule, value, callback) {
+                { type: 'string', required: true, trigger: 'input+blur', message: 'Please fill in a number between 0 and 255', validator(rule, value, callback) {
                     const parts = value.split('.');
                     /* eslint-disable-next-line */
                     parts.every((part) => 0 <= part && part < 256) ? callback() : callback(new Error());
@@ -985,6 +985,6 @@ export default {
 
 ## FAQ
 
-#### 为什么要将验证逻辑放在`<u-form-item>`而不是`<m-field>`中？
+#### Why Put Validation Logic in `<u-form-item>` Instead of `<m-field>`?
 
-验证有一部分功能是关于消息提示的，这牵扯到模板的实现。如果验证逻辑放在`<m-field>`中，那么就要求每个子类的模板都要实现这部分功能。一个组件最好只干一件事情，所以我们把它划到了`<u-form-item>`中，虽然要添加一些组件间的通信逻辑，但这些都是必要的。
+Part of the validation function is about message prompts, which involves the implementation of templates. If the validation logic is placed in `<m-field>`, then each subclass template is required to implement this part of the function. A component is best to do only one thing, so we put it in `<u-form-item>`. Although some communication logic between components needs to be added, these are all necessary.

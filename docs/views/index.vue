@@ -18,7 +18,7 @@
 </template>
 
 <script>
-const base = 'https://vusion.dev';
+const base = 'https://kubevue.dev';
 
 export default {
     data() {

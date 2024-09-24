@@ -44,7 +44,7 @@
 
     /* Fonts */
     /* stylelint-disable value-keyword-case */
-    --font-family-zh-CN: "Helvetica Neue", helvetica, tahoma, arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    --font-family-en-US: "Helvetica Neue", helvetica, tahoma, arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
     --font-family-code: menlo, consolas, monaco, monospace;
     --tab-size: 4;
     --font-size-base: 14px;

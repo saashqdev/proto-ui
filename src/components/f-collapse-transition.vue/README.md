@@ -22,7 +22,7 @@
             <u-menu-item to="/guides/">指南</u-menu-item>
             <u-menu-item to="/api/">API</u-menu-item>
             <u-menu-item to="/components/">原型组件</u-menu-item>
-            <u-menu-item href="https://github.com/vusion">GitHub</u-menu-item>
+            <u-menu-item href="https://github.com/saashqdev">GitHub</u-menu-item>
         </u-menu>
     </f-collapse-transition>
 </div>

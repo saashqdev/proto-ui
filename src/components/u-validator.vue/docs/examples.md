@@ -139,7 +139,7 @@ interface Rule {
 type Validator = (value: any, ...args: any[]) => boolean | Promise<boolean>;
 ```
 
-参见[内置的验证器](https://github.com/vusion/atom-validator/blob/master/src/builtIn/validators.ts)。
+参见[内置的验证器](https://github.com/saashqdev/atom-validator/blob/master/src/builtIn/validators.ts)。
 
 验证函数（ValidateFunc）是验证规则需要即时调用的函数，常用于处理同步或异步方法。与验证器有所不同，它的结构如下：
 

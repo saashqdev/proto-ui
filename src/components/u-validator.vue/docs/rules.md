@@ -1033,12 +1033,12 @@ export default {
 
 输入内容是否为合法的手机号。
 
-- `locale`：所在地区，例如`zh-CN`、`ja-JP`等。可以是一个字符串或数组。如果不填，则尝试自动匹配所有地区。
+- `locale`：所在地区，例如`en-US`、`ja-JP`等。可以是一个字符串或数组。如果不填，则尝试自动匹配所有地区。
 
 - `strict`：是否检验国家代号。如果为`true`，则必须以`+`和国家代码开头。
 
 ``` html
-<u-validator label="手机" rules="mobile('zh-CN')">
+<u-validator label="手机" rules="mobile('en-US')">
     <u-input placeholder="请输入手机号码"></u-input>
 </u-validator>
 ```

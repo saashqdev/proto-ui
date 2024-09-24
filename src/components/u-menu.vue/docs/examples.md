@@ -11,7 +11,7 @@
                 <u-menu-item to="/guides/">指南</u-menu-item>
                 <u-menu-item to="/api/">API</u-menu-item>
                 <u-menu-item to="/components/">原型组件</u-menu-item>
-                <u-menu-item href="https://github.com/vusion">GitHub</u-menu-item>
+                <u-menu-item href="https://github.com/saashqdev">GitHub</u-menu-item>
             </u-menu>
         </u-popup>
     </u-button>
@@ -22,7 +22,7 @@
                 <u-menu-item to="/guides/">指南</u-menu-item>
                 <u-menu-item to="/api/">API</u-menu-item>
                 <u-menu-item to="/components/">原型组件</u-menu-item>
-                <u-menu-item href="https://github.com/vusion">GitHub</u-menu-item>
+                <u-menu-item href="https://github.com/saashqdev">GitHub</u-menu-item>
             </u-menu>
         </m-popper>
     </u-button>
@@ -71,7 +71,7 @@
                 <u-menu-item to="/ui-design">组件设计方案</u-menu-item>
             </u-menu>
         </u-menu-item>
-        <u-menu-item target="_blank" href="https://github.com/vusion">GitHub</u-menu-item>
+        <u-menu-item target="_blank" href="https://github.com/saashqdev">GitHub</u-menu-item>
     </u-menu>
     <div>
         <u-button>
@@ -115,7 +115,7 @@
                             <u-menu-item to="/ui-design">组件设计方案</u-menu-item>
                         </u-menu>
                     </u-menu-item>
-                    <u-menu-item target="_blank" href="https://github.com/vusion">GitHub</u-menu-item>
+                    <u-menu-item target="_blank" href="https://github.com/saashqdev">GitHub</u-menu-item>
                 </u-menu>
             </u-popup>
         </u-button>

@@ -17,9 +17,9 @@
 
 ``` html
 <u-linear-layout>
-    <u-button href="https://github.com/vusion/vusion" target="_blank">href</u-button>
+    <u-button href="https://github.com/saashqdev/kubevue" target="_blank">href</u-button>
     <u-button to="/some/router/path">to</u-button>
-    <u-button href="https://github.com/vusion/vusion" disabled>href</u-button>
+    <u-button href="https://github.com/saashqdev/kubevue" disabled>href</u-button>
 </u-linear-layout>
 ```
 

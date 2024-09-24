@@ -15,9 +15,9 @@
         <u-navbar slot="head">
             <u-logo slot="left">演示</u-logo>
             <u-navbar-item href="/">首页</u-navbar-item>
-            <u-navbar-item href="https://vusion.github.io" target="_blank">Vusion</u-navbar-item>
-            <u-navbar-item href="https://github.com/vusion/cloud-ui" target="_blank">组件库</u-navbar-item>
-            <u-navbar-item href="https://github.com/vusion-templates/admin-cloud-fs" target="_blank">GitHub</u-navbar-item>
+            <u-navbar-item href="https://kubevue.github.io" target="_blank">kubevue</u-navbar-item>
+            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">组件库</u-navbar-item>
+            <u-navbar-item href="https://github.com/saashqdev-templates/admin-cloud-fs" target="_blank">GitHub</u-navbar-item>
             <div slot="right">
                 <u-navbar-dropdown style="width: 100px; margin-right: 10px;">
                     <div slot="title">user</div>
@@ -63,8 +63,8 @@
             <u-navbar>
                 <u-logo slot="left" style="margin-left: -20px;">演示</u-logo>
                 <u-navbar-item href="/">首页</u-navbar-item>
-                <u-navbar-item href="https://vusion.github.io" target="_blank">Vusion</u-navbar-item>
-                <u-navbar-item href="https://github.com/vusion/cloud-ui" target="_blank">组件库</u-navbar-item>
+                <u-navbar-item href="https://kubevue.github.io" target="_blank">kubevue</u-navbar-item>
+                <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">组件库</u-navbar-item>
                 <div slot="right">
                     <u-navbar-dropdown style="width: 100px; margin-right: 10px;">
                         <div slot="title">user</div>
@@ -110,8 +110,8 @@
         <u-navbar slot="head">
             <u-logo slot="left" style="margin-left: -20px;">演示</u-logo>
             <u-navbar-item href="/">首页</u-navbar-item>
-            <u-navbar-item href="https://vusion.github.io" target="_blank">Vusion</u-navbar-item>
-            <u-navbar-item href="https://github.com/vusion/cloud-ui" target="_blank">组件库</u-navbar-item>
+            <u-navbar-item href="https://kubevue.github.io" target="_blank">kubevue</u-navbar-item>
+            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">组件库</u-navbar-item>
             <div slot="right">
                 <u-navbar-dropdown style="width: 100px; margin-right: 10px;">
                     <div slot="title">user</div>
