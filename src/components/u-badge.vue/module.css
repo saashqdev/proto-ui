@@ -16,7 +16,7 @@
 }
 
 .root[corner] {
-    line-height: 1; /* 防止外面的 line-height 影响 */
+    line-height: 1; /* Prevent external line-height effects */
 }
 
 .root[corner] .value {

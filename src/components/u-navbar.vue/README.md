@@ -13,11 +13,11 @@
 
 ``` html
 <u-navbar>
-    <u-navbar-item to="/components">组件</u-navbar-item>
-    <u-navbar-item>概念</u-navbar-item>
-    <u-navbar-item disabled>指令</u-navbar-item>
+    <u-navbar-item to="/components">Components</u-navbar-item>
+    <u-navbar-item>Concept</u-navbar-item>
+    <u-navbar-item disabled>Command</u-navbar-item>
     <u-navbar-divider></u-navbar-divider>
-    <u-navbar-item>配置</u-navbar-item>
+    <u-navbar-item>Configuration</u-navbar-item>
     <u-navbar-item href="https://github.com/saashqdev/proto-ui">GitHub</u-navbar-item>
 </u-navbar>
 ```
@@ -32,9 +32,9 @@
 
 ``` html
 <u-navbar>
-    <u-navbar-item to="/components">组件</u-navbar-item>
-    <u-navbar-item>概念</u-navbar-item>
-    <u-navbar-item disabled>指令</u-navbar-item>
+    <u-navbar-item to="/components">Components</u-navbar-item>
+    <u-navbar-item>Concept</u-navbar-item>
+    <u-navbar-item disabled>Command</u-navbar-item>
     <u-navbar-item href="https://github.com/saashqdev/proto-ui">GitHub</u-navbar-item>
 </u-navbar>
 ```
@@ -62,9 +62,9 @@
 ``` html
 <u-navbar>
     <u-logo slot="left"></u-logo>
-    <u-navbar-item to="/components">组件</u-navbar-item>
-    <u-navbar-item>概念</u-navbar-item>
-    <u-navbar-item disabled>指令</u-navbar-item>
+    <u-navbar-item to="/components">Components</u-navbar-item>
+    <u-navbar-item>Concept</u-navbar-item>
+    <u-navbar-item disabled>Command</u-navbar-item>
     <u-navbar-item slot="right" href="https://github.com/saashqdev/proto-ui" target="_blank"><i-icon name="github" style="font-size: 24px;"></i-icon></u-navbar-item>
 </u-navbar>
 ```
@@ -78,21 +78,21 @@
     <u-navbar alignment="left">
         <u-logo slot="left"></u-logo>
         <u-navbar-item>指南</u-navbar-item>
-        <u-navbar-item>概念</u-navbar-item>
+        <u-navbar-item>Concept</u-navbar-item>
         <u-navbar-item to="/proto-ui">组件</u-navbar-item>
         <u-navbar-item slot="right" href="https://github.com/saashqdev/proto-ui" target="_blank"><i-icon name="github" style="font-size: 24px;"></i-icon></u-navbar-item>
     </u-navbar>
     <u-navbar alignment="center">
         <u-logo slot="left"></u-logo>
         <u-navbar-item>指南</u-navbar-item>
-        <u-navbar-item>概念</u-navbar-item>
+        <u-navbar-item>Concept</u-navbar-item>
         <u-navbar-item to="/proto-ui">组件</u-navbar-item>
         <u-navbar-item slot="right" href="https://github.com/saashqdev/proto-ui" target="_blank"><i-icon name="github" style="font-size: 24px;"></i-icon></u-navbar-item>
     </u-navbar>
     <u-navbar alignment="right">
         <u-logo slot="left"></u-logo>
         <u-navbar-item>指南</u-navbar-item>
-        <u-navbar-item>概念</u-navbar-item>
+        <u-navbar-item>Concept</u-navbar-item>
         <u-navbar-item to="/proto-ui">组件</u-navbar-item>
         <u-navbar-item slot="right" href="https://github.com/saashqdev/proto-ui" target="_blank"><i-icon name="github" style="font-size: 24px;"></i-icon></u-navbar-item>
     </u-navbar>
@@ -105,8 +105,8 @@
 
 ``` html
 <u-navbar>
-    <u-navbar-item to="/components">组件</u-navbar-item>
-    <u-navbar-item disabled>指令</u-navbar-item>
+    <u-navbar-item to="/components">Components</u-navbar-item>
+    <u-navbar-item disabled>Command</u-navbar-item>
     <u-navbar-dropdown title="下拉菜单">
         <u-navbar-menu>
             <u-navbar-menu-item>Basic</u-navbar-menu-item>

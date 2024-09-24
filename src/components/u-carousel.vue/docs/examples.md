@@ -10,8 +10,8 @@
 </u-carousel>
 ```
 
-### 动画
-#### fade
+### Animation
+#### Fade
 ``` html
 <u-carousel animation="fade">
     <u-carousel-item><img src="../../../assets/images/1.jpg"></u-carousel-item>
@@ -22,9 +22,9 @@
 </u-carousel>
 ```
 
-### 自动播放与循环
+### Auto Play and Loop
 
-通过`interval`来设置播放间隔。
+Use `interval` to set the playback interval.
 
 ``` html
 <u-carousel :interval="1000">
@@ -36,7 +36,7 @@
 </u-carousel>
 ```
 
-通过`autoplay`可以关闭自动播放。
+Autoplay can be turned off via `autoplay`.
 
 ``` html
 <u-carousel :autoplay="false">
@@ -48,7 +48,7 @@
 </u-carousel>
 ```
 
-通过`loop`可以关闭循环播放。
+Loop playback can be turned off through `loop`.
 
 ``` html
 <u-carousel :autoplay="false" :loop="false">

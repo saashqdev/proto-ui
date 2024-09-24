@@ -1,83 +1,83 @@
 - name: u-carousel
-  title: 幻灯片
+  title: Slideshow
   attrs:
     - name: value.sync
       type: any
       default: null
-      description: 播放位置
+      description: Playback position
     - name: autoplay
       type: boolean
       default: true
-      description: 是否自动播放
+      description: Whether to play automatically
     - name: loop
       type: boolean
       default: true
-      description: 是否循环播放，即首尾连接
+      description: Whether to play in a loop, i.e. connect the beginning and the end
     - name: interval
       type: number
       default: 4000
-      description: 幻灯片切换时间，如果设置值小于动画时长，会在动画完成后切换
+      description: Slide switching time. If the set value is less than the animation duration, the slide will switch after the animation is completed.
     - name: direction
       type: string
       default: right
-      description: 幻灯片播放方向
+      description: Slide show direction
     - name: animation
       type: string
       default: null
-      description: 幻灯片过渡动画
+      description: Slide transition animation
     # - name: router
     #   type: boolean
     #   default: false
-    #   description: 是否根据vue-router来控制选择播放至哪个位置
+    # description: Whether to control the playback position according to vue-router
   slots:
     - name: default
-      description: 插入`<u-carousel-item>`子组件。
+      description: Inserts a `<u-carousel-item>` child component.
   events:
     - name: before-select
-      description: 选择某一页前触发
+      description: Triggered before selecting a page
       params:
         - name: $event.value
           type: any
-          description: 选中项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.itemVM
           type: UCarouselItem
-          description: 选中项实例
+          description: Selected item instance
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: UCarousel
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择某一页时触发
+      description: Triggered when a page is selected
       params:
         - name: $event.value
           type: any
-          description: 选中项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.itemVM
           type: UCarouselItem
-          description: 选中项实例
+          description: Selected item instance
         - name: senderVM
           type: UCarousel
-          description: 发送事件实例
+          description: Send event instance
 - name: u-carousel-item
   attrs:
     - name: title
       type: string
       default: null
-      description: 该项的标题
+      description: The title of the item
     - name: value
       type: any
       default: null
-      description: 该项的值
+      description: The value of this item
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.
     - name: title
-      description: 自定义标题文本。
+      description: Custom title text.

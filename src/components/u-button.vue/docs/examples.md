@@ -1,16 +1,16 @@
 ### Basic Usage
 
 ``` html
-<u-button>按钮</u-button>
+<u-button>Button</u-button>
 ```
 
 ### Disable
 
 ``` html
-<u-button disabled>禁用</u-button>
+<u-button disabled>Disabled</u-button>
 ```
 
-### 链接
+### Link
 
 ``` html
 <u-linear-layout>
@@ -20,11 +20,11 @@
 </u-linear-layout>
 ```
 
-### 展示方式
+### Display Method
 
 ``` html
 <u-linear-layout direction="vertical" gap="small">
-    <u-button display="inline">行内按钮（默认）</u-button> 与文字对齐
-    <u-button display="block">块级按钮</u-button>
+    <u-button display="inline">Inline Button (default)</u-button> aligned with text
+    <u-button display="block">Block Level Button</u-button>
 </u-linear-layout>
 ```

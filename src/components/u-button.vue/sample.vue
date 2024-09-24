@@ -1,3 +1,3 @@
 <template>
-<u-button>按钮</u-button>
+<u-button>Button</u-button>
 </template>

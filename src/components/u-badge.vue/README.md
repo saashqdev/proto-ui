@@ -1,39 +1,39 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UBadge 徽章
+# UBadge badge
 
-**UI 组件**, **行内展示**
+**UI Components**, **Inline Display**
 
 ## Example
 ### Basic Usage
 
 ``` html
-<p>消息 <u-badge :value="3"></u-badge></p>
-<p>消息 <u-badge value="new"></u-badge></p>
+<p>Message <u-badge :value="3"></u-badge></p>
+<p>Message <u-badge value="new"></u-badge></p>
 ```
 
-### 右上角
+### Upper Right Corner
 
 ``` html
 <u-badge :value="3" corner>
-    <u-button>评论</u-button>
+    <u-button>Comment</u-button>
 </u-badge>
 ```
 
-### 最大值
+### Maximum Value
 
 ``` html
 <u-badge :value="120" :max="99" corner>
-    <u-button>评论</u-button>
+    <u-button>Comment</u-button>
 </u-badge>
 ```
 
-### 小圆点
+### Small Dots
 
 ``` html
-<p>消息 <u-badge :value="3" dot></u-badge></p>
+<p>Message <u-badge :value="3" dot></u-badge></p>
 <p><u-badge :value="3" corner dot>
-    <u-button>评论</u-button>
+    <u-button>Comment</u-button>
 </u-badge></p>
 ```
 
@@ -42,13 +42,13 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | number, string |  |  | 显示的值 |
-| max | number |  |  | 最大值，超过最大值会显示为`max+`的形式，要求`value`是 `Number`类型。 |
-| corner | boolean |  | `false` | 是否插入到右上角 |
-| dot | boolean |  | `false` | 是否显示为小圆点 |
+| value | number, string | | | Displayed value |
+| max | number | | | The maximum value. If it exceeds the maximum value, it will be displayed in the form of `max+`, and `value` is required to be of `Number` type. |
+| corner | boolean | | `false` | Whether to insert into the upper right corner |
+| dot | boolean | | `false` | Whether to display as small dots |
 
 ### Slots
 
 #### (default)
 
-插入需要附加徽章的元素。
+Insert the element to which the badge needs to be attached.

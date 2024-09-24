@@ -1,4 +1,4 @@
 ## 0.1.2
 
-### ✨ 新特性：
-- 使用Vue@2.4.2的新功能`$listeners`，简化事件绑定写法，可以不加`.native`
+### ✨ New features:
+- Use the new function `$listeners` of Vue@2.4.2 to simplify event binding writing, you don’t need to add `.native`
