@@ -1,7 +1,7 @@
-如果要给某些节点添加展开/收起动画效果，但不知道节点的高度，这时动画光靠 CSS 的`transition`属性是实现不了的，需要用 JS 进行计算。
+If you want to add an expand/collapse animation effect to some nodes, but you don’t know the height of the node, then the animation cannot be achieved by relying solely on the `transition` property of CSS, and you need to use JS to calculate it.
 
-本组件对这种动画进行了封装，方便快速实现这种效果。需要完成以下几步工作：
+This component encapsulates this animation to facilitate quick implementation of this effect. The following steps need to be completed:
 
-- 给需要添加动画的节点外面包裹`<f-collapse-transition>`组件；
-- 给需要添加动画的节点在 CSS 中添加针对`height`、`padding-top`和`padding-bottom`几个属性的`transition`动画；
-- 使用`v-show`或`v-if`控制节点的显示/隐藏。
+- Wrap the `<f-collapse-transition>` component around the node that needs to be animated;
+- Add `transition` animations for the `height`, `padding-top` and `padding-bottom` properties in CSS to the nodes that need to be animated;
+- Use `v-show` or `v-if` to control the display/hiding of nodes.

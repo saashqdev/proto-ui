@@ -37,8 +37,8 @@ export const FDraggable = {
     mounted() {
         this.sourceEl = this.getSourceEl();
 
-        // 虽然 Vue 中一般子组件比父组件先 mounted，
-        // 但这里必须放到 mounted。不然可能在 v-if 的情况下出不来。。
+        // Although in Vue, child components are generally mounted before their parent components,
+        // But it must be placed here mounted. Otherwise, it may not come out under v-if. 
         /* eslint-disable consistent-this */
         const parentVM = this;
         this.childVM = new Vue({
@@ -81,11 +81,11 @@ export const FDraggable = {
                 else if (this.source === 'offset-parent')
                     return this.$el.offsetParent;
                 else if (this.source === 'context-parent') {
-                    // 求上下文中的 parent
+                    // Find the parent in the context
                     if (this.$parent === this.$vnode.context)
                         return this.$el.parentElement;
 
-                    // Vue 的 vnode.parent 没有连接起来，需要自己找，不知道有没有更好的方法
+                    // Vue's vnode.parent is not connected. You need to find it yourself. I don't know if there is a better way.
                     let parentVNode = this.$parent._vnode;
                     while (parentVNode && !parentVNode.children.includes(this.$vnode))
                         parentVNode = parentVNode.children.find((child) => child.elm.contains(this.$el));
@@ -93,7 +93,7 @@ export const FDraggable = {
                     if (parentVNode.context === this.$vnode.context)
                         return parentVNode.elm;
 
-                    // 否则，找第一个上下文一致的组件
+                    // Otherwise, find the first component with consistent context
                     let parentVM = this.$parent;
                     while (parentVM && parentVM.$vnode.context !== this.$vnode.context)
                         parentVM = parentVM.$parent;
@@ -131,7 +131,7 @@ export const FDraggable = {
             return transferEl;
         },
         initTransfer(transfer) {
-            // 如果position为static，则设置为relative，保证可以移动
+            // If position is static, set it to relative to ensure that it can be moved.
             if (window.getComputedStyle(transfer, 'position') === 'static')
                 transfer.style.position = 'relative';
         },
@@ -185,8 +185,8 @@ export const FDraggable = {
         onMouseMoveStart(e, override) {
             const transferEl = this.getTransferEl();
 
-            // 代理元素的位置从MouseMoveStart开始算，这样在MouseDown中也可以预先处理位置
-            // 获取初始的left和top值
+            // The position of the proxy element is calculated starting from MouseMoveStart, so that the position can also be pre-processed in MouseDown.
+            // Get the initial left and top values
             let style = transferEl ? window.getComputedStyle(transferEl) : {};
             style = { left: style.left, top: style.top };
             if (!style.left || style.left === 'auto')
@@ -211,16 +211,16 @@ export const FDraggable = {
             !override && this.dragStart();
         },
         onMouseMoving(e) {
-            // 拖拽约束
+            // Drag constraints
             const next = (this.constraint || this.defaultConstraint)(manager);
 
-            // 设置位置
+            // Set position
             if (manager.transferEl) {
                 manager.transferEl.style.left = next.left + 'px';
                 manager.transferEl.style.top = next.top + 'px';
             }
 
-            // 更新当前位置
+            // Update current location
             manager.left = next.left;
             manager.top = next.top;
 
@@ -255,7 +255,7 @@ export const FDraggable = {
                 manager.droppable = pointDroppable;
             }
 
-            // dragEnter之后也要dragOver
+            // DragOver is also required after dragEnter
             pointDroppable && pointDroppable.dragOver(this);
         },
         onMouseUp(e) {

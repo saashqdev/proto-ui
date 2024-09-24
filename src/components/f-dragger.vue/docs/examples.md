@@ -2,42 +2,41 @@
 
 ``` html
 <f-dragger>
-    <u-block size="normal" style="position: relative;">拖我</u-block>
+<u-block size="normal" style="position: relative;">Drag Me</u-block>
 </f-dragger>
 ```
 
-### 轴向约束
+### Axial Constraints
 
 ``` html
 <f-dragger axis="horizontal">
-    <u-block size="normal" inline style="position: relative;">水平</u-block>
+    <u-block size="normal" inline style="position: relative;">Horizontal</u-block>
 </f-dragger>
 <f-dragger axis="vertical">
-    <u-block size="normal" inline style="position: relative;">垂直</u-block>
+    <u-block size="normal" inline style="position: relative;">Vertical</u-block>
 </f-dragger>
 ```
 
-### 网格约束
+### Grid Constraints
 
 ``` html
 <f-dragger :grid="{ x: 40, y: 30 }">
-    <u-block size="normal" color="primary" inline style="position: relative;">网格</u-block>
-</f-dragger>
+    <u-block size="normal" color="primary" inline style="position: relative;">Grid</u-block></f-dragger>
 ```
 
-### 范围约束
+### Scope Constraints
 
 ``` vue
 <template>
 <div>
     <div :class="$style.well">
         <f-dragger :range="{ left: 0, top: 0, right: 200, bottom: 200 }">
-            <u-block :class="$style.block" size="normal" color="primary" inline>object</u-block>
+            <u-block :class="$style.block" size="normal" color="primary" inline>Object</u-block>
         </f-dragger>
     </div>
     <div :class="$style.well">
         <f-dragger range="offset-parent">
-            <u-block :class="$style.block" size="normal" color="primary" inline>offset-parent</u-block>
+            <u-block :class="$style.block" size="normal" color="primary" inline>Offset-Parent</u-block>
         </f-dragger>
     </div>
 </div>
@@ -61,19 +60,19 @@
 </style>
 ```
 
-### 范围约束模式
+### Range Constraint Mode
 
 ``` vue
 <template>
 <div>
     <div :class="$style.well">
         <f-dragger range="offset-parent" range-mode="inside">
-            <u-block :class="$style.block" size="normal" color="primary" inline>object</u-block>
+            <u-block :class="$style.block" size="normal" color="primary" inline>Object</u-block>
         </f-dragger>
     </div>
     <div :class="$style.well">
         <f-dragger range="offset-parent" range-mode="center">
-            <u-block :class="$style.block" range-mode="center" size="normal" color="primary" inline>offset-parent</u-block>
+            <u-block :class="$style.block" range-mode="center" size="normal" color="primary" inline>Offset-Parent</u-block>
         </f-dragger>
     </div>
 </div>

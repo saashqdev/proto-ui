@@ -1,28 +1,28 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- This README.md is automatically generated based on api.yaml and docs/*.md for easy reference on GitHub and NPM. If you need to modify it, please view the source file -->
 
-# FCollapseTransition 折叠过渡
+# FCollapseTransition Collapse Transition
 
-如果要给某些节点添加展开/收起动画效果，但不知道节点的高度，这时动画光靠 CSS 的`transition`属性是实现不了的，需要用 JS 进行计算。
+If you want to add an expand/collapse animation effect to some nodes, but you don't know the height of the node, the animation cannot be achieved by the CSS `transition` attribute alone, and you need to use JS to calculate it.
 
-本组件对这种动画进行了封装，方便快速实现这种效果。需要完成以下几步工作：
+This component encapsulates this kind of animation, making it easy to quickly achieve this effect. The following steps need to be completed:
 
-- 给需要添加动画的节点外面包裹`<f-collapse-transition>`组件；
-- 给需要添加动画的节点在 CSS 中添加针对`height`、`padding-top`和`padding-bottom`几个属性的`transition`动画；
-- 使用`v-show`或`v-if`控制节点的显示/隐藏。
+- Wrap the node that needs animation with the `<f-collapse-transition>` component;
+- Add `transition` animations for the `height`, `padding-top`, and `padding-bottom` properties in CSS to the nodes that need animation;
+- Use `v-show` or `v-if` to control the display/hide of nodes.
 
 ## Example
 ### Basic Usage
 
-``` vue
+``` view
 <template>
 <div :class="$style.root">
-    <u-button @click="toggle">展开/收起</u-button>
+    <u-button @click="toggle">Expand/Collapse</u-button>
     <f-collapse-transition>
         <u-menu v-show="expanded" :class="$style.menu" value="3" :router="false" style="width: 128px;">
-            <u-menu-item to="/guides/">指南</u-menu-item>
+            <u-menu-item to="/guides/">Guides</u-menu-item>
             <u-menu-item to="/api/">API</u-menu-item>
-            <u-menu-item to="/components/">原型组件</u-menu-item>
-            <u-menu-item href="https://github.com/saashqdev">GitHub</u-menu-item>
+            <u-menu-item to="/components/">Components</u-menu-item>
+            <u-menu-item href="https://github.com/saashqdev/kubevue">GitHub</u-menu-item>
         </u-menu>
     </f-collapse-transition>
 </div>
@@ -53,4 +53,4 @@ export default {
 
 #### (default)
 
-需要添加动画的元素或组件
+Elements or components that need to be animated

@@ -1,178 +1,178 @@
 - name: f-draggable
-  title: 拖拽
+  title: Drag
   attrs:
     - name: value
       type: any
       default: null
-      description: 需要传递的值
+      description: The value to be passed
     - name: transfer
       type: string, Element
       options: [clone, self]
       default: clone
-      description: 拖拽时的移动元素。可选值：`'clone'`表示拖拽时拖起自身的一个拷贝，`'self'`表示拖拽时拖起自身，也可以直接传入一个元素，或者用slot来设置。
+      description: The mobile element when dragging. Optional values - `'clone'` means dragging a copy of itself when dragging, `'self'` means dragging itself when dragging, you can also pass in an element directly, or use slot to set it.
     - name: immediate
       type: boolean
       default: false
-      description: 是否在鼠标按下时立即拖拽。默认为`false`，是为了防止鼠标单击等事件频繁触发拖拽操作。
+      description: Whether to drag immediately when the mouse is pressed. The default value is `false`, which is to prevent frequent triggering of drag operations by events such as mouse clicks.
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
     - name: constraint
       type: function
       default: ...
-      description: 拖拽时移动路径的约束函数。需要传入一个对象，至少要包含：`startLeft`、`startTop`、`dragX`、`dragY`几个字段
+      description: The constraint function of the moving path when dragging. You need to pass in an object, which must contain at least the following fields - `startLeft`, `startTop`, `dragX`, `dragY`
   slots:
     - name: default
-      description: 插入需要拖拽的元素，仅一个。
+      description: Insert the element to be dragged, only one.
     - name: transfer
-      description: 自定义的移动元素。
+      description: A custom mobile element.
   events:
     - name: dragstart
-      description: 拖拽开始时触发
+      description: Triggered when dragging starts
       params:
         - name: $event.originVM
           type: VueComponent
-          description: 拖拽源，为当前的`<f-draggable>`
+          description: Drag source, the current `<f-draggable>`
         - name: $event.sourceEl
           type: Element
-          description: 拖拽起始元素
+          description: Drag the starting element
         - name: $event.transferEl
           type: Element
-          description: 拖拽移动元素
+          description: Drag and move elements
         - name: $event.value
           type: any
-          description: 需要传递的值
+          description: The value to be passed
         - name: $event.screenX
           type: number
-          description: 鼠标指针相对于屏幕的水平坐标
+          description: The horizontal coordinate of the mouse pointer relative to the screen
         - name: $event.screenY
           type: number
-          description: 鼠标指针相对于屏幕的垂直坐标
+          description: The vertical coordinate of the mouse pointer relative to the screen
         - name: $event.clientX
           type: number
-          description: 鼠标指针相对于浏览器的水平坐标
+          description: The horizontal coordinate of the mouse pointer relative to the browser
         - name: $event.clientY
           type: number
-          description: 鼠标指针相对于浏览器的垂直坐标
+          description: The vertical coordinate of the mouse pointer relative to the browser
         - name: $event.pageX
           type: number
-          description: 鼠标指针相对于页面的水平坐标
+          description: The horizontal coordinate of the mouse pointer relative to the page
         - name: $event.pageY
           type: number
-          description: 鼠标指针相对于页面的垂直坐标
+          description: The vertical coordinate of the mouse pointer relative to the page
         - name: $event.startX
           type: number
-          description: 拖拽开始时鼠标指针的水平坐标
+          description: The horizontal coordinate of the mouse pointer when the drag starts
         - name: $event.startY
           type: number
-          description: 拖拽开始时鼠标指针的垂直坐标
+          description: The vertical coordinate of the mouse pointer when the drag starts
         - name: $event.dragX
           type: number
-          description: 拖拽时鼠标指针相对于起始坐标的水平位移
+          description: The horizontal displacement of the mouse pointer relative to the starting coordinates when dragging
         - name: $event.dragY
           type: number
-          description: 拖拽时鼠标指针相对于起始坐标的垂直位移
+          description: The vertical displacement of the mouse pointer relative to the starting coordinates when dragging
         - name: $event.startLeft
           type: number
-          description: 拖拽开始时代理元素的left值
+          description: The left value of the proxy element when dragging starts
         - name: $event.startTop
           type: number
-          description: 拖拽开始时代理元素的top值
+          description: The top value of the proxy element when dragging starts
         - name: $event.left
           type: number
-          description: 拖拽时代理元素的left值
+          description: The left value of the proxy element when dragging
         - name: $event.top
           type: number
-          description: 拖拽时代理元素的top值
+          description: The top value of the proxy element when dragging
         - name: $event.preventDefault
           type: Function
-          description: 阻止拖拽流程
+          description: Prevent dragging process
         - name: senderVM
           type: FDraggable
-          description: 发送事件实例
+          description: Send event instance
     - name: drag
-      description: 正在拖拽时触发
+      description: Triggered when dragging
       params:
         - name: $event.originVM
           type: VueComponent
-          description: 拖拽源，为当前的`<f-draggable>`
+          description: Drag source, the current `<f-draggable>`
         - name: $event.sourceEl
           type: Element
-          description: 拖拽起始元素
+          description: Drag the starting element
         - name: $event.transferEl
           type: Element
-          description: 拖拽移动元素
+          description: Drag and move elements
         - name: $event.value
           type: any
-          description: 需要传递的值
+          description: The value to be passed
         - name: $event.screenX
           type: number
-          description: 鼠标指针相对于屏幕的水平坐标
+          description: The horizontal coordinate of the mouse pointer relative to the screen
         - name: $event.screenY
           type: number
-          description: 鼠标指针相对于屏幕的垂直坐标
+          description: The vertical coordinate of the mouse pointer relative to the screen
         - name: $event.clientX
           type: number
-          description: 鼠标指针相对于浏览器的水平坐标
+          description: The horizontal coordinate of the mouse pointer relative to the browser
         - name: $event.clientY
           type: number
-          description: 鼠标指针相对于浏览器的垂直坐标
+          description: The vertical coordinate of the mouse pointer relative to the browser
         - name: $event.pageX
           type: number
-          description: 鼠标指针相对于页面的水平坐标
+          description: The horizontal coordinate of the mouse pointer relative to the page
         - name: $event.pageY
           type: number
-          description: 鼠标指针相对于页面的垂直坐标
+          description: The vertical coordinate of the mouse pointer relative to the page
         - name: $event.startX
           type: number
-          description: 拖拽开始时鼠标指针的水平坐标
+          description: The horizontal coordinate of the mouse pointer when the drag starts
         - name: $event.startY
           type: number
-          description: 拖拽开始时鼠标指针的垂直坐标
+          description: The vertical coordinate of the mouse pointer when the drag starts
         - name: $event.dragX
           type: number
-          description: 拖拽时鼠标指针相对于起始坐标的水平位移
+          description: The horizontal displacement of the mouse pointer relative to the starting coordinates when dragging
         - name: $event.dragY
           type: number
-          description: 拖拽时鼠标指针相对于起始坐标的垂直位移
+          description: The vertical displacement of the mouse pointer relative to the starting coordinates when dragging
         - name: $event.startLeft
           type: number
-          description: 拖拽开始时代理元素的left值
+          description: The left value of the proxy element when dragging starts
         - name: $event.startTop
           type: number
-          description: 拖拽开始时代理元素的top值
+          description: The top value of the proxy element when dragging starts
         - name: $event.left
           type: number
-          description: 拖拽时代理元素的left值
+          description: The left value of the proxy element when dragging
         - name: $event.top
           type: number
-          description: 拖拽时代理元素的top值
+          description: The top value of the proxy element when dragging
         - name: $event.preventDefault
           type: Function
-          description: 阻止拖拽流程
+          description: Prevent dragging process
         - name: senderVM
           type: FDraggable
-          description: 发送事件实例
-    - name: dragend
-      description: 拖拽结束时触发
+          description: Send event instance
+    - name: carrying
+      description: Triggered when dragging ends
       params:
         - name: $event.originVM
           type: VueComponent
-          description: 拖拽源，为当前的`<f-draggable>`
+          description: Drag source, the current `<f-draggable>`
         - name: $event.sourceEl
           type: Element
-          description: 拖拽起始元素
+          description: Drag the starting element
         - name: $event.transferEl
           type: Element
-          description: 拖拽移动元素
+          description: Drag and move elements
         - name: $event.value
           type: any
-          description: 需要传递的值
+          description: The value to be passed
         - name: senderVM
           type: FDraggable
-          description: 发送事件实例
+          description: Send event instance
   methods:
     - name: cancel()
-      description: 取消拖拽。
+      description: Cancel the drag.
       params: []
