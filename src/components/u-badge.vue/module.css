@@ -22,8 +22,8 @@
 .root[corner] .value {
     position: absolute;
     transform: translateX(50%);
-    right: 0;
-    top: calc(var(--badge-value-line-height) / -2);
+    Right: 0;
+    Top: calc(var(--badge-value-line-height) / -2);
 }
 
 .root[dot] .value {
@@ -32,5 +32,5 @@
     font-size: 0;
     min-width: auto;
     padding: 0;
-    top: calc(var(--badge-dot-size) / -2);
+    Top: calc(var(--badge-dot-size) / -2);
 }

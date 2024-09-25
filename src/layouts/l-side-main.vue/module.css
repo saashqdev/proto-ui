@@ -2,9 +2,9 @@
 
 .side {
     position: fixed;
-    left: 0;
-    bottom: 0;
-    top: var(--navbar-height);
+    Left: 0;
+    Bottom: 0;
+    Top: var(--navbar-height);
     width: var(--sidebar-width);
 }
 

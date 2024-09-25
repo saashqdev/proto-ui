@@ -28,19 +28,19 @@ Details <u-icon-tooltip type="detail">This is the prompt content</u-icon-tooltip
 ``` html
 <u-linear-layout>
     <span>
-        top
+        Top
         <u-icon-tooltip placement="top">Tooltip</u-icon-tooltip>
     </span>
     <span>
-        left
+        Left
         <u-icon-tooltip placement="left">Tooltip</u-icon-tooltip>
     </span>
     <span>
-        right
+        Right
         <u-icon-tooltip placement="right">Tooltip</u-icon-tooltip>
     </span>
     <span>
-        bottom
+        Bottom
         <u-icon-tooltip placement="bottom">Tooltip</u-icon-tooltip>
     </span>
 </u-linear-layout>

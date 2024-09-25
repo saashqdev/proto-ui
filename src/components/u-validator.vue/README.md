@@ -599,7 +599,7 @@ export default {
 </u-validator>
 ```
 
-### 自定义
+### Customize
 
 #### pattern(re: RegExp) <u-label>input+blur</u-label>
 

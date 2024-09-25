@@ -18,8 +18,8 @@
     position: absolute;
     icon-font: url('../../i-icon.vue/assets/arrow-down.svg');
     font-size: var(--navbar-dropdown-popper-font-size);
-    right: 10px;
-    top: 0;
+    Right: 10px;
+    Top: 0;
     line-height: var(--navbar-height);
 }
 

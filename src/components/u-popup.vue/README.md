@@ -1,6 +1,6 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UPopup 弹出框
+# UPopup Popup Box
 
 ## Example
 ### Basic Usage
@@ -8,24 +8,24 @@
 ``` html
 <u-linear-layout>
     <u-button>
-        内容
-        <u-popup>使用 content 属性添加内容</u-popup>
+        Content
+        <u-popup>Add content using the content attribute</u-popup>
     </u-button>
     <u-button>
-        标题
-        <u-popup title="标题">使用 title 属性添加标题</u-popup>
+        Title
+        <u-popup title="title">Add a title using the title attribute</u-popup>
     </u-button>
     <u-button>
-        使用 slot
+        Use Slot
         <u-popup>
-            <span slot="title">标题 <u-badge :value="3"></u-badge></span>
-            <span>使用 <u-link>slot</u-link> 可以添加一些复杂功能</span>
+            <span slot="title">Title <u-badge :value="3"></u-badge></span>
+            <span>Use <u-link>slot</u-link> to add some complex functions</span>
         </u-popup>
     </u-button>
 </u-linear-layout>
 ```
 
-### 自定义
+### Customize
 
 ``` html
 <u-linear-layout>
@@ -49,19 +49,19 @@
         TreeView
         <u-popup>
             <u-tree-view slot="root">
-                <u-tree-view-node text="节点1">
-                    <u-tree-view-node text="节点1.1"></u-tree-view-node>
-                    <u-tree-view-node text="节点1.2">
-                        <u-tree-view-node text="节点1.2.1"></u-tree-view-node>
-                        <u-tree-view-node text="节点1.2.2"></u-tree-view-node>
+                <u-tree-view-node text="Node1">
+                    <u-tree-view-node text="Node1.1"></u-tree-view-node>
+                    <u-tree-view-node text="Node1.2">
+                        <u-tree-view-node text="Node1.2.1"></u-tree-view-node>
+                        <u-tree-view-node text="Node1.2.2"></u-tree-view-node>
                     </u-tree-view-node>
-                    <u-tree-view-node text="节点1.3"></u-tree-view-node>
-                    <u-tree-view-node text="节点1.4"></u-tree-view-node>
+                    <u-tree-view-node text="Node1.3"></u-tree-view-node>
+                    <u-tree-view-node text="Node1.4"></u-tree-view-node>
                 </u-tree-view-node>
-                <u-tree-view-node text="节点2"></u-tree-view-node>
-                <u-tree-view-node text="节点3">
-                    <u-tree-view-node text="节点3.1"></u-tree-view-node>
-                    <u-tree-view-node text="节点3.2"></u-tree-view-node>
+                <u-tree-view-node text="Node2"></u-tree-view-node>
+                <u-tree-view-node text="Node3">
+                    <u-tree-view-node text="Node3.1"></u-tree-view-node>
+                    <u-tree-view-node text="Node3.2"></u-tree-view-node>
                 </u-tree-view-node>
             </u-tree-view>
         </u-popup>
@@ -74,32 +74,32 @@
 ``` html
 <u-linear-layout>
     <u-button>
-        hover
+        Hover
         <u-popup trigger="hover">Popup</u-popup>
     </u-button>
     <u-button>
-        click（默认）
+        Click (default)
         <u-popup trigger="click">Popup</u-popup>
     </u-button>
     <u-button>
-        right-click
+        Right Click
         <u-popup trigger="right-click">Popup</u-popup>
     </u-button>
     <u-button>
-        double-click
+        Double-Click
         <u-popup trigger="double-click">Popup</u-popup>
     </u-button>
 </u-linear-layout>
 ```
 
-#### 手动触发
+#### Manual Trigger
 
-也可以手动触发弹出框的弹出/关闭：
+You can also manually trigger the pop-up/close of the pop-up box:
 
 ``` vue
 <template>
 <u-button @click="opened = !opened">
-    {{ opened ? '隐藏' : '弹出' }}
+    {{ opened ? 'hide' : 'pop' }}
     <u-popup trigger="manual" :opened.sync="opened">Popup</u-popup>
 </u-button>
 </template>
@@ -114,128 +114,128 @@ export default {
 </script>
 ```
 
-### 弹出位置
+### Popup Location
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-button>
-            top-start
+            Top-Start
             <u-popup placement="top-start">Popup</u-popup>
         </u-button>
         <u-button>
-            top
+            Top
             <u-popup placement="top">Popup</u-popup>
         </u-button>
         <u-button>
-            top-end
+            Top-End
             <u-popup placement="top-end">Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            left-start
+            Left-Start
             <u-popup placement="left-start">Popup</u-popup>
         </u-button>
         <u-button>
-            left
+            Left
             <u-popup placement="left">Popup</u-popup>
         </u-button>
         <u-button>
-            left-end
+            Left-End
             <u-popup placement="left-end">Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            right-start
+            Right-Start
             <u-popup placement="right-start">Popup</u-popup>
         </u-button>
         <u-button>
-            right
+            Right
             <u-popup placement="right">Popup</u-popup>
         </u-button>
         <u-button>
-            right-end
+            Right-End
             <u-popup placement="right-end">Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            bottom-start
+            Bottom-Start
             <u-popup placement="bottom-start">Popup</u-popup>
         </u-button>
         <u-button>
-            bottom
+            Bottom
             <u-popup placement="bottom">Popup</u-popup>
         </u-button>
         <u-button>
-            bottom-end
+            Bottom-End
             <u-popup placement="bottom-end">Popup</u-popup>
         </u-button>
     </u-linear-layout>
 </u-linear-layout>
 ```
 
-#### 跟随鼠标
+#### Follow Mouse
 
-将`'follow-cursor'`属性设置为`true`可以跟随鼠标。也可以传一个数字或对象调整位置偏移。
+Set the `'follow-cursor'` property to `true` to follow the mouse. You can also pass a number or object to adjust the position offset.
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-button>
-            top-start
+            Top-Start
             <u-popup placement="top-start" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            top
+            Top
             <u-popup placement="top" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            top-end
+            Top-End
             <u-popup placement="top-end" follow-cursor>Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            left-start
+            Left-Start
             <u-popup placement="left-start" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            left
+            Left
             <u-popup placement="left" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            left-end
+            Left-End
             <u-popup placement="left-end" follow-cursor>Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            right-start
+            Right-Start
             <u-popup placement="right-start" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            right
+            Right
             <u-popup placement="right" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            right-end
+            Right-End
             <u-popup placement="right-end" follow-cursor>Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            bottom-start
+            Bottom-Start
             <u-popup placement="bottom-start" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            bottom
+            Bottom
             <u-popup placement="bottom" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            bottom-end
+            Bottom-End
             <u-popup placement="bottom-end" follow-cursor>Popup</u-popup>
         </u-button>
     </u-linear-layout>
@@ -246,7 +246,7 @@ export default {
 
 ``` html
 <u-button disabled>
-    disabled
+    Disabled
     <u-popup disabled>Popup</u-popup>
 </u-button>
 ```
@@ -256,79 +256,79 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  | `'标题'` | 弹出框标题 |
-| opened.sync | boolean |  | `false` | 弹出/关闭状态 |
-| trigger | string |  | `'click'` | 弹出框的触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
-| placement | string |  | `'bottom'` | 弹出框的弹出方向。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
-| hideDelay | number |  | `0` | 提示内容消失延迟时间，单位是`'ms'` |
-| offset | string |  | `'0'` | 弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px` |
-| follow-cursor | boolean, number, object |  | `false` | 是否跟随鼠标 |
-| disabled | boolean |  | `false` | 是否禁用 |
-| merge-borders | boolean |  | `true` | 是否自动合并内外边框 |
+| title | string | | `'title'` | Pop-up box title |
+| opened.sync | boolean | | `false` | Popup/closed status |
+| trigger | string | | `'click'` | The triggering method of the pop-up box. Optional values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
+| placement | string | | `'bottom'` | The pop-up direction of the pop-up box. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start' `, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
+| hideDelay | number | | `0` | The delay time for the prompt content to disappear, the unit is `'ms'` |
+| offset | string | | `'0'` | Pop-up layer offset, such as: '10', '10px 10px', '10% 10%', the first value represents horizontal offset, the second value represents vertical Displacement, the default unit is `px` |
+| follow-cursor | boolean, number, object | | `false` | Whether to follow the mouse |
+| disabled | boolean | | `false` | Whether to disable |
+| merge-borders | boolean | | `true` | Whether to automatically merge inner and outer borders |
 
 ### Slots
 
 #### (default)
 
-自定义弹出的内容。
+Customize pop-up content.
 
-#### root
+#### Root
 
-自定义整个弹出层。
+Customize the entire popup layer.
 
-#### head
+#### Head
 
-自定义头部。
+Custom header.
 
-#### body
+#### Body
 
-自定义中部。
+Customize the middle.
 
-#### foot
+#### Foot
 
-自定义尾部。
+Custom tail.
 
-#### title
+#### Title
 
-自定义标题文本。
+Custom title text.
 
 ### Events
 
 #### @before-open
 
-弹出前触发。
+Triggered before pop-up.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止弹出流程 |
-| senderVM | UPopup | 发送事件实例 |
+| $event.preventDefault | Function | Prevent pop-up process |
+| senderVM | UPopup | Send event instance |
 
 #### @open
 
-弹出时触发。
+Fired on popup.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | UPopup | 发送事件实例 |
+| $event | | Empty |
+| senderVM | UPopup | Send event instance |
 
 #### @before-close
 
-隐藏前触发。
+Triggered before hiding.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止隐藏流程 |
-| senderVM | UPopup | 发送事件实例 |
+| $event.preventDefault | Function | Prevent hidden process |
+| senderVM | UPopup | Send event instance |
 
 #### @close
 
-隐藏时触发。
+Triggered when hidden.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | UPopup | 发送事件实例 |
+| $event |  | Empty |
+| senderVM | UPopup | Send event instance |
 
 #### @before-toggle
 
@@ -348,36 +348,36 @@ export default {
 
 #### open()
 
-弹出实例。
+Pop up instance.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### close()
 
-关闭实例。
+Shut down the instance.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### toggle(opened?)
 
-切换弹出/关闭状态。
+Toggle popup/closed state.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| opened? | boolean |  | 可选。弹出/关闭状态 |
+| opened? | boolean | | Optional. popup/closed status |
 
 #### update()
 
-更新 popper 实例。参考 [Popper.update()](https://popper.js.org/popper-documentation.html#Popper.update)。
+Update the popper instance. Refer to [Popper.update()](https://popper.js.org/popper-documentation.html#Popper.update).
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### scheduleUpdate()
 
-在下次 UI 渲染时一块更新 popper 实例，比`update()`性能要好。参考 [Popper.scheduleUpdate()](https://popper.js.org/popper-documentation.html#Popper.scheduleUpdate)。
+Updating the popper instance together during the next UI rendering has better performance than `update()`. Refer to [Popper.scheduleUpdate()](https://popper.js.org/popper-documentation.html#Popper.scheduleUpdate).
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |

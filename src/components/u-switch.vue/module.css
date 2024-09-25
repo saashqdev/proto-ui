@@ -19,8 +19,8 @@
 
 .button {
     position: absolute;
-    left: var(--switch-button-space);
-    top: calc((var(--switch-height) - var(--switch-button-size)) / 2);
+    Left: var(--switch-button-space);
+    Top: calc((var(--switch-height) - var(--switch-button-size)) / 2);
     border-radius: var(--switch-button-radius);
     width: var(--switch-button-size);
     height: var(--switch-button-size);
@@ -39,7 +39,7 @@
 }
 
 .root[checked] .button {
-    left: calc(var(--switch-width) - var(--switch-button-size) - var(--switch-button-space));
+    Left: calc(var(--switch-width) - var(--switch-button-size) - var(--switch-button-space));
 }
 
 .root[checked] .text {
@@ -51,7 +51,7 @@
 }
 
 .root[width="wide"][checked] .button {
-    left: calc(var(--switch-width-wide) - var(--switch-button-size) - var(--switch-button-space));
+    Left: calc(var(--switch-width-wide) - var(--switch-button-size) - var(--switch-button-space));
 }
 
 .root[disabled] {

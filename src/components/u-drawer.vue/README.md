@@ -62,8 +62,8 @@ export default {
 export default {
     data() {
         return {
-            leftVisible: false,
-            rightVisible: false,
+            LeftVisible: false,
+            RightVisible: false,
         };
     },
 };

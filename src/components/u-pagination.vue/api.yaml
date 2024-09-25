@@ -1,68 +1,68 @@
 - name: u-pagination
-  title: 分页
-  labels: [UI 组件, 块级展示]
+  title: Pagination
+  labels: [UI Component, Block-Level Display]
   attrs:
     - name: page.sync
       type: number
       default: 1
-      description: 当前页码
+      description: Current page number
     - name: total
       type: number
       default: 11
-      description: 总页数
+      description: Total number of pages
     - name: side
       type: number
       default: 2
-      description: 当页数多时，两边恒定显示的数量
+      description: When there are many pages, the number of pages displayed on both sides is constant
     - name: around
       type: number
       default: 5
-      description: 当页数多时，中间恒定显示的数量
+      description: When there are many pages, the number displayed in the middle
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Whether it is read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
   events:
     - name: before-select
-      description: 选择分页前触发
+      description: Triggered before selecting a page
       params:
         - name: $event.page
           type: number
-          description: 选择的页码
+          description: The selected page number
         - name: $event.oldPage
           type: number
-          description: 旧的页码
+          description: Old page number
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: UPagination
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择分页时触发
+      description: Triggered when paging is selected
       params:
         - name: $event.page
           type: number
-          description: 选择的页码
+          description: The selected page number
         - name: $event.oldPage
           type: number
-          description: 旧的页码
+          description: Old page number
         - name: senderVM
           type: UPagination
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 页码改变时触发
+      description: Triggered when the page number changes
       params:
         - name: $event.page
           type: number
-          description: 当前页码
+          description: Current page number
         - name: $event.oldPage
           type: number
-          description: 旧的页码
+          description: Old page number
         - name: senderVM
           type: UPagination
-          description: 发送事件实例
+          description: Send event instance

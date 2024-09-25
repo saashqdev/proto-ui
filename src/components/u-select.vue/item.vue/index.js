@@ -14,7 +14,7 @@ export const USelectItem = {
         },
     },
     methods: {
-        hover() {
+        Hover() {
             this.parentVM && (this.parentVM.focusedVM = this);
         },
     },

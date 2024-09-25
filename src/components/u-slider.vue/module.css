@@ -28,17 +28,17 @@
 }
 
 .bound[role="start"] {
-    left: 0;
+    Left: 0;
 }
 
 .bound[role="end"] {
-    right: 0;
+    Right: 0;
 }
 
 .handle {
     position: absolute;
-    left: 0;
-    top: 0;
+    Left: 0;
+    Top: 0;
     margin-left: calc(var(--slider-handle-width) / -2);
     width: var(--slider-handle-width);
     height: var(--slider-handle-height);

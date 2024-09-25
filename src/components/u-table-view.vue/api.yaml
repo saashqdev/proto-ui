@@ -187,7 +187,7 @@
       params:
         - name: $event
           type: ""
-          description: 空
+          description: Empty
         - name: senderVM
           type: UTableView
           description: 发送事件实例

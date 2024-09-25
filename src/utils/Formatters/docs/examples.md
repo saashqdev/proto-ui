@@ -31,7 +31,7 @@ export default {
 </script>
 ```
 
-### 自定义
+### Customize
 
 也可以创建自定义的占位符格式器。
 

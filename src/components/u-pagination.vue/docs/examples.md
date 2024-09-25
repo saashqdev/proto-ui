@@ -7,9 +7,9 @@
 </u-linear-layout>
 ```
 
-### 显示数量
+### Display Quantity
 
-当页数多时，可以使用`side`和`around`来设置两边和中间恒定显示的数量。
+When there are many pages, you can use `side` and `around` to set the constant display amount on both sides and in the middle.
 
 ``` html
 <u-pagination :total="11" :page="6" :side="1" :around="3"></u-pagination>

@@ -17,7 +17,7 @@
 </u-steps>
 ```
 
-### 自定义标题
+### Customize标题
 
 ``` html
 <u-steps :value="1">

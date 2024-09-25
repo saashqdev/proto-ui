@@ -17,8 +17,8 @@
 
 .expander {
     position: absolute;
-    right: 0;
-    top: 0;
+    Right: 0;
+    Top: 0;
     z-index: 1;
     width: var(--sidebar-expander-size);
     height: var(--sidebar-expander-size);

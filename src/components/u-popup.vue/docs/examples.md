@@ -3,24 +3,24 @@
 ``` html
 <u-linear-layout>
     <u-button>
-        内容
-        <u-popup>使用 content 属性添加内容</u-popup>
+        Content
+        <u-popup>Add content using the content attribute</u-popup>
     </u-button>
     <u-button>
-        标题
-        <u-popup title="标题">使用 title 属性添加标题</u-popup>
+        Title
+        <u-popup title="title">Add a title using the title attribute</u-popup>
     </u-button>
     <u-button>
-        使用 slot
+        Use Slot
         <u-popup>
-            <span slot="title">标题 <u-badge :value="3"></u-badge></span>
-            <span>使用 <u-link>slot</u-link> 可以添加一些复杂功能</span>
+            <span slot="title">Title <u-badge :value="3"></u-badge></span>
+            <span>Use <u-link>slot</u-link> to add some complex functions</span>
         </u-popup>
     </u-button>
 </u-linear-layout>
 ```
 
-### 自定义
+### Customize
 
 ``` html
 <u-linear-layout>
@@ -44,19 +44,19 @@
         TreeView
         <u-popup>
             <u-tree-view slot="root">
-                <u-tree-view-node text="节点1">
-                    <u-tree-view-node text="节点1.1"></u-tree-view-node>
-                    <u-tree-view-node text="节点1.2">
-                        <u-tree-view-node text="节点1.2.1"></u-tree-view-node>
-                        <u-tree-view-node text="节点1.2.2"></u-tree-view-node>
+                <u-tree-view-node text="Node1">
+                    <u-tree-view-node text="Node1.1"></u-tree-view-node>
+                    <u-tree-view-node text="Node1.2">
+                        <u-tree-view-node text="Node1.2.1"></u-tree-view-node>
+                        <u-tree-view-node text="Node1.2.2"></u-tree-view-node>
                     </u-tree-view-node>
-                    <u-tree-view-node text="节点1.3"></u-tree-view-node>
-                    <u-tree-view-node text="节点1.4"></u-tree-view-node>
+                    <u-tree-view-node text="Node1.3"></u-tree-view-node>
+                    <u-tree-view-node text="Node1.4"></u-tree-view-node>
                 </u-tree-view-node>
-                <u-tree-view-node text="节点2"></u-tree-view-node>
-                <u-tree-view-node text="节点3">
-                    <u-tree-view-node text="节点3.1"></u-tree-view-node>
-                    <u-tree-view-node text="节点3.2"></u-tree-view-node>
+                <u-tree-view-node text="Node2"></u-tree-view-node>
+                <u-tree-view-node text="Node3">
+                    <u-tree-view-node text="Node3.1"></u-tree-view-node>
+                    <u-tree-view-node text="Node3.2"></u-tree-view-node>
                 </u-tree-view-node>
             </u-tree-view>
         </u-popup>
@@ -69,32 +69,32 @@
 ``` html
 <u-linear-layout>
     <u-button>
-        hover
+        Hover
         <u-popup trigger="hover">Popup</u-popup>
     </u-button>
     <u-button>
-        click（默认）
+        Click (default)
         <u-popup trigger="click">Popup</u-popup>
     </u-button>
     <u-button>
-        right-click
+        Right Click
         <u-popup trigger="right-click">Popup</u-popup>
     </u-button>
     <u-button>
-        double-click
+        Double-Click
         <u-popup trigger="double-click">Popup</u-popup>
     </u-button>
 </u-linear-layout>
 ```
 
-#### 手动触发
+#### Manual Trigger
 
-也可以手动触发弹出框的弹出/关闭：
+You can also manually trigger the pop-up/close of the pop-up box:
 
 ``` vue
 <template>
 <u-button @click="opened = !opened">
-    {{ opened ? '隐藏' : '弹出' }}
+    {{ opened ? 'hide' : 'pop' }}
     <u-popup trigger="manual" :opened.sync="opened">Popup</u-popup>
 </u-button>
 </template>
@@ -109,128 +109,128 @@ export default {
 </script>
 ```
 
-### 弹出位置
+### Popup Location
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-button>
-            top-start
+            Top-Start
             <u-popup placement="top-start">Popup</u-popup>
         </u-button>
         <u-button>
-            top
+            Top
             <u-popup placement="top">Popup</u-popup>
         </u-button>
         <u-button>
-            top-end
+            Top-End
             <u-popup placement="top-end">Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            left-start
+            Left-Start
             <u-popup placement="left-start">Popup</u-popup>
         </u-button>
         <u-button>
-            left
+            Left
             <u-popup placement="left">Popup</u-popup>
         </u-button>
         <u-button>
-            left-end
+            Left-End
             <u-popup placement="left-end">Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            right-start
+            Right-Start
             <u-popup placement="right-start">Popup</u-popup>
         </u-button>
         <u-button>
-            right
+            Right
             <u-popup placement="right">Popup</u-popup>
         </u-button>
         <u-button>
-            right-end
+            Right-End
             <u-popup placement="right-end">Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            bottom-start
+            Bottom-Start
             <u-popup placement="bottom-start">Popup</u-popup>
         </u-button>
         <u-button>
-            bottom
+            Bottom
             <u-popup placement="bottom">Popup</u-popup>
         </u-button>
         <u-button>
-            bottom-end
+            Bottom-End
             <u-popup placement="bottom-end">Popup</u-popup>
         </u-button>
     </u-linear-layout>
 </u-linear-layout>
 ```
 
-#### 跟随鼠标
+#### Follow Mouse
 
-将`'follow-cursor'`属性设置为`true`可以跟随鼠标。也可以传一个数字或对象调整位置偏移。
+Set the `'follow-cursor'` property to `true` to follow the mouse. You can also pass a number or object to adjust the position offset.
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-button>
-            top-start
+            Top-Start
             <u-popup placement="top-start" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            top
+            Top
             <u-popup placement="top" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            top-end
+            Top-End
             <u-popup placement="top-end" follow-cursor>Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            left-start
+            Left-Start
             <u-popup placement="left-start" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            left
+            Left
             <u-popup placement="left" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            left-end
+            Left-End
             <u-popup placement="left-end" follow-cursor>Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            right-start
+            Right-Start
             <u-popup placement="right-start" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            right
+            Right
             <u-popup placement="right" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            right-end
+            Right-End
             <u-popup placement="right-end" follow-cursor>Popup</u-popup>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            bottom-start
+            Bottom-Start
             <u-popup placement="bottom-start" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            bottom
+            Bottom
             <u-popup placement="bottom" follow-cursor>Popup</u-popup>
         </u-button>
         <u-button>
-            bottom-end
+            Bottom-End
             <u-popup placement="bottom-end" follow-cursor>Popup</u-popup>
         </u-button>
     </u-linear-layout>
@@ -241,7 +241,7 @@ export default {
 
 ``` html
 <u-button disabled>
-    disabled
+    Disabled
     <u-popup disabled>Popup</u-popup>
 </u-button>
 ```

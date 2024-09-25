@@ -98,8 +98,8 @@ export const FDragger = {
         },
         defaultConstraint(params) {
             const next = {
-                left: params.startLeft + params.dragX,
-                top: params.startTop + params.dragY,
+                Left: params.startLeft + params.dragX,
+                Top: params.startTop + params.dragY,
             };
 
             // Range constraints

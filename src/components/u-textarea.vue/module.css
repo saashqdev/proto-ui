@@ -14,14 +14,14 @@
 }
 
 .clearable::before {
-    top: 2px;
-    right: 4px;
+    Top: 2px;
+    Right: 4px;
 }
 
 .handle {
     position: absolute;
-    right: 1px;
-    bottom: 1px;
+    Right: 1px;
+    Bottom: 1px;
     display: block;
     width: 8px;
     height: 8px;

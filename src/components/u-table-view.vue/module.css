@@ -14,8 +14,8 @@
 
 .table[position="left"] {
     position: absolute;
-    left: 0;
-    top: 0;
+    Left: 0;
+    Top: 0;
     overflow: hidden;
     background: var(--table-view-table-background);
 }
@@ -26,8 +26,8 @@
 
 .table[position="right"] {
     position: absolute;
-    right: 0;
-    top: 0;
+    Right: 0;
+    Top: 0;
     overflow: hidden;
     background: var(--table-view-table-background);
 }
@@ -74,16 +74,16 @@
 
 .sort::before {
     position: absolute;
-    left: 0;
-    top: -3px;
+    Left: 0;
+    Top: -3px;
     line-height: 1;
     icon-font: url('../i-icon.vue/assets/arrow-up.svg');
 }
 
 .sort::after {
     position: absolute;
-    left: 0;
-    bottom: -4px;
+    Left: 0;
+    Bottom: -4px;
     line-height: 1;
     icon-font: url('../i-icon.vue/assets/arrow-down.svg');
 }
@@ -112,9 +112,9 @@
 
 .resizer {
     position: absolute;
-    top: 4px;
-    bottom: 4px;
-    right: -3px;
+    Top: 4px;
+    Bottom: 4px;
+    Right: -3px;
     z-index: 1;
     cursor: col-resize;
     padding: 2px;

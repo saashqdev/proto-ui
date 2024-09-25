@@ -269,8 +269,8 @@ export const FDraggable = {
         },
         defaultConstraint(params) {
             return {
-                left: params.startLeft + params.dragX,
-                top: params.startTop + params.dragY,
+                Left: params.startLeft + params.dragX,
+                Top: params.startTop + params.dragY,
             };
         },
         cancel() {
@@ -293,8 +293,8 @@ export const FDraggable = {
                 dragY: 0,
                 startLeft: 0,
                 startTop: 0,
-                left: 0,
-                top: 0,
+                Left: 0,
+                Top: 0,
                 droppable: undefined,
             });
         },

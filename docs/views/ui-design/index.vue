@@ -50,8 +50,8 @@ export default {
 .side {
     position: fixed;
     width: var(--sidebar-width);
-    top: var(--navbar-height);
-    bottom: 0;
+    Top: var(--navbar-height);
+    Bottom: 0;
     overflow: hidden;
 }
 

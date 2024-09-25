@@ -3,7 +3,7 @@
 .button {
     user-select: none;
     position: absolute;
-    right: 1px;
+    Right: 1px;
     height: var(--number-input-height);
     line-height: var(--number-input-line-height);
     padding: var(--number-input-padding);
@@ -24,7 +24,7 @@
 }
 
 .button[role="up"] {
-    top: 1px;
+    Top: 1px;
 }
 
 .button[role="up"]::before {
@@ -32,7 +32,7 @@
 }
 
 .button[role="down"] {
-    bottom: 1px;
+    Bottom: 1px;
 }
 
 .button[role="down"]::before {

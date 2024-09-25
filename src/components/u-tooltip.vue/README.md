@@ -20,7 +20,7 @@
 ``` html
 <u-linear-layout>
     <u-button>
-        hover（默认）
+        Hover（默认）
         <u-tooltip trigger="hover">Tooltip</u-tooltip>
     </u-button>
     <u-button>
@@ -28,11 +28,11 @@
         <u-tooltip trigger="click">Tooltip</u-tooltip>
     </u-button>
     <u-button>
-        right-click
+        Right Click
         <u-tooltip trigger="right-click">Tooltip</u-tooltip>
     </u-button>
     <u-button>
-        double-click
+        Double-Click
         <u-tooltip trigger="double-click">Tooltip</u-tooltip>
     </u-button>
 </u-linear-layout>
@@ -49,14 +49,14 @@
 </u-linear-layout>
 ```
 
-#### 手动触发
+#### Manual Trigger
 
 也可以手动触发工具提示的弹出/关闭：
 
 ``` vue
 <template>
 <u-button @click="opened = !opened">
-    {{ opened ? '隐藏' : '弹出' }}
+    {{ opened ? 'hide' : 'pop' }}
     <u-tooltip trigger="manual" :opened.sync="opened">Tooltip</u-tooltip>
 </u-button>
 </template>
@@ -72,63 +72,63 @@ export default {
 </script>
 ```
 
-### 弹出位置
+### Popup Location
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-button>
-            top-start
+            Top-Start
             <u-tooltip placement="top-start">Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            top
+            Top
             <u-tooltip placement="top">Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            top-end
+            Top-End
             <u-tooltip placement="top-end">Tooltip</u-tooltip>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            left-start
+            Left-Start
             <u-tooltip placement="left-start">Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            left
+            Left
             <u-tooltip placement="left">Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            left-end
+            Left-End
             <u-tooltip placement="left-end">Tooltip</u-tooltip>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            right-start
+            Right-Start
             <u-tooltip placement="right-start">Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            right
+            Right
             <u-tooltip placement="right">Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            right-end
+            Right-End
             <u-tooltip placement="right-end">Tooltip</u-tooltip>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            bottom-start
+            Bottom-Start
             <u-tooltip placement="bottom-start">Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            bottom
+            Bottom
             <u-tooltip placement="bottom">Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            bottom-end
+            Bottom-End
             <u-tooltip placement="bottom-end">Tooltip</u-tooltip>
         </u-button>
     </u-linear-layout>
@@ -162,7 +162,7 @@ export default {
 </u-linear-layout>
 ```
 
-#### 跟随鼠标
+#### Follow Mouse
 
 将`'follow-cursor'`属性设置为`true`可以跟随鼠标。也可以传一个数字或对象调整位置偏移。
 
@@ -170,57 +170,57 @@ export default {
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-button>
-            top-start
+            Top-Start
             <u-tooltip placement="top-start" follow-cursor>Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            top
+            Top
             <u-tooltip placement="top" follow-cursor>Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            top-end
+            Top-End
             <u-tooltip placement="top-end" follow-cursor>Tooltip</u-tooltip>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            left-start
+            Left-Start
             <u-tooltip placement="left-start" follow-cursor>Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            left
+            Left
             <u-tooltip placement="left" follow-cursor>Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            left-end
+            Left-End
             <u-tooltip placement="left-end" follow-cursor>Tooltip</u-tooltip>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            right-start
+            Right-Start
             <u-tooltip placement="right-start" follow-cursor>Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            right
+            Right
             <u-tooltip placement="right" follow-cursor>Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            right-end
+            Right-End
             <u-tooltip placement="right-end" follow-cursor>Tooltip</u-tooltip>
         </u-button>
     </u-linear-layout>
     <u-linear-layout>
         <u-button>
-            bottom-start
+            Bottom-Start
             <u-tooltip placement="bottom-start" follow-cursor>Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            bottom
+            Bottom
             <u-tooltip placement="bottom" follow-cursor>Tooltip</u-tooltip>
         </u-button>
         <u-button>
-            bottom-end
+            Bottom-End
             <u-tooltip placement="bottom-end" follow-cursor>Tooltip</u-tooltip>
         </u-button>
     </u-linear-layout>

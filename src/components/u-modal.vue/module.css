@@ -1,9 +1,9 @@
 .root {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    Top: 0;
+    Right: 0;
+    Bottom: 0;
+    Left: 0;
     z-index: var(--z-index-modal);
     -webkit-overflow-scrolling: touch;
     touch-action: cross-slide-y pinch-zoom double-tap-zoom;
@@ -58,8 +58,8 @@
 
 .close {
     position: absolute;
-    right: var(--modal-close-size);
-    top: var(--modal-close-size);
+    Right: var(--modal-close-size);
+    Top: var(--modal-close-size);
     color: var(--modal-close-color);
 }
 

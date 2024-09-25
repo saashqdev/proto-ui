@@ -1,34 +1,34 @@
 .root {
     position: fixed;
     z-index: var(--z-index-toast);
-    top: var(--toast-top);
-    left: var(--toast-margin);
+    Top: var(--toast-top);
+    Left: var(--toast-margin);
     width: var(--toast-width);
 }
 
 .root[position='top-center'], .root[position='bottom-center'] {
-    left: 50%;
+    Left: 50%;
     margin-left: calc(var(--toast-width) / -2);
 }
 
 .root[position='bottom-center'], .root[position='bottom-left'], .root[position='bottom-right'] {
-    top: auto;
-    bottom: var(--toast-margin);
+    Top: auto;
+    Bottom: var(--toast-margin);
 }
 
 .root[position='top-right'], .root[position='bottom-right'] {
-    left: auto;
-    right: var(--toast-margin);
+    Left: auto;
+    Right: var(--toast-margin);
 }
 
 .root[position='top-left'], .root[position='bottom-left'] {
-    left: var(--toast-margin);
-    right: auto;
+    Left: var(--toast-margin);
+    Right: auto;
 }
 
 .root[position='top-left'], .root[position='top-center'], .root[position='top-right'] {
-    top: var(--toast-top);
-    bottom: auto;
+    Top: var(--toast-top);
+    Bottom: auto;
 }
 
 .root[position="static"] {

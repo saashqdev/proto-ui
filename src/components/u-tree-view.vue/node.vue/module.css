@@ -11,8 +11,8 @@
 
 .back {
     position: absolute;
-    left: -10000px;
-    right: -10000px;
+    Left: -10000px;
+    Right: -10000px;
     height: 100%;
 }
 

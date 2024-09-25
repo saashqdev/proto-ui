@@ -21,34 +21,34 @@
 
 .root[display="full"] {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    Left: 0;
+    Right: 0;
+    Top: 0;
+    Bottom: 0;
     z-index: 99;
     background: var(--loading-full-background);
 }
 
 .root[display="full"] .body {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    Top: 50%;
+    Left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .root[display="fullWindow"] {
     position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    Left: 0;
+    Right: 0;
+    Top: 0;
+    Bottom: 0;
     z-index: var(--z-index-loading);
     background: var(--loading-fullWindow-background);
 }
 
 .root[display="fullWindow"] .body {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    Top: 50%;
+    Left: 50%;
     transform: translate(-50%, -50%);
 }

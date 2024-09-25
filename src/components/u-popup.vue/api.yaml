@@ -1,95 +1,95 @@
 - name: u-popup
-  title: 弹出框
+  title: Pop-up Box
   attrs:
     - name: title
       type: string
-      default: 标题
-      description: 弹出框标题
+      default: title
+      description: Pop-up box title
     - name: opened.sync
       type: boolean
       default: false
-      description: 弹出/关闭状态
+      description: Popup/closed state
     - name: trigger
       type: string
       default: click
-      description: 弹出框的触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`,
+      description: How to trigger the pop-up box. Optional values - `'click'`, `'hover'`, `'right-click'`, `'double-click'`,
         `'manual'`
     - name: placement
       type: string
       default: bottom
-      description: 弹出框的弹出方向。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`,
+      description: The pop-up direction of the pop-up box. Optional values - `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`,
         `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',`
         'left-end'`, `'right-start'`, `'right-end'`
     - name: hideDelay
       type: number
       default: 0
-      description: 提示内容消失延迟时间，单位是`'ms'`
+      description: The delay time for prompt content to disappear, in ms
     - name: offset
       type: string
       default: "0"
-      description: 弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px`
+      description: Popup layer offset, such as - '10', '10px 10px', '10% 10%', the first value represents the horizontal offset, the second value represents the vertical displacement, the default unit is `px`
     - name: follow-cursor
       type: boolean, number, object
       default: false
-      description: 是否跟随鼠标
+      description: Whether to follow the mouse
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
     - name: merge-borders
       type: boolean
       default: true
-      description: 是否自动合并内外边框
+      description: Whether to automatically merge inner and outer borders
   slots:
     - name: default
-      description: 自定义弹出的内容。
+      description: Customize the popup content.
     - name: root
-      description: 自定义整个弹出层。
+      description: Customize the entire popup layer.
     - name: head
-      description: 自定义头部。
+      description: Custom header.
     - name: body
-      description: 自定义中部。
+      description: Customize the middle.
     - name: foot
-      description: 自定义尾部。
+      description: Custom footer.
     - name: title
-      description: 自定义标题文本。
+      description: Custom title text.
   events:
     - name: before-open
-      description: 弹出前触发。
+      description: Triggered before popup.
       params:
         - name: $event.preventDefault
           type: Function
-          description: 阻止弹出流程
+          description: Block pop-up process
         - name: senderVM
           type: UPopup
-          description: 发送事件实例
+          description: Send event instance
     - name: open
-      description: 弹出时触发。
+      description: Triggered when popping up.
       params:
         - name: $event
           type: ""
-          description: 空
+          description: Empty
         - name: senderVM
           type: UPopup
-          description: 发送事件实例
+          description: Send event instance
     - name: before-close
-      description: 隐藏前触发。
+      description: Triggered before hiding.
       params:
         - name: $event.preventDefault
           type: Function
-          description: 阻止隐藏流程
+          description: Prevent hidden processes
         - name: senderVM
           type: UPopup
-          description: 发送事件实例
+          description: Send event instance
     - name: close
-      description: 隐藏时触发。
+      description: Triggered when hidden.
       params:
         - name: $event
           type: ""
-          description: 空
+          description: Empty
         - name: senderVM
           type: UPopup
-          description: 发送事件实例
+          description: Send event instance
     - name: before-toggle
       description: "@deprecated"
       params: []
@@ -98,22 +98,22 @@
       params: []
   methods:
     - name: open()
-      description: 弹出实例。
+      description: Popup instance.
       params: []
     - name: close()
-      description: 关闭实例。
+      description: Close the instance.
       params: []
     - name: toggle(opened?)
-      description: 切换弹出/关闭状态。
+      description: Toggle popup/closed state.
       params:
         - name: opened?
           type: boolean
-          description: 可选。弹出/关闭状态
+          description: Optional. Popup/closed state
     - name: update()
-      description: 更新 popper 实例。参考
+      description: Updates the popper instance.
         [Popper.update()](https://popper.js.org/popper-documentation.html#Popper.update)。
       params: []
     - name: scheduleUpdate()
-      description: 在下次 UI 渲染时一块更新 popper 实例，比`update()`性能要好。参考
+      description: Update the popper instance at the next UI rendering, which is better than `update()`.
         [Popper.scheduleUpdate()](https://popper.js.org/popper-documentation.html#Popper.scheduleUpdate)。
       params: []

@@ -6,19 +6,19 @@
 
 ``` html
 <u-tree-view>
-    <u-tree-view-node text="节点 1">
-        <u-tree-view-node text="节点 1.1"></u-tree-view-node>
-        <u-tree-view-node text="节点 1.2">
-            <u-tree-view-node text="节点 1.2.1"></u-tree-view-node>
-            <u-tree-view-node text="节点 1.2.2"></u-tree-view-node>
+    <u-tree-view-node text="Node 1">
+        <u-tree-view-node text="Node 1.1"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.2">
+            <u-tree-view-node text="Node 1.2.1"></u-tree-view-node>
+            <u-tree-view-node text="Node 1.2.2"></u-tree-view-node>
         </u-tree-view-node>
-        <u-tree-view-node text="节点 1.3"></u-tree-view-node>
-        <u-tree-view-node text="节点 1.4"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.3"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.4"></u-tree-view-node>
     </u-tree-view-node>
-    <u-tree-view-node text="节点 2"></u-tree-view-node>
-    <u-tree-view-node text="节点 3">
-        <u-tree-view-node text="节点 3.1"></u-tree-view-node>
-        <u-tree-view-node text="节点 3.2"></u-tree-view-node>
+    <u-tree-view-node text="Node 2"></u-tree-view-node>
+    <u-tree-view-node text="Node 3">
+        <u-tree-view-node text="Node 3.1"></u-tree-view-node>
+        <u-tree-view-node text="Node 3.2"></u-tree-view-node>
     </u-tree-view-node>
 </u-tree-view>
 ```
@@ -44,7 +44,7 @@
 ]"></u-tree-view>
 ```
 
-#### 自定义模板
+#### Customize模板
 
 Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提供了一个名为`text`的作用域插槽，可以很轻松地处理这个问题。
 
@@ -80,19 +80,19 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 
 ``` html
 <u-tree-view value="1.2">
-    <u-tree-view-node text="节点 1" value="1">
-        <u-tree-view-node text="节点 1.1" value="1.1"></u-tree-view-node>
-        <u-tree-view-node text="节点 1.2" value="1.2">
-            <u-tree-view-node text="节点 1.2.1" value="1.2.1"></u-tree-view-node>
-            <u-tree-view-node text="节点 1.2.2" value="1.2.2"></u-tree-view-node>
+    <u-tree-view-node text="Node 1" value="1">
+        <u-tree-view-node text="Node 1.1" value="1.1"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.2" value="1.2">
+            <u-tree-view-node text="Node 1.2.1" value="1.2.1"></u-tree-view-node>
+            <u-tree-view-node text="Node 1.2.2" value="1.2.2"></u-tree-view-node>
         </u-tree-view-node>
-        <u-tree-view-node text="节点 1.3" value="1.3"></u-tree-view-node>
-        <u-tree-view-node text="节点 1.4" value="1.4"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.3" value="1.3"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.4" value="1.4"></u-tree-view-node>
     </u-tree-view-node>
-    <u-tree-view-node text="节点 2" value="2"></u-tree-view-node>
-    <u-tree-view-node text="节点 3" value="3">
-        <u-tree-view-node text="节点 3.1" value="3.1"></u-tree-view-node>
-        <u-tree-view-node text="节点 3.2" value="3.2"></u-tree-view-node>
+    <u-tree-view-node text="Node 2" value="2"></u-tree-view-node>
+    <u-tree-view-node text="Node 3" value="3">
+        <u-tree-view-node text="Node 3.1" value="3.1"></u-tree-view-node>
+        <u-tree-view-node text="Node 3.2" value="3.2"></u-tree-view-node>
     </u-tree-view-node>
 </u-tree-view>
 ```
@@ -126,55 +126,55 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 <u-grid-layout>
     <u-grid-layout-column :span="4">
         <u-tree-view readonly>
-            <u-tree-view-node text="节点 1">
-                <u-tree-view-node text="节点 1.1"></u-tree-view-node>
-                <u-tree-view-node text="节点 1.2">
-                    <u-tree-view-node text="节点 1.2.1"></u-tree-view-node>
-                    <u-tree-view-node text="节点 1.2.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 1">
+                <u-tree-view-node text="Node 1.1"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.2">
+                    <u-tree-view-node text="Node 1.2.1"></u-tree-view-node>
+                    <u-tree-view-node text="Node 1.2.2"></u-tree-view-node>
                 </u-tree-view-node>
-                <u-tree-view-node text="节点 1.3"></u-tree-view-node>
-                <u-tree-view-node text="节点 1.4"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.3"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.4"></u-tree-view-node>
             </u-tree-view-node>
-            <u-tree-view-node text="节点 2"></u-tree-view-node>
-            <u-tree-view-node text="节点 3">
-                <u-tree-view-node text="节点 3.1"></u-tree-view-node>
-                <u-tree-view-node text="节点 3.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 2"></u-tree-view-node>
+            <u-tree-view-node text="Node 3">
+                <u-tree-view-node text="Node 3.1"></u-tree-view-node>
+                <u-tree-view-node text="Node 3.2"></u-tree-view-node>
             </u-tree-view-node>
         </u-tree-view>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <u-tree-view disabled>
-            <u-tree-view-node text="节点 1">
-                <u-tree-view-node text="节点 1.1"></u-tree-view-node>
-                <u-tree-view-node text="节点 1.2">
-                    <u-tree-view-node text="节点 1.2.1"></u-tree-view-node>
-                    <u-tree-view-node text="节点 1.2.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 1">
+                <u-tree-view-node text="Node 1.1"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.2">
+                    <u-tree-view-node text="Node 1.2.1"></u-tree-view-node>
+                    <u-tree-view-node text="Node 1.2.2"></u-tree-view-node>
                 </u-tree-view-node>
-                <u-tree-view-node text="节点 1.3"></u-tree-view-node>
-                <u-tree-view-node text="节点 1.4"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.3"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.4"></u-tree-view-node>
             </u-tree-view-node>
-            <u-tree-view-node text="节点 2"></u-tree-view-node>
-            <u-tree-view-node text="节点 3">
-                <u-tree-view-node text="节点 3.1"></u-tree-view-node>
-                <u-tree-view-node text="节点 3.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 2"></u-tree-view-node>
+            <u-tree-view-node text="Node 3">
+                <u-tree-view-node text="Node 3.1"></u-tree-view-node>
+                <u-tree-view-node text="Node 3.2"></u-tree-view-node>
             </u-tree-view-node>
         </u-tree-view>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <u-tree-view>
-            <u-tree-view-node text="节点 1">
-                <u-tree-view-node text="节点 1.1"></u-tree-view-node>
-                <u-tree-view-node text="节点 1.2" disabled>
-                    <u-tree-view-node text="节点 1.2.1"></u-tree-view-node>
-                    <u-tree-view-node text="节点 1.2.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 1">
+                <u-tree-view-node text="Node 1.1"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.2" disabled>
+                    <u-tree-view-node text="Node 1.2.1"></u-tree-view-node>
+                    <u-tree-view-node text="Node 1.2.2"></u-tree-view-node>
                 </u-tree-view-node>
-                <u-tree-view-node text="节点 1.3" disabled></u-tree-view-node>
-                <u-tree-view-node text="节点 1.4"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.3" disabled></u-tree-view-node>
+                <u-tree-view-node text="Node 1.4"></u-tree-view-node>
             </u-tree-view-node>
-            <u-tree-view-node text="节点 2" disabled></u-tree-view-node>
-            <u-tree-view-node text="节点 3">
-                <u-tree-view-node text="节点 3.1"></u-tree-view-node>
-                <u-tree-view-node text="节点 3.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 2" disabled></u-tree-view-node>
+            <u-tree-view-node text="Node 3">
+                <u-tree-view-node text="Node 3.1"></u-tree-view-node>
+                <u-tree-view-node text="Node 3.2"></u-tree-view-node>
             </u-tree-view-node>
         </u-tree-view>
     </u-grid-layout-column>
@@ -207,28 +207,28 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 
 ``` html
 <u-tree-view accordion>
-    <u-tree-view-node text="节点 1">
-        <u-tree-view-node text="节点 1.1">
-            <u-tree-view-node text="节点 1.1.1"></u-tree-view-node>
-            <u-tree-view-node text="节点 1.1.2"></u-tree-view-node>
+    <u-tree-view-node text="Node 1">
+        <u-tree-view-node text="Node 1.1">
+            <u-tree-view-node text="Node 1.1.1"></u-tree-view-node>
+            <u-tree-view-node text="Node 1.1.2"></u-tree-view-node>
         </u-tree-view-node>
-        <u-tree-view-node text="节点 1.2">
-            <u-tree-view-node text="节点 1.2.1"></u-tree-view-node>
-            <u-tree-view-node text="节点 1.2.2"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.2">
+            <u-tree-view-node text="Node 1.2.1"></u-tree-view-node>
+            <u-tree-view-node text="Node 1.2.2"></u-tree-view-node>
         </u-tree-view-node>
-        <u-tree-view-node text="节点 1.3">
-            <u-tree-view-node text="节点 1.3.1"></u-tree-view-node>
-            <u-tree-view-node text="节点 1.3.2"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.3">
+            <u-tree-view-node text="Node 1.3.1"></u-tree-view-node>
+            <u-tree-view-node text="Node 1.3.2"></u-tree-view-node>
         </u-tree-view-node>
-        <u-tree-view-node text="节点 1.4"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.4"></u-tree-view-node>
     </u-tree-view-node>
-    <u-tree-view-node text="节点 2" expanded>
-        <u-tree-view-node text="节点 2.1"></u-tree-view-node>
-        <u-tree-view-node text="节点 2.2"></u-tree-view-node>
+    <u-tree-view-node text="Node 2" expanded>
+        <u-tree-view-node text="Node 2.1"></u-tree-view-node>
+        <u-tree-view-node text="Node 2.2"></u-tree-view-node>
     </u-tree-view-node>
-    <u-tree-view-node text="节点 3">
-        <u-tree-view-node text="节点 3.1"></u-tree-view-node>
-        <u-tree-view-node text="节点 3.2"></u-tree-view-node>
+    <u-tree-view-node text="Node 3">
+        <u-tree-view-node text="Node 3.1"></u-tree-view-node>
+        <u-tree-view-node text="Node 3.2"></u-tree-view-node>
     </u-tree-view-node>
 </u-tree-view>
 ```
@@ -240,38 +240,38 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
     <u-grid-layout-column :span="4" expand-trigger="click">
         <p>整行点击均可触发（默认）</p>
         <u-tree-view>
-            <u-tree-view-node text="节点 1" expanded>
-                <u-tree-view-node text="节点 1.1" expanded></u-tree-view-node>
-                <u-tree-view-node text="节点 1.2" expanded>
-                    <u-tree-view-node text="节点 1.2.1"></u-tree-view-node>
-                    <u-tree-view-node text="节点 1.2.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 1" expanded>
+                <u-tree-view-node text="Node 1.1" expanded></u-tree-view-node>
+                <u-tree-view-node text="Node 1.2" expanded>
+                    <u-tree-view-node text="Node 1.2.1"></u-tree-view-node>
+                    <u-tree-view-node text="Node 1.2.2"></u-tree-view-node>
                 </u-tree-view-node>
-                <u-tree-view-node text="节点 1.3"></u-tree-view-node>
-                <u-tree-view-node text="节点 1.4"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.3"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.4"></u-tree-view-node>
             </u-tree-view-node>
-            <u-tree-view-node text="节点 2"></u-tree-view-node>
-            <u-tree-view-node text="节点 3">
-                <u-tree-view-node text="节点 3.1"></u-tree-view-node>
-                <u-tree-view-node text="节点 3.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 2"></u-tree-view-node>
+            <u-tree-view-node text="Node 3">
+                <u-tree-view-node text="Node 3.1"></u-tree-view-node>
+                <u-tree-view-node text="Node 3.2"></u-tree-view-node>
             </u-tree-view-node>
         </u-tree-view>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <p>仅点击小箭头时触发</p>
         <u-tree-view expand-trigger="click-expander">
-            <u-tree-view-node text="节点 1" expanded>
-                <u-tree-view-node text="节点 1.1" expanded></u-tree-view-node>
-                <u-tree-view-node text="节点 1.2" expanded>
-                    <u-tree-view-node text="节点 1.2.1"></u-tree-view-node>
-                    <u-tree-view-node text="节点 1.2.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 1" expanded>
+                <u-tree-view-node text="Node 1.1" expanded></u-tree-view-node>
+                <u-tree-view-node text="Node 1.2" expanded>
+                    <u-tree-view-node text="Node 1.2.1"></u-tree-view-node>
+                    <u-tree-view-node text="Node 1.2.2"></u-tree-view-node>
                 </u-tree-view-node>
-                <u-tree-view-node text="节点 1.3"></u-tree-view-node>
-                <u-tree-view-node text="节点 1.4"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.3"></u-tree-view-node>
+                <u-tree-view-node text="Node 1.4"></u-tree-view-node>
             </u-tree-view-node>
-            <u-tree-view-node text="节点 2"></u-tree-view-node>
-            <u-tree-view-node text="节点 3">
-                <u-tree-view-node text="节点 3.1"></u-tree-view-node>
-                <u-tree-view-node text="节点 3.2"></u-tree-view-node>
+            <u-tree-view-node text="Node 2"></u-tree-view-node>
+            <u-tree-view-node text="Node 3">
+                <u-tree-view-node text="Node 3.1"></u-tree-view-node>
+                <u-tree-view-node text="Node 3.2"></u-tree-view-node>
             </u-tree-view-node>
         </u-tree-view>
     </u-grid-layout-column>
@@ -282,19 +282,19 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 
 ``` html
 <u-tree-view cancelable>
-    <u-tree-view-node text="节点 1">
-        <u-tree-view-node text="节点 1.1"></u-tree-view-node>
-        <u-tree-view-node text="节点 1.2">
-            <u-tree-view-node text="节点 1.2.1"></u-tree-view-node>
-            <u-tree-view-node text="节点 1.2.2"></u-tree-view-node>
+    <u-tree-view-node text="Node 1">
+        <u-tree-view-node text="Node 1.1"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.2">
+            <u-tree-view-node text="Node 1.2.1"></u-tree-view-node>
+            <u-tree-view-node text="Node 1.2.2"></u-tree-view-node>
         </u-tree-view-node>
-        <u-tree-view-node text="节点 1.3"></u-tree-view-node>
-        <u-tree-view-node text="节点 1.4"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.3"></u-tree-view-node>
+        <u-tree-view-node text="Node 1.4"></u-tree-view-node>
     </u-tree-view-node>
-    <u-tree-view-node text="节点 2"></u-tree-view-node>
-    <u-tree-view-node text="节点 3">
-        <u-tree-view-node text="节点 3.1"></u-tree-view-node>
-        <u-tree-view-node text="节点 3.2"></u-tree-view-node>
+    <u-tree-view-node text="Node 2"></u-tree-view-node>
+    <u-tree-view-node text="Node 3">
+        <u-tree-view-node text="Node 3.1"></u-tree-view-node>
+        <u-tree-view-node text="Node 3.2"></u-tree-view-node>
     </u-tree-view-node>
 </u-tree-view>
 ```
@@ -305,19 +305,19 @@ Tag 方式中可以使用`v-show`，Data 方式中可以使用`hidden`属性
 
 ``` html
 <u-tree-view cancelable>
-    <u-tree-view-node v-show="false" text="节点1">
-        <u-tree-view-node text="节点1.1"></u-tree-view-node>
-        <u-tree-view-node text="节点1.2">
-            <u-tree-view-node text="节点1.2.1"></u-tree-view-node>
-            <u-tree-view-node text="节点1.2.2"></u-tree-view-node>
+    <u-tree-view-node v-show="false" text="Node1">
+        <u-tree-view-node text="Node1.1"></u-tree-view-node>
+        <u-tree-view-node text="Node1.2">
+            <u-tree-view-node text="Node1.2.1"></u-tree-view-node>
+            <u-tree-view-node text="Node1.2.2"></u-tree-view-node>
         </u-tree-view-node>
-        <u-tree-view-node text="节点1.3"></u-tree-view-node>
-        <u-tree-view-node text="节点1.4"></u-tree-view-node>
+        <u-tree-view-node text="Node1.3"></u-tree-view-node>
+        <u-tree-view-node text="Node1.4"></u-tree-view-node>
     </u-tree-view-node>
-    <u-tree-view-node text="节点2"></u-tree-view-node>
-    <u-tree-view-node text="节点3">
-        <u-tree-view-node text="节点3.1" hidden></u-tree-view-node>
-        <u-tree-view-node text="节点3.2"></u-tree-view-node>
+    <u-tree-view-node text="Node2"></u-tree-view-node>
+    <u-tree-view-node text="Node3">
+        <u-tree-view-node text="Node3.1" hidden></u-tree-view-node>
+        <u-tree-view-node text="Node3.2"></u-tree-view-node>
     </u-tree-view-node>
 </u-tree-view>
 ```
