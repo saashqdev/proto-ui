@@ -1,43 +1,43 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UCascadeSelect 级联选择
+# UCascadeSelect Cascade Selection
 
-**UI 组件**, **表单控件**, **块级展示**
+**UI Component**, **Form Control**, **Block Level Display**
 
 ## Example
 ### Basic Usage
 
 ``` html
 <u-cascade-select :categories="[
-    { label: '学科门类' },
-    { label: '一级学科' },
-    { label: '二级学科' },
+    { label: 'Subject Category' },
+    { label: 'First-level Discipline' },
+    { label: 'Secondary Discipline' },
 ]" :data="[
-    { text: '理学', value: '理学', children: [
-        { text: '物理学', value: '物理学', children: [
-            { text: '理论物理', value: '理论物理' },
-            { text: '凝聚态物理', value: '凝聚态物理' },
-            { text: '材料物理', value: '材料物理' },
+    { text: 'Geography', value: 'Geography', children: [
+        { text: 'Physics', value: 'Physics', children: [
+            { text: 'Theoretical Physics', value: 'Theoretical Physics' },
+            { text: 'Condensed Matter Physics', value: 'Condensed Matter Physics' },
+            { text: 'Material Physics', value: 'Material Physics' },
         ] },
-        { text: '数学', value: '数学', children: [
-            { text: '基础数学', value: '基础数学' },
-            { text: '计算数学', value: '计算数学' },
-            { text: '应用数学', value: '应用数学' },
+        { text: 'Mathematics', value: 'Mathematics', children: [
+            { text: 'Basic Mathematics', value: 'Basic Mathematics' },
+            { text: 'Computational Mathematics', value: 'Computational Mathematics' },
+            { text: 'Applied Mathematics', value: 'Applied Mathematics' },
         ] },
-        { text: '化学', value: '化学' },
+        { text: 'Chemistry', value: 'Chemistry' },
     ]},
-    { text: '工学', value: '工学', children: [
-        { text: '计算机科学与技术', value: '计算机科学与技术', children: [
-            { text: '计算机系统结构', value: '计算机系统结构' },
-            { text: '计算机软件与理论', value: '计算机软件与理论', disabled: true },
-            { text: '计算机应用技术', value: '计算机应用技术' },
+    { text: 'Engineering', value: 'Engineering', children: [
+        { text: 'Computer Science and Technology', value: 'Computer Science and Technology', children: [
+            { text: 'Computer System Structure', value: 'Computer System Structure' },
+            { text: 'Computer Software and Theory', value: 'Computer Software and Theory', disabled: true },
+            { text: 'Computer Application Technology', value: 'Computer Application Technology' },
         ] },
-        { text: '软件工程', value: '软件工程', disabled: true },
-        { text: '机械工程', value: '机械工程', children: [
-            { text: '机械制造及其自动化', value: '机械制造及其自动化' },
-            { text: '机械电子工程', value: '机械电子工程' },
-            { text: '机械设计及理论', value: '机械设计及理论', disabled: true },
-            { text: '车辆工程', value: '车辆工程', disabled: true },
+        { text: 'Software Engineering', value: 'Software Engineering', disabled: true },
+        { text: 'Mechanical Engineering', value: 'Mechanical Engineering', children: [
+            { text: 'Mechanical Manufacturing and Automation', value: 'Mechanical Manufacturing and Automation' },
+            { text: 'Mechatronics Engineering', value: 'Mechatronics Engineering' },
+            { text: 'Mechanical Design and Theory', value: 'Mechanical Design and Theory', disabled: true },
+            { text: 'Vehicle Engineering', value: 'Vehicle Engineering', disabled: true },
         ] },
     ] },
 ]">
@@ -48,35 +48,35 @@
 
 ``` html
 <u-cascade-select :categories="[
-    { label: '学科门类', placeholder: '学科门类' },
-    { label: '一级学科', placeholder: '一级学科' },
-    { label: '二级学科', placeholder: '二级学科' },
+    { label: 'Subject Category', placeholder: 'Subject Category' },
+    { label: 'First-level Discipline', placeholder: 'First-level Discipline' },
+    { label: 'Secondary Discipline', placeholder: 'Secondary Discipline' },
 ]" :data="[
-    { text: '理学', value: '理学', children: [
-        { text: '物理学', value: '物理学', children: [
-            { text: '理论物理', value: '理论物理' },
-            { text: '凝聚态物理', value: '凝聚态物理' },
-            { text: '材料物理', value: '材料物理' },
-        ]},
-        { text: '数学', value: '数学', children: [
-            { text: '基础数学', value: '基础数学' },
-            { text: '计算数学', value: '计算数学' },
-            { text: '应用数学', value: '应用数学' },
-        ]},
-        { text: '化学', value: '化学' },
-    ]},
-    { text: '工学', value: '工学', children: [
-        { text: '计算机科学与技术', value: '计算机科学与技术', children: [
-            { text: '计算机系统结构', value: '计算机系统结构' },
-            { text: '计算机软件与理论', value: '计算机软件与理论', disabled: true },
-            { text: '计算机应用技术', value: '计算机应用技术' },
+    { text: 'Geography', value: 'Geography', children: [
+        { text: 'Physics', value: 'Physics', children: [
+            { text: 'Theoretical Physics', value: 'Theoretical Physics' },
+            { text: 'Condensed Matter Physics', value: 'Condensed Matter Physics' },
+            { text: 'Material Physics', value: 'Material Physics' },
         ] },
-        { text: '软件工程', value: '软件工程', disabled: true },
-        { text: '机械工程', value: '机械工程', children: [
-            { text: '机械制造及其自动化', value: '机械制造及其自动化' },
-            { text: '机械电子工程', value: '机械电子工程' },
-            { text: '机械设计及理论', value: '机械设计及理论', disabled: true },
-            { text: '车辆工程', value: '车辆工程', disabled: true },
+        { text: 'Mathematics', value: 'Mathematics', children: [
+            { text: 'Basic Mathematics', value: 'Basic Mathematics' },
+            { text: 'Computational Mathematics', value: 'Computational Mathematics' },
+            { text: 'Applied Mathematics', value: 'Applied Mathematics' },
+        ] },
+        { text: 'Chemistry', value: 'Chemistry' },
+    ]},
+    { text: 'Engineering', value: 'Engineering', children: [
+        { text: 'Computer Science and Technology', value: 'Computer Science and Technology', children: [
+            { text: 'Computer System Structure', value: 'Computer System Structure' },
+            { text: 'Computer Software and Theory', value: 'Computer Software and Theory', disabled: true },
+            { text: 'Computer Application Technology', value: 'Computer Application Technology' },
+        ] },
+        { text: 'Software Engineering', value: 'Software Engineering', disabled: true },
+        { text: 'Mechanical Engineering', value: 'Mechanical Engineering', children: [
+            { text: 'Mechanical Manufacturing and Automation', value: 'Mechanical Manufacturing and Automation' },
+            { text: 'Mechatronics Engineering', value: 'Mechatronics Engineering' },
+            { text: 'Mechanical Design and Theory', value: 'Mechanical Design and Theory', disabled: true },
+            { text: 'Vehicle Engineering', value: 'Vehicle Engineering', disabled: true },
         ] },
     ] },
 ]">
@@ -87,92 +87,92 @@
 
 ``` html
 <u-cascade-select hide-empty :categories="[
-    { label: '学科门类', placeholder: '学科门类' },
-    { label: '一级学科', placeholder: '一级学科' },
-    { label: '二级学科', placeholder: '二级学科' },
+    { label: 'Subject Category', placeholder: 'Subject Category' },
+    { label: 'First-level Discipline', placeholder: 'First-level Discipline' },
+    { label: 'Secondary Discipline', placeholder: 'Secondary Discipline' },
 ]" :data="[
-    { text: '理学', value: '理学', children: [
-        { text: '物理学', value: '物理学', children: [
-            { text: '理论物理', value: '理论物理' },
-            { text: '凝聚态物理', value: '凝聚态物理' },
-            { text: '材料物理', value: '材料物理' },
+    { text: 'Geography', value: 'Geography', children: [
+        { text: 'Physics', value: 'Physics', children: [
+            { text: 'Theoretical Physics', value: 'Theoretical Physics' },
+            { text: 'Condensed Matter Physics', value: 'Condensed Matter Physics' },
+            { text: 'Material Physics', value: 'Material Physics' },
         ] },
-        { text: '数学', value: '数学', children: [
-            { text: '基础数学', value: '基础数学' },
-            { text: '计算数学', value: '计算数学' },
-            { text: '应用数学', value: '应用数学' },
+        { text: 'Mathematics', value: 'Mathematics', children: [
+            { text: 'Basic Mathematics', value: 'Basic Mathematics' },
+            { text: 'Computational Mathematics', value: 'Computational Mathematics' },
+            { text: 'Applied Mathematics', value: 'Applied Mathematics' },
         ] },
-        { text: '化学', value: '化学' },
-    ] },
-    { text: '工学', value: '工学', children: [
-        { text: '计算机科学与技术', value: '计算机科学与技术', children: [
-            { text: '计算机系统结构', value: '计算机系统结构' },
-            { text: '计算机软件与理论', value: '计算机软件与理论', disabled: true },
-            { text: '计算机应用技术', value: '计算机应用技术' },
+        { text: 'Chemistry', value: 'Chemistry' },
+    ]},
+    { text: 'Engineering', value: 'Engineering', children: [
+        { text: 'Computer Science and Technology', value: 'Computer Science and Technology', children: [
+            { text: 'Computer System Structure', value: 'Computer System Structure' },
+            { text: 'Computer Software and Theory', value: 'Computer Software and Theory', disabled: true },
+            { text: 'Computer Application Technology', value: 'Computer Application Technology' },
         ] },
-        { text: '软件工程', value: '软件工程', disabled: true },
-        { text: '机械工程', value: '机械工程', children: [
-            { text: '机械制造及其自动化', value: '机械制造及其自动化' },
-            { text: '机械电子工程', value: '机械电子工程' },
-            { text: '机械设计及理论', value: '机械设计及理论', disabled: true },
-            { text: '车辆工程', value: '车辆工程', disabled: true },
+        { text: 'Software Engineering', value: 'Software Engineering', disabled: true },
+        { text: 'Mechanical Engineering', value: 'Mechanical Engineering', children: [
+            { text: 'Mechanical Manufacturing and Automation', value: 'Mechanical Manufacturing and Automation' },
+            { text: 'Mechatronics Engineering', value: 'Mechatronics Engineering' },
+            { text: 'Mechanical Design and Theory', value: 'Mechanical Design and Theory', disabled: true },
+            { text: 'Vehicle Engineering', value: 'Vehicle Engineering', disabled: true },
         ] },
     ] },
 ]">
 </u-cascade-select>
 ```
 
-### 值转换器
+### Value Converter
 
-组件的 value 与 各选择器的 value 的转换器。
+Converter between the component's value and the value of each selector.
 
 #### join
 
-默认为`'join'`，表示将 values 数组 join 之后变成 value。这种情况下 value 一般不会重复，推荐使用。
+The default is `'join'`, which means joining the values array into value. In this case, value is generally not repeated and is recommended.
 
 ``` vue
 <template>
 <u-linear-layout direction="vertical">
     <u-cascade-select converter="join" v-model="value" :categories="[
-        { label: '学科门类' },
-        { label: '一级学科' },
-        { label: '二级学科' },
+        { label: 'Subject Category' },
+        { label: 'First-level Discipline' },
+        { label: 'Secondary Discipline' },
     ]" :data="data">
     </u-cascade-select>
-    <div>选择的值为：{{ value }}</div>
+    <div>The selected values are:{{ value }}</div>
 </u-linear-layout>
 </template>
 <script>
 export default {
     data() {
         return {
-            value: '工学,计算机科学与技术,计算机应用技术',
+            value: 'Engineering, Computer Science and Technology, Computer Application Technology',
             data: [
-                { text: '理学', value: '理学', children: [
-                    { text: '物理学', value: '物理学', children: [
-                        { text: '理论物理', value: '理论物理' },
-                        { text: '凝聚态物理', value: '凝聚态物理' },
-                        { text: '材料物理', value: '材料物理' },
+                { text: 'Geography', value: 'Geography', children: [
+                    { text: 'Physics', value: 'Physics', children: [
+                        { text: 'Theoretical Physics', value: 'Theoretical Physics' },
+                        { text: 'Condensed Matter Physics', value: 'Condensed Matter Physics' },
+                        { text: 'Material Physics', value: 'Material Physics' },
                     ] },
-                    { text: '数学', value: '数学', children: [
-                        { text: '基础数学', value: '基础数学' },
-                        { text: '计算数学', value: '计算数学' },
-                        { text: '应用数学', value: '应用数学' },
+                    { text: 'Mathematics', value: 'Mathematics', children: [
+                        { text: 'Basic Mathematics', value: 'Basic Mathematics' },
+                        { text: 'Computational Mathematics', value: 'Computational Mathematics' },
+                        { text: 'Applied Mathematics', value: 'Applied Mathematics' },
                     ] },
-                    { text: '化学', value: '化学' },
-                ] },
-                { text: '工学', value: '工学', children: [
-                    { text: '计算机科学与技术', value: '计算机科学与技术', children: [
-                        { text: '计算机系统结构', value: '计算机系统结构' },
-                        { text: '计算机软件与理论', value: '计算机软件与理论', disabled: true },
-                        { text: '计算机应用技术', value: '计算机应用技术' },
+                    { text: 'Chemistry', value: 'Chemistry' },
+                ]},
+                { text: 'Engineering', value: 'Engineering', children: [
+                    { text: 'Computer Science and Technology', value: 'Computer Science and Technology', children: [
+                        { text: 'Computer System Structure', value: 'Computer System Structure' },
+                        { text: 'Computer Software and Theory', value: 'Computer Software and Theory', disabled: true },
+                        { text: 'Computer Application Technology', value: 'Computer Application Technology' },
                     ] },
-                    { text: '软件工程', value: '软件工程', disabled: true },
-                    { text: '机械工程', value: '机械工程', children: [
-                        { text: '机械制造及其自动化', value: '机械制造及其自动化' },
-                        { text: '机械电子工程', value: '机械电子工程' },
-                        { text: '机械设计及理论', value: '机械设计及理论', disabled: true },
-                        { text: '车辆工程', value: '车辆工程', disabled: true },
+                    { text: 'Software Engineering', value: 'Software Engineering', disabled: true },
+                    { text: 'Mechanical Engineering', value: 'Mechanical Engineering', children: [
+                        { text: 'Mechanical Manufacturing and Automation', value: 'Mechanical Manufacturing and Automation' },
+                        { text: 'Mechatronics Engineering', value: 'Mechatronics Engineering' },
+                        { text: 'Mechanical Design and Theory', value: 'Mechanical Design and Theory', disabled: true },
+                        { text: 'Vehicle Engineering', value: 'Vehicle Engineering', disabled: true },
                     ] },
                 ] },
             ],
@@ -182,20 +182,20 @@ export default {
 </script>
 ```
 
-`'join.number'`与`join`类似，只是会考虑它为数字的情况。
+`'join.number'` is similar to `join`, except that it will be considered as a number.
 
-`'join:,'`，还可以用`:`修改分隔符，类似 Vue 的指令参数。
+`'join:,'`, you can also use `:` to modify the separator, similar to Vue's command parameters.
 
 ``` vue
 <template>
 <u-linear-layout direction="vertical">
     <u-cascade-select :value.sync="value" converter="join.number:|" :categories="[
         { label: 'CPU', key: 'cpu' },
-        { label: '内存', key: 'memory' },
-        { label: '系统盘', key: 'storage' },
+        { label: 'Memory', key: 'memory' },
+        { label: 'System Disk', key: 'storage' },
     ]" :data="data">
     </u-cascade-select>
-    <div>选择的值为：{{ value }}</div>
+    <div>The selected value is: {{ value }}</div>
 </u-linear-layout>
 </template>
 
@@ -205,7 +205,7 @@ export default {
         return {
             value: undefined,
             data: [
-                { text: '1核', value: 1, children: [
+                { text: '1 core', value: 1, children: [
                     { text: '1GB', value: 1, children: [
                         { text: '20GB', value: 20 },
                     ] },
@@ -213,7 +213,7 @@ export default {
                         { text: '20GB', value: 20 },
                     ] },
                 ] },
-                { text: '2核', value: 2, children: [
+                { text: '2 core', value: 2, children: [
                     { text: '2GB', value: 2, children: [
                         { text: '20GB', value: 20 },
                     ] },
@@ -224,7 +224,7 @@ export default {
                         { text: '20GB', value: 20 },
                     ] },
                 ] },
-                { text: '4核', value: 4, children: [
+                { text: '4 core', value: 4, children: [
                     { text: '4GB', value: 4, children: [
                         { text: '20GB', value: 20 },
                     ] },
@@ -242,17 +242,17 @@ export default {
 </script>
 ```
 
-#### last-value
+#### Last-Value
 
-`'last-value'`表示以最后一项的值作为 value，如果每一项的值是唯一的，可以用这种方法。
+`'last-value'` means using the value of the last item as the value. This method can be used if the value of each item is unique.
 
 ``` vue
 <template>
 <u-linear-layout direction="vertical">
     <u-cascade-select converter="last-value" v-model="value" :categories="[
-        { label: '学科门类' },
-        { label: '一级学科' },
-        { label: '二级学科' },
+        { label: 'Subject Category' },
+        { label: 'First-level Discipline' },
+        { label: 'Secondary Discipline' },
     ]" :data="data">
     </u-cascade-select>
     <div>选择的值为：{{ value }}</div>
@@ -264,31 +264,31 @@ export default {
         return {
             value: '213',
             data: [
-                { text: '理学', value: '1', children: [
-                    { text: '物理学', value: '11', children: [
-                        { text: '理论物理', value: '111' },
-                        { text: '凝聚态物理', value: '112' },
-                        { text: '材料物理', value: '113' },
+                { text: 'Geography', value: 'Geography', children: [
+                    { text: 'Physics', value: 'Physics', children: [
+                        { text: 'Theoretical Physics', value: 'Theoretical Physics' },
+                        { text: 'Condensed Matter Physics', value: 'Condensed Matter Physics' },
+                        { text: 'Material Physics', value: 'Material Physics' },
                     ] },
-                    { text: '数学', value: '12', children: [
-                        { text: '基础数学', value: '121' },
-                        { text: '计算数学', value: '122' },
-                        { text: '应用数学', value: '123' },
+                    { text: 'Mathematics', value: 'Mathematics', children: [
+                        { text: 'Basic Mathematics', value: 'Basic Mathematics' },
+                        { text: 'Computational Mathematics', value: 'Computational Mathematics' },
+                        { text: 'Applied Mathematics', value: 'Applied Mathematics' },
                     ] },
-                    { text: '化学', value: '13' },
-                ] },
-                { text: '工学', value: '2', children: [
-                    { text: '计算机科学与技术', value: '21', children: [
-                        { text: '计算机系统结构', value: '211' },
-                        { text: '计算机软件与理论', value: '212', disabled: true },
-                        { text: '计算机应用技术', value: '213' },
+                    { text: 'Chemistry', value: 'Chemistry' },
+                ]},
+                { text: 'Engineering', value: 'Engineering', children: [
+                    { text: 'Computer Science and Technology', value: 'Computer Science and Technology', children: [
+                        { text: 'Computer System Structure', value: 'Computer System Structure' },
+                        { text: 'Computer Software and Theory', value: 'Computer Software and Theory', disabled: true },
+                        { text: 'Computer Application Technology', value: 'Computer Application Technology' },
                     ] },
-                    { text: '软件工程', value: '22', disabled: true },
-                    { text: '机械工程', value: '23', children: [
-                        { text: '机械制造及其自动化', value: '231' },
-                        { text: '机械电子工程', value: '232' },
-                        { text: '机械设计及理论', value: '233', disabled: true },
-                        { text: '车辆工程', value: '234', disabled: true },
+                    { text: 'Software Engineering', value: 'Software Engineering', disabled: true },
+                    { text: 'Mechanical Engineering', value: 'Mechanical Engineering', children: [
+                        { text: 'Mechanical Manufacturing and Automation', value: 'Mechanical Manufacturing and Automation' },
+                        { text: 'Mechatronics Engineering', value: 'Mechatronics Engineering' },
+                        { text: 'Mechanical Design and Theory', value: 'Mechanical Design and Theory', disabled: true },
+                        { text: 'Vehicle Engineering', value: 'Vehicle Engineering', disabled: true },
                     ] },
                 ] },
             ],
@@ -298,39 +298,39 @@ export default {
 </script>
 ```
 
-### 大小扩展
+### Size Expansion
 
 ``` html
 <u-cascade-select size="large" :categories="[
-    { label: '学科门类' },
-    { label: '一级学科' },
-    { label: '二级学科' },
+    { label: 'Subject Category' },
+    { label: 'First-level Discipline' },
+    { label: 'Secondary Discipline' },
 ]" :data="[
-    { text: '理学', value: '理学', children: [
-        { text: '物理学', value: '物理学', children: [
-            { text: '理论物理', value: '理论物理' },
-            { text: '凝聚态物理', value: '凝聚态物理' },
-            { text: '材料物理', value: '材料物理' },
+    { text: 'Geography', value: 'Geography', children: [
+        { text: 'Physics', value: 'Physics', children: [
+            { text: 'Theoretical Physics', value: 'Theoretical Physics' },
+            { text: 'Condensed Matter Physics', value: 'Condensed Matter Physics' },
+            { text: 'Material Physics', value: 'Material Physics' },
         ] },
-        { text: '数学', value: '数学', children: [
-            { text: '基础数学', value: '基础数学' },
-            { text: '计算数学', value: '计算数学' },
-            { text: '应用数学', value: '应用数学' },
+        { text: 'Mathematics', value: 'Mathematics', children: [
+            { text: 'Basic Mathematics', value: 'Basic Mathematics' },
+            { text: 'Computational Mathematics', value: 'Computational Mathematics' },
+            { text: 'Applied Mathematics', value: 'Applied Mathematics' },
         ] },
-        { text: '化学', value: '化学' },
+        { text: 'Chemistry', value: 'Chemistry' },
     ]},
-    { text: '工学', value: '工学', children: [
-        { text: '计算机科学与技术', value: '计算机科学与技术', children: [
-            { text: '计算机系统结构', value: '计算机系统结构' },
-            { text: '计算机软件与理论', value: '计算机软件与理论', disabled: true },
-            { text: '计算机应用技术', value: '计算机应用技术' },
+    { text: 'Engineering', value: 'Engineering', children: [
+        { text: 'Computer Science and Technology', value: 'Computer Science and Technology', children: [
+            { text: 'Computer System Structure', value: 'Computer System Structure' },
+            { text: 'Computer Software and Theory', value: 'Computer Software and Theory', disabled: true },
+            { text: 'Computer Application Technology', value: 'Computer Application Technology' },
         ] },
-        { text: '软件工程', value: '软件工程', disabled: true },
-        { text: '机械工程', value: '机械工程', children: [
-            { text: '机械制造及其自动化', value: '机械制造及其自动化' },
-            { text: '机械电子工程', value: '机械电子工程' },
-            { text: '机械设计及理论', value: '机械设计及理论', disabled: true },
-            { text: '车辆工程', value: '车辆工程', disabled: true },
+        { text: 'Software Engineering', value: 'Software Engineering', disabled: true },
+        { text: 'Mechanical Engineering', value: 'Mechanical Engineering', children: [
+            { text: 'Mechanical Manufacturing and Automation', value: 'Mechanical Manufacturing and Automation' },
+            { text: 'Mechatronics Engineering', value: 'Mechatronics Engineering' },
+            { text: 'Mechanical Design and Theory', value: 'Mechanical Design and Theory', disabled: true },
+            { text: 'Vehicle Engineering', value: 'Vehicle Engineering', disabled: true },
         ] },
     ] },
 ]">
@@ -342,47 +342,47 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| data | Array\<{ text, value }\> |  |  | 数据列表 |
-| value.sync, v-model | any |  |  | 当前选择的值 |
-| categories | Array\<{ label, key, placeholder }\> |  |  | 多级分类 |
-| hide-empty | boolean |  | `false` | 是否隐藏空列表 |
-| converter | string, object |  | `'join'` | value 与 values 的转换器。可选值：`'join'`表示将 values 数组 join 之后变成 value，`'join.number'`与`join`类似，只是会考虑它为数字的情况。也可以用`:`修改分隔符，类似 Vue 的指令参数，`'last-value'`表示以最后一项的值作为 value。也可以传入一个包含 { get, set } 的一个对象 |
-| field | string |  | `'text'` | 显示文本字段 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| data | Array\<{ text, value }\> | | | Data list |
+| value.sync, v-model | any | | | Currently selected value |
+| categories | Array\<{ label, key, placeholder }\> | | | Multi-level classification |
+| hide-empty | boolean | | `false` | Whether to hide the empty list |
+| converter | string, object | | `'join'` | Converter between value and values. Optional value: `'join'` means joining the values   array into value. `'join.number'` is similar to `join`, except that it will be considered as a number. You can also use `:` to modify the separator, similar to Vue's command parameters. `'last-value'` means using the value of the last item as the value. You can also pass in an object containing { get, set } |
+| field | string | | `'text'` | Display text field |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Events
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | any | 选择项的值 |
-| senderVM | UCascadeSelect | 发送事件实例 |
+| $event | any | Value of selection |
+| senderVM | UCascadeSelect | Send event instance |
 
 #### @select
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.level | number | 选择的层级 |
-| $event.value | any | 改变后的值 |
-| $event.values | Array | 改变后每项值的数组 |
-| $event.item | object | 选择项相关对象 |
-| $event.itemVM | ListViewItem | 选择项子组件 |
-| senderVM | UCascadeSelect | 发送事件实例 |
+| $event.level | number | Selected level |
+| $event.value | any | Changed value |
+| $event.values   | Array | Array of changed values of each item |
+| $event.item | object | Object related to selection item |
+| $event.itemVM | ListViewItem | Selection subcomponent |
+| senderVM | UCascadeSelect | Send event instance |
 
 #### @change
 
-选择值改变时触发
+Fires when the selection value changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 改变后的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.values | Array | 改变后每项值的数组 |
-| $event.oldValues | Array | 旧的每项值的数组 |
-| senderVM | UCascadeSelect | 发送事件实例 |
+| $event.value | any | Changed value |
+| $event.oldValue | any | Old value |
+| $event.values   | Array | Array of changed values of each item |
+| $event.oldValues   | Array | Array of old values for each item |
+| senderVM | UCascadeSelect | Send event instance |

@@ -22,7 +22,7 @@
 <u-pagination :total="11" :page="6" :side="1" :around="3"></u-pagination>
 ```
 
-### 只读和禁用
+### Read Only and Disabled
 
 ``` html
 <u-linear-layout direction="vertical">

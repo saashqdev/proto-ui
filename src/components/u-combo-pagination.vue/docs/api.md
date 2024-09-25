@@ -3,36 +3,36 @@
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| page.sync | Number | `1` | 当前页码 |
-| page-size.sync | Number | `20` | 每页大小 |
-| page-size-options | Array | `[10, 20, 50]` | 每页大小选项列表 |
-| total | Number | `11` | 总页数 |
-| side | Number | `2` | 当页数多时，两边恒定显示的数量 |
-| around | Number | `5` | 当页数多时，中间恒定显示的数量  |
-| readonly | Boolean | `false` | 是否只读 |
-| disabled | Boolean | `false` | 是否禁用 |
-| show-total | Boolean | `false` | 是否显示总条目数 |
-| show-sizer | Boolean | `false` | 是否显示切换每页大小选项 |
-| show-jumper | Boolean | `false` | 是否显示页面跳转输入框 |
+| page.sync | Number | `1` | Current page number |
+| page-size.sync | Number | `20` | Size per page |
+| page-size-options | Array | `[10, 20, 50]` | List of page size options |
+| total | Number | `11` | Total number of pages |
+| side | Number | `2` | When there are many pages, the number always displayed on both sides |
+| around | Number | `5` | When there are many pages, the number that is always displayed in the middle |
+| readonly | Boolean | `false` | Whether it is read-only |
+| disabled | Boolean | `false` | Whether to disable |
+| show-total | Boolean | `false` | Whether to display the total number of entries |
+| show-sizer | Boolean | `false` | Whether to display the option to switch the size of each page |
+| show-jumper | Boolean | `false` | Whether to display the page jump input box |
 
 ### Events
 
 #### @change
 
-页码改变时触发
+Triggered when page number changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.page | Number | 当前页码 |
-| $event.oldPage | Number | 旧的页码 |
-| senderVM | UComboPagination | 发送事件实例 |
+| $event.page | Number | Current page number |
+| $event.oldPage | Number | Old page number |
+| senderVM | UComboPagination | Send event instance |
 
 #### @change-page-size
 
-每页大小改变时触发
+Triggered every time the page size changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.page | Number | 当前页码 |
-| $event.oldPage | Number | 旧的页码 |
-| senderVM | UComboPagination | 发送事件实例 |
+| $event.page | Number | Current page number |
+| $event.oldPage | Number | Old page number |
+| senderVM | UComboPagination | Send event instance |

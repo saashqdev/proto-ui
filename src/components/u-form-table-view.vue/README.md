@@ -1,10 +1,10 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UFormTableView 表格表单视图
+# UFormTableView Table Form View
 
-**UI 组件**, **表单验证器**, **块级展示**
+**UI Components**, **Form Validators**, **Block Level Display**
 
-本组件用于在表单中使用表单验证、动态数据等复杂功能。
+This component is used to use complex functions such as form validation and dynamic data in forms.
 
 ## Example
 ### Basic Usage
@@ -17,17 +17,17 @@
             <u-input size="huge full" v-model="item.url"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="服务" width="20%">
+    <u-form-table-view-column title="Service" width="20%">
         <template slot="cell" slot-scope="{ item }">
             <u-select size="huge full" v-model="item.service" :data="services"></u-select>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="端口" width="20%">
+    <u-form-table-view-column title="Port" width="20%">
         <template slot="cell" slot-scope="{ item }">
             <u-input size="huge full" v-model="item.port"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="描述">
+    <u-form-table-view-column title="Description">
         <template slot="cell" slot-scope="{ item }">
             <u-input size="huge full" v-model="item.description"></u-input>
         </template>
@@ -60,7 +60,7 @@ export default {
 </script>
 ```
 
-### 在表单中使用
+### Use in Form
 
 ``` vue
 <template>
@@ -72,17 +72,17 @@ export default {
                     <u-input size="huge full" v-model="item.url"></u-input>
                 </template>
             </u-form-table-view-column>
-            <u-form-table-view-column title="服务" width="20%">
+            <u-form-table-view-column title="Service" width="20%">
                 <template slot="cell" slot-scope="{ item }">
                     <u-select size="huge full" v-model="item.service" :data="services"></u-select>
                 </template>
             </u-form-table-view-column>
-            <u-form-table-view-column title="端口" width="20%">
+            <u-form-table-view-column title="Port" width="20%">
                 <template slot="cell" slot-scope="{ item }">
                     <u-input size="huge full" v-model="item.port"></u-input>
                 </template>
             </u-form-table-view-column>
-            <u-form-table-view-column title="描述">
+            <u-form-table-view-column title="Description">
                 <template slot="cell" slot-scope="{ item }">
                     <u-input size="huge full" v-model="item.description"></u-input>
                 </template>
@@ -117,7 +117,7 @@ export default {
 </script>
 ```
 
-### 动态表格
+### Dynamic Table
 
 ``` vue
 <template>
@@ -127,17 +127,17 @@ export default {
             <u-input size="huge full" v-model="item.url"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="服务" width="20%">
+    <u-form-table-view-column title="Service" width="20%">
         <template slot="cell" slot-scope="{ item }">
             <u-select size="huge full" v-model="item.service" :data="services"></u-select>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="端口" width="20%">
+    <u-form-table-view-column title="Port" width="20%">
         <template slot="cell" slot-scope="{ item }">
             <u-input size="huge full" v-model="item.port"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="描述">
+    <u-form-table-view-column title="Description">
         <template slot="cell" slot-scope="{ item }">
             <u-input size="huge full" v-model="item.description"></u-input>
         </template>
@@ -180,9 +180,9 @@ export default {
 </script>
 ```
 
-#### 限制数量
+#### Limited Quantity
 
-通过`max-count`属性的设置，下面的表格中最多可以添加5项。
+By setting the `max-count` attribute, up to 5 items can be added to the table below.
 
 ``` vue
 <template>
@@ -192,17 +192,17 @@ export default {
             <u-input size="huge full" v-model="item.url"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="服务" width="20%">
+    <u-form-table-view-column title="Service" width="20%">
         <template slot="cell" slot-scope="{ item }">
             <u-select size="huge full" v-model="item.service" :data="services"></u-select>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="端口" width="20%">
+    <u-form-table-view-column title="Port" width="20%">
         <template slot="cell" slot-scope="{ item }">
             <u-input size="huge full" v-model="item.port"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="描述">
+    <u-form-table-view-column title="Description">
         <template slot="cell" slot-scope="{ item }">
             <u-input size="huge full" v-model="item.description"></u-input>
         </template>
@@ -245,7 +245,7 @@ export default {
 </script>
 ```
 
-### 表单验证
+### Form Validation
 
 ``` vue
 <template>
@@ -256,19 +256,19 @@ export default {
             <u-input size="huge full" v-model="item.url"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="服务" width="20%"
+    <u-form-table-view-column title="Service" width="20%"
         rules="required">
         <template slot="cell" slot-scope="{ item }">
             <u-select size="huge full" v-model="item.service" :data="services"></u-select>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="端口" width="20%"
+    <u-form-table-view-column title="Port" width="20%"
         rules="required | integer | range(1,65535)">
         <template slot="cell" slot-scope="{ item }">
             <u-input size="huge full" v-model="item.port"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="描述">
+    <u-form-table-view-column title="Description">
         <template slot="cell" slot-scope="{ item }">
             <u-input size="huge full" v-model="item.description"></u-input>
         </template>
@@ -311,7 +311,7 @@ export default {
 </script>
 ```
 
-注意在添加列插槽的时候，必须使用`slot-scope`或者 Vue 2.6.x 新的 `#` 方式，否则模板渲染可能会有问题。
+Note that when adding column slots, you must use `slot-scope` or the new `#` method in Vue 2.6.x, otherwise there may be problems with template rendering.
 
 ``` vue
 <template>
@@ -322,19 +322,19 @@ export default {
             <u-input size="huge full" v-model="cluster.url"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="服务" width="20%"
+    <u-form-table-view-column title="Service" width="20%"
         rules="required">
         <template #cell>
             <u-select size="huge full" v-model="cluster.service" :data="services"></u-select>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="端口" width="20%"
+    <u-form-table-view-column title="Port" width="20%"
         rules="required | integer | range(1,65535)">
         <template #cell>
             <u-input size="huge full" v-model.number="cluster.port"></u-input>
         </template>
     </u-form-table-view-column>
-    <u-form-table-view-column title="描述">
+    <u-form-table-view-column title="Description">
         <template #cell>
             <u-input size="huge full" v-model="cluster.description"></u-input>
         </template>
@@ -377,136 +377,136 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| border | boolean |  |  | 是否有边框 |
-| data | Array |  |  | 数据 |
-| dynamic | boolean |  | `false` | 是否可以动态添加/删除项 |
-| get-default-item | Function |  |  | 传入获取默认项的方法 |
-| initial-add | boolean |  | `true` | 是否自动补充项，如果初始时`data`中的项目数少于`min-count` |
-| min-count | number |  | `1` | 最小项目数 |
-| max-count | number |  | `Infinity` | 最大项目数 |
+| border | boolean | | | Whether there is a border |
+| data | Array | | | Data |
+| dynamic | boolean | | `false` | Whether items can be added/removed dynamically |
+| get-default-item | Function | | | Pass in the method to get the default item |
+| initial-add | boolean | | `true` | Whether to automatically add items if the initial number of items in `data` is less than `min-count` |
+| min-count | number | | `1` | Minimum number of items |
+| max-count | number | | `Infinity` | Maximum number of items |
 
 ### Slots
 
 #### (default)
 
-添加文本或 HTML。
+Add text or HTML.
 
 ### Events
 
 #### @before-add
 
-添加前触发
+Trigger before adding
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 添加的项 |
-| $event.index | number | 添加的索引 |
-| $event.data | Array | 当前数据 |
-| $event.preventDefault | Function | 阻止添加流程 |
-| senderVM | UFormTableView | 发送事件实例 |
+| $event.item | any | Added items |
+| $event.index | number | Added index |
+| $event.data | Array | Current data |
+| $event.preventDefault | Function | Prevent adding process |
+| senderVM | UFormTableView | Send event instance |
 
 #### @add
 
-添加时触发
+Triggered when added
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 添加的项 |
-| $event.index | number | 添加的索引 |
-| $event.data | Array | 当前数据 |
-| senderVM | UFormTableView | 发送事件实例 |
+| $event.item | any | Added items |
+| $event.index | number | Added index |
+| $event.data | Array | Current data |
+| senderVM | UFormTableView | Send event instance |
 
 #### @before-remove
 
-删除前触发
+Triggered before deletion
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 删除的项 |
-| $event.index | number | 删除的索引 |
-| $event.data | Array | 当前数据 |
-| $event.preventDefault | Function | 阻止删除流程 |
-| senderVM | UFormTableView | 发送事件实例 |
+| $event.item | any | Deleted item |
+| $event.index | number | Deleted index |
+| $event.data | Array | Current data |
+| $event.preventDefault | Function | Prevent deletion process |
+| senderVM | UFormTableView | Send event instance |
 
 #### @remove
 
-删除时触发
+Triggered when deleted
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 删除的项 |
-| $event.index | number | 删除的索引 |
-| $event.data | Array | 当前数据 |
-| senderVM | UFormTableView | 发送事件实例 |
+| $event.item | any | Deleted item |
+| $event.index | number | Deleted index |
+| $event.data | Array | Current data |
+| senderVM | UFormTableView | Send event instance |
 
 #### @splice
 
-数量变更（添加/删除）时触发
+Triggered when quantity changes (add/delete)
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.item | any | 变更的项 |
-| $event.index | number | 变更的索引 |
-| $event.data | Array | 当前数据 |
-| senderVM | UFormTableView | 发送事件实例 |
+| $event.item | any | Changed item |
+| $event.index | number | Changed index |
+| $event.data | Array | Current data |
+| senderVM | UFormTableView | Send event instance |
 
 ## UFormTableViewColumn API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 列标题 |
-| field | string |  |  | data 中的字段名 |
-| width | string, number |  |  | 给列指定宽度，可以为数字或百分比 |
-| ellipsis | boolean |  | `false` | 是否省略显示。默认文字超出时会换行 |
-| formatter | string, object, Function, Formatter |  | `'placeholder'` | 格式器 |
-| hidden | boolean |  | `false` | 是否隐藏 |
-| start-index | number |  | `1` | 当`type="index"`时的起始序号 |
-| **Validator Props/Attrs** |  |  |  |  |
-| label | string |  |  | 标签。用于提示消息的合成 |
-| muted | string |  |  | 验证时是否静默。可选值：`'message'`表示只静默消息提示，`'all'`同时静默消息提示和红框提示 |
-| rules | string, Array |  |  | 验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型 |
-| ignore-validation | boolean |  | `false` | 忽略验证 |
-| ignore-rules | boolean |  | `false` | 忽略验证规则。已废弃，同`ignore-validation` |
-| validating-options | object |  |  | 验证辅助对象。在 Rule 的 `validate` 方法中使用。表格中会额外将`{ data: currentData, item, rowIndex }`注入 |
-| validating-value | any |  |  | 临时修改验证值 |
-| validating-process | Function |  |  | 验证前对值进行预处理 |
+| title | string | | | Column title |
+| field | string | | | Field name in data |
+| width | string, number | | | Specify the width of the column, which can be a number or a percentage |
+| ellipsis | boolean | | `false` | Whether to omit display. By default, the text will wrap when it exceeds |
+| formatter | string, object, Function, Formatter | | `'placeholder'` | Formatter |
+| hidden | boolean | | `false` | Whether to hide |
+| start-index | number | | `1` | The starting index when `type="index"` |
+| **Validator Props/Attrs** | | | | |
+| label | string | | | Label. Composition for prompt messages |
+| muted | string | | | Whether to be silent during verification. Optional values: `'message'` means to silence only the message prompt, `'all'` to silence both the message prompt and the red box prompt |
+| rules | string, Array | | | Validation rules. The abbreviated format is a string type, the full format or mixed format is an array type |
+| ignore-validation | boolean | | `false` | Ignore validation |
+| ignore-rules | boolean | | `false` | Ignore validation rules. Deprecated, same as `ignore-validation` |
+| validating-options | object | | | Validation auxiliary object. Used in Rule's `validate` method. Additional `{ data: currentData, item, rowIndex }` will be injected into the table |
+| validating-value | any | | | Temporarily modify the validation value |
+| validating-process | Function | | | Preprocess the value before validation |
 
 ### Slots
 
 #### (default)
 
-在表格列中插入`cell`插槽。
+Insert a `cell` slot into a table column.
 
-#### cell
+#### Cell
 
-对单元格数据展示进行自定义。
-
-| Prop | Type | Description |
-| ---- | ---- | ----------- |
-| item | object | 循环中的当前项 |
-| value | any | item 中 field 字段对应的值 |
-| columnVM | string | 该列组件实例 |
-| rowIndex | number | 行的索引 |
-| columnIndex | number | 列的索引 |
-
-#### title
-
-对标题进行自定义。
+Customize cell data display.
 
 | Prop | Type | Description |
 | ---- | ---- | ----------- |
-| columnVM | string | 该列组件实例 |
-| columnIndex | number | 列的索引 |
+| item | object | The current item in the loop |
+| value | any | The value corresponding to the field field in item |
+| columnVM | string | The column component instance |
+| rowIndex | number | Row index |
+| columnIndex | number | Index of column |
+
+#### Title
+
+Customize the title.
+
+| Prop | Type | Description |
+| ---- | ---- | ----------- |
+| columnVM | string | The column component instance |
+| columnIndex | number | Index of column |
 
 #### expand-content
 
-展开列的内容
+Expand column contents
 
 | Prop | Type | Description |
 | ---- | ---- | ----------- |
-| item | object | 循环中的当前项 |
-| value | any | item 中 field 字段对应的值 |
-| columnVM | string | 该列组件实例 |
-| rowIndex | number | 行的索引 |
-| columnIndex | number | 列的索引 |
+| item | object | The current item in the loop |
+| value | any | The value corresponding to the field field in item |
+| columnVM | string | The column component instance |
+| rowIndex | number | Row index |
+| columnIndex | number | Index of column |

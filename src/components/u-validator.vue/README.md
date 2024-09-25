@@ -173,7 +173,7 @@ type ValidateFunc = (value: any, rule: Rule, options?: Object) => ValidateResult
 - 一个函数，待函数执行后再传入验证器计算
 - 函数返回值可以为 Promise
 
-#### 触发方式
+#### Trigger Method
 
 表单验证按照实时性通常可以分为：手动验证、失焦验证、实时验证，验证规则中`trigger`字段分别对应的值为：`''`, `'blur'`, `'input'`，可以组合使用，如`input+blur`。
 

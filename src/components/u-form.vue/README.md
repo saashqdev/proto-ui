@@ -1,148 +1,148 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UForm 表单
+# UForm Form
 
-**UI 组件**, **表单验证器**, **块级展示**
+**UI Components**, **Form Validators**, **Block Level Display**
 
-具有数据收集、校验和提交功能的表单，包含输入框、选择框、复选框、单选框等元素。
+A form with data collection, verification and submission functions, including input boxes, selection boxes, check boxes, radio buttons and other elements.
 
-### 相关组件
+### Related Components
 
-#### 表单 UForm
+#### Form UForm
 
-用于整体布局，集中设置属性，统一暴露事件和方法。
+Used for overall layout, centralized setting of attributes, and unified exposure of events and methods.
 
-#### 验证器 UValidator
+#### Validator UValidator
 
-实现了基础的嵌套验证功能和原子化验证功能，包含提示样式。
+Implemented basic nested verification function and atomic verification function, including prompt style.
 
-#### 表单项 UFormItem
+#### Form Item UFormItem
 
-继承自验证器，具备所有验证器的功能。与验证器相比，是为了配合 UForm 布局方便而生。
+Inherited from validator and has all the functions of validator. Compared with the validator, it is designed to facilitate the layout of UForm.
 
-#### 表单域（表单控件）MField
+#### Form Field (form control) MField
 
-MField 作为各种表单域（表单控件）的基类，用于触发 UValidator（或 UFormItem）的验证功能。
+MField serves as the base class for various form fields (form controls) and is used to trigger the validation function of UValidator (or UFormItem).
 
-比如常见的：`<u-input>`、`<u-select>`、`<u-radios>`、`<u-date-picker>`都属于这一类。
+For example, the common ones: `<u-input>`, `<u-select>`, `<u-radios>`, `<u-date-picker>` all belong to this category.
 
-#### 复杂动态验证组件
+#### Complex dynamic verification component
 
-如：`<u-form-table-view>`和`<u-dynamic-cards>`
+Such as: `<u-form-table-view>` and `<u-dynamic-cards>`
 
 ## Example
-## 表单布局
+## Form layout
 ### Basic Usage
 
 ``` html
 <u-form gap="large">
-    <u-form-item label="计费方式" required>
+    <u-form-item label="Billing method" required>
         <u-radios value="0">
-            <u-radio label="0">包年包月</u-radio>
-            <u-radio label="1">按量付费</u-radio>
+            <u-radio label="0">Yearly and monthly subscription</u-radio>
+            <u-radio label="1">Pay as you go</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="实例名称" required>
-        <u-input size="huge" maxlength="63" placeholder="由1-63个小写字母，数字，中划线组成，以字母开头，字母或数字结尾"></u-input>
+    <u-form-item label="Instance Name" required>
+        <u-input size="huge" maxlength="63" placeholder="Composed of 1-63 lowercase letters, numbers, and underscores, starting with a letter and ending with a letter or number"></u-input>
     </u-form-item>
-    <u-form-item label="　" required>
-        <u-input size="huge" maxlength="63" placeholder="label为空的必填项"></u-input>
+    <u-form-item label=" " required>
+        <u-input size="huge" maxlength="63" placeholder="Required if label is empty"></u-input>
     </u-form-item>
-    <u-form-item label="规格">
+    <u-form-item label="Specification">
         <u-select value="0101">
-            <u-select-item value="0101">1核 1GB</u-select-item>
-            <u-select-item value="0102">1核 2GB</u-select-item>
-            <u-select-item value="0204">2核 4GB</u-select-item>
-            <u-select-item value="0408">4核 8GB</u-select-item>
-            <u-select-item value="0816">8核 16GB</u-select-item>
-            <u-select-item value="0832">8核 32GB</u-select-item>
-            <u-select-item value="1664">16核 64GB</u-select-item>
+            <u-select-item value="0101">1 core 1GB</u-select-item>
+            <u-select-item value="0102">1 core 2GB</u-select-item>
+            <u-select-item value="0204">2 core 4GB</u-select-item>
+            <u-select-item value="0408">4 core 8GB</u-select-item>
+            <u-select-item value="0816">8 core 16GB</u-select-item>
+            <u-select-item value="0832">8 core 32GB</u-select-item>
+            <u-select-item value="1664">16 core 64GB</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="类型" description="高性能 SSD 云盘不支持快照功能" layout="block">
+    <u-form-item label="Type" description="High-performance SSD cloud disk does not support snapshot function" layout="block">
         <u-select value="SSD">
-            <u-select-item value="SSD">SSD 云盘</u-select-item>
-            <u-select-item value="HSSD">高性能 SSD 云盘</u-select-item>
+            <u-select-item value="SSD">SSD Cloud Disk</u-select-item>
+            <u-select-item value="HSSD">High-performance SSD Cloud Disk</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="端口号" required>
+    <u-form-item label="Port Number" required>
         <u-input size="huge medium" maxlength="5" placeholder="1150-65535" value="3306"></u-input>
     </u-form-item>
-    <u-form-item label="公网带宽">
+    <u-form-item label="Public Network Bandwidth">
         <u-combo-slider :step="10" unit="Mbps"></u-combo-slider>
     </u-form-item>
-    <u-form-item label="详情" layout="block">
+    <u-form-item label="Details" layout="block">
         <u-textarea size="huge"></u-textarea>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary">立即创建</u-button>
+        <u-button color="primary">Create Now</u-button>
     </u-form-item>
 </u-form>
 ```
 
-### 行内
+### Inline
 
 ``` html
 <u-form layout="inline" label-size="auto">
-    <u-form-item label="状态">
+    <u-form-item label="Status">
         <u-select auto-select>
-            <u-select-item>认证中</u-select-item>
+            <u-select-item>Authenticating</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="用户名">
-        <u-input maxlength="63" placeholder="请输入用户名"></u-input>
+    <u-form-item label="Username">
+        <u-input maxlength="63" placeholder="Please enter username"></u-input>
     </u-form-item>
-    <u-form-item label="联系号码">
-        <u-input maxlength="63" placeholder="请输入联系号码"></u-input>
+    <u-form-item label="Contact Number">
+        <u-input maxlength="63" placeholder="Please enter contact number"></u-input>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary">查询</u-button>
+        <u-button color="primary">Query</u-button>
     </u-form-item>
 </u-form>
 ```
 
-### 栅格布局
+### Grid Layout
 
-有多行的表单为了对齐美观，通常与栅格布局搭配使用。
+Forms with multiple rows are usually used with grid layout for beautiful alignment.
 
 ``` html
 <u-form layout="inline">
     <u-grid-layout>
         <u-grid-layout-row :repeat="3">
             <u-grid-layout-column>
-                <u-form-item label="状态">
+                <u-form-item label="Status">
                     <u-select auto-select>
-                        <u-select-item>认证中</u-select-item>
+                        <u-select-item>Authenticating</u-select-item>
                     </u-select>
                 </u-form-item>
             </u-grid-layout-column>
             <u-grid-layout-column>
-                <u-form-item label="备案类型">
+                <u-form-item label="Record Type">
                     <u-select auto-select>
-                        <u-select-item>全部</u-select-item>
+                        <u-select-item>All</u-select-item>
                     </u-select>
                 </u-form-item>
             </u-grid-layout-column>
             <u-grid-layout-column>
-                <u-form-item label="备案号">
+                <u-form-item label="Registration Number">
                     <u-input maxlength="63"></u-input>
                 </u-form-item>
             </u-grid-layout-column>
         </u-grid-layout-row>
         <u-grid-layout-row :repeat="3">
             <u-grid-layout-column>
-                <u-form-item label="用户名">
+                <u-form-item label="Username">
                     <u-input maxlength="63"></u-input>
                 </u-form-item>
             </u-grid-layout-column>
             <u-grid-layout-column>
-                <u-form-item label="单位名称">
+                <u-form-item label="Organization Name">
                     <u-input maxlength="63"></u-input>
                 </u-form-item>
             </u-grid-layout-column>
             <u-grid-layout-column>
                 <u-form-item>
-                    <u-button color="primary">查询</u-button>
+                    <u-button color="primary">Query</u-button>
                 </u-form-item>
             </u-grid-layout-column>
         </u-grid-layout-row>
@@ -150,72 +150,72 @@ MField 作为各种表单域（表单控件）的基类，用于触发 UValidato
 </u-form>
 ```
 
-### 插槽
+### Slot
 
-- 通过`slot="label"`插槽自定义左侧内容
-- 通过`slot="description"`插槽自定义描述内容
-- 通过`slot='extra'`插槽自定义`label`右侧额外内容
+- Customize left content through `slot="label"` slot
+- Customize the description content through the `slot="description"` slot
+- Customize extra content on the right side of `label` through `slot='extra'` slot
 
 ``` html
 <u-form ref="form">
     <u-form-item required layout="block">
         <span slot="label">
-            用户名
+            Username
         </span>
-        <div slot="description">描述描述</div>
+        <div slot="description">Description</div>
         <i-icon name="alert" size="small" slot="extra">
-            <u-tooltip content="请输入正确格式的中文汉字"></u-tooltip>
+            <u-tooltip content="Please enter Chinese characters in the correct format"></u-tooltip>
         </i-icon>
-        <u-input maxlength="4" maxlength-message="不超过4个字符" placeholder="不超过4个字符"></u-input>
+        <u-input maxlength="4" maxlength-message="No more than 4 characters" placeholder="No more than 4 characters"></u-input>
     </u-form-item>
 </u-form>
 ```
 
 
-## 数据收集与提交
+## Data collection and submission
 
-推荐将各表单控件使用`v-model`绑定的数据，统一收集到`data`里的`model`对象中。
+It is recommended to collect the data bound by each form control using `v-model` into the `model` object in `data`.
 
-``` vue
+```vue
 <template>
 <u-form gap="large">
-    <u-form-item label="计费方式" required>
+    <u-form-item label="Billing Method" required>
         <u-radios v-model="model.chargeType">
-            <u-radio label="0">包年包月</u-radio>
-            <u-radio label="1">按量付费</u-radio>
+            <u-radio label="0">Yearly and Monthly Subscription</u-radio>
+            <u-radio label="1">Pay as you Go</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="实例名称" required>
-        <u-input v-model="model.name" size="huge" maxlength="63" placeholder="由1-63个小写字母，数字，中划线组成，以字母开头，字母或数字结尾"></u-input>
+    <u-form-item label="Instance Name" required>
+        <u-input v-model="model.name" size="huge" maxlength="63" placeholder="Composed of 1-63 lowercase letters, numbers, and underscores, starting with a letter and ending with a letter or number" ></u-input>
     </u-form-item>
-    <u-form-item label="规格">
+    <u-form-item label="Specification">
         <u-select v-model="model.spec">
-            <u-select-item value="0101">1核 1GB</u-select-item>
-            <u-select-item value="0102">1核 2GB</u-select-item>
-            <u-select-item value="0204">2核 4GB</u-select-item>
-            <u-select-item value="0408">4核 8GB</u-select-item>
-            <u-select-item value="0816">8核 16GB</u-select-item>
-            <u-select-item value="0832">8核 32GB</u-select-item>
-            <u-select-item value="1664">16核 64GB</u-select-item>
+            <u-select-item value="0101">1 core 1GB</u-select-item>
+            <u-select-item value="0102">1 core 2GB</u-select-item>
+            <u-select-item value="0204">2 core 4GB</u-select-item>
+            <u-select-item value="0408">4 core 8GB</u-select-item>
+            <u-select-item value="0816">8 core 16GB</u-select-item>
+            <u-select-item value="0832">8 core 32GB</u-select-item>
+            <u-select-item value="1664">16 core 64GB</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="类型" description="高性能 SSD 云盘不支持快照功能" layout="block">
+    <u-form-item label="Type" description="High-performance SSD cloud disk does not support snapshot function" layout="block">
         <u-select v-model="model.type">
-            <u-select-item value="SSD">SSD 云盘</u-select-item>
-            <u-select-item value="HSSD">高性能 SSD 云盘</u-select-item>
+            <u-select-item value="SSD">SSD Cloud Disk</u-select-item>
+            <u-select-item value="HSSD">High-performance SSD Cloud Disk</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="端口号" required>
+    <u-form-item label="Port Number" required>
         <u-input v-model.number="model.port" size="huge normal" maxlength="5" placeholder="1150-65535"></u-input>
     </u-form-item>
-    <u-form-item label="公网带宽">
+    <u-form-item label="Public Network Bandwidth">
         <u-combo-slider v-model="model.bandwidth" :step="10" unit="Mbps"></u-combo-slider>
     </u-form-item>
-    <u-form-item label="描述" layout="block">
+    <u-form-item label="Description" layout="block">
         <u-textarea v-model="model.description" size="huge"></u-textarea>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary" @click="submit()">立即创建</u-button>
+        <u-button color="primary" @click="submit()">Create Now</u-button>
     </u-form-item>
 </u-form>
 </template>
@@ -237,31 +237,31 @@ export default {
     methods: {
         submit() {
             console.info(this.model);
-            this.$toast.show('提交成功！');
+            this.$toast.show('Submission successful!');
         },
     },
 };
 </script>
 ```
 
-### 数据转换
+### Data Conversion
 
-有时 UI 中的数据与向后端提交的数据不完全一致，可以将`v-model`分解为一个`:value`属性绑定 + `@input`事件，做临时转换。
+Sometimes the data in the UI is not completely consistent with the data submitted to the backend. You can decompose `v-model` into a `:value` attribute binding + `@input` event for temporary conversion.
 
-对于需要保持数字类型的，可以直接使用 Vue 的 `v-model` 的 `.number` 修饰符。
+For those that need to maintain the numeric type, you can directly use the `.number` modifier of Vue's `v-model`.
 
-``` vue
+```vue
 <template>
 <u-form gap="large">
-    <u-form-item label="超时时长" required>
+    <u-form-item label="Timeout Duration" required>
         <u-input size="huge normal" maxlength="5" placeholder="300-10000"
             :value="model.timeout / 1000" @input="model.timeout = $event * 1000"></u-input>
     </u-form-item>
-    <u-form-item label="端口号" required>
+    <u-form-item label="Port Number" required>
         <u-input v-model.number="model.port" size="huge normal" maxlength="5" placeholder="1150-65535"></u-input>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary" @click="submit()">立即创建</u-button>
+        <u-button color="primary" @click="submit()">Create Now</u-button>
     </u-form-item>
 </u-form>
 </template>
@@ -278,61 +278,61 @@ export default {
     methods: {
         submit() {
             console.info(this.model);
-            this.$toast.show('提交成功！');
+            this.$toast.show('Submission successful!');
         },
     },
 };
 </script>
 ```
 
-### 表单验证
+### Form Validation
 
-需要在`<u-form-item>`的`rules`属性添加验证规则，输入和失焦会自动触发验证，点击提交按钮时，需要手动调用 form 的`validate`方法。
+Validation rules need to be added to the `rules` attribute of `<u-form-item>`. Input and defocusing will automatically trigger validation. When the submit button is clicked, the `validate` method of the form needs to be manually called.
 
-可以根据`@validate`事件监听表单的验证状态。
+You can monitor the validation status of the form based on the `@validate` event.
 
-关于验证规则的详细使用，参见 [UValidator](../u-validator)。
+For detailed usage of validation rules, see [UValidator](../u-validator).
 
-``` vue
+```vue
 <template>
 <u-form ref="form" gap="large">
-    <u-form-item label="计费方式" required>
+    <u-form-item label="Billing Method" required>
         <u-radios v-model="model.chargeType">
-            <u-radio label="0">包年包月</u-radio>
-            <u-radio label="1">按量付费</u-radio>
+            <u-radio label="0">Yearly and Monthly Subscription</u-radio>
+            <u-radio label="1">Pay as you Go</u-radio>        
         </u-radios>
     </u-form-item>
-    <u-form-item label="实例名称" required rules="required | ^az | az09$ | ^az09-$ | rangeLength(1,63)">
-        <u-input v-model="model.name" size="huge" maxlength="63" placeholder="由1-63个小写字母，数字，中划线组成，以字母开头，字母或数字结尾"></u-input>
+    <u-form-item label="Instance name" required rules="required | ^az | az09$ | ^az09-$ | rangeLength(1,63)">
+        <u-input v-model="model.name" size="huge" maxlength="63" placeholder="Composed of 1-63 lowercase letters, numbers, and underscores, starting with a letter and ending with a letter or number" ></u-input>
     </u-form-item>
-    <u-form-item label="规格">
+    <u-form-item label="Specification">
         <u-select v-model="model.spec">
-            <u-select-item value="0101">1核 1GB</u-select-item>
-            <u-select-item value="0102">1核 2GB</u-select-item>
-            <u-select-item value="0204">2核 4GB</u-select-item>
-            <u-select-item value="0408">4核 8GB</u-select-item>
-            <u-select-item value="0816">8核 16GB</u-select-item>
-            <u-select-item value="0832">8核 32GB</u-select-item>
-            <u-select-item value="1664">16核 64GB</u-select-item>
+            <u-select-item value="0101">1 core 1GB</u-select-item>
+            <u-select-item value="0102">1 core 2GB</u-select-item>
+            <u-select-item value="0204">2 core 4GB</u-select-item>
+            <u-select-item value="0408">4 core 8GB</u-select-item>
+            <u-select-item value="0816">8 core 16GB</u-select-item>
+            <u-select-item value="0832">8 core 32GB</u-select-item>
+            <u-select-item value="1664">16 core 64GB</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="类型" description="高性能 SSD 云盘不支持快照功能" layout="block">
+    <u-form-item label="Type" description="High-performance SSD cloud disk does not support snapshot function" layout="block">
         <u-select v-model="model.type">
-            <u-select-item value="SSD">SSD 云盘</u-select-item>
-            <u-select-item value="HSSD">高性能 SSD 云盘</u-select-item>
+            <u-select-item value="SSD">SSD Cloud Disk</u-select-item>
+            <u-select-item value="HSSD">High-performance SSD Cloud Disk</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="端口号" required rules="required | integer | range(1150,65535)">
+    <u-form-item label="Port Number" required rules="required | integer | range(1150,65535)">
         <u-input v-model.number="model.port" size="huge normal" maxlength="5" placeholder="1150-65535"></u-input>
     </u-form-item>
-    <u-form-item label="公网带宽">
+    <u-form-item label="Public Network Bandwidth">
         <u-combo-slider v-model="model.bandwidth" :step="10" unit="Mbps"></u-combo-slider>
     </u-form-item>
-    <u-form-item label="描述" layout="block" rules="minLength(8)">
+    <u-form-item label="Description" layout="block" rules="minLength(8)">
         <u-textarea v-model="model.description" size="huge"></u-textarea>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary" @click="submit">立即创建</u-button>
+        <u-button color="primary" @click="submit">Create Now</u-button>
     </u-form-item>
 </u-form>
 </template>
@@ -354,8 +354,8 @@ export default {
     methods: {
         submit() {
             this.$refs.form.validate()
-                .then(() => this.$toast.show('验证通过，提交成功！'))
-                .catch(() => this.$toast.show('验证失败！'));
+                .then(() => this.$toast.show('Verification passed, submission successful!'))
+                .catch(() => this.$toast.show('Verification failed!'));
         },
     },
 };
@@ -367,39 +367,39 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| model | object |  |  | 表单数据模型 |
-| rules | object |  |  | 表单所有域的验证规则，已废弃，推荐在各`<u-form-item>`中自行添加 rules。 |
-| layout | string |  | `'block'` | 表单布局方式。可选值：`block`、`inline`。 |
-| label-size | string |  | `'normal'` | 标签大小。可选值：`small`、`normal`、`large`。 |
+| model | object | | | Form data model |
+| rules | object | | | Validation rules for all fields of the form are obsolete. It is recommended to add rules yourself in each `<u-form-item>`. |
+| layout | string | | `'block'` | Form layout method. Optional values: `block`, `inline`. |
+| label-size | string | | `'normal'` | Label size. Optional values: `small`, `normal`, `large`. |
 
 ### Computed
 
 | Computed | Type | Description |
 | -------- | ---- | ----------- |
-| touched | boolean | 用户是否触碰 |
-| dirty | boolean | 用户是否修改值 |
-| valid | boolean | 验证是否通过 |
-| firstError | string | 第一个错误提示消息 |
+| touched | boolean | Whether the user touched |
+| dirty | boolean | whether the user modified the value |
+| valid | boolean | whether the verification passed |
+| firstError | string | The first error message |
 
 ### Slots
 
 #### (default)
 
-插入`<u-form-item>`子组件。
+Insert `<u-form-item>` subcomponent.
 
 ### Events
 
 #### @validate
 
-验证时触发
+Triggered on verification
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.valid | boolean | 验证是否通过 |
-| $event.touched | boolean | 用户是否触碰 |
-| $event.dirty | boolean | 用户是否修改值 |
-| $event.firstError | string | 第一个错误提示消息 |
-| senderVM | UValidator | 发送事件实例 |
+| $event.valid | boolean | Verification passed |
+| $event.touched | boolean | Whether the user touched |
+| $event.dirty | boolean | Whether the user modifies the value |
+| $event.firstError | string | The first error message |
+| senderVM | UValidator | Send event instance |
 
 ### Methods
 
@@ -409,83 +409,83 @@ export default {
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| trigger | string | `'submit'` | 触发方式，可选值：`submit`、`blur`和`input`之一，或者它们的任意组合。 |
-| muted | boolean | `false` | 是否验证后无提示 |
+| trigger | string | `'submit'` | Trigger mode, optional value: one of `submit`, `blur` and `input`, or any combination thereof. |
+| muted | boolean | `false` | Whether to be silent after verification |
 
 #### validateItem(name, trigger, slient)
 
-验证表单中的某一项，已废弃。表单中的项是嵌套的，用 name 层级较深，而且可能有重名。
+An item in the validation form is obsolete. The items in the form are nested, with a deeper level of name, and may have the same name.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| name | string |  | 表单项的 name |
-| trigger | string | `'submit'` | 触发方式，可选值：`submit`、`blur`和`input`之一，或者它们的任意组合。 |
-| muted | boolean | `false` | 是否验证后无提示 |
+| name | string | | Name of the form item |
+| trigger | string | `'submit'` | Trigger mode, optional value: one of `submit`, `blur` and `input`, or any combination thereof. |
+| muted | boolean | `false` | Whether to be silent after verification |
 
 ## UFormItem API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| name | string |  |  | 表单项名称。已废弃 |
-| label | string |  |  | 标签。用于左侧显示，同时用于提示消息的合成 |
-| label-size | string |  | `'normal'` | 单独设置表单项的标签大小 |
-| field-size | string |  | `'normal'` | 单独设置表单项的内容大小。可选值：`'full'` |
-| required | boolean |  | `false` | 是否必填。仅显示样式，如果要验证必填项，需要在`rules`中添加必填规则。 |
-| message | string |  |  | 默认提示消息 |
-| muted | string |  |  | 验证时是否静默。可选值：`'message'`表示只静默消息提示，`'all'`同时静默消息提示和红框提示 |
-| description | string |  |  | 添加描述内容 |
-| placement | string |  |  | 值为`'bottom'`时提示信息在底部显示，改变提示信息显示位置 |
-| layout | string |  |  | 布局方式，可选值：`'block'` |
-| **Validator Props/Attrs** |  |  |  |  |
-| rules | string, Array |  |  | 验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型 |
-| ignore-validation | boolean |  | `false` | 忽略验证 |
-| ignore-rules | boolean |  | `false` | 忽略验证规则。已废弃，同`ignore-validation` |
-| validating-options | object |  |  | 验证辅助对象。在 Rule 的 `validate` 方法中使用 |
-| validating-value | any |  |  | 临时修改验证值 |
-| validating-process | Function |  |  | 验证前对值进行预处理 |
+| name | string | | | Form item name. Deprecated |
+| label | string | | | Label. Used for left display and synthesis of prompt messages |
+| label-size | string | | `'normal'` | Set the label size of the form item individually |
+| field-size | string | | `'normal'` | Set the content size of the form item individually. Optional value: `'full'` |
+| required | boolean | | `false` | Whether it is required. Only the style is displayed. If you want to verify required items, you need to add required rules in `rules`. |
+| message | string | | | Default prompt message |
+| muted | string | | | Whether to be silent during verification. Optional values: `'message'` means to silence only the message prompt, `'all'` to silence both the message prompt and the red box prompt |
+| description | string | | | Add description content |
+| placement | string | | | When the value is `'bottom'`, the prompt information is displayed at the bottom, change the display position of the prompt information |
+| layout | string | | | Layout mode, optional value: `'block'` |
+| **Validator Props/Attrs** | | | | |
+| rules | string, Array | | | Validation rules. The abbreviated format is a string type, the full format or mixed format is an array type |
+| ignore-validation | boolean | | `false` | Ignore validation |
+| ignore-rules | boolean | | `false` | Ignore validation rules. Deprecated, same as `ignore-validation` |
+| validating-options | object | | | Validation auxiliary object. Used in Rule's `validate` method |
+| validating-value | any | | | Temporarily modify the validation value |
+| validating-process | Function | | | Preprocess the value before validation |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
-#### label
+#### Label
 
-插入自定义标签标题，代替`label`属性。
+Insert a custom label title in place of the `label` attribute.
 
-#### description
+#### Description
 
-插入自定义描述内容，代替`description`属性。
+Insert custom description content instead of the `description` attribute.
 
-#### extra
+#### Extra
 
-自定义标签右侧额外内容。
+Additional content on the right side of the custom label.
 
 ### Events
 
 #### @validate
 
-验证时触发，或内部验证时冒泡触发。
-对于第一个 Field 或者所有子 UValidator：
+Triggered during validation, or triggered by bubbling during internal validation.
+For the first Field or all child UValidators:
 
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.valid | boolean | 验证是否通过 |
-| $event.touched | boolean | 用户是否触碰 |
-| $event.dirty | boolean | 用户是否修改值 |
-| $event.firstError | string | 第一个错误提示消息 |
-| senderVM | UValidator | 发送事件实例 |
+| $event.valid | boolean | Verification passed |
+| $event.touched | boolean | Whether the user touched |
+| $event.dirty | boolean | Whether the user modifies the value |
+| $event.firstError | string | The first error message |
+| senderVM | UValidator | Send event instance |
 
 ### Methods
 
 #### validate(trigger, muted)
 
-验证此表单项。
+Validate this form item.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| trigger | string | `'submit'` | 触发方式，可选值：`submit`、`blur`和`input`之一，或者它们的任意组合。 |
-| muted | boolean | `false` | 是否验证后无提示 |
+| trigger | string | `'submit'` | Trigger mode, optional value: one of `submit`, `blur` and `input`, or any combination thereof. |
+| muted | boolean | `false` | Whether to be silent after verification |

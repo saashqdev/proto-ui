@@ -1,77 +1,77 @@
 - name: u-combo-pagination
-  title: 复合翻页器
-  description: 在 UPagination 的基础上，添加了显示总页数、切换每页大小、页面跳转等功能。
-  labels: [UI 组件, 块级展示]
+  title: Compound Page Turner
+  description: Based on UPagination, it adds functions such as displaying the total number of pages, switching the size of each page, and page jump.
+  labels: [UI Component, Block-Level Display]
   attrs:
     - name: page.sync
       type: number
       default: 1
-      description: 当前页码
+      description: Current page number
     - name: page-size.sync
       type: number
       default: 20
-      description: 每页大小
+      description: Page size
     - name: page-size-options
       type: Array
       default:
         - 10
         - 20
         - 50
-      description: 每页大小选项列表
+      description: A list of page size options
     - name: total
       type: number
       default: 11
-      description: 总页数
+      description: Total number of pages
     - name: side
       type: number
       default: 2
-      description: 当页数多时，两边恒定显示的数量
+      description: When there are many pages, the number of pages displayed on both sides is constant
     - name: around
       type: number
       default: 5
-      description: 当页数多时，中间恒定显示的数量
+      description: When there are many pages, the number displayed in the middle
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Whether it is read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
     - name: show-total
       type: boolean
       default: false
-      description: 是否显示总条目数
+      description: Whether to display the total number of entries
     - name: show-sizer
       type: boolean
       default: false
-      description: 是否显示切换每页大小选项
+      description: Whether to display the option to switch the page size
     - name: show-jumper
       type: boolean
       default: false
-      description: 是否显示页面跳转输入框
+      description: Whether to display the page jump input box
   events:
     - name: change
-      description: 页码改变时触发
+      description: Triggered when the page number changes
       params:
         - name: $event.page
           type: number
-          description: 当前页码
+          description: Current page number
         - name: $event.oldPage
           type: number
-          description: 旧的页码
+          description: Old page number
         - name: senderVM
           type: UComboPagination
-          description: 发送事件实例
+          description: Send event instance
     - name: change-page-size
-      description: 每页大小改变时触发
+      description: Triggered when each page size changes
       params:
         - name: $event.page
           type: number
-          description: 当前页码
+          description: Current page number
         - name: $event.oldPage
           type: number
-          description: 旧的页码
+          description: Old page number
         - name: senderVM
           type: UComboPagination
-          description: 发送事件实例
+          description: Send event instance

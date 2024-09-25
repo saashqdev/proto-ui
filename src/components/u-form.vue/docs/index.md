@@ -1,23 +1,23 @@
-### 相关组件
+### Related Components
 
-#### 表单 UForm
+#### Form UForm
 
-用于整体布局，集中设置属性，统一暴露事件和方法。
+Used for overall layout, centralized setting of attributes, and unified exposure of events and methods.
 
-#### 验证器 UValidator
+#### Validator UValidator
 
-实现了基础的嵌套验证功能和原子化验证功能，包含提示样式。
+Implemented basic nested verification function and atomic verification function, including prompt style.
 
-#### 表单项 UFormItem
+#### Form Item UFormItem
 
-继承自验证器，具备所有验证器的功能。与验证器相比，是为了配合 UForm 布局方便而生。
+Inherited from validator and has all the functions of validator. Compared with the validator, it is designed to facilitate the layout of UForm.
 
-#### 表单域（表单控件）MField
+#### Form Field (form control) MField
 
-MField 作为各种表单域（表单控件）的基类，用于触发 UValidator（或 UFormItem）的验证功能。
+MField serves as the base class for various form fields (form controls) and is used to trigger the validation function of UValidator (or UFormItem).
 
-比如常见的：`<u-input>`、`<u-select>`、`<u-radios>`、`<u-date-picker>`都属于这一类。
+For example, the common ones: `<u-input>`, `<u-select>`, `<u-radios>`, `<u-date-picker>` all belong to this category.
 
-#### 复杂动态验证组件
+#### Complex Dynamic Verification Component
 
-如：`<u-form-table-view>`和`<u-dynamic-cards>`
+Such as: `<u-form-table-view>` and `<u-dynamic-cards>`

@@ -1,3 +1,3 @@
 <template>
-<u-checkbox>多选框</u-checkbox>
+<u-checkbox>Checkbox</u-checkbox>
 </template>

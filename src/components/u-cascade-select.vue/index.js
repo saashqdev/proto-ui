@@ -43,7 +43,7 @@ export const UCascadeSelect = {
                             const item = list[i];
                             values.push(item.value);
 
-                            if (level === this.categories.length - 1 && item.value === value) // 最后一个元素，且值相等，则找到路径
+                            if (level === this.categories.length - 1 && item.value === value) // The last element, and the values are equal, find the path
                                 return true;
                             else if (item.children && findValues(item.children, level + 1))
                                 return true;
@@ -75,7 +75,7 @@ export const UCascadeSelect = {
             };
         }
 
-        // 首次传入需要从`value`中得出`values`
+        // The first pass in requires `values` to be derived from `value`
         data.values = data.currentConverter.set(this.value);
 
         return data;
@@ -85,7 +85,7 @@ export const UCascadeSelect = {
             this.currentData = data;
         },
         currentData(currentData) {
-            // @TODO: 该不该用 map 来查找 value
+            // @TODO: Should I use map to find value?
             this.lists = [];
             this.values = this.currentConverter.set(this.value);
             this.setList(currentData, 0);
@@ -111,7 +111,7 @@ export const UCascadeSelect = {
     },
     created() {
         this.setList(this.currentData, 0);
-        // 如果没有传入 value，并且选择了 autoSelect，则自动触发一次同步事件
+        // If no value is passed in and autoSelect is selected, a synchronization event is automatically triggered.
         if (this.autoSelect && this.value === undefined) {
             const value = this.currentConverter.get(this.values);
             if (value !== '') {
@@ -122,12 +122,12 @@ export const UCascadeSelect = {
     },
     methods: {
         /**
-         * 设置列表
-         * @param {Array} list 需要设置的列表
-         * @param {Number} level 当前级别
+         * Setting list
+         * @param {Array} list The list to be set
+         * @param {Number} level current level
          */
         setList(list, level) {
-            // 递归结束条件
+            // Recursive end condition
             // if (level >= this.categories.length)
             //     return;
 
@@ -138,14 +138,14 @@ export const UCascadeSelect = {
             if (list && list.length) {
                 item = list.find((item) => (item.exist === undefined || !!item.exist === true) && !item.disabled && item.value === value);
 
-                // 当找不到与 value 对应的 item 时
-                // 如果设置了自动选择，并且没有设置 placeholder 的情况下
-                // 自动选择第一个显示并且非禁用的项
+                // When the item corresponding to value cannot be found
+                // If automatic selection is set and placeholder is not set
+                // Automatically select the first displayed and non-disabled item
                 if (!item && this.autoSelect && this.categories[level].placeholder === undefined) {
                     let index = 0;
                     for (let i = 0; i < list.length; i++) {
                         const item = list[i];
-                        // 自动过滤禁用与不存在的项
+                        // Automatically filter disabled and non-existent items
                         if (!(item.exist === undefined || !!item.exist === true) || item.disabled)
                             continue;
 
@@ -161,7 +161,7 @@ export const UCascadeSelect = {
 
             if (item) {
                 this.values.splice(level, 1, item.value);
-                // 继续处理下一级
+                // Continue to the next level
                 level < this.categories.length && this.setList(item.children, level + 1);
             } else {
                 this.values.splice(level, this.values.length);

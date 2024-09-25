@@ -1,29 +1,28 @@
-前面的Example只是局部展示组件库表单验证体系的使用方法，达到的效果不一定符合实际情况。下面举几种比较合理的案例：
+The previous Example only partially shows how to use the component library form verification system, and the effect achieved may not be consistent with the actual situation. Here are some more reasonable cases:
 
-按照表单提交按钮在什么情况下可点击，可以分为以下几种常见且比较合理的情况：始终可点、必填项有内容可点、所有项内容正确时才可点。
+According to the circumstances under which the form submit button can be clicked, it can be divided into the following common and reasonable situations: it can always be clicked, the required fields can be clicked if there is content, and the form submission button can be clicked only when the content of all items is correct.
 
-### 始终可点
+### Always Clickable
 
-表单提交按钮始终可点。
+The form submit button is always clickable.
 
-表现为表单中所有控件的所有行为必须进行提交验证，适当采用失焦和实时验证加以帮助。
+All behavior represented by all controls in the form must be submitted for validation, aided by appropriate use of out-of-focus and real-time validation.
 
 ``` vue
 <template>
-<u-form ref="form" :rules="rules">
-    <u-form-item label="用户名" name="username">
-        <u-input v-model="model.username" maxlength="12" placeholder="4~12个字符"></u-input>
-    </u-form-item>
-    <u-form-item label="邮箱" name="email">
-        <u-input v-model="model.email" maxlength="24" placeholder="请输入邮箱"></u-input>
-    </u-form-item>
-    <u-form-item label="手机号码" name="phone">
-        <u-input v-model="model.phone" maxlength="11" placeholder="请输入手机号码"></u-input>
-    </u-form-item>
-    <u-form-item>
-        <u-button color="primary" @click="submit()">提交</u-button>
-    </u-form-item>
-</u-form>
+    <u-form ref="form" :rules="rules">
+        <u-form-item label="Username" name="username">
+            <u-input v-model="model.username" maxlength="12" placeholder="4~12 characters"></u-input>
+        </u-form-item>
+        <u-form-item label="Email" name="email">
+            <u-input v-model="model.email" maxlength="24" placeholder="Please enter your email"></u-input>
+        </u-form-item>
+        <u-form-item label="Mobile Phone Number" name="phone">
+            <u-input v-model="model.phone" maxlength="11" placeholder="Please enter your mobile phone number"></u-input>
+        </u-form-item>
+        <u-form-item>
+            <u-button color="primary" @click="submit()">Submit</u-button>    </u-form-item>
+    </u-form>
 </template>
 
 <script>
@@ -37,15 +36,15 @@ export default {
             },
             rules: {
                 username: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入用户名' },
-                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: '请输入4~12个字符' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter username' },
+                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: 'Please enter 4~12 characters' },
                 ],
                 email: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入邮箱' },
-                    { type: 'email', trigger: 'blur', message: '邮箱格式不正确' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your email' },
+                    { type: 'email', trigger: 'blur', message: 'The email format is incorrect' },
                 ],
                 phone: [
-                    { type: 'string', pattern: /^\d{11}$/, trigger: 'blur', message: '手机号码格式不正确' },
+                    { type: 'string', pattern: /^\d{11}$/, trigger: 'blur', message: 'Mobile phone number format is incorrect' },
                 ],
             },
         };
@@ -61,27 +60,26 @@ export default {
 </script>
 ```
 
-### 必填项有内容可点
+### Required Fields have Content to Click On
 
-当表单中所有必填项有内容时，表单提交按钮才可点。
+The form submit button can only be clicked when all required fields in the form have content.
 
-表现为根据表单中必填项是否为空，使用计算属性来实时判断提交按钮是否可点。并且在这种情况下，通常采用三种验证相结合的方式。
+The performance is based on whether the required fields in the form are empty, and calculated properties are used to determine in real time whether the submit button can be clicked. And in this case, a combination of three verifications is usually used.
 
-``` vue
+```vue
 <template>
 <u-form ref="form" :rules="rules">
-    <u-form-item label="用户名" name="username">
-        <u-input v-model="model.username" maxlength="12" placeholder="4~12个字符"></u-input>
+    <u-form-item label="Username" name="username">
+        <u-input v-model="model.username" maxlength="12" placeholder="4~12 characters"></u-input>
     </u-form-item>
-    <u-form-item label="邮箱" name="email">
-        <u-input v-model="model.email" maxlength="24" placeholder="请输入邮箱"></u-input>
+    <u-form-item label="Email" name="email">
+        <u-input v-model="model.email" maxlength="24" placeholder="Please enter your email"></u-input>
     </u-form-item>
-    <u-form-item label="手机号码" name="phone">
-        <u-input v-model="model.phone" maxlength="11" placeholder="请输入手机号码"></u-input>
+    <u-form-item label="Mobile Phone Number" name="phone">
+        <u-input v-model="model.phone" maxlength="11" placeholder="Please enter your mobile phone number"></u-input>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary" :disabled="!canSubmit" @click="submit()">提交</u-button>
-    </u-form-item>
+        <u-button color="primary" :disabled="!canSubmit" @click="submit()">Submit</u-button>    </u-form-item>
 </u-form>
 </template>
 
@@ -96,15 +94,15 @@ export default {
             },
             rules: {
                 username: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入用户名' },
-                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: '请输入4~12个字符' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter username' },
+                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: 'Please enter 4~12 characters' },
                 ],
                 email: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入邮箱' },
-                    { type: 'email', trigger: 'blur', message: '邮箱格式不正确' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your email' },
+                    { type: 'email', trigger: 'blur', message: 'The email format is incorrect' },
                 ],
                 phone: [
-                    { type: 'string', pattern: /^\d{11}$/, trigger: 'blur', message: '手机号码格式不正确' },
+                    { type: 'string', pattern: /^\d{11}$/, trigger: 'blur', message: 'Mobile phone number format is incorrect' },
                 ],
             },
         };
@@ -117,7 +115,7 @@ export default {
     methods: {
         submit() {
             this.$refs.form.validate()
-                .then(() => alert('提交成功'))
+                .then(() => alert('Submission successful'))
                 .catch(() => { /* noop */ });
         },
     },
@@ -125,26 +123,26 @@ export default {
 </script>
 ```
 
-### 所有项内容正确可点
+### All Items are Correct and Clickable
 
-当表单中所有项内容均符合要求时，表单提交按钮才可点。
+The form submit button can only be clicked when all items in the form meet the requirements.
 
-表现为根据每个表单控件的验证结果，使用计算属性来实时判断提交按钮是否可点。这种情况下，一般就不需要进行提交验证了。
+The performance is based on the verification results of each form control, using calculated properties to determine whether the submit button can be clicked in real time. In this case, submission verification is generally not required.
 
-``` vue
+```vue
 <template>
 <u-form ref="form" :rules="rules" @validate="canSubmit = $event.valid">
-    <u-form-item label="用户名" name="username">
-        <u-input v-model="model.username" maxlength="12" placeholder="4~12个字符"></u-input>
+    <u-form-item label="Username" name="username">
+        <u-input v-model="model.username" maxlength="12" placeholder="4~12 characters"></u-input>
     </u-form-item>
-    <u-form-item label="邮箱" name="email">
-        <u-input v-model="model.email" maxlength="24" placeholder="请输入邮箱"></u-input>
+    <u-form-item label="Email" name="email">
+        <u-input v-model="model.email" maxlength="24" placeholder="Please enter your email"></u-input>
     </u-form-item>
-    <u-form-item label="手机号码" name="phone">
-        <u-input v-model="model.phone" maxlength="11" placeholder="请输入手机号码"></u-input>
+    <u-form-item label="Mobile Phone Number" name="phone">
+        <u-input v-model="model.phone" maxlength="11" placeholder="Please enter your mobile phone number"></u-input>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary" :disabled="!canSubmit" @click="submit()">提交</u-button>
+        <u-button color="primary" :disabled="!canSubmit" @click="submit()">Submit</u-button>
     </u-form-item>
 </u-form>
 </template>
@@ -161,33 +159,33 @@ export default {
             },
             rules: {
                 username: [
-                    { type: 'string', required: true, trigger: 'input+blur', message: '请输入用户名' },
-                    { type: 'string', min: 4, max: 12, trigger: 'input+blur', message: '请输入4~12个字符' },
+                    { type: 'string', required: true, trigger: 'input+blur', message: 'Please enter username' },
+                    { type: 'string', min: 4, max: 12, trigger: 'input+blur', message: 'Please enter 4~12 characters' },
                 ],
                 email: [
-                    { type: 'string', required: true, trigger: 'input+blur', message: '请输入邮箱' },
-                    { type: 'email', trigger: 'input+blur', message: '邮箱格式不正确' },
+                    { type: 'string', required: true, trigger: 'input+blur', message: 'Please enter your email' },
+                    { type: 'email', trigger: 'input+blur', message: 'The email format is incorrect' },
                 ],
                 phone: [
-                    { type: 'string', pattern: /^\d{11}$/, trigger: 'input+blur', message: '手机号码格式不正确' },
+                    { type: 'string', pattern: /^\d{11}$/, trigger: 'input+blur', message: 'Mobile phone number format is incorrect' },
                 ],
             },
         };
     },
     mounted() {
-        // 必须初始化时或在获取数据到时安静验证一次
+        // Must be quietly verified during initialization or when data is obtained.
         this.$refs.form.validate(true)
             .catch(() => { /* noop */ });
 
-        // 在获取数据到时如下
+        //When getting data, it's as follows
         // this.getData().then(...)
-        //  .then(() => this.$refs.form.validate(true))
-        //  .catch(() => { /* noop */ });
+        // .then(() => this.$refs.form.validate(true))
+        // .catch(() => { /* noop */ });
     },
     methods: {
         submit() {
             this.$refs.form.validate()
-                .then(() => alert('提交成功'))
+                .then(() => alert('Submission successful'))
                 .catch(() => { /* noop */ });
         },
     },

@@ -13,7 +13,7 @@ export const UDrawer = {
         };
     },
     watch: {
-        // @TODO: 为了让两个动画错开的临时解决方案
+        // @TODO: Temporary solution to stagger two animations
         currentVisible(currentVisible) {
             this.$nextTick(() => this.drawerVisible = currentVisible);
         },

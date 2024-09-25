@@ -46,7 +46,7 @@ export const UComboSlider = {
                 return;
             const value = $event.value;
 
-            // 最小值的情况不同步，不然会显得很怪异
+            // The minimum value is not synchronized, otherwise it will look weird.
             if (!$event.valid && value === this.min)
                 return;
             this.currentValue = value;

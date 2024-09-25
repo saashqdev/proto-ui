@@ -1,14 +1,14 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UCheckboxes 多选组
+# UCheckboxes Multiple Selection Groups
 
-**UI 组件**, **表单控件**, **块级展示**
+**UI Component**, **Form Control**, **Block Level Display**
 
 ## Example
 ### Basic Usage
 
 ``` html
-<u-checkbox>多选框</u-checkbox>
+<u-checkbox>Multiple Checkbox</u-checkbox>
 ```
 
 ### Two-Way Binding
@@ -31,22 +31,22 @@ export default {
 </script>
 ```
 
-### 只读和禁用
+### Read Only and Disabled
 
 ``` html
 <u-linear-layout>
-    <u-checkbox :value="true" readonly>只读</u-checkbox>
-    <u-checkbox :value="true" disabled>禁用</u-checkbox>
+    <u-checkbox :value="true" readonly>Read-Only</u-checkbox>
+    <u-checkbox :value="true" disabled>Disabled</u-checkbox>
 </u-linear-layout>
 ```
 
-### 不确定状态
+### Uncertain Status
 
 ``` html
-<u-checkbox :value="null">不确定</u-checkbox>
+<u-checkbox :value="null">Not Sure</u-checkbox>
 ```
 
-### 多选组
+### Multiple Selection Group
 
 ``` vue
 <template>
@@ -71,9 +71,9 @@ export default {
 </script>
 ```
 
-### 数量限制
+### Quantity Limit
 
-使用`min`和`max`属性可以限制选择项的数量。
+Use the `min` and `max` attributes to limit the number of selections.
 
 ``` vue
 <template>
@@ -103,12 +103,12 @@ export default {
 </script>
 ```
 
-### 全选
+### Select All
 
 ``` vue
 <template>
 <div>
-    <u-checkbox v-model="allChecked" @check="checkAll($event.value)">全选</u-checkbox>
+    <u-checkbox v-model="allChecked" @check="checkAll($event.value)">Select All</u-checkbox>
     <u-checkboxes v-model="checkedList" @check="onCheck($event.value)">
         <u-checkbox label="Water Cup">Water Cup</u-checkbox>
         <u-checkbox label="Nut">Nut</u-checkbox>
@@ -148,73 +148,73 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | Array |  | `[]` | 多选组的选中项 |
-| min | number |  | `0` | 可以勾选多选框的最小数量 |
-| max | number |  | `Infinity` | 可以勾选多选框的最大数量 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value | Array | | `[]` | Selected items of multi-select group |
+| min | number | | `0` | The minimum number of checkboxes that can be checked |
+| max | number | | `Infinity` | The maximum number of checkboxes that can be checked |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入`<checkbox>`子组件。
+Insert the `<checkbox>` subcomponent.
 
 ## UCheckbox API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | boolean, null |  | `false` | 选中状态，`null`表示不确定状态 |
-| label | any |  |  | 多选框标签。用于关联多选组的值 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value.sync, v-model | boolean, null | | `false` | Selected state, `null` means uncertain state |
+| label | any | | | Checkbox label. Value used to associate multiple selection groups |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @before-check
 
-切换选中状态前触发
+Triggered before switching selected state
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | boolean, null | 选中状态 |
-| $event.oldValue | boolean, null | 旧的选中状态 |
-| $event.preventDefault | Function | 阻止切换流程 |
-| senderVM | UCheckbox | 发送事件实例 |
+| $event.value | boolean, null | Selected state |
+| $event.oldValue | boolean, null | Old selected state |
+| $event.preventDefault | Function | Prevent switching process |
+| senderVM | UCheckbox | Send event instance |
 
 #### @input
 
-切换选中状态时触发
+Triggered when switching the selected state
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | boolean, null | 切换后的选中状态 |
-| senderVM | UCheckbox | 发送事件实例 |
+| $event | boolean, null | The selected state after switching |
+| senderVM | UCheckbox | Send event instance |
 
 #### @check
 
-切换选中状态时触发
+Triggered when switching the selected state
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | boolean, null | 选中状态 |
-| $event.oldValue | boolean, null | 旧的选中状态 |
-| $event.label | any | 此选框的标签 |
-| senderVM | UCheckbox | 发送事件实例 |
+| $event.value | boolean, null | Selected state |
+| $event.oldValue | boolean, null | Old selected state |
+| $event.label | any | The label for this checkbox |
+| senderVM | UCheckbox | Send event instance |
 
 #### @change
 
-选中状态改变时触发
+Triggered when the selected state changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | boolean, null | 选中状态 |
-| $event.oldValue | boolean, null | 旧的选中状态 |
-| senderVM | UCheckbox | 发送事件实例 |
+| $event.value | boolean, null | Selected state |
+| $event.oldValue | boolean, null | Old selected state |
+| senderVM | UCheckbox | Send event instance |

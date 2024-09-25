@@ -1,115 +1,115 @@
-## 表单布局
+## Form Layout
 ### Basic Usage
 
 ``` html
 <u-form gap="large">
-    <u-form-item label="计费方式" required>
+    <u-form-item label="Billing Method" required>
         <u-radios value="0">
-            <u-radio label="0">包年包月</u-radio>
-            <u-radio label="1">按量付费</u-radio>
+            <u-radio label="0">Yearly and Monthly Subscription</u-radio>
+            <u-radio label="1">Pay as you Go</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="实例名称" required>
-        <u-input size="huge" maxlength="63" placeholder="由1-63个小写字母，数字，中划线组成，以字母开头，字母或数字结尾"></u-input>
+    <u-form-item label="Instance Name" required>
+        <u-input size="huge" maxlength="63" placeholder="Composed of 1-63 lowercase letters, numbers, and underscores, starting with a letter and ending with a letter or number"></u-input>
     </u-form-item>
-    <u-form-item label="　" required>
-        <u-input size="huge" maxlength="63" placeholder="label为空的必填项"></u-input>
+    <u-form-item label=" " required>
+        <u-input size="huge" maxlength="63" placeholder="Required if label is empty"></u-input>
     </u-form-item>
-    <u-form-item label="规格">
+    <u-form-item label="Specification">
         <u-select value="0101">
-            <u-select-item value="0101">1核 1GB</u-select-item>
-            <u-select-item value="0102">1核 2GB</u-select-item>
-            <u-select-item value="0204">2核 4GB</u-select-item>
-            <u-select-item value="0408">4核 8GB</u-select-item>
-            <u-select-item value="0816">8核 16GB</u-select-item>
-            <u-select-item value="0832">8核 32GB</u-select-item>
-            <u-select-item value="1664">16核 64GB</u-select-item>
+            <u-select-item value="0101">1 core 1GB</u-select-item>
+            <u-select-item value="0102">1 core 2GB</u-select-item>
+            <u-select-item value="0204">2 core 4GB</u-select-item>
+            <u-select-item value="0408">4 core 8GB</u-select-item>
+            <u-select-item value="0816">8 core 16GB</u-select-item>
+            <u-select-item value="0832">8 core 32GB</u-select-item>
+            <u-select-item value="1664">16 core 64GB</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="类型" description="高性能 SSD 云盘不支持快照功能" layout="block">
+    <u-form-item label="Type" description="High-performance SSD cloud disk does not support snapshot function" layout="block">
         <u-select value="SSD">
-            <u-select-item value="SSD">SSD 云盘</u-select-item>
-            <u-select-item value="HSSD">高性能 SSD 云盘</u-select-item>
+            <u-select-item value="SSD">SSD Cloud Disk</u-select-item>
+            <u-select-item value="HSSD">High-performance SSD Cloud Disk</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="端口号" required>
+    <u-form-item label="Port Number" required>
         <u-input size="huge medium" maxlength="5" placeholder="1150-65535" value="3306"></u-input>
     </u-form-item>
-    <u-form-item label="公网带宽">
+    <u-form-item label="Public Network Bandwidth">
         <u-combo-slider :step="10" unit="Mbps"></u-combo-slider>
     </u-form-item>
-    <u-form-item label="详情" layout="block">
+    <u-form-item label="Details" layout="block">
         <u-textarea size="huge"></u-textarea>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary">立即创建</u-button>
+        <u-button color="primary">Create Now</u-button>
     </u-form-item>
 </u-form>
 ```
 
-### 行内
+### Inline
 
 ``` html
 <u-form layout="inline" label-size="auto">
-    <u-form-item label="状态">
+    <u-form-item label="Status">
         <u-select auto-select>
-            <u-select-item>认证中</u-select-item>
+            <u-select-item>Authenticating</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="用户名">
-        <u-input maxlength="63" placeholder="请输入用户名"></u-input>
+    <u-form-item label="Username">
+        <u-input maxlength="63" placeholder="Please enter username"></u-input>
     </u-form-item>
-    <u-form-item label="联系号码">
-        <u-input maxlength="63" placeholder="请输入联系号码"></u-input>
+    <u-form-item label="Contact Number">
+        <u-input maxlength="63" placeholder="Please enter contact number"></u-input>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary">查询</u-button>
+        <u-button color="primary">Query</u-button>
     </u-form-item>
 </u-form>
 ```
 
-### 栅格布局
+### Grid Layout
 
-有多行的表单为了对齐美观，通常与栅格布局搭配使用。
+Forms with multiple rows are usually used with grid layout for beautiful alignment.
 
 ``` html
 <u-form layout="inline">
     <u-grid-layout>
         <u-grid-layout-row :repeat="3">
             <u-grid-layout-column>
-                <u-form-item label="状态">
+                <u-form-item label="Status">
                     <u-select auto-select>
-                        <u-select-item>认证中</u-select-item>
+                        <u-select-item>Authenticating</u-select-item>
                     </u-select>
                 </u-form-item>
             </u-grid-layout-column>
             <u-grid-layout-column>
-                <u-form-item label="备案类型">
+                <u-form-item label="Record Type">
                     <u-select auto-select>
-                        <u-select-item>全部</u-select-item>
+                        <u-select-item>All</u-select-item>
                     </u-select>
                 </u-form-item>
             </u-grid-layout-column>
             <u-grid-layout-column>
-                <u-form-item label="备案号">
+                <u-form-item label="Registration Number">
                     <u-input maxlength="63"></u-input>
                 </u-form-item>
             </u-grid-layout-column>
         </u-grid-layout-row>
         <u-grid-layout-row :repeat="3">
             <u-grid-layout-column>
-                <u-form-item label="用户名">
+                <u-form-item label="Username">
                     <u-input maxlength="63"></u-input>
                 </u-form-item>
             </u-grid-layout-column>
             <u-grid-layout-column>
-                <u-form-item label="单位名称">
+                <u-form-item label="Organization Name">
                     <u-input maxlength="63"></u-input>
                 </u-form-item>
             </u-grid-layout-column>
             <u-grid-layout-column>
                 <u-form-item>
-                    <u-button color="primary">查询</u-button>
+                    <u-button color="primary">Query</u-button>
                 </u-form-item>
             </u-grid-layout-column>
         </u-grid-layout-row>
@@ -117,72 +117,72 @@
 </u-form>
 ```
 
-### 插槽
+### Slot
 
-- 通过`slot="label"`插槽自定义左侧内容
-- 通过`slot="description"`插槽自定义描述内容
-- 通过`slot='extra'`插槽自定义`label`右侧额外内容
+- Customize left content through `slot="label"` slot
+- Customize the description content through the `slot="description"` slot
+- Customize extra content on the right side of `label` through `slot='extra'` slot
 
 ``` html
 <u-form ref="form">
     <u-form-item required layout="block">
         <span slot="label">
-            用户名
+            username
         </span>
-        <div slot="description">描述描述</div>
+        <div slot="description">Description</div>
         <i-icon name="alert" size="small" slot="extra">
-            <u-tooltip content="请输入正确格式的中文汉字"></u-tooltip>
+            <u-tooltip content="Please enter Chinese characters in the correct format"></u-tooltip>
         </i-icon>
-        <u-input maxlength="4" maxlength-message="不超过4个字符" placeholder="不超过4个字符"></u-input>
+        <u-input maxlength="4" maxlength-message="No more than 4 characters" placeholder="No more than 4 characters"></u-input>
     </u-form-item>
 </u-form>
 ```
 
 
-## 数据收集与提交
+## Data Collection and Submission
 
-推荐将各表单控件使用`v-model`绑定的数据，统一收集到`data`里的`model`对象中。
+It is recommended to collect the data bound by each form control using `v-model` into the `model` object in `data`.
 
-``` vue
+```vue
 <template>
 <u-form gap="large">
-    <u-form-item label="计费方式" required>
+    <u-form-item label="Billing method" required>
         <u-radios v-model="model.chargeType">
-            <u-radio label="0">包年包月</u-radio>
-            <u-radio label="1">按量付费</u-radio>
+            <u-radio label="0">Yearly and Monthly Subscription</u-radio>
+            <u-radio label="1">Pay as you Go</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="实例名称" required>
-        <u-input v-model="model.name" size="huge" maxlength="63" placeholder="由1-63个小写字母，数字，中划线组成，以字母开头，字母或数字结尾"></u-input>
+    <u-form-item label="Instance name" required>
+        <u-input v-model="model.name" size="huge" maxlength="63" placeholder="Composed of 1-63 lowercase letters, numbers, and underscores, starting with a letter and ending with a letter or number" ></u-input>
     </u-form-item>
-    <u-form-item label="规格">
+    <u-form-item label="Specification">
         <u-select v-model="model.spec">
-            <u-select-item value="0101">1核 1GB</u-select-item>
-            <u-select-item value="0102">1核 2GB</u-select-item>
-            <u-select-item value="0204">2核 4GB</u-select-item>
-            <u-select-item value="0408">4核 8GB</u-select-item>
-            <u-select-item value="0816">8核 16GB</u-select-item>
-            <u-select-item value="0832">8核 32GB</u-select-item>
-            <u-select-item value="1664">16核 64GB</u-select-item>
+            <u-select-item value="0101">1 core 1GB</u-select-item>
+            <u-select-item value="0102">1 core 2GB</u-select-item>
+            <u-select-item value="0204">2 core 4GB</u-select-item>
+            <u-select-item value="0408">4 core 8GB</u-select-item>
+            <u-select-item value="0816">8 core 16GB</u-select-item>
+            <u-select-item value="0832">8 core 32GB</u-select-item>
+            <u-select-item value="1664">16 core 64GB</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="类型" description="高性能 SSD 云盘不支持快照功能" layout="block">
+    <u-form-item label="Type" description="High-performance SSD cloud disk does not support snapshot function" layout="block">
         <u-select v-model="model.type">
-            <u-select-item value="SSD">SSD 云盘</u-select-item>
-            <u-select-item value="HSSD">高性能 SSD 云盘</u-select-item>
+            <u-select-item value="SSD">SSD Cloud Disk</u-select-item>
+            <u-select-item value="HSSD">High-performance SSD Cloud Disk</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="端口号" required>
+    <u-form-item label="Port Number" required>
         <u-input v-model.number="model.port" size="huge normal" maxlength="5" placeholder="1150-65535"></u-input>
     </u-form-item>
-    <u-form-item label="公网带宽">
+    <u-form-item label="Public Network Bandwidth">
         <u-combo-slider v-model="model.bandwidth" :step="10" unit="Mbps"></u-combo-slider>
     </u-form-item>
-    <u-form-item label="描述" layout="block">
+    <u-form-item label="Description" layout="block">
         <u-textarea v-model="model.description" size="huge"></u-textarea>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary" @click="submit()">立即创建</u-button>
+        <u-button color="primary" @click="submit()">Create Now</u-button>
     </u-form-item>
 </u-form>
 </template>
@@ -204,31 +204,31 @@ export default {
     methods: {
         submit() {
             console.info(this.model);
-            this.$toast.show('提交成功！');
+            this.$toast.show('Submission successful!');
         },
     },
 };
 </script>
 ```
 
-### 数据转换
+### Data Conversion
 
-有时 UI 中的数据与向后端提交的数据不完全一致，可以将`v-model`分解为一个`:value`属性绑定 + `@input`事件，做临时转换。
+Sometimes the data in the UI is not completely consistent with the data submitted to the backend. You can decompose `v-model` into a `:value` attribute binding + `@input` event for temporary conversion.
 
-对于需要保持数字类型的，可以直接使用 Vue 的 `v-model` 的 `.number` 修饰符。
+For those that need to maintain the numeric type, you can directly use the `.number` modifier of Vue's `v-model`.
 
-``` vue
+```vue
 <template>
 <u-form gap="large">
-    <u-form-item label="超时时长" required>
+    <u-form-item label="Timeout Duration" required>
         <u-input size="huge normal" maxlength="5" placeholder="300-10000"
             :value="model.timeout / 1000" @input="model.timeout = $event * 1000"></u-input>
     </u-form-item>
-    <u-form-item label="端口号" required>
+    <u-form-item label="Port Number" required>
         <u-input v-model.number="model.port" size="huge normal" maxlength="5" placeholder="1150-65535"></u-input>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary" @click="submit()">立即创建</u-button>
+        <u-button color="primary" @click="submit()">Create Now</u-button>
     </u-form-item>
 </u-form>
 </template>
@@ -245,61 +245,61 @@ export default {
     methods: {
         submit() {
             console.info(this.model);
-            this.$toast.show('提交成功！');
+            this.$toast.show('Submission successful!');
         },
     },
 };
 </script>
 ```
 
-### 表单验证
+### Form validation
 
-需要在`<u-form-item>`的`rules`属性添加验证规则，输入和失焦会自动触发验证，点击提交按钮时，需要手动调用 form 的`validate`方法。
+Validation rules need to be added to the `rules` attribute of `<u-form-item>`. Input and defocusing will automatically trigger validation. When the submit button is clicked, the `validate` method of the form needs to be manually called.
 
-可以根据`@validate`事件监听表单的验证状态。
+You can monitor the validation status of the form based on the `@validate` event.
 
-关于验证规则的详细使用，参见 [UValidator](../u-validator)。
+For detailed usage of validation rules, see [UValidator](../u-validator).
 
-``` vue
+```vue
 <template>
 <u-form ref="form" gap="large">
-    <u-form-item label="计费方式" required>
+    <u-form-item label="Billing Method" required>
         <u-radios v-model="model.chargeType">
-            <u-radio label="0">包年包月</u-radio>
-            <u-radio label="1">按量付费</u-radio>
+            <u-radio label="0">Yearly and Monthly Subscription</u-radio>
+            <u-radio label="1">Pay as you Go</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="实例名称" required rules="required | ^az | az09$ | ^az09-$ | rangeLength(1,63)">
-        <u-input v-model="model.name" size="huge" maxlength="63" placeholder="由1-63个小写字母，数字，中划线组成，以字母开头，字母或数字结尾"></u-input>
+    <u-form-item label="Instance Name" required rules="required | ^az | az09$ | ^az09-$ | rangeLength(1,63)">
+        <u-input v-model="model.name" size="huge" maxlength="63" placeholder="Composed of 1-63 lowercase letters, numbers, and underscores, starting with a letter and ending with a letter or number" ></u-input>
     </u-form-item>
-    <u-form-item label="规格">
+    <u-form-item label="Specification">
         <u-select v-model="model.spec">
-            <u-select-item value="0101">1核 1GB</u-select-item>
-            <u-select-item value="0102">1核 2GB</u-select-item>
-            <u-select-item value="0204">2核 4GB</u-select-item>
-            <u-select-item value="0408">4核 8GB</u-select-item>
-            <u-select-item value="0816">8核 16GB</u-select-item>
-            <u-select-item value="0832">8核 32GB</u-select-item>
-            <u-select-item value="1664">16核 64GB</u-select-item>
+            <u-select-item value="0101">1 core 1GB</u-select-item>
+            <u-select-item value="0102">1 core 2GB</u-select-item>
+            <u-select-item value="0204">2 core 4GB</u-select-item>
+            <u-select-item value="0408">4 core 8GB</u-select-item>
+            <u-select-item value="0816">8 core 16GB</u-select-item>
+            <u-select-item value="0832">8 core 32GB</u-select-item>
+            <u-select-item value="1664">16 core 64GB</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="类型" description="高性能 SSD 云盘不支持快照功能" layout="block">
+    <u-form-item label="Type" description="High-performance SSD cloud disk does not support snapshot function" layout="block">
         <u-select v-model="model.type">
-            <u-select-item value="SSD">SSD 云盘</u-select-item>
-            <u-select-item value="HSSD">高性能 SSD 云盘</u-select-item>
+            <u-select-item value="SSD">SSD Cloud Disk</u-select-item>
+            <u-select-item value="HSSD">High-performance SSD Cloud Disk</u-select-item>
         </u-select>
     </u-form-item>
-    <u-form-item label="端口号" required rules="required | integer | range(1150,65535)">
+    <u-form-item label="Port Number" required rules="required | integer | range(1150,65535)">
         <u-input v-model.number="model.port" size="huge normal" maxlength="5" placeholder="1150-65535"></u-input>
     </u-form-item>
-    <u-form-item label="公网带宽">
+    <u-form-item label="Public Network Bandwidth">
         <u-combo-slider v-model="model.bandwidth" :step="10" unit="Mbps"></u-combo-slider>
     </u-form-item>
-    <u-form-item label="描述" layout="block" rules="minLength(8)">
+    <u-form-item label="Description" layout="block" rules="minLength(8)">
         <u-textarea v-model="model.description" size="huge"></u-textarea>
     </u-form-item>
     <u-form-item>
-        <u-button color="primary" @click="submit">立即创建</u-button>
+        <u-button color="primary" @click="submit">Create Now</u-button>
     </u-form-item>
 </u-form>
 </template>
@@ -321,8 +321,8 @@ export default {
     methods: {
         submit() {
             this.$refs.form.validate()
-                .then(() => this.$toast.show('验证通过，提交成功！'))
-                .catch(() => this.$toast.show('验证失败！'));
+                .then(() => this.$toast.show('Verification passed, submission successful!'))
+                .catch(() => this.$toast.show('Verification failed!'));
         },
     },
 };

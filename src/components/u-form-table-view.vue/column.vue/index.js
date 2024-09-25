@@ -1,5 +1,5 @@
 import { MEmitter } from '../../m-emitter.vue';
-// import UValidator from '../../u-validator.vue'; 这里不直接继承了，只是把属性抄一下
+// import UValidator from '../../u-validator.vue'; We don’t inherit it directly here, we just copy the attributes.
 import { Formatter, parseFormatters, placeholderFormatter } from '../../../utils/Formatters';
 
 export const UFormTableViewColumn = {

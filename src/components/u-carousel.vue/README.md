@@ -1,6 +1,6 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UCarousel 幻灯片
+# UCarousel Slideshow
 
 ## Example
 ### Basic Usage
@@ -15,8 +15,8 @@
 </u-carousel>
 ```
 
-### 动画
-#### fade
+### Animation
+#### Fade
 ``` html
 <u-carousel animation="fade">
     <u-carousel-item><img src="../../../assets/images/1.jpg"></u-carousel-item>
@@ -27,9 +27,9 @@
 </u-carousel>
 ```
 
-### 自动播放与循环
+### Auto Play and Loop
 
-通过`interval`来设置播放间隔。
+Use `interval` to set the playback interval.
 
 ``` html
 <u-carousel :interval="1000">
@@ -41,7 +41,7 @@
 </u-carousel>
 ```
 
-通过`autoplay`可以关闭自动播放。
+Autoplay can be turned off via `autoplay`.
 
 ``` html
 <u-carousel :autoplay="false">
@@ -53,7 +53,7 @@
 </u-carousel>
 ```
 
-通过`loop`可以关闭循环播放。
+Loop playback can be turned off through `loop`.
 
 ``` html
 <u-carousel :autoplay="false" :loop="false">
@@ -70,58 +70,58 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync | any |  |  | 播放位置 |
-| autoplay | boolean |  | `true` | 是否自动播放 |
-| loop | boolean |  | `true` | 是否循环播放，即首尾连接 |
-| interval | number |  | `4000` | 幻灯片切换时间，如果设置值小于动画时长，会在动画完成后切换 |
-| direction | string |  | `'right'` | 幻灯片播放方向 |
-| animation | string |  |  | 幻灯片过渡动画 |
+| value.sync | any | | | Play position |
+| autoplay | boolean | | `true` | Whether to play automatically |
+| loop | boolean | | `true` | Whether to play in a loop, that is, connect the beginning and the end |
+| interval | number | | `4000` | Slide switching time, if the setting value is less than the animation duration, it will switch after the animation is completed |
+| direction | string | | `'right'` | Slide show direction |
+| animation | string | | | Slide transition animation |
 
 ### Slots
 
 #### (default)
 
-插入`<u-carousel-item>`子组件。
+Insert `<u-carousel-item>` subcomponent.
 
 ### Events
 
 #### @before-select
 
-选择某一页前触发
+Triggered before selecting a page
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选中项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | UCarouselItem | 选中项实例 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | UCarousel | 发送事件实例 |
+| $event.value | any | The value of the selected item |
+| $event.oldValue | any | Old value |
+| $event.itemVM | UCarouselItem | Selected item instance |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | UCarousel | Send event instance |
 
 #### @select
 
-选择某一页时触发
+Triggered when a page is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选中项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | UCarouselItem | 选中项实例 |
-| senderVM | UCarousel | 发送事件实例 |
+| $event.value | any | The value of the selected item |
+| $event.oldValue | any | Old value |
+| $event.itemVM | UCarouselItem | Selected item instance |
+| senderVM | UCarousel | Send event instance |
 
 ## UCarouselItem API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 该项的标题 |
-| value | any |  |  | 该项的值 |
+| title | string | | | The title of the item |
+| value | any | | | The value of the item |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
-#### title
+#### Title
 
-自定义标题文本。
+Custom title text.

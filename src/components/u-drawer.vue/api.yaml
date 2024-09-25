@@ -1,90 +1,90 @@
 - name: u-drawer
-  title: 抽屉
+  title: Drawer
   attrs:
     - name: visible.sync
       type: boolean
       default: false
-      description: 是否显示
+      description: Whether to display
     - name: title
       type: string
-      default: 提示
-      description: 抽屉的标题
+      default: prompt
+      description: The title of the drawer
     - name: okButton
       type: string
-      default: 确定
-      description: 确定按钮文本，如果为空则不显示
+      default: OK
+      description: OK button text, if empty then it will not be displayed
     - name: cancelButton
       type: string
-      default: 取消
-      description: 取消按钮文本，如果为空则不显示
+      default: cancel
+      description: Cancel button text, if empty then it will not be displayed
     - name: size
       type: string
       default: normal
-      description: 抽屉的尺寸。可选值：`'small'`, `'normal'`, `'large'`
+      description: The size of the drawer. Optional values - `'small'`, `'normal'`, `'large'`
     - name: static
       type: boolean
       default: false
-      description: 是否嵌入页面显示
+      description: Whether to embed the page display
     - name: maskClosable
       type: boolean
       default: true
-      description: 是否点击遮罩时关闭抽屉
+      description: Whether to close the drawer when clicking the mask
   events:
     - name: open
-      description: 打开抽屉时触发
+      description: Triggered when the drawer is opened
       params:
         - name: senderVM
           type: UDrawer
-          description: 发送事件实例
+          description: Send event instance
     - name: ok
-      description: 确定时触发
+      description: Triggered when confirmed
       params:
         - name: senderVM
           type: UDrawer
-          description: 发送事件实例
+          description: Send event instance
     - name: cancel
-      description: 取消时触发
+      description: Triggered when canceled
       params:
         - name: senderVM
           type: UDrawer
-          description: 发送事件实例
+          description: Send event instance
     - name: before-close
-      description: 关闭抽屉前触发
+      description: Triggered before closing the drawer
       params:
         - name: ok
           type: boolean
-          description: 是否确定
+          description: Is it confirmed?
         - name: $event.preventDefault
           type: Function
-          description: 阻止关闭流程
+          description: Prevent the shutdown process
         - name: senderVM
           type: UDrawer
-          description: 发送事件实例
+          description: Send event instance
     - name: close
-      description: 关闭抽屉时触发
+      description: Triggered when the drawer is closed
       params:
         - name: ok
           type: boolean
-          description: 是否确定
+          description: Is it confirmed?
         - name: senderVM
           type: UDrawer
-          description: 发送事件实例
+          description: Send event instance
   static-methods:
     - name: alert(content, title)
-      description: 打开只有确定按钮的抽屉
+      description: Open the drawer with only the OK button
       params:
         - name: content
           type: string
-          description: 抽屉内容
+          description: Drawer contents
         - name: title
           type: string
-          description: 抽屉标题
+          description: Drawer title
     - name: confirm(content, title)
-      description: 打开有确定和取消按钮的抽屉
+      description: Opens a drawer with OK and Cancel buttons
       params:
         - name: content
           type: string
-          description: 抽屉内容
+          description: Drawer contents
         - name: title
           type: string
-          description: 抽屉标题
+          description: Drawer title

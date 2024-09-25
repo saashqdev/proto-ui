@@ -1,16 +1,16 @@
-# 表单项
+# Form Item
 
 ## Example
 ### Basic Usage
 
-``` vue
+```vue
 <template>
 <u-linear-layout direction="vertical">
     <u-form-item :rules="rules">
-        <u-input maxlength="112" placeholder="4~12位字母、数字或中划线组成"></u-input>
+        <u-input maxlength="112" placeholder="4~12 characters, numbers or underscores"></u-input>
     </u-form-item>
     <u-form-item :rules="rules" placement="bottom">
-        <u-input maxlength="112" placeholder="4~12位字母、数字或中划线组成"></u-input>
+        <u-input maxlength="112" placeholder="4~12 letters, numbers or underscores"></u-input>
     </u-form-item>
 </u-linear-layout>
 </template>
@@ -20,11 +20,11 @@ export default {
     data() {
         return {
             rules: [
-                { type: 'string', required: true, trigger: 'blur', message: '请输入用户名' },
-                { type: 'string', pattern: /^[a-zA-Z]/, trigger: 'input+blur', message: '以字母开头' },
-                { type: 'string', pattern: /^[a-zA-Z0-9-]+$/, trigger: 'input+blur', message: '字母、数字或中划线组成' },
-                { type: 'string', pattern: /[a-zA-Z0-9]$/, trigger: 'blur', message: '以字母或数字结尾' },
-                { type: 'string', min: 4, trigger: 'blur', message: '不得少于4个字符' },
+                { type: 'string', required: true, trigger: 'blur', message: 'Please enter username' },
+                { type: 'string', pattern: /^[a-zA-Z]/, trigger: 'input+blur', message: 'Starts with letter' },
+                { type: 'string', pattern: /^[a-zA-Z0-9-]+$/, trigger: 'input+blur', message: 'Composed of letters, numbers or underscores' },
+                { type: 'string', pattern: /[a-zA-Z0-9]$/, trigger: 'blur', message: 'End with letter or number' },
+                { type: 'string', min: 4, trigger: 'blur', message: 'Not less than 4 characters' },
             ],
         };
     },

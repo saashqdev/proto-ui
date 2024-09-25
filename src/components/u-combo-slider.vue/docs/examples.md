@@ -4,19 +4,19 @@
 <u-combo-slider></u-combo-slider>
 ```
 
-### 最大值和最小值
+### Maximum and Minimum Values
 
 ``` html
 <u-combo-slider :value="36" :min="10" :max="50"></u-combo-slider>
 ```
 
-### 精度与间隔
+### Precision and Interval
 
-精度表示数字要保留的最小单位，整数、小数均可，输入框会根据它作四舍五入。默认为`1`，即保留到整数。
+The precision indicates the smallest unit to be retained for the number. It can be an integer or a decimal. The input box will round based on it. Defaults to `1`, which is reserved to integers.
 
-间隔表示点击按钮或按上下键所增加或减少的量，最好为精度的整数倍。
+The interval represents the amount increased or decreased by clicking the button or pressing the up and down keys, preferably an integer multiple of the precision.
 
-间隔为`0`时，滑块拖动连续，数值保留到精度。
+When the interval is `0`, the slider is dragged continuously and the value is retained to the accuracy.
 
 ``` html
 <u-grid-layout>
@@ -32,9 +32,9 @@
 </u-grid-layout>
 ```
 
-### 范围
+### Scope
 
-使用`range`可以进一步对`value`限制，通常传入一个数组，第一个值表示范围开始值，第二个值表示范围的结束值。
+Use `range` to further limit `value`, usually passing in an array, the first value represents the starting value of the range, and the second value represents the end value of the range.
 
 ``` html
 <u-grid-layout>
@@ -47,9 +47,9 @@
 </u-grid-layout>
 ```
 
-### 同步时机
+### Synchronization Timing
 
-用`sync-on`属性可以设置输入后何时同步值到`<u-slider>`组件中。
+Use the `sync-on` attribute to set when to synchronize the value to the `<u-slider>` component after input.
 
 ``` html
 <u-grid-layout>
@@ -62,16 +62,16 @@
 </u-grid-layout>
 ```
 
-### 格式化
+### Formatting
 
-通常可以用以下字符组成一个格式化字符串：
+You can usually use the following characters to form a format string:
 
-- `0`表示数字占位符。如果整数部分长度小于占位符的数量，则用`0`补足。如果小数部分长度大于占位符数量，则会四舍五入。
-- `#`表示数字占位符。只显有意义的零而不显示无意义的零。
-- `.`表示小数点。
-- `,`表示千分位。
+- `0` represents a numeric placeholder. If the length of the integer part is less than the number of placeholders, it is padded with `0`. If the fractional part is longer than the number of placeholders, it is rounded off.
+- `#` represents a numeric placeholder. Only meaningful zeros are displayed and meaningless zeros are not displayed.
+- `.` represents the decimal point.
+- `,` means thousandths.
 
-也可以传入一个包含`get`和`set`方法的格式化对象。
+You can also pass in a format object containing `get` and `set` methods.
 
 ``` html
 <u-grid-layout>
@@ -84,7 +84,8 @@
 </u-grid-layout>
 ```
 
-### 只读和禁用
+### Read Only and Disabled
+
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="6">

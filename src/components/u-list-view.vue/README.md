@@ -333,7 +333,7 @@ export default {
 | multiple | boolean |  | `false` | 是否可以多选 |
 | collapsible | boolean |  | `false` | 分组是否可以折叠 |
 | accordion | boolean |  | `false` | 是否每次只会展开一个分组 |
-| expand-trigger | string |  | `'click'` | 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发 |
+| expand-trigger | string |  | `'click'` | 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示The Entire Row can be Triggered by Clicking only the Small Arrow (default) |
 | loading-text | string |  | `'加载中...'` | 加载时的文字。使用分页加载时才会出现 |
 | initial-load | boolean |  | `true` | 是否在初始时立即加载 |
 | pageable | boolean |  | `false` | 是否需要分页 |

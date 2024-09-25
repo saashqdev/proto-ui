@@ -69,7 +69,7 @@
 </u-linear-layout>
 ```
 
-### 触发方式
+### Trigger Method
 
 ``` html
 <u-linear-layout>

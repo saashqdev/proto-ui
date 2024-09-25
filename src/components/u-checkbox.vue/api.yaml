@@ -1,5 +1,5 @@
 - name: u-checkbox
-  title: 多选框
+  title: Checkbox
   attrs:
     - name: value
       type: boolean, null

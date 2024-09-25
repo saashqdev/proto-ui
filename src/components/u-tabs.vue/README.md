@@ -25,7 +25,7 @@
 </u-tabs>
 ```
 
-### 只读和禁用
+### Read Only and Disabled
 
 ``` html
 <u-tabs readonly>

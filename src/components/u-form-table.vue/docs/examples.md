@@ -5,9 +5,9 @@
     <thead>
         <tr>
             <th width="20%">URL</th>
-            <th width="20%">服务</th>
-            <th width="20%">端口</th>
-            <th>描述</th>
+            <th width="20%">Service</th>
+            <th width="20%">Port</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -32,18 +32,18 @@
 </u-form-table>
 ```
 
-### 在 UForm 中使用
+### Used in UForm
 
 ``` html
 <u-form>
-    <u-form-item label="规则" layout="block">
+    <u-form-item label="Rules" layout="block">
         <u-form-table>
             <thead>
                 <tr>
                     <th width="20%">URL</th>
-                    <th width="20%">服务</th>
-                    <th width="20%">端口</th>
-                    <th>描述</th>
+                    <th width="20%">Service</th>
+                    <th width="20%">Port</th>
+                    <th>Description</th>
                 </tr>
             </thead>
             <tbody>
@@ -70,18 +70,18 @@
 </u-form>
 ```
 
-### 动态添加表单
+### Dynamically add a form
 
-``` vue
+```vue
 <template>
 <u-linear-layout>
     <u-form-table>
         <thead>
             <tr>
                 <th width="20%">URL</th>
-                <th width="20%">服务</th>
-                <th width="20%">端口</th>
-                <th>描述</th>
+                <th width="20%">Service</th>
+                <th width="20%">Port</th>
+                <th>Description</th>
                 <th width="40"></th>
             </tr>
         </thead>
@@ -95,7 +95,7 @@
             </tr>
         </tbody>
     </u-form-table>
-    <u-form-table-add-button>添加选项</u-form-table-add-button>
+    <u-form-table-add-button>Add Options</u-form-table-add-button>
 </u-linear-layout>
 </template>
 <script>

@@ -243,7 +243,7 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="4" expand-trigger="click">
-        <p>整行点击均可触发（默认）</p>
+        <p>Clicking on the Entire Row can Trigger (default)</p>
         <u-tree-view>
             <u-tree-view-node text="节点 1" expanded>
                 <u-tree-view-node text="节点 1.1" expanded></u-tree-view-node>
@@ -262,7 +262,7 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
         </u-tree-view>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
-        <p>仅点击小箭头时触发</p>
+        <p>The Entire Row can be Triggered by Clicking only the Small Arrow (default)</p>
         <u-tree-view expand-trigger="click-expander">
             <u-tree-view-node text="节点 1" expanded>
                 <u-tree-view-node text="节点 1.1" expanded></u-tree-view-node>
@@ -501,7 +501,7 @@ export default {
 | cancelable | boolean |  | `false` | 是否可以取消选择 |
 | checkable | boolean |  | `false` | 是否可以选中/取消 |
 | accordion | boolean |  | `false` | 是否每次只会展开一个分组 |
-| expand-trigger | string |  | `'click'` | 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发 |
+| expand-trigger | string |  | `'click'` | 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示The Entire Row can be Triggered by Clicking only the Small Arrow (default) |
 | readonly | boolean |  | `false` | 是否只读 |
 | disabled | boolean |  | `false` | 是否禁用 |
 

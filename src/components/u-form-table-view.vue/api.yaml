@@ -1,152 +1,152 @@
 - name: u-form-table-view
-  title: 表格表单视图
-  labels: [UI 组件, 表单验证器, 块级展示]
-  description: 本组件用于在表单中使用表单验证、动态数据等复杂功能。
+  title: Table Form View
+  labels: [UI Component, Form Validator, Block-Level Display]
+  description: This component is used to use complex functions such as form validation and dynamic data in the form.
   extends: m-dynamic
   attrs:
     - name: border
       type: boolean
       default: null
-      description: 是否有边框
+      description: Whether there is a border
     - name: data
       type: Array
       default: null
-      description: 数据
+      description: Data
     - name: dynamic
       type: boolean
       default: false
-      description: 是否可以动态添加/删除项
+      description: Whether it is possible to add/remove items dynamically
     - name: get-default-item
       type: Function
       default: null
-      description: 传入获取默认项的方法
+      description: Pass in the method to get the default item
     - name: initial-add
       type: boolean
       default: true
-      description: 是否自动补充项，如果初始时`data`中的项目数少于`min-count`
+      description: Whether to automatically add items if the number of items in `data` is less than `min-count` initially
     - name: min-count
       type: number
       default: 1
-      description: 最小项目数
+      description: Minimum number of items
     - name: max-count
       type: number
       default: .inf
-      description: 最大项目数
+      description: Maximum number of items
   slots:
     - name: default
-      description: 添加文本或 HTML。
+      description: Add text or HTML.
   events:
     - name: before-add
-      description: 添加前触发
+      description: Triggered before adding
       params:
         - name: $event.item
           type: any
-          description: 添加的项
+          description: Item added
         - name: $event.index
           type: number
-          description: 添加的索引
+          description: Added index
         - name: $event.data
           type: Array
-          description: 当前数据
+          description: Current data
         - name: $event.preventDefault
           type: Function
-          description: 阻止添加流程
+          description: Prevent adding process
         - name: senderVM
           type: UFormTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: add
-      description: 添加时触发
+      description: Triggered when added
       params:
         - name: $event.item
           type: any
-          description: 添加的项
+          description: Item added
         - name: $event.index
           type: number
-          description: 添加的索引
+          description: Added index
         - name: $event.data
           type: Array
-          description: 当前数据
+          description: Current data
         - name: senderVM
           type: UFormTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: before-remove
-      description: 删除前触发
+      description: Triggered before deletion
       params:
         - name: $event.item
           type: any
-          description: 删除的项
+          description: Deleted item
         - name: $event.index
           type: number
-          description: 删除的索引
+          description: Deleted index
         - name: $event.data
           type: Array
-          description: 当前数据
+          description: Current data
         - name: $event.preventDefault
           type: Function
-          description: 阻止删除流程
+          description: Block the deletion process
         - name: senderVM
           type: UFormTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: remove
-      description: 删除时触发
+      description: Triggered when deleted
       params:
         - name: $event.item
           type: any
-          description: 删除的项
+          description: Deleted item
         - name: $event.index
           type: number
-          description: 删除的索引
+          description: Deleted index
         - name: $event.data
           type: Array
-          description: 当前数据
+          description: Current data
         - name: senderVM
           type: UFormTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: splice
-      description: 数量变更（添加/删除）时触发
+      description: Triggered when quantity changes (addition/deletion)
       params:
         - name: $event.item
           type: any
-          description: 变更的项
+          description: The item that was changed
         - name: $event.index
           type: number
-          description: 变更的索引
+          description: The index of the change
         - name: $event.data
           type: Array
-          description: 当前数据
+          description: Ccurrent data
         - name: senderVM
           type: UFormTableView
-          description: 发送事件实例
+          description: Send event instance
 - name: u-form-table-view-column
   attrs:
     - name: title
       type: string
       default: null
-      description: 列标题
+      description: Column title
     - name: field
       type: string
       default: null
-      description: data 中的字段名
+      description: Field name in data
     - name: width
       type: string, number
       default: null
-      description: 给列指定宽度，可以为数字或百分比
+      description: Specifies the width of the column, which can be a number or a percentage
     - name: ellipsis
       type: boolean
       default: false
-      description: 是否省略显示。默认文字超出时会换行
+      description: Whether to omit the display. By default, the text will wrap if it exceeds the limit.
     - name: formatter
       type: string, object, Function, Formatter
       default: placeholder
-      description: 格式器
+      description: Formatter
     - name: hidden
       type: boolean
       default: false
-      description: 是否隐藏
+      description: Whether to hide
     - name: start-index
       type: number
       default: 1
-      description: 当`type="index"`时的起始序号
+      description: The starting number when `type="index"`
     - name: "**Validator Props/Attrs**"
       type: ""
       default: null
@@ -154,81 +154,81 @@
     - name: label
       type: string
       default: null
-      description: 标签。用于提示消息的合成
+      description: Label. Used for the synthesis of prompt messages
     - name: muted
       type: string
       default: null
-      description: 验证时是否静默。可选值：`'message'`表示只静默消息提示，`'all'`同时静默消息提示和红框提示
+      description: Whether to be silent during verification. Optional values - `'message'` means only silent message prompt, `'all'` means silent message prompt and red box prompt at the same time
     - name: rules
       type: string, Array
       default: null
-      description: 验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型
+      description: Validation rules. The short form is a string type, and the full form or mixed form is an array type.
     - name: ignore-validation
       type: boolean
       default: false
-      description: 忽略验证
+      description: Ignore validation
     - name: ignore-rules
       type: boolean
       default: false
-      description: 忽略验证规则。已废弃，同`ignore-validation`
+      description: Ignore validation rules. Deprecated, same as `ignore-validation`
     - name: validating-options
       type: object
       default: null
-      description: "验证辅助对象。在 Rule 的 `validate` 方法中使用。表格中会额外将`{ data: currentData, item,
-        rowIndex }`注入"
+      description: "Validation auxiliary object. Used in the `validate` method of Rule. The table will additionally include `{ data: currentData, item,
+        rowIndex }`inject"
     - name: validating-value
       type: any
       default: null
-      description: 临时修改验证值
+      description: Temporarily modify the verification value
     - name: validating-process
       type: Function
       default: null
-      description: 验证前对值进行预处理
+      description: Preprocess the value before validation
   slots:
     - name: default
-      description: 在表格列中插入`cell`插槽。
+      description: Inserts a `cell` slot into a table column.
     - name: cell
-      description: 对单元格数据展示进行自定义。
+      description: Customize the display of cell data.
       props:
         - name: item
           type: object
-          description: 循环中的当前项
+          description: The current item in the loop
         - name: value
           type: any
-          description: item 中 field 字段对应的值
+          description: The value corresponding to the field in item
         - name: columnVM
           type: string
-          description: 该列组件实例
+          description: This column component instance
         - name: rowIndex
           type: number
-          description: 行的索引
+          description: The index of the row
         - name: columnIndex
           type: number
-          description: 列的索引
+          description: The index of the column
     - name: title
-      description: 对标题进行自定义。
+      description: Customize the title.
       props:
         - name: columnVM
           type: string
-          description: 该列组件实例
+          description: This column component instance
         - name: columnIndex
           type: number
-          description: 列的索引
+          description: The index of the column
     - name: expand-content
-      description: 展开列的内容
+      description: expand the content of the column
       props:
         - name: item
           type: object
-          description: 循环中的当前项
+          description: The current item in the loop
         - name: value
           type: any
-          description: item 中 field 字段对应的值
+          description: The value corresponding to the field in item
         - name: columnVM
           type: string
-          description: 该列组件实例
+          description: This column component instance
         - name: rowIndex
           type: number
-          description: 行的索引
+          description: The index of the row
         - name: columnIndex
           type: number
-          description: 列的索引
+          description: The index of the column

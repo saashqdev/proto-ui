@@ -1,10 +1,10 @@
 - name: u-circular-progress
-  title: 圆形进度条
+  title: Circular Progress Bar
   attrs:
     - name: percent
       type: number
       default: 0
-      description: 百分比
+      description: Percentage
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.

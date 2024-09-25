@@ -1,7 +1,7 @@
 ### Basic Usage
 
 ``` html
-<u-checkbox>多选框</u-checkbox>
+<u-checkbox>Checkbox</u-checkbox>
 ```
 
 ### Two-Way Binding
@@ -24,22 +24,22 @@ export default {
 </script>
 ```
 
-### 只读和禁用
+### Read Only and Disabled
 
 ``` html
 <u-linear-layout>
-    <u-checkbox :value="true" readonly>只读</u-checkbox>
-    <u-checkbox :value="true" disabled>禁用</u-checkbox>
+    <u-checkbox :value="true" readonly>Read-only</u-checkbox>
+    <u-checkbox :value="true" disabled>Disabled</u-checkbox>
 </u-linear-layout>
 ```
 
-### 不确定状态
+### Uncertain Status
 
 ``` html
-<u-checkbox :value="null">不确定</u-checkbox>
+<u-checkbox :value="null">Not Sure</u-checkbox>
 ```
 
-### 多选组
+### Multiple Selection Group
 
 ``` vue
 <template>
@@ -64,9 +64,9 @@ export default {
 </script>
 ```
 
-### 数量限制
+### Quantity Limit
 
-使用`min`和`max`属性可以限制选择项的数量。
+Use the `min` and `max` attributes to limit the number of selections.
 
 ``` vue
 <template>
@@ -96,12 +96,12 @@ export default {
 </script>
 ```
 
-### 全选
+### Select All
 
 ``` vue
 <template>
 <div>
-    <u-checkbox v-model="allChecked" @check="checkAll($event.value)">全选</u-checkbox>
+    <u-checkbox v-model="allChecked" @check="checkAll($event.value)">Select All</u-checkbox>
     <u-checkboxes v-model="checkedList" @check="onCheck($event.value)">
         <u-checkbox label="Water Cup">Water Cup</u-checkbox>
         <u-checkbox label="Nut">Nut</u-checkbox>

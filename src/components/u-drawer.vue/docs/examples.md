@@ -3,11 +3,11 @@
 ``` vue
 <template>
 <div>
-    <u-drawer :visible.sync="visible" title="标题">
+    <u-drawer :visible.sync="visible" title="title">
         <u-sidebar slot="drawer">
-            <u-sidebar-item>指南</u-sidebar-item>
-            <u-sidebar-item>概念</u-sidebar-item>
-            <u-sidebar-item to="/proto-ui">组件</u-sidebar-item>
+            <u-sidebar-item>Guidelines</u-sidebar-item>
+            <u-sidebar-item>Concept</u-sidebar-item>
+            <u-sidebar-item to="/proto-ui">Component</u-sidebar-item>
         </u-sidebar>
     </u-drawer>
     <u-linear-layout>
@@ -27,23 +27,23 @@ export default {
 </script>
 ```
 
-### 位置
+### Location
 
-``` vue
+```vue
 <template>
 <div>
-    <u-drawer :visible.sync="leftVisible" title="标题">
+    <u-drawer :visible.sync="leftVisible" title="title">
         <u-sidebar slot="drawer">
-            <u-sidebar-item>指南</u-sidebar-item>
-            <u-sidebar-item>概念</u-sidebar-item>
-            <u-sidebar-item to="/proto-ui">组件</u-sidebar-item>
+            <u-sidebar-item>Guidelines</u-sidebar-item>
+            <u-sidebar-item>Concept</u-sidebar-item>
+            <u-sidebar-item to="/proto-ui">Component</u-sidebar-item>
         </u-sidebar>
     </u-drawer>
-    <u-drawer placement="right" :visible.sync="rightVisible" title="标题">
+    <u-drawer placement="right" :visible.sync="rightVisible" title="title">
         <u-sidebar slot="drawer">
-            <u-sidebar-item>指南</u-sidebar-item>
-            <u-sidebar-item>概念</u-sidebar-item>
-            <u-sidebar-item to="/proto-ui">组件</u-sidebar-item>
+            <u-sidebar-item>Guidelines</u-sidebar-item>
+            <u-sidebar-item>Concept</u-sidebar-item>
+            <u-sidebar-item to="/proto-ui">Component</u-sidebar-item>
         </u-sidebar>
     </u-drawer>
     <u-linear-layout>

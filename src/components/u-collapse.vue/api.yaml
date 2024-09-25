@@ -1,85 +1,85 @@
 - name: u-collapse
-  title: 折叠面板
-  labels: [UI 组件, 块级展示]
+  title: Folding Panel
+  labels: [UI Component, Block-Level Display]
   attrs:
     - name: accordion
       type: boolean
       default: false
-      description: 是否每次只会展开一个面板
+      description: Whether to expand only one panel at a time
     - name: expand-trigger
       type: string
       default: click
-      description: 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发
+      description: The triggering method of expanding/collapse. Optional values - `'click'` means that the entire row can be triggered, and `'click-expander'` means that it is triggered only when the small arrow is clicked
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
   slots:
     - name: default
-      description: 插入`<u-collapse-item>`子组件。
+      description: Inserts a `<u-collapse-item>` child component.
   events:
     - name: toggle
-      description: 展开/折叠某面板时触发
+      description: Triggered when a panel is expanded/collapsed
       params:
         - name: $event.expanded
           type: boolean
-          description: 展开/折叠状态
+          description: Expand/collapse state
         - name: $event.itemVM
           type: UCollapseItem
-          description: 面板组件
+          description: Panel component
   methods:
     - name: toggleAll(expanded)
-      description: 展开/折叠所有面板
+      description: Expand/collapse all panels
       params:
         - name: expanded
           type: boolean
-          description: 展开/折叠
+          description: Expand/collapse
 - name: u-collapse-item
   attrs:
     - name: title
       type: string
       default: null
-      description: 显示的标题
+      description: The displayed title
     - name: expanded.sync
       type: boolean
       default: false
-      description: 展开/折叠状态
+      description: Expand/collapse state
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用。禁用时无法展开/折叠
+      description: Whether to disable. When disabled, it cannot be expanded/collapsed.
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.
     - name: title
-      description: 自定义标题文本。
+      description: Custom title text.
     - name: extra
-      description: 在右侧可以附加内容。
+      description: Additional content can be added on the right.
   events:
     - name: before-toggle
-      description: 展开/折叠此面板前触发
+      description: Triggered before expanding/collapse this panel
       params:
         - name: $event.expanded
           type: boolean
-          description: 展开/折叠状态
+          description: Expand/collapse state
         - name: $event.itemVM
           type: UCollapseItem
-          description: 面板组件
+          description: Panel component
         - name: $event.preventDefault
           type: Function
-          description: 阻止展开/折叠流程
+          description: Prevents the expand/collapse process
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance
     - name: toggle
-      description: 展开/折叠某面板时触发
+      description: Triggered when a panel is expanded/collapsed
       params:
         - name: $event.expanded
           type: boolean
-          description: 展开/折叠状态
+          description: Expand/collapse state
         - name: $event.itemVM
           type: UCollapseItem
-          description: 面板组件
+          description: Panel component
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance

@@ -1,6 +1,6 @@
 ### Basic Usage
 
-使用`show-total`、`show-sizer`、`show-jumper`这几个属性，可以对应开启的显示总页数、切换每页大小、页面跳转功能。
+Using the attributes `show-total`, `show-sizer`, and `show-jumper`, you can correspondingly enable the display of the total number of pages, switch the size of each page, and page jump functions.
 
 ``` html
 <u-combo-pagination :total-items="75" show-total show-sizer show-jumper></u-combo-pagination>

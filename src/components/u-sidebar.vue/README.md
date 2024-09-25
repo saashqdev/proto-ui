@@ -205,7 +205,7 @@
 | value.sync, v-model | any |  |  | 当前选择的值 |
 | collapsible | boolean |  | `false` | 分组是否可以折叠 |
 | accordion | boolean |  | `false` | 是否每次只会展开一个分组 |
-| expand-trigger | string |  | `'click'` | 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发 |
+| expand-trigger | string |  | `'click'` | 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示The Entire Row can be Triggered by Clicking only the Small Arrow (default) |
 | readonly | boolean |  | `false` | 是否只读 |
 | disabled | boolean |  | `false` | 是否禁用 |
 

@@ -1,10 +1,10 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UFormTable 表单表格
+# UFormTable Form Table
 
-**UI 组件**, **块级展示**
+**UI Components**, **Block Level Display**
 
-在表单中使用的表格，本组件主要实现基本样式，方便在特殊场景下扩展。如果需要快速使用动态数据、表单验证等功能，请使用 [UFormTableView](../u-form-table-view)。
+For tables used in forms, this component mainly implements basic styles to facilitate expansion in special scenarios. If you need to quickly use dynamic data, form validation and other functions, please use [UFormTableView](../u-form-table-view).
 
 ## Example
 ### Basic Usage
@@ -14,9 +14,9 @@
     <thead>
         <tr>
             <th width="20%">URL</th>
-            <th width="20%">服务</th>
-            <th width="20%">端口</th>
-            <th>描述</th>
+            <th width="20%">Service</th>
+            <th width="20%">Port</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -41,18 +41,18 @@
 </u-form-table>
 ```
 
-### 在 UForm 中使用
+### Used in UForm
 
 ``` html
 <u-form>
-    <u-form-item label="规则" layout="block">
+    <u-form-item label="Rules" layout="block">
         <u-form-table>
             <thead>
                 <tr>
                     <th width="20%">URL</th>
-                    <th width="20%">服务</th>
-                    <th width="20%">端口</th>
-                    <th>描述</th>
+                    <th width="20%">Service</th>
+                    <th width="20%">Port</th>
+                    <th>Description</th>
                 </tr>
             </thead>
             <tbody>
@@ -79,18 +79,18 @@
 </u-form>
 ```
 
-### 动态添加表单
+### Dynamically Add a Form
 
-``` vue
+```vue
 <template>
 <u-linear-layout>
     <u-form-table>
         <thead>
             <tr>
                 <th width="20%">URL</th>
-                <th width="20%">服务</th>
-                <th width="20%">端口</th>
-                <th>描述</th>
+                <th width="20%">Service</th>
+                <th width="20%">Port</th>
+                <th>Description</th>
                 <th width="40"></th>
             </tr>
         </thead>
@@ -104,7 +104,7 @@
             </tr>
         </tbody>
     </u-form-table>
-    <u-form-table-add-button>添加选项</u-form-table-add-button>
+    <u-form-table-add-button>Add Options</u-form-table-add-button>
 </u-linear-layout>
 </template>
 <script>
@@ -133,12 +133,12 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| line | boolean |  | `false` | 单元格之间是否显示分隔线条 |
-| striped | boolean |  | `false` | 表格行是否按斑马线条纹显示 |
-| hover | boolean |  | `false` | 表格行在悬浮时是否高亮显示 |
+| line | boolean | | `false` | Whether to display separation lines between cells |
+| striped | boolean | | `false` | Whether table rows are displayed in zebra stripes |
+| hover | boolean | | `false` | Whether table rows are highlighted when hovering |
 
 ### Slots
 
 #### (default)
 
-在表格中插入`<thead>`、`<tbody>`、`<tr>`、`<th>`、`<td>`标签。
+Insert `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>` tags into the table.

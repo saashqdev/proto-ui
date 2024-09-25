@@ -38,7 +38,7 @@ export const UForm = {
         model: {
             handler(val) {
                 if (this.comparedModel) {
-                    // @TODO: 考虑到 @change 事件是基于子组件的 @change 事件的，所以 @modify 命名分开
+                    // @TODO: Considering that the @change event is based on the @change event of the child component, the @modify naming is separated
                     this.$emit('modify', {
                         modified: this.deepCompare(val, this.comparedModel),
                     }, this);
@@ -70,7 +70,7 @@ export const UForm = {
                 return itemVM.validate(trigger, silent);
         },
         getState() {
-            console.warn('[proto-ui]', '<u-form-item>升级为<u-validator>的子类，此函数已废弃。可能是由于你使用了<u-form-items>等其他表单衍生组件，请尽快更新。');
+            console.warn('[proto-ui]', '<u-form-item> is upgraded to a subclass of <u-validator>, and this function is obsolete. It may be because you use other form-derived components such as <u-form-items>, please update as soon as possible.');
             const STATE_LEVEL = {
                 '': 4,
                 focus: 3,

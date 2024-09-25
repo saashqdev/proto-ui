@@ -26,7 +26,7 @@ export default {
 </script>
 ```
 
-### 只读和禁用
+### Read Only and Disabled
 
 ``` html
 <u-linear-layout>

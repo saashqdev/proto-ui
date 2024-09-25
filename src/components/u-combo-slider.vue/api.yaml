@@ -1,92 +1,92 @@
 - name: u-combo-slider
-  title: 复合滑块
-  labels: [UI 组件, 表单控件, 块级展示]
+  title: Composite Slider
+  labels: [UI Components, Form Controls, Block-Level Display]
   attrs:
     - name: value.sync, v-model
       type: number
       default: 0
-      description: 滑块的值
+      description: The value of the slider
     - name: min
       type: number
       default: 0
-      description: 最小值
+      description: Minimum value
     - name: max
       type: number
       default: 0
-      description: 最大值
+      description: Maximum value
     - name: step
       type: number
       default: 1
-      description: 间隔。`0`表示连续
+      description: Interval. `0` means continuous
     - name: precision
       type: number
       default: 1
-      description: 精度，表示数字要保留的最小单位，整数、小数均可
+      description: Precision, which indicates the smallest unit to be retained by the number, both integer and decimal are acceptable
     - name: range
       type: Array
       default: []
-      description: 进一步对`value`限制，通常传入一个数组，第一个值表示范围开始值，第二个值表示范围的结束值。
+      description: Further restrict `value`, usually passing in an array, the first value represents the start value of the range, and the second value represents the end value of the range.
     - name: formatter
       type: string, object
       default: null
-      description: 格式化字符串，具体参见Example。也可以传入一个包含`get`和`set`方法的格式化对象。
+      description: Format string, see examples for details. You can also pass in a format object containing `get` and `set` methods.
     - name: sync-on
       type: string
       default: input
-      description: 输入后何时同步值到`<u-slider>`组件中。可选值：`'input'`表示在输入时同步，`'blur'`表示在失焦时同步
+      description: When to synchronize the value to the `<u-slider>` component after input. Optional values - `'input'` means synchronization during input, `'blur'` means synchronization when out of focus
     - name: hide-buttons
       type: boolean
       default: false
-      description: 是否隐藏按钮
+      description: Whether to hide the button
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Whether it is read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
   events:
     - name: input
-      description: 滑块的值改变时触发
+      description: Triggered when the slider value changes
       params:
         - name: $event
           type: number
-          description: 滑块的值
+          description: The value of the slider
         - name: senderVM
           type: UComboSlider
-          description: 发送事件实例
+          description: Send event instance
     - name: slide
-      description: 拖动滑块时触发
+      description: Triggered when dragging the slider
       params:
         - name: $event.value
           type: number
-          description: 滑块的值
+          description: The value of the slider
         - name: $event.oldValue
           type: number
-          description: 旧的值
+          description: Old value
         - name: $event.percent
           type: number
-          description: 滑块位置所在的百分比
+          description: The percentage of the slider position
         - name: senderVM
           type: UComboSlider
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 滑块的值改变后触发
+      description: Triggered when the slider value changes
       params:
         - name: $event.value
           type: number
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: number
-          description: 旧的值
+          description: Old value
         - name: senderVM
           type: UComboSlider
-          description: 发送事件实例
-  aria:
+          description: Send event instance
+  air:
     - key: ↑
-      description: 按`step`量增加值
+      description: Increase the value by `step` amount
     - key: ↓
-      description: 按`step`量减小值
+      description: Decrease the value by `step` amount
     - key: Enter
-      description: 自动修复为合法的值，并且应用更改
+      description: Automatically fix to a legal value and apply the changes

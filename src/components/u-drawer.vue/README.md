@@ -1,18 +1,18 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UDrawer 抽屉
+# UDrawer Drawer
 
 ## Example
 ### Basic Usage
 
-``` vue
+```vue
 <template>
 <div>
-    <u-drawer :visible.sync="visible" title="标题">
+    <u-drawer :visible.sync="visible" title="title">
         <u-sidebar slot="drawer">
-            <u-sidebar-item>指南</u-sidebar-item>
-            <u-sidebar-item>概念</u-sidebar-item>
-            <u-sidebar-item to="/proto-ui">组件</u-sidebar-item>
+            <u-sidebar-item>Guidelines</u-sidebar-item>
+            <u-sidebar-item>Concept</u-sidebar-item>
+            <u-sidebar-item to="/proto-ui">Component</u-sidebar-item>
         </u-sidebar>
     </u-drawer>
     <u-linear-layout>
@@ -32,23 +32,23 @@ export default {
 </script>
 ```
 
-### 位置
+### Location
 
 ``` vue
 <template>
 <div>
-    <u-drawer :visible.sync="leftVisible" title="标题">
+    <u-drawer :visible.sync="leftVisible" title="title">
         <u-sidebar slot="drawer">
-            <u-sidebar-item>指南</u-sidebar-item>
-            <u-sidebar-item>概念</u-sidebar-item>
-            <u-sidebar-item to="/proto-ui">组件</u-sidebar-item>
+            <u-sidebar-item>Guidelines</u-sidebar-item>
+            <u-sidebar-item>Concept</u-sidebar-item>
+            <u-sidebar-item to="/proto-ui">Component</u-sidebar-item>
         </u-sidebar>
     </u-drawer>
-    <u-drawer placement="right" :visible.sync="rightVisible" title="标题">
+    <u-drawer placement="right" :visible.sync="rightVisible" title="title">
         <u-sidebar slot="drawer">
-            <u-sidebar-item>指南</u-sidebar-item>
-            <u-sidebar-item>概念</u-sidebar-item>
-            <u-sidebar-item to="/proto-ui">组件</u-sidebar-item>
+            <u-sidebar-item>Guidelines</u-sidebar-item>
+            <u-sidebar-item>Concept</u-sidebar-item>
+            <u-sidebar-item to="/proto-ui">Component</u-sidebar-item>
         </u-sidebar>
     </u-drawer>
     <u-linear-layout>
@@ -75,55 +75,54 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| visible.sync | boolean |  | `false` | 是否显示 |
-| title | string |  | `'提示'` | 抽屉的标题 |
-| okButton | string |  | `'确定'` | 确定按钮文本，如果为空则不显示 |
-| cancelButton | string |  | `'取消'` | 取消按钮文本，如果为空则不显示 |
-| size | string |  | `'normal'` | 抽屉的尺寸。可选值：`'small'`, `'normal'`, `'large'` |
-| static | boolean |  | `false` | 是否嵌入页面显示 |
-| maskClosable | boolean |  | `true` | 是否点击遮罩时关闭抽屉 |
+| visible.sync | boolean | | `false` | Whether to display |
+| title | string | | `'Prompt'' | The title of the drawer |
+| okButton | string | | `'OK'` | OK button text, if it is empty, it will not be displayed |
+| cancelButton | string | | `'Cancel'` | Cancel button text, not displayed if empty |
+| size | string | | `'normal'` | The size of the drawer. Optional values: `'small'`, `'normal'`, `'large'` |
+| static | boolean | | `false` | Whether to embed the page display |
+| maskClosable | boolean | | `true` | Whether to close the drawer when the mask is clicked |
 
 ### Events
 
 #### @open
 
-打开抽屉时触发
+Triggered when drawer is opened
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| senderVM | UDrawer | 发送事件实例 |
+| senderVM | UDrawer | Send event instance |
 
 #### @ok
 
-确定时触发
-
+Triggered when confirmed
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| senderVM | UDrawer | 发送事件实例 |
+| senderVM | UDrawer | Send event instance |
 
 #### @cancel
 
-取消时触发
+Triggered when canceled
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| senderVM | UDrawer | 发送事件实例 |
+| senderVM | UDrawer | Send event instance |
 
 #### @before-close
 
-关闭抽屉前触发
+Triggered before closing the drawer
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| ok | boolean | 是否确定 |
-| $event.preventDefault | Function | 阻止关闭流程 |
-| senderVM | UDrawer | 发送事件实例 |
+| ok | boolean | Are you sure |
+| $event.preventDefault | Function | Prevent closing process |
+| senderVM | UDrawer | Send event instance |
 
 #### @close
 
-关闭抽屉时触发
+Fires when the drawer is closed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| ok | boolean | 是否确定 |
-| senderVM | UDrawer | 发送事件实例 |
+| ok | boolean | Are you sure |
+| senderVM | UDrawer | Send event instance |
