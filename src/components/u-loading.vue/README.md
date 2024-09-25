@@ -25,7 +25,7 @@
 </u-linear-layout>
 ```
 
-### 展示方式
+### Display Method
 
 #### 行内展示
 

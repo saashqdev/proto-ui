@@ -1,19 +1,19 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# ULinearLayout 线性布局
+# ULinearLayout Linear Layout
 
-**布局组件**, **块级展示**
+**Layout Component**, **Block Level Display**
 
 ## Example
-处理页面中各组件之间的间距，方法有很多，但经常会出现捉襟见肘的情况。
+There are many ways to deal with the spacing between components on the page, but they are often stretched.
 
-比如一种常见的方法是，给一些默认组件如按钮之间添加`margin`样式。这种方法的问题在于，有时会出现间距多余的情况，使得之后样式处理常常要作一些减法，而且按钮周围的组件不一定继续是按钮，组件之间间距有n^2种情况，到最后开发者自己也摸不清处理了多少。另一种方法是，使用一些类似`margin-sm`简单的 class 来控制间距。它的典型问题是，class 经常会被滥用，而且污染了 html 结构，因为处理间距本来是一个样式问题，现在却要经常声明在 html 中，另一个问题是经常第一项或最后一项不加，缺乏一种对称性的美感。
+For example, a common method is to add a `margin` style between some default components such as buttons. The problem with this method is that sometimes there is excess spacing, which often requires some subtraction in subsequent style processing. Moreover, the components around the button may not continue to be buttons. There are n^2 situations of spacing between components. In the final development The author himself cannot figure out how much has been processed. Another way is to use some simple class like `margin-sm` to control the spacing. Its typical problem is that classes are often abused and pollute the html structure, because dealing with spacing is originally a style issue, but now it must be often declared in html. Another problem is that the first or last item is often not added, which lacks a sense of symmetry.
 
-考虑到以上各种问题，我们参考一些 native 开发如 Android 的布局方式，总结出这个简单易用的布局组件——线性布局。
+Considering the above problems, we refer to some native development methods such as Android layout methods and summarize this simple and easy-to-use layout component - linear layout.
 
 ### Basic Usage
 
-一般具有`inline`特性的组件，可以直接在外面套一个`<u-linear-layout>`，就会拉开间隔。
+Generally, for components with the `inline` feature, you can directly put a `<u-linear-layout>` outside, which will widen the gap.
 
 ``` html
 <u-linear-layout>
@@ -23,9 +23,9 @@
 </u-linear-layout>
 ```
 
-### 方向
+### Direction
 
-默认方向为`horizontal`，它只处理具有`inline`特性的组件，拉开横向的间隔；方向也可以设置为`vertical`，它只处理具有`block`特性的组件。
+The default direction is `horizontal`, which only processes components with the `inline` feature and opens the horizontal gap; the direction can also be set to `vertical`, which only processes components with the `block` feature.
 
 ``` html
 <u-linear-layout direction="horizontal">
@@ -41,9 +41,9 @@
 </u-linear-layout>
 ```
 
-### 展示方式与布局方式
+### Display Method and Layout Method
 
-展示方式`display`用于控制`<u-linear-layout>`本身是否为块级元素或行内元素，而布局方式`layout`用于迅速调整子元素或组件的展示方式。
+The display mode `display` is used to control whether `<u-linear-layout>` itself is a block-level element or an inline element, while the layout mode `layout` is used to quickly adjust the display mode of child elements or components.
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -53,20 +53,20 @@
             <u-button>Button</u-button>
             <u-button>Button</u-button>
         </u-linear-layout>
-        <span><code>&lt;u-linear-layout&gt;</code>本身为<code>&lt;block&gt;</code>类型，修改<code>display</code>可以拥有行内的特性。</span>
+        <span><code>&lt;u-linear-layout&gt;</code> itself is of type <code>&lt;block&gt;</code>. Modifying <code>display</code> can have inline features. </span>
     </u-linear-layout>
     <u-linear-layout direction="vertical" layout="block">
         <u-button>Button</u-button>
         <u-button>Button</u-button>
         <u-button>Button</u-button>
-        <span>这个<code>&lt;u-linear-layout&gt;</code>中的元素本来都是行内元素，添加<code>layout</code>属性后可全部变成块级元素。</span>
+        <span>The elements in this <code>&lt;u-linear-layout&gt;</code> are originally inline elements. After adding the <code>layout</code> attribute, they can all become block-level elements. </span>
     </u-linear-layout>
 </u-linear-layout>
 ```
 
-### 间距
+### Spacing
 
-水平和垂直方向都可以通过设置`gap`属性，调整间距大小。
+The gap size can be adjusted both horizontally and vertically by setting the `gap` attribute.
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -102,15 +102,15 @@
 </u-linear-layout>
 ```
 
-### 水平分布方式
+### Horizontal Distribution Method
 
-考虑到兼容 IE9，普通的分布方式是用`inline-block`与`text-align`两个特性实现的，只支持水平方向。
+Considering compatibility with IE9, the common distribution method is implemented using the two features of `inline-block` and `text-align`, and only supports the horizontal direction.
 
-> 没有用`float`的主要原因是：1. 需要外加父元素或后继元素清除浮动，2. 浮动之后`vertial-align`对齐不太可控。
+> The main reasons for not using `float` are: 1. An additional parent element or successor element is required to clear the float, 2. After floating, the alignment of `vertial-align` is not controllable.
 >
-> 但`text-align`也有个坑，就是会影响子元素默认的对齐方式。如果有更好的解决方案，欢迎提供。
+> But `text-align` also has a pitfall, that is, it will affect the default alignment of child elements. If there is a better solution, please provide it.
 
-如果想使用没有坑、更灵活的分布方式，请使用后面的 Flex 模式，但要确保你的浏览器支持该功能。
+If you want to use a more flexible distribution method without pitfalls, please use the later Flex mode, but make sure your browser supports this feature.
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -136,9 +136,9 @@
 </u-linear-layout>
 ```
 
-> `space-between`目前只支持左右两个元素，为了兼容没办法。
+> `space-between` currently only supports left and right elements, and there is no way to do it for compatibility.
 
-请不要忘记，`<u-linear-layout>`可以很方便的嵌套使用。
+Please don’t forget that `<u-linear-layout>` can be easily nested.
 
 ``` html
 <u-linear-layout justify="space-between">
@@ -154,8 +154,8 @@
 </u-linear-layout>
 ```
 
-### Flex模式
-#### 主轴分布方式
+### Flex Mode
+#### Spindle Distribution Method
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -187,7 +187,7 @@
 </u-linear-layout>
 ```
 
-#### 交叉轴对齐方式
+#### Cross Axis Alignment
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -224,16 +224,16 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| direction | enum | `'horizontal'`, `'vertical'` | `'horizontal'` | 排列方向。 |
-| gap | enum | `'shrink'`, `'none'`, `'small'`, `'normal'`, `'large'` | `'normal'` | 间隙大小，需自行扩展。 |
-| display | string | `'inline'`, `'block'` | `'block'` | 展示方式。可选值： |
-| layout | string | `'none'`, `'inline'`, `'block'` | `'none'` | 布局方式，用于迅速调整子元素或组件的展示方式。 |
-| type | string | `'flex'` |  | 布局模式。 |
-| justify | string |  | `'start'` | 主轴分布方式。普通模式下可选值：`'start'`, `'center'`, `'end'`, `'space-between'`。flex布局模式下还支持：`'space-around'`。普通模式下的`'space-between'`功能很弱，只支持左右分布。 |
-| alignment | string |  | `'stretch'` | flex布局模式下的交叉轴对齐方式，可选值：`'start'`, `'center'`, `'end'`, `'baseline'`, `'stretch'` |
+| direction | enum | `'horizontal'`, `'vertical'` | `'horizontal'` | Arrangement direction. |
+| gap | enum | `'shrink'`, `'none'`, `'small'`, `'normal'`, `'large'` | `'normal'` | Gap size, needs to be expanded by itself. |
+| display | string | `'inline'`, `'block'` | `'block'` | Display mode. Optional values: |
+| layout | string | `'none'`, `'inline'`, `'block'` | `'none'` | Layout method, used to quickly adjust the display mode of sub-elements or components. |
+| type | string | `'flex'` | | Layout mode. |
+| justify | string | | `'start'` | The main axis distribution method. Optional values   in normal mode: `'start'`, `'center'`, `'end'`, `'space-between'`. Flex layout mode also supports: `'space-around'`. The `space-between' function in normal mode is very weak and only supports left and right distribution. |
+| alignment | string | | `'stretch'` | Cross-axis alignment in flex layout mode, optional values: `'start'`, `'center'`, `'end'`, `'baseline'`, `'stretch'' |
 
 ### Slots
 
 #### (default)
 
-插入需要布局的元素。
+Insert elements that require layout.

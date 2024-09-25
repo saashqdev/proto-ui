@@ -59,8 +59,8 @@ export const UInput = {
             this.$emit('blur', e, this);
         },
         onCompositionEnd(e) {
-            // 中文输入的时候，会先触发onInput事件，再触发此事件，导致不能捕捉到中文输入
-            // 因此需要特殊处理，此时compositionInputing值为true
+            // When inputting, the onInput event will be triggered first, and then this event will be triggered, resulting in the inability to capture input.
+            // Therefore special processing is required, and the compositionInputing value is true at this time
             this.compositionInputing = false;
             this.currentValue = e.target.value;
             this.$emit('input', this.currentValue, this);

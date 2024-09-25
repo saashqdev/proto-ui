@@ -1,6 +1,6 @@
 - name: u-label
-  title: 标签
-  labels: [UI 组件, 行内展示]
+  title: Label
+  labels: [UI Component, Inline Display]
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.

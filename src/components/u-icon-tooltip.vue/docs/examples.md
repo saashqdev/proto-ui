@@ -1,37 +1,37 @@
-图标与`<u-tooltip>`的组合。
+The combination of icon and `<u-tooltip>`.
 
 ### Basic Usage
 
 ``` html
-文字旁的提示 <u-icon-tooltip>这是提示内容</u-icon-tooltip>
+Tip next to the text <u-icon-tooltip>This is the tip content</u-icon-tooltip>
 ```
 
-### 切换类型
+### Switch Type
 
 ``` html
-信息 <u-icon-tooltip>这是提示内容</u-icon-tooltip><br>
-帮助 <u-icon-tooltip type="help">这是提示内容</u-icon-tooltip><br>
-详情 <u-icon-tooltip type="detail">这是提示内容</u-icon-tooltip>
+Information <u-icon-tooltip>This is the prompt content</u-icon-tooltip><br>
+Help <u-icon-tooltip type="help">This is the prompt content</u-icon-tooltip><br>
+Details <u-icon-tooltip type="detail">This is the prompt content</u-icon-tooltip>
 ```
 
-### 弹出位置
+### Popup Location
 
 ``` html
 <u-linear-layout>
     <span>
-        top
+        Top
         <u-icon-tooltip placement="top">Tooltip</u-icon-tooltip>
     </span>
     <span>
-        left
+        Left
         <u-icon-tooltip placement="left">Tooltip</u-icon-tooltip>
     </span>
     <span>
-        right
+        Right
         <u-icon-tooltip placement="right">Tooltip</u-icon-tooltip>
     </span>
     <span>
-        bottom
+        Bottom
         <u-icon-tooltip placement="bottom">Tooltip</u-icon-tooltip>
     </span>
 </u-linear-layout>

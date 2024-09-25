@@ -1,31 +1,31 @@
 ### Basic Usage
 
 ``` html
-<u-link href="#">链接</u-link>&nbsp;<u-link href="#">查看详情</u-link>
+<u-link href="#">Link</u-link>&nbsp;<u-link href="#">View Details</u-link>
 ```
 
 ### Disable
 
 ``` html
-<u-link href="#" disabled>禁用</u-link>
+<u-link href="#" disabled>Disabled</u-link>
 ```
 
-### 目标
+### Target
 
-使用`href`和`target`属性，可以直接实现`<a>`元素对应的功能。使用`to`、`replace`和`append`需要引入vue-router，它们与`<router-link>`组件中对应属性的功能相同。
+Using the `href` and `target` attributes, you can directly implement the functions corresponding to the `<a>` element. Using `to`, `replace` and `append` requires the introduction of vue-router, which have the same function as the corresponding properties in the `<router-link>` component.
 
 ``` html
-<u-link href="https://kubevue.github.io" target="_blank">href</u-link>&nbsp;
-<u-link to="/proto-ui/u-button">router</u-link>
+<u-link href="https://kubevue.github.io" target="_blank">Href</u-link>&nbsp;
+<u-link to="/proto-ui/u-button">Router</u-link>
 ```
 
-### 展示方式
+### Display Method
 
 ``` html
-<u-link href="#" display="block">这是几个</u-link>
-<u-link href="#" display="block">块级</u-link>
-<u-link href="#" display="block">链接组件</u-link>
-<u-link href="#" display="inline">这是几个</u-link>
-<u-link href="#">行内（默认）</u-link>
-<u-link href="#" display="inline">链接组件</u-link>
+<u-link href="#" display="block">Here are a Few</u-link>
+<u-link href="#" display="block">Block Level</u-link>
+<u-link href="#" display="block">Link Component</u-link>
+<u-link href="#" display="inline">These are a Few</u-link>
+<u-link href="#">Inline (default)</u-link>
+<u-link href="#" display="inline">Link Component</u-link>
 ```

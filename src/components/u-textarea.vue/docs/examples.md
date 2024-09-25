@@ -51,7 +51,7 @@ export default {
 </u-linear-layout>
 ```
 
-### 可清空
+### Can be Cleared
 
 开启`clearable`属性，在输入框有内容时会显示清空按钮。
 
@@ -59,7 +59,7 @@ export default {
 <u-textarea value="可清空" clearable></u-textarea>
 ```
 
-### 展示方式
+### Display Method
 
 默认为行内展示，可以将`display`设置为块级展示。
 

@@ -1,6 +1,6 @@
 ### Basic Usage
 
-定义栅格系统，用`repeat`属性来定义栅格列数，用`span`属性来设置列跨越的栅格数。
+Define the grid system, use the `repeat` attribute to define the number of raster columns, and use the `span` attribute to set the number of rasters that the columns span.
 
 ``` html
 <u-grid-layout>
@@ -25,86 +25,86 @@
 </u-grid-layout>
 ```
 
-### 间隙
+### Gap
 
 ```html
 <u-grid-layout gap="none">
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>none</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>none</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>none</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>none</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>None</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>None</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>None</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>None</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>none</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>none</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>none</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>none</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>None</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>None</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>None</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>None</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 </u-grid-layout>
 <br>
 <u-grid-layout gap="small">
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 </u-grid-layout>
 <br>
 <u-grid-layout gap="normal">
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>normal</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>normal</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>normal</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>normal</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Normal</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Normal</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Normal</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Normal</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>normal</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>normal</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>normal</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>normal</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Normal</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Normal</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Normal</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Normal</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 </u-grid-layout>
 <br>
 <u-grid-layout gap="large">
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>large</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>large</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>large</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>large</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Large</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Large</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Large</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Large</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>large</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>large</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>large</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>large</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Large</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Large</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Large</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Large</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 </u-grid-layout>
 <br>
 <u-grid-layout gap="small normal">
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="4">
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Small</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 </u-grid-layout>
 ```
 
-### 列偏移
+### Column Offset
 
 ```html
 <u-grid-layout>
@@ -119,7 +119,7 @@
 </u-grid-layout>
 ```
 
-### 列排序
+### Column Sort
 
 ``` html
 <u-grid-layout>
@@ -135,62 +135,62 @@
 </u-grid-layout>
 ```
 
-### Flex模式
-#### 水平分布方式
+### Flex Mode
+#### Horizontal Distribution Method
 
 ``` html
 <u-grid-layout>
 	<u-grid-layout-row :repeat="6" type="flex" justify="start">
-		<u-grid-layout-column :span="1"><u-block>start</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>start</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>start</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Start</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Start</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Start</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="6" type="flex" justify="center">
-		<u-grid-layout-column :span="1"><u-block>center</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>center</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>center</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Center</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Center</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Center</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="6" type="flex" justify="end">
-		<u-grid-layout-column :span="1"><u-block>end</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>end</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>end</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>End</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>End</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>End</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="6" type="flex" justify="space-between">
-		<u-grid-layout-column :span="1"><u-block>space-between</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>space-between</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>space-between</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Space-between</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Space-between</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Space-between</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="6" type="flex" justify="space-around">
-		<u-grid-layout-column :span="1"><u-block>space-around</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>space-around</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block>space-around</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Space-around</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Space-around</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block>Space-around</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 </u-grid-layout>
 ```
 
-#### 垂直对齐方式
+#### Vertical Alignment
 
 ``` html
 <u-grid-layout gap="large small">
 	<u-grid-layout-row :repeat="6" type="flex" alignment="start">
 		<u-grid-layout-column :span="1"><u-block>start</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block size="normal auto">start</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block size="large auto">start</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block size="normal auto">Start</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block size="large auto">Start</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="6" type="flex" alignment="center">
 		<u-grid-layout-column :span="1"><u-block>center</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block size="normal auto">center</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block size="large auto">center</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block size="normal auto">Center</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block size="large auto">Center</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="6" type="flex" alignment="end">
 		<u-grid-layout-column :span="1"><u-block>end</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block size="normal auto">end</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block size="large auto">end</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block size="normal auto">End</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block size="large auto">End</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="6" type="flex" alignment="baseline">
 		<u-grid-layout-column :span="1"><u-block>baseline</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block size="normal auto">baseline</u-block></u-grid-layout-column>
-		<u-grid-layout-column :span="1"><u-block size="large auto">baseline</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block size="normal auto">Baseline</u-block></u-grid-layout-column>
+		<u-grid-layout-column :span="1"><u-block size="large auto">Baseline</u-block></u-grid-layout-column>
 	</u-grid-layout-row>
 	<u-grid-layout-row :repeat="6" type="flex" alignment="stretch">
 		<u-grid-layout-column :span="1"><u-block style="height: 100%">stretch</u-block></u-grid-layout-column>
@@ -200,9 +200,9 @@
 </u-grid-layout>
 ```
 
-### 响应式
+### Responsive
 
-参考了[Bootstrap](https://getbootstrap.com)的响应式设计，预设了五个响应尺寸：`mini`、`small`、`medium`、`large`和`huge`。
+Referring to the responsive design of [Bootstrap](https://getbootstrap.com), five responsive sizes are preset: `mini`, `small`, `medium`, `large` and `huge`.
 
 ``` html
 <u-grid-layout>

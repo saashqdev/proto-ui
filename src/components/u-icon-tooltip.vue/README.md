@@ -1,29 +1,29 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UIconTooltip 图标提示
+# UIconTooltip icon tip
 
-**UI 组件**, **弹出层**, **行内展示**
+**UI Components**, **Popup Layer**, **Inline Display**
 
-图标与`<u-tooltip>`的组合。
+The combination of icon and `<u-tooltip>`.
 
 ## Example
-图标与`<u-tooltip>`的组合。
+The combination of icon and `<u-tooltip>`.
 
 ### Basic Usage
 
 ``` html
-文字旁的提示 <u-icon-tooltip>这是提示内容</u-icon-tooltip>
+Tip next to the text <u-icon-tooltip>This is the tip content</u-icon-tooltip>
 ```
 
-### 切换类型
+### Switch Type
 
 ``` html
-信息 <u-icon-tooltip>这是提示内容</u-icon-tooltip><br>
-帮助 <u-icon-tooltip type="help">这是提示内容</u-icon-tooltip><br>
-详情 <u-icon-tooltip type="detail">这是提示内容</u-icon-tooltip>
+Information <u-icon-tooltip>This is the prompt content</u-icon-tooltip><br>
+Help <u-icon-tooltip type="help">This is the prompt content</u-icon-tooltip><br>
+Details <u-icon-tooltip type="detail">This is the prompt content</u-icon-tooltip>
 ```
 
-### 弹出位置
+### Popup Location
 
 ``` html
 <u-linear-layout>
@@ -51,59 +51,59 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| type | string |  | `'info'` | 图标类型。可选值：`'info'`, `'help'`, `'detail'` |
-| size | string |  | `'normal'` | 提示大小。可选值：`'mini'`, `'normal'`, `'large'` |
-| opened.sync | boolean |  | `false` | 弹出/关闭状态 |
-| trigger | string |  | `'hover'` | 工具提示的触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
-| placement | string |  | `'bottom'` | 工具提示的弹出方向。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
-| hide-delay | number |  | `0` | 提示内容消失延迟时间，单位是 ms |
-| offset | string |  | `'0'` | 弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px` |
-| follow-cursor | boolean, number, object |  | `false` | 是否跟随鼠标 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| type | string | | `'info'` | Icon type. Optional values: `'info'`, `'help'`, `'detail'` |
+| size | string | | `'normal'` | Prompt size. Optional values: `'mini'`, `'normal'`, `'large'` |
+| opened.sync | boolean | | `false` | Popup/closed status |
+| trigger | string | | `'hover'` | How to trigger tooltips. Optional values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
+| placement | string | | `'bottom'` | The popup direction of the tooltip. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start' `, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
+| hide-delay | number | | `0` | Delay time for prompt content to disappear, unit is ms |
+| offset | string | | `'0'` | Pop-up layer offset, such as: '10', '10px 10px', '10% 10%', the first value represents horizontal offset, the second value represents vertical Displacement, the default unit is `px` |
+| follow-cursor | boolean, number, object | | `false` | Whether to follow the mouse |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入需要弹出的内容。
+Insert the content that needs to pop up.
 
 ### Events
 
 #### @before-open
 
-弹出前触发。
+Triggered before pop-up.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止弹出流程 |
-| senderVM | UTooltip | 发送事件实例 |
+| $event.preventDefault | Function | Prevent pop-up process |
+| senderVM | UTooltip | Send event instance |
 
 #### @open
 
-弹出时触发。
+Fired on popup.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | UTooltip | 发送事件实例 |
+| $event | | Empty |
+| senderVM | UTooltip | Send event instance |
 
 #### @before-close
 
-隐藏前触发。
+Triggered before hiding.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止隐藏流程 |
-| senderVM | UTooltip | 发送事件实例 |
+| $event.preventDefault | Function | Prevent hidden process |
+| senderVM | UTooltip | Send event instance |
 
 #### @close
 
-隐藏时触发。
+Triggered when hidden.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | UTooltip | 发送事件实例 |
+| $event | | Empty |
+| senderVM | UTooltip | Send event instance |
 
 #### @before-toggle
 
@@ -123,14 +123,14 @@
 
 #### open()
 
-弹出实例。
+Pop up instance.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### close()
 
-关闭实例。
+Shut down the instance.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |

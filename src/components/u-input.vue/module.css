@@ -1,7 +1,7 @@
 .root {
     display: inline-block;
     position: relative;
-    max-width: 100%; /* 防止表格等小的地方超出区域 */
+    max-width: 100%; /* Prevent small places such as tables from exceeding the area */
     width: var(--input-width);
     height: var(--input-height);
     padding: var(--input-padding);

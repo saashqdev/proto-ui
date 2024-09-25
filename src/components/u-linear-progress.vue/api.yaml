@@ -1,10 +1,10 @@
 - name: u-linear-progress
-  title: 线型进度条
+  title: Linear Progress Bar
   attrs:
     - name: percent
       type: number
       default: 0
-      description: 百分比
+      description: percentage
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.

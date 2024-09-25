@@ -19,7 +19,7 @@
 </u-linear-layout>
 ```
 
-### 展示方式
+### Display Method
 
 ``` html
 <u-text display="block">这是几个</u-text>

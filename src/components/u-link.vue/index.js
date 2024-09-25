@@ -10,7 +10,7 @@ export const ULink = {
     },
     computed: {
         /**
-         * 使用`to`时，也产生一个链接，尽可能向原生的`<a>`靠近
+         * When using `to`, a link is also generated, as close as possible to the native `<a>`
          */
         currentHref() {
             if (this.href !== undefined)
@@ -36,10 +36,10 @@ export const ULink = {
             if (this.target !== '_self')
                 return;
 
-            // 使用`to`的时候走`$router`，否则走原生
+            // Use `$router` when using `to`, otherwise use native
             if (this.href === undefined) {
-                // 使用浏览器的一些快捷键时，走原生
-                // @TODO: 考虑使用快捷键抛出事件，阻止流程的需求
+                // When using some shortcut keys of the browser, go native
+                // @TODO: Consider using shortcut keys to throw events and prevent the process.
                 if (e.ctrlKey || e.shiftKey || e.metaKey || e.altKey)
                     return;
 

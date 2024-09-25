@@ -1,10 +1,10 @@
-/* 默认为 block */
+/* Default is block */
 .root[display="inline"], .root[inline] {
     display: inline-block;
 }
 
-/* @trap: 不能自动添加`display: block`了，因为`display`有好多种如`table``flex``grid`，有覆盖掉的风险。
- * 用一个属性来添加是否使用`block`
+/* @trap: `display: block` cannot be added automatically, because there are many kinds of `display` such as `table`flex`grid`, and there is a risk of being overwritten.
+ * Use an attribute to add whether to use `block`
  */
 .root[layout="block"] > * {
     display: block;
@@ -56,7 +56,7 @@
 .root[alignment="center"] { text-align: center; }
 .root[alignment="right"] { text-align: right; }
 
-/* @TRAP: 使用 text-align 可能会造成使用子元素的默认对齐方式不是左对齐 */
+/* @TRAP: Using text-align may cause the default alignment of child elements to be other than left-aligned */
 .root[justify="start"] { text-align: left; }
 .root[justify="center"] { text-align: center; }
 .root[justify="end"] { text-align: right; }

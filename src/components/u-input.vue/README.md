@@ -1,40 +1,40 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UInput 单行输入
+# UInput Single Line Input
 
-**UI 组件**, **表单控件**, **行内展示**
+**UI Components**, **Form Controls**, **Inline Display**
 
-基本的表单输入组件，在原生`<input>`控件基础上进行了一些功能扩展。
+The basic form input component has some functional extensions based on the native `<input>` control.
 
 ## Example
 ### Basic Usage
 
-大部分属性与原生`<input>`控件一致。
+Most properties are consistent with the native `<input>` control.
 
 ``` html
-<u-input maxlength="12" placeholder="1~12位小写字母" autofocus></u-input>
+<u-input maxlength="12" placeholder="1~12 lowercase letters" autofocus></u-input>
 ```
 
-### 加密
+### Encryption
 
-将`type`属性设置为`password`可以加密显示。
+Set the `type` attribute to `password` to encrypt the display.
 
 ``` html
-<u-input type="password" maxlength="12" placeholder="请输入密码"></u-input>
+<u-input type="password" maxlength="12" placeholder="Please enter password"></u-input>
 ```
 
 ### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行Two-Way Binding。
+Use `v-model` or `:value.sync` for Two-Way Binding.
 
-提示：如果需要绑定的值自动转换为 number 类型，可以使用`number`修饰符。
+Tip: If you need the bound value to be automatically converted to number type, you can use the `number` modifier.
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-input v-model="value" maxlength="12" placeholder="请输入端口号"></u-input>
-    <u-input :value.sync="value" maxlength="12" placeholder="请输入端口号"></u-input>
-    <u-input v-model.number="numberValue" maxlength="12" placeholder="请输入端口号"></u-input>
+    <u-input v-model="value" maxlength="12" placeholder="Please enter the port number"></u-input>
+    <u-input :value.sync="value" maxlength="12" placeholder="Please enter the port number"></u-input>
+    <u-input v-model.number="numberValue" maxlength="12" placeholder="Please enter the port number"></u-input>
 </u-linear-layout>
 </template>
 
@@ -54,27 +54,27 @@ export default {
 
 ``` html
 <u-linear-layout>
-    <u-input value="只读" readonly></u-input>
-    <u-input value="禁用" disabled></u-input>
+    <u-input value="read only" readonly></u-input>
+    <u-input value="disable" disabled></u-input>
 </u-linear-layout>
 ```
 
-### 可清除
+### Clearable
 
-开启`clearable`属性，在输入框有内容时会显示清空按钮。
+Turn on the `clearable` attribute, and the clear button will be displayed when the input box has content.
 
 ``` html
-<u-input value="可清除" clearable></u-input>
+<u-input value="clearable" clearable></u-input>
 ```
 
-### 展示方式
+### Display Method
 
-默认为行内展示，可以将`display`设置为块级展示。
+The default is inline display, and `display` can be set to block-level display.
 
 ``` html
 <u-linear-layout direction="vertical" gap="small">
-    <u-input maxlength="12" placeholder="行内展示（默认）"></u-input> 与文字对齐
-    <u-input display="block" maxlength="12" placeholder="块级展示"></u-input>
+    <u-input maxlength="12" placeholder="Inline display (default)"></u-input> Align with text
+    <u-input display="block" maxlength="12" placeholder="Block-level display"></u-input>
 </u-linear-layout>
 ```
 
@@ -83,96 +83,96 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| type | string |  | `'text'` | 输入框的类型，目前支持两种：`'text'`和`'password'` |
-| value.sync, v-model | string |  |  | 输入框的值 |
-| clearable | boolean |  |  | 是否可清空。开启并在输入框有内容时会显示清空按钮。 |
-| placeholder | string |  |  | 原生属性。对 IE9 做了兼容。 |
-| minlength | number |  |  | 原生属性 |
-| maxlength | number |  |  | 原生属性 |
-| spellcheck | boolean |  |  | 原生属性 |
-| autofocus | boolean |  |  | 是否自动获取焦点 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| type | string | | `'text'` | The type of input box, currently supports two types: `'text'` and `'password'` |
+| value.sync, v-model | string | | | The value of the input box |
+| clearable | boolean | | | Whether it can be cleared. Enable and display a clear button when the input box contains content. |
+| placeholder | string | | | Native attributes. Compatible with IE9. |
+| minlength | number | | | Native properties |
+| maxlength | number | | | Native properties |
+| spellcheck | boolean | | | Native properties |
+| autofocus | boolean | | | Whether to automatically obtain focus |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Events
 
 #### @input
 
-输入时触发。
+Fires on input.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | string | 输入框的值 |
-| senderVM | UInput | 发送事件实例 |
+| $event | string | Value of input box |
+| senderVM | UInput | Send event instance |
 
 #### @change
 
-值变化时触发。（注意：与原生事件不同）
+Fires when the value changes. (Note: Different from native events)
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | string | 改变后的值 |
-| $event.oldValue | string | 旧的值 |
-| senderVM | UInput | 发送事件实例 |
+| $event.value | string | Changed value |
+| $event.oldValue | string | Old value |
+| senderVM | UInput | Send event instance |
 
 #### @focus
 
-获得焦点时触发。
+Triggered when focus is obtained.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | FocusEvent | 原生事件对象 |
-| senderVM | UInput | 发送事件实例 |
+| $event | FocusEvent | Native event object |
+| senderVM | UInput | Send event instance |
 
 #### @blur
 
-失去焦点时触发。
+Fired when focus is lost.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | FocusEvent | 原生事件对象 |
-| senderVM | UInput | 发送事件实例 |
+| $event | FocusEvent | Native event object |
+| senderVM | UInput | Send event instance |
 
 #### @before-clear
 
-清空前触发。
+Triggered before clearing.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | string | 清空后的值 |
-| $event.oldValue | string | 待清空的值 |
-| $event.preventDefault | Function | 阻止清空流程 |
-| senderVM | UInput | 发送事件实例 |
+| $event.value | string | Cleared value |
+| $event.oldValue | string | The value to be cleared |
+| $event.preventDefault | Function | Prevent the clearing process |
+| senderVM | UInput | Send event instance |
 
 #### @clear
 
-清空时触发。
+Triggered when cleared.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | string | 清空后的值 |
-| $event.oldValue | string | 旧的值 |
-| senderVM | UInput | 发送事件实例 |
+| $event.value | string | Cleared value |
+| $event.oldValue | string | Old value |
+| senderVM | UInput | Send Event instance |
 
 ### Methods
 
 #### focus()
 
-让输入框获取焦点。
+Let the input box get focus.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### blur()
 
-让输入框失去焦点。
+Let the input box lose focus.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### clear()
 
-清空输入框。
+Clear the input box.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |

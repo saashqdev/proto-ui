@@ -1,89 +1,89 @@
 - name: u-grid-layout
-  title: 栅格布局
-  labels: [布局组件, 块级展示]
+  title: Grid Layout
+  labels: [Layout Component, Block-Level Display]
   attrs:
     - name: gap
       type: string
       default: normal
-      description: "栅格之间的间隔，一个值（行列间隔）或两个值（行间隔 列间隔）。可选值: `'none'`, `'small'`, `'normal'`,
+      description: "The interval between grids, one value (row and column interval) or two values   (row and column interval). Optional values: `'none'`, `'small'`, `'normal'`,
         `'large'`"
   slots:
     - name: default
-      description: 插入`<u-grid-layout-row>`或`<u-grid-layout-column>`子组件。
+      description: Inserts a `<u-grid-layout-row>` or `<u-grid-layout-column>` child component.
 - name: u-grid-layout-row
   attrs:
     - name: repeat
       type: number
       default: 12
-      description: 划分的栅格数
+      description: The number of grids divided
     - name: type
       type: string
       default: null
-      description: 布局模式。可选值：`'flex'`或不填
+      description: Layout mode. Optional values - `'flex'` or empty
     - name: justify
       type: string
       default: start
-      description: flex布局模式的水平分布方式，可选值：`'start'`, `'center'`, `'end'`, `'space-between'`,
+      description: The horizontal distribution mode of flex layout mode, optional values - `'start'`, `'center'`, `'end'`, `'space-between'`,
         `'space-around'`
     - name: alignment
       type: string
       default: stretch
-      description: flex布局模式的垂直对齐方式，可选值：`'start'`, `'center'`, `'end'`, `'baseline'`,
+      description: The vertical alignment of the flex layout mode. Optional values - `'start'`, `'center'`, `'end'`, `'baseline'`,
         `'stretch'`
   slots:
     - name: default
-      description: 插入`<u-grid-layout-column>`子组件。
+      description: Inserts a `<u-grid-layout-column>` child component.
 - name: u-grid-layout-column
   attrs:
     - name: span
       type: number
       default: 1
-      description: 列跨越的栅格数
+      description: The number of grid cells the column spans
     - name: offset
       type: number
       default: null
-      description: 列左边偏移的栅格数
+      description: The number of grid cells to offset the column to the left
     - name: pull
       type: number
       default: null
-      description: 列向左移动栅格数
+      description: The number of grid cells to move the column to the left
     - name: push
       type: number
       default: null
-      description: 列向右移动栅格数
+      description: The number of grid cells to move the column to the right
     - name: media-huge
       type: number
       default: null
-      description: 响应式布局`<=1440px`的列跨越栅格数
+      description: The number of columns spanning the grid for responsive layouts <= 1440px
     - name: media-large
       type: number
       default: null
-      description: 响应式布局`<=1200px`的列跨越栅格数
+      description: The number of columns spanning the grid for responsive layouts `<=1200px`
     - name: media-medium
       type: number
       default: null
-      description: 响应式布局`<=960px`的列跨越栅格数
+      description: The number of columns spanning the grid for responsive layouts <= 960px
     - name: media-small
       type: number
       default: null
-      description: 响应式布局`<=768px`的列跨越栅格数
+      description: The number of columns spanning the grid for responsive layouts <= 768px
     - name: media-mini
       type: number
       default: null
-      description: 响应式布局`<=480px`的列跨越栅格数
+      description: The number of columns spanning the grid for responsive layouts <= 480px
   slots:
     - name: default
-      description: 插入需要布局的元素。
+      description: Insert the element that needs layout.
   events:
     - name: responsive
-      description: 响应式布局引发栅格变化时触发
+      description: Triggered when the responsive layout causes grid changes
       params:
         - name: $event.span
           type: number
-          description: 列跨越的栅格数
+          description: The number of grid cells the column spans
         - name: $event.oldSpan
           type: number
-          description: 旧的列跨越的栅格数
+          description: The number of grid cells that the old column spans
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance

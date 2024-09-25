@@ -1,40 +1,40 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# ULink 链接
+# ULink Link
 
-**UI 组件**, **路由链接**, **行内展示**
+**UI Components**, **Route Links**, **Inline Display**
 
 ## Example
 ### Basic Usage
 
 ``` html
-<u-link href="#">链接</u-link>&nbsp;<u-link href="#">查看详情</u-link>
+<u-link href="#">Link</u-link>&nbsp;<u-link href="#">View details</u-link>
 ```
 
 ### Disable
 
 ``` html
-<u-link href="#" disabled>禁用</u-link>
+<u-link href="#" disabled>Disabled</u-link>
 ```
 
-### 目标
+### Target
 
-使用`href`和`target`属性，可以直接实现`<a>`元素对应的功能。使用`to`、`replace`和`append`需要引入vue-router，它们与`<router-link>`组件中对应属性的功能相同。
+Using the `href` and `target` attributes, you can directly implement the functions corresponding to the `<a>` element. Using `to`, `replace` and `append` requires the introduction of vue-router, which have the same function as the corresponding properties in the `<router-link>` component.
 
 ``` html
-<u-link href="https://kubevue.github.io" target="_blank">href</u-link>&nbsp;
-<u-link to="/proto-ui/u-button">router</u-link>
+<u-link href="https://kubevue.github.io" target="_blank">Href</u-link>&nbsp;
+<u-link to="/proto-ui/u-button">Router</u-link>
 ```
 
-### 展示方式
+### Display Method
 
 ``` html
-<u-link href="#" display="block">这是几个</u-link>
-<u-link href="#" display="block">块级</u-link>
-<u-link href="#" display="block">链接组件</u-link>
-<u-link href="#" display="inline">这是几个</u-link>
-<u-link href="#">行内（默认）</u-link>
-<u-link href="#" display="inline">链接组件</u-link>
+<u-link href="#" display="block">Here are a Few</u-link>
+<u-link href="#" display="block">Block Level</u-link>
+<u-link href="#" display="block">Link Component</u-link>
+<u-link href="#" display="inline">These are a Few</u-link>
+<u-link href="#">Inline (default)</u-link>
+<u-link href="#" display="inline">Link Component</u-link>
 ```
 
 ## API
@@ -42,57 +42,57 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| href | string |  |  | 链接地址 |
-| target | string |  |  | （原生属性） |
-| to | string, Location |  |  | 需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。 |
-| replace | boolean |  | `false` | 需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。 |
-| append | boolean |  | `false` | 需要 vue-router，与`<router-link>`的`append`属性相同。如果为`true`，则在当前路径后追加`to`的路径。 |
-| disabled | boolean |  | `false` | 是否禁用。禁用后不会响应`click`事件。 |
-| display | string |  | `'inline'` | 展示方式。可选值：`'inline'`, `'block'` |
+| href | string | | | Link address |
+| target | string | | | (native attribute) |
+| to | string, Location | | | Requires vue-router, same as `to` attribute of `<router-link>`. Can be a string or an object describing the target location. |
+| replace | boolean | | `false` | Requires vue-router, the same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation. |
+| append | boolean | | `false` | Requires vue-router, the same as the `append` attribute of `<router-link>`. If `true`, append the path of `to` after the current path. |
+| disabled | boolean | | `false` | Whether to disable. When disabled, the `click` event will not be responded to. |
+| display | string | | `'inline'` | Display mode. Optional values: `'inline'`, `'block'` |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @$listeners
 
-监听所有`<a>`元素的事件。
+Listen for events on all `<a>` elements.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
 
 #### @click
 
-点击链接时触发，与原生 click 事件不同的是，它只会在非禁用状态下触发。
+Fires when a link is clicked. Unlike the native click event, it will only fire in a non-disabled state.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | MouseEvent | 鼠标事件对象 |
-| senderVM | Vue | 发送事件实例 |
+| $event | MouseEvent | Mouse event object |
+| senderVM | Vue | Send event instance |
 
 #### @before-navigate
 
-使用router相关属性切换路由前触发
+Triggered before switching routes using router related attributes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.to | string, Location | `to`属性的值 |
-| $event.replace | boolean | `replace`属性的值 |
-| $event.append | boolean | `append`属性的值 |
-| $event.preventDefault | Function | 阻止切换流程 |
-| senderVM | Vue | 发送事件实例 |
+| $event.to | string, Location | The value of the `to` attribute |
+| $event.replace | boolean | The value of the `replace` attribute |
+| $event.append | boolean | The value of the `append` attribute |
+| $event.preventDefault | Function | Prevent switching process |
+| senderVM | Vue | Send event instance |
 
 #### @navigate
 
-使用router相关属性切换路由时触发
+Triggered when switching routes using router related attributes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.to | string, Location | `to`属性的值 |
-| $event.replace | boolean | `replace`属性的值 |
-| $event.append | boolean | `append`属性的值 |
-| senderVM | Vue | 发送事件实例 |
+| $event.to | string, Location | The value of the `to` attribute |
+| $event.replace | boolean | The value of the `replace` attribute |
+| $event.append | boolean | The value of the `append` attribute |
+| senderVM | Vue | Send event instance |

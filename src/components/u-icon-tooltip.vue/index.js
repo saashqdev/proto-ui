@@ -2,13 +2,13 @@ import MPopper from '../m-popper.vue';
 import pick from 'lodash/pick';
 
 /**
- * 默认显示一个按钮，hover 上去有提示
+ * A button is displayed by default, and there is a prompt when hovering up.
  */
 export const UIconTooltip = {
     name: 'u-icon-tooltip',
     props: {
-        type: { type: String, default: 'info' }, // 按钮名称
-        size: { type: String, default: 'normal' }, // 提示大小
+        type: { type: String, default: 'info' }, // Button name
+        size: { type: String, default: 'normal' }, // Tip size
         content: String,
         trigger: { type: String, default: 'hover' },
         placement: { type: String, default: 'bottom' },
