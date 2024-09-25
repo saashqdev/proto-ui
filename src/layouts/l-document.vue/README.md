@@ -14,7 +14,7 @@
             <u-logo slot="left">演示</u-logo>
             <u-navbar-item href="/">首页</u-navbar-item>
             <u-navbar-item href="https://kubevue.github.io" target="_blank">kubevue</u-navbar-item>
-            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">组件库</u-navbar-item>
+            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">Components库</u-navbar-item>
             <u-navbar-item href="https://github.com/saashqdev-templates/admin-cloud-fs" target="_blank">GitHub</u-navbar-item>
             <div slot="right">
                 <u-navbar-dropdown style="width: 100px; margin-right: 10px;">
@@ -43,7 +43,7 @@
         <u-linear-layout direction="vertical">
             <u-crumb>
                 <u-crumb-item to="/">首页</u-crumb-item>
-                <u-crumb-item to="/proto-ui">原型组件</u-crumb-item>
+                <u-crumb-item to="/proto-ui">Prototype Component</u-crumb-item>
                 <u-crumb-item disabled>Navigation</u-crumb-item>
                 <u-crumb-item to="/proto-ui/u-crumb" current>面包屑</u-crumb-item>
             </u-crumb>

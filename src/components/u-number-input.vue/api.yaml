@@ -1,121 +1,121 @@
 - name: u-number-input
-  title: 数字输入
-  labels: [UI 组件, 表单控件, 行内展示]
+  title: Digital Input
+  labels: [UI Components, Form Controls, Inline Display]
   attrs:
     - name: value.sync, v-model
       type: number
       default: 0
-      description: 输入框的值
+      description: The value of the input box
     - name: min
       type: number
       default: -.inf
-      description: 最小值
+      description: Minimum value
     - name: max
       type: number
       default: .inf
-      description: 最大值
+      description: Maximum value
     - name: step
       type: number
       default: 1
-      description: 间隔，表示点击按钮或按上下键所增加或减少的量
+      description: Interval, indicating the amount of increase or decrease when clicking a button or pressing the up or down key
     - name: precision
       type: number
       default: 1
-      description: 精度，表示数字要保留的最小单位，整数、小数均可
+      description: Precision, which indicates the smallest unit to be retained by the number, both integer and decimal are acceptable
     - name: formatter
       type: string, object
       default: null
-      description: 格式化字符串，具体参见Example。也可以传入一个包含`get`和`set`方法的格式化对象。
+      description: Format string, see examples for details. You can also pass in a format object containing `get` and `set` methods.
     - name: placeholder
       type: string
       default: null
-      description: 原生属性
+      description: Native property
     - name: autofocus
       type: boolean
       default: null
-      description: 原生属性
+      description: Native property
     - name: hide-buttons
       type: boolean
       default: false
-      description: 是否隐藏按钮
+      description: Whether to hide the button
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Whether it is read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
     - name: size
       type: string
       default: normal
-      description: 大小扩展，支持一个值：`'mini'`, `'small'`, `'normal'`, `'large'`, `'huge'`,
-        `'full'`，或两个值的组合，前者表示高度，后者表示宽度，类似CSS的padding书写格式
+      description: Size extension, supports one value - `'mini'`, `'small'`, `'normal'`, `'large'`, `'huge'`,
+        `'full'`, or a combination of two values, the former represents the height, the latter represents the width, similar to the CSS padding writing format
   events:
     - name: input
-      description: 输入时触发
+      description: Triggered on input
       params:
         - name: $event
           type: string
-          description: 输入框的值
+          description: The value of the input box
         - name: senderVM
           type: UNumberInput
-          description: 发送事件实例
+          description: Send event instance
     - name: validate
-      description: 输入验证时触发
+      description: Triggered when input is validated
       params:
         - name: $event.rawValue
           type: string
-          description: 用户输入的原始值
+          description: The original value entered by the user
         - name: $event.value
           type: number
-          description: 验证修复的值
+          description: Verify the repaired value
         - name: $event.valid
           type: boolean
-          description: 原始值是否合法
+          description: Is the original value legal?
         - name: senderVM
           type: UNumberInput
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 值变化时触发（与原生事件不同）
+      description: Triggered when the value changes (different from native events)
       params:
         - name: $event.value
           type: number
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: number
-          description: 旧的值
+          description: Old value
         - name: $event.formattedValue
           type: string
-          description: 格式化后的值
+          description: Formatted value
         - name: $event.valid
           type: boolean
-          description: 改变后的值是否合法
+          description: Is the changed value legal?
         - name: senderVM
           type: UNumberInput
-          description: 发送事件实例
+          description: Send event instance
     - name: focus
-      description: 获得焦点时触发
+      description: Triggered when focus is obtained
       params:
         - name: $event
           type: string
-          description: 原生事件对象
+          description: Native event object
         - name: senderVM
           type: UNumberInput
-          description: 发送事件实例
+          description: Send event instance
     - name: blur
-      description: 失去焦点时触发
+      description: Triggered when losing focus
       params:
         - name: $event
           type: string
-          description: 原生事件对象
+          description: Native event object
         - name: senderVM
           type: UNumberInput
-          description: 发送事件实例
-  aria:
+          description: Send event instance
+  air:
     - key: ↑
-      description: 按`step`量增加值
+      description: Increase the value by `step` amount
     - key: ↓
-      description: 按`step`量减小值
+      description: Decrease the value by `step` amount
     - key: Enter
-      description: 自动修复为合法的值，并且应用更改
+      description: Automatically fix to a legal value and apply the changes

@@ -51,7 +51,7 @@
 </u-grid-layout>
 ```
 
-### 分隔符
+### Separator
 
 ``` html
 <u-list-view value="nut">
@@ -154,7 +154,7 @@
 
 ### Cancel
 
-尝试在同一个选项上点击两次。
+Try clicking twice on the same option.
 
 ``` html
 <u-list-view value="towel" cancelable>
@@ -165,7 +165,7 @@
 </u-list-view>
 ```
 
-### 多项选择
+### Multiple Choice
 
 Two-Way Binding can be performed using `v-model` or `:value.sync`.
 

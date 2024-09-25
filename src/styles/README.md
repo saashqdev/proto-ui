@@ -10,7 +10,7 @@ kubevue 的组件库与传统的纯 CSS 组件库所不同，它更加重视样�
 
 ### 统一样式
 
-原型组件库以 [normalize.css](http://necolas.github.io/normalize.css) 为基础，使初始样式在各个浏览器下保持统一，然后对HTML元素的默认样式作了进一步优化。
+Prototype Component库以 [normalize.css](http://necolas.github.io/normalize.css) 为基础，使初始样式在各个浏览器下保持统一，然后对HTML元素的默认样式作了进一步优化。
 
 类似 [Bootstrap](https://getbootstrap.com)，将`box-sizing: border-box`应用到所有元素，于是元素的宽高便不会受到`padding`的影响。
 

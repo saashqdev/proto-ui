@@ -18,7 +18,7 @@
         <u-select-item>Nut</u-select-item>
     </u-select>
     <u-select>
-        <u-select-item>请选择</u-select-item>
+        <u-select-item>Please select</u-select-item>
         <u-select-item>兼容 0.3.x</u-select-item>
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
@@ -83,7 +83,7 @@ export default {
 </u-linear-layout>
 ```
 
-### 分隔符
+### Separator
 
 ``` html
 <u-select value="nut">
@@ -148,7 +148,7 @@ export default {
         <u-select-item>Nut</u-select-item>
     </u-select>
     <u-select multiple>
-        <u-select-item>请选择</u-select-item>
+        <u-select-item>Please select</u-select-item>
         <u-select-item>兼容 0.3.x</u-select-item>
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>

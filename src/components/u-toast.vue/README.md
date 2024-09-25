@@ -6,11 +6,11 @@
 ### Basic Usage
 
 ```html
-<u-button @click="$refs.toast.show()">组件</u-button>
+<u-button @click="$refs.toast.show()">Components</u-button>
 <u-toast ref="toast">2s</u-toast>
 ```
 
-### 快捷方式
+### Shortcut
 
 ``` vue
 <template>

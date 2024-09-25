@@ -79,7 +79,7 @@ export const UListView = {
         this.currentDataSource = this.normalizeDataSource(this.dataSource || this.data);
         if (this.currentDataSource && this.initialLoad) {
             this.load().then(() => {
-                // Update List之后，原来的选择可能已不存在，这里暂存然后重新查找一遍
+                // After Update List, the original selection may no longer exist. Save it temporarily and search again.
                 MComplex.watch.itemVMs.handler.call(this, this.itemVMs);
             });
         }
@@ -89,7 +89,7 @@ export const UListView = {
             // @TODO: undefined or null
             this.currentDataSource = this.normalizeDataSource(this.dataSource || this.data);
             this.load().then(() => {
-                // Update List之后，原来的选择可能已不存在，这里暂存然后重新查找一遍
+                // After Update List, the original selection may no longer exist. Save it temporarily and search again.
                 MComplex.watch.itemVMs.handler.call(this, this.itemVMs);
             });
         },
@@ -182,7 +182,7 @@ export const UListView = {
                     parentEl.scrollTop = focusedEl.offsetTop + focusedEl.offsetHeight - parentEl.clientHeight;
                 if (selectedIndex === this.itemVMs.length - 1) {
                     this.pageable && this.debouncedLoad(true);
-                    // 保证显示加载中，但又不是全部数据
+                    // Ensure that loading is displayed, but not all data
                     this.$nextTick(() => parentEl.scrollTop = parentEl.scrollHeight - parentEl.clientHeight);
                 }
             }

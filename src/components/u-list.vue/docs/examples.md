@@ -10,9 +10,9 @@
 </u-list>
 ```
 
-### 列表前缀
+### List Prefix
 
-添加`type`属性，可以快速设置列表前缀。
+Add the `type` attribute to quickly set the list prefix.
 
 ``` html
 <u-grid-layout>
@@ -48,9 +48,9 @@
 </u-grid-layout>
 ```
 
-### 列表线条
+### List Lines
 
-添加`line`属性，使列表各项之间由线条隔开。
+Add the `line` attribute so that list items are separated by lines.
 
 ``` html
 <u-list line>
@@ -62,9 +62,9 @@
 </u-list>
 ```
 
-### 条纹展示
+### Stripe Display
 
-添加`striped`属性，使列表行具有斑马线条纹样式。
+Add the `striped` attribute to give the list rows a zebra stripe style.
 
 ``` html
 <u-list striped>
@@ -76,9 +76,9 @@
 </u-list>
 ```
 
-### 悬浮高亮
+### Floating Highlight
 
-添加`hover`属性，使列表行在悬浮时能够高亮显示。
+Add the `hover` attribute so that list rows can be highlighted when hovered.
 
 ``` html
 <u-list hover>
@@ -90,9 +90,9 @@
 </u-list>
 ```
 
-### 组合修饰
+### Combination Modification
 
-列表组件的修饰属性可以组合使用。
+Modifying properties of list components can be used in combination.
 
 ``` html
 <u-list line hover striped>

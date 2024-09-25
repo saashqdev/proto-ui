@@ -1,15 +1,15 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UNavbar 导航条
+# UNavbar Navigation Bar
 
-**UI 组件**, **路由链接**, **块级展示**
+**UI Components**, **Route Links**, **Block Level Display**
 
-通常用于页面顶部的导航菜单，放置 Logo、导航链接、用户信息等。
+Usually used for the navigation menu at the top of the page to place logo, navigation links, user information, etc.
 
 ## Example
 ### Basic Usage
 
-下面展示了导航条的一些基本特性，如配置链接、添加分隔线、禁用选项等。
+The following shows some basic features of the navigation bar, such as configuring links, adding dividers, disabling options, etc.
 
 ``` html
 <u-navbar>
@@ -22,13 +22,13 @@
 </u-navbar>
 ```
 
-### 选择控制
+### Select Control
 
-通过`router`属性开关来决定，导航条的选择项是直接与路由绑定，还是由`value`属性来控制。
+Use the `router` attribute switch to decide whether the navigation bar selection is directly bound to the route, or whether it is controlled by the `value` attribute.
 
-#### 路由模式
+#### Routing Mode
 
-默认为此种模式，即导航条的选择项通过`to`属性直接与路由绑定的，这样就不需要操作额外的变量。这种模式下每个`<u-navbar-item>`类似 VueRouter 的`<router-link>`。
+The default is this mode, that is, the navigation bar selection is directly bound to the route through the `to` attribute, so there is no need to operate additional variables. In this mode, each `<u-navbar-item>` is similar to VueRouter's `<router-link>`.
 
 ``` html
 <u-navbar>
@@ -39,25 +39,25 @@
 </u-navbar>
 ```
 
-#### value 模式
+#### Value Mode
 
-将`router`属性设置为`false`时，导航条的选择项则由`value`属性来控制。类似于常用的`<u-select>`操作，`value`可以用`v-model`或`.sync`进行Two-Way Binding。
+When the `router` attribute is set to `false`, the navigation bar selection is controlled by the `value` attribute. Similar to the commonly used `<u-select>` operation, `value` can use `v-model` or `.sync` for Two-Way Binding.
 
 ``` html
 <u-navbar value="Concepts" :router="false">
-    <u-navbar-item value="Components">组件</u-navbar-item>
-    <u-navbar-item value="Concepts">概念</u-navbar-item>
-    <u-navbar-item value="Directives" disabled>指令</u-navbar-item>
+    <u-navbar-item value="Components">Components</u-navbar-item>
+    <u-navbar-item value="Concepts">Concept</u-navbar-item>
+    <u-navbar-item value="Directives" disabled>Instructions</u-navbar-item>
     <u-navbar-item value="GitHub">GitHub</u-navbar-item>
 </u-navbar>
 ```
 
-### 布局
-#### 左右插槽
+### Layout
+#### Left and Right Slots
 
-导航条内容有左中右三块区域。
+The content of the navigation bar has three areas: left, middle and right.
 
-通过`left`和`right`两个 slot，可以快速进行布局。
+Through the two slots `left` and `right`, layout can be quickly carried out.
 
 ``` html
 <u-navbar>
@@ -69,45 +69,45 @@
 </u-navbar>
 ```
 
-#### 对齐方式
+#### Alignment
 
-通过设置`alignment`属性，可以调整中部区域的对齐方式。
+By setting the `alignment` property, you can adjust the alignment of the middle area.
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-navbar alignment="left">
         <u-logo slot="left"></u-logo>
-        <u-navbar-item>指南</u-navbar-item>
+        <u-navbar-item>Multi-Level Menu</u-navbar-item>
         <u-navbar-item>Concept</u-navbar-item>
-        <u-navbar-item to="/proto-ui">组件</u-navbar-item>
+        <u-navbar-item to="/proto-ui">Components</u-navbar-item>
         <u-navbar-item slot="right" href="https://github.com/saashqdev/proto-ui" target="_blank"><i-icon name="github" style="font-size: 24px;"></i-icon></u-navbar-item>
     </u-navbar>
     <u-navbar alignment="center">
         <u-logo slot="left"></u-logo>
-        <u-navbar-item>指南</u-navbar-item>
+        <u-navbar-item>Multi-Level Menu</u-navbar-item>
         <u-navbar-item>Concept</u-navbar-item>
-        <u-navbar-item to="/proto-ui">组件</u-navbar-item>
+        <u-navbar-item to="/proto-ui">Components</u-navbar-item>
         <u-navbar-item slot="right" href="https://github.com/saashqdev/proto-ui" target="_blank"><i-icon name="github" style="font-size: 24px;"></i-icon></u-navbar-item>
     </u-navbar>
     <u-navbar alignment="right">
         <u-logo slot="left"></u-logo>
-        <u-navbar-item>指南</u-navbar-item>
+        <u-navbar-item>Multi-Level Menu</u-navbar-item>
         <u-navbar-item>Concept</u-navbar-item>
-        <u-navbar-item to="/proto-ui">组件</u-navbar-item>
+        <u-navbar-item to="/proto-ui">Components</u-navbar-item>
         <u-navbar-item slot="right" href="https://github.com/saashqdev/proto-ui" target="_blank"><i-icon name="github" style="font-size: 24px;"></i-icon></u-navbar-item>
     </u-navbar>
 </u-linear-layout>
 ```
 
-### 下拉菜单与选择
+### Dropdown Menus and Selections
 
-使用`<u-navbar-menu>`搭配`<u-navbar-dropdown>`来实现下拉菜单，使用`<u-navbar-select>`来实现下拉选择。
+Use `<u-navbar-menu>` with `<u-navbar-dropdown>` to implement the drop-down menu, and use `<u-navbar-select>` to implement the drop-down selection.
 
 ``` html
 <u-navbar>
     <u-navbar-item to="/components">Components</u-navbar-item>
     <u-navbar-item disabled>Command</u-navbar-item>
-    <u-navbar-dropdown title="下拉菜单">
+    <u-navbar-dropdown title="Drop-Down Menu">
         <u-navbar-menu>
             <u-navbar-menu-item>Basic</u-navbar-menu-item>
             <u-navbar-menu-item>Layout</u-navbar-menu-item>
@@ -121,8 +121,8 @@
         </u-navbar-menu>
     </u-navbar-dropdown>
     <u-navbar-select>
-        <u-navbar-select-item>请选择</u-navbar-select-item>
-        <u-navbar-select-item>中文</u-navbar-select-item>
+        <u-navbar-select-item>Please select</u-navbar-select-item>
+        <u-navbar-select-item>Chinese</u-navbar-select-item>
         <u-navbar-select-item>English</u-navbar-select-item>
         <u-navbar-select-item>Français</u-navbar-select-item>
         <u-navbar-select-item>Русский</u-navbar-select-item>
@@ -130,19 +130,19 @@
 </u-navbar>
 ```
 
-### 颜色扩展
+### Color Extension
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-navbar value="3" :router="false">
-        <u-navbar-item value="1">指南</u-navbar-item>
-        <u-navbar-item value="2">概念</u-navbar-item>
-        <u-navbar-item value="3">组件</u-navbar-item>
+        <u-navbar-item value="1">Multi-Level Menu</u-navbar-item>
+        <u-navbar-item value="2">Concept</u-navbar-item>
+        <u-navbar-item value="3">Components</u-navbar-item>
     </u-navbar>
     <u-navbar value="3" :router="false" color="inverse">
-        <u-navbar-item value="1">指南</u-navbar-item>
-        <u-navbar-item value="2">概念</u-navbar-item>
-        <u-navbar-item value="3">组件</u-navbar-item>
+        <u-navbar-item value="1">Multi-Level Menu</u-navbar-item>
+        <u-navbar-item value="2">Concept</u-navbar-item>
+        <u-navbar-item value="3">Components</u-navbar-item>
     </u-navbar>
 </u-linear-layout>
 ```
@@ -152,159 +152,160 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| router | boolean |  | `true` | 是否根据 vue-router 来控制选择项 |
-| value.sync, v-model | any |  |  | 当前选择的值 |
-| field | string |  | `'text'` | 显示文本字段 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| router | boolean | | `true` | Whether to control the selection based on vue-router |
+| value.sync, v-model | any | | | Currently selected value |
+| field | string | | `'text'` | Display text field |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-中部区域，可插入`<u-navbar-item>`、`<u-navbar-divider>`等子组件，或其他 HTML。
+In the middle area, subcomponents such as `<u-navbar-item>`, `<u-navbar-divider>`, or other HTML can be inserted.
 
-#### left
+#### Left
 
-左部区域。
+Left area.
 
-#### right
+#### Right
 
-右部区域。
+Right area.
 
 ### Events
 
 #### @click
 
-点击此项时触发，与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。
+Fires when this item is clicked. Unlike the native click event, it will only fire when it is not read-only and disabled.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | MouseEvent | 鼠标事件对象 |
-| senderVM | Vue | 发送事件实例 |
+| $event | MouseEvent | Mouse event object |
+| senderVM | Vue | Send event instance |
 
 #### @before-select
 
-选择某一项前触发
+Trigger before selecting an item
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.itemVM | NavbarItem | 选择项子组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | Vue | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.itemVM | NavbarItem | Selection subcomponent |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | Vue | Send event instance |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | any | 选择项的值 |
-| senderVM | Vue | 发送事件实例 |
+| $event | any | Value of selection |
+| senderVM | Vue | Send event instance |
 
 #### @select
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 改变后的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | UNavbarItem | 选择项子组件 |
-| $event.oldVM | UNavbarItem | 旧的选择项子组件 |
-| senderVM | Vue | 发送事件实例 |
+| $event.value | any | Changed value |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.oldItem | object | Old selection related object |
+| $event.itemVM | UNavbarItem | Selection subcomponent |
+| $event.oldVM | UNavbarItem | Old selection subcomponent |
+| senderVM | Vue | Send event instance |
 
 #### @change
 
-选择值改变时触发
+Fires when the selection value changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | UNavbarItem | 选择项子组件 |
-| $event.oldVM | UNavbarItem | 旧的选择项子组件 |
-| senderVM | UNavbar | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.oldItem | object | Old selection related object |
+| $event.itemVM | UNavbarItem | Selection subcomponent |
+| $event.oldVM | UNavbarItem | Old selection subcomponent |
+| senderVM | UNavbar | Send event instance |
 
 ## UNavbarItem API
 ### Props/Attrs
-
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | any |  |  | 此项的值 |
-| disabled | boolean |  | `false` | 禁用此项 |
-| item | object |  |  | 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发 |
-| href | string |  |  | 链接地址 |
-| target | string |  |  | 打开方式 |
-| to | string, Location |  |  | 需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。 |
-| replace | boolean |  | `false` | 需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。 |
-| exact | boolean |  | `false` | 需要 vue-router，与`<router-link>`的`exact`属性相同。是否与路由完全一致时才高亮显示。 |
+| value | any | | | The value of this item |
+| disabled | boolean | | `false` | Disable this |
+| item | object | | | Related objects. When this is selected, the event thrown will pass the object, making it easier to develop |
+| href | string | | | Link address |
+| target | string | | | Open method |
+| to | string, Location | | | Requires vue-router, same as `to` attribute of `<router-link>`. Can be a string or an object describing the target location. |
+| replace | boolean | | `false` | Requires vue-router, the same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation. |
+| exact | boolean | | `false` | Requires vue-router, same as `<router-link>`'s `exact` attribute. It will be highlighted only if it is completely consistent with the route. |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @before-select
 
-选择此项前触发
+Trigger before selecting this
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 此项的值 |
-| $event.item | object | 此项的相关对象 |
-| $event.itemVM | UNavbarItem | 此组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | Vue | 发送事件实例 |
+| $event.value | any | The value of this item |
+| $event.item | object | The related object of this item |
+| $event.itemVM | UNavbarItem | This component |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | Vue | Send event instance |
 
 #### @before-navigate
 
-使用router相关属性切换路由前触发
+Triggered before switching routes using router related attributes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.to | string, Location | `to`属性的值 |
-| $event.replace | boolean | `replace`属性的值 |
-| $event.exact | boolean | `exact`属性的值 |
-| $event.preventDefault | Function | 阻止切换流程 |
-| senderVM | Vue | 发送事件实例 |
+| $event.to | string, Location | The value of the `to` attribute |
+| $event.replace | boolean | The value of the `replace` attribute |
+| $event.exact | boolean | The value of the `exact` attribute |
+| $event.preventDefault | Function | Prevent switching process |
+| senderVM | Vue | Send event instance |
 
 #### @navigate
 
-使用router相关属性切换路由时触发
+Triggered when switching routes using router related attributes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.to | string, Location | `to`属性的值 |
-| $event.replace | boolean | `replace`属性的值 |
-| $event.exact | boolean | `exact`属性的值 |
-| senderVM | Vue | 发送事件实例 |
+| $event.to | string, Location | The value of the `to` attribute |
+| $event.replace | boolean | The value of the `replace` attribute |
+| $event.exact | boolean | The value of the `exact` attribute |
+| senderVM | Vue | Send event instance |
 
 ## UNavbarDivider API
 
-暂无
+None
+
 ## UNavbarDropdown API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| trigger | string |  | `'hover'` | 触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
-| placement | string |  | `'bottom'` | 弹出方位。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
-| disabled | boolean |  | `false` | 是否禁用 |
+| trigger | string | | `'hover'` | Trigger mode. Optional values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
+| placement | string | | `'bottom'` | Popup position. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start' `, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
+| disabled | boolean | | `false` | Whether to disable |
 
-## UNavbarMenu、UNavbarMenuGroup、UNavbarMenuItem、UNavbarMenuDivider API
+## UNavbarMenu, UNavbarMenuGroup, UNavbarMenuItem, UNavbarMenuDivider API
 
-暂无
-## UNavbarSelect、UNavbarSelectGroup、UNavbarSelectItem、UNavbarSelectDivider API
+None
 
-暂无
+## UNavbarSelect, UNavbarSelectGroup, UNavbarSelectItem, UNavbarSelectDivider API
+
+None

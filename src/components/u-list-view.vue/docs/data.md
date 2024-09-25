@@ -1,10 +1,10 @@
-### 数据和数据源
+### Data and Data Sources
 
-基础Example中采用的是标签形式添加数据，适合数据量小、数据操作简单或对模板有定制化的场景。
+The basic Example uses tags to add data, which is suitable for scenarios where the amount of data is small, data operations are simple, or the template is customized.
 
-如果数据量较大，或要使用一些高级功能时，推荐使用`data`或`data-source`属性。`data`属性的格式为`Array<{ text, value }>`，下面简写为`Array<Item>`；`data-source`属性一般接受一个`load`函数，用于异步加载。
+If the amount of data is large, or you want to use some advanced functions, it is recommended to use the `data` or `data-source` attributes. The format of the `data` attribute is `Array<{ text, value }>`, which is abbreviated as `Array<Item>` below; the `data-source` attribute generally accepts a `load` function for asynchronous loading.
 
-#### 纯前端数据
+#### Pure Front-End Data
 
 ``` vue
 <template>
@@ -13,7 +13,7 @@
 <script>
 export default {
     data() {
-        // 构造数量较多的 100 条数据
+        // Construct a large number of 100 pieces of data
         let data = [];
         for (let i = 1; i <= 100; i++)
             data.push('item' + i);
@@ -25,11 +25,11 @@ export default {
 </script>
 ```
 
-### 分页
+### Pagination
 
-#### 前端分页
+#### Front-End Paging
 
-当数据量较大时，开启`pageable`属性可以进行前端分页，同时可以用`page-size`属性修改默认分页大小。
+When the amount of data is large, front-end paging can be performed by turning on the `pageable` attribute, and the default paging size can be modified with the `page-size` attribute.
 
 ``` vue
 <template>
@@ -38,7 +38,7 @@ export default {
 <script>
 export default {
     data() {
-        // 构造数量较多的 500 条数据
+        // Construct a larger number of 500 pieces of data
         let data = [];
         for (let i = 1; i <= 500; i++)
             data.push('item' + i);
@@ -50,26 +50,26 @@ export default {
 </script>
 ```
 
-#### 一次性后端数据，前端分页
+#### One-Time Back-End Data, Front-End Paging
 
-在`data-source`属性中传入`load`方法，用于接收完整的后端数据。
+Pass in the `load` method in the `data-source` attribute to receive complete backend data.
 
-`load`方法要求返回一个`Promise<Array<Item>>`或`Promise<{ data: Array<Item>, total: Number }>`的格式。该会在组件初始化时会被调用一次，如果不需要可以将`initial-load`属性设置为`false`。
+The `load` method requires returning a `Promise<Array<Item>>` or `Promise<{ data: Array<Item>, total: Number }>` format. This will be called once when the component is initialized. If not needed, the `initial-load` attribute can be set to `false`.
 
-开启`pageable`属性时可以进行前端分页。
+Front-end paging can be performed when the `pageable` attribute is turned on.
 
 ``` vue
 <template>
 <u-list-view :data-source="load" pageable :page-size="20" style="height: 182px"></u-list-view>
 </template>
 <script>
-// 模拟构造远程数据
+// Simulate the construction of remote data
 const remoteData = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New hampshire', 'New jersey', 'New mexico', 'New york', 'North carolina', 'North dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode island', 'South carolina', 'South dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West virginia', 'Wisconsin', 'Wyoming'].map((text) => ({ text, value: text }));
 
 export default {
     methods: {
         load() {
-            // 这里使用 Promise 和 setTimeout 模拟一个异步请求
+            // Here use Promise and setTimeout to simulate an asynchronous request
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(remoteData);
@@ -81,29 +81,29 @@ export default {
 </script>
 ```
 
-#### 后端分页
+#### Backend Paging
 
-如果要使用后端分页，在`data-source`属性中传入`load`方法的基础上，开启`remote-paging`功能。
+If you want to use back-end paging, enable the `remote-paging` function after passing the `load` method in the `data-source` attribute.
 
-这时`load`方法会接受一个与分页相关的`paging`参数：
+At this time, the `load` method will accept a `paging` parameter related to paging:
 
 ``` js
 params.paging = {
-    size: Number, // 每页大小
-    number: Number, // 页数。从1开始计
-    offset: Number, // 偏移量：(number - 1) * size
-    limit: Number, // 同 size
+    size: Number, // size of each page
+    number: Number, //Number of pages. Count from 1
+    offset: Number, // offset: (number - 1) * size
+    limit: Number, // same as size
 }
 ```
 
-要求返回一个`Promise<Array<Item>>`或`Promise<{ data: Array<Item>, total: Number }>`的格式。翻页是否到底，根据`total`字段判断，如果没有则根据最后一次数组为空判断。
+It is required to return a `Promise<Array<Item>>` or `Promise<{ data: Array<Item>, total: Number }>` format. Whether the page turns to the end is judged according to the `total` field. If not, it is judged according to the last time the array is empty.
 
-``` vue
+```vue
 <template>
-<u-list-view :data-source="load" pageable remote-paging style="height: 182px"></u-list-view>
+    <u-list-view :data-source="load" pageable remote-paging style="height: 182px"></u-list-view>
 </template>
 <script>
-// 模拟构造数量较多的 500 条远程数据
+// Simulate and construct a large number of 500 remote data
 let remoteData = [];
 for (let i = 1; i <= 500; i++)
     remoteData.push('item' + i);
@@ -112,7 +112,7 @@ remoteData = remoteData.map((text) => ({ text, value: text }));
 export default {
     methods: {
         load({ paging }) {
-            // 这里使用 Promise 和 setTimeout 模拟一个异步请求
+            // Use Promise and setTimeout here to simulate an asynchronous request
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(remoteData.slice(paging.offset, paging.offset + paging.limit));

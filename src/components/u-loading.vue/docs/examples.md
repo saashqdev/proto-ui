@@ -4,39 +4,39 @@
 <u-loading></u-loading>
 ```
 
-### 添加文字
+### Add Text
 
 ``` html
-<u-loading>正在加载中...</u-loading>
+<u-loading>Loading...</u-loading>
 ```
 
-### 大小扩展
+### Size Expansion
 
 ``` html
 <u-linear-layout direction="vertical">
-    <div><u-loading size="small">正在加载中...</u-loading></div>
-    <div><u-loading>正在加载中...</u-loading></div>
-    <div><u-loading size="large">正在加载中...</u-loading></div>
+    <div><u-loading size="small">Loading...</u-loading></div>
+    <div><u-loading>Loading...</u-loading></div>
+    <div><u-loading size="large">Loading...</u-loading></div>
 </u-linear-layout>
 ```
 
 ### Display Method
 
-#### 行内展示
+#### Inline Display
 
 ``` html
-<u-loading size="small" display="inline"></u-loading> 默认在行内...
+<u-loading size="small" display="inline"></u-loading> Defaults to inline...
 ```
 
-#### 块级展示
+#### Block Level Display
 
 ``` html
-<u-loading>正在加载中...</u-loading>
+<u-loading>Loading...</u-loading>
 ```
 
-#### 填充父元素
+#### Fill Parent Element
 
-将`display`属性设置为`full`，可以填充定位父元素（offsetParent）。
+Set the `display` attribute to `full` to fill the positioned parent element (offsetParent).
 
 ``` html
 <u-list-view>
@@ -44,19 +44,19 @@
     <u-list-view-item>Nut</u-list-view-item>
     <u-list-view-item>Towel</u-list-view-item>
     <u-list-view-item>Sofa</u-list-view-item>
-    <u-loading display="full">正在加载中...</u-loading>
+    <u-loading display="full">Loading...</u-loading>
 </u-list-view>
 ```
 
-#### 填充全窗口
+#### Fill the Full Window
 
-将`display`属性设置为`fullWindow`，则会填满整个浏览器。
+Setting the `display` attribute to `fullWindow` will fill the entire browser.
 
 ``` vue
 <template>
 <div>
-<u-button @click="load">加载</u-button>
-<u-loading v-if="loading" display="fullWindow">正在加载中...</u-loading>
+<u-button @click="load">Load</u-button>
+<u-loading v-if="loading" display="fullWindow">Loading...</u-loading>
 </div>
 </template>
 <script>

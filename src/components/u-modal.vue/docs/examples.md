@@ -3,8 +3,8 @@
 ``` vue
 <template>
 <div>
-    <u-modal :visible.sync="visible" title="标题">
-        这是一段文字内容。
+<u-modal :visible.sync="visible" title="title">
+        This is a piece of text content.
     </u-modal>
     <u-linear-layout>
         <u-button @click="visible = true">Modal</u-button>
@@ -23,7 +23,7 @@ export default {
 </script>
 ```
 
-### 快捷方式
+### Shortcut
 
 ``` vue
 <template>
@@ -37,13 +37,13 @@ export default {
 export default {
     methods: {
         alert() {
-            this.$alert('创建失败！');
+            this.$alert('Creation failed!');
         },
         confirm() {
-            this.$confirm('是否要删除该任务？').then(() => {
-                console.info('用户点击了确定。');
+            this.$confirm('Do you want to delete this task?').then(() => {
+                console.info('The user clicked OK.');
             }).catch(() => {
-                console.info('用户点击了取消。');
+                console.info('The user clicked Cancel.');
             });
         },
     },
@@ -54,27 +54,27 @@ export default {
 ### Static
 
 ``` html
-<u-modal visible static>静态显示，该属性用于文档中局部展示，实际开发时请去除。</u-modal>
+<u-modal visible static>Static display, this attribute is used for partial display in the document, please remove it during actual development. </u-modal>
 ```
 
-### 标题与内容
+### Title and Content
 
 ``` html
-<u-modal title="标题" visible static>内容</u-modal>
+<u-modal title="title" visible static>Content</u-modal>
 ```
 
-### 自定义
+### Customize
 
 ``` html
 <u-modal visible static>
-    <div slot="title">自定义标题 <u-badge :value="3"></u-badge></div>
-    这是一段文字内容。
+    <div slot="title">Custom title <u-badge :value="3"></u-badge></div>
+        This is a piece of text content.
     <div slot="foot">
-        <u-button color="primary">关闭</u-button>
+        <u-button color="primary">Close</u-button>
     </div>
 </u-modal>
 ```
-### 大小扩展
+### Size Expansion
 
 ``` html
 <u-modal visible static size="small">

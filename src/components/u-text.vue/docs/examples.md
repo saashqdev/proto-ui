@@ -1,4 +1,4 @@
-### 大小扩展
+### Size Expansion
 
 ``` html
 <u-linear-layout>
@@ -8,7 +8,7 @@
 </u-linear-layout>
 ```
 
-### 颜色扩展
+### Color Extension
 
 ``` html
 <u-linear-layout>

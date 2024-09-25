@@ -82,7 +82,7 @@ export default {
 <u-select value="nut" empty-disabled placeholder="暂无选项"></u-select>
 ```
 
-### 分隔符
+### Separator
 
 ``` html
 <u-select value="nut">

@@ -1,10 +1,10 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UList 列表
+# UList List
 
-**UI 组件**, **块级展示**
+**UI Components**, **Block Level Display**
 
-对列表样式做了简单的修饰。如果需要选择、分页等更多的功能，请使用 [UListView](../u-list-view)。
+The list style has been simply modified. If you need more functions such as selection, paging, etc., please use [UListView](../u-list-view).
 
 ## Example
 ### Basic Usage
@@ -19,9 +19,9 @@
 </u-list>
 ```
 
-### 列表前缀
+### List Prefix
 
-添加`type`属性，可以快速设置列表前缀。
+Add the `type` attribute to quickly set the list prefix.
 
 ``` html
 <u-grid-layout>
@@ -57,9 +57,9 @@
 </u-grid-layout>
 ```
 
-### 列表线条
+### List Lines
 
-添加`line`属性，使列表各项之间由线条隔开。
+Add the `line` attribute so that list items are separated by lines.
 
 ``` html
 <u-list line>
@@ -71,9 +71,9 @@
 </u-list>
 ```
 
-### 条纹展示
+### Stripe Display
 
-添加`striped`属性，使列表行具有斑马线条纹样式。
+Add the `striped` attribute to give the list rows a zebra stripe style.
 
 ``` html
 <u-list striped>
@@ -85,9 +85,9 @@
 </u-list>
 ```
 
-### 悬浮高亮
+### Floating Highlight
 
-添加`hover`属性，使列表行在悬浮时能够高亮显示。
+Add the `hover` attribute so that list rows can be highlighted when hovered.
 
 ``` html
 <u-list hover>
@@ -99,9 +99,9 @@
 </u-list>
 ```
 
-### 组合修饰
+### Combination Modification
 
-列表组件的修饰属性可以组合使用。
+Modifying properties of list components can be used in combination.
 
 ``` html
 <u-list line hover striped>
@@ -118,17 +118,17 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| type | string |  |  | 列表前缀，如：`'disc'`, `'circle'`, `'decimal'`，与原生样式属性`list-style-type`的值对应。 |
-| line | string |  |  | 列表行之间显示分隔线条。可选值：`'both'`, `'horizontal'`, `'vertical'` |
-| striped | boolean |  | `false` | 列表行是否按斑马线条纹显示 |
-| hover | boolean |  | `false` | 列表行在悬浮时是否高亮显示 |
+| type | string | | | List prefix, such as: `'disc'`, `'circle'`, `'decimal'`, corresponding to the value of the native style attribute `list-style-type`. |
+| line | string | | | Displays separating lines between list rows. Optional values: `'both'`, `'horizontal'`, `'vertical'` |
+| striped | boolean | | `false` | Whether the list rows are displayed in zebra stripes |
+| hover | boolean | | `false` | Whether the list row is highlighted when hovering |
 
 ### Slots
 
 #### (default)
 
-在表格中插入`<u-list-item>`标签。
+Insert the `<u-list-item>` tag into the table.
 
 ## UListItem API
 
-暂无
+None

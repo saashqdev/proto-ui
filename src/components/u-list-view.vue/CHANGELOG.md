@@ -1,9 +1,9 @@
-### 🐛 修复：
-- 移除Vue关于list key的警告
+### 🐛 Fixes:
+- Removed Vue warning about list key
 
 ## 0.2.1
 
-### 🐛 修复：
-- 修复watch方法中的错误
+### 🐛 Fixes:
+- Fix bug in watch method
 
 ## 0.2.0

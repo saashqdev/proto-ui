@@ -1,4 +1,4 @@
 - name: u-logo
-  title: 标识
-  labels: [UI 组件, 行内展示]
-  description: 常见的网站标识。该组件作为一个Example，业务中请自行拓展。
+  title: Logo
+  labels: [UI Component, Inline Display]
+  description: Common website identifier. This component is an Example, please expand it yourself in your business.

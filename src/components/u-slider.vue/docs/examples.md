@@ -4,7 +4,7 @@
 <u-slider :value="36"></u-slider>
 ```
 
-### 最大值和最小值
+### Maximum and Minimum Values
 
 ``` html
 <u-slider :value="36" :min="10" :max="50"></u-slider>

@@ -1,8 +1,8 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UListView 列表视图
+# UListView List View
 
-## 基础Example
+## BasicExample
 ### Basic Usage
 
 ``` html
@@ -56,7 +56,7 @@
 </u-grid-layout>
 ```
 
-### 分隔符
+### Separator
 
 ``` html
 <u-list-view value="nut">
@@ -159,7 +159,7 @@
 
 ### Cancel
 
-尝试在同一个选项上点击两次。
+Try clicking twice on the same option.
 
 ``` html
 <u-list-view value="towel" cancelable>
@@ -170,7 +170,7 @@
 </u-list-view>
 ```
 
-### 多项选择
+### Multiple Choice
 
 Two-Way Binding can be performed using `v-model` or `:value.sync`.
 
@@ -193,14 +193,14 @@ export default {
 </script>
 ```
 
-## 数据相关
-### 数据和数据源
+## Data related
+### Data and Data Sources
 
-基础Example中采用的是标签形式添加数据，适合数据量小、数据操作简单或对模板有定制化的场景。
+The basic Example uses tags to add data, which is suitable for scenarios where the amount of data is small, data operations are simple, or the template is customized.
 
-如果数据量较大，或要使用一些高级功能时，推荐使用`data`或`data-source`属性。`data`属性的格式为`Array<{ text, value }>`，下面简写为`Array<Item>`；`data-source`属性一般接受一个`load`函数，用于异步加载。
+If the amount of data is large, or you want to use some advanced functions, it is recommended to use the `data` or `data-source` attributes. The format of the `data` attribute is `Array<{ text, value }>`, which is abbreviated as `Array<Item>` below; the `data-source` attribute generally accepts a `load` function for asynchronous loading.
 
-#### 纯前端数据
+#### Pure Front-End Data
 
 ``` vue
 <template>
@@ -209,7 +209,7 @@ export default {
 <script>
 export default {
     data() {
-        // 构造数量较多的 100 条数据
+        // Construct a large number of 100 pieces of data
         let data = [];
         for (let i = 1; i <= 100; i++)
             data.push('item' + i);
@@ -221,20 +221,20 @@ export default {
 </script>
 ```
 
-### 分页
+### Pagination
 
-#### 前端分页
+#### Front-End Paging
 
-当数据量较大时，开启`pageable`属性可以进行前端分页，同时可以用`page-size`属性修改默认分页大小。
+When the amount of data is large, front-end paging can be performed by turning on the `pageable` attribute, and the default paging size can be modified with the `page-size` attribute.
 
-``` vue
+```vue
 <template>
 <u-list-view :data="data" pageable :page-size="50" style="height: 182px"></u-list-view>
 </template>
 <script>
 export default {
     data() {
-        // 构造数量较多的 500 条数据
+        // Construct a larger number of 500 pieces of data
         let data = [];
         for (let i = 1; i <= 500; i++)
             data.push('item' + i);
@@ -246,26 +246,26 @@ export default {
 </script>
 ```
 
-#### 一次性后端数据，前端分页
+#### One-Time Back-End Data, Front-End Paging
 
-在`data-source`属性中传入`load`方法，用于接收完整的后端数据。
+Pass in the `load` method in the `data-source` attribute to receive complete backend data.
 
-`load`方法要求返回一个`Promise<Array<Item>>`或`Promise<{ data: Array<Item>, total: Number }>`的格式。该会在组件初始化时会被调用一次，如果不需要可以将`initial-load`属性设置为`false`。
+The `load` method requires returning a `Promise<Array<Item>>` or `Promise<{ data: Array<Item>, total: Number }>` format. This will be called once when the component is initialized. If not needed, the `initial-load` attribute can be set to `false`.
 
-开启`pageable`属性时可以进行前端分页。
+Front-end paging can be performed when the `pageable` attribute is turned on.
 
-``` vue
+```vue
 <template>
-<u-list-view :data-source="load" pageable :page-size="20" style="height: 182px"></u-list-view>
+    <u-list-view :data-source="load" pageable :page-size="20" style="height: 182px"></u-list-view>
 </template>
 <script>
-// 模拟构造远程数据
+// Simulate the construction of remote data
 const remoteData = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New hampshire', 'New jersey', 'New mexico', 'New york', 'North carolina', 'North dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode island', 'South carolina', 'South dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West virginia', 'Wisconsin', 'Wyoming'].map((text) => ({ text, value: text }));
 
 export default {
     methods: {
         load() {
-            // 这里使用 Promise 和 setTimeout 模拟一个异步请求
+            // Here use Promise and setTimeout to simulate an asynchronous request
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(remoteData);
@@ -277,29 +277,29 @@ export default {
 </script>
 ```
 
-#### 后端分页
+#### Backend Paging
 
-如果要使用后端分页，在`data-source`属性中传入`load`方法的基础上，开启`remote-paging`功能。
+If you want to use back-end paging, enable the `remote-paging` function after passing the `load` method in the `data-source` attribute.
 
-这时`load`方法会接受一个与分页相关的`paging`参数：
+At this time, the `load` method will accept a `paging` parameter related to paging:
 
 ``` js
 params.paging = {
-    size: Number, // 每页大小
-    number: Number, // 页数。从1开始计
-    offset: Number, // 偏移量：(number - 1) * size
-    limit: Number, // 同 size
+    size: Number, // size of each page
+    number: Number, //Number of pages. Count from 1
+    offset: Number, // offset: (number - 1) * size
+    limit: Number, // same as size
 }
 ```
 
-要求返回一个`Promise<Array<Item>>`或`Promise<{ data: Array<Item>, total: Number }>`的格式。翻页是否到底，根据`total`字段判断，如果没有则根据最后一次数组为空判断。
+It is required to return a `Promise<Array<Item>>` or `Promise<{ data: Array<Item>, total: Number }>` format. Whether the page turns to the end is judged according to the `total` field. If not, it is judged according to the last time the array is empty.
 
-``` vue
+```vue
 <template>
-<u-list-view :data-source="load" pageable remote-paging style="height: 182px"></u-list-view>
+    <u-list-view :data-source="load" pageable remote-paging style="height: 182px"></u-list-view>
 </template>
 <script>
-// 模拟构造数量较多的 500 条远程数据
+// Simulate and construct a large number of 500 remote data
 let remoteData = [];
 for (let i = 1; i <= 500; i++)
     remoteData.push('item' + i);
@@ -308,7 +308,7 @@ remoteData = remoteData.map((text) => ({ text, value: text }));
 export default {
     methods: {
         load({ paging }) {
-            // 这里使用 Promise 和 setTimeout 模拟一个异步请求
+            // Here use Promise and setTimeout to simulate an asynchronous request
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(remoteData.slice(paging.offset, paging.offset + paging.limit));
@@ -325,157 +325,157 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | any |  |  | 当前选择的值 |
-| field | string |  | `'text'` | 显示文本字段 |
-| data | Array\<{ text, value }\> |  |  | 列表数据 |
-| data-source | object, Function, DataSource |  |  | 多功能数据源 |
-| cancelable | boolean |  | `false` | 是否可以取消选择 |
-| multiple | boolean |  | `false` | 是否可以多选 |
-| collapsible | boolean |  | `false` | 分组是否可以折叠 |
-| accordion | boolean |  | `false` | 是否每次只会展开一个分组 |
-| expand-trigger | string |  | `'click'` | 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示The Entire Row can be Triggered by Clicking only the Small Arrow (default) |
-| loading-text | string |  | `'加载中...'` | 加载时的文字。使用分页加载时才会出现 |
-| initial-load | boolean |  | `true` | 是否在初始时立即加载 |
-| pageable | boolean |  | `false` | 是否需要分页 |
-| page-size | number |  | `50` | 分页大小 |
-| remote-paging | number |  | `false` | 是否使用后端分页 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value.sync, v-model | any | | | Currently selected value |
+| field | string | | `'text'` | Display text field |
+| data | Array\<{ text, value }\> | | | List data |
+| data-source | object, Function, DataSource | | | Multifunctional data source |
+| cancelable | boolean | | `false` | Whether the selection can be canceled |
+| multiple | boolean | | `false` | Whether multiple selections are possible |
+| collapsible | boolean | | `false` | Whether the group can be collapsed |
+| accordion | boolean | | `false` | Whether to expand only one group at a time |
+| expand-trigger | string | | `'click'` | The trigger method for expand/collapse. Optional values: `'click'` means that the entire row can be triggered by clicking, `'click-expander'` means that The Entire Row can be Triggered by Clicking only the Small Arrow (default) |
+| loading-text | string | | `'Loading...'` | Text when loading. Appears only when using paging loading |
+| initial-load | boolean | | `true` | Whether to load immediately during initialization |
+| pageable | boolean | | `false` | Whether paging is required |
+| page-size | number | | `50` | Paging size |
+| remote-paging | number | | `false` | Whether to use backend paging |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入`<u-list-view-item>`、`<u-list-view-divider>`或`<u-list-view-group>`子组件。
+Insert a `<u-list-view-item>`, `<u-list-view-divider>` or `<u-list-view-group>` subcomponent.
 
 ### Events
 
 #### @before-select
 
-选择某一项前触发
+Trigger before selecting an item
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.itemVM | UListViewItem | 选择项子组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | UListView | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.itemVM | UListViewItem | Selection subcomponent |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | UListView | Send event instance |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | any | 选择项的值 |
-| senderVM | UListView | 发送事件实例 |
+| $event | any | Value of selection |
+| senderVM | UListView | Send event instance |
 
 #### @select
 
-选择某一项时触发。单选模式中：
+Triggered when an item is selected. In radio selection mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 改变后的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | UListViewItem | 选择项子组件 |
-| $event.oldVM | UListViewItem | 旧的选择项子组件 |
-| senderVM | UListView | 发送事件实例 |
+| $event.value | any | Changed value |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.oldItem | object | Old selection related object |
+| $event.itemVM | UListViewItem | Selection subcomponent |
+| $event.oldVM | UListViewItem | Old selection subcomponent |
+| senderVM | UListView | Send event instance |
 
 #### @select
 
-选择某一项时触发。多选模式中：
+Triggered when an item is selected. In multi-select mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.selected | boolean | 选中还是取消 |
-| $event.item | boolean | 该选中项相关对象 |
-| $event.itemVM | boolean | 该选中项子组件 |
-| $event.value | Array | 改变后的值 |
-| $event.oldValue | Array | 旧的值 |
-| $event.items | Array\<object\> | 所有选中项相关对象的数组 |
-| $event.oldItems | Array\<object\> | 旧的所有选中项相关对象的数组 |
-| $event.itemVMs | Array\<UListViewItem\> | 所有选中项子组件的数组 |
-| $event.oldVMs | Array\<UListViewItem\> | 旧的所有选中项子组件的数组 |
-| senderVM | UListView | 发送事件实例 |
+| $event.selected | boolean | Select or cancel |
+| $event.item | boolean | Object related to the selected item |
+| $event.itemVM | boolean | The selected item subcomponent |
+| $event.value | Array | Changed value |
+| $event.oldValue | Array | Old value |
+| $event.items | Array\<object\> | Array of objects related to all selected items |
+| $event.oldItems | Array\<object\> | Array of objects related to all old selected items |
+| $event.itemVMs | Array\<UListViewItem\> | Array of all selected item subcomponents |
+| $event.oldVMs | Array\<UListViewItem\> | Array of all old selected item subcomponents |
+| senderVM | UListView | Send event instance |
 
 #### @change
 
-选择值改变时触发。单选模式中：
+Fires when the selection value changes. In radio selection mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | UListViewItem | 选择项子组件 |
-| $event.oldVM | UListViewItem | 旧的选择项子组件 |
-| senderVM | UListView | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.oldItem | object | Old selection related object |
+| $event.itemVM | UListViewItem | Selection subcomponent |
+| $event.oldVM | UListViewItem | Old selection subcomponent |
+| senderVM | UListView | Send event instance |
 
 #### @change
 
-选择值改变时触发。多选模式中：
+Fires when the selection value changes. In multi-select mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Array | 所有选中项的值 |
-| $event.items | Array\<object\> | 所有选中项相关对象的数组 |
-| $event.itemVMs | Array\<UListViewItem\> | 所有选中项子组件的数组 |
-| senderVM | UListView | 发送事件实例 |
+| $event.value | Array | Values   of all selected items |
+| $event.items | Array\<object\> | Array of objects related to all selected items |
+| $event.itemVMs | Array\<UListViewItem\> | Array of all selected item subcomponents |
+| senderVM | UListView | Send event instance |
 
 #### @before-load
 
-加载前触发
+Trigger before loading
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止加载流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.preventDefault | Function | Prevent loading process |
+| senderVM | UTableView | Send event instance |
 
 #### @load
 
-加载时触发
+Triggered when loading
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | UTableView | 发送事件实例 |
+| $event | | Empty |
+| senderVM | UTableView | Send event instance |
 
 #### @toggle
 
-展开/折叠某分组时触发
+Triggered when a group is expanded/collapsed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.expanded | boolean | 展开/折叠状态 |
-| $event.groupVM | UListViewGroup | 分组组件 |
-| senderVM | UListView | 发送事件实例 |
+| $event.expanded | boolean | Expanded/collapsed state |
+| $event.groupVM | UListViewGroup | Group component |
+| senderVM | UListView | Send event instance |
 
 ### Methods
 
 #### toggleAll(expanded)
 
-展开/折叠所有分组
+Expand/collapse all groups
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| expanded | boolean |  | 展开/折叠 |
+| expanded | boolean | | Expand/collapse |
 
 #### load()
 
-带缓存地加载
+Load with cache
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### reload()
 
-清除缓存，重新加载
+Clear cache and reload
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
@@ -485,86 +485,86 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | any |  |  | 此项的值 |
-| disabled | boolean |  | `false` | 禁用此项 |
-| item | object |  |  | 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发 |
+| value | any | | | The value of this item |
+| disabled | boolean | | `false` | Disable this |
+| item | object | | | Related objects. When this is selected, the event thrown will pass the object, making it easier to develop |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @click
 
-点击此项时触发，与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。
+Fires when this item is clicked. Unlike the native click event, it will only fire when it is not read-only and disabled.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | MouseEvent | 鼠标事件对象 |
-| senderVM | UListView | 发送事件实例 |
+| $event | MouseEvent | Mouse event object |
+| senderVM | UListView | Send event instance |
 
 #### @before-select
 
-选择此项前触发
+Trigger before selecting this
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 此项的值 |
-| $event.item | object | 此项的相关对象 |
-| $event.itemVM | UListViewItem | 此组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | UListView | 发送事件实例 |
+| $event.value | any | The value of this item |
+| $event.item | object | The related object of this item |
+| $event.itemVM | UListViewItem | This component |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | UListView | Send event instance |
 
 ## UListViewGroup API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 显示的标题 |
-| collapsible | boolean |  |  | `false` |
-| expanded.sync | boolean |  | `false` | 展开/折叠状态 |
-| disabled | boolean |  | `false` | 是否禁用。禁用时无法展开/折叠 |
+| title | string | | | Displayed title |
+| collapsible | boolean | | | `false` |
+| expanded.sync | boolean | | `false` | Expanded/collapsed state |
+| disabled | boolean | | `false` | Whether to disable. Cannot expand/collapse when disabled |
 
 ### Slots
 
 #### (default)
 
-插入`<u-list-view-item>`或`<u-list-view-divider>`子组件。
+Insert `<u-list-view-item>` or `<u-list-view-divider>` subcomponent.
 
-#### title
+#### Title
 
-自定义标题文本。
+Custom title text.
 
-#### extra
+#### Extra
 
-在右侧可以附加内容。
+On the right side you can attach content.
 
 ### Events
 
 #### @before-toggle
 
-展开/折叠此分组前触发
+Triggered before expanding/collapsing this group
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.expanded | boolean | 展开/折叠状态 |
-| $event.groupVM | UListViewGroup | 分组组件 |
-| $event.preventDefault | Function | 阻止展开/折叠流程 |
-| senderVM | UListView | 发送事件实例 |
+| $event.expanded | boolean | Expanded/collapsed state |
+| $event.groupVM | UListViewGroup | Group component |
+| $event.preventDefault | Function | Prevent the expand/collapse process |
+| senderVM | UListView | Send event instance |
 
 #### @toggle
 
-展开/折叠某分组时触发
+Triggered when a group is expanded/collapsed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.expanded | boolean | 展开/折叠状态 |
-| $event.groupVM | UListViewGroup | 分组组件 |
-| senderVM | UListView | 发送事件实例 |
+| $event.expanded | boolean | Expanded/collapsed state |
+| $event.groupVM | UListViewGroup | Group component |
+| senderVM | UListView | Send event instance |
 
 ## UListViewDivider API
 
-暂无
+None

@@ -1,27 +1,27 @@
 ### Basic Usage
 
-可以结合 Popup 或 Popper 弹出菜单。
+Can be combined with Popup or Popper popup menus.
 
 ``` html
 <u-linear-layout>
     <u-button>
-        Popup 菜单
+        Popup Menu
         <u-popup>
             <u-menu slot="root">
-                <u-menu-item to="/guides/">指南</u-menu-item>
+                <u-menu-item to="/guides/">Guidelines</u-menu-item>
                 <u-menu-item to="/api/">API</u-menu-item>
-                <u-menu-item to="/components/">原型组件</u-menu-item>
+                <u-menu-item to="/components/">Prototype Components</u-menu-item>
                 <u-menu-item href="https://github.com/saashqdev">GitHub</u-menu-item>
             </u-menu>
         </u-popup>
     </u-button>
     <u-button>
-        Popper 菜单
+        Popper Menu
         <m-popper>
             <u-menu value="3" :router="false" style="width: 128px;">
-                <u-menu-item to="/guides/">指南</u-menu-item>
+                <u-menu-item to="/guides/">Guidelines</u-menu-item>
                 <u-menu-item to="/api/">API</u-menu-item>
-                <u-menu-item to="/components/">原型组件</u-menu-item>
+                <u-menu-item to="/components/">Prototype Components</u-menu-item>
                 <u-menu-item href="https://github.com/saashqdev">GitHub</u-menu-item>
             </u-menu>
         </m-popper>
@@ -29,90 +29,90 @@
 </u-linear-layout>
 ```
 
-### 多级菜单
+### Multi-Level Menu
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-menu style="width: 200px;">
-        <u-menu-item>指南</u-menu-item>
+        <u-menu-item>Guidelines</u-menu-item>
         <u-menu-item>API
             <u-menu slot="sub">
-                <u-menu-item to="/api/cli">命令行工具（CLI）</u-menu-item>
-                <u-menu-item to="/api/config">配置</u-menu-item>
+                <u-menu-item to="/api/cli">Command Line Tool (CLI)</u-menu-item>
+                <u-menu-item to="/api/config">Configuration</u-menu-item>
             </u-menu>
         </u-menu-item>
-        <u-menu-item>组件
+        <u-menu-item> Component
             <u-menu slot="sub">
-                <u-menu-item>原型组件
+                <u-menu-item>Prototype Component
                     <u-menu slot="sub">
                         <u-menu-item>Basic
                             <u-menu slot="sub">
-                                <u-menu-item to="/components/u-link">链接 Link</u-menu-item>
-                                <u-menu-item to="/components/u-button">按钮 Button</u-menu-item>
-                                <u-menu-item to="/components/u-badge">徽章 Badge</u-menu-item>
+                                <u-menu-item to="/components/u-link">Link</u-menu-item>
+                                <u-menu-item to="/components/u-button">Button</u-menu-item>
+                                <u-menu-item to="/components/u-badge">Badge</u-menu-item>
                             </u-menu>
                         </u-menu-item>
                         <u-menu-item>Navigation
                             <u-menu slot="sub">
-                                <u-menu-item to="/components/u-navbar">导航栏 Navbar</u-menu-item>
-                                <u-menu-item to="/components/u-sidebar">侧边栏 Sidebar</u-menu-item>
-                                <u-menu-item to="/components/u-menu">菜单 Menu</u-menu-item>
+                                <u-menu-item to="/components/u-navbar">Navigation Bar</u-menu-item>
+                                <u-menu-item to="/components/u-sidebar">Sidebar</u-menu-item>
+                                <u-menu-item to="/components/u-menu">Menu</u-menu-item>
                             </u-menu>
                         </u-menu-item>
                         <u-menu-item>Popper
                             <u-menu slot="sub">
-                                <u-menu-item to="/components/m-popper">弹出层 Popper</u-menu-item>
-                                <u-menu-item to="/components/u-tooltip">工具提示 Tooltip</u-menu-item>
-                                <u-menu-item to="/components/u-popup">弹出框 Popup</u-menu-item>
+                                <u-menu-item to="/components/m-popper">Pop-up Layer</u-menu-item>
+                                <u-menu-item to="/components/u-tooltip">Tooltip</u-menu-item>
+                                <u-menu-item to="/components/u-popup">Popup Box</u-menu-item>
                             </u-menu>
                         </u-menu-item>
                     </u-menu>
                 </u-menu-item>
-                <u-menu-item to="/ui-design">组件设计方案</u-menu-item>
+                <u-menu-item to="/ui-design">Component design plan</u-menu-item>
             </u-menu>
         </u-menu-item>
         <u-menu-item target="_blank" href="https://github.com/saashqdev">GitHub</u-menu-item>
     </u-menu>
     <div>
         <u-button>
-            多级菜单
+            Multi-Level Menu
             <u-popup>
                 <u-menu slot="root" style="width: 200px;">
-                    <u-menu-item>指南</u-menu-item>
+                    <u-menu-item>Multi-Level Menu</u-menu-item>
                     <u-menu-item>API
                         <u-menu slot="sub">
-                            <u-menu-item to="/api/cli">命令行工具（CLI）</u-menu-item>
-                            <u-menu-item to="/api/config">配置</u-menu-item>
+                            <u-menu-item to="/api/cli">Command Line Tools (CLI)</u-menu-item>
+                            <u-menu-item to="/api/config">Configuration</u-menu-item>
                         </u-menu>
                     </u-menu-item>
-                    <u-menu-item>组件
+                    <u-menu-item>Components
                         <u-menu slot="sub">
-                            <u-menu-item>原型组件
+                            <u-menu-item>Prototype Component
                                 <u-menu slot="sub">
                                     <u-menu-item>Basic
                                         <u-menu slot="sub">
-                                            <u-menu-item to="/components/u-link">链接 Link</u-menu-item>
-                                            <u-menu-item to="/components/u-button">按钮 Button</u-menu-item>
-                                            <u-menu-item to="/components/u-badge">徽章 Badge</u-menu-item>
+                                            <u-menu-item to="/components/u-link">Link</u-menu-item>
+                                            <u-menu-item to="/components/u-button">Button</u-menu-item>
+                                            <u-menu-item to="/components/u-badge">Badge</u-menu-item>
                                         </u-menu>
                                     </u-menu-item>
                                     <u-menu-item>Navigation
                                         <u-menu slot="sub">
-                                            <u-menu-item to="/components/u-navbar">导航栏 Navbar</u-menu-item>
-                                            <u-menu-item to="/components/u-sidebar">侧边栏 Sidebar</u-menu-item>
-                                            <u-menu-item to="/components/u-menu">菜单 Menu</u-menu-item>
+                                            <u-menu-item to="/components/u-navbar">Navbar</u-menu-item>
+                                            <u-menu-item to="/components/u-sidebar">Sidebar</u-menu-item>
+                                            <u-menu-item to="/components/u-menu">Menu</u-menu-item>
                                         </u-menu>
                                     </u-menu-item>
                                     <u-menu-item>Popper
                                         <u-menu slot="sub">
-                                            <u-menu-item to="/components/m-popper">弹出层 Popper</u-menu-item>
-                                            <u-menu-item to="/components/u-tooltip">工具提示 Tooltip</u-menu-item>
-                                            <u-menu-item to="/components/u-popup">弹出框 Popup</u-menu-item>
+                                            <u-menu-item to="/components/m-popper">Popper</u-menu-item>
+                                            <u-menu-item to="/components/u-tooltip">Tooltip</u-menu-item>
+                                            <u-menu-item to="/components/u-popup">Popup</u-menu-item>
                                         </u-menu>
                                     </u-menu-item>
                                 </u-menu>
                             </u-menu-item>
-                            <u-menu-item to="/ui-design">组件设计方案</u-menu-item>
+                            <u-menu-item to="/ui-design">Component Design Plan</u-menu-item>
                         </u-menu>
                     </u-menu-item>
                     <u-menu-item target="_blank" href="https://github.com/saashqdev">GitHub</u-menu-item>
@@ -123,37 +123,37 @@
 </u-linear-layout>
 ```
 
-### Disable、禁用某一项
+### Disable、Disable an Item
 
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="4">
         <u-menu disabled>
-            <u-menu-item>指南</u-menu-item>
-            <u-menu-item>概念</u-menu-item>
-            <u-menu-item to="/proto-ui">组件</u-menu-item>
+            <u-menu-item>Multi-Level Menu</u-menu-item>
+            <u-menu-item>Concept</u-menu-item>
+            <u-menu-item to="/proto-ui">Components</u-menu-item>
         </u-menu>
     </u-grid-layout-column>
     <u-grid-layout-column :span="4">
         <u-menu>
-            <u-menu-item>指南</u-menu-item>
-            <u-menu-item disabled>概念</u-menu-item>
-            <u-menu-item to="/proto-ui">组件</u-menu-item>
+            <u-menu-item>Multi-Level Menu</u-menu-item>
+            <u-menu-item disabled>Concept</u-menu-item>
+            <u-menu-item to="/proto-ui">Components</u-menu-item>
         </u-menu>
     </u-grid-layout-column>
 </u-grid-layout>
 ```
 
-### 分隔符
+### Separator
 
 ``` html
 <u-menu style="width: 200px;">
-    <u-menu-item>指南</u-menu-item>
-    <u-menu-item>概念</u-menu-item>
-    <u-menu-item>配置</u-menu-item>
+    <u-menu-item>Multi-Level Menu</u-menu-item>
+    <u-menu-item>Concept</u-menu-item>
+    <u-menu-item>Configuration</u-menu-item>
     <u-menu-divider></u-menu-divider>
-    <u-menu-item to="/proto-ui">组件</u-menu-item>
-    <u-menu-item to="/libraries">组件库</u-menu-item>
+    <u-menu-item to="/proto-ui">Components</u-menu-item>
+    <u-menu-item to="/libraries">Component Library</u-menu-item>
 </u-menu>
 ```
 
@@ -166,20 +166,20 @@
             <p>Default, No Folding Function</p>
             <u-menu>
                 <u-menu-group title="Basic">
-                    <u-menu-item>链接</u-menu-item>
-                    <u-menu-item>按钮</u-menu-item>
-                    <u-menu-item>标签</u-menu-item>
+                    <u-menu-item>Link</u-menu-item>
+                    <u-menu-item>Button</u-menu-item>
+                    <u-menu-item>Label</u-menu-item>
                 </u-menu-group>
                 <u-menu-group title="Navigation">
-                    <u-menu-item>导航栏</u-menu-item>
-                    <u-menu-item to="/components/u-menu">侧边栏</u-menu-item>
-                    <u-menu-item>标签页</u-menu-item>
+                    <u-menu-item>Navigation Bar</u-menu-item>
+                    <u-menu-item to="/components/u-menu">Sidebar</u-menu-item>
+                    <u-menu-item>Label</u-menu-item>
                 </u-menu-group>
                 <u-menu-group title="Form">
-                    <u-menu-item>单行输入</u-menu-item>
-                    <u-menu-item>多行输入</u-menu-item>
-                    <u-menu-item>选择框</u-menu-item>
-                    <u-menu-item>表单</u-menu-item>
+                    <u-menu-item>Single Line Input</u-menu-item>
+                    <u-menu-item>Muli-Line Input</u-menu-item>
+                    <u-menu-item>Select Box</u-menu-item>
+                    <u-menu-item>Form</u-menu-item>
                 </u-menu-group>
             </u-menu>
         </u-grid-layout-column>

@@ -1,99 +1,99 @@
 - name: u-modal
-  title: 弹窗
+  title: Pop-up
   attrs:
     - name: visible.sync
       type: boolean
       default: false
-      description: 是否显示
+      description: Whether to display
     - name: title
       type: string
-      default: 提示
-      description: 弹窗的标题
+      default: prompt
+      description: Title of the popup
     - name: ok-button
       type: string
-      default: 确定
-      description: 确定按钮文本，如果为空则不显示
+      default: OK
+      description: OK button text, if empty then it will not be displayed
     - name: cancel-button
       type: string
-      default: 取消
-      description: 取消按钮文本，如果为空则不显示
+      default: cancel
+      description: Cancel button text, if empty then it will not be displayed
     - name: size
       type: string
       default: normal
-      description: 弹窗的尺寸。可选值：`'small'`, `'normal'`, `'large'`
+      description: The size of the popup. Optional values - `'small'`, `'normal'`, `'large'`
     - name: static
       type: boolean
       default: false
-      description: 是否嵌入页面显示
+      description: Whether to embed the page display
     - name: mask-closable
       type: boolean
       default: false
-      description: 是否点击遮罩时关闭弹窗
+      description: Whether to close the popup window when clicking the mask
   slots:
     - name: title
-      description: 弹窗标题自定义
+      description: Pop-up title customization
     - name: head
-      description: 弹窗头部自定义
+      description: Pop-up header customization
     - name: foot
-      description: 弹窗尾部自定义
+      description: Customize the end of the pop-up window
     - name: default
-      description: 弹窗内容自定义
+      description: Customize pop-up content
   events:
     - name: open
-      description: 打开弹窗时触发
+      description: Triggered when a popup window is opened
       params:
         - name: senderVM
           type: UModal
-          description: 发送事件实例
+          description: Send event instance
     - name: ok
-      description: 确定时触发
+      description: Triggered when confirmed
       params:
         - name: senderVM
           type: UModal
-          description: 发送事件实例
+          description: Send event instance
     - name: cancel
-      description: 取消时触发
+      description: Triggered when canceled
       params:
         - name: senderVM
           type: UModal
-          description: 发送事件实例
+          description: Send event instance
     - name: before-close
-      description: 关闭弹窗前触发
+      description: Triggered before closing the popup window
       params:
         - name: $event.ok
           type: boolean
-          description: 是否确定
+          description: Is it confirmed?
         - name: $event.preventDefault
           type: Function
-          description: 阻止关闭流程
+          description: Prevent the shutdown process
         - name: senderVM
           type: UModal
-          description: 发送事件实例
+          description: Send event instance
     - name: close
-      description: 关闭弹窗时触发
+      description: Triggered when the popup is closed
       params:
         - name: $event.ok
           type: boolean
-          description: 是否确定
+          description: Is it confirmed?
         - name: senderVM
           type: UModal
-          description: 发送事件实例
+          description: Send event instance
   static-methods:
     - name: alert(content, title)
-      description: 打开只有确定按钮的弹窗
+      description: Open a pop-up window with only the OK button
       params:
         - name: content
           type: string
-          description: 弹窗内容
+          description: Pop-up content
         - name: title
           type: string
-          description: 弹窗标题
+          description: Popup title
     - name: confirm(content, title)
-      description: 打开有确定和取消按钮的弹窗
+      description: Open a popup window with OK and Cancel buttons
       params:
         - name: content
           type: string
-          description: 弹窗内容
+          description: Pop-up content
         - name: title
           type: string
-          description: 弹窗标题
+          description: Popup title

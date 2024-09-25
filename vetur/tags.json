@@ -644,7 +644,7 @@
       "readonly",
       "disabled"
     ],
-    "description": "菜单组件支持路由、触发关闭、多级菜单等功能。",
+    "description": "菜单组件支持路由、触发关闭、Multi-Level Menu等功能。",
     "defaults": [
       "v-model"
     ],

@@ -1,25 +1,25 @@
 - name: u-list
-  title: 列表
-  labels: [UI 组件, 块级展示]
-  description: 对列表样式做了简单的修饰。如果需要选择、分页等更多的功能，请使用 [UListView](../u-list-view)。
+  title: List
+  labels: [UI Components, Block-Level Display]
+  description: Simple modifications to the list style. If you need more functions such as selection, paging, etc., please use [UListView](../u-list-view).
   attrs:
     - name: type
       type: string
       default: null
-      description: 列表前缀，如：`'disc'`, `'circle'`, `'decimal'`，与原生样式属性`list-style-type`的值对应。
+      description: List prefix, such as - `'disc'`, `'circle'`, `'decimal'`, corresponding to the value of the native style attribute `list-style-type`.
     - name: line
       type: string
       default: null
-      description: 列表行之间显示分隔线条。可选值：`'both'`, `'horizontal'`, `'vertical'`
+      description: Display dividing lines between list rows. Optional values - `'both'`, `'horizontal'`, `'vertical'`
     - name: striped
       type: boolean
       default: false
-      description: 列表行是否按斑马线条纹显示
+      description: Whether the list rows are displayed in zebra stripes
     - name: hover
       type: boolean
       default: false
-      description: 列表行在悬浮时是否高亮显示
+      description: Whether list rows are highlighted when suspended
   slots:
     - name: default
-      description: 在表格中插入`<u-list-item>`标签。
+      description: Insert the `<u-list-item>` tag into the table.
 - name: u-list-item

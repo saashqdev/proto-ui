@@ -1,231 +1,231 @@
 - name: u-navbar
-  title: 导航条
-  labels: [UI 组件, 路由链接, 块级展示]
-  description: 通常用于页面顶部的导航菜单，放置 Logo、导航链接、用户信息等。
+  title: Navigation Bar
+  labels: [UI Component, Routing Link, Block-Level Display]
+  description: Usually used for the navigation menu at the top of the page to place logos, navigation links, user information, etc.
   attrs:
     - name: router
       type: boolean
       default: true
-      description: 是否根据 vue-router 来控制选择项
+      description: Whether to control the selection according to vue-router
     - name: value.sync, v-model
       type: any
       default: null
-      description: 当前选择的值
+      description: The currently selected value
     - name: field
       type: string
       default: text
-      description: 显示文本字段
+      description: Display text field
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Whether it is read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
   slots:
     - name: default
-      description: 中部区域，可插入`<u-navbar-item>`、`<u-navbar-divider>`等子组件，或其他 HTML。
+      description: The middle area, where you can insert subcomponents such as `<u-navbar-item>`, `<u-navbar-divider>`, or other HTML.
     - name: left
-      description: 左部区域。
+      description: The left area.
     - name: right
-      description: 右部区域。
+      description: The right area.
   events:
     - name: click
-      description: 点击此项时触发，与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。
+      description: Triggered when this item is clicked. Unlike the native click event, it will only be triggered when it is not read-only and disabled.
       params:
         - name: $event
           type: MouseEvent
-          description: 鼠标事件对象
+          description: Mouse event object
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance
     - name: before-select
-      description: 选择某一项前触发
+      description: Triggered before selecting an item
       params:
         - name: $event.value
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.itemVM
           type: NavbarItem
-          description: 选择项子组件
+          description: Select item subcomponent
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance
     - name: input
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance
     - name: select
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event.value
           type: any
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.oldItem
           type: object
-          description: 旧的选择项相关对象
+          description: Old selection related object
         - name: $event.itemVM
           type: UNavbarItem
-          description: 选择项子组件
+          description: Select item subcomponent
         - name: $event.oldVM
           type: UNavbarItem
-          description: 旧的选择项子组件
+          description: The old selection subcomponent
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance
     - name: change
-      description: 选择值改变时触发
+      description: Triggered when the selected value changes
       params:
         - name: $event.value
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.oldItem
           type: object
-          description: 旧的选择项相关对象
+          description: Old selection related object
         - name: $event.itemVM
           type: UNavbarItem
-          description: 选择项子组件
+          description: Select item subcomponent
         - name: $event.oldVM
           type: UNavbarItem
-          description: 旧的选择项子组件
+          description: The old selection subcomponent
         - name: senderVM
           type: UNavbar
-          description: 发送事件实例
+          description: Send event instance
 - name: u-navbar-item
   attrs:
     - name: value
       type: any
       default: null
-      description: 此项的值
+      description: The value of this item
     - name: disabled
       type: boolean
       default: false
-      description: 禁用此项
+      description: Disable this option
     - name: item
       type: object
       default: null
-      description: 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发
+      description: Related object. When this option is selected, the thrown event will pass this object, which is convenient for development
     - name: href
       type: string
       default: null
-      description: 链接地址
+      description: Link address
     - name: target
       type: string
       default: null
-      description: 打开方式
+      description: Open method
     - name: to
       type: string, Location
       default: null
-      description: 需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。
+      description: Requires vue-router, same as the `to` property of `<router-link>`. Can be a string or an object describing the target location.
     - name: replace
       type: boolean
       default: false
-      description: 需要
-        vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history
-        `记录。
+      description: Required
+        vue-router, same as the `replace` property of `<router-link>`. If `true`, when clicking, `router.replace()` will be called instead of `router.push()`, so that `history` will not be left after navigation
+        `Record.
     - name: exact
       type: boolean
       default: false
-      description: 需要 vue-router，与`<router-link>`的`exact`属性相同。是否与路由完全一致时才高亮显示。
+      description: Requires vue-router, same as the `exact` property of `<router-link>`. Highlights only when it is exactly the same as the route.
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.
   events:
     - name: before-select
-      description: 选择此项前触发
+      description: Triggered before selecting this item
       params:
         - name: $event.value
           type: any
-          description: 此项的值
+          description: The value of this item
         - name: $event.item
           type: object
-          description: 此项的相关对象
+          description: The object associated with this item
         - name: $event.itemVM
           type: UNavbarItem
-          description: 此组件
+          description: This component
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance
     - name: before-navigate
-      description: 使用router相关属性切换路由前触发
+      description: Triggered before switching routes using router related attributes
       params:
         - name: $event.to
           type: string, Location
-          description: "`to`属性的值"
+          description: "The value of the `to` property"
         - name: $event.replace
           type: boolean
-          description: "`replace`属性的值"
+          description: "The value of the `replace` property"
         - name: $event.exact
           type: boolean
-          description: "`exact`属性的值"
+          description: "The value of the `exact` property"
         - name: $event.preventDefault
           type: Function
-          description: 阻止切换流程
+          description: Prevent switching process
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance
     - name: navigate
-      description: 使用router相关属性切换路由时触发
+      description: Triggered when switching routes using router related attributes
       params:
         - name: $event.to
           type: string, Location
-          description: "`to`属性的值"
+          description: "The value of the `to` property"
         - name: $event.replace
           type: boolean
-          description: "`replace`属性的值"
+          description: "The value of the `replace` property"
         - name: $event.exact
           type: boolean
-          description: "`exact`属性的值"
+          description: "The value of the `exact` property"
         - name: senderVM
-          type: Vue
-          description: 发送事件实例
+          type: View
+          description: Send event instance
 - name: u-navbar-divider
 - name: u-navbar-dropdown
   attrs:
     - name: trigger
       type: string
       default: hover
-      description: 触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`,
+      description: Trigger method. Optional values - `'click'`, `'hover'`, `'right-click'`, `'double-click'`,
         `'manual'`
     - name: placement
       type: string
       default: bottom
-      description: 弹出方位。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`,
+      description: Pop-up position. Optional values - `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`,
         `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',`
         'left-end'`, `'right-start'`, `'right-end'`
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
 - name: u-navbar-menu、-u-navbar-menu-group、-u-navbar-menu-item、-u-navbar-menu-divider
 - name: u-navbar-select、-u-navbar-select-group、-u-navbar-select-item、-u-navbar-select-divider

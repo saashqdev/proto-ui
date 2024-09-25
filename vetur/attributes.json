@@ -2012,7 +2012,7 @@
   },
   "u-text/color": {
     "type": "string",
-    "description": "颜色扩展。可选值：`'default'`, `'primary'`, `'error'`, `'disabled'`"
+    "description": "Color Extension。可选值：`'default'`, `'primary'`, `'error'`, `'disabled'`"
   },
   "u-text/display": {
     "type": "string",

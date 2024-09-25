@@ -1,12 +1,12 @@
-### 其他
-#### 只读与禁用
+### Other
+#### Read Only and Disabled
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-navbar readonly>
-        <u-navbar-item>指南</u-navbar-item>
-        <u-navbar-item to="/proto-ui">组件</u-navbar-item>
-        <u-navbar-dropdown title="下拉菜单">
+        <u-navbar-item>Multi-Level Menu</u-navbar-item>
+        <u-navbar-item to="/proto-ui">Components</u-navbar-item>
+        <u-navbar-dropdown title="Drop-down Menu">
             <u-navbar-menu>
                 <u-navbar-menu-item>Basic</u-navbar-menu-item>
                 <u-navbar-menu-item>Layout</u-navbar-menu-item>
@@ -20,17 +20,17 @@
             </u-navbar-menu>
         </u-navbar-dropdown>
         <u-navbar-select>
-            <u-navbar-select-item>请选择</u-navbar-select-item>
-            <u-navbar-select-item>中文</u-navbar-select-item>
+            <u-navbar-select-item>Please select</u-navbar-select-item>
+            <u-navbar-select-item>Chinese</u-navbar-select-item>
             <u-navbar-select-item>English</u-navbar-select-item>
             <u-navbar-select-item>Français</u-navbar-select-item>
             <u-navbar-select-item>Русский</u-navbar-select-item>
         </u-navbar-select>
     </u-navbar>
     <u-navbar disabled>
-        <u-navbar-item>指南</u-navbar-item>
-        <u-navbar-item to="/proto-ui">组件</u-navbar-item>
-        <u-navbar-dropdown title="下拉菜单">
+        <u-navbar-item>Multi-Level Menu</u-navbar-item>
+        <u-navbar-item to="/proto-ui">Components</u-navbar-item>
+        <u-navbar-dropdown title="Drop-Down Menu">
             <u-navbar-menu>
                 <u-navbar-menu-item>Basic</u-navbar-menu-item>
                 <u-navbar-menu-item>Layout</u-navbar-menu-item>
@@ -44,8 +44,8 @@
             </u-navbar-menu>
         </u-navbar-dropdown>
         <u-navbar-select>
-            <u-navbar-select-item>请选择</u-navbar-select-item>
-            <u-navbar-select-item>中文</u-navbar-select-item>
+            <u-navbar-select-item>Please select</u-navbar-select-item>
+            <u-navbar-select-item>Chinese</u-navbar-select-item>
             <u-navbar-select-item>English</u-navbar-select-item>
             <u-navbar-select-item>Français</u-navbar-select-item>
             <u-navbar-select-item>Русский</u-navbar-select-item>

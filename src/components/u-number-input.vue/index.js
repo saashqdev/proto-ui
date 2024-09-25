@@ -7,7 +7,7 @@ export const UNumberInput = {
     mixins: [MField],
     directives: { repeatClick },
     props: {
-        // String 类型是为了验证抛出
+        // String type is thrown for validation
         value: { type: [Number, String], default: 0 },
         defaultValue: [String, Number],
         min: { type: Number, default: -Infinity },
@@ -22,7 +22,7 @@ export const UNumberInput = {
     data() {
         const data = {
             currentValue: this.fix(this.value),
-            // 格式化后的 value，与`<input>`中的实际值保持一致
+            // The formatted value is consistent with the actual value in `<input>`
             formattedValue: this.value,
             currentFormatter: undefined,
         };
@@ -34,7 +34,7 @@ export const UNumberInput = {
         else
             data.currentFormatter = noopFormatter;
 
-        // 初始值需要在最小值和最大值范围之内
+        // The initial value needs to be within the minimum and maximum range
         data.formattedValue = data.currentFormatter.format(data.currentValue);
 
         return data;
@@ -65,17 +65,17 @@ export const UNumberInput = {
     },
     methods: {
         fix(value) {
-            // 为空时使用默认值
+            // Use default value if empty
             if (typeof value === 'string' && value.trim() === '' || value === null)
                 value = this.defaultValue !== undefined ? this.defaultValue : this.currentValue || 0;
             else if (isNaN(value))
                 value = this.currentValue || this.defaultValue || 0;
             value = +value;
-            // 精度约束
+            // Accuracy constraints
             value = Math.round(value / this.precision) * this.precision;
-            // 最大最小约束
+            // Maximum constraints
             value = Math.min(Math.max(this.min, value), this.max);
-            // 保留小数位数
+            // Keep decimal places
             value = +value.toFixed(this.precision < 1 ? -Math.floor(Math.log10(this.precision)) : 0);
             return value;
         },
@@ -87,8 +87,8 @@ export const UNumberInput = {
             return String(this.fix(value)) === String(value);
         },
         /**
-         * 单纯输入
-         * @param {*} value 输入值
+         * Simple input
+         * @param {*} value input value
          */
         input(value) {
             if (this.readonly || this.disabled)
@@ -110,7 +110,7 @@ export const UNumberInput = {
             }, this);
         },
         /**
-         * 按上下按钮发送 adjust 事件
+         * Send adjust event when pressing up or down button
          * @param {*} value
          */
         adjust(value) {

@@ -1,14 +1,14 @@
 - name: u-loading
-  title: 加载中
+  title: Loading
   attrs:
     - name: size
       type: string
       default: normal
-      description: 图标的大小。可选值：`'small'`, `'normal'`, `'large'`
+      description: The size of the icon. Optional values - `'small'`, `'normal'`, `'large'`
     - name: display
       type: string
       default: inline
-      description: 展示方式。可选值：`'inline'`表示按行内展示，`'block'`表示按块级展示，`'full'`表示填充定位父元素（offsetParent），`'fullWindow'`表示填充整个浏览器
+      description: display method. Optional values - `'inline'` means display in line, `'block'` means display at block level, `'full'` means filling the positioned parent element (offsetParent), `'fullWindow'` means filling the entire browser
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.

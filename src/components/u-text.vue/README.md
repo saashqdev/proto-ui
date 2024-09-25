@@ -7,7 +7,7 @@
 用于在业务中临时快速地调整文本大小、颜色等特性。不建议在封装基础组件时使用。
 
 ## Example
-### 大小扩展
+### Size Expansion
 
 ``` html
 <u-linear-layout>
@@ -17,7 +17,7 @@
 </u-linear-layout>
 ```
 
-### 颜色扩展
+### Color Extension
 
 ``` html
 <u-linear-layout>
@@ -55,6 +55,6 @@
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
 | size | string |  | `'normal'` | 大小扩展。可选值：`'small'`, `'normal'`, `'large'` |
-| color | string |  | `'default'` | 颜色扩展。可选值：`'default'`, `'primary'`, `'error'`, `'disabled'` |
+| color | string |  | `'default'` | Color Extension。可选值：`'default'`, `'primary'`, `'error'`, `'disabled'` |
 | display | string |  | `'inline'` | 展示方式。可选值：`'inline'`, `'block'` |
 | wrap | string |  | `'normal'` | 换行方式。可选值：`'normal'`表示默认方式，`'ellipsis'`表示多余的文本省略，`'break'`表示强制换行且英文自动添加换行符，`'nowrap'`表示始终不换行。 |
