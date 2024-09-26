@@ -1,126 +1,126 @@
 - name: u-textarea
-  title: 多行输入
-  labels: [UI 组件, 表单控件, 行内展示]
-  description: 多行输入组件，在原生`<textarea>`控件基础上进行了一些功能扩展。
+  title: Multi-Line Input
+  labels: [UI Components, Form Controls, Inline Display]
+  description: A multi-line input component that extends the functionality of the native `<textarea>` control.
   attrs:
     - name: value
       type: string
       default: null
-      description: 输入框的值
+      description: The value of the input box
     - name: value.sync, v-model
       type: string
       default: null
-      description: 输入框的值
+      description: The value of the input box
     - name: clearable
       type: boolean
       default: null
-      description: 是否可清空。开启并在输入框有内容时会显示清空按钮。
+      description: Whether it can be cleared. If it is turned on, a clear button will be displayed when there is content in the input box.
     - name: placeholder
       type: string
       default: null
-      description: 原生属性。对 IE9 做了兼容。
+      description: Native property. Compatible with IE9.
     - name: minlength
       type: number
       default: null
-      description: 原生属性
+      description: Native property
     - name: maxlength
       type: number
       default: null
-      description: 原生属性
+      description: Native property
     - name: spellcheck
       type: boolean
       default: null
-      description: 原生属性
+      description: Native property
     - name: autofocus
       type: boolean
       default: null
-      description: 是否自动获取焦点
+      description: Whether to automatically get the focus
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
     - name: resize
       type: string
       default: none
-      description: 是否可以调整大小。可选值：`'none'`、`'both'`、`'horizontal'`、`'vertical'`
+      description: Whether the size can be adjusted. Optional values - `'none'`, `'both'`, `'horizontal'`, `'vertical'`
   events:
     - name: input
-      description: 输入时触发。
+      description: Triggered on input.
       params:
         - name: $event
           type: string
-          description: 输入框的值
+          description: The value of the input box
         - name: senderVM
           type: UTextarea
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 值变化时触发。（注意：与原生事件不同）
+      description: Triggered when the value changes. (Note - different from native events)
       params:
         - name: $event.value
           type: string
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: string
-          description: 旧的值
+          description: Old value
         - name: senderVM
           type: UTextarea
-          description: 发送事件实例
+          description: Send event instance
     - name: focus
-      description: 获得焦点时触发。
+      description: Fired when the focus is obtained.
       params:
         - name: $event
           type: FocusEvent
-          description: 原生事件对象
+          description: Native event object
         - name: senderVM
           type: UTextarea
-          description: 发送事件实例
+          description: Send event instance
     - name: blur
-      description: 失去焦点时触发。
+      description: Fired when losing focus.
       params:
         - name: $event
           type: FocusEvent
-          description: 原生事件对象
+          description: Native event object
         - name: senderVM
           type: UTextarea
-          description: 发送事件实例
+          description: Send event instance
     - name: before-clear
-      description: 清空前触发。
+      description: Triggered before clearing.
       params:
         - name: $event.value
           type: string
-          description: 清空后的值
+          description: The value after clearing
         - name: $event.oldValue
           type: string
-          description: 待清空的值
+          description: The value to be cleared
         - name: $event.preventDefault
           type: Function
-          description: 阻止清空流程
+          description: Prevent the clearing process
         - name: senderVM
           type: UTextarea
-          description: 发送事件实例
+          description: Send event instance
     - name: clear
-      description: 清空时触发。
+      description: Triggered when cleared.
       params:
         - name: $event.value
           type: string
-          description: 清空后的值
+          description: The value after clearing
         - name: $event.oldValue
           type: string
-          description: 旧的值
+          description: Old value
         - name: senderVM
           type: UTextarea
-          description: 发送事件实例
+          description: Send event instance
   methods:
     - name: focus()
-      description: 让输入框获取焦点。
+      description: Make the input box get focus.
       params: []
     - name: blur()
-      description: 让输入框失去焦点。
+      description: Make the input box lose focus.
       params: []
     - name: clear()
-      description: 清空输入框。
+      description: Clear the input box.
       params: []

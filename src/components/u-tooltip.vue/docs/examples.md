@@ -3,10 +3,10 @@
 ``` html
 <u-linear-layout>
     <u-button>
-        直接插入
-        <u-tooltip>直接插入<u-link>文本</u-link>或<u-link>HTML</u-link></u-tooltip>
+        Insert Directly
+        <u-tooltip>Insert <u-link>Text</u-link> or <u-link>HTML</u-link></u-tooltip> directly
     </u-button>
-    <u-button v-tooltip="'指令中只能插入文本'">Instructions</u-button>
+    <u-button v-tooltip="'Only text can be inserted in instructions'">Instructions</u-button>
 </u-linear-layout>
 ```
 
@@ -15,11 +15,11 @@
 ``` html
 <u-linear-layout>
     <u-button>
-        Hover（默认）
+        Hover (default)
         <u-tooltip trigger="hover">Tooltip</u-tooltip>
     </u-button>
     <u-button>
-        click
+        Click
         <u-tooltip trigger="click">Tooltip</u-tooltip>
     </u-button>
     <u-button>
@@ -33,20 +33,20 @@
 </u-linear-layout>
 ```
 
-#### 指令形式
+#### Command Form
 
 ``` html
 <u-linear-layout>
-    <u-button v-tooltip="'Tooltip'">hover（默认）</u-button>
-    <u-button v-tooltip.click="'Tooltip'">click</u-button>
-    <u-button v-tooltip.right-click="'Tooltip'">right-click</u-button>
-    <u-button v-tooltip.double-click="'Tooltip'">double-click</u-button>
+    <u-button v-tooltip="'Tooltip'">Hover (default)</u-button>
+    <u-button v-tooltip.click="'Tooltip'">Click</u-button>
+    <u-button v-tooltip.right-click="'Tooltip'">Right-Click</u-button>
+    <u-button v-tooltip.double-click="'Tooltip'">Double-Click</u-button>
 </u-linear-layout>
 ```
 
 #### Manual Trigger
 
-也可以手动触发工具提示的弹出/关闭：
+It is also possible to manually trigger the popup/close of the tooltip:
 
 ``` vue
 <template>
@@ -130,36 +130,36 @@ export default {
 </u-linear-layout>
 ```
 
-#### 指令形式
+#### Instruction Form
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
-        <u-button v-tooltip.top-start="'Tooltip'">top-start</u-button>
-        <u-button v-tooltip.top="'Tooltip'">top</u-button>
-        <u-button v-tooltip.top-end="'Tooltip'">top-end</u-button>
+        <u-button v-tooltip.top-start="'Tooltip'">Top-Start</u-button>
+        <u-button v-tooltip.top="'Tooltip'">Top</u-button>
+        <u-button v-tooltip.top-end="'Tooltip'">Top-End</u-button>
     </u-linear-layout>
     <u-linear-layout>
-        <u-button v-tooltip.left-start="'Tooltip'">left-start</u-button>
-        <u-button v-tooltip.left="'Tooltip'">left</u-button>
-        <u-button v-tooltip.left-end="'Tooltip'">left-end</u-button>
+        <u-button v-tooltip.left-start="'Tooltip'">Left-Start</u-button>
+        <u-button v-tooltip.left="'Tooltip'">Left</u-button>
+        <u-button v-tooltip.left-end="'Tooltip'">Left-End</u-button>
     </u-linear-layout>
     <u-linear-layout>
-        <u-button v-tooltip.right-start="'Tooltip'">right-start</u-button>
-        <u-button v-tooltip.right="'Tooltip'">right</u-button>
-        <u-button v-tooltip.right-end="'Tooltip'">right-end</u-button>
+        <u-button v-tooltip.right-start="'Tooltip'">Right-Start</u-button>
+        <u-button v-tooltip.right="'Tooltip'">Right</u-button>
+        <u-button v-tooltip.right-end="'Tooltip'">Right-End</u-button>
     </u-linear-layout>
     <u-linear-layout>
-        <u-button v-tooltip.bottom-start="'Tooltip'">bottom-start</u-button>
-        <u-button v-tooltip.bottom="'Tooltip'">bottom</u-button>
-        <u-button v-tooltip.bottom-end="'Tooltip'">bottom-end</u-button>
+        <u-button v-tooltip.bottom-start="'Tooltip'">Bottom-Start</u-button>
+        <u-button v-tooltip.bottom="'Tooltip'">Bottom</u-button>
+        <u-button v-tooltip.bottom-end="'Tooltip'">Bottom-End</u-button>
     </u-linear-layout>
 </u-linear-layout>
 ```
 
 #### Follow Mouse
 
-将`'follow-cursor'`属性设置为`true`可以跟随鼠标。也可以传一个数字或对象调整位置偏移。
+Set the `'follow-cursor'` property to `true` to follow the mouse. You can also pass a number or object to adjust the position offset.
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -222,7 +222,7 @@ export default {
 </u-linear-layout>
 ```
 
-### Hover 时延迟消失
+### Delay Disappears when Wovering
 
 ``` html
 <u-linear-layout>
@@ -236,7 +236,7 @@ export default {
 
 ``` html
 <u-button disabled>
-    disabled
+    Disabled
     <u-tooltip content="Tooltip" disabled>disabled</u-tooltip>
 </u-button>
 ```

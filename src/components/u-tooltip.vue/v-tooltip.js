@@ -1,8 +1,8 @@
 import Vue from 'vue';
 
 /**
- * 给任意元素添加`<u-tooltip>`工具提示效果
- * @value 需要绑定的内容
+ * Add `<u-tooltip>` tooltip effect to any element
+ * @value The content that needs to be bound
  */
 const directive = {
     handle(binding) {

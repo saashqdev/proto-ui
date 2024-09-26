@@ -24,7 +24,7 @@ export default {
 </script>
 ```
 
-### Disable某一项
+### Disable a Certain Item
 
 ``` vue
 <template>

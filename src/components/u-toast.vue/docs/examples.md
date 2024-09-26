@@ -23,7 +23,7 @@ export default {
 </script>
 ```
 
-### 位置扩展
+### Location Extension
 
 ``` vue
 <template>
@@ -49,25 +49,25 @@ export default {
 </script>
 ```
 
-### 嵌入文档流
+### Embed Document Stream
 
-上面的 Toast 都是以`fixed`的形式固定在浏览器中，也可以将Toast嵌入文档流。只需使用`u-toast`标签，并设置`position="static"`即可。
+The above Toasts are all fixed in the browser in the form of `fixed`, and the Toasts can also be embedded in the document stream. Just use the `u-toast` tag and set `position="static"`.
 
 ``` html
 <p><u-button @click="$refs.staticToast.show()">Static</u-button></p>
 <u-toast ref="staticToast" position="static" text="Static Toast"></u-toast>
 ```
 
-### 可关闭
+### Can be Closed
 
 ``` html
 <p><u-button @click="$refs.closableToast.show()">Static</u-button></p>
 <u-toast ref="closableToast" position="static" text="Closable" :duration="0" closable></u-toast>
 ```
 
-### 提示停留时间
+### Prompt Stay Time
 
-可以通过设置toast的`duration`参数设置所有提示的停留时间，也可以在`show`的时候单独设置该条提示的停留时间，单位为毫秒。
+You can set the dwell time of all prompts by setting the `duration` parameter of toast, or you can set the dwell time of this prompt individually during `show`, in milliseconds.
 
 ``` vue
 <template>
@@ -90,9 +90,9 @@ export default {
 </script>
 ```
 
-### 始终显示一条
+### Always Show One
 
-将`single`设置为`true`，可以让toast始终只显示一条提示。
+Setting `single` to `true` allows toast to always display only one prompt.
 
 ``` vue
 <template>

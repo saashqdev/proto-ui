@@ -1,15 +1,15 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UTextarea 多行输入
+# UTextarea Multi-Line Input
 
-**UI 组件**, **表单控件**, **行内展示**
+**UI Components**, **Form Controls**, **Inline Display**
 
-多行输入组件，在原生`<textarea>`控件基础上进行了一些功能扩展。
+The multi-line input component has some functional extensions based on the native `<textarea>` control.
 
 ## Example
 ### Basic Usage
 
-大部分属性与`<textarea>`元素一致。
+Most of the attributes are consistent with the `<textarea>` element.
 
 ``` html
 <u-textarea placeholder="Details" autofocus></u-textarea>
@@ -17,13 +17,13 @@
 
 ### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行Two-Way Binding。
+Use `v-model` or `:value.sync` for Two-Way Binding.
 
-``` vue
+```vue
 <template>
 <u-linear-layout>
-    <u-textarea v-model="value" placeholder="请输入"></u-textarea>
-    <u-textarea :value.sync="value" placeholder="请输入"></u-textarea>
+    <u-textarea v-model="value" placeholder="Please enter"></u-textarea>
+    <u-textarea :value.sync="value" placeholder="Please enter"></u-textarea>
 </u-linear-layout>
 </template>
 
@@ -31,51 +31,51 @@
 export default {
     data() {
         return {
-            value: '一段很长很长的文本',
+            value: 'A very long text',
         };
     },
 };
 </script>
 ```
 
-### 只读与禁用
+### Read Only and Disabled
 
 ``` html
 <u-linear-layout>
-    <u-textarea value="只读" readonly></u-textarea>
-    <u-textarea value="禁用" disabled></u-textarea>
+    <u-textarea value="readonly" readonly></u-textarea>
+    <u-textarea value="disabled" disabled></u-textarea>
 </u-linear-layout>
 ```
 
-### 调整大小
+### Resize
 
-通过设置`resize`属性，决定水平垂直方向是否可以调整大小。
+By setting the `resize` attribute, determine whether the size can be resized horizontally and vertically.
 
 ``` html
 <u-linear-layout direction="vertical">
-    <div><u-textarea placeholder="none" resize="none"></u-textarea></div>
-    <div><u-textarea placeholder="vertical（默认）" resize="vertical"></u-textarea></div>
-    <div><u-textarea placeholder="horizontal" resize="horizontal"></u-textarea></div>
-    <div><u-textarea placeholder="both" resize="both"></u-textarea></div>
+    <div><u-textarea placeholder="None" resize="none"></u-textarea></div>
+    <div><u-textarea placeholder="Vertical (default)" resize="vertical"></u-textarea></div>
+    <div><u-textarea placeholder="Horizontal" resize="horizontal"></u-textarea></div>
+    <div><u-textarea placeholder="Both" resize="both"></u-textarea></div>
 </u-linear-layout>
 ```
 
 ### Can be Cleared
 
-开启`clearable`属性，在输入框有内容时会显示清空按钮。
+Turn on the `clearable` attribute, and the clear button will be displayed when the input box has content.
 
 ``` html
-<u-textarea value="可清空" clearable></u-textarea>
+<u-textarea value="clearable" clearable></u-textarea>
 ```
 
 ### Display Method
 
-默认为行内展示，可以将`display`设置为块级展示。
+The default is inline display, and `display` can be set to block-level display.
 
 ``` html
 <u-linear-layout direction="vertical" gap="small">
-    <u-textarea placeholder="行内展示（默认）"></u-textarea> Align to Text
-    <u-textarea display="block" placeholder="块级展示"></u-textarea>
+    <u-textarea placeholder="Inline display (default)"></u-textarea> Align to Text
+    <u-textarea display="block" placeholder="Block-level display"></u-textarea>
 </u-linear-layout>
 ```
 
@@ -84,97 +84,97 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | string |  |  | 输入框的值 |
-| value.sync, v-model | string |  |  | 输入框的值 |
-| clearable | boolean |  |  | 是否可清空。开启并在输入框有内容时会显示清空按钮。 |
-| placeholder | string |  |  | 原生属性。对 IE9 做了兼容。 |
-| minlength | number |  |  | 原生属性 |
-| maxlength | number |  |  | 原生属性 |
-| spellcheck | boolean |  |  | 原生属性 |
-| autofocus | boolean |  |  | 是否自动获取焦点 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
-| resize | string |  | `'none'` | 是否可以调整大小。可选值：`'none'`、`'both'`、`'horizontal'`、`'vertical'` |
+| value | string | | | The value of the input box |
+| value.sync, v-model | string | | | The value of the input box |
+| clearable | boolean | | | Whether it can be cleared. Enable and display a clear button when the input box contains content. |
+| placeholder | string | | | Native attributes. Compatible with IE9. |
+| minlength | number | | | Native attributes |
+| maxlength | number | | | Native properties |
+| spellcheck | boolean | | | Native properties |
+| autofocus | boolean | | | Whether to automatically obtain focus |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
+| resize | string | | `'none'` | Whether it can be resized. Optional values: `'none'`, `'both'`, `'horizontal'`, `'vertical'` |
 
 ### Events
 
 #### @input
 
-输入时触发。
+Fires on input.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | string | 输入框的值 |
-| senderVM | UTextarea | 发送事件实例 |
+| $event | string | Value of input box |
+| senderVM | UTextarea | Send event instance |
 
 #### @change
 
-值变化时触发。（注意：与原生事件不同）
+Fires when the value changes. (Note: Different from native events)
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | string | 改变后的值 |
-| $event.oldValue | string | 旧的值 |
-| senderVM | UTextarea | 发送事件实例 |
+| $event.value | string | Changed value |
+| $event.oldValue | string | Old value |
+| senderVM | UTextarea | Send event instance |
 
 #### @focus
 
-获得焦点时触发。
+Triggered when focus is obtained.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | FocusEvent | 原生事件对象 |
-| senderVM | UTextarea | 发送事件实例 |
+| $event | FocusEvent | Native event object |
+| senderVM | UTextarea | Send event instance |
 
 #### @blur
 
-失去焦点时触发。
+Fired when focus is lost.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | FocusEvent | 原生事件对象 |
-| senderVM | UTextarea | 发送事件实例 |
+| $event | FocusEvent | Native event object |
+| senderVM | UTextarea | Send event instance |
 
 #### @before-clear
 
-清空前触发。
+Triggered before clearing.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | string | 清空后的值 |
-| $event.oldValue | string | 待清空的值 |
-| $event.preventDefault | Function | 阻止清空流程 |
-| senderVM | UTextarea | 发送事件实例 |
+| $event.value | string | Cleared value |
+| $event.oldValue | string | The value to be cleared |
+| $event.preventDefault | Function | Prevent the clearing process |
+| senderVM | UTextarea | Send event instance |
 
 #### @clear
 
-清空时触发。
+Triggered when cleared.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | string | 清空后的值 |
-| $event.oldValue | string | 旧的值 |
-| senderVM | UTextarea | 发送事件实例 |
+| $event.value | string | Cleared value |
+| $event.oldValue | string | Old value |
+| senderVM | UTextarea | Send event instance |
 
 ### Methods
 
 #### focus()
 
-让输入框获取焦点。
+Let the input box get focus.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### blur()
 
-让输入框失去焦点。
+Let the input box lose focus.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### clear()
 
-清空输入框。
+Clear the input box.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |

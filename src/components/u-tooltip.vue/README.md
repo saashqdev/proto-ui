@@ -1,6 +1,6 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UTooltip 工具提示
+# UTooltip Tooltip
 
 ## Example
 ### Basic Usage
@@ -8,10 +8,10 @@
 ``` html
 <u-linear-layout>
     <u-button>
-        直接插入
-        <u-tooltip>直接插入<u-link>文本</u-link>或<u-link>HTML</u-link></u-tooltip>
+        Insert Directly
+        <u-tooltip>Insert <u-link>Text</u-link> or <u-link>HTML</u-link></u-tooltip> directly
     </u-button>
-    <u-button v-tooltip="'指令中只能插入文本'">Instructions</u-button>
+    <u-button v-tooltip="'Only text can be inserted in instructions'">Instructions</u-button>
 </u-linear-layout>
 ```
 
@@ -20,11 +20,11 @@
 ``` html
 <u-linear-layout>
     <u-button>
-        Hover（默认）
+        Hover（default）
         <u-tooltip trigger="hover">Tooltip</u-tooltip>
     </u-button>
     <u-button>
-        click
+        Click
         <u-tooltip trigger="click">Tooltip</u-tooltip>
     </u-button>
     <u-button>
@@ -38,20 +38,20 @@
 </u-linear-layout>
 ```
 
-#### 指令形式
+#### Instruction Form
 
 ``` html
 <u-linear-layout>
-    <u-button v-tooltip="'Tooltip'">hover（默认）</u-button>
-    <u-button v-tooltip.click="'Tooltip'">click</u-button>
-    <u-button v-tooltip.right-click="'Tooltip'">right-click</u-button>
-    <u-button v-tooltip.double-click="'Tooltip'">double-click</u-button>
+    <u-button v-tooltip="'Tooltip'">Hover（default）</u-button>
+    <u-button v-tooltip.click="'Tooltip'">Click</u-button>
+    <u-button v-tooltip.right-click="'Tooltip'">Right-Click</u-button>
+    <u-button v-tooltip.double-click="'Tooltip'">Double-Click</u-button>
 </u-linear-layout>
 ```
 
 #### Manual Trigger
 
-也可以手动触发工具提示的弹出/关闭：
+It is also possible to manually trigger the popup/close of the tooltip:
 
 ``` vue
 <template>
@@ -135,36 +135,36 @@ export default {
 </u-linear-layout>
 ```
 
-#### 指令形式
+#### Instruction Form
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
-        <u-button v-tooltip.top-start="'Tooltip'">top-start</u-button>
-        <u-button v-tooltip.top="'Tooltip'">top</u-button>
-        <u-button v-tooltip.top-end="'Tooltip'">top-end</u-button>
+        <u-button v-tooltip.top-start="'Tooltip'">Top-Start</u-button>
+        <u-button v-tooltip.top="'Tooltip'">Top</u-button>
+        <u-button v-tooltip.top-end="'Tooltip'">Top-End</u-button>
     </u-linear-layout>
     <u-linear-layout>
-        <u-button v-tooltip.left-start="'Tooltip'">left-start</u-button>
-        <u-button v-tooltip.left="'Tooltip'">left</u-button>
-        <u-button v-tooltip.left-end="'Tooltip'">left-end</u-button>
+        <u-button v-tooltip.left-start="'Tooltip'">Left-Start</u-button>
+        <u-button v-tooltip.left="'Tooltip'">Left</u-button>
+        <u-button v-tooltip.left-end="'Tooltip'">Left-End</u-button>
     </u-linear-layout>
     <u-linear-layout>
-        <u-button v-tooltip.right-start="'Tooltip'">right-start</u-button>
-        <u-button v-tooltip.right="'Tooltip'">right</u-button>
-        <u-button v-tooltip.right-end="'Tooltip'">right-end</u-button>
+        <u-button v-tooltip.right-start="'Tooltip'">Right-Start</u-button>
+        <u-button v-tooltip.right="'Tooltip'">Right</u-button>
+        <u-button v-tooltip.right-end="'Tooltip'">Right-End</u-button>
     </u-linear-layout>
     <u-linear-layout>
-        <u-button v-tooltip.bottom-start="'Tooltip'">bottom-start</u-button>
-        <u-button v-tooltip.bottom="'Tooltip'">bottom</u-button>
-        <u-button v-tooltip.bottom-end="'Tooltip'">bottom-end</u-button>
+        <u-button v-tooltip.bottom-start="'Tooltip'">Bottom-Start</u-button>
+        <u-button v-tooltip.bottom="'Tooltip'">Bottom</u-button>
+        <u-button v-tooltip.bottom-end="'Tooltip'">Bottom-End</u-button>
     </u-linear-layout>
 </u-linear-layout>
 ```
 
 #### Follow Mouse
 
-将`'follow-cursor'`属性设置为`true`可以跟随鼠标。也可以传一个数字或对象调整位置偏移。
+Set the `'follow-cursor'` property to `true` to follow the mouse. You can also pass a number or object to adjust the position offset.
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -227,7 +227,7 @@ export default {
 </u-linear-layout>
 ```
 
-### Hover 时延迟消失
+### Delay Disappears when Hovering
 
 ``` html
 <u-linear-layout>
@@ -241,7 +241,7 @@ export default {
 
 ``` html
 <u-button disabled>
-    disabled
+    Disabled
     <u-tooltip content="Tooltip" disabled>disabled</u-tooltip>
 </u-button>
 ```
@@ -251,65 +251,65 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| opened.sync | boolean |  | `false` | 弹出/关闭状态 |
-| trigger | string |  | `'hover'` | 工具提示的触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
-| placement | string |  | `'bottom'` | 工具提示的弹出方向。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
-| hide-delay | number |  | `0` | 提示内容消失延迟时间，单位是 ms |
-| offset | string |  | `'0'` | 弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px` |
-| follow-cursor | boolean, number, object |  | `false` | 是否跟随鼠标 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| opened.sync | boolean | | `false` | Popup/closed status |
+| trigger | string | | `'hover'` | How to trigger tooltips. Optional values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
+| placement | string | | `'bottom'` | The popup direction of the tooltip. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start' `, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
+| hide-delay | number | | `0` | Delay time for prompt content to disappear, unit is ms |
+| offset | string | | `'0'` | Pop-up layer offset, such as: '10', '10px 10px', '10% 10%', the first value represents horizontal offset, the second value represents vertical Displacement, the default unit is `px` |
+| follow-cursor | boolean, number, object | | `false` | Whether to follow the mouse |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入需要弹出的内容。
+Insert the content that needs to pop up.
 
-#### popper
+#### Popper
 
-自定义整个弹出层。
+Customize the entire popup layer.
 
-#### body
+#### Body
 
-自定义滚动区域。
+Custom scroll area.
 
 ### Events
 
 #### @before-open
 
-弹出前触发。
+Triggered before pop-up.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止弹出流程 |
-| senderVM | UTooltip | 发送事件实例 |
+| $event.preventDefault | Function | Prevent pop-up process |
+| senderVM | UTooltip | Send event instance |
 
 #### @open
 
-弹出时触发。
+Fired on popup.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | UTooltip | 发送事件实例 |
+| $event | | Empty |
+| senderVM | UTooltip | Send event instance |
 
 #### @before-close
 
-隐藏前触发。
+Triggered before hiding.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止隐藏流程 |
-| senderVM | UTooltip | 发送事件实例 |
+| $event.preventDefault | Function | Prevent hidden process |
+| senderVM | UTooltip | Send event instance |
 
 #### @close
 
-隐藏时触发。
+Triggered when hidden.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | UTooltip | 发送事件实例 |
+| $event | | Empty |
+| senderVM | UTooltip | Send event instance |
 
 #### @before-toggle
 
@@ -329,36 +329,36 @@ export default {
 
 #### open()
 
-弹出实例。
+Pop up instance.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### close()
 
-关闭实例。
+Shut down the instance.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### toggle(opened?)
 
-切换弹出/关闭状态。
+Toggle popup/closed state.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| opened? | boolean |  | 可选。弹出/关闭状态 |
+| opened? | boolean | | Optional. popup/closed status |
 
 #### update()
 
-更新 popper 实例。参考 [Popper.update()](https://popper.js.org/popper-documentation.html#Popper.update)。
+Update the popper instance. Refer to [Popper.update()](https://popper.js.org/popper-documentation.html#Popper.update).
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### scheduleUpdate()
 
-在下次 UI 渲染时一块更新 popper 实例，比`update()`性能要好。参考 [Popper.scheduleUpdate()](https://popper.js.org/popper-documentation.html#Popper.scheduleUpdate)。
+Updating the popper instance together during the next UI rendering has better performance than `update()`. Refer to [Popper.scheduleUpdate()](https://popper.js.org/popper-documentation.html#Popper.scheduleUpdate).
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |

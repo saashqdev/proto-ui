@@ -1,24 +1,24 @@
-#### 修改偏移距离
+#### Modify Offset Distance
 
 ``` html
 <u-linear-layout>
     <u-button>
-        Hover（默认）
+        Hover (default)
         <u-tooltip offset="10">Tooltip</u-tooltip>
     </u-button>
     <u-button>
-        Hover（默认）
+        Hover (default)
         <u-tooltip offset="10% 10px">Tooltip</u-tooltip>
     </u-button>
 </u-linear-layout>
 ```
 
-#### 更新数据
+#### Update Data
 
-``` vue
+```vue
 <template>
 <u-button>
-    Hover（默认）
+    Hover (default)
     <u-tooltip @mousemove.native="onMouseMove">{{ count }}</u-tooltip>
 </u-button>
 </template>
@@ -39,17 +39,17 @@ export default {
 </script>
 ```
 
-#### 空值
+#### Null Value
 
 ``` html
 <u-button>
-    空值
+    Null Value
     <u-tooltip></u-tooltip>
 </u-button>
 ```
 
 
-### 复杂定位问题
+### Complex Positioning Problem
 
 ``` html
 <u-linear-layout>
@@ -64,16 +64,16 @@ export default {
     <u-button>
         Button
         <span>
-            test
+            Test
             <u-tooltip>Button</u-tooltip>
         </span>
     </u-button>
     <u-select>
-        <u-select-item>苹果</u-select-item>
-        <u-select-item>香蕉</u-select-item>
-        <u-select-item>蛋糕<u-tooltip>SelectItem</u-tooltip></u-select-item>
+        <u-select-item>Apple</u-select-item>
+        <u-select-item>Banana</u-select-item>
+        <u-select-item>Cake<u-tooltip>Select Item</u-tooltip></u-select-item>
         <u-tooltip>Select</u-tooltip>
-        <div>test <u-tooltip>Select</u-tooltip></div>
+        <div>Test <u-tooltip>Select</u-tooltip></div>
     </u-select>
     <input v-tooltip="'Input'">
     <u-button>Button</u-button>

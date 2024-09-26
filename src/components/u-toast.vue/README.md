@@ -1,6 +1,6 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- This README.md is automatically generated based on api.yaml and docs/*.md for easy reference on GitHub and NPM. If you need to modify it, please view the source file -->
 
-# UToast 吐司提示
+# UToast Toast Tips
 
 ## Example
 ### Basic Usage
@@ -10,9 +10,9 @@
 <u-toast ref="toast">2s</u-toast>
 ```
 
-### Shortcut
+### Shortcuts
 
-``` vue
+``` view
 <template>
 <u-button @click="show">Toast</u-button>
 </template>
@@ -28,9 +28,9 @@ export default {
 </script>
 ```
 
-### 位置扩展
+### Location Extension
 
-``` vue
+``` view
 <template>
 <u-linear-layout>
     <u-button @click="show('top-center')">Top Center</u-button>
@@ -54,27 +54,27 @@ export default {
 </script>
 ```
 
-### 嵌入文档流
+### Embedding Document Flow
 
-上面的 Toast 都是以`fixed`的形式固定在浏览器中，也可以将Toast嵌入文档流。只需使用`u-toast`标签，并设置`position="static"`即可。
+The above toasts are fixed in the browser in the form of `fixed`. You can also embed the toast in the document flow. Just use the `u-toast` tag and set `position="static"`.
 
 ``` html
 <p><u-button @click="$refs.staticToast.show()">Static</u-button></p>
 <u-toast ref="staticToast" position="static" text="Static Toast"></u-toast>
 ```
 
-### 可关闭
+### Can be Closed
 
 ``` html
 <p><u-button @click="$refs.closableToast.show()">Static</u-button></p>
 <u-toast ref="closableToast" position="static" text="Closable" :duration="0" closable></u-toast>
 ```
 
-### 提示停留时间
+### Prompt Stay Time
 
-可以通过设置toast的`duration`参数设置所有提示的停留时间，也可以在`show`的时候单独设置该条提示的停留时间，单位为毫秒。
+You can set the duration of all prompts by setting the `duration` parameter of toast, or you can set the duration of a single prompt during `show`, in milliseconds.
 
-``` vue
+``` view
 <template>
 <u-linear-layout>
     <u-button @click="show(500)">0.5s</u-button>
@@ -95,11 +95,11 @@ export default {
 </script>
 ```
 
-### 始终显示一条
+### Always Show One
 
-将`single`设置为`true`，可以让toast始终只显示一条提示。
+Set `single` to `true` to make the toast always show only one prompt.
 
-``` vue
+``` view
 <template>
 <u-button @click="show()">Single</u-button>
 </template>
@@ -127,45 +127,45 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| position | string |  | `'top-center'` | 显示的位置，可选值：`'top-center'`, `'top-left'`, `'top-right'`, `'bottom-center'`, `'bottom-left'`, `'bottom-right'`, `static` |
-| duration | number |  | `2000` | 提示停留的时间。`0`表示常驻。 |
-| single | boolean |  | `false` | 多个提示会合并为一个 |
-| text | string |  | `''` | 默认提示内容 |
-| color | string |  | `'default'` | 提示的颜色 |
-| closable | boolean |  | `false` | 是否可以关闭提示 |
+| position | string | | `'top-center'` | Display position, optional values: `'top-center'`, `'top-left'`, `'top-right'`, `'bottom-center'`, `'bottom-left'`, `'bottom-right'`, `static` |
+| duration | number | | `2000` | How long the prompt stays. `0` means permanent. |
+| single | boolean | | `false` | Multiple prompts will be merged into one |
+| text | string | | `''` | Default prompt content |
+| color | string | | `'default'` | The color of the prompt |
+| closable | boolean | | `false` | Whether to close the prompt |
 
 ### Events
 
 #### @open
 
-弹出提示时触发
+Triggered when a prompt pops up
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.text | string | 提示的内容 |
-| $event.color | string | 提示的颜色 |
-| $event.duration | number | 提示停留的时间 |
-| senderVM | UToast | 发送事件实例 |
+| $event.text | string | Prompt content |
+| $event.color | string | The color of the prompt |
+| $event.duration | number | How long the prompt stays |
+| senderVM | UToast | Send event instance |
 
 #### @before-close
 
-关闭提示前触发
+Fires before closing the prompt
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.text | string | 提示的内容 |
-| $event.color | string | 提示的颜色 |
-| $event.duration | number | 提示停留的时间 |
-| $event.preventDefault | Function | 阻止关闭流程 |
-| senderVM | UToast | 发送事件实例 |
+| $event.text | string | Prompt content |
+| $event.color | string | The color of the prompt |
+| $event.duration | number | How long the prompt stays |
+| $event.preventDefault | Function | Prevent the shutdown process |
+| senderVM | UToast | Send event instance |
 
 #### @close
 
-关闭提示时触发
+Fired when the prompt is closed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.text | string | 提示的内容 |
-| $event.color | string | 提示的颜色 |
-| $event.duration | number | 提示停留的时间 |
-| senderVM | UToast | 发送事件实例 |
+| $event.text | string | Prompt content |
+| $event.color | string | The color of the prompt |
+| $event.duration | number | How long the prompt stays |
+| senderVM | UToast | Send event instance |

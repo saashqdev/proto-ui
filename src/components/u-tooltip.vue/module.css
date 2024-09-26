@@ -14,8 +14,8 @@
 }
 
 /**
- - 扩大区域鼠标 hover 区域
- - 保证原来的 .root 可以直接控制样式
+ - Expand area mouse hover area
+ - Ensure that the original .root can directly control the style
 */
 .root::before {
     content: '';

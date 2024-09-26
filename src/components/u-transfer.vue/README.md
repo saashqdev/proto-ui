@@ -1,6 +1,6 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UTransfer 穿梭框
+# UTransfer Transfer
 
 ## Example
 ### Basic Usage
@@ -29,7 +29,7 @@ export default {
 </script>
 ```
 
-### Disable某一项
+### Disable a Certain Item
 
 ``` vue
 <template>
@@ -60,39 +60,38 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| source | Array\<{ text, value }\> |  |  | 原数据列表 |
-| target | Array\<{ text, value }\> |  |  | 目标数据列表 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| source | Array\<{ text, value }\> | | | Original data list |
+| target | Array\<{ text, value }\> | | | Target data list |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
 
-
 ### Events
 
 #### @transfer
 
-数据转移时触发
+Triggered when data is transferred
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.source | Array\<{ text, value }\> | 原数据列表 |
-| $event.target | Array\<{ text, value }\> | 目标数据列表 |
-| $event.transfer | Array\<{ text, value }\> | 移动的项 |
-| $event.transferValues | Array | 移动项的值 |
-| senderVM | Vue | 发送事件实例 |
+| $event.source | Array\<{ text, value }\> | Original data list |
+| $event.target | Array\<{ text, value }\> | Target data list |
+| $event.transfer | Array\<{ text, value }\> | Moved items |
+| $event.transferValues   | Array | Values   of moved items |
+| senderVM | Vue | Send event instance |
 
 #### @change
 
-数据改变时触发
+Triggered when data changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.source | Array\<{ text, value }\> | 原数据列表 |
-| $event.target | Array\<{ text, value }\> | 目标数据列表 |
-| $event.transfer | Array\<{ text, value }\> | 移动的项 |
-| $event.transferValues | Array | 移动项的值 |
-| senderVM | Vue | 发送事件实例 |
+| $event.source | Array\<{ text, value }\> | Original data list |
+| $event.target | Array\<{ text, value }\> | Target data list |
+| $event.transfer | Array\<{ text, value }\> | Moved items |
+| $event.transferValues   | Array | Values   of moved items |
+| senderVM | Vue | Send event instance |

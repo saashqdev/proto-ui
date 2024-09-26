@@ -1,19 +1,19 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UText 文本
+# UText Text
 
-**UI 组件**, **行内展示**
+**UI Components**, **Inline Display**
 
-用于在业务中临时快速地调整文本大小、颜色等特性。不建议在封装基础组件时使用。
+Used to temporarily and quickly adjust Text size, color and other characteristics in business. Not recommended when encapsulating base components.
 
 ## Example
 ### Size Expansion
 
 ``` html
 <u-linear-layout>
-    <u-text size="small">小号文本</u-text>
-    <u-text size="normal">正常文本</u-text>
-    <u-text size="large">大号文本</u-text>
+    <u-text size="small">Small Text</u-text>
+    <u-text size="normal">Normal Text</u-text>
+    <u-text size="large">Large Text</u-text>
 </u-linear-layout>
 ```
 
@@ -21,31 +21,31 @@
 
 ``` html
 <u-linear-layout>
-    <u-text>默认颜色</u-text>
-    <u-text color="primary">主要文本</u-text>
-    <u-text color="error">错误文本</u-text>
-    <u-text color="disabled">禁默文本</u-text>
+    <u-text>Default Color</u-text>
+    <u-text color="primary">Primary Text</u-text>
+    <u-text color="error">Error Text</u-text>
+    <u-text color="disabled">Disabled Text</u-text>
 </u-linear-layout>
 ```
 
 ### Display Method
 
 ``` html
-<u-text display="block">这是几个</u-text>
-<u-text display="block">块级</u-text>
-<u-text display="block">文本组件</u-text>
-<u-text display="inline">这是几个</u-text>
-<u-text>行内（默认）</u-text>
-<u-text display="inline">文本组件</u-text>
+<u-text display="block">These are a Few</u-text>
+<u-text display="block">Block Level</u-text>
+<u-text display="block">Text Component</u-text>
+<u-text display="inline">These are Several</u-text>
+<u-text>Inline (default)</u-text>
+<u-text display="inline">Text Component</u-text>
 ```
 
-### 文本换行
+### Text Wrapping
 
 ``` html
 <u-linear-layout direction="vertical">
-    <u-text display="block" wrap="ellipsis" style="width: 120px; background: #f2f3f8;">天将降大任于斯人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为也，所以动心忍性，增益其所不能。</u-text>
-    <u-text display="block" wrap="break" style="width: 120px; background: #f2f3f8;">天将降大任于斯人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为也，所以动心忍性，增益其所不能。</u-text>
-    <u-text display="block" wrap="nowrap" style="width: 120px; background: #f2f3f8;">天将降大任于斯人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为也，所以动心忍性，增益其所不能。</u-text>
+    <u-text display="block" wrap="ellipsis" style="width: 120px; background: #f2f3f8;">When Heaven is about to entrust a great responsibility to this people, they must first suffer their mental and physical difficulties, strain their muscles and bones, and starve their bodies. The skin is empty and its body is empty, and its actions are messed up. Therefore, the mind and forbearance are tempted to gain what it cannot. </u-text>
+    <u-text display="block" wrap="break" style="width: 120px; background: #f2f3f8;">When heaven is about to entrust a great responsibility to this people, they must first suffer their mental and physical hardships, strain their muscles and bones, and starve their bodies. The skin is empty and its body is empty, and its actions are messed up. Therefore, the mind and forbearance are tempted to gain what it cannot. </u-text>
+    <u-text display="block" wrap="nowrap" style="width: 120px; background: #f2f3f8;">When heaven is about to entrust a person with a great responsibility, he must first suffer from hardship in his mind, strain his muscles and bones, and starve his body. The skin is empty and its body is empty, and its actions are messed up. Therefore, the mind and forbearance are tempted to gain what it cannot. </u-text>
 </u-linear-layout>
 ```
 
@@ -54,7 +54,7 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| size | string |  | `'normal'` | 大小扩展。可选值：`'small'`, `'normal'`, `'large'` |
-| color | string |  | `'default'` | Color Extension。可选值：`'default'`, `'primary'`, `'error'`, `'disabled'` |
-| display | string |  | `'inline'` | 展示方式。可选值：`'inline'`, `'block'` |
-| wrap | string |  | `'normal'` | 换行方式。可选值：`'normal'`表示默认方式，`'ellipsis'`表示多余的文本省略，`'break'`表示强制换行且英文自动添加换行符，`'nowrap'`表示始终不换行。 |
+| size | string | | `'normal'` | Size extension. Optional values - `'small'`, `'normal'`, `'large'` |
+| color | string | | `'default'` | Color Extension. Optional values - `'default'`, `'primary'`, `'error'`, `'disabled'` |
+| display | string | | `'inline'` | Display mode. Optional values - `'inline'`, `'block'` |
+| wrap | string | | `'normal'` | Line wrapping method. Optional values - `'normal'` means the default mode, `'ellipsis'` means redundant text is omitted, `'break'` means forced line breaks and English line breaks are automatically added, `'nowrap'` means no line breaks at all. |

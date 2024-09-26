@@ -1,283 +1,283 @@
 - name: u-tree-view
-  title: 树型视图
+  title: Tree View
   attrs:
     - name: data
       type: Array<{ text, value }>
       default: null
-      description: Data书写方式中的数据列表
+      description: Data list in Data writing mode
     - name: value.sync, v-model
       type: any
       default: null
-      description: 当前选择的值
+      description: The currently selected value
     - name: field
       type: string
       default: text
-      description: 显示文本字段
+      description: Display text field
     - name: cancelable
       type: boolean
       default: false
-      description: 是否可以取消选择
+      description: Whether the selection can be canceled
     - name: checkable
       type: boolean
       default: false
-      description: 是否可以选中/取消
+      description: Whether it can be selected/cancelled
     - name: accordion
       type: boolean
       default: false
-      description: 是否每次只会展开一个分组
+      description: Whether to expand only one group at a time
     - name: expand-trigger
       type: string
       default: click
-      description: 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示The Entire Row can be Triggered by Clicking only the Small Arrow (default)
+      description: The triggering method of expanding/collapse. Optional values - `'click'` means that the entire row can be triggered, and `'click-expander'` means that it is triggered only when the small arrow is clicked
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
   slots:
     - name: default
-      description: 插入`<u-tree-view-node>`子组件
+      description: Inserts a `<u-tree-view-node>` subcomponent
   events:
     - name: before-select
-      description: 选择某一项前触发
+      description: Triggered before selecting an item
       params:
         - name: $event.value
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.node
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.oldNode
           type: object
-          description: 旧的选择项相关对象
+          description: Old selection related object
         - name: $event.nodeVM
           type: UTreeViewNode
-          description: 选择项子组件
+          description: Select item subcomponent
         - name: $event.oldVM
           type: UTreeViewNode
-          description: 旧的选择项子组件
+          description: The old selection subcomponent
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: UTreeView
-          description: 发送事件实例
+          description: Send event instance
     - name: input
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: senderVM
           type: UTreeView
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event.value
           type: any
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.node
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.oldNode
           type: object
-          description: 旧的选择项相关对象
+          description: Old selection related object
         - name: $event.nodeVM
           type: UTreeViewNode
-          description: 选择项子组件
+          description: Select item subcomponent
         - name: $event.oldVM
           type: UTreeViewNode
-          description: 旧的选择项子组件
+          description: The old selection subcomponent
         - name: senderVM
           type: UTreeView
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 选择值改变时触发
+      description: Triggered when the selected value changes
       params:
         - name: $event.value
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.node
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.oldNode
           type: object
-          description: 旧的选择项相关对象
+          description: Old selection related object
         - name: $event.nodeVM
           type: UTreeViewNode
-          description: 选择项子组件
+          description: Select item subcomponent
         - name: $event.oldVM
           type: UTreeViewNode
-          description: 旧的选择项子组件
+          description: The old selection subcomponent
         - name: senderVM
           type: UTreeView
-          description: 发送事件实例
+          description: Send event instance
     - name: toggle
-      description: 展开/折叠某节点时触发
+      description: Triggered when a node is expanded/collapsed
       params:
         - name: $event.expanded
           type: boolean
-          description: 展开/折叠状态
+          description: Expand/collapse state
         - name: $event.node
           type: object
-          description: 节点相关对象
+          description: Node related object
         - name: $event.nodeVM
           type: UTreeViewNode
-          description: 节点组件
+          description: Node component
         - name: senderVM
           type: UTreeView
-          description: 发送事件实例
+          description: Send event instance
     - name: check
-      description: 选中/取消节点时触发
+      description: Triggered when a node is selected/cancelled
       params:
         - name: $event.checked
           type: boolean
-          description: 选中/取消状态
+          description: Selected/unchecked state
         - name: $event.oldChecked
           type: boolean
-          description: 旧的选中/取消状态
+          description: The old checked/unchecked state
         - name: $event.values
           type: Array
-          description: 所有选中节点的值
+          description: The value of all selected nodes
         - name: $event.node
           type: object
-          description: 节点相关对象
+          description: Node related object
         - name: $event.nodeVM
           type: UTreeViewNode
-          description: 节点组件
+          description: Node component
         - name: senderVM
           type: UTreeView
-          description: 发送事件实例
+          description: Send event instance
   methods:
     - name: walk(func)
-      description: 广度优先遍历树。当`func`函数有返回值时，停止遍历。
+      description: Breadth-first traversal of the tree. When the `func` function returns a value, stop traversal.
       params:
         - name: func
           type: Function
-          description: 遍历的处理函数
+          description: Traversal processing function
     - name: find(func)
-      description: 查找节点实例。
+      description: Find a node instance.
       params:
         - name: func
           type: Function
-          description: 查找函数。找到第一个返回值为`true`的实例。
+          description: Find function. Find the first instance that returns true.
     - name: toggleAll(expanded)
-      description: 展开/折叠所有节点
+      description: Expand/collapse all nodes
       params:
         - name: expanded
           type: boolean
-          description: 展开/折叠
+          description: Expand/collapse
     - name: checkAll(checked)
-      description: 选中/取消所有节点
+      description: Select/deselect all nodes
       params:
         - name: expanded
           type: boolean
-          description: 选中/取消
+          description: Check/uncheck
 - name: u-tree-view-node
   attrs:
     - name: value
       type: any
       default: null
-      description: 此项的值
+      description: The value of this item
     - name: expanded.sync
       type: any
       default: null
-      description: 展开/折叠状态
+      description: Expand/collapse state
     - name: checked.sync
       type: any
       default: null
-      description: 选中/取消状态
+      description: Selected/unchecked state
     - name: disabled
       type: boolean
       default: false
-      description: 禁用此项
+      description: Disable this option
     - name: node
       type: object
       default: null
-      description: 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发
+      description: Related object. When this option is selected, the thrown event will pass this object, which is convenient for development
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.
   events:
     - name: before-select
-      description: 选择此项前触发
+      description: Triggered before selecting this item
       params:
         - name: $event.value
           type: any
-          description: 此项的值
+          description: The value of this item
         - name: $event.node
           type: object
-          description: 此项的相关对象
+          description: The object associated with this item
         - name: $event.nodeVM
           type: UTreeViewNode
-          description: 此组件
+          description: This component
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: UTreeViewNode
-          description: 发送事件实例
+          description: Send event instance
     - name: before-toggle
-      description: 展开/折叠此节点前触发
+      description: Triggered before expanding/collapseing this node
       params:
         - name: $event.expanded
           type: boolean
-          description: 展开/折叠状态
+          description: Expand/collapse state
         - name: $event.node
           type: object
-          description: 节点相关对象
+          description: Node related object
         - name: $event.nodeVM
           type: UTreeViewNode
-          description: 节点组件
+          description: Node component
         - name: $event.preventDefault
           type: Function
-          description: 阻止展开/折叠流程
+          description: Prevents the expand/collapse process
         - name: senderVM
           type: UTreeViewNode
-          description: 发送事件实例
+          description: Send event instance
     - name: toggle
-      description: 展开/折叠某节点时触发
+      description: Triggered when a node is expanded/collapsed
       params:
         - name: $event.expanded
           type: boolean
-          description: 展开/折叠状态
+          description: Expand/collapse state
         - name: $event.node
           type: object
-          description: 节点相关对象
+          description: Node related object
         - name: $event.nodeVM
           type: UTreeViewNode
-          description: 节点组件
+          description: Node component
         - name: senderVM
           type: UTreeViewNode
-          description: 发送事件实例
+          description: Send event instance
     - name: check
-      description: 选中节点时触发
+      description: Triggered when a node is selected
       params:
         - name: $event.checked
           type: boolean
-          description: 选中状态
+          description: Selected state
         - name: $event.oldChecked
           type: boolean
-          description: 旧的选中状态
+          description: Old selected state
         - name: $event.node
           type: object
-          description: 节点相关对象
+          description: Node related object
         - name: $event.nodeVM
           type: UTreeViewNode
-          description: 节点组件
+          description: Node component
         - name: senderVM
           type: UTreeViewNode
-          description: 发送事件实例
+          description: Send event instance

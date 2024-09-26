@@ -1,13 +1,13 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UTreeView 树型视图
+# UTreeView Tree View
 
 ## Example
 ### Basic Usage
 
-有两种书写方式，这里推荐使用Data方式，因为树型结构的数据有时非常多。
+There are two writing methods. The Data method is recommended here because there is sometimes a lot of data in a tree structure.
 
-#### Tag 方式
+#### Tag Method
 
 ``` html
 <u-tree-view>
@@ -28,46 +28,46 @@
 </u-tree-view>
 ```
 
-#### Data 方式
+#### Data Method
 
 ``` html
 <u-tree-view :data="[
-    { text: '节点 1', children: [
-        { text: '节点 1.1' },
-        { text: '节点 1.2', children: [
-            { text: '节点 1.2.1' },
-            { text: '节点 1.2.2' },
+    { text: 'Node 1', children: [
+        { text: 'Node 1.1' },
+        { text: 'Node 1.2', children: [
+            { text: 'Node 1.2.1' },
+            { text: 'Node 1.2.2' },
         ] },
-        { text: '节点 1.3' },
-        { text: '节点 1.4' },
+        { text: 'Node 1.3' },
+        { text: 'Node 1.4' },
     ] },
-    { text: '节点 2' },
-    { text: '节点 3', children: [
-        { text: '节点 3.1' },
-        { text: '节点 3.2' },
+    { text: 'Node 2' },
+    { text: 'Node 3', children: [
+        { text: 'Node 3.1' },
+        { text: 'Node 3.2' },
     ] },
 ]"></u-tree-view>
 ```
 
-#### Customize模板
+#### Customize Template
 
-Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提供了一个名为`text`的作用域插槽，可以很轻松地处理这个问题。
+The Tag method makes it easy to customize the template, but the Data method is not easy to extend. We provide a scoped slot called `text` that can easily handle this problem.
 
 ``` html
 <u-tree-view :data="[
-    { text: '文件夹1', type: 'directory', children: [
-        { text: '文件夹1.1', type: 'directory' },
-        { text: '文件夹1.2', type: 'directory', children: [
-            { text: '文件1.2.1', type: 'file' },
-            { text: '文件1.2.2', type: 'file' },
+    { text: 'Folder1', type: 'directory', children: [
+        { text: 'Folder1.1', type: 'directory' },
+        { text: 'Folder1.2', type: 'directory', children: [
+            { text: 'Document1.2.1', type: 'file' },
+            { text: 'Document1.2.2', type: 'file' },
         ] },
-        { text: '文件1.3', type: 'file' },
-        { text: '文件1.4', type: 'file' },
+        { text: 'Document1.3', type: 'file' },
+        { text: 'Document1.4', type: 'file' },
     ] },
-    { text: '文件夹2', type: 'directory' },
-    { text: '文件夹3', type: 'directory', children: [
-        { text: '文件3.1', type: 'file' },
-        { text: '文件3.2', type: 'file' },
+    { text: 'Folder2', type: 'directory' },
+    { text: 'Folder3', type: 'directory', children: [
+        { text: 'Document3.1', type: 'file' },
+        { text: 'Document3.2', type: 'file' },
     ] },
 ]">
     <span slot="text" slot-scope="{ node, expanded, text }">
@@ -77,11 +77,11 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 </u-tree-view>
 ```
 
-但`text`作用域插槽只支持扩展 text 文本内容，如果你的需求更加复杂，建议直接通过继承 UTreeView 相关组件来实现。
+However, the `text` scope slot only supports extending text text content. If your needs are more complex, it is recommended to directly inherit UTreeView related components to achieve it.
 
 ### Option Value
 
-#### Tag 方式
+#### Tag Method
 
 ``` html
 <u-tree-view value="1.2">
@@ -102,30 +102,30 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 </u-tree-view>
 ```
 
-#### Data 方式
+#### Data Method
 
 ``` html
 <u-tree-view value="1.2" :data="[
-    { text: '节点 1', value: '1', children: [
-        { text: '节点 1.1', value: '1.1' },
-        { text: '节点 1.2', value: '1.2', children: [
-            { text: '节点 1.2.1', value: '1.2.1' },
-            { text: '节点 1.2.2', value: '1.2.2' },
+    { text: 'Node 1', value: '1', children: [
+        { text: 'Node 1.1', value: '1.1' },
+        { text: 'Node 1.2', value: '1.2', children: [
+            { text: 'Node 1.2.1', value: '1.2.1' },
+            { text: 'Node 1.2.2', value: '1.2.2' },
         ] },
-        { text: '节点 1.3', value: '1.3' },
-        { text: '节点 1.4', value: '1.4' },
+        { text: 'Node 1.3', value: '1.3' },
+        { text: 'Node 1.4', value: '1.4' },
     ] },
-    { text: '节点 2', value: '2' },
-    { text: '节点 3', value: '3', children: [
-        { text: '节点 3.1', value: '3.1' },
-        { text: '节点 3.2', value: '3.2' },
+    { text: 'Node 2', value: '2' },
+    { text: 'Node 3', value: '3', children: [
+        { text: 'Node 3.1', value: '3.1' },
+        { text: 'Node 3.2', value: '3.2' },
     ] },
 ]"></u-tree-view>
 ```
 
 ### Read Only, Disable, Disable an Item
 
-#### Tag 方式
+#### Tag Method
 
 ``` html
 <u-grid-layout>
@@ -186,29 +186,29 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 </u-grid-layout>
 ```
 
-#### Data 方式
+#### Data Method
 
 ``` html
 <u-tree-view :data="[
-    { text: '节点 1', children: [
-        { text: '节点 1.1' },
-        { text: '节点 1.2', disabled: true, children: [
-            { text: '节点 1.2.1' },
-            { text: '节点 1.2.2'}
+    { text: 'Node 1', children: [
+        { text: 'Node 1.1' },
+        { text: 'Node 1.2', disabled: true, children: [
+            { text: 'Node 1.2.1' },
+            { text: 'Node 1.2.2'}
         ] },
-        { text: '节点 1.3', disabled: true  },
-        { text: '节点 1.4' },
+        { text: 'Node 1.3', disabled: true  },
+        { text: 'Node 1.4' },
     ] },
-    { text: '节点 2', disabled: true  },
-    { text: '节点 3', children: [
-        { text: '节点 3.1' },
-        { text: '节点 3.2'}
+    { text: 'Node 2', disabled: true  },
+    { text: 'Node 3', children: [
+        { text: 'Node 3.1' },
+        { text: 'Node 3.2'}
     ]}
 ]"></u-tree-view>
 ```
 
 
-### 手风琴
+### Accordion
 
 ``` html
 <u-tree-view accordion>
@@ -238,7 +238,7 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 </u-tree-view>
 ```
 
-### 展开/折叠触发方式
+### Expand/Collapse Trigger Method
 
 ``` html
 <u-grid-layout>
@@ -304,9 +304,9 @@ Tag 方式很容易自定义模板，而 Data 方式却不好扩展。我们提�
 </u-tree-view>
 ```
 
-### 节点显示/隐藏
+### Node Show/Hide
 
-Tag 方式中可以使用`v-show`，Data 方式中可以使用`hidden`属性
+You can use `v-show` in Tag Method, and you can use the `hidden` attribute in Data Method.
 
 ``` html
 <u-tree-view cancelable>
@@ -327,11 +327,11 @@ Tag 方式中可以使用`v-show`，Data 方式中可以使用`hidden`属性
 </u-tree-view>
 ```
 
-### 多选
+### Multiple Selection
 
-通过`checkable`属性开启多选模式。
+Enable multi-selection mode through the `checkable` attribute.
 
-控制多选有两种方式，一种是设置数据各项的`checked`属性，该属性会与多项选择框进行Two-Way Binding。`disabled`属性可以禁用多项选择框。
+There are two methods for controlling multi-selection. One is to set the `checked` attribute of each data item. This attribute will perform Two-Way Binding with the multiple selection box. The `disabled` attribute disables the multiple selection box.
 
 ``` vue
 <template>
@@ -343,17 +343,17 @@ export default {
     data() {
         return {
             data: [
-                { text: '节点 1', expanded: true, checked: false, children: [
-                    { text: '节点 1.1', expanded: false, checked: false },
-                    { text: '节点 1.2', expanded: true, checked: false, children: [
-                        { text: '节点 1.2.1', expanded: false, checked: false },
-                        { text: '节点 1.2.2', expanded: false, checked: false },
+                { text: 'Node 1', expanded: true, checked: false, children: [
+                    { text: 'Node 1.1', expanded: false, checked: false },
+                    { text: 'Node 1.2', expanded: true, checked: false, children: [
+                        { text: 'Node 1.2.1', expanded: false, checked: false },
+                        { text: 'Node 1.2.2', expanded: false, checked: false },
                     ] },
-                    { text: '节点 1.3', expanded: false, checked: false },
-                    { text: '节点 1.4', expanded: false, checked: false },
+                    { text: 'Node 1.3', expanded: false, checked: false },
+                    { text: 'Node 1.4', expanded: false, checked: false },
                 ] },
-                { text: '节点 2', expanded: false, checked: false },
-                { text: '节点 3', expanded: false, checked: false },
+                { text: 'Node 2', expanded: false, checked: false },
+                { text: 'Node 3', expanded: false, checked: false },
             ],
         };
     },
@@ -361,7 +361,7 @@ export default {
 </script>
 ```
 
-另一种是通过`:values.sync`对选择值进行Two-Way Binding，该方法要求每项有`value`作为唯一值。`values`只会收集叶子节点的值。
+The other is to perform Two-Way Binding on the selected value through `:values.sync`. This method requires that each item has `value` as the unique value. `values` will only collect the values   of leaf Nodes.
 
 ``` vue
 <template>
@@ -374,17 +374,17 @@ export default {
         return {
             values: ['1.2.1', '1.2.2', '1.3', '3'],
             data: [
-                { text: '节点 1', value: '1', expanded: true, checked: false, children: [
-                    { text: '节点 1.1', value: '1.1', expanded: false, checked: false },
-                    { text: '节点 1.2', value: '1.2', expanded: true, checked: false, children: [
-                        { text: '节点 1.2.1', value: '1.2.1', expanded: false, checked: false },
-                        { text: '节点 1.2.2', value: '1.2.2', expanded: false, checked: false },
+                { text: 'Node 1', value: '1', expanded: true, checked: false, children: [
+                    { text: 'Node 1.1', value: '1.1', expanded: false, checked: false },
+                    { text: 'Node 1.2', value: '1.2', expanded: true, checked: false, children: [
+                        { text: 'Node 1.2.1', value: '1.2.1', expanded: false, checked: false },
+                        { text: 'Node 1.2.2', value: '1.2.2', expanded: false, checked: false },
                     ] },
-                    { text: '节点 1.3', value: '1.3', expanded: false, checked: false },
-                    { text: '节点 1.4', value: '1.4', expanded: false, checked: false },
+                    { text: 'Node 1.3', value: '1.3', expanded: false, checked: false },
+                    { text: 'Node 1.4', value: '1.4', expanded: false, checked: false },
                 ] },
-                { text: '节点 2', value: '2', expanded: false, checked: false },
-                { text: '节点 3', value: '3', expanded: false, checked: false },
+                { text: 'Node 2', value: '2', expanded: false, checked: false },
+                { text: 'Node 3', value: '3', expanded: false, checked: false },
             ],
         };
     },
@@ -392,21 +392,21 @@ export default {
 </script>
 ```
 
-### 其他方法
+### Other Methods
 
-#### 统一操作
+#### Unified Operation
 
-UTreeView 有针对选中/取消和Expand/Collapse两个操作的统一处理的方法：`checkAll`和`toggleAll`，方便开发者使用。
+UTreeView has unified processing methods for the two operations of selecting/canceling and Expand/Collapse: `checkAll` and `toggleAll`, which is convenient for developers to use.
 
-``` vue
+```vue
 <template>
 <u-linear-layout direction="vertical">
     <u-tree-view ref="treeView" checkable :data="data"></u-tree-view>
     <u-linear-layout>
-        <u-button @click="checkAll(true)">全部选中</u-button>
-        <u-button @click="checkAll(false)">全部取消</u-button>
-        <u-button @click="toggleAll(true)">全部展开</u-button>
-        <u-button @click="toggleAll(false)">全部收起</u-button>
+        <u-button @click="checkAll(true)">Check All</u-button>
+        <u-button @click="checkAll(false)">Cancel All</u-button>
+        <u-button @click="toggleAll(true)">Expand All</u-button>
+        <u-button @click="toggleAll(false)">Collapse All</u-button>
     </u-linear-layout>
 </u-linear-layout>
 </template>
@@ -416,17 +416,17 @@ export default {
     data() {
         return {
             data: [
-                { text: '节点 1', expanded: true, checked: false, children: [
-                    { text: '节点 1.1', expanded: false, checked: false },
-                    { text: '节点 1.2', expanded: true, checked: false, disabled: true, children: [
-                        { text: '节点 1.2.1', expanded: false, checked: false },
-                        { text: '节点 1.2.2', expanded: false, checked: false },
+                { text: 'Node 1', expanded: true, checked: false, children: [
+                    { text: 'Node 1.1', expanded: false, checked: false },
+                    { text: 'Node 1.2', expanded: true, checked: false, disabled: true, children: [
+                        { text: 'Node 1.2.1', expanded: false, checked: false },
+                        { text: 'Node 1.2.2', expanded: false, checked: false },
                     ] },
-                    { text: '节点 1.3', expanded: false, checked: false },
-                    { text: '节点 1.4', expanded: false, checked: false },
+                    { text: 'Node 1.3', expanded: false, checked: false },
+                    { text: 'Node 1.4', expanded: false, checked: false },
                 ] },
-                { text: '节点 2', expanded: false, checked: false },
-                { text: '节点 3', expanded: false, checked: false },
+                { text: 'Node 2', expanded: false, checked: false },
+                { text: 'Node 3', expanded: false, checked: false },
             ],
         };
     },
@@ -442,17 +442,17 @@ export default {
 </script>
 ```
 
-#### 遍历和查找
+#### Traverse and Search
 
-UTreeView 有关于遍历与查找节点的方法：`walk`和`find`，方便开发者使用。
+UTreeView has methods for traversing and finding Node: `walk` and `find`, which are convenient for developers to use.
 
-``` vue
+```vue
 <template>
 <u-linear-layout direction="vertical">
     <u-tree-view ref="treeView" :data="data"></u-tree-view>
     <u-linear-layout>
-        <u-button @click="walk()">遍历所有节点</u-button>
-        <u-button @click="find()">查找末尾为`4`的节点</u-button>
+        <u-button @click="walk()">Traverse all Node</u-button>
+        <u-button @click="find()">Find Node with `4` at the End</u-button>
     </u-linear-layout>
 </u-linear-layout>
 </template>
@@ -462,23 +462,23 @@ export default {
     data() {
         return {
             data: [
-                { text: '节点 1', expanded: true, checked: false, children: [
-                    { text: '节点 1.1', expanded: false, checked: false },
-                    { text: '节点 1.2', expanded: true, checked: false, disabled: true, children: [
-                        { text: '节点 1.2.1', expanded: false, checked: false },
-                        { text: '节点 1.2.2', expanded: false, checked: false },
+                { text: 'Node 1', expanded: true, checked: false, children: [
+                    { text: 'Node 1.1', expanded: false, checked: false },
+                    { text: 'Node 1.2', expanded: true, checked: false, disabled: true, children: [
+                        { text: 'Node 1.2.1', expanded: false, checked: false },
+                        { text: 'Node 1.2.2', expanded: false, checked: false },
                     ] },
-                    { text: '节点 1.3', expanded: false, checked: false },
-                    { text: '节点 1.4', expanded: false, checked: false },
+                    { text: 'Node 1.3', expanded: false, checked: false },
+                    { text: 'Node 1.4', expanded: false, checked: false },
                 ] },
-                { text: '节点 2', expanded: false, checked: false },
-                { text: '节点 3', expanded: false, checked: false },
+                { text: 'Node 2', expanded: false, checked: false },
+                { text: 'Node 3', expanded: false, checked: false },
             ],
         };
     },
     methods: {
         walk() {
-            // 注意：如果有返回值，遍历会终止。
+            // Note: If there is a return value, the traversal will terminate.
             this.$refs.treeView.walk((nodeVM) => console.info(nodeVM.text));
         },
         find() {
@@ -491,200 +491,200 @@ export default {
 ```
 
 ## UTreeView API
-### Props/Attrs
+Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| data | Array\<{ text, value }\> |  |  | Data书写方式中的数据列表 |
-| value.sync, v-model | any |  |  | 当前选择的值 |
-| field | string |  | `'text'` | 显示文本字段 |
-| cancelable | boolean |  | `false` | 是否可以取消选择 |
-| checkable | boolean |  | `false` | 是否可以选中/取消 |
-| accordion | boolean |  | `false` | 是否每次只会展开一个分组 |
-| expand-trigger | string |  | `'click'` | 展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示The Entire Row can be Triggered by Clicking only the Small Arrow (default) |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| data | Array\<{ text, value }\> | | | Data list in Data writing mode |
+| value.sync, v-model | any | | | The currently selected value |
+| field | string | | `'text'` | Display text field |
+| cancelable | boolean | | `false` | Whether the selection can be canceled |
+| checkable | boolean | | `false` | Whether it can be checked/unchecked |
+| accordion | boolean | | `false` | Whether to expand only one group at a time |
+| expand-trigger | string | | `'click'` | Trigger method for expansion/collapse. Optional values: `'click'` means that the entire row can be triggered, `'click-expander'` means that it is triggered only when the small arrow is clicked |
+| readonly | boolean | | `false` | Read-only |
+| disabled | boolean | | `false` | Disabled |
 
 ### Slots
 
 #### (default)
 
-插入`<u-tree-view-node>`子组件
+Insert `<u-tree-view-node>` subcomponent
 
 ### Events
 
 #### @before-select
 
-选择某一项前触发
+Triggered before an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.node | object | 选择项相关对象 |
-| $event.oldNode | object | 旧的选择项相关对象 |
-| $event.nodeVM | UTreeViewNode | 选择项子组件 |
-| $event.oldVM | UTreeViewNode | 旧的选择项子组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | UTreeView | 发送事件实例 |
+| $event.value | any | The value of the selected item |
+| $event.oldValue | any | Old value |
+| $event.node | object | Selection related object |
+| $event.oldNode | object | Old selection related object |
+| $event.nodeVM | UTreeViewNode | Select item subcomponent |
+| $event.oldVM | UTreeViewNode | Old selection subcomponent |
+| $event.preventDefault | Function | Prevent the selection process |
+| senderVM | UTreeView | Send event instance |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | any | 选择项的值 |
-| senderVM | UTreeView | 发送事件实例 |
+| $event | any | Value of the selection |
+| senderVM | UTreeView | Send event instance |
 
 #### @select
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 改变后的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.node | object | 选择项相关对象 |
-| $event.oldNode | object | 旧的选择项相关对象 |
-| $event.nodeVM | UTreeViewNode | 选择项子组件 |
-| $event.oldVM | UTreeViewNode | 旧的选择项子组件 |
-| senderVM | UTreeView | 发送事件实例 |
+| $event.value | any | Changed value |
+| $event.oldValue | any | Old value |
+| $event.node | object | Selection related object |
+| $event.oldNode | object | Old selection related object |
+| $event.nodeVM | UTreeViewNode | Select item subcomponent |
+| $event.oldVM | UTreeViewNode | Old selection subcomponent |
+| senderVM | UTreeView | Send event instance |
 
 #### @change
 
-选择值改变时触发
+Fired when the selected value changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.node | object | 选择项相关对象 |
-| $event.oldNode | object | 旧的选择项相关对象 |
-| $event.nodeVM | UTreeViewNode | 选择项子组件 |
-| $event.oldVM | UTreeViewNode | 旧的选择项子组件 |
-| senderVM | UTreeView | 发送事件实例 |
+| $event.value | any | The value of the selected item |
+| $event.oldValue | any | Old value |
+| $event.node | object | Selection related object |
+| $event.oldNode | object | Old selection related object |
+| $event.nodeVM | UTreeViewNode | Select item subcomponent |
+| $event.oldVM | UTreeViewNode | Old selection subcomponent |
+| senderVM | UTreeView | Send event instance |
 
 #### @toggle
 
-展开/折叠某节点时触发
+Triggered when a node is expanded/collapsed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.expanded | boolean | 展开/折叠状态 |
-| $event.node | object | 节点相关对象 |
-| $event.nodeVM | UTreeViewNode | 节点组件 |
-| senderVM | UTreeView | 发送事件实例 |
+| $event.expanded | boolean | Expanded/collapsed state |
+| $event.node | object | Node related object |
+| $event.nodeVM | UTreeViewNode | Node component |
+| senderVM | UTreeView | Send event instance |
 
 #### @check
 
-选中/取消节点时触发
+Triggered when a node is selected/cancelled
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.checked | boolean | 选中/取消状态 |
-| $event.oldChecked | boolean | 旧的选中/取消状态 |
-| $event.values | Array | 所有选中节点的值 |
-| $event.node | object | 节点相关对象 |
-| $event.nodeVM | UTreeViewNode | 节点组件 |
-| senderVM | UTreeView | 发送事件实例 |
+| $event.checked | boolean | Checked/unchecked state |
+| $event.oldChecked | boolean | Old checked/unchecked state |
+| $event.values   | Array | Values of all selected nodes |
+| $event.node | object | Node related object |
+| $event.nodeVM | UTreeViewNode | Node component |
+| senderVM | UTreeView | Send event instance |
 
 ### Methods
 
 #### walk(func)
 
-广度优先遍历树。当`func`函数有返回值时，停止遍历。
+Traverse the tree in breadth-first order. Stop traversing when the `func` function returns a value.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| func | Function |  | 遍历的处理函数 |
+| func | Function | | Traversal processing function |
 
 #### find(func)
 
-查找节点实例。
+Find a node instance.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| func | Function |  | 查找函数。找到第一个返回值为`true`的实例。 |
+| func | Function | | Find a function. Find the first instance that returns `true`. |
 
 #### toggleAll(expanded)
 
-展开/折叠所有节点
+Expand/Collapse All Nodes
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| expanded | boolean |  | 展开/折叠 |
+| expanded | boolean | | Expand/collapse |
 
 #### checkAll(checked)
 
-选中/取消所有节点
+Select/deselect all nodes
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| expanded | boolean |  | 选中/取消 |
+| expanded | boolean | | Checked/unchecked |
 
 ## UTreeViewNode API
-### Props/Attrs
+Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | any |  |  | 此项的值 |
-| expanded.sync | any |  |  | 展开/折叠状态 |
-| checked.sync | any |  |  | 选中/取消状态 |
-| disabled | boolean |  | `false` | 禁用此项 |
-| node | object |  |  | 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发 |
+| value | any | | | The value of this item |
+| expanded.sync | any | | | Expanded/collapsed state |
+| checked.sync | any | | | Checked/unchecked state |
+| disabled | boolean | | `false` | Disable this item |
+| node | object | | | Related object. When this option is selected, the thrown event will pass this object, which is convenient for development.
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @before-select
 
-选择此项前触发
+Triggered before selecting this item
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 此项的值 |
-| $event.node | object | 此项的相关对象 |
-| $event.nodeVM | UTreeViewNode | 此组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | UTreeViewNode | 发送事件实例 |
+| $event.value | any | The value of this item |
+| $event.node | object | The object associated with this item |
+| $event.nodeVM | UTreeViewNode | This component |
+| $event.preventDefault | Function | Prevent the selection process |
+| senderVM | UTreeViewNode | Send event instance |
 
 #### @before-toggle
 
-展开/折叠此节点前触发
+Triggered before expanding/collapseing this node
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.expanded | boolean | 展开/折叠状态 |
-| $event.node | object | 节点相关对象 |
-| $event.nodeVM | UTreeViewNode | 节点组件 |
-| $event.preventDefault | Function | 阻止展开/折叠流程 |
-| senderVM | UTreeViewNode | 发送事件实例 |
+| $event.expanded | boolean | Expanded/collapsed state |
+| $event.node | object | Node related object |
+| $event.nodeVM | UTreeViewNode | Node component |
+| $event.preventDefault | Function | Prevent the expand/collapse process |
+| senderVM | UTreeViewNode | Send event instance |
 
 #### @toggle
 
-展开/折叠某节点时触发
+Triggered when a node is expanded/collapsed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.expanded | boolean | 展开/折叠状态 |
-| $event.node | object | 节点相关对象 |
-| $event.nodeVM | UTreeViewNode | 节点组件 |
-| senderVM | UTreeViewNode | 发送事件实例 |
+| $event.expanded | boolean | Expanded/collapsed state |
+| $event.node | object | Node related object |
+| $event.nodeVM | UTreeViewNode | Node component |
+| senderVM | UTreeViewNode | Send event instance |
 
 #### @check
 
-选中节点时触发
+Triggered when a node is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.checked | boolean | 选中状态 |
-| $event.oldChecked | boolean | 旧的选中状态 |
-| $event.node | object | 节点相关对象 |
-| $event.nodeVM | UTreeViewNode | 节点组件 |
-| senderVM | UTreeViewNode | 发送事件实例 |
+| $event.checked | boolean | Checked state |
+| $event.oldChecked | boolean | Old checked state |
+| $event.node | object | Node related object |
+| $event.nodeVM | UTreeViewNode | Node component |
+| senderVM | UTreeViewNode | Send event instance |

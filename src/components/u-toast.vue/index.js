@@ -77,7 +77,7 @@ export const UToast = {
             this.itemsQueue.clear();
         },
         /**
-         * @method closeAll() 关闭所有消息
+         * @method closeAll() Close all messages
          * @return {void}
          */
         closeAll() {

@@ -1,6 +1,6 @@
 ### Basic Usage
 
-大部分属性与`<textarea>`元素一致。
+Most of the attributes are consistent with the `<textarea>` element.
 
 ``` html
 <u-textarea placeholder="Details" autofocus></u-textarea>
@@ -8,13 +8,13 @@
 
 ### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行Two-Way Binding。
+Use `v-model` or `:value.sync` for Two-Way Binding.
 
-``` vue
+```vue
 <template>
 <u-linear-layout>
-    <u-textarea v-model="value" placeholder="请输入"></u-textarea>
-    <u-textarea :value.sync="value" placeholder="请输入"></u-textarea>
+    <u-textarea v-model="value" placeholder="Please enter"></u-textarea>
+    <u-textarea :value.sync="value" placeholder="Please enter"></u-textarea>
 </u-linear-layout>
 </template>
 
@@ -22,51 +22,51 @@
 export default {
     data() {
         return {
-            value: '一段很长很长的文本',
+            value: 'A very long text',
         };
     },
 };
 </script>
 ```
 
-### 只读与禁用
+### Read Only and Disabled
 
 ``` html
 <u-linear-layout>
-    <u-textarea value="只读" readonly></u-textarea>
-    <u-textarea value="禁用" disabled></u-textarea>
+    <u-textarea value="readonly" readonly></u-textarea>
+    <u-textarea value="disabled" disabled></u-textarea>
 </u-linear-layout>
 ```
 
-### 调整大小
+### Resize
 
-通过设置`resize`属性，决定水平垂直方向是否可以调整大小。
+By setting the `resize` attribute, determine whether the size can be resized horizontally and vertically.
 
 ``` html
 <u-linear-layout direction="vertical">
-    <div><u-textarea placeholder="none" resize="none"></u-textarea></div>
-    <div><u-textarea placeholder="vertical（默认）" resize="vertical"></u-textarea></div>
-    <div><u-textarea placeholder="horizontal" resize="horizontal"></u-textarea></div>
-    <div><u-textarea placeholder="both" resize="both"></u-textarea></div>
+    <div><u-textarea placeholder="None" resize="none"></u-textarea></div>
+    <div><u-textarea placeholder="Vertical（default）" resize="vertical"></u-textarea></div>
+    <div><u-textarea placeholder="Horizontal" resize="horizontal"></u-textarea></div>
+    <div><u-textarea placeholder="Both" resize="both"></u-textarea></div>
 </u-linear-layout>
 ```
 
 ### Can be Cleared
 
-开启`clearable`属性，在输入框有内容时会显示清空按钮。
+Turn on the `clearable` attribute, and the clear button will be displayed when the input box has content.
 
 ``` html
-<u-textarea value="可清空" clearable></u-textarea>
+<u-textarea value="clearable" clearable></u-textarea>
 ```
 
 ### Display Method
 
-默认为行内展示，可以将`display`设置为块级展示。
+The default is inline display, and `display` can be set to block-level display.
 
 ``` html
 <u-linear-layout direction="vertical" gap="small">
-    <u-textarea placeholder="行内展示（默认）"></u-textarea> Align to Text
-    <u-textarea display="block" placeholder="块级展示"></u-textarea>
+    <u-textarea placeholder="Display Inline (default)"></u-textarea> Align to Text
+    <u-textarea display="block" placeholder="Block Level Display"></u-textarea>
 </u-linear-layout>
 ```
 

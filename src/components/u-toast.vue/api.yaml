@@ -1,77 +1,77 @@
 - name: u-toast
-  title: 吐司提示
+  title: Toast Tips
   attrs:
     - name: position
       type: string
       default: top-center
-      description: 显示的位置，可选值：`'top-center'`, `'top-left'`, `'top-right'`,
+      description: Display position, optional values - `'top-center'`, `'top-left'`, `'top-right'`,
         `'bottom-center'`, `'bottom-left'`, `'bottom-right'`, `static`
     - name: duration
       type: number
       default: 2000
-      description: 提示停留的时间。`0`表示常驻。
+      description: How long the prompt stays. `0` means always on.
     - name: single
       type: boolean
       default: false
-      description: 多个提示会合并为一个
+      description: Multiple prompts will be merged into one
     - name: text
       type: string
       default: ""
-      description: 默认提示内容
+      description: Default prompt content
     - name: color
       type: string
       default: default
-      description: 提示的颜色
+      description: The color of the prompt
     - name: closable
       type: boolean
       default: false
-      description: 是否可以关闭提示
+      description: Whether the prompt can be turned off
   events:
     - name: open
-      description: 弹出提示时触发
+      description: Triggered when a prompt pops up
       params:
         - name: $event.text
           type: string
-          description: 提示的内容
+          description: The content of the prompt
         - name: $event.color
           type: string
-          description: 提示的颜色
+          description: The color of the prompt
         - name: $event.duration
           type: number
-          description: 提示停留的时间
+          description: The time the prompt stays
         - name: senderVM
           type: UToast
-          description: 发送事件实例
+          description: Send event instance
     - name: before-close
-      description: 关闭提示前触发
+      description: Triggered before closing the prompt
       params:
         - name: $event.text
           type: string
-          description: 提示的内容
+          description: The content of the prompt
         - name: $event.color
           type: string
-          description: 提示的颜色
+          description: The color of the prompt
         - name: $event.duration
           type: number
-          description: 提示停留的时间
+          description: The time the prompt stays
         - name: $event.preventDefault
           type: Function
-          description: 阻止关闭流程
+          description: Prevent the shutdown process
         - name: senderVM
           type: UToast
-          description: 发送事件实例
+          description: Send event instance
     - name: close
-      description: 关闭提示时触发
+      description: Triggered when the prompt is closed
       params:
         - name: $event.text
           type: string
-          description: 提示的内容
+          description: The content of the prompt
         - name: $event.color
           type: string
-          description: 提示的颜色
+          description: The color of the prompt
         - name: $event.duration
           type: number
-          description: 提示停留的时间
+          description: The time the prompt stays
         - name: senderVM
           type: UToast
-          description: 发送事件实例
+          description: Send event instance
