@@ -1,9 +1,9 @@
-### 相同的文件
+### Upload File
 
 ``` vue
 <template>
 <u-uploader url="/api/upload" @before-send.prevent="onBeforeSend">
-    <u-button>upload</u-button>
+    <u-button>Upload</u-button>
 </u-uploader>
 </template>
 

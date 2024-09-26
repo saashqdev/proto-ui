@@ -1,33 +1,33 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UUploader 文件上传
+# UUploader file upload
 
-**UI 组件**, **表单控件**, **行内展示**
+**UI Components**, **Form Controls**, **Inline Display**
 
 ## Example
 ### Basic Usage
 
 ``` html
 <u-uploader url="/api/upload">
-    <u-button>upload</u-button>
+    <u-button>Upload</u-button>
 </u-uploader>
 ```
 
-> 注意：在IE中实现上传功能时，需要将响应头的`Content-Type`设置为`text/plain`或`text/html`，而不能是`application/json`，否则IE会提示用户下载返回的数据。
+> Note: When implementing the upload function in IE, you need to set the `Content-Type` of the response header to `text/plain` or `text/html`, not `application/json`, otherwise IE will prompt the user to download The data returned.
 
-### 文件类型限制
+### File Type Restrictions
 
 ``` html
 <u-uploader url="/api/upload" extensions="jpg,gif,png">
-    <u-button>upload</u-button>
+    <u-button>Upload</u-button>
 </u-uploader>
 ```
 
-### 文件大小限制
+### File Size Limit
 
 ``` html
 <u-uploader url="/api/upload" max-size="10kB">
-    <u-button>upload</u-button>
+    <u-button>Upload</u-button>
 </u-uploader>
 ```
 
@@ -44,81 +44,81 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| url | string |  |  | 上传文件路径 |
-| data-type | string |  | `'json'` | 接收数据类型。可选值：`text`、`xml`、`json` |
-| data | object |  |  | 附加数据 |
-| name | string |  | `'file'` | 上传文件的名称，后端一般需要这个字段 |
-| extensions | string, Array |  | `''` | 可上传的扩展名。默认为空，表示可上传任意文件类型的文件。可以为字符串，多个扩展名用`,`隔开，如：`'png,jpg,gif'`；也可以为数组，如：`['png', 'jpg', 'gif']` |
-| max-size | string, number |  | `Infinity` | 可上传的最大文件大小。默认为空，表示可上传任意大小的文件；如果为数字，则表示单位为字节；如果为字符串，可以添加以下单位：`kB`、`MB`、`GB` |
-| disabled | boolean |  | `false` | 是否禁用 |
+| url | string | | | Upload file path |
+| data-type | string | | `'json'` | Receive data type. Optional values: `text`, `xml`, `json` |
+| data | object | | | Additional data |
+| name | string | | `'file'` | The name of the uploaded file, the backend generally requires this field |
+| extensions | string, Array | | `''` | Uploadable extensions. The default is empty, which means files of any file type can be uploaded. It can be a string, with multiple extensions separated by `,`, such as: `'png, jpg, gif'`; it can also be an array, such as: `['png', 'jpg', 'gif']` |
+| max-size | string, number | | `Infinity` | The maximum file size that can be uploaded. The default is empty, which means files of any size can be uploaded; if it is a number, the unit is bytes; if it is a string, the following units can be added: `kB`, `MB`, `GB` |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入文本或HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @before-send
 
-发送前触发
+Trigger before sending
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.data | object | 进度相关信息 |
-| $event.xhr | XMLHttpRequest | 发送前的 XMLHttpRequest 对象 |
-| $event.formData | FormData | 用于发送的数据对象 |
-| $event.preventDefault | Function | 阻止上传流程 |
-| senderVM | UUploader | 发送事件对象 |
+| $event.data | object | Progress related information |
+| $event.xhr | XMLHttpRequest | XMLHttpRequest object before sending |
+| $event.formData | FormData | Data object for sending |
+| $event.preventDefault | Function | Prevent upload process |
+| senderVM | UUploader | Send event object |
 
 #### @send
 
-刚发送时触发
+Triggered when just sent
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.data | object | 进度相关信息 |
-| $event.preventDefault | Function | 阻止上传流程 |
-| senderVM | UUploader | 发送事件对象 |
+| $event.data | object | Progress related information |
+| $event.preventDefault | Function | Prevent upload process |
+| senderVM | UUploader | Send event object |
 
 #### @progress
 
-发送进度改变时触发，在上传进度条时使用
+Triggered when sending progress changes, used when uploading progress bar
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.data | object | 进度相关信息 |
-| senderVM | UUploader | 发送事件对象 |
+| $event.data | object | Progress related information |
+| senderVM | UUploader | Send event object |
 
 #### @complete
 
-上传完成时触发
+Triggered when upload is complete
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.xml | string | 服务器回传信息 |
-| senderVM | UUploader | 发送事件对象 |
+| $event.xml | string | Server response information |
+| senderVM | UUploader | Send event object |
 
 #### @success
 
-上传成功时触发
+Triggered when upload is successful
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.data | object | 服务器回传信息对象 |
-| $event.file | object | 上传文件信息，不包含文件主体内容 |
-| senderVM | UUploader | 发送事件对象 |
+| $event.data | object | Server returns information object |
+| $event.file | object | Upload file information, excluding file body content |
+| senderVM | UUploader | Send event object |
 
 #### @error
 
-上传报错时触发
+Triggered when an upload error occurs
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.name | string | 错误名 |
-| $event.message | string | 错误描述 |
-| $event.extensions | string | 限制类型 |
-| $event.maxSize | number | 限制大小 |
-| $event.size | number | 当前大小 |
-| senderVM | UUploader | 发送事件对象 |
+| $event.name | string | Error name |
+| $event.message | string | Error description |
+| $event.extensions | string | Restriction type |
+| $event.maxSize | number | Limit size |
+| $event.size | number | Current size |
+| senderVM | UUploader | Send event object |

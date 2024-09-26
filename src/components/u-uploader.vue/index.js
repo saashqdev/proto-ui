@@ -29,7 +29,7 @@ export const UUploader = {
     },
     methods: {
         /**
-         * @method upload() 弹出文件对话框并且上传文件
+         * @method upload() Pop up the file dialog box and upload the file
          * @public
          * @return {void}
          */
@@ -41,10 +41,10 @@ export const UUploader = {
             this.$refs.file.click();
         },
         /**
-         * @method checkExtensions(file) 检查扩展名
+         * @method checkExtensions(file) Check extensions
          * @private
-         * @param  {File} file 文件对象
-         * @return {boolean} 返回是否通过验证
+         * @param {File} file file object
+         * @return {boolean} Returns whether verification is passed
          */
         checkExtensions(file) {
             if (!this.extensions)
@@ -61,10 +61,10 @@ export const UUploader = {
                 return true;
 
             /**
-             * @event error 上传错误时触发
+             * @event error Triggered when there is an upload error
              * @property {object} name ExtensionError
-             * @property {object} message 错误信息
-             * @property {object} extensions 可上传的扩展名
+             * @property {object} message error message
+             * @property {object} extensions Uploadable extensions
              */
             this.$emit('error', {
                 name: 'ExtensionError',
@@ -75,10 +75,10 @@ export const UUploader = {
             return false;
         },
         /**
-         * @method checkSize(file) 检查文件大小
+         * @method checkSize(file) Check file size
          * @private
-         * @param  {File} file 文件对象
-         * @return {boolean} 返回是否通过验证
+         * @param {File} file file object
+         * @return {boolean} Returns whether verification is passed
          */
         checkSize(file) {
             if (this.maxSize === Infinity)
@@ -99,15 +99,15 @@ export const UUploader = {
                 return true;
 
             /**
-             * @event error 上传错误时触发
+             * @event error Triggered when there is an upload error
              * @property {object} name SizeError
-             * @property {object} message 错误信息
-             * @property {object} maxSize 可上传的最大文件大小
-             * @property {object} size 当前文件大小
+             * @property {object} message error message
+             * @property {object} maxSize The maximum file size that can be uploaded
+             * @property {object} size current file size
              */
             this.$emit('error', {
                 name: 'SizeError',
-                message: '文件大小超出限制！',
+                message: 'File size exceeds limit! ',
                 maxSize: this.maxSize,
                 size: file.size,
             }, this);
@@ -115,7 +115,7 @@ export const UUploader = {
             return false;
         },
         /**
-         * @method submit() 提交表单
+         * @method submit() Submit the form
          * @private
          * @return {void}
          */
@@ -135,10 +135,10 @@ export const UUploader = {
                 size: file.size,
             };
 
-            if (typeof FormData === 'undefined') { // IE9 不支持 XHR2 相关功能
+            if (typeof FormData === 'undefined') { // IE9 does not support XHR2 related functions
                 /**
-                 * @event sending 发送前触发
-                 * @property {object} data 待发送的数据
+                 * @event sending trigger before sending
+                 * @property {object} data data to be sent
                  */
                 let cancel = false;
                 this.$emit('before-send', {
@@ -160,8 +160,8 @@ export const UUploader = {
                 xhr.upload.onprogress = function (e) {
                     if (e.lengthComputable) {
                         /**
-                        * @event progress 发送中触发
-                        * @property {object} data 待发送的数据
+                        * @event progress triggered when sending
+                        * @property {object} data data to be sent
                         */
                         this.$emit('progress', {
                             loaded: e.loaded,
@@ -190,8 +190,8 @@ export const UUploader = {
                 };
 
                 /**
-                 * @event sending 发送前触发
-                 * @property {object} data 待发送的数据
+                 * @event sending trigger before sending
+                 * @property {object} data data to be sent
                  */
                 let cancel = false;
                 this.$emit('before-send', {
@@ -216,7 +216,7 @@ export const UUploader = {
             }, this);
         },
         /**
-         * @method onLoad() 接收数据回调
+         * @method onLoad() Receive data callback
          * @private
          * @return {void}
          */
@@ -232,7 +232,7 @@ export const UUploader = {
             const xml = {};
 
             if (!!responseText || !!responseXML) {
-                // ajax上传时数据处理
+                // Data processing during ajax upload
                 xml.responseText = responseText;
                 xml.responseXML = responseXML;
             } else {
@@ -247,9 +247,9 @@ export const UUploader = {
 
             if (!xml.responseText) {
                 /**
-                 * @event error 上传错误时触发
+                 * @event error Triggered when there is an upload error
                  * @property {object} name ResponseError
-                 * @property {object} message 错误信息
+                 * @property {object} message error message
                  */
                 return this.$emit('error', {
                     name: 'ResponseError',
@@ -259,16 +259,16 @@ export const UUploader = {
             }
 
             /**
-             * @event complete 上传完成时触发
-             * @property {object} xml 返回的xml
+             * @event complete Triggered when the upload is completed
+             * @property {object} xml returned xml
              */
             this.$emit('complete', {
                 xml,
             }, this);
 
             /**
-             * @event success 上传成功时触发
-             * @property {object} data 返回的数据
+             * @event success Triggered when the upload is successful
+             * @property {object} data returned data
              */
             this.$emit('success', {
                 data: this.parseData(xml, this.dataType),
@@ -277,11 +277,11 @@ export const UUploader = {
             }, this);
         },
         /**
-         * @method parseData(xml, type) 解析接收的数据
+         * @method parseData(xml, type) parse the received data
          * @private
-         * @param  {object} xml 接收的xml
-         * @param  {object} type 数据类型
-         * @return {object|string} 解析后的数据
+         * @param {object} xml received xml
+         * @param {object} type data type
+         * @return {object|string} parsed data
          */
         parseData(xml, type) {
             if (type === 'text')
@@ -295,7 +295,7 @@ export const UUploader = {
                 } catch (e) { }
 
                 return data;
-                // danger，暂时不开启
+                // danger, temporarily not enabled
                 // } else if (type === 'script')
                 //     return eval(xml.responseText);
             } else

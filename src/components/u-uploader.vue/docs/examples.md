@@ -2,25 +2,25 @@
 
 ``` html
 <u-uploader url="/api/upload">
-    <u-button>upload</u-button>
+    <u-button>Upload</u-button>
 </u-uploader>
 ```
 
-> 注意：在IE中实现上传功能时，需要将响应头的`Content-Type`设置为`text/plain`或`text/html`，而不能是`application/json`，否则IE会提示用户下载返回的数据。
+> Note: When implementing the upload function in IE, you need to set the `Content-Type` of the response header to `text/plain` or `text/html`, not `application/json`, otherwise IE will prompt the user to download The data returned.
 
-### 文件类型限制
+### File Type Restrictions
 
 ``` html
 <u-uploader url="/api/upload" extensions="jpg,gif,png">
-    <u-button>upload</u-button>
+    <u-button>Upload</u-button>
 </u-uploader>
 ```
 
-### 文件大小限制
+### File Size Limit
 
 ``` html
 <u-uploader url="/api/upload" max-size="10kB">
-    <u-button>upload</u-button>
+    <u-button>Upload</u-button>
 </u-uploader>
 ```
 
@@ -28,6 +28,6 @@
 
 ``` html
 <u-uploader url="/api/upload" disabled>
-    <u-button disabled>upload</u-button>
+    <u-button disabled>Upload</u-button>
 </u-uploader>
 ```

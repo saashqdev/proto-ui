@@ -3,7 +3,7 @@
         <slot></slot>
     </div>
     <form :class="$style.form" ref="form" method="POST" :action="url" :target="'iframe'+ tempId" :enctype="contentType">
-        <!-- IE需要重置input[type=file] -->
+        <!-- IE needs to reset input[type=file] -->
         <input :class="$style.input" ref="file" v-if="!sending" type="file" :name="name" @change="submit()"/>
         <input v-for="key in Object.keys(data)" type="hidden" :name="key" :value="data[key]"/>
     </form>
