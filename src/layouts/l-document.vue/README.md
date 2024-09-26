@@ -1,61 +1,61 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# LDocument 文档布局
+# LDocument Document Layout
 
-常见文档网站中顶部栏和左侧栏固定的布局，如本文档页。
+The top bar and left bar are fixed layouts in common document websites, such as this document page.
 
 ## Example
-滚动区域设置在了全局，内容会随窗口自适应。（下面的Example暂时体现不出现滚动效果）
+The scrolling area is set globally, and the content will adapt to the window. (The following Example does not display the scrolling effect for the time being)
 
 ``` html
 <div style="position: relative; z-index: 1; height: 500px; overflow: hidden;">
     <l-document demo>
         <u-navbar slot="head">
-            <u-logo slot="left">演示</u-logo>
-            <u-navbar-item href="/">首页</u-navbar-item>
+            <u-logo slot="left">Demo</u-logo>
+            <u-navbar-item href="/">Homepage</u-navbar-item>
             <u-navbar-item href="https://kubevue.github.io" target="_blank">kubevue</u-navbar-item>
-            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">Components库</u-navbar-item>
+            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">Components Library</u-navbar-item>
             <u-navbar-item href="https://github.com/saashqdev-templates/admin-cloud-fs" target="_blank">GitHub</u-navbar-item>
             <div slot="right">
                 <u-navbar-dropdown style="width: 100px; margin-right: 10px;">
-                    <div slot="title">user</div>
+                    <div slot="title">User</div>
                     <u-navbar-menu>
-                        <u-navbar-menu-item to="/account/info">个人信息</u-navbar-menu-item>
-                        <u-navbar-menu-item>安全退出</u-navbar-menu-item>
+                        <u-navbar-menu-item to="/account/info">Personal Information</u-navbar-menu-item>
+                        <u-navbar-menu-item>Logout</u-navbar-menu-item>
                     </u-navbar-menu>
                 </u-navbar-dropdown>
             </div>
         </u-navbar>
         <u-sidebar slot="side">
-            <u-sidebar-item>总览</u-sidebar-item>
-            <u-sidebar-group title="列表页">
-                <u-sidebar-item>基础列表</u-sidebar-item>
-                <u-sidebar-item>搜索列表</u-sidebar-item>
+            <u-sidebar-item>Overview</u-sidebar-item>
+            <u-sidebar-group title="List Page">
+                <u-sidebar-item>Basic List</u-sidebar-item>
+                <u-sidebar-item>Search List</u-sidebar-item>
             </u-sidebar-group>
-            <u-sidebar-group title="表单页">
-                <u-sidebar-item>基础表单</u-sidebar-item>
-                <u-sidebar-item>步骤表单</u-sidebar-item>
+            <u-sidebar-group title="Form Page">
+                <u-sidebar-item>Basic Form</u-sidebar-item>
+                <u-sidebar-item>Step Form</u-sidebar-item>
             </u-sidebar-group>
-            <u-sidebar-group title="个人页">
-                <u-sidebar-item>个人信息</u-sidebar-item>
+            <u-sidebar-group title="Personal Page">
+                <u-sidebar-item>Personal Information</u-sidebar-item>
             </u-sidebar-group>
         </u-sidebar>
         <u-linear-layout direction="vertical">
             <u-crumb>
-                <u-crumb-item to="/">首页</u-crumb-item>
+                <u-crumb-item to="/">Home</u-crumb-item>
                 <u-crumb-item to="/proto-ui">Prototype Component</u-crumb-item>
                 <u-crumb-item disabled>Navigation</u-crumb-item>
-                <u-crumb-item to="/proto-ui/u-crumb" current>面包屑</u-crumb-item>
+                <u-crumb-item to="/proto-ui/u-crumb" current>Breadcrumbs</u-crumb-item>
             </u-crumb>
             <!--router-view></router-view-->
             <u-article>
-                <h1>前赤壁赋</h1>
-                <p>苏轼 公元1082年</p>
-                <p>壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。清风徐来，水波不兴。举酒属客，诵明月之诗，歌窈窕之章。少焉，月出于东山之上，徘徊于斗牛之间。白露横江，水光接天。纵一苇之所如，凌万顷之茫然。浩浩乎如冯虚御风，而不知其所止；飘飘乎如遗世独立，羽化而登仙。</p>
-                <p>于是饮酒乐甚，扣舷而歌之。歌曰：“桂棹兮兰桨，击空明兮溯流光。渺渺兮予怀，望美人兮天一方。”客有吹洞箫者，倚歌而和之。其声呜呜然，如怨如慕，如泣如诉，余音袅袅，不绝如缕。舞幽壑之潜蛟，泣孤舟之嫠妇。</p>
-                <p>苏子愀然，正襟危坐，而问客曰：“何为其然也？”客曰：“‘月明星稀，乌鹊南飞。’此非曹孟德之诗乎？西望夏口，东望武昌。山川相缪，郁乎苍苍，此非孟德之困于周郎者乎？方其破荆州，下江陵，顺流而东也，舳舻千里，旌旗蔽空，酾酒临江，横槊赋诗，固一世之雄也，而今安在哉？况吾与子渔樵于江渚之上，侣鱼虾而友麋鹿，驾一叶之扁舟，举匏樽以相属。寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。挟飞仙以遨游，抱明月而长终。知不可乎骤得，托遗响于悲风。"</p>
-                <p>苏子曰：“客亦知夫水与月乎？逝者如斯，而未尝往也；盈虚者如彼，而卒莫消长也。盖将自其变者而观之，则天地曾不能以一瞬；自其不变者而观之，则物与我皆无尽也，而又何羡乎！且夫天地之间，物各有主，苟非吾之所有，虽一毫而莫取。惟江上之清风，与山间之明月，耳得之而为声，目遇之而成色，取之无禁，用之不竭，是造物者之无尽藏也，而吾与子之所共适。”</p>
-                <p>客喜而笑，洗盏更酌。肴核既尽，杯盘狼籍。相与枕藉乎舟中，不知东方之既白。</p>
+                <h1>Former Chibi Fu</h1>
+                <p>Su Shi 1082 AD</p>
+                <p>In the autumn of Renxu, in the seventh month, Su Zi and his guests went boating under Red Cliff. The breeze comes slowly and the water waves are calm. Lifting wine to the guests, reciting poems about the bright moon and singing graceful chapters. After a while, the moon rose above the east mountain, wandering among the bullfights. White dew flows across the river, and the water reaches the sky. Even though a reed is like this, thousands of hectares are at a loss. The vastness is as if Feng Xu is riding the wind without knowing where it stops; the flutteringness is as if he is left alone in the world, becoming an immortal and ascending to immortality. </p>
+                <p>Then he drank and enjoyed himself very much, and he buckled the boat and sang. The song goes: "The osmanthus sticks are covered with orchid oars, hitting the sky is bright and tracing the stream of light. It is dim and vague, and I look forward to the beauty in the sky." There is a guest who plays the cave flute, and he sings along with it. His voice was whining, like resentment and admiration, like weeping and complaining, and the lingering sound was lingering like a wisp. The lurking dragon dances in the secluded ravine, and the concubine weeps in the lonely boat. </p>
+                <p>Su Zi was stunned, sitting upright, and asked the guest: "Why is this so?" The guest said: "'The moon and stars are sparse, and the black magpie flies south.' Is this not a poem by Cao Mengde? Looking west to Xiakou, Looking east to Wuchang, the mountains and rivers are looming, and the sky is green. Isn't this what Meng De was trapped in Zhou Lang? , Hengshu wrote poems, and he was a hero for a lifetime. How are they now? Kuangwu and his son fished and wooded on the river, accompanied by fish and shrimps, and friends with elk. They rode a small boat and sent mayflies to each other. In the sky and the earth, I feel sorry for my life for a moment, and I admire the infiniteness of the Yangtze River. I carry the flying immortals to swim, and I don’t know that I will be there suddenly, and I will leave it in the sad wind."</p>
+                <p>Su Zi said: "You also know that the water is like the moon? Those who have passed away are like this, but they have not yet gone; those who are full and empty are like that, but their soldiers are not waxing and waning. If you look at the changes in Gaijiang, then the world will be like this. It cannot be seen in a moment; from the perspective of being unchanging, things and I are endless, and how can I envy it! In heaven and earth, everything has its own owner, even if it is not my own, I can't take any of it. But the cool breeze on the river and the bright moon in the mountains can be heard by the ears and become sounds, and the eyes can see them and form colors. They can be taken without restraint and used inexhaustibly. They are the endless treasures of the Creator, and I and my son are in harmony with each other. ”</p>
+                <p>The guests are happy and smile, wash their cups and drink more. The core of the food is gone, and the cups and plates are in a mess. The couple and their pillows were spread out in the boat, not knowing how white the east was. </p>
             </u-article>
         </u-linear-layout>
     </l-document>
@@ -67,16 +67,16 @@
 
 #### (default)
 
-主内容区。
+Main content area.
 
-#### head
+#### Head
 
-设置顶部内容。
+Set top content.
 
-#### side
+#### Side
 
-设置左侧栏内容。
+Set the left column content.
 
-#### main
+#### Main
 
-重置中间区域内容。包裹在主内容区外。
+Reset the middle area content. Wrapped outside the main content area.

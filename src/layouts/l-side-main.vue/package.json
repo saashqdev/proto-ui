@@ -1,6 +1,6 @@
 {
   "name": "@proto-ui/l-side-main.vue",
-  "description": "只有左侧栏固定的通用布局",
+  "description": "Universal layout with only left column fixed",
   "version": "0.6.1",
   "author": "Kubeworkz <kubeworkz@gmail.com>",
   "main": "./index.js",
@@ -33,8 +33,8 @@
   },
   "kubevue": {
     "type": "component",
-    "title": "左侧栏固定布局",
-    "team": "necfe",
+    "title": "Left column fixed layout",
+    "team": "lubevue",
     "access": "public",
     "screenshots": [
       "https://unpkg.com/@proto-ui/l-side-main.vue@0.6.1/screenshots/0.png",

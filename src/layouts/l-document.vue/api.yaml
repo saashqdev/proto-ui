@@ -1,12 +1,12 @@
 - name: l-document
-  title: 文档布局
-  description: 常见文档网站中顶部栏和左侧栏固定的布局，如本文档页。
+  title: Document Layout
+  description: The fixed layout of the top bar and left column in common document websites, such as this document page.
   slots:
     - name: default
-      description: 主内容区。
+      description: Main content area.
     - name: head
-      description: 设置顶部内容。
+      description: Set the top content.
     - name: side
-      description: 设置左侧栏内容。
+      description: Set the content of the left column.
     - name: main
-      description: 重置中间区域内容。包裹在主内容区外。
+      description: Reset the content of the middle area. Wrapped outside the main content area.

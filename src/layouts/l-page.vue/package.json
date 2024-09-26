@@ -1,6 +1,6 @@
 {
   "name": "@proto-ui/l-page.vue",
-  "description": "只有顶部栏和底部栏的通用页面布局。",
+  "description": "Generic page layout with only top and bottom bars.",
   "version": "0.6.0",
   "author": "Kubeworkz <kubeworkz@gmail.com>",
   "main": "./index.js",
@@ -33,8 +33,8 @@
   },
   "kubevue": {
     "type": "component",
-    "title": "通用页面布局",
-    "team": "necfe",
+    "title": "Common page layout",
+    "team": "kubevue",
     "access": "public",
     "screenshots": [
       "https://unpkg.com/@proto-ui/l-page.vue@0.6.0/screenshots/0.png",

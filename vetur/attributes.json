@@ -5,23 +5,23 @@
       "light",
       "dark"
     ],
-    "description": "波纹颜色"
+    "description": "Ripple color"
   },
   "e-watermark/text": {
     "type": "string",
-    "description": "水印文本"
+    "description": "Watermark text"
   },
   "e-watermark/image": {
     "type": "CanvasImageSource",
-    "description": "水印图案。如果没有，则默认按文本绘制"
+    "description": "Watermark pattern. If not, it will be drawn as text by default."
   },
   "e-watermark/opacity": {
     "type": "number",
-    "description": "透明度"
+    "description": "Watermark opacity"
   },
   "f-draggable/value": {
     "type": "any",
-    "description": "需要传递的值"
+    "description": "The value to be passed"
   },
   "f-draggable/transfer": {
     "type": "string, Element",
@@ -29,75 +29,75 @@
       "clone",
       "self"
     ],
-    "description": "拖拽时的移动元素。可选值：`'clone'`表示拖拽时拖起自身的一个拷贝，`'self'`表示拖拽时拖起自身，也可以直接传入一个元素，或者用slot来设置。"
+    "description": "The mobile element when dragging. Optional values: `'clone'` means dragging a copy of itself when dragging, `'self'` means dragging itself when dragging, you can also pass in an element directly, or use slot to set it."
   },
   "f-draggable/immediate": {
     "type": "boolean",
-    "description": "是否在鼠标按下时立即拖拽。默认为`false`，是为了防止鼠标单击等事件频繁触发拖拽操作。"
+    "description": "Whether to drag immediately when the mouse is pressed. The default value is `false`, which is to prevent mouse clicks and other events from frequently triggering drag operations."
   },
   "f-draggable/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "f-draggable/constraint": {
     "type": "function",
-    "description": "拖拽时移动路径的约束函数。需要传入一个对象，至少要包含：`startLeft`、`startTop`、`dragX`、`dragY`几个字段"
+    "description": "The constraint function of the moving path when dragging. You need to pass in an object, which must contain at least the following fields: `startLeft`, `startTop`, `dragX`, `dragY`"
   },
   "f-dragger/axis": {
     "type": "string",
-    "description": "拖拽时移动路径的约束轴向。可选值：`both`表示可以在任意方向上移动、`horizontal`表示限制在水平方向上移动、`vertical`表示限制在垂直方向上移动。"
+    "description": "The axis of the movement path when dragging. Optional values: `both` means it can move in any direction, `horizontal` means it is limited to horizontal movement, and `vertical` means it is limited to vertical movement."
   },
   "f-dragger/grid": {
     "type": "object",
-    "description": "f拖拽时移动路径的约束网格。值为一个{x,y}格式的对象，表示水平方向和垂直方向网格的大小。"
+    "description": "The constraint grid of the moving path when dragging. The value is an object in {x,y} format, indicating the size of the horizontal and vertical grid."
   },
   "f-dragger/range": {
     "type": "string, object",
-    "description": "拖拽范围。值可以为一个{left,top,right,bottom}格式的对象，表示代理元素移动的上下左右边界。当值为`offset-parent`，代理元素限制在offsetParent中移动，仅适用于`position`为`absolute`的情况。"
+    "description": "Drag range. The value can be an object in the format of {left,top,right,bottom}, which represents the upper, lower, left and right boundaries of the proxy element. When the value is `offset-parent`, the proxy element is restricted to move within offsetParent, which is only applicable when `position` is `absolute`."
   },
   "f-dragger/range-mode": {
     "type": "string",
-    "description": "拖拽范围模式。可选值：`inside`表示在拖拽范围内侧移动，`center`表示在拖拽范围边缘及内侧移动，`outside`表示在拖拽范围外侧及内侧移动。"
+    "description": "Drag range mode. Optional values: `inside` means moving inside the drag range, `center` means moving at the edge and inside of the drag range, `outside` means moving outside and inside of the drag range."
   },
   "f-dragger/value": {
     "type": "any",
-    "description": "需要传递的值"
+    "description": "The value to be passed"
   },
   "f-dragger/transfer": {
     "type": "string, Element",
-    "description": "拖拽时的移动元素。可选值：`'clone'`表示拖拽时拖起自身的一个拷贝，`'self'`表示拖拽时拖起自身，也可以直接传入一个元素，或者用slot来设置。"
+    "description": "The mobile element when dragging. Optional values: `'clone'` means dragging a copy of itself when dragging, `'self'` means dragging itself when dragging, you can also pass in an element directly, or use slot to set it."
   },
   "f-dragger/immediate": {
     "type": "boolean",
-    "description": "是否在鼠标按下时立即拖拽。默认为`false`，是为了防止鼠标单击等事件频繁触发拖拽操作。"
+    "description": "Whether to drag immediately when the mouse is pressed. The default value is `false`, which is to prevent mouse clicks and other events from frequently triggering drag operations."
   },
   "f-dragger/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "f-droppable/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "f-forbidden/contextmenu": {
     "type": "boolean",
-    "description": "是否禁止弹出右键菜单"
+    "description": "Whether to disable the right-click menu popup"
   },
   "f-forbidden/select": {
     "type": "boolean",
-    "description": "是否禁止选择文本"
+    "description": "Whether to prohibit text selection"
   },
   "f-forbidden/copy": {
     "type": "boolean",
-    "description": "是否禁止复制"
+    "description": "Whether to prohibit copying"
   },
   "f-forbidden/save-key": {
     "type": "boolean",
-    "description": "是否禁止另存为键"
+    "description": "Whether to prohibit saving as key"
   },
   "f-forbidden/devtools-key": {
     "type": "boolean",
-    "description": "是否禁止开发者工具键"
+    "description": "Whether to disable developer tool keys"
   },
   "f-forbidden/senderVM": {
     "type": "FForbidden",
@@ -105,107 +105,107 @@
   },
   "f-render/vnode": {
     "type": "VNode",
-    "description": "需要渲染的 VNode 节点"
+    "description": "The VNode node that needs to be rendered"
   },
   "f-slot/vm": {
     "type": "Vue",
-    "description": "实例"
+    "description": "Example"
   },
   "f-slot/name": {
     "type": "string",
-    "description": "Slot 名称"
+    "description": "Slot name"
   },
   "f-slot/props": {
     "type": "object",
-    "description": "需要传给作用域插槽的属性"
+    "description": "Properties that need to be passed to scoped slots"
   },
   "f-slot/catchError": {
     "type": "boolean",
-    "description": "是否捕获异常，防止报错终止整体渲染"
+    "description": "Whether to capture exceptions to prevent errors from terminating the overall rendering"
   },
   "i-icon/name": {
     "type": "string",
-    "description": "图标名称"
+    "description": "Icon name"
   },
   "m-complex/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "m-complex/auto-select": {
     "type": "boolean",
-    "description": "是否自动选择第一个非禁用的项"
+    "description": "Whether to automatically select the first non-disabled item"
   },
   "m-complex/cancelable": {
     "type": "boolean",
-    "description": "是否可以取消选择"
+    "description": "Is it possible to deselect?"
   },
   "m-complex/multiple": {
     "type": "boolean",
-    "description": "是否切换为多选模式"
+    "description": "Whether to switch to multiple selection mode"
   },
   "m-complex/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "m-complex/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "m-complex-item/value": {
     "type": "any",
-    "description": "此项的值"
+    "description": "The value of this item"
   },
   "m-complex-item/selected": {
     "type": "boolean",
-    "description": "是否选中此项"
+    "description": "Is this option selected?"
   },
   "m-complex-item/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "m-complex-item/item": {
     "type": "object",
-    "description": "相关对象。当选择此项时，抛出的事件会传递该对象，便于开发"
+    "description": "Related objects. When this option is selected, the thrown event will pass this object, which is convenient for development."
   },
   "m-dynamic/data": {
     "type": "Array",
-    "description": "数据"
+    "description": "Data"
   },
   "m-dynamic/dynamic": {
     "type": "boolean",
-    "description": "是否可以动态添加/删除项"
+    "description": "Is it possible to add/remove items dynamically?"
   },
   "m-dynamic/get-default-item": {
     "type": "Function",
-    "description": "传入获取默认项的方法"
+    "description": "Pass in a method to get the default item"
   },
   "m-dynamic/initial-add": {
     "type": "boolean",
-    "description": "是否Auto Replenish项，如果初始时`data`中的项目数少于`min-count`"
+    "description": "Whether to automatically add items if the number of items in `data` is initially less than `min-count`"
   },
   "m-dynamic/min-count": {
     "type": "number",
-    "description": "最小项目数"
+    "description": "Minimum number of items"
   },
   "m-dynamic/max-count": {
     "type": "number",
-    "description": "最大项目数"
+    "description": "Maximum number of items"
   },
   "m-group-parent/collapsible": {
     "type": "boolean",
-    "description": "分组是否可以折叠"
+    "description": "Whether the group can be collapsed"
   },
   "m-group-parent/accordion": {
     "type": "boolean",
-    "description": "是否每次只会展开一个分组"
+    "description": "Whether to expand only one group at a time"
   },
   "m-group-parent/expand-trigger": {
     "type": "string",
-    "description": "展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发"
+    "description": "The triggering method of expanding/collapse. Optional values: `'click'` means that the entire row can be triggered by clicking, and `'click-expander'` means that it is triggered only when the small arrow is clicked."
   },
   "m-group/title": {
     "type": "string",
-    "description": "显示的标题"
+    "description": "Displayed title"
   },
   "m-group/collapsible": {
     "type": "boolean",
@@ -213,499 +213,499 @@
   },
   "m-group/expanded": {
     "type": "boolean",
-    "description": "展开/折叠状态"
+    "description": "Expand/collapse state"
   },
   "m-group/disabled": {
     "type": "boolean",
-    "description": "是否禁用。禁用时无法展开/折叠"
+    "description": "Whether to disable. Cannot expand/collapse when disabled"
   },
   "m-multiplex/value": {
     "type": "Array",
-    "description": "所有选中项的值"
+    "description": "The values of all selected items"
   },
   "m-multiplex/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "m-multiplex/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "m-multiplex-item/value": {
     "type": "any",
-    "description": "此项的值"
+    "description": "The value of this item"
   },
   "m-multiplex-item/selected": {
     "type": "boolean",
-    "description": "是否选择此项"
+    "description": "Whether to select this option"
   },
   "m-multiplex-item/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "m-multiplex-item/item": {
     "type": "object",
-    "description": "相关对象。当选择此项时，抛出的事件会传递该对象，便于开发"
+    "description": "Related objects. When this option is selected, the thrown event will pass this object, which is convenient for development."
   },
   "m-popper/opened": {
     "type": "boolean",
-    "description": "弹出/关闭状态"
+    "description": "Popup/closed state"
   },
   "m-popper/trigger": {
     "type": "string",
-    "description": "触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
+    "description": "Trigger method. Optional values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
   },
   "m-popper/reference": {
     "type": "string, HTMLElement, Function",
-    "description": "参考元素。可选值：`'parent'`表示父元素，`'prev'`表示上一个元素，`'next'`表示下一个元素。也可以传一个 HTML 元素，或用于返回元素的方法"
+    "description": "Reference element. Optional values: `'parent'` means parent element, `'prev'` means previous element, `'next'` means next element. You can also pass an HTML element, or a method to return an element."
   },
   "m-popper/placement": {
     "type": "string",
-    "description": "弹出方位。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
+    "description": "Pop-up orientation. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
   },
   "m-popper/hover-delay": {
     "type": "number",
-    "description": "当 trigger 为 `'hover'` 时的延迟时间"
+    "description": "Delay time when trigger is `'hover'`"
   },
   "m-popper/hide-delay": {
     "type": "number",
-    "description": "当 trigger 为 `'hover'` 时的隐藏延迟时间"
+    "description": "Hide delay when trigger is `'hover'`"
   },
   "m-popper/append-to": {
     "type": "string",
-    "description": "设置添加到哪个元素。可选值：`'body'`表示添加到 document.body，`'reference'`表示添加到参考元素中"
+    "description": "Set which element to add to. Optional values: `'body'` means adding to document.body, `'reference'` means adding to the reference element"
   },
   "m-popper/boundaries-element": {
     "type": "Element, string",
-    "description": "边际元素。用于定义弹出层的边际，默认为首个滚动的父级元素"
+    "description": "Margin element. Used to define the margin of the popup layer. The default is the parent element of the first scroll."
   },
   "m-popper/escape-with-reference": {
     "type": "boolean",
-    "description": "当触发元素离开边际时，弹出层离开/保留在边际元素内"
+    "description": "When the trigger element leaves the margin, the popup leaves/remains inside the margin element"
   },
   "m-popper/follow-cursor": {
     "type": "boolean, number, object",
-    "description": "是否跟随鼠标"
+    "description": "Whether to follow the mouse"
   },
   "m-popper/offset": {
     "type": "string",
-    "description": "弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px`"
+    "description": "Popup layer offset, such as: '10', '10px 10px', '10% 10%', the first value represents the horizontal offset, the second value represents the vertical displacement, the default unit is `px`"
   },
   "m-popper/options": {
     "type": "object",
-    "description": "补充 popper.js 的选项"
+    "description": "Add options to popper.js"
   },
   "m-popper/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "m-singlex/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "m-singlex/auto-select": {
     "type": "boolean",
-    "description": "是否自动选择第一个非禁用的项"
+    "description": "Whether to automatically select the first non-disabled item"
   },
   "m-singlex/cancelable": {
     "type": "boolean",
-    "description": "是否可以取消选择"
+    "description": "Is it possible to deselect?"
   },
   "m-singlex/router": {
     "type": "boolean",
-    "description": "是否开启路由模式"
+    "description": "Whether to enable routing mode"
   },
   "m-singlex/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "m-singlex/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "m-singlex-item/value": {
     "type": "any",
-    "description": "此项的值"
+    "description": "The value of this item"
   },
   "m-singlex-item/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "m-singlex-item/item": {
     "type": "object",
-    "description": "相关对象。当选择此项时，抛出的事件会传递该对象，便于开发"
+    "description": "Related objects. When this option is selected, the thrown event will pass this object, which is convenient for development."
   },
   "u-avatar/shape": {
     "type": "string",
-    "description": "形状。可选值：`circle`, `square` 两种类型"
+    "description": "Shape. Optional values: `circle`, `square`"
   },
   "u-avatar/size": {
     "type": "string",
-    "description": "头像大小。可选值：`'mini'`、`'small'`、`'normal'`、`'large'`、`'huge'`。如需自定义大小，可以直接设置`style=\"width: 40px; height: 40px;\"`"
+    "description": "Avatar size. Optional values: `'mini'`, `'small'`, `'normal'`, `'large'`, `'huge'`. To customize the size, you can directly set `style=\"width: 40px; height: 40px;\"`"
   },
   "u-badge/value": {
     "type": "number, string",
-    "description": "显示的值"
+    "description": "Displayed value"
   },
   "u-badge/max": {
     "type": "number",
-    "description": "最大值，超过最大值会显示为`max+`的形式，要求`value`是 `Number`类型。"
+    "description": "The maximum value. If the value exceeds the maximum value, it will be displayed as `max+`. `value` must be of `Number` type."
   },
   "u-badge/corner": {
     "type": "boolean",
-    "description": "是否插入到右上角"
+    "description": "Whether to insert to the upper right corner"
   },
   "u-badge/dot": {
     "type": "boolean",
-    "description": "是否显示为小圆点"
+    "description": "Whether to display as a small dot"
   },
   "u-button/href": {
     "type": "string",
-    "description": "链接地址"
+    "description": "Link address"
   },
   "u-button/target": {
     "type": "string",
-    "description": "（原生属性）"
+    "description": "(native attribute)"
   },
   "u-button/to": {
     "type": "string, Location",
-    "description": "需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。"
+    "description": "Requires vue-router, same as the `to` attribute of `<router-link>`. Can be a string or an object describing the target location."
   },
   "u-button/replace": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。"
+    "description": "Requires vue-router, same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation."
   },
   "u-button/append": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`append`属性相同。如果为`true`，则在当前路径后追加`to`的路径。"
+    "description": "Requires vue-router, same as the `append` prop of `<router-link>`. If `true`, append the path of `to` after the current path."
   },
   "u-button/disabled": {
     "type": "boolean",
-    "description": "是否禁用。禁用后不会响应`click`事件。"
+    "description": "Whether to disable. If disabled, it will not respond to the `click` event."
   },
   "u-button/display": {
     "type": "string",
-    "description": "展示方式。可选值：`'inline'`, `'block'`"
+    "description": "Display method. Optional values: `'inline'`, `'block'`"
   },
   "u-carousel/value": {
     "type": "any",
-    "description": "播放位置"
+    "description": "Play position"
   },
   "u-carousel/autoplay": {
     "type": "boolean",
-    "description": "是否自动播放"
+    "description": "Whether to play automatically"
   },
   "u-carousel/loop": {
     "type": "boolean",
-    "description": "是否循环播放，即首尾连接"
+    "description": "Whether to play in a loop, i.e. connect the beginning and the end"
   },
   "u-carousel/interval": {
     "type": "number",
-    "description": "幻灯片切换时间，如果设置值小于动画时长，会在动画完成后切换"
+    "description": "Slide switching time. If the set value is less than the animation duration, the slide will switch after the animation is completed."
   },
   "u-carousel/direction": {
     "type": "string",
-    "description": "幻灯片播放方向"
+    "description": "Slideshow direction"
   },
   "u-carousel/animation": {
     "type": "string",
-    "description": "幻灯片过渡动画"
+    "description": "Slide transition animation"
   },
   "u-carousel-item/title": {
     "type": "string",
-    "description": "该项的标题"
+    "description": "The title of this item"
   },
   "u-carousel-item/value": {
     "type": "any",
-    "description": "该项的值"
+    "description": "The value of this item"
   },
   "u-cascade-select/data": {
     "type": "Array<{ text, value }>",
-    "description": "数据列表"
+    "description": "Data list"
   },
   "u-cascade-select/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-cascade-select/categories": {
     "type": "Array<{ label, key, placeholder }>",
-    "description": "多级分类"
+    "description": "Multi-level classification"
   },
   "u-cascade-select/hide-empty": {
     "type": "boolean",
-    "description": "是否隐藏空列表"
+    "description": "Whether to hide empty lists"
   },
   "u-cascade-select/converter": {
     "type": "string, object",
-    "description": "value 与 values 的转换器。可选值：`'join'`表示将 values 数组 join 之后变成 value，`'join.number'`与`join`类似，只是会考虑它为数字的情况。也可以用`:`修改分隔符，类似 Vue 的指令参数，`'last-value'`表示以最后一项的值作为 value。也可以传入一个包含 { get, set } 的一个对象"
+    "description": "Converter between value and values. Optional values: `'join'` means joining the values   array to become value, `'join.number'` is similar to `join`, except that it will consider the case where it is a number. You can also use `:` to modify the separator, similar to Vue's instruction parameters, `'last-value'` means using the last item as value. You can also pass in an object containing { get, set }"
   },
   "u-cascade-select/field": {
     "type": "string",
-    "description": "显示文本字段"
+    "description": "Display text field"
   },
   "u-cascade-select/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-cascade-select/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-checkbox/value": {
     "type": "boolean, null",
-    "description": "选中状态，`null`表示不确定状态"
+    "description": "Selected state, `null` indicates uncertain state"
   },
   "u-checkbox/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-checkbox/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-checkboxes/value": {
     "type": "Array",
-    "description": "多选组的选中项"
+    "description": "Selected items in a multi-select group"
   },
   "u-checkboxes/min": {
     "type": "number",
-    "description": "可以勾选多选框的最小数量"
+    "description": "The minimum number of checkboxes that can be checked"
   },
   "u-checkboxes/max": {
     "type": "number",
-    "description": "可以勾选多选框的最大数量"
+    "description": "The maximum number of checkboxes that can be checked"
   },
   "u-checkboxes/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-checkboxes/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-checkbox/label": {
     "type": "any",
-    "description": "多选框标签。用于关联多选组的值"
+    "description": "Multiple checkbox label. Used to associate the value of a multiple-select group."
   },
   "u-circular-progress/percent": {
     "type": "number",
-    "description": "百分比"
+    "description": "Percentage"
   },
   "u-collapse/accordion": {
     "type": "boolean",
-    "description": "是否每次只会展开一个面板"
+    "description": "Whether only one panel will be expanded at a time"
   },
   "u-collapse/expand-trigger": {
     "type": "string",
-    "description": "展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发"
+    "description": "The triggering method of expanding/collapse. Optional values: `'click'` means that the entire row can be triggered by clicking, and `'click-expander'` means that it is triggered only when the small arrow is clicked."
   },
   "u-collapse/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-collapse-item/title": {
     "type": "string",
-    "description": "显示的标题"
+    "description": "Displayed title"
   },
   "u-collapse-item/expanded": {
     "type": "boolean",
-    "description": "展开/折叠状态"
+    "description": "Expand/collapse state"
   },
   "u-collapse-item/disabled": {
     "type": "boolean",
-    "description": "是否禁用。禁用时无法展开/折叠"
+    "description": "Whether to disable. Cannot expand/collapse when disabled"
   },
   "u-combo-pagination/page": {
     "type": "number",
-    "description": "当前页码"
+    "description": "Current page number"
   },
   "u-combo-pagination/page-size": {
     "type": "number",
-    "description": "每页大小"
+    "description": "Page size"
   },
   "u-combo-pagination/page-size-options": {
     "type": "Array",
-    "description": "每页大小选项列表"
+    "description": "List of page size options"
   },
   "u-combo-pagination/total": {
     "type": "number",
-    "description": "总页数"
+    "description": "Total number of pages"
   },
   "u-combo-pagination/side": {
     "type": "number",
-    "description": "当页数多时，两边恒定显示的数量"
+    "description": "When there are many pages, the number of pages displayed on both sides is constant."
   },
   "u-combo-pagination/around": {
     "type": "number",
-    "description": "当页数多时，中间恒定显示的数量"
+    "description": "When there are many pages, the number displayed in the middle is constant"
   },
   "u-combo-pagination/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-combo-pagination/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-combo-pagination/show-total": {
     "type": "boolean",
-    "description": "是否显示总条目数"
+    "description": "Whether to display the total number of entries"
   },
   "u-combo-pagination/show-sizer": {
     "type": "boolean",
-    "description": "是否显示切换每页大小选项"
+    "description": "Whether to display the option to switch the page size"
   },
   "u-combo-pagination/show-jumper": {
     "type": "boolean",
-    "description": "是否显示页面跳转输入框"
+    "description": "Whether to display the page jump input box"
   },
   "u-combo-slider/value": {
     "type": "number",
-    "description": "滑块的值"
+    "description": "The value of the slider"
   },
   "u-combo-slider/min": {
     "type": "number",
-    "description": "最小值"
+    "description": "Minimum value"
   },
   "u-combo-slider/max": {
     "type": "number",
-    "description": "最大值"
+    "description": "Maximum value"
   },
   "u-combo-slider/step": {
     "type": "number",
-    "description": "间隔。`0`表示连续"
+    "description": "Interval. `0` means continuous"
   },
   "u-combo-slider/precision": {
     "type": "number",
-    "description": "精度，表示数字要保留的最小单位，整数、小数均可"
+    "description": "Precision, which indicates the smallest unit to be retained by a number, both integers and decimals are acceptable"
   },
   "u-combo-slider/range": {
     "type": "Array",
-    "description": "进一步对`value`限制，通常传入一个数组，第一个值表示范围开始值，第二个值表示范围的结束值。"
+    "description": "Further restrict `value`, usually pass in an array, the first value indicates the start value of the range, and the second value indicates the end value of the range."
   },
   "u-combo-slider/formatter": {
     "type": "string, object",
-    "description": "格式化字符串，具体参见Example。也可以传入一个包含`get`和`set`方法的格式化对象。"
+    "description": "Format string, see examples for details. You can also pass a format object containing `get` and `set` methods."
   },
   "u-combo-slider/sync-on": {
     "type": "string",
-    "description": "输入后何时同步值到`<u-slider>`组件中。可选值：`'input'`表示在输入时同步，`'blur'`表示在失焦时同步"
+    "description": "When to synchronize the value to the `<u-slider>` component after input. Optional values: `'input'` means synchronization during input, `'blur'` means synchronization when out of focus"
   },
   "u-combo-slider/hide-buttons": {
     "type": "boolean",
-    "description": "是否隐藏按钮"
+    "description": "Whether to hide the button"
   },
   "u-combo-slider/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-combo-slider/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
-  "u-crumb/无": {
+  "u-crumb/none": {
     "type": "",
     "description": ""
   },
   "u-crumb-item/type": {
     "type": "string",
-    "description": "类型。可选值：`'link'`表示链接，可点击，`'text'`只显示为默认颜色文本，不可点。"
+    "description": "Type. Optional values: `'link'` indicates a link, which is clickable, and `'text'` only displays text in the default color, which is not clickable."
   },
   "u-crumb-item/href": {
     "type": "string",
-    "description": "链接地址"
+    "description": "Link address"
   },
   "u-crumb-item/target": {
     "type": "string",
-    "description": "（原生属性）"
+    "description": "(native attribute)"
   },
   "u-crumb-item/to": {
     "type": "string, Location",
-    "description": "需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。"
+    "description": "Requires vue-router, same as the `to` attribute of `<router-link>`. Can be a string or an object describing the target location."
   },
   "u-crumb-item/replace": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。"
+    "description": "Requires vue-router, same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation."
   },
   "u-crumb-item/append": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`append`属性相同。如果为`true`，则在当前路径后追加`to`的路径。"
+    "description": "Requires vue-router, same as the `append` prop of `<router-link>`. If `true`, append the path of `to` after the current path."
   },
   "u-crumb-item/disabled": {
     "type": "boolean",
-    "description": "是否不可点击。如果为`true`，则不会响应`click`事件。"
+    "description": "Whether it is not clickable. If `true`, it will not respond to `click` events."
   },
   "u-drawer/visible": {
     "type": "boolean",
-    "description": "是否显示"
+    "description": "Whether to display"
   },
   "u-drawer/title": {
     "type": "string",
-    "description": "抽屉的标题"
+    "description": "Title of the drawer"
   },
   "u-drawer/okButton": {
     "type": "string",
-    "description": "确定按钮文本，如果为空则不显示"
+    "description": "Confirm button text, if empty it will not be displayed"
   },
   "u-drawer/cancelButton": {
     "type": "string",
-    "description": "取消按钮文本，如果为空则不显示"
+    "description": "Cancel button text, if empty it will not be displayed"
   },
   "u-drawer/size": {
     "type": "string",
-    "description": "抽屉的尺寸。可选值：`'small'`, `'normal'`, `'large'`"
+    "description": "The size of the drawer. Possible values: `'small'`, `'normal'`, `'large'`"
   },
   "u-drawer/static": {
     "type": "boolean",
-    "description": "是否嵌入页面显示"
+    "description": "Whether to embed in page display"
   },
   "u-drawer/maskClosable": {
     "type": "boolean",
-    "description": "是否点击遮罩时关闭抽屉"
+    "description": "Whether to close the drawer when clicking the mask"
   },
   "u-form-table-view/border": {
     "type": "boolean",
-    "description": "是否有边框"
+    "description": "Is there a border?"
   },
   "u-form-table-view/data": {
     "type": "Array",
-    "description": "数据"
+    "description": "Data"
   },
   "u-form-table-view/dynamic": {
     "type": "boolean",
-    "description": "是否可以动态添加/删除项"
+    "description": "Is it possible to add/remove items dynamically?"
   },
   "u-form-table-view/get-default-item": {
     "type": "Function",
-    "description": "传入获取默认项的方法"
+    "description": "Pass in a method to get the default item"
   },
   "u-form-table-view/initial-add": {
     "type": "boolean",
-    "description": "是否Auto Replenish项，如果初始时`data`中的项目数少于`min-count`"
+    "description": "Whether to automatically add items if the number of items in `data` is initially less than `min-count`"
   },
   "u-form-table-view/min-count": {
     "type": "number",
-    "description": "最小项目数"
+    "description": "Minimum number of items"
   },
   "u-form-table-view/max-count": {
     "type": "number",
-    "description": "最大项目数"
+    "description": "Maximum number of items"
   },
   "u-form-table-view-column/title": {
     "type": "string",
-    "description": "列标题"
+    "description": "Column header"
   },
   "u-form-table-view-column/field": {
     "type": "string",
-    "description": "data 中的字段名"
+    "description": "Field name in data"
   },
   "u-form-table-view-column/width": {
     "type": "string, number",
-    "description": "给列指定宽度，可以为数字或百分比"
+    "description": "Specify the width of the column, either as a number or a percentage."
   },
   "u-form-table-view-column/ellipsis": {
     "type": "boolean",
-    "description": "是否省略显示。默认文字超出时会换行"
+    "description": "Whether to omit the display. By default, the text will wrap if it exceeds the limit."
   },
   "u-form-table-view-column/formatter": {
     "type": "string, object, Function, Formatter",
@@ -713,267 +713,267 @@
   },
   "u-form-table-view-column/hidden": {
     "type": "boolean",
-    "description": "是否隐藏"
+    "description": "Whether to hide"
   },
   "u-form-table-view-column/start-index": {
     "type": "number",
-    "description": "当`type=\"index\"`时的起始Serial Number"
+    "description": "Starting number when `type=\"index\"`"
   },
   "u-form-table-view-column/label": {
     "type": "string",
-    "description": "标签。用于提示消息的合成"
+    "description": "Label. Used for compositing prompt messages."
   },
   "u-form-table-view-column/muted": {
     "type": "string",
-    "description": "验证时是否静默。可选值：`'message'`表示只静默消息提示，`'all'`同时静默消息提示和红框提示"
+    "description": "Whether to be silent during verification. Optional values: `'message'` means only silent message prompt, `'all'` means silent message prompt and red box prompt at the same time"
   },
   "u-form-table-view-column/rules": {
     "type": "string, Array",
-    "description": "验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型"
+    "description": "Validation rules. The short form is a string type, and the full or mixed form is an array type."
   },
   "u-form-table-view-column/ignore-validation": {
     "type": "boolean",
-    "description": "忽略验证"
+    "description": "Ignore validation"
   },
   "u-form-table-view-column/ignore-rules": {
     "type": "boolean",
-    "description": "忽略验证规则。已废弃，同`ignore-validation`"
+    "description": "Ignore validation rules. Deprecated, same as `ignore-validation`"
   },
   "u-form-table-view-column/validating-options": {
     "type": "object",
-    "description": "验证辅助对象。在 Rule 的 `validate` 方法中使用。表格中会额外将`{ data: currentData, item, rowIndex }`注入"
+    "description": "A validation auxiliary object. Used in the `validate` method of Rule. `{ data: currentData, item, rowIndex }` will be additionally injected into the table."
   },
   "u-form-table-view-column/validating-value": {
     "type": "any",
-    "description": "临时修改验证值"
+    "description": "Temporarily modify the verification value"
   },
   "u-form-table-view-column/validating-process": {
     "type": "Function",
-    "description": "验证前对值进行预处理"
+    "description": "Preprocess the value before validation"
   },
   "u-form-table/line": {
     "type": "boolean",
-    "description": "单元格之间是否显示分隔线条"
+    "description": "Whether to display separator lines between cells"
   },
   "u-form-table/striped": {
     "type": "boolean",
-    "description": "表格行是否按斑马线条纹显示"
+    "description": "Whether table rows should be displayed as zebra stripes"
   },
   "u-form-table/hover": {
     "type": "boolean",
-    "description": "表格行在悬浮时是否高亮显示"
+    "description": "Whether table rows should be highlighted when hovering"
   },
   "u-form/model": {
     "type": "object",
-    "description": "表单数据模型"
+    "description": "Form data model"
   },
   "u-form/rules": {
     "type": "object",
-    "description": "表单所有域的验证规则，已废弃，推荐在各`<u-form-item>`中自行添加 rules。"
+    "description": "Validation rules for all fields in the form have been deprecated. It is recommended to add rules in each `<u-form-item>`."
   },
   "u-form/layout": {
     "type": "string",
-    "description": "表单布局方式。可选值：`block`、`inline`。"
+    "description": "Form layout mode. Optional values: `block`, `inline`."
   },
   "u-form/label-size": {
     "type": "string",
-    "description": "标签大小。可选值：`small`、`normal`、`large`。"
+    "description": "Label size. Optional values: `small`, `normal`, `large`."
   },
   "u-form-item/name": {
     "type": "string",
-    "description": "表单项名称。已废弃"
+    "description": "The name of the form field. Deprecated."
   },
   "u-form-item/label": {
     "type": "string",
-    "description": "标签。用于左侧显示，同时用于提示消息的合成"
+    "description": "Label. Used for left display and also used for the synthesis of prompt messages."
   },
   "u-form-item/label-size": {
     "type": "string",
-    "description": "单独设置表单项的标签大小"
+    "description": "Set the label size of each form item individually"
   },
   "u-form-item/field-size": {
     "type": "string",
-    "description": "单独设置表单项的内容大小。可选值：`'full'`"
+    "description": "Set the content size of each form item. Optional value: `'full'`"
   },
   "u-form-item/required": {
     "type": "boolean",
-    "description": "是否必填。仅显示样式，如果要验证必填项，需要在`rules`中添加必填规则。"
+    "description": "Whether it is required. Only display style, if you want to verify the required items, you need to add a required rule in `rules`."
   },
   "u-form-item/message": {
     "type": "string",
-    "description": "默认提示消息"
+    "description": "Default prompt message"
   },
   "u-form-item/muted": {
     "type": "string",
-    "description": "验证时是否静默。可选值：`'message'`表示只静默消息提示，`'all'`同时静默消息提示和红框提示"
+    "description": "Whether to be silent during verification. Optional values: `'message'` means only silent message prompt, `'all'` means silent message prompt and red box prompt at the same time"
   },
   "u-form-item/description": {
     "type": "string",
-    "description": "添加描述内容"
+    "description": "Add description content"
   },
   "u-form-item/placement": {
     "type": "string",
-    "description": "值为`'bottom'`时提示信息在底部显示，改变提示信息显示位置"
+    "description": "When the value is `'bottom'`, the prompt information is displayed at the bottom, changing the display position of the prompt information"
   },
   "u-form-item/layout": {
     "type": "string",
-    "description": "\b\b\b布局方式，可选值：`'block'`"
+    "description": "\b\b\bLayout mode, optional value: `'block'`"
   },
   "u-form-item/rules": {
     "type": "string, Array",
-    "description": "验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型"
+    "description": "Validation rules. The short form is a string type, and the full or mixed form is an array type."
   },
   "u-form-item/ignore-validation": {
     "type": "boolean",
-    "description": "忽略验证"
+    "description": "Ignore validation"
   },
   "u-form-item/ignore-rules": {
     "type": "boolean",
-    "description": "忽略验证规则。已废弃，同`ignore-validation`"
+    "description": "Ignore validation rules. Deprecated, same as `ignore-validation`"
   },
   "u-form-item/validating-options": {
     "type": "object",
-    "description": "验证辅助对象。在 Rule 的 `validate` 方法中使用"
+    "description": "Validation helper object. Used in Rule's `validate` method."
   },
   "u-form-item/validating-value": {
     "type": "any",
-    "description": "临时修改验证值"
+    "description": "Temporarily modify the verification value"
   },
   "u-form-item/validating-process": {
     "type": "Function",
-    "description": "验证前对值进行预处理"
+    "description": "Preprocess the value before validation"
   },
   "u-grid-layout/gap": {
     "type": "string",
-    "description": "栅格之间的间隔，一个值（行列间隔）或两个值（行间隔 列间隔）。可选值: `'none'`, `'small'`, `'normal'`, `'large'`"
+    "description": "The spacing between grids, one value (row spacing and column spacing) or two values   (row spacing and column spacing). Optional values: `'none'`, `'small'`, `'normal'`, `'large'`"
   },
   "u-grid-layout-row/repeat": {
     "type": "number",
-    "description": "划分的栅格数"
+    "description": "Number of grid divisions"
   },
   "u-grid-layout-row/type": {
     "type": "string",
-    "description": "布局模式。可选值：`'flex'`或不填"
+    "description": "Layout mode. Optional values: `'flex'` or empty"
   },
   "u-grid-layout-row/justify": {
     "type": "string",
-    "description": "flex布局模式的水平分布方式，可选值：`'start'`, `'center'`, `'end'`, `'space-between'`, `'space-around'`"
+    "description": "Horizontal distribution mode of flex layout mode, optional values: `'start'`, `'center'`, `'end'`, `'space-between'`, `'space-around'`"
   },
   "u-grid-layout-row/alignment": {
     "type": "string",
-    "description": "flex布局模式的垂直对齐方式，可选值：`'start'`, `'center'`, `'end'`, `'baseline'`, `'stretch'`"
+    "description": "Vertical alignment of flex layout mode, optional values: `'start'`, `'center'`, `'end'`, `'baseline'`, `'stretch'`"
   },
   "u-grid-layout-column/span": {
     "type": "number",
-    "description": "列跨越的栅格数"
+    "description": "Number of grid cells the column spans"
   },
   "u-grid-layout-column/offset": {
     "type": "number",
-    "description": "列左边偏移的栅格数"
+    "description": "Number of grid cells to offset the column to the left"
   },
   "u-grid-layout-column/pull": {
     "type": "number",
-    "description": "列向左移动栅格数"
+    "description": "The number of grid cells to move the column to the left"
   },
   "u-grid-layout-column/push": {
     "type": "number",
-    "description": "列向右移动栅格数"
+    "description": "The number of grid cells to move the column right by"
   },
   "u-grid-layout-column/media-huge": {
     "type": "number",
-    "description": "响应式布局`<=1440px`的列跨越栅格数"
+    "description": "Number of columns spanning the grid for responsive layouts `<=1440px`"
   },
   "u-grid-layout-column/media-large": {
     "type": "number",
-    "description": "响应式布局`<=1200px`的列跨越栅格数"
+    "description": "Number of columns spanning the grid for responsive layouts `<=1200px`"
   },
   "u-grid-layout-column/media-medium": {
     "type": "number",
-    "description": "响应式布局`<=960px`的列跨越栅格数"
+    "description": "Number of columns spanning the grid for responsive layouts `<=960px`"
   },
   "u-grid-layout-column/media-small": {
     "type": "number",
-    "description": "响应式布局`<=768px`的列跨越栅格数"
+    "description": "Number of columns spanning the grid for responsive layouts `<=768px`"
   },
   "u-grid-layout-column/media-mini": {
     "type": "number",
-    "description": "响应式布局`<=480px`的列跨越栅格数"
+    "description": "Number of columns spanning the grid for responsive layouts `<=480px`"
   },
   "u-icon-tooltip/type": {
     "type": "string",
-    "description": "图标类型。可选值：`'info'`, `'help'`, `'detail'`"
+    "description": "Icon type. Optional values: `'info'`, `'help'`, `'detail'`"
   },
   "u-icon-tooltip/size": {
     "type": "string",
-    "description": "提示大小。可选值：`'mini'`, `'normal'`, `'large'`"
+    "description": "Prompt size. Optional values: `'mini'`, `'normal'`, `'large'`"
   },
   "u-icon-tooltip/opened": {
     "type": "boolean",
-    "description": "弹出/关闭状态"
+    "description": "Popup/closed state"
   },
   "u-icon-tooltip/trigger": {
     "type": "string",
-    "description": "工具提示的触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
+    "description": "How the tooltip is triggered. Possible values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
   },
   "u-icon-tooltip/placement": {
     "type": "string",
-    "description": "工具提示的弹出方向。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
+    "description": "The direction of the tooltip. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
   },
   "u-icon-tooltip/hide-delay": {
     "type": "number",
-    "description": "提示内容消失延迟时间，单位是 ms"
+    "description": "The delay time for prompt content to disappear, in ms"
   },
   "u-icon-tooltip/offset": {
     "type": "string",
-    "description": "弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px`"
+    "description": "Popup layer offset, such as: '10', '10px 10px', '10% 10%', the first value represents the horizontal offset, the second value represents the vertical displacement, the default unit is `px`"
   },
   "u-icon-tooltip/follow-cursor": {
     "type": "boolean, number, object",
-    "description": "是否跟随鼠标"
+    "description": "Whether to follow the mouse"
   },
   "u-icon-tooltip/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-input/type": {
     "type": "string",
-    "description": "输入框的类型，目前支持两种：`'text'`和`'password'`"
+    "description": "The input box type currently supports two types: `'text'` and `'password'`"
   },
   "u-input/value": {
     "type": "string",
-    "description": "输入框的值"
+    "description": "The value of the input box"
   },
   "u-input/clearable": {
     "type": "boolean",
-    "description": "是否可清空。开启并在输入框有内容时会显示清空按钮。"
+    "description": "Whether it can be cleared. If it is turned on, a clear button will be displayed when there is content in the input box."
   },
   "u-input/placeholder": {
     "type": "string",
-    "description": "原生属性。对 IE9 做了兼容。"
+    "description": "Native properties. Compatible with IE9."
   },
   "u-input/minlength": {
     "type": "number",
-    "description": "原生属性"
+    "description": "Native attribute"
   },
   "u-input/maxlength": {
     "type": "number",
-    "description": "原生属性"
+    "description": "Native attribute"
   },
   "u-input/spellcheck": {
     "type": "boolean",
-    "description": "原生属性"
+    "description": "Native attribute"
   },
   "u-input/autofocus": {
     "type": "boolean",
-    "description": "是否自动获取焦点"
+    "description": "Whether to automatically obtain focus"
   },
   "u-input/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-input/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-linear-layout/direction": {
     "type": "enum",
@@ -981,7 +981,7 @@
       "horizontal",
       "vertical"
     ],
-    "description": "排列方向。"
+    "description": "Order of arrangement."
   },
   "u-linear-layout/gap": {
     "type": "enum",
@@ -992,7 +992,7 @@
       "normal",
       "large"
     ],
-    "description": "间隙大小，需自行扩展。"
+    "description": "Gap size, needs to be expanded by yourself."
   },
   "u-linear-layout/display": {
     "type": "string",
@@ -1000,7 +1000,7 @@
       "inline",
       "block"
     ],
-    "description": "展示方式。可选值："
+    "description": "Display method. Optional values:"
   },
   "u-linear-layout/layout": {
     "type": "string",
@@ -1009,134 +1009,134 @@
       "inline",
       "block"
     ],
-    "description": "布局方式，用于迅速调整子元素或组件的展示方式。"
+    "description": "Layout mode, used to quickly adjust the display of child elements or components."
   },
   "u-linear-layout/type": {
     "type": "string",
     "options": [
       "flex"
     ],
-    "description": "布局模式。"
+    "description": "Layout mode."
   },
   "u-linear-layout/justify": {
     "type": "string",
-    "description": "主轴分布方式。普通模式下可选值：`'start'`, `'center'`, `'end'`, `'space-between'`。flex布局模式下还支持：`'space-around'`。普通模式下的`'space-between'`功能很弱，只支持左右分布。"
+    "description": "Main axis distribution method. Optional values in normal mode: `'start'`, `'center'`, `'end'`, `'space-between'`. Flex layout mode also supports: `'space-around'`. The function of `'space-between'` in normal mode is very weak and only supports left and right distribution."
   },
   "u-linear-layout/alignment": {
     "type": "string",
-    "description": "flex布局模式下的交叉轴对齐方式，可选值：`'start'`, `'center'`, `'end'`, `'baseline'`, `'stretch'`"
+    "description": "Cross-axis alignment in flex layout mode, optional values: `'start'`, `'center'`, `'end'`, `'baseline'`, `'stretch'`"
   },
   "u-linear-progress/percent": {
     "type": "number",
-    "description": "百分比"
+    "description": "Percentage"
   },
   "u-link/href": {
     "type": "string",
-    "description": "链接地址"
+    "description": "Link address"
   },
   "u-link/target": {
     "type": "string",
-    "description": "（原生属性）"
+    "description": "(native attribute)"
   },
   "u-link/to": {
     "type": "string, Location",
-    "description": "需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。"
+    "description": "Requires vue-router, same as the `to` attribute of `<router-link>`. Can be a string or an object describing the target location."
   },
   "u-link/replace": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。"
+    "description": "Requires vue-router, same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation."
   },
   "u-link/append": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`append`属性相同。如果为`true`，则在当前路径后追加`to`的路径。"
+    "description": "Requires vue-router, same as the `append` prop of `<router-link>`. If `true`, append the path of `to` after the current path."
   },
   "u-link/disabled": {
     "type": "boolean",
-    "description": "是否禁用。禁用后不会响应`click`事件。"
+    "description": "Whether to disable. If disabled, it will not respond to the `click` event."
   },
   "u-link/display": {
     "type": "string",
-    "description": "展示方式。可选值：`'inline'`, `'block'`"
+    "description": "Display method. Optional values: `'inline'`, `'block'`"
   },
   "u-list-view/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-list-view/field": {
     "type": "string",
-    "description": "显示文本字段"
+    "description": "Display text field"
   },
   "u-list-view/data": {
     "type": "Array<{ text, value }>",
-    "description": "列表数据"
+    "description": "List data"
   },
   "u-list-view/data-source": {
     "type": "object, Function, DataSource",
-    "description": "多功能数据源"
+    "description": "Multi-functional data source"
   },
   "u-list-view/cancelable": {
     "type": "boolean",
-    "description": "是否可以取消选择"
+    "description": "Is it possible to deselect?"
   },
   "u-list-view/multiple": {
     "type": "boolean",
-    "description": "是否可以多选"
+    "description": "Is it possible to select multiple items?"
   },
   "u-list-view/collapsible": {
     "type": "boolean",
-    "description": "分组是否可以折叠"
+    "description": "Whether the group can be collapsed"
   },
   "u-list-view/accordion": {
     "type": "boolean",
-    "description": "是否每次只会展开一个分组"
+    "description": "Whether to expand only one group at a time"
   },
   "u-list-view/expand-trigger": {
     "type": "string",
-    "description": "展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发"
+    "description": "The triggering method of expanding/collapse. Optional values: `'click'` means that the entire row can be triggered by clicking, and `'click-expander'` means that it is triggered only when the small arrow is clicked."
   },
   "u-list-view/loading-text": {
     "type": "string",
-    "description": "加载时的文字。使用分页加载时才会出现"
+    "description": "Loading text. Appears only when using paging loading."
   },
   "u-list-view/initial-load": {
     "type": "boolean",
-    "description": "是否在初始时立即加载"
+    "description": "Whether to load immediately at the initialization"
   },
   "u-list-view/pageable": {
     "type": "boolean",
-    "description": "是否需要分页"
+    "description": "Whether paging is required"
   },
   "u-list-view/page-size": {
     "type": "number",
-    "description": "分页大小"
+    "description": "Page size"
   },
   "u-list-view/remote-paging": {
     "type": "number",
-    "description": "是否使用后端分页"
+    "description": "Whether to use backend paging"
   },
   "u-list-view/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-list-view/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-list-view-item/value": {
     "type": "any",
-    "description": "此项的值"
+    "description": "The value of this item"
   },
   "u-list-view-item/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "u-list-view-item/item": {
     "type": "object",
-    "description": "相关对象。当选择此项时，抛出的事件会传递该对象，便于开发"
+    "description": "Related objects. When this option is selected, the thrown event will pass this object, which is convenient for development."
   },
   "u-list-view-group/title": {
     "type": "string",
-    "description": "显示的标题"
+    "description": "Displayed title"
   },
   "u-list-view-group/collapsible": {
     "type": "boolean",
@@ -1144,355 +1144,355 @@
   },
   "u-list-view-group/expanded": {
     "type": "boolean",
-    "description": "展开/折叠状态"
+    "description": "Expand/collapse state"
   },
   "u-list-view-group/disabled": {
     "type": "boolean",
-    "description": "是否禁用。禁用时无法展开/折叠"
+    "description": "Whether to disable. Cannot expand/collapse when disabled"
   },
   "u-list/type": {
     "type": "string",
-    "description": "列表前缀，如：`'disc'`, `'circle'`, `'decimal'`，与原生样式属性`list-style-type`的值对应。"
+    "description": "List prefix, such as: `'disc'`, `'circle'`, `'decimal'`, corresponding to the value of the native style property `list-style-type`."
   },
   "u-list/line": {
     "type": "string",
-    "description": "列表行之间显示分隔线条。可选值：`'both'`, `'horizontal'`, `'vertical'`"
+    "description": "Display separator lines between list rows. Possible values: `'both'`, `'horizontal'`, `'vertical'`"
   },
   "u-list/striped": {
     "type": "boolean",
-    "description": "列表行是否按斑马线条纹显示"
+    "description": "Whether list rows should be displayed as zebra stripes"
   },
   "u-list/hover": {
     "type": "boolean",
-    "description": "列表行在悬浮时是否高亮显示"
+    "description": "Whether list rows should be highlighted when hovering"
   },
   "u-loading/size": {
     "type": "string",
-    "description": "图标的大小。可选值：`'small'`, `'normal'`, `'large'`"
+    "description": "The size of the icon. Optional values: `'small'`, `'normal'`, `'large'`"
   },
   "u-loading/display": {
     "type": "string",
-    "description": "展示方式。可选值：`'inline'`表示按行内展示，`'block'`表示按块级展示，`'full'`表示填充定位父元素（offsetParent），`'fullWindow'`表示填充整个浏览器"
+    "description": "Display mode. Optional values: `'inline'` means display inline, `'block'` means display at block level, `'full'` means fill the parent element (offsetParent), `'fullWindow'` means fill the entire browser"
   },
   "u-menu/router": {
     "type": "boolean",
-    "description": "是否根据vue-router来控制选择哪一项"
+    "description": "Whether to control which item is selected according to vue-router"
   },
   "u-menu/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-menu/collapsible": {
     "type": "boolean",
-    "description": "分组是否可以折叠"
+    "description": "Whether the group can be collapsed"
   },
   "u-menu/accordion": {
     "type": "boolean",
-    "description": "是否每次只会展开一个分组"
+    "description": "Whether to expand only one group at a time"
   },
   "u-menu/expand-trigger": {
     "type": "string",
-    "description": "展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发"
+    "description": "The triggering method of expanding/collapse. Optional values: `'click'` means that the entire row can be triggered by clicking, and `'click-expander'` means that it is triggered only when the small arrow is clicked."
   },
   "u-menu/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-menu/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-menu-item/value": {
     "type": "any",
-    "description": "此项的值"
+    "description": "The value of this item"
   },
   "u-menu-item/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "u-menu-item/item": {
     "type": "object",
-    "description": "相关对象。当选择此项时，抛出的事件会传递该对象，便于开发"
+    "description": "Related objects. When this option is selected, the thrown event will pass this object, which is convenient for development."
   },
   "u-menu-item/href": {
     "type": "string",
-    "description": "链接地址"
+    "description": "Link address"
   },
   "u-menu-item/target": {
     "type": "string",
-    "description": "打开方式"
+    "description": "Open method"
   },
   "u-menu-item/to": {
     "type": "string, Location",
-    "description": "需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。"
+    "description": "Requires vue-router, same as the `to` attribute of `<router-link>`. Can be a string or an object describing the target location."
   },
   "u-menu-item/replace": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。"
+    "description": "Requires vue-router, same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation."
   },
   "u-menu-item/exact": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`exact`属性相同。是否与路由完全一致时才高亮显示。"
+    "description": "Requires vue-router, same as `exact` property of `<router-link>`. Highlighted only when it is exactly the same as the route."
   },
   "u-menu-group/title": {
     "type": "string",
-    "description": "显示的标题"
+    "description": "Displayed title"
   },
   "u-modal/visible": {
     "type": "boolean",
-    "description": "是否显示"
+    "description": "Whether to display"
   },
   "u-modal/title": {
     "type": "string",
-    "description": "弹窗的标题"
+    "description": "Title of the pop-up window"
   },
   "u-modal/ok-button": {
     "type": "string",
-    "description": "确定按钮文本，如果为空则不显示"
+    "description": "Confirm button text, if empty it will not be displayed"
   },
   "u-modal/cancel-button": {
     "type": "string",
-    "description": "取消按钮文本，如果为空则不显示"
+    "description": "Cancel button text, if empty it will not be displayed"
   },
   "u-modal/size": {
     "type": "string",
-    "description": "弹窗的尺寸。可选值：`'small'`, `'normal'`, `'large'`"
+    "description": "The size of the popup window. Optional values: `'small'`, `'normal'`, `'large'`"
   },
   "u-modal/static": {
     "type": "boolean",
-    "description": "是否嵌入页面显示"
+    "description": "Whether to embed in page display"
   },
   "u-modal/mask-closable": {
     "type": "boolean",
-    "description": "是否点击遮罩时关闭弹窗"
+    "description": "Whether to close the popup window when clicking the mask"
   },
   "u-navbar/router": {
     "type": "boolean",
-    "description": "是否根据 vue-router 来控制选择项"
+    "description": "Whether to control the selection according to vue-router"
   },
   "u-navbar/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-navbar/field": {
     "type": "string",
-    "description": "显示文本字段"
+    "description": "Display text field"
   },
   "u-navbar/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-navbar/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-navbar-item/value": {
     "type": "any",
-    "description": "此项的值"
+    "description": "The value of this item"
   },
   "u-navbar-item/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "u-navbar-item/item": {
     "type": "object",
-    "description": "相关对象。当选择此项时，抛出的事件会传递该对象，便于开发"
+    "description": "Related objects. When this option is selected, the thrown event will pass this object, which is convenient for development."
   },
   "u-navbar-item/href": {
     "type": "string",
-    "description": "链接地址"
+    "description": "Link address"
   },
   "u-navbar-item/target": {
     "type": "string",
-    "description": "打开方式"
+    "description": "Open method"
   },
   "u-navbar-item/to": {
     "type": "string, Location",
-    "description": "需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。"
+    "description": "Requires vue-router, same as the `to` attribute of `<router-link>`. Can be a string or an object describing the target location."
   },
   "u-navbar-item/replace": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。"
+    "description": "Requires vue-router, same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation."
   },
   "u-navbar-item/exact": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`exact`属性相同。是否与路由完全一致时才高亮显示。"
+    "description": "Requires vue-router, same as `exact` property of `<router-link>`. Highlighted only when it is exactly the same as the route."
   },
   "u-navbar-dropdown/trigger": {
     "type": "string",
-    "description": "触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
+    "description": "Trigger method. Optional values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
   },
   "u-navbar-dropdown/placement": {
     "type": "string",
-    "description": "弹出方位。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
+    "description": "Pop-up orientation. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
   },
   "u-navbar-dropdown/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-number-input/value": {
     "type": "number",
-    "description": "输入框的值"
+    "description": "The value of the input box"
   },
   "u-number-input/min": {
     "type": "number",
-    "description": "最小值"
+    "description": "Minimum value"
   },
   "u-number-input/max": {
     "type": "number",
-    "description": "最大值"
+    "description": "Maximum value"
   },
   "u-number-input/step": {
     "type": "number",
-    "description": "间隔，表示点击按钮或按上下键所增加或减少的量"
+    "description": "Interval, which indicates the amount of increase or decrease when clicking a button or pressing the up or down key"
   },
   "u-number-input/precision": {
     "type": "number",
-    "description": "精度，表示数字要保留的最小单位，整数、小数均可"
+    "description": "Precision, which indicates the smallest unit to be retained by a number, both integers and decimals are acceptable"
   },
   "u-number-input/formatter": {
     "type": "string, object",
-    "description": "格式化字符串，具体参见Example。也可以传入一个包含`get`和`set`方法的格式化对象。"
+    "description": "Format string, see examples for details. You can also pass a format object containing `get` and `set` methods."
   },
   "u-number-input/placeholder": {
     "type": "string",
-    "description": "原生属性"
+    "description": "Native attribute"
   },
   "u-number-input/autofocus": {
     "type": "boolean",
-    "description": "原生属性"
+    "description": "Native attribute"
   },
   "u-number-input/hide-buttons": {
     "type": "boolean",
-    "description": "是否隐藏按钮"
+    "description": "Whether to hide the button"
   },
   "u-number-input/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-number-input/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-number-input/size": {
     "type": "string",
-    "description": "大小扩展，支持一个值：`'mini'`, `'small'`, `'normal'`, `'large'`, `'huge'`, `'full'`，或两个值的组合，前者表示高度，后者表示宽度，类似CSS的padding书写格式"
+    "description": "Size extension, supports one value: `'mini'`, `'small'`, `'normal'`, `'large'`, `'huge'`, `'full'`, or a combination of two values, the former represents the height, the latter represents the width, similar to the CSS padding writing format"
   },
   "u-pagination/page": {
     "type": "number",
-    "description": "当前页码"
+    "description": "Current page number"
   },
   "u-pagination/total": {
     "type": "number",
-    "description": "总页数"
+    "description": "Total number of pages"
   },
   "u-pagination/side": {
     "type": "number",
-    "description": "当页数多时，两边恒定显示的数量"
+    "description": "When there are many pages, the number of pages displayed on both sides is constant."
   },
   "u-pagination/around": {
     "type": "number",
-    "description": "当页数多时，中间恒定显示的数量"
+    "description": "When there are many pages, the number displayed in the middle is constant"
   },
   "u-pagination/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-pagination/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-popup/title": {
     "type": "string",
-    "description": "弹出框标题"
+    "description": "Popup box title"
   },
   "u-popup/opened": {
     "type": "boolean",
-    "description": "弹出/关闭状态"
+    "description": "Popup/closed state"
   },
   "u-popup/trigger": {
     "type": "string",
-    "description": "弹出框的触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
+    "description": "The triggering method of the pop-up box. Optional values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
   },
   "u-popup/placement": {
     "type": "string",
-    "description": "弹出框的弹出方向。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
+    "description": "The pop-up direction of the pop-up box. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
   },
   "u-popup/hideDelay": {
     "type": "number",
-    "description": "提示内容消失延迟时间，单位是`'ms'`"
+    "description": "The delay time for prompt content to disappear, in `'ms'`"
   },
   "u-popup/offset": {
     "type": "string",
-    "description": "弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px`"
+    "description": "Popup layer offset, such as: '10', '10px 10px', '10% 10%', the first value represents the horizontal offset, the second value represents the vertical displacement, the default unit is `px`"
   },
   "u-popup/follow-cursor": {
     "type": "boolean, number, object",
-    "description": "是否跟随鼠标"
+    "description": "Whether to follow the mouse"
   },
   "u-popup/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-popup/merge-borders": {
     "type": "boolean",
-    "description": "是否自动合并内外边框"
+    "description": "Whether to automatically merge inner and outer borders"
   },
   "u-radios/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-radios/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-radios/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-radio/label": {
     "type": "any",
-    "description": "单选框标签。用于关联单选组的值"
+    "description": "Radio label. Used to associate the value of a radio group."
   },
   "u-radio/readonly": {
     "type": "boolean",
-    "description": "禁用只读"
+    "description": "Disable read-only"
   },
   "u-radio/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "u-region-select/data": {
     "type": "Array<{ text, value }>",
-    "description": "数据列表"
+    "description": "Data list"
   },
   "u-region-select/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-region-select/categories": {
     "type": "Array<{ label, key, placeholder }>",
-    "description": "多级分类"
+    "description": "Multi-level classification"
   },
   "u-region-select/hide-empty": {
     "type": "boolean",
-    "description": "是否隐藏空列表"
+    "description": "Whether to hide empty lists"
   },
   "u-region-select/converter": {
     "type": "string, object",
-    "description": "value 与 values 的转换器。可选值：`'join'`表示将 values 数组 join 之后变成 value，`'join.number'`与`join`类似，只是会考虑它为数字的情况。也可以用`:`修改分隔符，类似 Vue 的指令参数，`'last-value'`表示以最后一项的值作为 value。也可以传入一个包含 { get, set } 的一个对象"
+    "description": "Converter between value and values. Optional values: `'join'` means joining the values   array to become value, `'join.number'` is similar to `join`, except that it will consider the case where it is a number. You can also use `:` to modify the separator, similar to Vue's instruction parameters, `'last-value'` means using the last item as value. You can also pass in an object containing { get, set }"
   },
   "u-region-select/field": {
     "type": "string",
-    "description": "显示文本字段"
+    "description": "Display text field"
   },
   "u-region-select/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-region-select/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-sample/color": {
     "type": "string",
@@ -1500,175 +1500,175 @@
   },
   "u-select/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-select/field": {
     "type": "string",
-    "description": "显示文本字段"
+    "description": "Display text field"
   },
   "u-select/data": {
     "type": "Array<{ text, value }>",
-    "description": "列表数据"
+    "description": "List data"
   },
   "u-select/data-source": {
     "type": "object, Function, DataSource",
-    "description": "多功能数据源"
+    "description": "Multi-functional data source"
   },
   "u-select/cancelable": {
     "type": "boolean",
-    "description": "是否可以取消选择"
+    "description": "Is it possible to deselect?"
   },
   "u-select/multiple": {
     "type": "boolean",
-    "description": "是否可以多选"
+    "description": "Is it possible to select multiple items?"
   },
   "u-select/placeholder": {
     "type": "boolean",
-    "description": "选择框的占位符"
+    "description": "Placeholder for a select box"
   },
   "u-select/loading-text": {
     "type": "string",
-    "description": "加载时的文字。使用分页加载时才会出现"
+    "description": "Loading text. Appears only when using paging loading."
   },
   "u-select/empty-text": {
     "type": "string",
-    "description": "没有匹配时的文字"
+    "description": "Text when there is no match"
   },
   "u-select/empty-disabled": {
     "type": "boolean",
-    "description": "没有数据时，自动禁用"
+    "description": "Automatically disabled when no data"
   },
   "u-select/initial-load": {
     "type": "boolean",
-    "description": "是否在初始时立即加载"
+    "description": "Whether to load immediately at the initialization"
   },
   "u-select/pageable": {
     "type": "boolean",
-    "description": "是否需要分页"
+    "description": "Whether paging is required"
   },
   "u-select/page-size": {
     "type": "number",
-    "description": "分页大小"
+    "description": "Page size"
   },
   "u-select/remote-paging": {
     "type": "boolean",
-    "description": "是否使用后端分页"
+    "description": "Whether to use backend paging"
   },
   "u-select/clearable": {
     "type": "boolean",
-    "description": "是否有清除按钮"
+    "description": "Is there a clear button?"
   },
   "u-select/filterable": {
     "type": "boolean",
-    "description": "是否使用输入框进行过滤"
+    "description": "Whether to use input box for filtering"
   },
   "u-select/match-method": {
     "type": "string, Function",
-    "description": "过滤时的匹配方法"
+    "description": "Matching method when filtering"
   },
   "u-select/case-sensitive": {
     "type": "string, Function",
-    "description": "过滤时大小写是否敏感"
+    "description": "Is the filter case sensitive?"
   },
   "u-select/remote-filtering": {
     "type": "boolean",
-    "description": "是否使用后端过滤"
+    "description": "Whether to use backend filtering"
   },
   "u-select/auto-complete": {
     "type": "boolean",
-    "description": "是否开启Auto Replenish模式，用于增加列表中没有的项"
+    "description": "Whether to enable the automatic supplement mode to add items that are not in the list"
   },
   "u-select/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-select/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-select/opened": {
     "type": "boolean",
-    "description": "弹出/关闭状态"
+    "description": "Popup/closed state"
   },
   "u-select-item/value": {
     "type": "any",
-    "description": "此项的值"
+    "description": "The value of this item"
   },
   "u-select-item/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "u-select-item/item": {
     "type": "object",
-    "description": "相关对象。当选择此项时，抛出的事件会传递该对象，便于开发"
+    "description": "Related objects. When this option is selected, the thrown event will pass this object, which is convenient for development."
   },
   "u-select-group/title": {
     "type": "string",
-    "description": "显示的标题"
+    "description": "Displayed title"
   },
   "u-sidebar/router": {
     "type": "boolean",
-    "description": "是否根据vue-router来控制选择哪一项"
+    "description": "Whether to control which item is selected according to vue-router"
   },
   "u-sidebar/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-sidebar/collapsible": {
     "type": "boolean",
-    "description": "分组是否可以折叠"
+    "description": "Whether the group can be collapsed"
   },
   "u-sidebar/accordion": {
     "type": "boolean",
-    "description": "是否每次只会展开一个分组"
+    "description": "Whether to expand only one group at a time"
   },
   "u-sidebar/expand-trigger": {
     "type": "string",
-    "description": "展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发"
+    "description": "The triggering method of expanding/collapse. Optional values: `'click'` means that the entire row can be triggered by clicking, and `'click-expander'` means that it is triggered only when the small arrow is clicked."
   },
   "u-sidebar/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-sidebar/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-sidebar-item/value": {
     "type": "any",
-    "description": "此项的值"
+    "description": "The value of this item"
   },
   "u-sidebar-item/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "u-sidebar-item/item": {
     "type": "object",
-    "description": "相关对象。当选择此项时，抛出的事件会传递该对象，便于开发"
+    "description": "Related objects. When this option is selected, the thrown event will pass this object, which is convenient for development."
   },
   "u-sidebar-item/href": {
     "type": "string",
-    "description": "链接地址"
+    "description": "Link address"
   },
   "u-sidebar-item/target": {
     "type": "string",
-    "description": "打开方式"
+    "description": "Open method"
   },
   "u-sidebar-item/to": {
     "type": "string, Location",
-    "description": "需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。"
+    "description": "Requires vue-router, same as the `to` attribute of `<router-link>`. Can be a string or an object describing the target location."
   },
   "u-sidebar-item/replace": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。"
+    "description": "Requires vue-router, same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation."
   },
   "u-sidebar-item/exact": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`exact`属性相同。是否与路由完全一致时才高亮显示。"
+    "description": "Requires vue-router, same as `exact` property of `<router-link>`. Highlighted only when it is exactly the same as the route."
   },
   "u-sidebar-group/title": {
     "type": "string",
-    "description": "显示的标题"
+    "description": "Displayed title"
   },
   "u-sidebar-group/collapsible": {
     "type": "boolean",
@@ -1676,239 +1676,239 @@
   },
   "u-sidebar-group/expanded": {
     "type": "boolean",
-    "description": "展开/折叠状态"
+    "description": "Expand/collapse state"
   },
   "u-sidebar-group/disabled": {
     "type": "boolean",
-    "description": "是否禁用。禁用时无法展开/折叠"
+    "description": "Whether to disable. Cannot expand/collapse when disabled"
   },
   "u-slider/value": {
     "type": "number",
-    "description": "滑块的值"
+    "description": "The value of the slider"
   },
   "u-slider/min": {
     "type": "number",
-    "description": "最小值"
+    "description": "Minimum value"
   },
   "u-slider/max": {
     "type": "number",
-    "description": "最大值"
+    "description": "Maximum value"
   },
   "u-slider/step": {
     "type": "number",
-    "description": "间隔，表示点击按钮或按上下键所增加或减少的量。`0`表示连续"
+    "description": "Interval, which indicates the amount of increase or decrease when clicking a button or pressing the up or down key. `0` means continuous"
   },
   "u-slider/precision": {
     "type": "number",
-    "description": "精度，表示数字要保留的最小单位，整数、小数均可"
+    "description": "Precision, which indicates the smallest unit to be retained by a number, both integers and decimals are acceptable"
   },
   "u-slider/range": {
     "type": "Array",
-    "description": "进一步对`value`限制，通常传入一个数组，第一个值表示范围开始值，第二个值表示范围的结束值。"
+    "description": "Further restrict `value`, usually pass in an array, the first value indicates the start value of the range, and the second value indicates the end value of the range."
   },
   "u-slider/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-slider/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-steps/value": {
     "type": "number",
-    "description": "当前步骤数"
+    "description": "Current step number"
   },
   "u-steps/readonly": {
     "type": "boolean",
-    "description": "是否只读。非只读的情况下可以选择"
+    "description": "Whether it is read-only. You can select it if it is not read-only."
   },
   "u-steps/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-step/title": {
     "type": "string",
-    "description": "步骤名"
+    "description": "Step name"
   },
   "u-step/disabled": {
     "type": "boolean",
-    "description": "是否禁用此标签页"
+    "description": "Whether to disable this tab"
   },
   "u-switch/value": {
     "type": "boolean",
-    "description": "开关状态"
+    "description": "Switch status"
   },
   "u-switch/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-switch/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-table-view/title": {
     "type": "string",
-    "description": "表格标题"
+    "description": "Table title"
   },
   "u-table-view/title-alignment": {
     "type": "string",
-    "description": "表格标题对齐方式"
+    "description": "Table title alignment"
   },
   "u-table-view/border": {
     "type": "boolean",
-    "description": "是否显示边框"
+    "description": "Whether to display border"
   },
   "u-table-view/line": {
     "type": "boolean",
-    "description": "单元格之间是否显示分隔线条"
+    "description": "Whether to display separator lines between cells"
   },
   "u-table-view/striped": {
     "type": "boolean",
-    "description": "表格行是否按斑马线条纹显示"
+    "description": "Whether table rows should be displayed as zebra stripes"
   },
   "u-table-view/hover": {
     "type": "boolean",
-    "description": "表格行在悬浮时是否高亮显示"
+    "description": "Whether table rows should be highlighted when hovering"
   },
   "u-table-view/show-head": {
     "type": "boolean",
-    "description": "是否显示表格头部"
+    "description": "Whether to display the table header"
   },
   "u-table-view/loading": {
     "type": "boolean",
-    "description": "手动设置是否Loading"
+    "description": "Manually set whether loading is in progress"
   },
   "u-table-view/loading-text": {
     "type": "string",
-    "description": "Loading的文字"
+    "description": "Loading text"
   },
   "u-table-view/error": {
     "type": "boolean",
-    "description": "手动设置是否加载失败"
+    "description": "Manually set whether loading fails"
   },
   "u-table-view/error-text": {
     "type": "string",
-    "description": "加载失败时的文字"
+    "description": "Text when loading fails"
   },
   "u-table-view/empty-text": {
     "type": "string",
-    "description": "暂无数据时的文字"
+    "description": "Text when there is no data"
   },
   "u-table-view/data": {
     "type": "Array<{ [field]: string, ... }>",
-    "description": "表格数据"
+    "description": "Table data"
   },
   "u-table-view/data-source": {
     "type": "object, Function, DataSource",
-    "description": "多功能数据源"
+    "description": "Multi-functional data source"
   },
   "u-table-view/initial-load": {
     "type": "boolean",
-    "description": "是否在初始时立即加载"
+    "description": "Whether to load immediately at the initialization"
   },
   "u-table-view/pageable": {
     "type": "boolean",
-    "description": "是否需要分页"
+    "description": "Whether paging is required"
   },
   "u-table-view/page-size": {
     "type": "number",
-    "description": "分页大小"
+    "description": "Page size"
   },
   "u-table-view/page-size-options": {
     "type": "Array",
-    "description": "每页大小选项列表"
+    "description": "List of page size options"
   },
   "u-table-view/show-total": {
     "type": "boolean",
-    "description": "是否显示总条目数"
+    "description": "Whether to display the total number of entries"
   },
   "u-table-view/show-sizer": {
     "type": "boolean",
-    "description": "是否显示切换每页大小选项"
+    "description": "Whether to display the option to switch the page size"
   },
   "u-table-view/show-jumper": {
     "type": "boolean",
-    "description": "是否显示页面跳转输入框"
+    "description": "Whether to display the page jump input box"
   },
   "u-table-view/sorting": {
     "type": "object<{ field: string, order: string, compare: Function }>",
-    "description": "当前排序字段和顺序"
+    "description": "Current sort field and order"
   },
   "u-table-view/default-order": {
     "type": "string",
-    "description": "所有列首次点击时的排序顺序"
+    "description": "Sort order of all columns when first clicked"
   },
   "u-table-view/filtering": {
     "type": "object",
-    "description": "过滤项"
+    "description": "Filter items"
   },
   "u-table-view/remote-paging": {
     "type": "boolean",
-    "description": "是否使用后端分页"
+    "description": "Whether to use backend paging"
   },
   "u-table-view/remote-sorting": {
     "type": "boolean",
-    "description": "是否使用后端排序"
+    "description": "Whether to use backend sorting"
   },
   "u-table-view/remote-filtering": {
     "type": "boolean",
-    "description": "是否使用后端过滤"
+    "description": "Whether to use backend filtering"
   },
   "u-table-view/value-field": {
     "type": "string",
-    "description": "在单选和多选操作中，指定数据唯一值的字段"
+    "description": "In single-select and multi-select operations, a field that specifies unique values   for data"
   },
   "u-table-view/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-table-view/values": {
     "type": "Array",
-    "description": "多项选择的值"
+    "description": "Multiple choice values"
   },
   "u-table-view/selectable": {
     "type": "boolean",
-    "description": "是否可以选择行"
+    "description": "Is it possible to select rows?"
   },
   "u-table-view/cancelable": {
     "type": "boolean",
-    "description": "是否可以取消选择"
+    "description": "Is it possible to deselect?"
   },
   "u-table-view/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-table-view/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-table-view/accordion": {
     "type": "boolean",
-    "description": "在有`expander`列的情况下，展开一行的同时，是否收起其它行"
+    "description": "Whether to collapse other rows when expanding a row when there is an `expander` column"
   },
   "u-table-view/resizable": {
     "type": "boolean",
-    "description": "是否可以调整列宽"
+    "description": "Is it possible to adjust the column width?"
   },
   "u-table-view/resize-remaining": {
     "type": "boolean",
-    "description": "调整列宽效果。可选值：`sequence`表示保持总宽不变，优先后一列弥补宽度；`average`表示保持总宽不变，后面所有列平均弥补宽度；`none`表示不做任何处理，表格宽度变化。"
+    "description": "Adjust the column width effect. Optional values: `sequence` means keep the total width unchanged, and give priority to the next column to make up the width; `average` means keep the total width unchanged, and all the following columns make up the width evenly; `none` means no processing is done, and the table width changes."
   },
   "u-table-view-column/title": {
     "type": "string",
-    "description": "列标题"
+    "description": "Column header"
   },
   "u-table-view-column/field": {
     "type": "string",
-    "description": "data 中的字段名"
+    "description": "Field name in data"
   },
   "u-table-view-column/width": {
     "type": "string, number",
-    "description": "给列指定宽度，可以为数字或百分比"
+    "description": "Specify the width of the column, either as a number or a percentage."
   },
   "u-table-view-column/ellipsis": {
     "type": "boolean",
-    "description": "是否省略显示。默认文字超出时会换行"
+    "description": "Whether to omit the display. By default, the text will wrap if it exceeds the limit."
   },
   "u-table-view-column/formatter": {
     "type": "string, object, Function, Formatter",
@@ -1920,343 +1920,343 @@
   },
   "u-table-view-column/sortable": {
     "type": "boolean",
-    "description": "该列是否可以排序"
+    "description": "Whether this column can be sorted"
   },
   "u-table-view-column/default-order": {
     "type": "string",
-    "description": "该列首次点击时的排序顺序"
+    "description": "The sort order when the column is first clicked"
   },
   "u-table-view-column/filters": {
     "type": "Array<{ text: string, value: any }>",
-    "description": "该列首次点击时的排序顺序"
+    "description": "The sort order when the column is first clicked"
   },
   "u-table-view-column/hidden": {
     "type": "boolean",
-    "description": "是否隐藏"
+    "description": "Whether to hide"
   },
   "u-table-view-column/type": {
     "type": "string",
-    "description": "列类型。可选值：`index`表示Serial Number列，`radio`表示单选列，`checkbox`表示多选列，`expander`表示展开列。"
+    "description": "Column type. Optional values: `index` indicates ordinal column, `radio` indicates single-select column, `checkbox` indicates multi-select column, and `expander` indicates expanded column."
   },
   "u-table-view-column/start-index": {
     "type": "number",
-    "description": "当`type=\"index\"`时的起始Serial Number"
+    "description": "Starting number when `type=\"index\"`"
   },
   "u-table/line": {
     "type": "boolean",
-    "description": "单元格之间是否显示分隔线条"
+    "description": "Whether to display separator lines between cells"
   },
   "u-table/striped": {
     "type": "boolean",
-    "description": "表格行是否按斑马线条纹显示"
+    "description": "Whether table rows should be displayed as zebra stripes"
   },
   "u-table/hover": {
     "type": "boolean",
-    "description": "表格行在悬浮时是否高亮显示"
+    "description": "Whether table rows should be highlighted when hovering"
   },
   "u-tabs/value": {
     "type": "any",
-    "description": "选中标签页的值"
+    "description": "The value of the selected tab"
   },
   "u-tabs/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-tabs/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-tabs/closable": {
     "type": "boolean",
-    "description": "是否可以关闭"
+    "description": "Can it be closed?"
   },
   "u-tabs/router": {
     "type": "boolean",
-    "description": "是否根据 vue-router 来控制选择哪个标签页"
+    "description": "Whether to control which tab is selected based on vue-router"
   },
   "u-tab/title": {
     "type": "string",
-    "description": "标签页标题"
+    "description": "Tab title"
   },
   "u-tab/value": {
     "type": "any",
-    "description": "标签页的值"
+    "description": "The value of the tab"
   },
   "u-tab/disabled": {
     "type": "boolean",
-    "description": "是否禁用此标签页"
+    "description": "Whether to disable this tab"
   },
   "u-tab/href": {
     "type": "string",
-    "description": "链接地址"
+    "description": "Link address"
   },
   "u-tab/target": {
     "type": "string",
-    "description": "打开方式"
+    "description": "Open method"
   },
   "u-tab/to": {
     "type": "string, Location",
-    "description": "需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。"
+    "description": "Requires vue-router, same as the `to` attribute of `<router-link>`. Can be a string or an object describing the target location."
   },
   "u-tab/replace": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。"
+    "description": "Requires vue-router, same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation."
   },
   "u-tab/exact": {
     "type": "boolean",
-    "description": "需要 vue-router，与`<router-link>`的`exact`属性相同。是否与路由完全一致时才高亮显示。"
+    "description": "Requires vue-router, same as `exact` property of `<router-link>`. Highlighted only when it is exactly the same as the route."
   },
   "u-text/size": {
     "type": "string",
-    "description": "大小扩展。可选值：`'small'`, `'normal'`, `'large'`"
+    "description": "Size extension. Possible values: `'small'`, `'normal'`, `'large'`"
   },
   "u-text/color": {
     "type": "string",
-    "description": "Color Extension。可选值：`'default'`, `'primary'`, `'error'`, `'disabled'`"
+    "description": "Color extension. Possible values: `'default'`, `'primary'`, `'error'`, `'disabled'`"
   },
   "u-text/display": {
     "type": "string",
-    "description": "展示方式。可选值：`'inline'`, `'block'`"
+    "description": "Display method. Optional values: `'inline'`, `'block'`"
   },
   "u-text/wrap": {
     "type": "string",
-    "description": "换行方式。可选值：`'normal'`表示默认方式，`'ellipsis'`表示多余的文本省略，`'break'`表示强制换行且英文自动添加换行符，`'nowrap'`表示始终不换行。"
+    "description": "Line break mode. Optional values: `'normal'` means the default mode, `'ellipsis'` means extra text is omitted, `'break'` means forced line break and automatic line break for English, `'nowrap'` means no line break at all."
   },
   "u-textarea/value": {
     "type": "string",
-    "description": "输入框的值"
+    "description": "The value of the input box"
   },
   "u-textarea/clearable": {
     "type": "boolean",
-    "description": "是否可清空。开启并在输入框有内容时会显示清空按钮。"
+    "description": "Whether it can be cleared. If it is turned on, a clear button will be displayed when there is content in the input box."
   },
   "u-textarea/placeholder": {
     "type": "string",
-    "description": "原生属性。对 IE9 做了兼容。"
+    "description": "Native properties. Compatible with IE9."
   },
   "u-textarea/minlength": {
     "type": "number",
-    "description": "原生属性"
+    "description": "Native properties"
   },
   "u-textarea/maxlength": {
     "type": "number",
-    "description": "原生属性"
+    "description": "Native properties"
   },
   "u-textarea/spellcheck": {
     "type": "boolean",
-    "description": "原生属性"
+    "description": "Native properties"
   },
   "u-textarea/autofocus": {
     "type": "boolean",
-    "description": "是否自动获取焦点"
+    "description": "Whether to automatically obtain focus"
   },
   "u-textarea/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-textarea/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-textarea/resize": {
     "type": "string",
-    "description": "是否可以调整大小。可选值：`'none'`、`'both'`、`'horizontal'`、`'vertical'`"
+    "description": "Whether it can be resized. Optional values: `'none'`, `'both'`, `'horizontal'`, `'vertical'`"
   },
   "u-toast/position": {
     "type": "string",
-    "description": "显示的位置，可选值：`'top-center'`, `'top-left'`, `'top-right'`, `'bottom-center'`, `'bottom-left'`, `'bottom-right'`, `static`"
+    "description": "Display position, optional values: `'top-center'`, `'top-left'`, `'top-right'`, `'bottom-center'`, `'bottom-left'`, `'bottom-right'`, `static`"
   },
   "u-toast/duration": {
     "type": "number",
-    "description": "提示停留的时间。`0`表示常驻。"
+    "description": "The time the prompt stays. `0` means always."
   },
   "u-toast/single": {
     "type": "boolean",
-    "description": "多个提示会合并为一个"
+    "description": "Multiple prompts will be merged into one"
   },
   "u-toast/text": {
     "type": "string",
-    "description": "默认提示内容"
+    "description": "Default prompt content"
   },
   "u-toast/color": {
     "type": "string",
-    "description": "提示的颜色"
+    "description": "The color of the prompt"
   },
   "u-toast/closable": {
     "type": "boolean",
-    "description": "是否可以关闭提示"
+    "description": "Can I turn off the prompt?"
   },
   "u-tooltip/opened": {
     "type": "boolean",
-    "description": "弹出/关闭状态"
+    "description": "Popup/closed state"
   },
   "u-tooltip/trigger": {
     "type": "string",
-    "description": "工具提示的触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
+    "description": "How the tooltip is triggered. Possible values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'`"
   },
   "u-tooltip/placement": {
     "type": "string",
-    "description": "工具提示的弹出方向。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
+    "description": "The direction of the tooltip. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'`"
   },
   "u-tooltip/hide-delay": {
     "type": "number",
-    "description": "提示内容消失延迟时间，单位是 ms"
+    "description": "The delay time for prompt content to disappear, in ms"
   },
   "u-tooltip/offset": {
     "type": "string",
-    "description": "弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px`"
+    "description": "Popup layer offset, such as: '10', '10px 10px', '10% 10%', the first value represents the horizontal offset, the second value represents the vertical displacement, the default unit is `px`"
   },
   "u-tooltip/follow-cursor": {
     "type": "boolean, number, object",
-    "description": "是否跟随鼠标"
+    "description": "Whether to follow the mouse"
   },
   "u-tooltip/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-transfer/source": {
     "type": "Array<{ text, value }>",
-    "description": "原数据列表"
+    "description": "Original data list"
   },
   "u-transfer/target": {
     "type": "Array<{ text, value }>",
-    "description": "目标数据列表"
+    "description": "Target data list"
   },
   "u-transfer/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-transfer/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-tree-view/data": {
     "type": "Array<{ text, value }>",
-    "description": "Data书写方式中的数据列表"
+    "description": "Data list in Data writing mode"
   },
   "u-tree-view/value": {
     "type": "any",
-    "description": "当前选择的值"
+    "description": "The currently selected value"
   },
   "u-tree-view/field": {
     "type": "string",
-    "description": "显示文本字段"
+    "description": "Display text field"
   },
   "u-tree-view/cancelable": {
     "type": "boolean",
-    "description": "是否可以取消选择"
+    "description": "Is it possible to deselect?"
   },
   "u-tree-view/checkable": {
     "type": "boolean",
-    "description": "是否可以选中/取消"
+    "description": "Can I select/cancel?"
   },
   "u-tree-view/accordion": {
     "type": "boolean",
-    "description": "是否每次只会展开一个分组"
+    "description": "Whether to expand only one group at a time"
   },
   "u-tree-view/expand-trigger": {
     "type": "string",
-    "description": "展开/折叠的触发方式。可选值：`'click'`表示整行点击均可触发、`'click-expander'`表示仅点击小箭头时触发"
+    "description": "The triggering method of expanding/collapse. Optional values: `'click'` means that the entire row can be triggered by clicking, and `'click-expander'` means that it is triggered only when the small arrow is clicked."
   },
   "u-tree-view/readonly": {
     "type": "boolean",
-    "description": "是否只读"
+    "description": "Is it read-only?"
   },
   "u-tree-view/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-tree-view-node/value": {
     "type": "any",
-    "description": "此项的值"
+    "description": "The value of this item"
   },
   "u-tree-view-node/expanded": {
     "type": "any",
-    "description": "展开/折叠状态"
+    "description": "Expand/collapse state"
   },
   "u-tree-view-node/checked": {
     "type": "any",
-    "description": "选中/取消状态"
+    "description": "Selected/unselected state"
   },
   "u-tree-view-node/disabled": {
     "type": "boolean",
-    "description": "禁用此项"
+    "description": "Disable this option"
   },
   "u-tree-view-node/node": {
     "type": "object",
-    "description": "相关对象。当选择此项时，抛出的事件会传递该对象，便于开发"
+    "description": "Related objects. When this option is selected, the thrown event will pass this object, which is convenient for development."
   },
   "u-uploader/url": {
     "type": "string",
-    "description": "上传文件路径"
+    "description": "Upload file path"
   },
   "u-uploader/data-type": {
     "type": "string",
-    "description": "接收数据类型。可选值：`text`、`xml`、`json`"
+    "description": "Receive data type. Optional values: `text`, `xml`, `json`"
   },
   "u-uploader/data": {
     "type": "object",
-    "description": "附加数据"
+    "description": "Additional data"
   },
   "u-uploader/name": {
     "type": "string",
-    "description": "上传文件的名称，后端一般需要这个字段"
+    "description": "The name of the uploaded file, the backend generally requires this field"
   },
   "u-uploader/extensions": {
     "type": "string, Array",
-    "description": "可上传的扩展名。默认为空，表示可上传任意文件类型的文件。可以为字符串，多个扩展名用`,`隔开，如：`'png,jpg,gif'`；也可以为数组，如：`['png', 'jpg', 'gif']`"
+    "description": "The uploadable extensions. The default is empty, which means that any file type can be uploaded. It can be a string with multiple extensions separated by `,`, such as: `'png,jpg,gif'`; it can also be an array, such as: `['png', 'jpg', 'gif']`"
   },
   "u-uploader/max-size": {
     "type": "string, number",
-    "description": "可上传的最大文件大小。默认为空，表示可上传任意大小的文件；如果为数字，则表示单位为字节；如果为字符串，可以添加以下单位：`kB`、`MB`、`GB`"
+    "description": "The maximum file size that can be uploaded. The default is empty, indicating that files of any size can be uploaded; if it is a number, it means the unit is bytes; if it is a string, you can add the following units: `kB`, `MB`, `GB`"
   },
   "u-uploader/disabled": {
     "type": "boolean",
-    "description": "是否禁用"
+    "description": "Whether to disable"
   },
   "u-validator/name": {
     "type": "string",
-    "description": "表单项名称。已废弃"
+    "description": "The name of the form field. Deprecated."
   },
   "u-validator/label": {
     "type": "string",
-    "description": "标签。在 UValidator 用于提示消息的合成，在 UFormItem 等其他组件用于显示标签"
+    "description": "Label. Used to synthesize prompt messages in UValidator and to display labels in other components such as UFormItem."
   },
   "u-validator/rules": {
     "type": "string, Array",
-    "description": "验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型"
+    "description": "Validation rules. The short form is a string type, and the full or mixed form is an array type."
   },
   "u-validator/message": {
     "type": "string",
-    "description": "默认提示消息"
+    "description": "Default prompt message"
   },
   "u-validator/muted": {
     "type": "string",
-    "description": "验证时是否静默。可选值：`'message'`表示只静默消息提示，`'all'`同时静默消息提示和红框提示"
+    "description": "Whether to be silent during verification. Optional values: `'message'` means only silent message prompt, `'all'` means silent message prompt and red box prompt at the same time"
   },
   "u-validator/ignore-validation": {
     "type": "boolean",
-    "description": "忽略验证"
+    "description": "Ignore validation"
   },
   "u-validator/ignore-rules": {
     "type": "boolean",
-    "description": "忽略验证规则。已废弃，同`ignore-validation`"
+    "description": "Ignore validation rules. Deprecated, same as `ignore-validation`"
   },
   "u-validator/validating-options": {
     "type": "object",
-    "description": "验证辅助对象。在 Rule 的 `validate` 方法中使用"
+    "description": "Validation helper object. Used in Rule's `validate` method."
   },
   "u-validator/validating-value": {
     "type": "any",
-    "description": "临时修改验证值"
+    "description": "Temporarily modify the verification value"
   },
   "u-validator/validating-process": {
     "type": "Function",
-    "description": "验证前对值进行预处理"
+    "description": "Preprocess the value before validation"
   },
   "u-validator/manual": {
     "type": "boolean",
-    "description": "是否采取手动验证。如果为`true`，则 UValidator 将不会在监听到子组件的`input`、`change`和`blur`事件后进行相应的验证。"
+    "description": "Whether to perform manual validation. If `true`, UValidator will not perform corresponding validation after listening to the `input`, `change` and `blur` events of child components."
   },
   "l-page-center/size": {
     "type": "enum",
@@ -2267,6 +2267,6 @@
       "large",
       "huge"
     ],
-    "description": "宽度大小。"
+    "description": "Width size."
   }
 }

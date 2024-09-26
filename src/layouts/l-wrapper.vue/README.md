@@ -1,13 +1,13 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# LWrapper 透传页
+# LWrapper Transparent Page
 
 ## Example
-在设置 VueRouter 时，经常会遇到这样的场景：模块需要显示一些内容，往往要重定向到第一个子路由（比如列表页面），而它自身只要配一个什么都不做的容器组件。
+When setting up VueRouter, you often encounter such a scenario: the module needs to display some content, often redirecting to the first sub-route (such as a list page), and it only needs to be equipped with a container component that does nothing.
 
-它的模板很简单：
+Its template is simple:
 
-``` htm
+```htm
 <div><router-view></router-view></div>
 ```
 
@@ -26,4 +26,4 @@ import { LWrapper } from 'proto-ui.kubevue';
 
 ## API
 
-暂无
+None

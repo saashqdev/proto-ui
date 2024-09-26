@@ -1,7 +1,7 @@
 /**
- * 给任意元素添加`<a>`链接效果
- * 该指令适合在某些场景下临时使用，推荐直接使用`<u-link>`或者从`<m-router-item>`继承新组件
- * @modifier blank - 是否打开新的窗口
+ * Add `<a>` link effect to any element
+ * This command is suitable for temporary use in certain scenarios. It is recommended to use `<u-link>` directly or inherit new components from `<m-router-item>`
+ * @modifier blank - whether to open a new window
  */
 export const href = {
     bind(el, binding) {
@@ -25,9 +25,9 @@ export const href = {
 };
 
 /**
- * 给任意元素添加`<router-link>`的`to`效果
- * 该指令适合在某些场景下临时使用，推荐直接使用`<u-link>`或者从`<m-router-item>`继承新组件
- * @modifier replace - History 使用`push`方式还是`replace`方式
+ * Add the `to` effect of `<router-link>` to any element
+ * This command is suitable for temporary use in certain scenarios. It is recommended to use `<u-link>` directly or inherit new components from `<m-router-item>`
+ * @modifier replace - History uses `push` method or `replace` method
  */
 export const to = {
     bind(el, binding, vnode) {

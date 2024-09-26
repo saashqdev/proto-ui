@@ -1,9 +1,9 @@
 - name: l-side-main
-  title: 左侧栏固定布局
+  title: Left Column Fixed Layout
   slots:
     - name: default
-      description: 主内容区。
+      description: Main content area.
     - name: side
-      description: 设置左侧栏内容。
+      description: Set the content of the left column.
     - name: main
-      description: 重置中间区域内容。包裹在主内容区外。
+      description: Reset the content of the middle area. Wrapped outside the main content area.

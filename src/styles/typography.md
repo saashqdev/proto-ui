@@ -1,116 +1,116 @@
-# Typography 排版
+Typography
 
 ## Example
-### 标题
+### Title
 
 ``` html
-<h1>H1 标题1 <small>小标题1</small></h1>
-<h2>H2 标题2 <small>小标题2</small></h2>
-<h3>H3 标题3 <small>小标题3</small></h3>
-<h4>H4 标题4 <small>小标题4</small></h4>
-<h5>H5 标题5 <small>小标题5</small></h5>
-<h6>H6 标题6 <small>小标题6</small></h6>
+<h1>H1 Title 1 <small>Subtitle 1</small></h1>
+<h2>H2 Heading 2 <small>Subheading 2</small></h2>
+<h3>H3 Title 3 <small>Subtitle 3</small></h3>
+<h4>H4 Title 4 <small>Subtitle 4</small></h4>
+<h5>H5 Title 5 <small>Subtitle 5</small></h5>
+<h6>H6 Title 6 <small>Subtitle 6</small></h6>
 ```
 
 ### Link
 
-由于`<a>`在组件中用途广泛，在业务中请使用[u-link](./u-link)。
+Since `<a>` is widely used in components, please use [u-link](./u-link) in business.
 
-### 段落
+### Paragraph
 
 ``` html
-<p>夏日，静好。如水的日子散发着淡淡的清欢，花香鸟鸣的清晨，喜欢依着一杯茶的馨香，倚在窗前，看天上白云轻轻飘过，任光阴静静在指尖流淌，让一颗被尘世烟火渲染的心渐渐沉静下来，默念一份心灵的温婉，拥有一段清寂的时光。</p>
-<p>一直认为最好的心境，不是避开车水马龙，而是在心中修篱种菊。尘世的纷纷扰扰，总是会让人倦了累了，找一个清闲的午后，关上心灵窗子，隔绝人世的喧嚣，一杯茶，一本书，便是一段静谧的光阴。茶，可以品尝人生的百味；书，可以找回心灵的皈依。轻拥一米阳光入怀，和着书香，任流淌的心事，在季节中浅漾，生命就在这悠然的时光中婉约成一朵花。</p>
+<p>Summer is quiet and good. The days like water exude a light joy. In the morning with the fragrance of flowers and the singing of birds, I like to lean against the window with the fragrance of a cup of tea, watching the white clouds drifting gently in the sky, letting time flow quietly through my fingertips, letting a heart that has been colored by worldly fireworks gradually calm down, silently thinking of a gentle soul, and having a quiet time. </p>
+<p>I have always believed that the best state of mind is not to avoid the hustle and bustle of life, but to build a fence and plant chrysanthemums in your heart. The hustle and bustle of the world always makes people tired and exhausted. Find a leisurely afternoon, close the window of your soul, isolate yourself from the hustle and bustle of the world, and drink a cup of tea and a book, which is a period of quiet time. Tea can taste the flavors of life; books can help you find the refuge of your soul. Gently embrace a meter of sunshine in your arms, and with the fragrance of books, let the flowing thoughts ripple in the seasons, and life will be gracefully transformed into a flower in this leisurely time. </p>
 ```
 
-### 水平线
+### Horizontal Line
 
 ``` html
 <hr>
 ```
 
-### 特殊文字
+### Special Text
 
 ``` html
 <u-linear-layout gap="small">
-    <em>强调文本</em>
-    <strong>加粗文本</strong>
-    <ins>插入文本</ins>
-    <del>删除文本</del>
-    <mark>标记文本</mark>
-    <small>缩小文本</small>
-    <code>代码片段</code>
+    Emphasize text
+    <strong>Bold text</strong>
+    <ins>Insert text</ins>
+    <del>Delete text</del>
+    <mark>Mark text</mark>
+    <small>Reduce Text</small>
+    <code>Code Snippet</code>
     <abbr title="Abbreviation">Abbr</abbr>
-    <span><sup>上</sup><sub>下</sub>标</span>
-    <q>引用片段</q>
-    <dfn>定义术语</dfn>
+    <span><sup>Upper</sup><sub>Lower</sub> Standard</span>
+    <q>Quote snippet</q>
+    <dfn>Define term</dfn>
 </u-linear-layout>
 ```
 
-### 列表
+### List
 
 ``` html
 <ul>
-    <li>选项1</li>
-    <li>选项2
+    <li>Option 1</li>
+    <li>Option 2
         <ul>
-            <li>选项1</li>
-            <li>选项2</li>
-            <li>选项3</li>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
         </ul>
     </li>
-    <li>选项3</li>
+    <li>Option 3</li>
 </ul>
 <ol>
-    <li>选项1</li>
-    <li>选项2
+    <li>Option 1</li>
+    <li>Option 2
         <ol>
-            <li>选项1</li>
-            <li>选项2</li>
-            <li>选项3</li>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
         </ol>
     </li>
-    <li>选项3</li>
+    <li>Option 3</li>
 </ol>
 ```
 
-### 描述列表
+### Description List
 
 ``` html
 <dl>
-    <dt>Web前端</dt>
-    <dd>通常是指网站的前台部分，包括网站的表现层和结构层。因此前端技术一般分为前端设计和前端开发，前端设计一般可以理解为网站的视觉设计，前端开发则是网站的前台代码实现，包括基本的HTML、CSS和JavaScript。</dd>
+    <dt>Web front end</dt>
+    <dd>Usually refers to the front-end part of the website, including the presentation layer and structure layer of the website. Therefore, front-end technology is generally divided into front-end design and front-end development. Front-end design can generally be understood as the visual design of the website, and front-end development is the front-end code implementation of the website, including basic HTML, CSS and JavaScript. </dd>
     <dt>CSS</dt>
-    <dd>级联样式表，是一种用来表现HTML或XML等文件样式的计算机语言。目前最新版本为CSS3，是能够真正做到网页表现与内容分离的一种样式设计语言。</dd>
+    <dd>Cascading Style Sheets is a computer language used to express the styles of files such as HTML or XML. The latest version is CSS3, which is a style design language that can truly separate web page presentation from content. </dd>
     <dt>JavaScript</dt>
-    <dd>一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型，广泛用于客户端的脚本语言，最早是在HTML网页上使用，用来给HTML网页增加动态功能。</dd>
+    <dd>A directly interpreted scripting language, a dynamically typed, weakly typed, prototype-based language with built-in support for types, widely used as a client-side scripting language, first used on HTML web pages to add dynamic functionality to HTML web pages. </dd>
 </dl>
 ```
 
-### 引用块
+### Blockquote
 
 ``` html
 <blockquote>
-    我不知道世上的人对我怎样评价。我却这样认为：我好像是在海滨上玩耍的孩子，时而拾到几块莹洁的石子，时而拾到几片美丽的贝壳并为之欢欣。那浩瀚的真理的海洋仍展现在面前。
+    I don't know how people in the world evaluate me. But I think this way: I am like a child playing on the seashore, sometimes picking up a few clear stones, sometimes picking up a few beautiful shells and rejoicing over them. The vast ocean of truth is still unfolding before me.
 </blockquote>
 ```
 
-### 代码块
+### Code Block
 
 ``` html
 <pre>
-factorial = (num) -&gt;
+factorial = (num) ->
     if not /^\d+$/.test(num)
         throw 'Error: Not an integer!'
 
-    _factorial = (num) -&gt;
-        return (if num &lt;= 1 then 1 else num * _factorial(num - 1))
+    _factorial = (num) ->
+        return (if num <= 1 then 1 else num * _factorial(num - 1))
 
     return _factorial(num)
 </pre>
 ```
 
-### 按键
+### Buttons
 
 ``` html
 <u-linear-layout gap="small" direction="vertical">

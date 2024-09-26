@@ -1,10 +1,10 @@
 /**
- * 给包含`ellipsis`样式并且带有过长文本的元素自动添加`title`提示
+ * Automatically add a `title` hint to elements containing the `ellipsis` style and with too long text
  */
 export const ellipsisTitle = {
     bind(el, binding) {
         el.__ellipsisTitleHandler = (e) => {
-            // 如果判断已存在`title`属性而不添加`title`的话，会导致`<u-select>`在某些场景下`value`不变`text`变，而`title`不会更新
+            // If it is judged that the `title` attribute already exists without adding `title`, it will cause `<u-select>` to remain unchanged and `text` change in some scenarios, but `title` will not be updated.
             const style = window.getComputedStyle(el);
             const title = binding.value || el.innerText;
             if (style.overflow === 'hidden' && style.textOverflow === 'ellipsis' && style.whiteSpace === 'nowrap' && el.scrollWidth > el.offsetWidth)

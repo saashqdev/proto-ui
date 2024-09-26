@@ -18,7 +18,7 @@ export const UValidator = {
         label: String,
         action: String,
         rules: [String, Array, Object],
-        // target: { type: String, default: 'auto' }, // 暂不开放此属性
+        // target: { type: String, default: 'auto' }, // This property is not available for the time being
         message: String,
         muted: String,
         ignoreRules: { type: Boolean, default: false }, // @deprecated
@@ -124,7 +124,7 @@ export const UValidator = {
 
         this.triggerValid = this.realValid = !(this.currentRules && this.currentRules.length);
         this.$on('add-field-vm', (fieldVM) => {
-            // @TODO: 一个`<u-form-item>`中，只注册一个`fieldVM`，其他的忽略
+            // @TODO: In a `<u-form-item>`, only one `fieldVM` is registered, and the others are ignored.
             if (this.fieldVM)
                 return;
             this.fieldVM = fieldVM;
@@ -132,7 +132,7 @@ export const UValidator = {
             fieldVM.formItemVM = this; // @compat
 
             this.value = fieldVM.value;
-            // 初始化的时候自行验证一次。Fix #23
+            // Verify it yourself during initialization. Fix #23
             this.validate('submit', true).catch((errors) => errors);
         });
         this.$on('remove-field-vm', (fieldVM) => {
@@ -157,7 +157,7 @@ export const UValidator = {
 
             this.hasUpdateEvent = true;
             this.value = value;
-            // 在没有触碰前，走 @update 事件；在触碰后，走 @input 事件
+            // Before the touch, the @update event is executed; after the touch, the @input event is executed
             if (!this.fieldTouched)
                 this.$nextTick(() => this.validate('submit', true).catch((errors) => errors));
         },
@@ -169,7 +169,7 @@ export const UValidator = {
                 this.fieldTouched = true;
             this.inputing = true;
             this.value = value;
-            // 处理输入法输入的问题
+            // Handling input method input issues
             this.$nextTick(() => {
                 this.validate('input').catch((errors) => errors);
                 this.inputing = false;
@@ -182,7 +182,7 @@ export const UValidator = {
             if (!this.fieldTouched)
                 this.oldValue = $event.value;
             this.value = $event.value;
-            // @compat: 以后推荐使用 @update & @input 事件
+            // @compat: It is recommended to use @update & @input events in the future
             if (!this.hasUpdateEvent && !this.inputing)
                 this.validate('submit', true).catch((errors) => errors);
         },
@@ -242,8 +242,8 @@ export const UValidator = {
                         value,
                         trigger,
                         Object.assign({
-                            label: this.label || '字段',
-                            action: this.action || '输入',
+                            label: this.label || 'Field',
+                            action: this.action || 'Input',
                         }, this.validatingOptions),
                     ).then(() => {
                         this.pending = false;

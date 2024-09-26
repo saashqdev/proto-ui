@@ -1,67 +1,67 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- This README.md is automatically generated based on api.yaml and docs/*.md for easy reference on GitHub and NPM. If you need to modify it, please view the source file -->
 
-# UValidator 验证器
+# UValidator Validator
 
-**UI 组件**, **表单验证器**, **块级展示**
+**UI Components**, **Form Validators**, **Block-Level Display**
 
-## 基础Example
-## 验证规则
+## Basic Example
+## Validation Rules
 
-验证规则（Rule）通过验证器（或表单项）的`rules`属性设置，可以用简写格式（字符串）或完整格式（数组）书写，推荐尽量使用简写格式。
+Validation rules are set via the `rules` property of a validator (or form item). They can be written in either a shorthand format (string) or a full format (array). It is recommended to use the shorthand format whenever possible.
 
-### 简写格式
+### Abbreviated Format
 
-在一个大的项目中，相同场景的验证规则（包括触发方式和错误提示等）通常会被多次使用。如果将这些规则通过注册好的名称调用，就能减少很多重复的代码。
+In a large project, validation rules (including triggering methods and error prompts, etc.) for the same scenario are usually used multiple times. If these rules are called by registered names, a lot of duplicate code can be reduced.
 
-组件库中已经内置了一些[常见的验证规则](./rules)，也可以自己在项目中注册规则（见下文）。
+Some common validation rules are already built into the component library, and you can also register rules in your project (see below).
 
-利用这些已有的规则，能够在`rules`属性上拼接成字符串快速使用。
+Using these existing rules, you can concatenate them into a string in the `rules` attribute for quick use.
 
-下面举个例子，一个用户名输入框的验证包含以下规则：
+For example, the validation of a username input box contains the following rules:
 
-1. 必须输入用户名，失焦验证
-2. 以字母开头，实时验证
-3. 字母、数字或中划线组成，实时验证
-4. 以字母或数字结尾，失焦验证
-5. 不得少于4个字符，失焦验证
+1. Username is required, out of focus verification
+2. Start with a letter, real-time verification
+3. Letters, numbers or hyphens, real-time verification
+4. Ending with letters or numbers, out of focus verification
+5. No less than 4 characters, out of focus verification
 
 ``` html
-<u-form-item label="用户名" rules="required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+<u-form-item label="Username" rules="required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)">
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 ```
 
-#### 字符串简写说明：
+#### String Abbreviation Description:
 
-多条验证规则用`|`分隔开，类似 Vue 的过滤器写法。
+Multiple validation rules are separated by `|`, similar to the filter writing method of Vue.
 
-每条验证格式为`name @bi #message`，各项顺序不能互换。
+The format of each verification is `name @bi #message`, and the order of the items cannot be interchanged.
 
-- `name`为已注册的验证规则名称：可以添加参数，如`name(arg1, arg2)`
-- `@`后面添加触发方式：`i`表示`input`，`b`表示`blur`，可单独或组合使用，如：`@input`、`@b`、`@bi`等
-- `#`后面添加错误提示：内容会一直截止到下一个`|`或字符串结尾
+- `name` is the name of the registered validation rule: you can add parameters, such as `name(arg1, arg2)`
+- Add triggering methods after `@`: `i` stands for `input`, `b` stands for `blur`, which can be used alone or in combination, such as: `@input`, `@b`, `@bi`, etc.
+- Add an error message after `#`: the content will be closed until the next `|` or the end of the string
 
 
-利用`@`和`#`，能够对原来的内置规则做一些调整：
+Using `@` and `#`, you can make some adjustments to the original built-in rules:
 
-下面的例子中：
-- 输入格式只进行失焦判断
-- 长度提示文案做了修改
+In the following example:
+- Input format only performs out-of-focus judgment
+- The length prompt text has been modified
 
 ``` html
-<u-form-item label="用户名" required rules="required | ^azAZ | ^azAZ09-$ @b | azAZ09$ | minLength(4) #4-12个字符">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+<u-form-item label="Username" required rules="required | ^azAZ | ^azAZ09-$ @b | azAZ09$ | minLength(4) #4-12 characters">
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 ```
 
-触发方式和错误提示在完整格式中会详细讲。下面再看几个例子：
+The triggering method and error prompts will be explained in detail in the full format. Let's take a look at a few more examples:
 
-#### 验证唯一性
+#### Verify Uniqueness
 
 ``` vue
 <template>
-<u-form-item label="端口" required rules="required | integer | range(80, 65535) | unique(...existingPortList)">
-    <u-input v-model.number="model.port" maxlength="5" placeholder="80-65535内的整数"></u-input>
+<u-form-item label="Port" required rules="required | integer | range(80, 65535) | unique(...existingPortList)">
+    <u-input v-model.number="model.port" maxlength="5" placeholder="Integer between 80-65535"></u-input>
 </u-form-item>
 </template>
 <script>
@@ -78,16 +78,16 @@ export default {
 </script>
 ```
 
-#### 密码确认场景
+#### Password Confirmation Scenario
 
 ``` vue
 <template>
 <u-form gap="large">
-    <u-form-item label="密码" required rules="required | ^azAZ09_$ | minLength(4)">
-        <u-input size="huge medium" type="password" v-model="model.password" maxlength="8" placeholder="以字母、数字或'_'组成"></u-input>
+    <u-form-item label="Password" required rules="required | ^azAZ09_$ | minLength(4)">
+        <u-input size="huge medium" type="password" v-model="model.password" maxlength="8" placeholder="Consists of letters, numbers or '_'"></u-input>
     </u-form-item>
-    <u-form-item label="确认密码" required rules="required | confirmed(model.password)">
-        <u-input size="huge medium" type="password" v-model="model.confirmedPassword" maxlength="8" placeholder="再次输入密码"></u-input>
+    <u-form-item label="Confirm password" required rules="required | confirmed(model.password)">
+        <u-input size="huge medium" type="password" v-model="model.confirmedPassword" maxlength="8" placeholder="Enter password again"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -105,88 +105,88 @@ export default {
 </script>
 ```
 
-### 完整格式
+### Full Format
 
-`rules`属性的完整格式为一个包含若干条验证规则的数组。每条规则结构如下：
+The full format of the `rules` property is an array containing several validation rules. Each rule has the following structure:
 
-``` ts
+```ts
 interface Rule {
-    validate: string | ValidateFunc, // 验证器名称或验证函数。下面有详细介绍
-    args?: any | Array<any> | (() => any | Array<any> | Promise<any | Array<any>>), // 验证参数。下面有详细介绍
-    required?: boolean, // 是否为必填规则。如果不是必填，值为空的情况会自动跳过此规则
-    trigger?: string, // 触发方式。下面有详细介绍
-    message?: string, // 错误提示
-    ignore?: boolean, // 是否忽略该条规则
-    muted?: boolean, // 是否仅验证但不提示
-    [prop: string]: any, // 自定义属性
+    validate: string | ValidateFunc, // Validator name or validation function. Details are given below.
+    args?: any | Array<any> | (() => any | Array<any> | Promise<any | Array<any>>), // Verify the arguments. More details below
+    required?: boolean, // Is this a required rule? If it is not required, this rule will be automatically skipped if the value is empty
+    trigger?: string, // Trigger method. Details are given below.
+    message?: string, // error message
+    ignore?: boolean, // Whether to ignore this rule
+    muted?: boolean, // Whether to verify but not prompt
+    [prop: string]: any, // custom property
 }
 ```
 
-再看一下上面例子`required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)`的完整格式：
+Let’s take a look at the complete format of the above example `required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)`:
 
 ``` html
-<u-form-item label="用户名" required :rules="[
-    { validate: 'required', required: true, trigger: 'blur', message: '请输入用户名' },
-    { validate: 'pattern', args: /^[a-zA-Z]/, trigger: 'input+blur', message: '以字母开头' },
-    { validate: 'pattern', args: /^[a-zA-Z0-9-]$/, trigger: 'input+blur', message: '字母、数字或中划线组成' },
-    { validate: 'pattern', args: /[a-zA-Z0-9]$/, trigger: 'blur', message: '以字母或数字结尾' },
-    { validate: 'minLength', args: [4], trigger: 'blur', message: '不得少于4个字符' },
+<u-form-item label="Username" required :rules="[
+    { validate: 'required', required: true, trigger: 'blur', message: 'Please enter your username' },
+    { validate: 'pattern', args: /^[a-zA-Z]/, trigger: 'input+blur', message: 'Starts with a letter' },
+    { validate: 'pattern', args: /^[a-zA-Z0-9-]$/, trigger: 'input+blur', message: 'Letters, numbers or hyphens' },
+    { validate: 'pattern', args: /[a-zA-Z0-9]$/, trigger: 'blur', message: 'Ends with a letter or number' },
+    { validate: 'minLength', args: [4], trigger: 'blur', message: 'Must not be less than 4 characters' },
 ]">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 ```
 
-#### 验证器名称或验证函数
+#### Validator Name or Validation Function
 
-验证器（Validator）是内置的或者注册好的简单函数，它的结构如下：
+A validator is a simple function that is built-in or registered. Its structure is as follows:
 
-参数为需要验证的值，加上若干函数需要的参数。返回布尔值或布尔值的 Promise。
+The parameter is the value to be verified, plus some parameters required by the function. Returns a Boolean value or a Promise of a Boolean value.
 
-``` ts
+```ts
 type Validator = (value: any, ...args: any[]) => boolean | Promise<boolean>;
 ```
 
-参见[内置的验证器](https://github.com/saashqdev/atom-validator/blob/master/src/builtIn/validators.ts)。
+See the built-in validators.
 
-验证函数（ValidateFunc）是验证规则需要即时调用的函数，常用于处理同步或异步方法。与验证器有所不同，它的结构如下：
+ValidateFunc is a function that needs to be called immediately to validate the rules. It is often used to handle synchronous or asynchronous methods. Different from the validator, its structure is as follows:
 
-``` ts
+```ts
 type ValidateResult = boolean | string | void;
 type ValidateFunc = (value: any, rule: Rule, options?: Object) => ValidateResult | Promise<ValidateResult>;
 ```
 
-参数为需要验证的值、规则对象、可选项。可选项可以通过 UValidator 组件的`validating-options`传入。
+The parameters are the value to be validated, the rule object, and the options. The options can be passed in through the `validating-options` of the UValidator component.
 
-当验证函数的返回值为以下类型时，分别情况为：
-- boolean，为`true`时通过验证，为`false`时显示`message`对应的错误提示
-- void 即`undefined`时，通过验证，同`true`
-- string，直接把返回的字符串显示错误提示
-- Promise，待异步获取到结果时，按以上类型处理
+When the return value of the verification function is of the following types, the cases are:
+- boolean, if it is `true`, the verification is passed, if it is `false`, the error message corresponding to `message` is displayed
+- void, that is, `undefined`, passes verification, the same as `true`
+- string, directly display the returned string as an error message
+- Promise, when the result is obtained asynchronously, it is processed according to the above types
 
-#### 验证参数
+#### Verify Parameters
 
-应用到验证器中的参数。
+Parameters to apply to the validator.
 
-类型可以为：
-- 一个数组
-- 一个值，是单个参数的简写
-- 一个函数，待函数执行后再传入验证器计算
-- 函数返回值可以为 Promise
+The type can be:
+- an array
+- A value, shorthand for a single parameter
+- A function, which is passed to the validator for calculation after execution
+- The function return value can be Promise
 
 #### Trigger Method
 
-表单验证按照实时性通常可以分为：手动验证、失焦验证、实时验证，验证规则中`trigger`字段分别对应的值为：`''`, `'blur'`, `'input'`，可以组合使用，如`input+blur`。
+Form validation can usually be divided into manual validation, out-of-focus validation, and real-time validation according to real-time performance. The corresponding values   of the `trigger` field in the validation rules are: `''`, `'blur'`, `'input'`, which can be used in combination, such as `input+blur`.
 
-### 混合编写
+### Mixed Writing
 
-有时需要执行一些复杂的验证，比如异步验证或一些自定义的方法，这时可以将字符串格式与完整格式混合编写。
+Sometimes you need to perform some complex validation, such as asynchronous validation or some custom methods, then you can mix the string format with the full format.
 
-下面是一个**异步验证**的例子，添加一个异步判断重复的验证：
+The following is an example of **asynchronous validation**, adding an asynchronous duplicate validation:
 
 ``` vue
 <template>
-<u-form-item label="用户名" required :rules="nameRules">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+<u-form-item label="Username" required :rules="nameRules">
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 </template>
 <script>
@@ -195,9 +195,9 @@ export default {
         return {
             nameRules: [
                 'required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)',
-                { message: '该用户名已经存在', trigger: 'blur', validate(value, rule, options) {
+                { message: 'This user name already exists', trigger: 'blur', validate(value, rule, options) {
                     return new Promise((resolve, reject) => {
-                        // 这里模拟一个异步请求
+                        // Here simulates an asynchronous request
                         setTimeout(() => {
                             resolve(!['abcd', 'aaaa', 'ABCD'].includes(value));
                         }, 200);
@@ -210,12 +210,12 @@ export default {
 </script>
 ```
 
-也可以都拆解开：
+You can also disassemble them all:
 
 ``` vue
 <template>
-<u-form-item label="用户名" required :rules="nameRules">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+<u-form-item label="Username" required :rules="nameRules">
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 </template>
 <script>
@@ -228,9 +228,9 @@ export default {
                 '^azAZ09-$',
                 'azAZ09$',
                 'minLength(4)',
-                { message: '该用户名已经存在', trigger: 'blur', validate(value, rule, options) {
+                { message: 'This user name already exists', trigger: 'blur', validate(value, rule, options) {
                     return new Promise((resolve, reject) => {
-                        // 这里模拟一个异步请求
+                        // Here simulates an asynchronous request
                         setTimeout(() => {
                             resolve(!['abcd', 'aaaa', 'ABCD'].includes(value));
                         }, 200);
@@ -243,9 +243,9 @@ export default {
 </script>
 ```
 
-### 动态验证
+### Dynamic Validation
 
-有时`rules`属性需要根据不同情形进行变化，这时直接给属性绑定动态字符串或数组。
+Sometimes the `rules` property needs to change according to different situations. In this case, you can directly bind a dynamic string or array to the property.
 
 ``` vue
 <template>
@@ -256,10 +256,10 @@ export default {
             <u-radio label="HTTPS">HTTPS</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="端口" required :rules="model.protocol === 'HTTP' ?
+    <u-form-item label="Port" required :rules="model.protocol === 'HTTP' ?
         'required | integer | range(80, 65535) | unique(...existingPortList)' :
         'required | integer | range(443, 65535) | unique(...existingPortList)'">
-        <u-input size="huge medium" v-model.number="model.port" maxlength="5" :placeholder="model.protocol === 'HTTP' ? '80-65535内的整数' : '443-65535内的整数'"></u-input>
+        <u-input size="huge medium" v-model.number="model.port" maxlength="5" :placeholder="model.protocol === 'HTTP' ? 'Integer between 80-65535' : 'Integer between 443-65535'"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -278,7 +278,7 @@ export default {
 </script>
 ```
 
-或者直接使用混合编写来处理复杂验证。
+Or use mixed writing directly to handle complex verification.
 
 ``` vue
 <template>
@@ -289,8 +289,8 @@ export default {
             <u-radio label="HTTPS">HTTPS</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="端口" required :rules="portRules">
-        <u-input size="huge medium" v-model.number="model.port" maxlength="5" :placeholder="model.protocol === 'HTTP' ? '80或1025-65535内的整数' : '443或1025-65535内的整数'"></u-input>
+    <u-form-item label="Port" required :rules="portRules">
+        <u-input size="huge medium" v-model.number="model.port" maxlength="5" :placeholder="model.protocol === 'HTTP' ? '80 or integer between 1025-65535' : '443 or integer between 1025-65535'"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -303,7 +303,7 @@ export default {
                 port: '',
             },
             existingPortList: [8000, 3306, 65535],
-            portRules: [
+            portRules:
                 'required',
                 'integer',
                 {
@@ -314,12 +314,12 @@ export default {
                             if (value === 80 || value >= 1025 && value <= 65535)
                                 return true;
                             else
-                                return '80或1025-65535内的整数';
+                                return '80 or an integer between 1025-65535';
                         } else {
                             if (value === 443 || value >= 1025 && value <= 65535)
                                 return true;
                             else
-                                return '443或1025-65535内的整数';
+                                return '443 or an integer between 1025-65535';
                         }
                     },
                 },
@@ -327,7 +327,7 @@ export default {
             ],
         };
     },
-    watch: {
+    watch:
         'model.protocol'() {
             this.$nextTick(() => this.$refs.form.validate().catch(() => undefined));
         },
@@ -336,31 +336,31 @@ export default {
 </script>
 ```
 
-### 注册验证规则
+### Registration Validation Rules
 
-可以在 Vue 组件 options 的`rules`字段中自己注册规则。
+You can register rules yourself in the `rules` field of the Vue component options.
 
 ``` vue
 <template>
-<u-form-item label="颜色" rules="hexColor">
-    <u-input placeholder="请输入十六进制颜色值"></u-input>
+<u-form-item label="Color" rules="hexColor">
+    <u-input placeholder="Please enter the hexadecimal color value"></u-input>
 </u-form-item>
 </template>
 <script>
 export default {
-    rules: {
-        hexColor: { validate: 'pattern', args: /^#([0-9a-f]{3}|[0-9a-f]{6})$/i, message: '颜色值格式不正确', trigger: 'blur' },
+    rules:
+        hexColor: { validate: 'pattern', args: /^#([0-9a-f]{3}|[0-9a-f]{6})$/i, message: 'The color value format is incorrect', trigger: 'blur' },
     },
 };
 </script>
 ```
 
-上面的例子，也可以先在 Vue 组件 options 的`validators`字段中注册验证器，再注册规则。
+In the above example, you can also register the validator in the `validators` field of the Vue component options first, and then register the rules.
 
 ``` vue
 <template>
-<u-form-item label="颜色" rules="hexColor">
-    <u-input placeholder="请输入十六进制颜色值"></u-input>
+<u-form-item label="Color" rules="hexColor">
+    <u-input placeholder="Please enter the hexadecimal color value"></u-input>
 </u-form-item>
 </template>
 <script>
@@ -368,37 +368,37 @@ export default {
     validators: {
         hexColor: (value) => /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(value),
     },
-    rules: {
-        hexColor: { validate: 'hexColor', message: '颜色值格式不正确', trigger: 'blur' },
+    rules:
+        hexColor: { validate: 'hexColor', message: 'The color value format is incorrect', trigger: 'blur' },
     },
 };
 </script>
 ```
 
-> Vue 组件 options 的`rules`和`validators` 可以经由`mixins`或`extends`传递。
+> Vue component options' `rules` and `validators` can be passed via `mixins` or `extends`.
 >
-> 如果要全局注册规则和验证器，请使用`Vue.rule(id, rule)`和`Vue.validator(id, validator)`方法。
+> If you want to register rules and validators globally, use the `Vue.rule(id, rule)` and `Vue.validator(id, validator)` methods.
 
-### 复合验证规则
+### Compound Validation Rules
 
-注册验证规则支持复合规则，也就是多个规则合并注册为一个。
+Registration validation rules support composite rules, that is, multiple rules are combined and registered as one.
 
-比如有几个字段有相同的一段验证逻辑，可以将它们定义成新的验证规则，再复合使用。
+For example, if several fields have the same validation logic, you can define them as new validation rules and use them in combination.
 
 ``` vue
 <template>
 <u-form gap="large">
-    <u-form-item label="名称1" required rules="nameBase | rangeLength(4,12) | unique(...existingList)">
-        <u-input size="huge medium" maxlength="12" placeholder="4-12个字符"></u-input>
+    <u-form-item label="Name1" required rules="nameBase | rangeLength(4,12) | unique(...existingList)">
+        <u-input size="huge medium" maxlength="12" placeholder="4-12 characters"></u-input>
     </u-form-item>
-    <u-form-item label="名称2" required rules="nameBase | rangeLength(8,24)">
-        <u-input size="huge medium" maxlength="24" placeholder="8-24个字符"></u-input>
+    <u-form-item label="Name2" required rules="nameBase | rangeLength(8,24)">
+        <u-input size="huge medium" maxlength="24" placeholder="8-24 characters"></u-input>
     </u-form-item>
 </u-form>
 </template>
 <script>
 export default {
-    rules: {
+    rules:
         nameBase: 'required | ^azAZ | ^azAZ09-$ | azAZ09$',
     },
     data() {
@@ -410,98 +410,98 @@ export default {
 </script>
 ```
 
-## 嵌套验证
+## Nested Validation
 
-嵌套验证是这样一种功能，叶子级别的验证（MField 验证）状态、信息和事件可以一层一层父级验证器传递，最终传到`<u-form>`上。在任意层级都能获取到嵌套层内是否通过（valid）、是否触发（touched）、是否修改（dirty）、首个错误（firstError）等信息。同时也可以通过调`<u-form>`的 validate 方法，验证所有子验证项。
+Nested validation is a function that allows leaf-level validation (MField validation) status, information, and events to be passed layer by layer through parent validators and eventually to `<u-form>`. At any level, you can get information such as whether the nested layer has passed (valid), whether it has been triggered (touched), whether it has been modified (dirty), and the first error (firstError). At the same time, you can also validate all child validation items by calling the validate method of `<u-form>`.
 
-### 单行嵌套
+### Single Row Nesting
 
-对于在同一行水平排列的输入框，如果希望它们的错误提示只出现在行尾。这时需要用嵌套验证功能实现。
+For input boxes arranged horizontally in the same row, if you want their error prompts to appear only at the end of the row, you need to use the nested validation function to achieve this.
 
-嵌套验证，内部的验证器会将验证结果（验证是否成功、错误提示）向外抛。
+Nested validation, the internal validator will throw the validation result (whether the validation is successful, error prompt) outward.
 
-将`muted`属性设置为`message`，可以屏蔽内部验证器提示，但不屏蔽输入框的红框样式。
+Setting the `muted` property to `message` can hide the internal validator prompt, but will not hide the red box style of the input box.
 
 ``` html
 <u-validator>
     <u-linear-layout gap="small">
-        <u-validator label="容器端口" rules="required | integer | range(1,65535) @i" muted="message">
-            <u-input size="huge normal" placeholder="容器端口，1-65535内的整数"></u-input>
+        <u-validator label="Container Port" rules="required | integer | range(1,65535) @i" muted="message">
+            <u-input size="huge normal" placeholder="Container port, integer between 1-65535"></u-input>
         </u-validator>
-        <u-validator label="服务端口" rules="required | integer | range(1,65535) @i" muted="message">
-            <u-input size="huge normal" placeholder="服务端口，1-65535内的整数"></u-input>
+        <u-validator label="Service Port" rules="required | integer | range(1,65535) @i" muted="message">
+            <u-input size="huge normal" placeholder="Service port, integer between 1-65535"></u-input>
         </u-validator>
     </u-linear-layout>
 </u-validator>
 ```
 
-当然，空间比较小时，也可以使用`placement`提示在下面。
+Of course, if the space is small, you can also use the placement hint below.
 
 ``` html
 <u-linear-layout gap="small">
-    <u-validator label="容器端口" rules="required | integer | range(1,65535) @i" placement="bottom">
-        <u-input size="huge normal" placeholder="容器端口，1-65535内的整数"></u-input>
+    <u-validator label="Container Port" rules="required | integer | range(1,65535) @i" placement="bottom">
+        <u-input size="huge normal" placeholder="Container port, integer between 1-65535"></u-input>
     </u-validator>
-    <u-validator label="服务端口" rules="required | integer | range(1,65535) @i" placement="bottom">
-        <u-input size="huge normal" placeholder="服务端口，1-65535内的整数"></u-input>
+    <u-validator label="Service Port" rules="required | integer | range(1,65535) @i" placement="bottom">
+        <u-input size="huge normal" placeholder="Service port, integer between 1-65535"></u-input>
     </u-validator>
 </u-linear-layout>
 ```
 
-### 复杂案例
+Complex Case
 
-下面这些组件已经集成了 UValidator 的嵌套验证功能，可以去相应文档进行查阅[UFormTableView](../u-form-table-view)、[UDynamicCards](../u-dynamic-cards)。
+The following components have integrated the nested validation function of UValidator. You can refer to the corresponding documents for details [UFormTableView](../u-form-table-view), [UDynamicCards](../u-dynamic-cards).
 
-## 其它
+## Other
 
-### 过长提示
+### Too Long Prompt
 
-通过给表单控件设置`maxlength-message`属性，可以在已输入至最大长度的情况下继续输入时，给用户提示消息。
+By setting the maxlength-message attribute on a form control, you can give the user a prompt message when they continue to enter the text after reaching the maximum length.
 
 ``` html
 <u-form ref="form">
-    <u-form-item label="用户名">
-        <u-input maxlength="4" maxlength-message="不超过4个字符" placeholder="不超过4个字符"></u-input>
+    <u-form-item label="Username">
+        <u-input maxlength="4" maxlength-message="No more than 4 characters" placeholder="No more than 4 characters"></u-input>
     </u-form-item>
 </u-form>
 ```
 
-## 内置规则
-### 空值判断
+## Built-In Rules
+### Null Value Judgment
 
 #### required <u-label>blur</u-label>
 
-必填，为空值会提示错误。空值指`''`、`undefined`、`null`。没有参数。
+Required. If it is empty, an error message will be displayed. Empty values   refer to `''`, `undefined`, and `null`. No parameters.
 
-在值为空的情况下，如果没有使用`required`、`filled`或`notEmpty`这些必填规则，其他规则会自动通过。
+In the case of an empty value, if none of the required rules, `required`, `filled`, or `notEmpty`, are used, the other rules will automatically pass.
 
 ``` html
-<u-validator label="用户名" rules="required">
-    <u-input placeholder="请输入用户名"></u-input>
+<u-validator label="Username" rules="required">
+    <u-input placeholder="Please enter your username"></u-input>
 </u-validator>
 ```
 
 #### filled <u-label>blur</u-label>
 
-必填，在`required`基础上，字符串不能全为空白（即调用`trim`方法）。没有参数。
+Required. On the basis of `required`, the string cannot be all blank (i.e. the `trim` method is called). No parameters.
 
-例如输入多个空格，会提示错误。
+For example, if you enter multiple spaces, an error message will be displayed.
 
 ``` html
-<u-validator label="描述" rules="filled">
-    <u-input placeholder="请输入描述"></u-input>
+<u-validator label="Description" rules="filled">
+    <u-input placeholder="Please enter a description"></u-input>
 </u-validator>
 ```
 
 #### notEmpty <u-label>input+blur</u-label>
 
-数组不能为空。字符串也可以比较。
+Arrays cannot be empty. Strings can also be compared.
 
 ``` html
-<u-validator label="列表" rules="notEmpty">
+<u-validator label="List" rules="notEmpty">
     <u-checkboxes>
-        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
-        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Water cup">Water cup</u-checkbox>
+        <u-checkbox label="Nuts">Nuts</u-checkbox>
         <u-checkbox label="Towel">Towel</u-checkbox>
         <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
@@ -510,164 +510,164 @@ export default {
 
 #### empty <u-label>input+blur</u-label>
 
-必须为空。与`notEmpty`相反。字符串也可以比较。
+Must be empty. The opposite of `notEmpty`. Strings can also be compared.
 
 ``` html
-<u-validator label="列表" rules="empty">
+<u-validator label="List" rules="empty">
     <u-checkboxes>
-        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
-        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Water cup">Water cup</u-checkbox>
+        <u-checkbox label="Nuts">Nuts</u-checkbox>
         <u-checkbox label="Towel">Towel</u-checkbox>
         <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
 </u-validator>
 ```
 
-### Scope判断
+### Range Judgment
 
 #### minLength(min: number) <u-label>blur</u-label>
 
-不得少于指定的字符数。字符串、数组长度均可比较。
+Must not be less than the specified number of characters. Both string and array lengths can be compared.
 
-- `min`：最小长度
+- `min`: minimum length
 
 ``` html
-<u-validator label="用户名" rules="minLength(4)">
-    <u-input placeholder="不得小于4个字符"></u-input>
+<u-validator label="Username" rules="minLength(4)">
+    <u-input placeholder="must be less than 4 characters"></u-input>
 </u-validator>
 ```
 
 #### maxLength(min: number) <u-label>blur</u-label>
 
-不得超过指定的字符数。字符串、数组长度均可比较。
+The length of the string and array can be compared.
 
-- `max`：最大长度
+- `max`: maximum length
 
 ``` html
-<u-validator label="用户名" rules="maxLength(12)">
-    <u-input placeholder="不得超过12个字符"></u-input>
+<u-validator label="Username" rules="maxLength(12)">
+    <u-input placeholder="No more than 12 characters"></u-input>
 </u-validator>
 ```
 
 #### rangeLength(min: number, max: number) <u-label>blur</u-label>
 
-字符数必须在指定的范围内。字符、数组长度均可比较。
+The number of characters must be within the specified range. Both characters and array lengths can be compared.
 
-- `min`：最小长度
-- `max`：最大长度
+- `min`: minimum length
+- `max`: maximum length
 
 ``` html
-<u-validator label="用户名" rules="rangeLength(4,12)">
-    <u-input placeholder="请输入4-12个字符"></u-input>
+<u-validator label="Username" rules="rangeLength(4,12)">
+    <u-input placeholder="Please enter 4-12 characters"></u-input>
 </u-validator>
 ```
 
 #### min(min: any) <u-label>blur</u-label>
 
-不得小于指定的值。数字、字符串、日期比较均可。
+Must not be less than the specified value. Comparisons can be made with numbers, strings, or dates.
 
-- `min`：最小值
+- `min`: minimum value
 
 ``` html
-<u-validator label="端口" rules="min(10)">
-    <u-input placeholder="不得小于10"></u-input>
+<u-validator label="Port" rules="min(10)">
+    <u-input placeholder="must not be less than 10"></u-input>
 </u-validator>
 ```
 
 #### max(min: any) <u-label>blur</u-label>
 
-不得大于指定的值。数字、字符串、日期比较均可。
+Must not be greater than the specified value. Comparisons can be made with numbers, strings, or dates.
 
-- `max`：最大值
+- `max`: maximum value
 
 ``` html
-<u-validator label="端口" rules="max(65535)">
-    <u-input placeholder="不得大于65535"></u-input>
+<u-validator label="Port" rules="max(65535)">
+    <u-input placeholder="No more than 65535"></u-input>
 </u-validator>
 ```
 
 #### range(min: any, max: any) <u-label>blur</u-label>
 
-不得大于指定的值。数字、字符串、日期比较均可。
+Must not be greater than the specified value. Comparisons can be made with numbers, strings, or dates.
 
-- `min`：最小值
-- `max`：最大值
+- `min`: minimum value
+- `max`: maximum value
 
 ``` html
-<u-validator label="端口" rules="range(80,8000)">
-    <u-input placeholder="在80-8000之间"></u-input>
+<u-validator label="Port" rules="range(80,8000)">
+    <u-input placeholder="Between 80-8000"></u-input>
 </u-validator>
 ```
 
-### Customize
+### Customization
 
 #### pattern(re: RegExp) <u-label>input+blur</u-label>
 
-根据正则表达式来判断。
+Determine based on regular expressions.
 
-- `re`：正则表达式
+- `re`: Regular expressions
 
 ``` html
-<u-validator label="昵称" rules="pattern(/^[a-z][a-zA-Z0-9]*$/)">
-    <u-input size="normal medium" placeholder="由字母和数字组成，开头必须为小写字母"></u-input>
+<u-validator label="Nickname" rules="pattern(/^[az][a-zA-Z0-9]*$/)">
+    <u-input size="normal medium" placeholder="Consists of letters and numbers, must start with a lowercase letter"></u-input>
 </u-validator>
 ```
 
-### 相等或包含判断
+### Equality or Inclusion Judgment
 
 #### is(arg: any) <u-label>blur</u-label>
 
-必须与参数相同，使用`===`比较。
+Must be equal to the argument, compared using === .
 
-- `arg`：用于判断的值
+- `arg`: value used for judgment
 
 ``` html
-<u-validator label="猜一猜" rules="is('abc')">
-    <u-input placeholder="必须与'abc'相同"></u-input>
+<u-validator label="Guess" rules="is('abc')">
+    <u-input placeholder="Must be the same as 'abc'"></u-input>
 </u-validator>
 ```
 
 ``` html
-<u-validator label="个数" rules="is(3) @bi">
-    <u-number-input placeholder="必须与3相等"></u-number-input>
+<u-validator label="Number" rules="is(3) @bi">
+    <u-number-input placeholder="Must be equal to 3"></u-number-input>
 </u-validator>
 ```
 
 #### isNot(arg: any) <u-label>blur</u-label>
 
-必须与参数不同，使用`===`比较。
+Must be different from the argument, compared using === .
 
-- `arg`：用于判断的值
+- `arg`: value used for judgment
 
 ``` html
-<u-validator label="猜一猜" rules="isNot('abc')">
-    <u-input placeholder="必须与'abc'不同"></u-input>
+<u-validator label="Guess" rules="isNot('abc')">
+    <u-input placeholder="Must be different from 'abc'"></u-input>
 </u-validator>
 ```
 
 ``` html
-<u-validator label="个数" rules="isNot(3) @bi">
-    <u-number-input placeholder="必须不等于3"></u-number-input>
+<u-validator label="Number" rules="isNot(3) @bi">
+    <u-number-input placeholder="Must not equal to 3"></u-number-input>
 </u-validator>
 ```
 
 #### equals(arg: any) <u-label>blur</u-label>
 
-必须与参数相等，除了数值，也可以比较数组和对象，使用的是[lodash.isEqual](https://www.lodashjs.com/docs/latest#_isequalvalue-other)。
+Must be equal to the parameter. In addition to numeric values, arrays and objects can also be compared using [lodash.isEqual](https://www.lodashjs.com/docs/latest#_isequalvalue-other).
 
-- `arg`：用于判断的值
+- `arg`: value used for judgment
 
 ``` html
-<u-validator label="猜一猜" rules="equals('abc')">
-    <u-input placeholder="必须等于'abc'"></u-input>
+<u-validator label="Guess" rules="equals('abc')">
+    <u-input placeholder="Must be equal to 'abc'"></u-input>
 </u-validator>
 ```
 
 ``` html
-<u-validator label="列表" rules="equals(['Water Cup', 'Nut']) @bi">
+<u-validator label="List" rules="equals(['cup', 'nuts']) @bi">
     <u-checkboxes>
-        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
-        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Water cup">Water cup</u-checkbox>
+        <u-checkbox label="Nuts">Nuts</u-checkbox>
         <u-checkbox label="Towel">Towel</u-checkbox>
         <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
@@ -676,21 +676,21 @@ export default {
 
 #### notEquals(arg: any) <u-label>blur</u-label>
 
-必须与参数不等，除了数值，也可以比较数组和对象，使用的是[lodash.isEqual](https://www.lodashjs.com/docs/latest#_isequalvalue-other)。
+Must be unequal to the parameter. In addition to numeric values, arrays and objects can also be compared using lodash.isEqual .
 
-- `arg`：用于判断的值
+- `arg`: value used for judgment
 
 ``` html
-<u-validator label="猜一猜" rules="notEquals('abc')">
-    <u-input placeholder="必须不等于'abc'"></u-input>
+<u-validator label="Guess" rules="notEquals('abc')">
+    <u-input placeholder="Must not equal to 'abc'"></u-input>
 </u-validator>
 ```
 
 ``` html
-<u-validator label="列表" rules="notEquals(['Water Cup', 'Nut']) @bi">
+<u-validator label="List" rules="notEquals(['cup', 'nuts']) @bi">
     <u-checkboxes>
-        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
-        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Water cup">Water cup</u-checkbox>
+        <u-checkbox label="Nuts">Nuts</u-checkbox>
         <u-checkbox label="Towel">Towel</u-checkbox>
         <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
@@ -699,16 +699,16 @@ export default {
 
 #### confirmed(arg: any) <u-label>blur</u-label>
 
-验证逻辑与`equals`相同，错误信息专用于密码的二次确认。
+The validation logic is the same as `equals`, and the error message is dedicated to the second confirmation of the password.
 
 ``` vue
 <template>
 <u-form gap="large">
-    <u-form-item label="密码" required rules="required | ^azAZ09_$ | minLength(4)">
-        <u-input size="huge medium" type="password" v-model="model.password" maxlength="8" placeholder="以字母、数字或'_'组成"></u-input>
+    <u-form-item label="Password" required rules="required | ^azAZ09_$ | minLength(4)">
+        <u-input size="huge medium" type="password" v-model="model.password" maxlength="8" placeholder="Consists of letters, numbers or '_'"></u-input>
     </u-form-item>
-    <u-form-item label="确认密码" required rules="required | confirmed(model.password)">
-        <u-input size="huge medium" type="password" v-model="model.confirmedPassword" maxlength="8" placeholder="再次输入密码"></u-input>
+    <u-form-item label="Confirm password" required rules="required | confirmed(model.password)">
+        <u-input size="huge medium" type="password" v-model="model.confirmedPassword" maxlength="8" placeholder="Enter password again"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -728,13 +728,13 @@ export default {
 
 #### includes(...args: any[]) <u-label>input+blur</u-label>
 
-验证值为数组，必须包含参数中的项。
+The value to be validated is an array and must contain the items in the parameter.
 
 ``` html
-<u-validator label="列表" rules="includes('Water Cup', 'Nut')">
+<u-validator label="List" rules="includes('cup', 'nuts')">
     <u-checkboxes>
-        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
-        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Water cup">Water cup</u-checkbox>
+        <u-checkbox label="Nuts">Nuts</u-checkbox>
         <u-checkbox label="Towel">Towel</u-checkbox>
         <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
@@ -743,13 +743,13 @@ export default {
 
 #### excludes(...args: any[]) <u-label>input+blur</u-label>
 
-验证值为数组，不能包含参数中的项。
+The validation value is an array and cannot contain the items in the parameter.
 
 ``` html
-<u-validator label="列表" rules="excludes('Water Cup', 'Nut')">
+<u-validator label="List" rules="excludes('cup', 'nuts')">
     <u-checkboxes>
-        <u-checkbox label="Water Cup">Water Cup</u-checkbox>
-        <u-checkbox label="Nut">Nut</u-checkbox>
+        <u-checkbox label="Water cup">Water cup</u-checkbox>
+        <u-checkbox label="Nuts">Nuts</u-checkbox>
         <u-checkbox label="Towel">Towel</u-checkbox>
         <u-checkbox label="Sofa">Sofa</u-checkbox>
     </u-checkboxes>
@@ -758,13 +758,13 @@ export default {
 
 #### included(...args: any[]) <u-label>input+blur</u-label>
 
-必须为参数中的某一个值。
+Must be one of the values   in the parameters.
 
 ``` html
-<u-validator label="列表" rules="included('Water Cup', 'Nut')">
+<u-validator label="List" rules="included('cup', 'nuts')">
     <u-select>
-        <u-select-item value="Water Cup">Water Cup</u-select-item>
-        <u-select-item value="Nut">Nut</u-select-item>
+        <u-select-item value="Water cup">Water cup</u-select-item>
+        <u-select-item value="Nuts">Nuts</u-select-item>
         <u-select-item value="Towel">Towel</u-select-item>
         <u-select-item value="Sofa">Sofa</u-select-item>
     </u-select>
@@ -773,13 +773,13 @@ export default {
 
 #### excluded(...args: any[]) <u-label>input+blur</u-label>
 
-不能为参数中的任一个值。
+Cannot be any of the values   in the parameters.
 
 ``` html
-<u-validator label="列表" rules="excluded('Water Cup', 'Nut')">
+<u-validator label="List" rules="excluded('cup', 'nuts')">
     <u-select>
-        <u-select-item value="Water Cup">Water Cup</u-select-item>
-        <u-select-item value="Nut">Nut</u-select-item>
+        <u-select-item value="Water cup">Water cup</u-select-item>
+        <u-select-item value="Nuts">Nuts</u-select-item>
         <u-select-item value="Towel">Towel</u-select-item>
         <u-select-item value="Sofa">Sofa</u-select-item>
     </u-select>
@@ -788,12 +788,12 @@ export default {
 
 #### unique(...args: any[]) <u-label>blur</u-label>
 
-验证逻辑与`excluded`相同，错误信息专用于判断是否重复。
+The validation logic is the same as `excluded`, and the error message is specific to determining whether it is a duplicate.
 
 ``` vue
 <template>
-<u-form-item label="端口" required rules="required | integer | unique(...existingPortList)">
-    <u-input v-model.number="model.port" maxlength="5" placeholder="请输入端口"></u-input>
+<u-form-item label="Port" required rules="required | integer | unique(...existingPortList)">
+    <u-input v-model.number="model.port" maxlength="5" placeholder="Please enter the port"></u-input>
 </u-form-item>
 </template>
 <script>
@@ -812,48 +812,48 @@ export default {
 
 #### noDuplicates(arg: any[]) <u-label>input</u-label>
 
-接受一个数组作为参数，验证数组中是否存在重复项。
+Accepts an array as a parameter and verifies if there are duplicate items in the array.
 
 ``` html
-<u-validator label="选项" rules="noDuplicates">
+<u-validator label="Options" rules="noDuplicates">
     <u-select multiple>
-        <u-select-item value="cup">Water Cup</u-select-item>
-        <u-select-item value="coffee">Coffee</u-select-item>
-        <u-select-item value="cup">Water Cup</u-select-item>
-        <u-select-item value="coffee">Coffee</u-select-item>
+        <u-select-item value="cup">Water cup</u-select-item>
+        <u-select-item value="coffee">coffee</u-select-item>
+        <u-select-item value="cup">Water cup</u-select-item>
+        <u-select-item value="coffee">coffee</u-select-item>
         <u-select-item value="towel">Towel</u-select-item>
     </u-select>
 </u-validator>
 ```
 
-### 类型判断
+### Type Judgment
 
 #### string <u-label>input+blur</u-label>
 
-必须为字符串类型。
+Must be a string type.
 
 ``` html
-<u-validator label="选项" rules="string">
+<u-validator label="Options" rules="string">
     <u-radios>
-        <u-radio label="1">字符串</u-radio>
-        <u-radio :label="2">数字</u-radio>
-        <u-radio :label="[]">数组</u-radio>
+        <u-radio label="1">String</u-radio>
+        <u-radio :label="2">Number</u-radio>
+        <u-radio :label="[]">Array</u-radio>
     </u-radios>
 </u-validator>
 ```
 
 #### number <u-label>input+blur</u-label>
 
-必须为数字类型。
+Must be a numeric type.
 
-使用`v-model`时，注意加入`.number`修饰符。
+When using `v-model`, be sure to add the `.number` modifier.
 
-例如`'12'`会报错。
+For example, `'12'` will result in an error.
 
 ``` vue
 <template>
-<u-validator label="端口" rules="number">
-    <u-input v-model="value" placeholder="必须为数字类型"></u-input>
+<u-validator label="Port" rules="number">
+    <u-input v-model="value" placeholder="Must be a numeric type"></u-input>
 </u-validator>
 </template>
 <script>
@@ -867,18 +867,18 @@ export default {
 </script>
 ```
 
-#### numberic(noSymbols?: boolean) <u-label>input+blur</u-label>
+#### numerical(noSymbols?: boolean) <u-label>input+blur</u-label>
 
-必须为数字。与`number`规则不同的是，它不关心是否为 string 或 number 类型，只要为数字即可。
+Must be a number. Unlike the `number` rule, it does not matter whether it is a string or a number, as long as it is a number.
 
-例如`12`和`'12'`均可。
+For example, both `12` and `'12'` are acceptable.
 
-- `noSymbols`：如果为`true`，则不能包含如`+`、`-`、`.`这样的符号
+- `noSymbols`: If `true`, symbols such as `+`, `-`, `.` cannot be included
 
 ``` vue
 <template>
-<u-validator label="端口" rules="numeric">
-    <u-input v-model="value" placeholder="必须为数字"></u-input>
+<u-validator label="Port" rules="numeric">
+    <u-input v-model="value" placeholder="Must be a number"></u-input>
 </u-validator>
 </template>
 <script>
@@ -894,721 +894,721 @@ export default {
 
 #### integer <u-label>input+blur</u-label>
 
-必须为整数。不关心是否为 string 或 number 类型。
+Must be an integer. Doesn't matter if it's a string or a number.
 
 ``` html
-<u-validator label="超时时间" rules="integer">
-    <u-input placeholder="必须为整数"></u-input>
+<u-validator label="Timeout" rules="integer">
+    <u-input placeholder="Must be an integer"></u-input>
 </u-validator>
 ```
 
 #### decimal(force?: boolean, digits?: string) <u-label>blur</u-label>
 
-整数或小数。不关心是否为 string 或 number 类型。
+Integer or decimal. Doesn't matter if it's string or number type.
 
-- `force`：是否只允许小数
-- `digits`：小数位数范围，格式如`1,3`。默认为`1,`
+- `force`: whether to allow only decimals
+- `digits`: the decimal place range, format like `1,3`. Default is `1,`
 
 ``` html
-<u-validator label="金额" rules="decimal(true, '2,2')">
-    <u-input placeholder="必须为两位小数"></u-input>
+<u-validator label="Amount" rules="decimal(true, '2,2')">
+    <u-input placeholder="Must have two decimal places"></u-input>
 </u-validator>
 ```
 
 #### boolean <u-label>input+blur</u-label>
 
-必须为布尔类型。
+Must be a Boolean type.
 
 ``` html
-<u-validator label="选项" rules="boolean">
+<u-validator label="Options" rules="boolean">
     <u-radios>
-        <u-radio label="abc">字符串</u-radio>
+        <u-radio label="abc">String</u-radio>
         <u-radio :label="true">true</u-radio>
-        <u-radio :label="123">数字</u-radio>
+        <u-radio :label="123">Numbers</u-radio>
     </u-radios>
 </u-validator>
 ```
 
 #### function <u-label>input+blur</u-label>
 
-必须为函数。
+Must be a function.
 
 ``` html
-<u-validator label="选项" rules="function">
+<u-validator label="Options" rules="function">
     <u-radios>
-        <u-radio label="abc">字符串</u-radio>
-        <u-radio :label="{}">对象</u-radio>
-        <u-radio :label="() => true">函数</u-radio>
+        <u-radio label="abc">String</u-radio>
+        <u-radio :label="{}">Object</u-radio>
+        <u-radio :label="() => true">Function</u-radio>
     </u-radios>
 </u-validator>
 ```
 
 #### object <u-label>input+blur</u-label>
 
-必须为对象。
+Must be an object.
 
 ``` html
-<u-validator label="选项" rules="object">
+<u-validator label="Options" rules="object">
     <u-radios>
-        <u-radio label="abc">字符串</u-radio>
-        <u-radio :label="{}">对象</u-radio>
-        <u-radio :label="[]">数组</u-radio>
+        <u-radio label="abc">String</u-radio>
+        <u-radio :label="{}">Object</u-radio>
+        <u-radio :label="[]">Array</u-radio>
     </u-radios>
 </u-validator>
 ```
 
 #### plainObject <u-label>input+blur</u-label>
 
-必须为简单对象。
+Must be a simple object.
 
 ``` html
-<u-validator label="选项" rules="plainObject">
+<u-validator label="Options" rules="plainObject">
     <u-radios>
-        <u-radio label="abc">字符串</u-radio>
-        <u-radio :label="{}">简单对象</u-radio>
-        <u-radio :label="new Date()">日期</u-radio>
-        <u-radio :label="[]">数组</u-radio>
+        <u-radio label="abc">String</u-radio>
+        <u-radio :label="{}">Simple object</u-radio>
+        <u-radio :label="new Date()">Date</u-radio>
+        <u-radio :label="[]">Array</u-radio>
     </u-radios>
 </u-validator>
 ```
 
-### 字母、数字、中划线、下划线判断
+### Letters, Numbers, Hyphens, and Underscores
 
 #### alpha
 
-是否只能为字母（a-zA-Z）。
+Whether it can only be letters (a-zA-Z).
 
 ``` html
-<u-validator label="名称" rules="alpha">
-    <u-input placeholder="必须为字母"></u-input>
+<u-validator label="Name" rules="alpha">
+    <u-input placeholder="Must be a letter"></u-input>
 </u-validator>
 ```
 
 #### alphaNum
 
-是否只能为字母或数字（a-zA-Z0-9）。
+Can it only be letters or numbers (a-zA-Z0-9).
 
 ``` html
-<u-validator label="名称" rules="alphaNum">
-    <u-input placeholder="必须为字母或数字"></u-input>
+<u-validator label="Name" rules="alphaNum">
+    <u-input placeholder="Must be a letter or number"></u-input>
 </u-validator>
 ```
 
 
 #### alphaDash <u-label>input+blur</u-label>
 
-必须由字母或下划线组成。
+Must consist of letters or underscores.
 
 ``` html
-<u-validator label="名称" rules="alphaDash">
-    <u-input placeholder="以字母、下划线组成"></u-input>
+<u-validator label="Name" rules="alphaDash">
+    <u-input placeholder="composed of letters and underscores"></u-input>
 </u-validator>
 ```
 
 #### alphaNumDash <u-label>input+blur</u-label>
 
-必须由字母、数字或下划线组成。
+Must consist of letters, numbers, or underscores.
 
 ``` html
-<u-validator label="名称" rules="alphaNumDash">
-    <u-input placeholder="以字母、数字或下划线组成"></u-input>
+<u-validator label="Name" rules="alphaNumDash">
+    <u-input placeholder="Letters, numbers or underscores"></u-input>
 </u-validator>
 ```
 
 #### alphaSpaces <u-label>input+blur</u-label>
 
-必须由字母或空格组成。
+Must consist of letters or spaces.
 
 ``` html
-<u-validator label="名称" rules="alphaSpaces">
-    <u-input placeholder="以字母或空格组成"></u-input>
+<u-validator label="Name" rules="alphaSpaces">
+    <u-input placeholder="composed of letters or spaces"></u-input>
 </u-validator>
 ```
 
 #### lowerCase <u-label>input+blur</u-label>
 
-不能出现大写字母。
+No uppercase letters are allowed.
 
 ``` html
-<u-validator label="名称" rules="lowerCase">
-    <u-input placeholder="不能出现大写字母"></u-input>
+<u-validator label="Name" rules="lowerCase">
+    <u-input placeholder="No uppercase letters"></u-input>
 </u-validator>
 ```
 
 #### upperCase <u-label>input+blur</u-label>
 
-不能出现小写字母。
+No lowercase letters are allowed.
 
 ``` html
-<u-validator label="名称" rules="upperCase">
-    <u-input placeholder="不能出现小写字母"></u-input>
+<u-validator label="Name" rules="upperCase">
+    <u-input placeholder="No lowercase letters"></u-input>
 </u-validator>
 ```
 
 #### ^az <u-label>input+blur</u-label>
 
-以小写字母开头。
+Starts with a lowercase letter.
 
 ``` html
-<u-validator label="名称" rules="^az">
-    <u-input placeholder="以小写字母开头"></u-input>
+<u-validator label="Name" rules="^az">
+    <u-input placeholder="starts with a lowercase letter"></u-input>
 </u-validator>
 ```
 
 #### ^az09 <u-label>input+blur</u-label>
 
-以小写字母或数字开头。
+Start with a lowercase letter or number.
 
 ``` html
-<u-validator label="名称" rules="^az09">
-    <u-input placeholder="以小写字母或数字开头"></u-input>
+<u-validator label="Name" rules="^az09">
+    <u-input placeholder="starts with a lowercase letter or number"></u-input>
 </u-validator>
 ```
 
 #### ^az09_ <u-label>input+blur</u-label>
 
-以小写字母、数字或下划线开头。
+Start with a lowercase letter, number, or underscore.
 
 ``` html
-<u-validator label="名称" rules="^az09_">
-    <u-input placeholder="以小写字母、数字或下划线开头"></u-input>
+<u-validator label="Name" rules="^az09_">
+    <u-input placeholder="starts with a lowercase letter, number or underscore"></u-input>
 </u-validator>
 ```
 
 #### ^azAZ <u-label>input+blur</u-label>
 
-以字母开头。
+Begins with a letter.
 
 ``` html
-<u-validator label="名称" rules="^azAZ">
-    <u-input placeholder="以字母开头"></u-input>
+<u-validator label="Name" rules="^azAZ">
+    <u-input placeholder="starts with a letter"></u-input>
 </u-validator>
 ```
 
 #### ^azAZ09 <u-label>input+blur</u-label>
 
-以字母或数字开头。
+Starts with a letter or number.
 
 ``` html
-<u-validator label="名称" rules="^azAZ09">
-    <u-input placeholder="以字母或数字开头"></u-input>
+<u-validator label="Name" rules="^azAZ09">
+    <u-input placeholder="starts with a letter or number"></u-input>
 </u-validator>
 ```
 
 #### ^azAZ09_ <u-label>input+blur</u-label>
 
-以字母、数字或下划线开头。
+Starts with a letter, number, or underscore.
 
 ``` html
-<u-validator label="名称" rules="^azAZ09_">
-    <u-input placeholder="以字母、数字或下划线开头"></u-input>
+<u-validator label="Name" rules="^azAZ09_">
+    <u-input placeholder="starts with a letter, number or underscore"></u-input>
 </u-validator>
 ```
 
 #### az09$ <u-label>blur</u-label>
 
-以小写字母或数字结尾。
+End with a lowercase letter or number.
 
 ``` html
-<u-validator label="名称" rules="az09$">
-    <u-input placeholder="以小写字母或数字结尾"></u-input>
+<u-validator label="Name" rules="az09$">
+    <u-input placeholder="ends with a lowercase letter or number"></u-input>
 </u-validator>
 ```
 
 #### azAZ09$ <u-label>blur</u-label>
 
-以字母或数字结尾。
+Ends with a letter or number.
 
 ``` html
-<u-validator label="名称" rules="azAZ09$">
-    <u-input placeholder="以字母或数字结尾"></u-input>
+<u-validator label="Name" rules="azAZ09$">
+    <u-input placeholder="ends with a letter or number"></u-input>
 </u-validator>
 ```
 
 #### ^09$ <u-label>input+blur</u-label>
 
-以数字组成。
+Made up of numbers.
 
 ``` html
-<u-validator label="名称" rules="^09$">
-    <u-input placeholder="以数字组成"></u-input>
+<u-validator label="Name" rules="^09$">
+    <u-input placeholder="consisting of numbers"></u-input>
 </u-validator>
 ```
 
 #### ^az09$ <u-label>input+blur</u-label>
 
-以小写字母或数字组成。
+It consists of lowercase letters or numbers.
 
 ``` html
-<u-validator label="名称" rules="^az09$">
-    <u-input placeholder="以小写字母或数字组成"></u-input>
+<u-validator label="Name" rules="^az09$">
+    <u-input placeholder="Use lowercase letters or numbers"></u-input>
 </u-validator>
 ```
 
 #### ^az09-$ <u-label>input+blur</u-label>
 
-以小写字母、数字或中划线组成。
+It can be composed of lowercase letters, numbers or hyphens.
 
 ``` html
-<u-validator label="名称" rules="^az09-$">
-    <u-input placeholder="以小写字母、数字或中划线组成"></u-input>
+<u-validator label="Name" rules="^az09-$">
+    <u-input placeholder="Use lowercase letters, numbers or hyphens"></u-input>
 </u-validator>
 ```
 
 #### ^az09-.$ <u-label>input+blur</u-label>
 
-以小写字母、数字、"-"或"."组成。
+It consists of lowercase letters, numbers, "-" or ".".
 
 ``` html
-<u-validator label="名称" rules="^az09-.$">
-    <u-input placeholder="以小写字母、数字、'-'或'.'组成"></u-input>
+<u-validator label="Name" rules="^az09-.$">
+    <u-input placeholder="Use lowercase letters, numbers, '-' or '.'"></u-input>
 </u-validator>
 ```
 
 #### ^azAZ09$ <u-label>input+blur</u-label>
 
-以字母或数字组成。
+Consists of letters or numbers.
 
 ``` html
-<u-validator label="名称" rules="^azAZ09$">
-    <u-input placeholder="以字母或数字组成"></u-input>
+<u-validator label="Name" rules="^azAZ09$">
+    <u-input placeholder="Letters or numbers"></u-input>
 </u-validator>
 ```
 
 #### ^azAZ09-$ <u-label>input+blur</u-label>
 
-以字母、数字或"_"组成。
+It consists of letters, numbers or "_".
 
 ``` html
-<u-validator label="名称" rules="^azAZ09-$">
-    <u-input placeholder="以字母、数字或'-'组成"></u-input>
+<u-validator label="Name" rules="^azAZ09-$">
+    <u-input placeholder="Letters, numbers or '-'"></u-input>
 </u-validator>
 ```
 
 #### ^azAZ09_$ <u-label>input+blur</u-label>
 
-以字母、数字或"_"组成。
+It consists of letters, numbers or "_".
 
 ``` html
-<u-validator label="名称" rules="^azAZ09_$">
-    <u-input placeholder="以字母、数字或'_'组成"></u-input>
+<u-validator label="Name" rules="^azAZ09_$">
+    <u-input placeholder="Letters, numbers or '_'"></u-input>
 </u-validator>
 ```
 
 #### ^azAZ09-_$ <u-label>input+blur</u-label>
 
-以字母、数字、"-"或"_"组成。
+It consists of letters, numbers, "-" or "_".
 
 ``` html
-<u-validator label="名称" rules="^azAZ09-_$">
-    <u-input placeholder="以字母、数字、'-'或'_'组成"></u-input>
+<u-validator label="Name" rules="^azAZ09-_$">
+    <u-input placeholder="Letters, numbers, '-' or '_'"></u-input>
 </u-validator>
 ```
 
 #### without-- <u-label>input+blur</u-label>
 
-不能连续出现中划线。
+There cannot be consecutive dashes.
 
 ``` html
-<u-validator label="名称" rules="without--">
-    <u-input placeholder="不能连续出现中划线"></u-input>
+<u-validator label="Name" rules="without--">
+    <u-input placeholder="No continuous hyphens"></u-input>
 </u-validator>
 ```
 
 #### without__ <u-label>input+blur</u-label>
 
-不能连续出现下划线。
+Consecutive underscores are not allowed.
 
 ``` html
-<u-validator label="名称" rules="without__">
-    <u-input placeholder="不能连续出现下划线"></u-input>
+<u-validator label="Name" rules="without__">
+    <u-input placeholder="Underlines cannot appear continuously"></u-input>
 </u-validator>
 ```
 
-### 特定场景判断
+### Specific Scenario Judgment
 
 #### email <u-label>blur</u-label>
 
-必须为正确的邮箱。
+Must be a valid email address.
 
 ``` html
-<u-validator label="邮箱" rules="email">
-    <u-input placeholder="请输入正确的邮箱"></u-input>
+<u-validator label="Email" rules="email">
+    <u-input placeholder="Please enter a valid email address"></u-input>
 </u-validator>
 ```
 
 #### ip <u-label>blur</u-label>
 
-必须为正确的 IP。
+It must be a correct IP.
 
 ``` html
 <u-validator label="IP" rules="ip">
-    <u-input placeholder="请输入正确的 IP"></u-input>
+    <u-input placeholder="Please enter the correct IP"></u-input>
 </u-validator>
 ```
 
 #### port <u-label>blur</u-label>
 
-必须为正确的端口。
+The port must be correct.
 
 ``` html
-<u-validator label="端口" rules="port">
-    <u-input placeholder="请输入正确的端口"></u-input>
+<u-validator label="Port" rules="port">
+    <u-input placeholder="Please enter the correct port"></u-input>
 </u-validator>
 ```
 
 #### halfWidth <u-label>input+blur</u-label>
 
-需要输入半角字符。
+Half-width characters are required.
 
 ``` html
-<u-validator label="名称" rules="halfWidth">
-    <u-input placeholder="需要输入半角字符"></u-input>
+<u-validator label="Name" rules="halfWidth">
+    <u-input placeholder="Need to enter half-width characters"></u-input>
 </u-validator>
 ```
 
 #### fullWidth <u-label>input+blur</u-label>
 
-必须输入全角字符。
+Full-width characters must be entered.
 
 ``` html
-<u-validator label="名称" rules="fullWidth">
-    <u-input placeholder="请输入全角字符"></u-input>
+<u-validator label="Name" rules="fullWidth">
+    <u-input placeholder="Please enter full-width characters"></u-input>
 </u-validator>
 ```
 
 #### ascii <u-label>input+blur</u-label>
 
-必须输入ascii字符。
+ASCII characters must be entered.
 
 ``` html
-<u-validator label="名称" rules="ascii">
-    <u-input placeholder="请输入ascii字符"></u-input>
+<u-validator label="Name" rules="ascii">
+    <u-input placeholder="Please enter ascii characters"></u-input>
 </u-validator>
 ```
 
 #### base64 <u-label>blur</u-label>
 
-必须输入base64编码。
+The base64 encoding must be entered.
 
 ``` html
-<u-validator label="名称" rules="base64">
-    <u-input placeholder="请输入base64编码"></u-input>
+<u-validator label="Name" rules="base64">
+    <u-input placeholder="Please enter base64 encoding"></u-input>
 </u-validator>
 ```
 
 #### byteLength(min: number, max: number) <u-label>input+blur</u-label>
 
-输入字符串的字节长度范围限制。
+The byte length range of the input string is limited.
 
-- `min`：最小字节长度
-- `max`：最大字节长度
+- `min`: minimum byte length
+- `max`: Maximum length in bytes
 
 ``` html
-<u-validator label="名称" rules="byteLength(0, 21)">
-    <u-input placeholder="请输入八个汉字"></u-input>
+<u-validator label="Name" rules="byteLength(0, 21)">
+    <u-input placeholder="Please enter eight Chinese characters"></u-input>
 </u-validator>
 ```
 
 #### dataURI <u-label>blur</u-label>
 
-必须输入dataURI编码。
+The dataURI must be encoded.
 
 ``` html
-<u-validator label="编码" rules="dataURI">
-    <u-input placeholder="请输入dataURI编码"></u-input>
+<u-validator label="encoding" rules="dataURI">
+    <u-input placeholder="Please enter the dataURI code"></u-input>
 </u-validator>
 ```
 
 #### divisibleBy(divisor: number) <u-label>blur</u-label>
 
-输入数字能否被相应除数整除。
+Whether the input number is divisible by the corresponding divisor.
 
-- `divisor`：除数
+- `divisor`: the divisor
 
 ``` html
-<u-validator label="名称" rules="divisibleBy(3)">
-    <u-input placeholder="请输入3的倍数"></u-input>
+<u-validator label="Name" rules="divisibleBy(3)">
+    <u-input placeholder="Please enter a multiple of 3"></u-input>
 </u-validator>
 ```
 
 #### hash(algorithm: string) <u-label>blur</u-label>
 
-输入编码是否符合指定哈希算法。
+Whether the input encoding complies with the specified hash algorithm.
 
-- `algorithm`：算法名称，支持`md4`、`md5`、`sha1`、`sha256`、`sha384`、`sha512`、`ripemd128`、`ripemd160`、`tiger128`、`tiger160`、`tiger192`、`crc32`以及`crc32b`
+- `algorithm`: algorithm name, supports `md4`, `md5`, `sha1`, `sha256`, `sha384`, `sha512`, `ripemd128`, `ripemd160`, `tiger128`, `tiger160`, `tiger192`, `crc32` and `crc32b`
 
 ``` html
-<u-validator label="编码" rules="hash('md4')">
-    <u-input placeholder="请输入哈希编码"></u-input>
+<u-validator label="Encoding" rules="hash('md4')">
+    <u-input placeholder="Please enter the hash code"></u-input>
 </u-validator>
 ```
 
 #### md5 <u-label>blur</u-label>
 
-输入编码是否符合md5算法。
+Whether the input code conforms to the md5 algorithm.
 
 ``` html
-<u-validator label="编码" rules="md5">
-    <u-input placeholder="请输入md5编码"></u-input>
+<u-validator label="Encoding" rules="md5">
+    <u-input placeholder="Please enter the md5 code"></u-input>
 </u-validator>
 ```
 
 #### hex <u-label>blur</u-label>
 
-输入数字是否是十六进制。
+Whether the input number is hexadecimal.
 
 ``` html
-<u-validator label="十六进制数" rules="hex">
-    <u-input placeholder="请输入十六进制数"></u-input>
+<u-validator label="Hexadecimal number" rules="hex">
+    <u-input placeholder="Please enter a hexadecimal number"></u-input>
 </u-validator>
 ```
 
 #### hexColor <u-label>blur</u-label>
 
-输入字符串是否是十六进制颜色码。
+Whether the input string is a hexadecimal color code.
 
 ``` html
-<u-validator label="颜色" rules="hexColor">
-    <u-input placeholder="请输入颜色"></u-input>
+<u-validator label="Color" rules="hexColor">
+    <u-input placeholder="Please enter color"></u-input>
 </u-validator>
 ```
 
 #### creditCard <u-label>blur</u-label>
 
-输入信用卡号码是否合法。
+Is the credit card number you entered legal?
 
 ``` html
-<u-validator label="信用卡号" rules="creditCard">
-    <u-input placeholder="请输入信用卡号"></u-input>
+<u-validator label="Credit Card Number" rules="creditCard">
+    <u-input placeholder="Please enter your credit card number"></u-input>
 </u-validator>
 ```
 
 #### fqdn <u-label>blur</u-label>
 
-输入全限定域名是否合法。
+Enter a legal fully qualified domain name.
 
 ``` html
 <u-validator label="FQDN" rules="fqdn">
-    <u-input placeholder="请输入全限定域名"></u-input>
+    <u-input placeholder="Please enter the fully qualified domain name"></u-input>
 </u-validator>
 ```
 
 #### ipOrFQDN <u-label>blur</u-label>
 
-输入内容是否为一个合法IP或全限定域名。
+Check whether the input is a valid IP or fully qualified domain name.
 
 ``` html
-<u-validator label="IP或FQDN" rules="ipOrFQDN">
-    <u-input placeholder="请输入IP或全限定域名"></u-input>
+<u-validator label="IP or FQDN" rules="ipOrFQDN">
+    <u-input placeholder="Please enter IP or fully qualified domain name"></u-input>
 </u-validator>
 ```
 
 #### isbn(version: number) <u-label>blur</u-label>
 
-输入内容是否为一个合法的国际标准书号(ISBN)。
+Whether the input content is a valid International Standard Book Number (ISBN).
 
-- `version`：ISBN版本，接受`10`或`13`
+- `version`: ISBN version, accepts `10` or `13`
 
 ``` html
 <u-validator label="ISBN" rules="isbn(10)">
-    <u-input placeholder="请输入ISBN编号"></u-input>
+    <u-input placeholder="Please enter the ISBN number"></u-input>
 </u-validator>
 ```
 
 #### issn <u-label>blur</u-label>
 
-输入内容是否为一个合法的国际标准连续出版物号(ISSN)。
+Whether the input content is a valid International Standard Serial Number (ISSN).
 
 ``` html
 <u-validator label="ISSN" rules="issn">
-    <u-input placeholder="请输入ISSN编号"></u-input>
+    <u-input placeholder="Please enter the ISSN number"></u-input>
 </u-validator>
 ```
 
 #### isin <u-label>blur</u-label>
 
-输入内容是否为一个合法的国际证券识别码(ISIN)。
+Whether the input is a valid International Securities Identification Number (ISIN).
 
 ``` html
 <u-validator label="ISIN" rules="isin">
-    <u-input placeholder="请输入ISIN编号"></u-input>
+    <u-input placeholder="Please enter the ISIN number"></u-input>
 </u-validator>
 ```
 
 #### iso8601(strict: boolean) <u-label>blur</u-label>
 
-输入内容是否为合法的ISO8601日期。
+Whether the input content is a valid ISO8601 date.
 
-- `strict`: 是否检测闰年日期。如果`strict`的值为`true`，则`2019-02-29`这样的日期属于非法日期
+- `strict`: Whether to detect leap year dates. If the value of `strict` is `true`, dates like `2019-02-29` are illegal dates
 
 ``` html
-<u-validator label="日期" rules="iso8601(true)">
-    <u-input placeholder="请输入日期"></u-input>
+<u-validator label="Date" rules="iso8601(true)">
+    <u-input placeholder="Please enter the date"></u-input>
 </u-validator>
 ```
 
 #### iso31661Alpha2 <u-label>blur</u-label>
 
-输入内容是否为合法的ISO 3166-1 Alpha-2国家代码。
+Whether the input is a valid ISO 3166-1 Alpha-2 country code.
 
 ``` html
-<u-validator label="代码" rules="iso31661Alpha2">
-    <u-input placeholder="请输入国家代码"></u-input>
+<u-validator label="Code" rules="iso31661Alpha2">
+    <u-input placeholder="Please enter the country code"></u-input>
 </u-validator>
 ```
 
 #### iso31661Alpha3 <u-label>blur</u-label>
 
-输入内容是否为合法的ISO 3166-1 Alpha-3国家代码。
+Whether the input is a valid ISO 3166-1 Alpha-3 country code.
 
 ``` html
-<u-validator label="代码" rules="iso31661Alpha3">
-    <u-input placeholder="请输入国家代码"></u-input>
+<u-validator label="Code" rules="iso31661Alpha3">
+    <u-input placeholder="Please enter the country code"></u-input>
 </u-validator>
 ```
 
 #### json <u-label>input+blur</u-label>
 
-输入字符串是否可以被解析为JSON格式。
+Whether the input string can be parsed as JSON.
 
 ``` html
 <u-validator label="JSON" rules="json">
-    <u-input placeholder="请输入JSON字符串"></u-input>
+    <u-input placeholder="Please enter a JSON string"></u-input>
 </u-validator>
 ```
 
 #### jwt <u-label>blur</u-label>
 
-输入字符串是否为合法的JSON Web Token。
+Whether the input string is a valid JSON Web Token.
 
 ``` html
-<u-validator label="JWT" rules="jwt">
-    <u-input placeholder="请输入JWT"></u-input>
+<u-validator label="JWT"   rules="jwt">
+    <u-input placeholder="Please enter JWT"></u-input>
 </u-validator>
 ```
 
 #### latLong <u-label>blur</u-label>
 
-输入字符串是否为合法的经纬度坐标。
+Whether the input string is a valid longitude and latitude coordinate.
 
 ``` html
-<u-validator label="经纬度" rules="latLong">
-    <u-input placeholder="请输入坐标"></u-input>
+<u-validator label="Longitude and Latitude" rules="latLong">
+    <u-input placeholder="Please enter coordinates"></u-input>
 </u-validator>
 ```
 
 #### mobile (locale?: any[], strict?: boolean) <u-label>blur</u-label>
 
-输入内容是否为合法的手机号。
+Check whether the input content is a legal mobile phone number.
 
-- `locale`：所在地区，例如`en-US`、`ja-JP`等。可以是一个字符串或数组。如果不填，则尝试自动匹配所有地区。
+- `locale`: the region, such as `en-US`, `en-CA`, etc. It can be a string or an array. If left blank, it will try to automatically match all regions.
 
-- `strict`：是否检验国家代号。如果为`true`，则必须以`+`和国家代码开头。
+- `strict`: Whether to check the country code. If `true`, it must start with `+` and the country code.
 
 ``` html
-<u-validator label="手机" rules="mobile('en-US')">
-    <u-input placeholder="请输入手机号码"></u-input>
+<u-validator label="mobile" rules="mobile('en-US')">
+    <u-input placeholder="Please enter your mobile number"></u-input>
 </u-validator>
 ```
 
 #### mongoId <u-label>blur</u-label>
 
-输入字符串是否为合法的MongoDB对象ID。
+Whether the input string is a valid MongoDB object ID.
 
 ``` html
 <u-validator label="ID" rules="mongoId">
-    <u-input placeholder="请输入mongoDB的对象ID"></u-input>
+    <u-input placeholder="Please enter the mongoDB object ID"></u-input>
 </u-validator>
 ```
 
 #### postalCode(locale: string) <u-label>blur</u-label>
 
-输入字符串是否为合法的邮政编码。
+Whether the input string is a valid postal code.
 
-- `locale`：所在地区。例如`CH`、`JP`等。
+- `locale`: the region. For example, `CH`, `JP`, etc.
 
 ``` html
 <u-validator label="postalID" rules="postalCode('JP')">
-    <u-input placeholder="请输入邮政编码"></u-input>
+    <u-input placeholder="Please enter your postal code"></u-input>
 </u-validator>
 ```
 
 #### uuid(version?: number) <u-label>blur</u-label>
 
-输入字符串是否为合法的UUID。
+Whether the input string is a valid UUID.
 
-- `version`：采用的UUID版本。接受`3`、`4`和`5`。如果不填，则尝试自动匹配所有版本。
+- `version`: The UUID version to use. Accepts `3`, `4`, and `5`. If left blank, attempts to automatically match all versions.
 
 ``` html
 <u-validator label="UUID" rules="uuid(3)">
-    <u-input placeholder="请输入UUID"></u-input>
+    <u-input placeholder="Please enter UUID"></u-input>
 </u-validator>
 ```
 
 #### chinese <u-label>input+blur</u-label>
 
-输入字符串是否为合法的中文内容。
+Whether the input string is legal Chinese content.
 
 ``` html
-<u-validator label="姓名" rules="chinese">
-    <u-input placeholder="请输入姓名"></u-input>
+<u-validator label="Name" rules="chinese">
+    <u-input placeholder="Please enter your name"></u-input>
 </u-validator>
 ```
 
 ## API
-### Props/Attrs
+Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| name | string |  |  | 表单项名称。已废弃 |
-| label | string |  |  | 标签。在 UValidator 用于提示消息的合成，在 UFormItem 等其他组件用于显示标签 |
-| rules | string, Array |  |  | 验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型 |
-| message | string |  |  | 默认提示消息 |
-| muted | string |  |  | 验证时是否静默。可选值：`'message'`表示只静默消息提示，`'all'`同时静默消息提示和红框提示 |
-| ignore-validation | boolean |  | `false` | 忽略验证 |
-| ignore-rules | boolean |  | `false` | 忽略验证规则。已废弃，同`ignore-validation` |
-| validating-options | object |  |  | 验证辅助对象。在 Rule 的 `validate` 方法中使用 |
-| validating-value | any |  |  | 临时修改验证值 |
-| validating-process | Function |  |  | 验证前对值进行预处理 |
-| manual | boolean |  | `false` | 是否采取手动验证。如果为`true`，则 UValidator 将不会在监听到子组件的`input`、`change`和`blur`事件后进行相应的验证。 |
+| name | string | | | The form item name. Deprecated |
+| label | string | | | Label. Used to synthesize prompt messages in UValidator and to display labels in other components such as UFormItem. |
+| rules | string, Array | | | Validation rules. The shorthand format is string type, and the full or mixed format is array type |
+| message | string | | | Default prompt message |
+| muted | string | | | Whether to mute during verification. Optional values: `'message'` means only muting the message prompt, `'all'` means muting both the message prompt and the red box prompt |
+| ignore-validation | boolean | | `false` | Ignore validation |
+| ignore-rules | boolean | | `false` | Ignore validation rules. Deprecated, same as `ignore-validation` |
+| validating-options | object | | | Validation helper object. Used in `validate` method of Rule |
+| validating-value | any | | | Temporarily modify the validation value |
+| validating-process | Function | | | Preprocess the value before validation |
+| manual | boolean | | `false` | Whether to use manual validation. If `true`, UValidator will not perform corresponding validation after listening to the `input`, `change` and `blur` events of the child components. |
 
-### Computed
+Computed
 
 | Computed | Type | Description |
 | -------- | ---- | ----------- |
-| touched | boolean | 用户是否触碰 |
-| dirty | boolean | 用户是否修改值 |
-| valid | boolean | 验证是否通过 |
-| firstError | string | 第一个错误提示消息 |
+| touched | boolean | Whether the user touched it |
+| dirty | boolean | Whether the user modified the value |
+| valid | boolean | Verification passed |
+| firstError | string | The first error message |
 
 ### Slots
 
 #### (default)
 
-插入继承了 MField 的组件，或子 UValidator，或其他 HTML 和文本。
+Insert a component that inherits MField, or a child UValidator, or other HTML and text.
 
 ### Events
 
 #### @validate
 
-对于第一个 Field 或者所有子 UValidator：
+For the first Field or all sub-UValidators:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.valid | boolean | 验证是否通过 |
-| $event.touched | boolean | 用户是否触碰 |
-| $event.dirty | boolean | 用户是否修改值 |
-| $event.firstError | string | 第一个错误提示消息 |
-| senderVM | UValidator | 发送事件实例 |
+| $event.valid | boolean | Whether the verification passed |
+| $event.touched | boolean | Whether the user touched |
+| $event.dirty | boolean | Whether the user modified the value |
+| $event.firstError | string | The first error message |
+| senderVM | UValidator | Sending event instance |
 
 ### Methods
 
 #### validate(trigger, muted)
 
-手动验证。
+Manual verification.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| trigger | string | `'submit'` | 触发方式，可选值：`submit`、`blur`和`input`之一，或者它们的任意组合。 |
-| muted | boolean | `false` | 是否验证后无提示 |
+| trigger | string | `'submit'` | Trigger method, optional value: one of `submit`, `blur` and `input`, or any combination of them. |
+| muted | boolean | `false` | No prompt after verification |

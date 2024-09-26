@@ -17,7 +17,7 @@ export const repeatClick = {
         };
 
         el.__repeatClickOff = event.on(el, 'mousedown', (e) => {
-            // self 和 prevent 有个顺序问题，所以用 for 循环
+            // There is an order issue with self and prevent, so use a for loop
             const modifiers = Object.keys(binding.modifiers);
             for (let i = 0; i < modifiers.length; i++) {
                 const modifier = modifiers[i];
@@ -29,7 +29,7 @@ export const repeatClick = {
                     e.preventDefault();
             }
 
-            // @TODO: 自定义指令其他相关
+            // @TODO: Other related custom instructions
             if (e.button !== 0)
                 return;
 

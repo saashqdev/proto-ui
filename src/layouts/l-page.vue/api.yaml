@@ -1,24 +1,24 @@
 - name: l-page
-  title: 通用页面布局
-  description: 只有顶部栏和底部栏的通用页面布局。
+  title: Generic Page Layout
+  description: A common page layout with only top and bottom bars.
   slots:
     - name: default
-      description: 主内容区。
+      description: Main content area.
     - name: head
-      description: 设置顶部内容。
+      description: Set the top content.
     - name: foot
-      description: 设置底部内容。
+      description: Set the bottom content.
 - name: l-page-center
   attrs:
     - name: size
       type: enum
       default: normal
       options: [mini, small, normal, large, huge]
-      description: 宽度大小。
+      description: Width size.
   slots:
     - name: default
-      description: 插入 HTML 或文本。
+      description: Insert HTML or text.
 - name: l-page-section
   slots:
     - name: default
-      description: 插入 HTML 或文本。
+      description: Insert HTML or text.

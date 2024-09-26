@@ -1,59 +1,59 @@
-## 验证规则
+## Validation Rules
 
-验证规则（Rule）通过验证器（或表单项）的`rules`属性设置，可以用简写格式（字符串）或完整格式（数组）书写，推荐尽量使用简写格式。
+Validation rules are set via the `rules` property of a validator (or form item). They can be written in either a shorthand format (string) or a full format (array). It is recommended to use the shorthand format whenever possible.
 
-### 简写格式
+### Abbreviated Format
 
-在一个大的项目中，相同场景的验证规则（包括触发方式和错误提示等）通常会被多次使用。如果将这些规则通过注册好的名称调用，就能减少很多重复的代码。
+In a large project, validation rules (including triggering methods and error prompts, etc.) for the same scenario are usually used multiple times. If these rules are called by registered names, a lot of duplicate code can be reduced.
 
-组件库中已经内置了一些[常见的验证规则](./rules)，也可以自己在项目中注册规则（见下文）。
+Some common validation rules are already built into the component library, and you can also register rules in your project (see below).
 
-利用这些已有的规则，能够在`rules`属性上拼接成字符串快速使用。
+Using these existing rules, you can concatenate them into a string in the `rules` attribute for quick use.
 
-下面举个例子，一个用户名输入框的验证包含以下规则：
+For example, the validation of a username input box contains the following rules:
 
-1. 必须输入用户名，失焦验证
-2. 以字母开头，实时验证
-3. 字母、数字或中划线组成，实时验证
-4. 以字母或数字结尾，失焦验证
-5. 不得少于4个字符，失焦验证
+1. Username is required, out of focus verification
+2. Start with a letter, real-time verification
+3. Letters, numbers or hyphens, real-time verification
+4. Ending with letters or numbers, out of focus verification
+5. No less than 4 characters, out of focus verification
 
 ``` html
-<u-form-item label="用户名" rules="required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+<u-form-item label="Username" rules="required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)">
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 ```
 
-#### 字符串简写说明：
+#### String Abbreviation Description:
 
-多条验证规则用`|`分隔开，类似 Vue 的过滤器写法。
+Multiple validation rules are separated by `|`, similar to the filter writing method of Vue.
 
-每条验证格式为`name @bi #message`，各项顺序不能互换。
+The format of each verification is `name @bi #message`, and the order of the items cannot be interchanged.
 
-- `name`为已注册的验证规则名称：可以添加参数，如`name(arg1, arg2)`
-- `@`后面添加触发方式：`i`表示`input`，`b`表示`blur`，可单独或组合使用，如：`@input`、`@b`、`@bi`等
-- `#`后面添加错误提示：内容会一直截止到下一个`|`或字符串结尾
+- `name` is the name of the registered validation rule: you can add parameters, such as `name(arg1, arg2)`
+- Add triggering methods after `@`: `i` stands for `input`, `b` stands for `blur`, which can be used alone or in combination, such as: `@input`, `@b`, `@bi`, etc.
+- Add an error message after `#`: the content will be closed until the next `|` or the end of the string
 
 
-利用`@`和`#`，能够对原来的内置规则做一些调整：
+Using `@` and `#`, you can make some adjustments to the original built-in rules:
 
-下面的例子中：
-- 输入格式只进行失焦判断
-- 长度提示文案做了修改
+In the following example:
+- Input format only performs out-of-focus judgment
+- The length prompt text has been modified
 
 ``` html
-<u-form-item label="用户名" required rules="required | ^azAZ | ^azAZ09-$ @b | azAZ09$ | minLength(4) #4-12个字符">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+<u-form-item label="Username" required rules="required | ^azAZ | ^azAZ09-$ @b | azAZ09$ | minLength(4) #4-12 characters">
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 ```
 
-触发方式和错误提示在完整格式中会详细讲。下面再看几个例子：
+The triggering method and error prompts will be explained in detail in the full format. Let's take a look at a few more examples:
 
-#### 验证唯一性
+#### Verify Uniqueness
 
-``` vue
+``` view
 <template>
-<u-form-item label="端口" required rules="required | integer | range(80, 65535) | unique(...existingPortList)">
+<u-form-item label="Port" required rules="required | integer | range(80, 65535) | unique(...existingPortList)">
     <u-input v-model.number="model.port" maxlength="5" placeholder="80-65535内的整数"></u-input>
 </u-form-item>
 </template>
@@ -71,15 +71,15 @@ export default {
 </script>
 ```
 
-#### 密码确认场景
+#### Password Confirmation Scenario
 
-``` vue
+``` view
 <template>
 <u-form gap="large">
-    <u-form-item label="密码" required rules="required | ^azAZ09_$ | minLength(4)">
+    <u-form-item label="Password" required rules="required | ^azAZ09_$ | minLength(4)">
         <u-input size="huge medium" type="password" v-model="model.password" maxlength="8" placeholder="以字母、数字或'_'组成"></u-input>
     </u-form-item>
-    <u-form-item label="确认密码" required rules="required | confirmed(model.password)">
+    <u-form-item label="Confirm Password" required rules="required | confirmed(model.password)">
         <u-input size="huge medium" type="password" v-model="model.confirmedPassword" maxlength="8" placeholder="再次输入密码"></u-input>
     </u-form-item>
 </u-form>
@@ -98,88 +98,88 @@ export default {
 </script>
 ```
 
-### 完整格式
+### Full Format
 
-`rules`属性的完整格式为一个包含若干条验证规则的数组。每条规则结构如下：
+The full format of the `rules` property is an array containing several validation rules. Each rule has the following structure:
 
 ``` ts
 interface Rule {
-    validate: string | ValidateFunc, // 验证器名称或验证函数。下面有详细介绍
-    args?: any | Array<any> | (() => any | Array<any> | Promise<any | Array<any>>), // 验证参数。下面有详细介绍
-    required?: boolean, // 是否为必填规则。如果不是必填，值为空的情况会自动跳过此规则
-    trigger?: string, // 触发方式。下面有详细介绍
-    message?: string, // 错误提示
-    ignore?: boolean, // 是否忽略该条规则
-    muted?: boolean, // 是否仅验证但不提示
-    [prop: string]: any, // 自定义属性
+    validate: string | ValidateFunc, // Validator name or validation function. Details are given below.
+    args?: any | Array<any> | (() => any | Array<any> | Promise<any | Array<any>>), // Verify the arguments. More details below
+    required?: boolean, // Is this a required rule? If it is not required, this rule will be automatically skipped if the value is empty
+    trigger?: string, // Trigger method. Details are given below.
+    message?: string, // error message
+    ignore?: boolean, // Whether to ignore this rule
+    muted?: boolean, // Whether to verify but not prompt
+    [prop: string]: any, // custom property
 }
 ```
 
-再看一下上面例子`required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)`的完整格式：
+Let’s take a look at the complete format of the above example `required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)`:
 
 ``` html
-<u-form-item label="用户名" required :rules="[
-    { validate: 'required', required: true, trigger: 'blur', message: '请输入用户名' },
-    { validate: 'pattern', args: /^[a-zA-Z]/, trigger: 'input+blur', message: '以字母开头' },
-    { validate: 'pattern', args: /^[a-zA-Z0-9-]$/, trigger: 'input+blur', message: '字母、数字或中划线组成' },
-    { validate: 'pattern', args: /[a-zA-Z0-9]$/, trigger: 'blur', message: '以字母或数字结尾' },
-    { validate: 'minLength', args: [4], trigger: 'blur', message: '不得少于4个字符' },
+<u-form-item label="Username" required :rules="[
+    { validate: 'required', required: true, trigger: 'blur', message: 'Please enter your username' },
+    { validate: 'pattern', args: /^[a-zA-Z]/, trigger: 'input+blur', message: 'Starts with a letter' },
+    { validate: 'pattern', args: /^[a-zA-Z0-9-]$/, trigger: 'input+blur', message: 'Letters, numbers or hyphens' },
+    { validate: 'pattern', args: /[a-zA-Z0-9]$/, trigger: 'blur', message: 'Ends with a letter or number' },
+    { validate: 'minLength', args: [4], trigger: 'blur', message: 'Must not be less than 4 characters' },
 ]">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 ```
 
-#### 验证器名称或验证函数
+#### Validator Name or Validation Function
 
-验证器（Validator）是内置的或者注册好的简单函数，它的结构如下：
+A validator is a simple function that is built-in or registered. Its structure is as follows:
 
-参数为需要验证的值，加上若干函数需要的参数。返回布尔值或布尔值的 Promise。
+The parameter is the value to be verified, plus some parameters required by the function. Returns a Boolean value or a Promise of a Boolean value.
 
 ``` ts
 type Validator = (value: any, ...args: any[]) => boolean | Promise<boolean>;
 ```
 
-参见[内置的验证器](https://github.com/saashqdev/atom-validator/blob/master/src/builtIn/validators.ts)。
+See the built-in validators.
 
-验证函数（ValidateFunc）是验证规则需要即时调用的函数，常用于处理同步或异步方法。与验证器有所不同，它的结构如下：
+ValidateFunc is a function that needs to be called immediately to validate the rules. It is often used to handle synchronous or asynchronous methods. Different from the validator, its structure is as follows:
 
 ``` ts
 type ValidateResult = boolean | string | void;
 type ValidateFunc = (value: any, rule: Rule, options?: Object) => ValidateResult | Promise<ValidateResult>;
 ```
 
-参数为需要验证的值、规则对象、可选项。可选项可以通过 UValidator 组件的`validating-options`传入。
+The parameters are the value to be validated, the rule object, and the options. The options can be passed in through the `validating-options` of the UValidator component.
 
-当验证函数的返回值为以下类型时，分别情况为：
-- boolean，为`true`时通过验证，为`false`时显示`message`对应的错误提示
-- void 即`undefined`时，通过验证，同`true`
-- string，直接把返回的字符串显示错误提示
-- Promise，待异步获取到结果时，按以上类型处理
+When the return value of the verification function is of the following types, the cases are:
+- boolean, if it is `true`, the verification is passed, if it is `false`, the error message corresponding to `message` is displayed
+- void, that is, `undefined`, passes verification, the same as `true`
+- string, directly display the returned string as an error message
+- Promise, when the result is obtained asynchronously, it is processed according to the above types
 
-#### 验证参数
+#### Verify Parameters
 
-应用到验证器中的参数。
+Parameters to apply to the validator.
 
-类型可以为：
-- 一个数组
-- 一个值，是单个参数的简写
-- 一个函数，待函数执行后再传入验证器计算
-- 函数返回值可以为 Promise
+The type can be:
+- an array
+- A value, shorthand for a single parameter
+- A function, which is passed to the validator for calculation after execution
+- The function return value can be Promise
 
 #### Trigger Method
 
-表单验证按照实时性通常可以分为：手动验证、失焦验证、实时验证，验证规则中`trigger`字段分别对应的值为：`''`, `'blur'`, `'input'`，可以组合使用，如`input+blur`。
+Form validation can usually be divided into manual validation, out-of-focus validation, and real-time validation according to real-time performance. The corresponding values   of the `trigger` field in the validation rules are: `''`, `'blur'`, `'input'`, which can be used in combination, such as `input+blur`.
 
-### 混合编写
+### Mixed Writing
 
-有时需要执行一些复杂的验证，比如异步验证或一些自定义的方法，这时可以将字符串格式与完整格式混合编写。
+Sometimes you need to perform some complex validation, such as asynchronous validation or some custom methods, then you can mix the string format with the full format.
 
-下面是一个**异步验证**的例子，添加一个异步判断重复的验证：
+The following is an example of **asynchronous validation**, adding an asynchronous duplicate validation:
 
-``` vue
+``` view
 <template>
-<u-form-item label="用户名" required :rules="nameRules">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+<u-form-item label="Username" required :rules="nameRules">
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 </template>
 <script>
@@ -187,10 +187,10 @@ export default {
     data() {
         return {
             nameRules: [
-                'required | ^azAZ | ^azAZ09-$ | azAZ09$ | minLength(4)',
-                { message: '该用户名已经存在', trigger: 'blur', validate(value, rule, options) {
+                'required | ^is THAT | ^azAZ09-$ | azAZ09$ | minLength(4)',
+                { message: 'This user name already exists', trigger: 'blur', validate(value, rule, options) {
                     return new Promise((resolve, reject) => {
-                        // 这里模拟一个异步请求
+                        // Here simulates an asynchronous request
                         setTimeout(() => {
                             resolve(!['abcd', 'aaaa', 'ABCD'].includes(value));
                         }, 200);
@@ -203,12 +203,12 @@ export default {
 </script>
 ```
 
-也可以都拆解开：
+You can also disassemble them all:
 
-``` vue
+``` view
 <template>
-<u-form-item label="用户名" required :rules="nameRules">
-    <u-input maxlength="12" placeholder="4-12个字符"></u-input>
+<u-form-item label="Username" required :rules="nameRules">
+    <u-input maxlength="12" placeholder="4-12 characters"></u-input>
 </u-form-item>
 </template>
 <script>
@@ -217,13 +217,13 @@ export default {
         return {
             nameRules: [
                 'required',
-                '^azAZ',
+                '^is THAT',
                 '^azAZ09-$',
                 'azAZ09$',
                 'minLength(4)',
-                { message: '该用户名已经存在', trigger: 'blur', validate(value, rule, options) {
+                { message: 'This user name already exists', trigger: 'blur', validate(value, rule, options) {
                     return new Promise((resolve, reject) => {
-                        // 这里模拟一个异步请求
+                        // Here simulates an asynchronous request
                         setTimeout(() => {
                             resolve(!['abcd', 'aaaa', 'ABCD'].includes(value));
                         }, 200);
@@ -236,11 +236,11 @@ export default {
 </script>
 ```
 
-### 动态验证
+### Dynamic Validation
 
-有时`rules`属性需要根据不同情形进行变化，这时直接给属性绑定动态字符串或数组。
+Sometimes the `rules` property needs to change according to different situations. In this case, you can directly bind a dynamic string or array to the property.
 
-``` vue
+``` view
 <template>
 <u-form ref="form">
     <u-form-item>
@@ -249,10 +249,10 @@ export default {
             <u-radio label="HTTPS">HTTPS</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="端口" required :rules="model.protocol === 'HTTP' ?
+    <u-form-item label="Port" required :rules="model.protocol === 'HTTP' ?
         'required | integer | range(80, 65535) | unique(...existingPortList)' :
         'required | integer | range(443, 65535) | unique(...existingPortList)'">
-        <u-input size="huge medium" v-model.number="model.port" maxlength="5" :placeholder="model.protocol === 'HTTP' ? '80-65535内的整数' : '443-65535内的整数'"></u-input>
+        <u-input size="huge medium" v-model.number="model.port" maxlength="5" :placeholder="model.protocol === 'HTTP' ? '80-65535内的整数' : 'Integer within 443-65535'"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -271,9 +271,9 @@ export default {
 </script>
 ```
 
-或者直接使用混合编写来处理复杂验证。
+Or use mixed writing directly to handle complex verification.
 
-``` vue
+``` view
 <template>
 <u-form ref="form">
     <u-form-item>
@@ -282,8 +282,8 @@ export default {
             <u-radio label="HTTPS">HTTPS</u-radio>
         </u-radios>
     </u-form-item>
-    <u-form-item label="端口" required :rules="portRules">
-        <u-input size="huge medium" v-model.number="model.port" maxlength="5" :placeholder="model.protocol === 'HTTP' ? '80或1025-65535内的整数' : '443或1025-65535内的整数'"></u-input>
+    <u-form-item label="Port" required :rules="portRules">
+        <u-input size="huge medium" v-model.number="model.port" maxlength="5" :placeholder="model.protocol === 'HTTP' ? '80 or an integer within 1025-65535' : '443 or an integer within 1025-65535'"></u-input>
     </u-form-item>
 </u-form>
 </template>
@@ -307,12 +307,12 @@ export default {
                             if (value === 80 || value >= 1025 && value <= 65535)
                                 return true;
                             else
-                                return '80或1025-65535内的整数';
+                                return '80 or an integer between 1025-65535';
                         } else {
                             if (value === 443 || value >= 1025 && value <= 65535)
                                 return true;
                             else
-                                return '443或1025-65535内的整数';
+                                return '443 or an integer between 1025-65535';
                         }
                     },
                 },
@@ -329,31 +329,31 @@ export default {
 </script>
 ```
 
-### 注册验证规则
+### Registration Validation Rules
 
-可以在 Vue 组件 options 的`rules`字段中自己注册规则。
+You can register rules yourself in the `rules` field of the Vue component options.
 
-``` vue
+``` view
 <template>
-<u-form-item label="颜色" rules="hexColor">
-    <u-input placeholder="请输入十六进制颜色值"></u-input>
+<u-form-item label="Color" rules="hexColor">
+    <u-input placeholder="Please enter the hexadecimal color value"></u-input>
 </u-form-item>
 </template>
 <script>
 export default {
     rules: {
-        hexColor: { validate: 'pattern', args: /^#([0-9a-f]{3}|[0-9a-f]{6})$/i, message: '颜色值格式不正确', trigger: 'blur' },
+        hexColor: { validate: 'pattern', args: /^#([0-9a-f]{3}|[0-9a-f]{6})$/i, message: 'The color value format is incorrect', trigger: 'blur' },
     },
 };
 </script>
 ```
 
-上面的例子，也可以先在 Vue 组件 options 的`validators`字段中注册验证器，再注册规则。
+In the above example, you can also register the validator in the `validators` field of the Vue component options first, and then register the rules.
 
-``` vue
+``` view
 <template>
-<u-form-item label="颜色" rules="hexColor">
-    <u-input placeholder="请输入十六进制颜色值"></u-input>
+<u-form-item label="Color" rules="hexColor">
+    <u-input placeholder="Please enter the hexadecimal color value"></u-input>
 </u-form-item>
 </template>
 <script>
@@ -362,29 +362,29 @@ export default {
         hexColor: (value) => /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(value),
     },
     rules: {
-        hexColor: { validate: 'hexColor', message: '颜色值格式不正确', trigger: 'blur' },
+        hexColor: { validate: 'hexColor', message: 'The color value format is incorrect', trigger: 'blur' },
     },
 };
 </script>
 ```
 
-> Vue 组件 options 的`rules`和`validators` 可以经由`mixins`或`extends`传递。
+> Vue component options' `rules` and `validators` can be passed via `mixins` or `extends`.
 >
-> 如果要全局注册规则和验证器，请使用`Vue.rule(id, rule)`和`Vue.validator(id, validator)`方法。
+> If you want to register rules and validators globally, use the `Vue.rule(id, rule)` and `Vue.validator(id, validator)` methods.
 
-### 复合验证规则
+### Compound Validation Rules
 
-注册验证规则支持复合规则，也就是多个规则合并注册为一个。
+Registration validation rules support composite rules, that is, multiple rules are combined and registered as one.
 
-比如有几个字段有相同的一段验证逻辑，可以将它们定义成新的验证规则，再复合使用。
+For example, if several fields have the same validation logic, you can define them as new validation rules and use them in combination.
 
-``` vue
+``` view
 <template>
 <u-form gap="large">
-    <u-form-item label="名称1" required rules="nameBase | rangeLength(4,12) | unique(...existingList)">
-        <u-input size="huge medium" maxlength="12" placeholder="4-12个字符"></u-input>
+    <u-form-item label="Name1" required rules="nameBase | rangeLength(4,12) | unique(...existingList)">
+        <u-input size="huge medium" maxlength="12" placeholder="4-12 characters"></u-input>
     </u-form-item>
-    <u-form-item label="名称2" required rules="nameBase | rangeLength(8,24)">
+    <u-form-item label="Name2" required rules="nameBase | rangeLength(8,24)">
         <u-input size="huge medium" maxlength="24" placeholder="8-24个字符"></u-input>
     </u-form-item>
 </u-form>
@@ -392,7 +392,7 @@ export default {
 <script>
 export default {
     rules: {
-        nameBase: 'required | ^azAZ | ^azAZ09-$ | azAZ09$',
+        nameBase: 'required | ^is THAT | ^azAZ09-$ | azAZ09$',
     },
     data() {
         return {
@@ -403,58 +403,58 @@ export default {
 </script>
 ```
 
-## 嵌套验证
+## Nested Validation
 
-嵌套验证是这样一种功能，叶子级别的验证（MField 验证）状态、信息和事件可以一层一层父级验证器传递，最终传到`<u-form>`上。在任意层级都能获取到嵌套层内是否通过（valid）、是否触发（touched）、是否修改（dirty）、首个错误（firstError）等信息。同时也可以通过调`<u-form>`的 validate 方法，验证所有子验证项。
+Nested validation is a function that allows leaf-level validation (MField validation) status, information, and events to be passed layer by layer through parent validators and eventually to `<u-form>`. At any level, you can get information such as whether the nested layer has passed (valid), whether it has been triggered (touched), whether it has been modified (dirty), and the first error (firstError). At the same time, you can also validate all child validation items by calling the validate method of `<u-form>`.
 
-### 单行嵌套
+### Single Row Nesting
 
-对于在同一行水平排列的输入框，如果希望它们的错误提示只出现在行尾。这时需要用嵌套验证功能实现。
+For input boxes arranged horizontally in the same row, if you want their error prompts to appear only at the end of the row, you need to use the nested validation function to achieve this.
 
-嵌套验证，内部的验证器会将验证结果（验证是否成功、错误提示）向外抛。
+Nested validation, the internal validator will throw the validation result (whether the validation is successful, error prompt) outward.
 
-将`muted`属性设置为`message`，可以屏蔽内部验证器提示，但不屏蔽输入框的红框样式。
+Setting the `muted` property to `message` can hide the internal validator prompt, but will not hide the red box style of the input box.
 
 ``` html
 <u-validator>
     <u-linear-layout gap="small">
-        <u-validator label="容器端口" rules="required | integer | range(1,65535) @i" muted="message">
-            <u-input size="huge normal" placeholder="容器端口，1-65535内的整数"></u-input>
+        <u-validator label="Container Port" rules="required | integer | range(1,65535) @i" muted="message">
+            <u-input size="huge normal" placeholder="Container port, integer between 1-65535"></u-input>
         </u-validator>
-        <u-validator label="服务端口" rules="required | integer | range(1,65535) @i" muted="message">
-            <u-input size="huge normal" placeholder="服务端口，1-65535内的整数"></u-input>
+        <u-validator label="Service Port" rules="required | integer | range(1,65535) @i" muted="message">
+            <u-input size="huge normal" placeholder="Service port, integer between 1-65535"></u-input>
         </u-validator>
     </u-linear-layout>
 </u-validator>
 ```
 
-当然，空间比较小时，也可以使用`placement`提示在下面。
+Of course, if the space is small, you can also use the placement hint below.
 
 ``` html
 <u-linear-layout gap="small">
-    <u-validator label="容器端口" rules="required | integer | range(1,65535) @i" placement="bottom">
-        <u-input size="huge normal" placeholder="容器端口，1-65535内的整数"></u-input>
+    <u-validator label="Container Port" rules="required | integer | range(1,65535) @i" placement="bottom">
+        <u-input size="huge normal" placeholder="Container port, integer between 1-65535"></u-input>
     </u-validator>
-    <u-validator label="服务端口" rules="required | integer | range(1,65535) @i" placement="bottom">
-        <u-input size="huge normal" placeholder="服务端口，1-65535内的整数"></u-input>
+    <u-validator label="Service Port" rules="required | integer | range(1,65535) @i" placement="bottom">
+        <u-input size="huge normal" placeholder="Service port, integer between 1-65535"></u-input>
     </u-validator>
 </u-linear-layout>
 ```
 
-### 复杂案例
+Complex Case
 
-下面这些组件已经集成了 UValidator 的嵌套验证功能，可以去相应文档进行查阅[UFormTableView](../u-form-table-view)、[UDynamicCards](../u-dynamic-cards)。
+The following components have integrated the nested validation function of UValidator. You can refer to the corresponding documents for details [UFormTableView](../u-form-table-view), [UDynamicCards](../u-dynamic-cards).
 
-## 其它
+## Other
 
-### 过长提示
+### Too Long Prompt
 
-通过给表单控件设置`maxlength-message`属性，可以在已输入至最大长度的情况下继续输入时，给用户提示消息。
+By setting the maxlength-message attribute on a form control, you can give the user a prompt message when they continue to enter the text after reaching the maximum length.
 
 ``` html
 <u-form ref="form">
-    <u-form-item label="用户名">
-        <u-input maxlength="4" maxlength-message="不超过4个字符" placeholder="不超过4个字符"></u-input>
+    <u-form-item label="Username">
+        <u-input maxlength="4" maxlength-message="No more than 4 characters" placeholder="No more than 4 characters"></u-input>
     </u-form-item>
 </u-form>
 ```

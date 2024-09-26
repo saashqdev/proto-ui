@@ -50,7 +50,7 @@ export const solveCondition = (condition, obj) => {
 };
 
 /**
- * @example 作为简单的 query
+ * @example as a simple query
  * const dataSource = new DataSource();
  * dataSource.query({
  *     paging,
@@ -58,7 +58,7 @@ export const solveCondition = (condition, obj) => {
  *     filtering,
  * }).then();
  *
- * @example 作为状态储存
+ * @example as state storage
  * const dataSource = new DataSource();
  * dataSource.filter();
  *
@@ -80,11 +80,11 @@ const VueDataSource = Vue.extend({
             remoteFiltering: false,
             // remoteGrouping: false,
             // ------
-            arrangedData: [], // 整理过的数据，用于缓存过滤和排序行为。比如多次获取分页的话，没有必要重新整理
+            arrangedData: [], // Arranged data, used for cache filtering and sorting. For example, if you get the paging multiple times, there is no need to re-arrange
             arranged: false,
             prependedData: [],
             dirty: false,
-            originTotal: Infinity, // @readonly - originTotal 作为很重要的判断有没有加载完所有数据的依据
+            originTotal: Infinity, // @readonly - originTotal is an important basis for judging whether all data has been loaded.
             initialLoaded: false,
             params: {},
         };
@@ -121,10 +121,10 @@ const VueDataSource = Vue.extend({
                 return this.arrangedData;
         },
     },
-    // paging, sorting, filtering 暂不用 watch
+    // paging, sorting, filtering do not use watch yet
     created() {
         this.remote = !!this._load;
-        // 传 data 为本地数据模式，此时已知所有数据
+        // Pass data as local data mode, all data is known at this time
         if (!this.remote) {
             this.initialLoaded = true;
             this.originTotal = this.data.length;
@@ -165,13 +165,13 @@ const VueDataSource = Vue.extend({
             this.initialLoaded = false;
         },
         mustRemote(offset, newOffset) {
-            return !this.hasAllRemoteData(offset, newOffset) // 没有全部的远程数据
+            return !this.hasAllRemoteData(offset, newOffset) // No all remote data
             || (this.params.hasOwnProperty('filtering') && this.remoteFiltering)
             || (this.params.hasOwnProperty('sorting') && this.remoteSorting);
         },
         /**
-         * 根据 viewData，是否还有数据
-         * @param {Number} offset - 位置
+         * According to viewData, whether there is still data
+         * @param {Number} offset - position
          */
         hasMore(offset) {
             if (offset === undefined || offset === Infinity)
@@ -179,8 +179,8 @@ const VueDataSource = Vue.extend({
             return offset < this.prependedData.length + this.originTotal;
         },
         /**
-         * 是否还有远程数据
-         * @param {Number} offset - 位置
+         * Is there any remote data?
+         * @param {Number} offset - position
          */
         hasAllRemoteData(offset, newOffset) {
             if (!this.remote)
@@ -219,9 +219,9 @@ const VueDataSource = Vue.extend({
             const newOffset = offset + limit;
 
             const queryChanged = Object.keys(this.params).length;
-            // 调用前端缓存数据
+            //Call the front-end cache data
             if (!this.remote || this.cache && !this.mustRemote(offset, newOffset)) {
-                // 没有缓存数据或者有新的请求参数时，再尝试重新过滤和排序
+                // When there is no cached data or there are new request parameters, try to filter and sort again
                 if (queryChanged) {
                     this.arrange();
                     this.params = {};
@@ -229,8 +229,8 @@ const VueDataSource = Vue.extend({
                 return Promise.resolve(this.arrangedData.slice(offset, newOffset));
             }
 
-            // 调用后端数据
-            // 如果有新的 query 参数的变更，则清除缓存
+            //Call backend data
+            // If there is a new query parameter change, clear the cache
             if (queryChanged) {
                 this.clearLocalData();
                 this.params = {};
@@ -246,29 +246,29 @@ const VueDataSource = Vue.extend({
             return this._load(params).then((result) => {
                 this.initialLoaded = true;
 
-                if (!this.remotePaging) { // 没有后端分页，认为是全部数据
-                    if (result instanceof Array) { // 只返回数组，没有 total 字段
+                if (!this.remotePaging) { // No backend paging, all data is considered
+                    if (result instanceof Array) { // Return only the array, no total field
                         this.originTotal = result.length;
                         this.data = this._process(result);
-                    } else if (result instanceof Object) { // 返回 { total, data }
+                    } else if (result instanceof Object) { // return { total, data }
                         this.originTotal = result.total;
                         this.data = this._process(result.data);
-                    } // 否则什么都不做
+                    } // Otherwise do nothing
 
                     this.arrange();
                     return this.arrangedData.slice(offset, newOffset);
                 } else {
                     let partialData;
 
-                    if (result instanceof Array) { // 只返回数组，没有 total 字段
-                        if (!result.length) // 没有数据了，则记录下总数
+                    if (result instanceof Array) { // Return only the array, no total field
+                        if (!result.length) // No more data, then record the total number
                             this.originTotal = this.data.length;
                         else
                             partialData = this._process(result);
-                    } else if (result instanceof Object) { // 返回 { total, data }
+                    } else if (result instanceof Object) { // return { total, data }
                         this.originTotal = result.total;
                         partialData = this._process(result.data);
-                    } // 否则什么都不做
+                    } // Otherwise do nothing
 
                     for (let i = 0; i < limit; i++) {
                         const item = partialData[i];
@@ -316,16 +316,16 @@ const VueDataSource = Vue.extend({
             this.arrange();
         },
         get() {
-            // 获取某一项
+            // Get an item
         },
         update() {
-            // 更新某一项
+            // Update an item
         },
         remove() {
-            // 删除某一项
+            // Delete an item
         },
         save() {
-            // 保存
+            // keep
         },
     },
 });

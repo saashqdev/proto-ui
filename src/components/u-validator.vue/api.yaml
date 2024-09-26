@@ -1,98 +1,98 @@
 - name: u-validator
-  title: 验证器
-  labels: [UI 组件, 表单验证器, 块级展示]
+  title: Validator
+  labels: [UI Component, Form Validator, Block-Level Display]
   docs:
-    rules: 内置规则
+    rules: built-in rules
   attrs:
     - name: name
       type: string
       default: null
-      description: 表单项名称。已废弃
+      description: The name of the form item. Deprecated
     - name: label
       type: string
       default: null
-      description: 标签。在 UValidator 用于提示消息的合成，在 UFormItem 等其他组件用于显示标签
+      description: Label. It is used to synthesize prompt messages in UValidator and to display labels in other components such as UFormItem.
     - name: rules
       type: string, Array
       default: null
-      description: 验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型
+      description: Validation rules. The short form is a string type, and the full form or mixed form is an array type.
     - name: message
       type: string
       default: null
-      description: 默认提示消息
+      description: Default prompt message
     - name: muted
       type: string
       default: null
-      description: 验证时是否静默。可选值：`'message'`表示只静默消息提示，`'all'`同时静默消息提示和红框提示
+      description: Whether to be silent during verification. Optional values - `'message'` means only silent message prompt, `'all'` means silent message prompt and red box prompt at the same time
     - name: ignore-validation
       type: boolean
       default: false
-      description: 忽略验证
+      description: Ignore validation
     - name: ignore-rules
       type: boolean
       default: false
-      description: 忽略验证规则。已废弃，同`ignore-validation`
+      description: Ignore validation rules. Deprecated, same as `ignore-validation`
     - name: validating-options
       type: object
       default: null
-      description: 验证辅助对象。在 Rule 的 `validate` 方法中使用
+      description: Validation auxiliary object. Used in the `validate` method of Rule
     - name: validating-value
       type: any
       default: null
-      description: 临时修改验证值
+      description: Temporarily modify the verification value
     - name: validating-process
       type: Function
       default: null
-      description: 验证前对值进行预处理
+      description: Preprocess the value before validation
     - name: manual
       type: boolean
       default: false
-      description: 是否采取手动验证。如果为`true`，则 UValidator
-        将不会在监听到子组件的`input`、`change`和`blur`事件后进行相应的验证。
+      description: Whether to use manual validation. If true, UValidator
+        The corresponding validation will not be performed after listening to the `input`, `change` and `blur` events of the child components.
   computed:
     - name: touched
       type: boolean
-      description: 用户是否触碰
+      description: Whether the user touches
     - name: dirty
       type: boolean
-      description: 用户是否修改值
+      description: Whether the user modified the value
     - name: valid
       type: boolean
-      description: 验证是否通过
+      description: Whether the verification is passed
     - name: firstError
       type: string
-      description: 第一个错误提示消息
+      description: The first error message
   slots:
     - name: default
-      description: 插入继承了 MField 的组件，或子 UValidator，或其他 HTML 和文本。
+      description: Inserts a component that inherits MField, or a child UValidator, or other HTML and text.
   events:
     - name: validate
-      description: 对于第一个 Field 或者所有子 UValidator：
+      description: For the first Field or all sub-UValidators:
       params:
         - name: $event.valid
           type: boolean
-          description: 验证是否通过
+          description: Whether the verification is passed
         - name: $event.touched
           type: boolean
-          description: 用户是否触碰
+          description: Whether the user touches
         - name: $event.dirty
           type: boolean
-          description: 用户是否修改值
+          description: Whether the user modified the value
         - name: $event.firstError
           type: string
-          description: 第一个错误提示消息
+          description: The first error message
         - name: senderVM
           type: UValidator
-          description: 发送事件实例
+          description: Send event instance
   methods:
     - name: validate(trigger, muted)
-      description: 手动验证。
+      description: Manual verification.
       params:
         - name: trigger
           type: string
           default: submit
-          description: 触发方式，可选值：`submit`、`blur`和`input`之一，或者它们的任意组合。
+          description: Trigger method, optional value - one of `submit`, `blur` and `input`, or any combination of them.
         - name: muted
           type: boolean
           default: false
-          description: 是否验证后无提示
+          description: Whether no prompt is given after verification

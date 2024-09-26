@@ -1,15 +1,15 @@
-# v-focus 自动获取焦点
+# v-focus Automatically Obtain Focus
 
-让输入框插入时自动获取焦点。
+Let the input box automatically gain focus when inserted.
 
-该指令用于原生的`<input>`和`<textarea>`元素。
+This directive works on native `<input>` and `<textarea>` elements.
 
-业务中请直接使用`<u-input>`和`<u-textarea>`组件的`autofocus`属性。
+Please use the `autofocus` attribute of `<u-input>` and `<u-textarea>` components directly in business.
 
 ## Example
 
 ``` html
-输入框：<input v-focus>
+Input box: <input v-focus>
 ```
 
 ## API
@@ -18,4 +18,4 @@
 
 | Params | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| value | Boolean | `true` | 是否获取焦点 |
+| value | Boolean | `true` | Whether to get focus |

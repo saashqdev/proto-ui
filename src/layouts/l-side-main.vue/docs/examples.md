@@ -1,8 +1,8 @@
-只有左侧栏固定的通用布局。
+A generic layout with only a fixed left sidebar.
 
-可以与 LPage 配合使用。因为有时需要路由分发，顶级页面使用 LPage，子页面可以使用该组件布局或其他组件布局。
+Can be used with LPage. Because routing distribution is sometimes required, the top-level page uses LPage, and the sub-pages can use this component layout or other component layouts.
 
-滚动区域设置在了全局，内容会随窗口自适应。（下面的Example暂时体现不出现滚动效果）
+The scrolling area is set globally, and the content will adapt to the window. (The following example does not show the scrolling effect temporarily)
 
 ### Basic Usage
 
@@ -10,92 +10,92 @@
 <div style="position: relative; z-index: 1; height: 500px; overflow: hidden;">
     <l-side-main demo>
         <u-sidebar slot="side">
-            <u-sidebar-item>总览</u-sidebar-item>
-            <u-sidebar-group title="列表页">
-                <u-sidebar-item>基础列表</u-sidebar-item>
-                <u-sidebar-item>搜索列表</u-sidebar-item>
+            <u-sidebar-item>Overview</u-sidebar-item>
+            <u-sidebar-group title="List Page">
+                <u-sidebar-item>Basic List</u-sidebar-item>
+                <u-sidebar-item>Search List</u-sidebar-item>
             </u-sidebar-group>
-            <u-sidebar-group title="表单页">
-                <u-sidebar-item>基础表单</u-sidebar-item>
-                <u-sidebar-item>步骤表单</u-sidebar-item>
+            <u-sidebar-group title="Form Page">
+                <u-sidebar-item>Basic Form</u-sidebar-item>
+                <u-sidebar-item>Step Form</u-sidebar-item>
             </u-sidebar-group>
-            <u-sidebar-group title="个人页">
-                <u-sidebar-item>个人信息</u-sidebar-item>
+            <u-sidebar-group title="Personal Page">
+                <u-sidebar-item>Personal Information</u-sidebar-item>
             </u-sidebar-group>
         </u-sidebar>
         <u-linear-layout direction="vertical">
             <u-crumb>
-                <u-crumb-item to="/">首页</u-crumb-item>
+                <u-crumb-item to="/">Homepage</u-crumb-item>
                 <u-crumb-item to="/proto-ui">Prototype Component</u-crumb-item>
                 <u-crumb-item disabled>Navigation</u-crumb-item>
-                <u-crumb-item to="/proto-ui/u-crumb" current>面包屑</u-crumb-item>
+                <u-crumb-item to="/proto-ui/u-crumb" current>Breadcrumbs</u-crumb-item>
             </u-crumb>
             <!--router-view></router-view-->
             <u-article>
-                <h1>前赤壁赋</h1>
-                <p>苏轼 公元1082年</p>
-                <p>壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。清风徐来，水波不兴。举酒属客，诵明月之诗，歌窈窕之章。少焉，月出于东山之上，徘徊于斗牛之间。白露横江，水光接天。纵一苇之所如，凌万顷之茫然。浩浩乎如冯虚御风，而不知其所止；飘飘乎如遗世独立，羽化而登仙。</p>
-                <p>于是饮酒乐甚，扣舷而歌之。歌曰：“桂棹兮兰桨，击空明兮溯流光。渺渺兮予怀，望美人兮天一方。”客有吹洞箫者，倚歌而和之。其声呜呜然，如怨如慕，如泣如诉，余音袅袅，不绝如缕。舞幽壑之潜蛟，泣孤舟之嫠妇。</p>
-                <p>苏子愀然，正襟危坐，而问客曰：“何为其然也？”客曰：“‘月明星稀，乌鹊南飞。’此非曹孟德之诗乎？西望夏口，东望武昌。山川相缪，郁乎苍苍，此非孟德之困于周郎者乎？方其破荆州，下江陵，顺流而东也，舳舻千里，旌旗蔽空，酾酒临江，横槊赋诗，固一世之雄也，而今安在哉？况吾与子渔樵于江渚之上，侣鱼虾而友麋鹿，驾一叶之扁舟，举匏樽以相属。寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。挟飞仙以遨游，抱明月而长终。知不可乎骤得，托遗响于悲风。"</p>
-                <p>苏子曰：“客亦知夫水与月乎？逝者如斯，而未尝往也；盈虚者如彼，而卒莫消长也。盖将自其变者而观之，则天地曾不能以一瞬；自其不变者而观之，则物与我皆无尽也，而又何羡乎！且夫天地之间，物各有主，苟非吾之所有，虽一毫而莫取。惟江上之清风，与山间之明月，耳得之而为声，目遇之而成色，取之无禁，用之不竭，是造物者之无尽藏也，而吾与子之所共适。”</p>
-                <p>客喜而笑，洗盏更酌。肴核既尽，杯盘狼籍。相与枕藉乎舟中，不知东方之既白。</p>
+                <h1>Preface to the Red Cliff</h1>
+                <p>Su Shi 1082 AD</p>
+                <p>In the autumn of the year Renxu, on the 15th day of the seventh month, Su Zi and his guests went boating under the Red Cliff. The breeze was gentle and the water was still. He raised his cup to his guests, recited poems about the bright moon, and sang songs about graceful women. After a while, the moon rose above the eastern hills and hovered between the Big Dipper and the Ox. White dew fell across the river, and the water shone to the sky. Even if you are as small as a reed, you can soar above the vast expanse of water. It is as vast as riding the wind in the sky, and you don’t know where it will stop; it is as light as being isolated from the world and ascending to heaven. </p>
+                <p>So they drank and enjoyed themselves, knocking on the side of the boat and singing. The song goes: "I paddle with cinnamon and orchid oars, and paddle against the clear sky and follow the flowing light. My heart is so far away, and I look forward to the beauty in the sky." There was a guest who played the flute, and he sang along with the song. The sound was sobbing, like resentment, like longing, like crying, and the lingering sound was like a thread. It was like a dancing dragon in a deep valley, and a weeping widow in a lonely boat.</p>
+                <p>Su Zi was gloomy, sitting upright, and asked the guest, "Why is it so?" The guest said, "'The moon is bright and the stars are sparse, the magpies fly south.' Isn't this the poem of Cao Mengde? Looking west to Xiakou, east to Wuchang. Mountains and rivers intersect, and the sky is vast. Isn't this the poem of Mengde trapped by Zhou Lang? When he broke through Jingzhou, went down to Jiangling, and went east along the river, his ships were thousands of miles long, his flags covered the sky, he drank wine by the river, held his spear and wrote poems, he was a hero of the time, but where is he now? What's more, I and you fish and chop wood on the river bank, we are friends with fish and shrimps and elk, we drive a small boat, and raise gourds to toast each other. We are like mayflies in the universe, a grain of sand in the vast ocean. We mourn the brevity of our lives and envy the infinity of the Yangtze River. We travel with the flying fairy and embrace the bright moon to live forever. We know that we can't get it all at once, so we entrust our echoes to the sad wind."</p>
+                <p>Su Zi said: "Do you also know water and the moon? The passing is like this, yet it has never gone; the waxing and waning is like that, yet it never grows or wanes. If we look at it from the perspective of change, then the heaven and earth cannot even last a moment; if we look at it from the perspective of the unchanging, then things and I are both endless, so why envy? Moreover, between heaven and earth, everything has its owner. If it is not mine, I will not take even a tiny bit of it. Only the fresh breeze on the river and the bright moon in the mountains, when I hear them, they become sound, when I see them, they become color. There is no restriction on taking them, and they are inexhaustible when I use them. They are the endless treasure of the Creator, and they are what you and I enjoy together."</p>
+                <p>The guests were delighted and laughed, washing their cups and drinking more. The food and kernels were all gone, and the cups and plates were in a mess. They lay together in the boat, not realizing that the east was already bright. </p>
             </u-article>
         </u-linear-layout>
     </l-side-main>
 </div>
 ```
 
-### 与 LPage 配合使用
+### Using with LPage
 
 ``` html
 <div style="position: relative; z-index: 1; height: 500px; overflow: hidden;">
     <l-page demo>
         <u-navbar slot="head">
-            <u-logo slot="left" style="margin-left: -20px;">演示</u-logo>
-            <u-navbar-item href="/">首页</u-navbar-item>
-            <u-navbar-item href="https://kubevue.github.io" target="_blank">kubevue</u-navbar-item>
-            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">Components库</u-navbar-item>
+            <u-logo slot="left" style="margin-left: -20px;">Demo</u-logo>
+            <u-navbar-item href="/">Homepage</u-navbar-item>
+            <u-navbar-item href="https://kubevue.github.io" target="_blank">Kubevue</u-navbar-item>
+            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">Component Library</u-navbar-item>
             <div slot="right">
                 <u-navbar-dropdown style="width: 100px; margin-right: 10px;">
-                    <div slot="title">user</div>
-                    <u-navbar-menu>
-                        <u-navbar-menu-item to="/account/info">个人信息</u-navbar-menu-item>
-                        <u-navbar-menu-item>安全退出</u-navbar-menu-item>
+                    <div slot="title">User</div>
+                    <in-navbar-menu>
+                        <u-navbar-menu-item to="/account/info">Personal Information</u-navbar-menu-item>
+                        <u-navbar-menu-item>Logout</u-navbar-menu-item>
                     </u-navbar-menu>
                 </u-navbar-dropdown>
             </div>
         </u-navbar>
         <l-side-main demo>
             <u-sidebar slot="side">
-                <u-sidebar-item>总览</u-sidebar-item>
-                <u-sidebar-group title="列表页">
-                    <u-sidebar-item>基础列表</u-sidebar-item>
-                    <u-sidebar-item>搜索列表</u-sidebar-item>
+                <u-sidebar-item>Overview</u-sidebar-item>
+                <u-sidebar-group title="List Page">
+                    <u-sidebar-item>Basic List</u-sidebar-item>
+                    <u-sidebar-item>Search List</u-sidebar-item>
                 </u-sidebar-group>
-                <u-sidebar-group title="表单页">
-                    <u-sidebar-item>基础表单</u-sidebar-item>
-                    <u-sidebar-item>步骤表单</u-sidebar-item>
+                <u-sidebar-group title="Form Page">
+                    <u-sidebar-item>Basic Form</u-sidebar-item>
+                    <u-sidebar-item>Step Form</u-sidebar-item>
                 </u-sidebar-group>
-                <u-sidebar-group title="个人页">
-                    <u-sidebar-item>个人信息</u-sidebar-item>
+                <u-sidebar-group title="Personal Page">
+                    <u-sidebar-item>Personal Information</u-sidebar-item>
                 </u-sidebar-group>
             </u-sidebar>
             <u-linear-layout direction="vertical">
                 <u-crumb>
-                    <u-crumb-item to="/">首页</u-crumb-item>
+                    <u-crumb-item to="/">Homepage</u-crumb-item>
                     <u-crumb-item to="/proto-ui">Prototype Component</u-crumb-item>
                     <u-crumb-item disabled>Navigation</u-crumb-item>
-                    <u-crumb-item to="/proto-ui/u-crumb" current>面包屑</u-crumb-item>
+                    <u-crumb-item to="/proto-ui/u-crumb" current>Breadcrumbs</u-crumb-item>
                 </u-crumb>
                 <!--router-view></router-view-->
                 <u-article>
-                    <h1>前赤壁赋</h1>
-                    <p>苏轼 公元1082年</p>
-                    <p>壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。清风徐来，水波不兴。举酒属客，诵明月之诗，歌窈窕之章。少焉，月出于东山之上，徘徊于斗牛之间。白露横江，水光接天。纵一苇之所如，凌万顷之茫然。浩浩乎如冯虚御风，而不知其所止；飘飘乎如遗世独立，羽化而登仙。</p>
-                    <p>于是饮酒乐甚，扣舷而歌之。歌曰：“桂棹兮兰桨，击空明兮溯流光。渺渺兮予怀，望美人兮天一方。”客有吹洞箫者，倚歌而和之。其声呜呜然，如怨如慕，如泣如诉，余音袅袅，不绝如缕。舞幽壑之潜蛟，泣孤舟之嫠妇。</p>
-                    <p>苏子愀然，正襟危坐，而问客曰：“何为其然也？”客曰：“‘月明星稀，乌鹊南飞。’此非曹孟德之诗乎？西望夏口，东望武昌。山川相缪，郁乎苍苍，此非孟德之困于周郎者乎？方其破荆州，下江陵，顺流而东也，舳舻千里，旌旗蔽空，酾酒临江，横槊赋诗，固一世之雄也，而今安在哉？况吾与子渔樵于江渚之上，侣鱼虾而友麋鹿，驾一叶之扁舟，举匏樽以相属。寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。挟飞仙以遨游，抱明月而长终。知不可乎骤得，托遗响于悲风。"</p>
-                    <p>苏子曰：“客亦知夫水与月乎？逝者如斯，而未尝往也；盈虚者如彼，而卒莫消长也。盖将自其变者而观之，则天地曾不能以一瞬；自其不变者而观之，则物与我皆无尽也，而又何羡乎！且夫天地之间，物各有主，苟非吾之所有，虽一毫而莫取。惟江上之清风，与山间之明月，耳得之而为声，目遇之而成色，取之无禁，用之不竭，是造物者之无尽藏也，而吾与子之所共适。”</p>
-                    <p>客喜而笑，洗盏更酌。肴核既尽，杯盘狼籍。相与枕藉乎舟中，不知东方之既白。</p>
+                    <h1>Preface to the Red Cliff</h1>
+                    <p>Su Shi 1082 AD</p>
+                    <p>In the autumn of the year Renxu, on the 15th day of the seventh month, Su Zi and his guests went boating under the Red Cliff. The breeze was gentle and the water was still. He raised his cup to his guests, recited poems about the bright moon, and sang songs about graceful women. After a while, the moon rose above the eastern hills and hovered between the Big Dipper and the Ox. White dew fell across the river, and the water shone to the sky. Even if you are as small as a reed, you can soar above the vast expanse of water. It is as vast as riding the wind in the sky, and you don’t know where it will stop; it is as light as being isolated from the world and ascending to heaven. </p>
+                    <p>So they drank and enjoyed themselves, knocking on the side of the boat and singing. The song goes: "I paddle with cinnamon and orchid oars, and paddle against the clear sky and follow the flowing light. My heart is so far away, and I look forward to the beauty in the sky." There was a guest who played the flute, and he sang along with the song. The sound was sobbing, like resentment, like longing, like crying, and the lingering sound was like a thread. It was like a dancing dragon in a deep valley, and a weeping widow in a lonely boat.</p>
+                    <p>Su Zi was gloomy, sitting upright, and asked the guest, "Why is it so?" The guest said, "'The moon is bright and the stars are sparse, the magpies fly south.' Isn't this the poem of Cao Mengde? Looking west to Xiakou, east to Wuchang. Mountains and rivers intersect, and the sky is vast. Isn't this the poem of Mengde trapped by Zhou Lang? When he broke through Jingzhou, went down to Jiangling, and went east along the river, his ships were thousands of miles long, his flags covered the sky, he drank wine by the river, held his spear and wrote poems, he was a hero of the time, but where is he now? What's more, I and you fish and chop wood on the river bank, we are friends with fish and shrimps and elk, we drive a small boat, and raise gourds to toast each other. We are like mayflies in the universe, a grain of sand in the vast ocean. We mourn the brevity of our lives and envy the infinity of the Yangtze River. We travel with the flying fairy and embrace the bright moon to live forever. We know that we can't get it all at once, so we entrust our echoes to the sad wind."</p>
+                    <p>Su Zi said: "Do you also know water and the moon? The passing is like this, yet it has never gone; the waxing and waning is like that, yet it never grows or wanes. If we look at it from the perspective of change, then the heaven and earth cannot even last a moment; if we look at it from the perspective of the unchanging, then things and I are both endless, so why envy? Moreover, between heaven and earth, everything has its owner. If it is not mine, I will not take even a tiny bit of it. Only the fresh breeze on the river and the bright moon in the mountains, when I hear them, they become sound, when I see them, they become color. There is no restriction on taking them, and they are inexhaustible when I use them. They are the endless treasure of the Creator, and they are what you and I enjoy together."</p>
+                    <p>The guests were delighted and laughed, washing their cups and drinking more. The food and kernels were all gone, and the cups and plates were in a mess. They lay together in the boat, not realizing that the east was already bright. </p>
                 </u-article>
             </u-linear-layout>
         </l-side-main>

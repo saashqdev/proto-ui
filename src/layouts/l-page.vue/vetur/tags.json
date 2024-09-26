@@ -1,7 +1,7 @@
 {
   "l-page": {
     "attributes": [],
-    "description": "只有顶部栏和底部栏的通用页面布局。",
+    "description": "Generic page layout with only top and bottom bars.",
     "subtags": [
       "l-page-center",
       "l-page-section"

@@ -1,12 +1,12 @@
 - name: l-dashboard
-  title: 仪表盘布局
-  description: 常见中后台系统中的顶部栏和左侧栏固定的仪表盘布局。
+  title: Dashboard Layout
+  description: A dashboard layout with fixed top and left columns in common mid- and back-end systems.
   slots:
     - name: default
-      description: 主内容区。
+      description: Main content area.
     - name: head
-      description: 设置顶部内容。
+      description: Set the top content.
     - name: side
-      description: 设置左侧栏内容。
+      description: Set the content of the left column.
     - name: main
-      description: 重置中间区域内容。包裹在主内容区外。
+      description: Reset the content of the middle area. Wrapped outside the main content area.

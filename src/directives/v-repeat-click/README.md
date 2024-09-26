@@ -1,10 +1,10 @@
-# v-repeat-click 重复点击
+# v-repeat-click Repeat Click
 
-浏览器原生的 click 事件在点击元素时，只能触发一次。
+The browser's native click event can only be triggered once when an element is clicked.
 
-该指令实现了在按下元素时，能够重复调用方法。常见Example比如 [UNumberInput](../../components/u-number-input) 的上下点击按钮。
+This directive enables the method to be called repeatedly when an element is pressed. Common Examples such as [UNumberInput](../../components/u-number-input) click up and down buttons.
 
-初始会有一个等待时长。
+There will be an initial waiting period.
 
 ## Example
 
@@ -36,16 +36,16 @@ export default {
 
 | Params | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| value | Function | | 需要调用的方法 |
-| arg | Number | `400` | 初始点击等待时长（毫秒） |
+| value | Function | | The method to be called |
+| arg | Number | `400` | Initial click wait time (milliseconds) |
 
 ### Modifiers
 
 | Modifier | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| self | Boolean | `false` | 同 Vue 指令的 Modifier |
-| stop | Boolean | `false` | 同 Vue 指令的 Modifier |
-| prevent | Boolean | `false` | 同 Vue 指令的 Modifier |
-| capture | Boolean | `false` | 同 Vue 指令的 Modifier |
-| once | Boolean | `false` | 同 Vue 指令的 Modifier |
-| passive | Boolean | `false` | 同 Vue 指令的 Modifier |
+| self | Boolean | `false` | Modifier same as Vue directive |
+| stop | Boolean | `false` | Modifier with the same Vue directive |
+| prevent | Boolean | `false` | Modifier with the same Vue directive |
+| capture | Boolean | `false` | Modifier with the same Vue directive |
+| once | Boolean | `false` | Modifier with the same Vue directive |
+| passive | Boolean | `false` | Modifier with the same Vue directive |

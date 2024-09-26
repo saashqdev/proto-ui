@@ -35,7 +35,7 @@ const initEvent = function (name, element, type, listener, options) {
 };
 
 /**
- * 避免多次绑定同一事件，方便添加 data
+ * Avoid binding the same event multiple times to facilitate adding data
  */
 export default {
     on(name, data, element, type, listener, options) {

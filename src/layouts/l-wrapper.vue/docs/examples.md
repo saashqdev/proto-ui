@@ -1,6 +1,6 @@
-在设置 VueRouter 时，经常会遇到这样的场景：模块需要显示一些内容，往往要重定向到第一个子路由（比如列表页面），而它自身只要配一个什么都不做的容器组件。
+When setting up VueRouter, you often encounter such a scenario: the module needs to display some content, often redirecting to the first sub-route (such as a list page), and it only needs to be equipped with a container component that does nothing.
 
-它的模板很简单：
+Its template is simple:
 
 ``` htm
 <div><router-view></router-view></div>

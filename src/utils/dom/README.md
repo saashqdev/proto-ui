@@ -1,13 +1,13 @@
-# dom DOM 相关
+# dom DOM Related
 
 ### addClass: (el: Element, className: string)
 
-添加 Class。
+Add Class.
 
 ### removeClass: (el: Element, className: string)
 
-删除 Class。
+Delete Class.
 
 ### hasClass: (el: Element, className: string) => boolean
 
-判断是否存在 Class。
+Determine whether Class exists.

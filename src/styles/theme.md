@@ -1,6 +1,6 @@
-# 视觉方案
+# Visual Scheme
 
-## 色彩
+## Color
 
 <u-grid-layout>
     <u-grid-layout-row :repeat="6">

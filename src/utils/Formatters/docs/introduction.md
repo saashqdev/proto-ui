@@ -1,4 +1,4 @@
-Formatter的一般形式是一个包含`format(value, ...settings)`方法的类。
+The general form of a Formatter is a class containing a `format(value, ...settings)` method.
 
 ``` js
 class SomeFormatter {
@@ -9,7 +9,7 @@ class SomeFormatter {
 }
 ```
 
-数据在经过某些Formatter格式化之后，信息没有丢失，仍然可以转换成原始数据。这类Formatter称为可逆Formatter，它们还包含`parse(value, ...settings)`方法。
+After the data is formatted by some Formatters, the information is not lost and can still be converted into original data. This type of Formatter is called a reversible Formatter, and they also contain the `parse(value, ...settings)` method.
 
 ``` js
 class SomeFormatter {
@@ -25,14 +25,14 @@ class SomeFormatter {
 }
 ```
 
-### 用于过滤器
+### For Filters
 
-除了直接当方法调用来转换数据，Formatter最常见的用法是可以配置成 Vue 的过滤器，很方便地在模板中使用。
+In addition to converting data directly when called as a method, the most common usage of Formatter is that it can be configured as a Vue filter, which is conveniently used in templates.
 
-``` vue
+```vue
 <template>
 <div>
-    <div>当前日期为：{{ now | date('YYYY-MM-DD') }}</div>
+    <div>The current date is: {{ now | date('YYYY-MM-DD') }}</div>
 </div>
 </template>
 <script>

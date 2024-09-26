@@ -33,8 +33,8 @@
   },
   "kubevue": {
     "type": "component",
-    "title": "透传页",
-    "team": "necfe",
+    "title": "Transparent page",
+    "team": "kubevue",
     "access": "public",
     "screenshots": [],
     "category": "layout",

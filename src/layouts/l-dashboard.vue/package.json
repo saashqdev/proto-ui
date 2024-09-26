@@ -1,6 +1,6 @@
 {
   "name": "@proto-ui/l-dashboard.vue",
-  "description": "常见中后台系统中的顶部栏和左侧栏固定的仪表盘布局。",
+  "description": "The top bar and left bar are fixed dashboard layouts in common mid- and back-end systems.",
   "version": "0.6.0",
   "author": "Kubeworkz <kubeworkz@gmail.com>",
   "main": "./index.js",
@@ -33,8 +33,8 @@
   },
   "kubevue": {
     "type": "component",
-    "title": "仪表盘布局",
-    "team": "necfe",
+    "title": "Dashboard layout",
+    "team": "kubevue",
     "access": "public",
     "screenshots": [
       "https://unpkg.com/@proto-ui/l-dashboard.vue@0.6.0/screenshots/0.png"

@@ -1,90 +1,90 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# LDashboard 仪表盘布局
+# LDashboard Dashboard Layout
 
-常见中后台系统中的顶部栏和左侧栏固定的仪表盘布局。
+The top bar and left bar are fixed dashboard layouts in common mid- and back-end systems.
 
 ## Example
-滚动区域设置在了主内容区，有最小宽度，可以进行横向滚动。
+The scrolling area is set in the main content area, has a minimum width, and can be scrolled horizontally.
 
 ``` html
 <div style="position: relative; z-index: 1; height: 500px; overflow: auto;">
     <l-dashboard demo>
         <u-navbar slot="head">
-            <u-logo slot="left">演示</u-logo>
-            <u-navbar-item href="/">首页</u-navbar-item>
+            <u-logo slot="left">Demo</u-logo>
+            <u-navbar-item href="/">Homepage</u-navbar-item>
             <u-navbar-item href="https://kubevue.github.io" target="_blank">kubevue</u-navbar-item>
-            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">Components库</u-navbar-item>
+            <u-navbar-item href="https://github.com/saashqdev/cloud-ui" target="_blank">Components Library</u-navbar-item>
             <u-navbar-item href="https://github.com/saashqdev-templates/admin-cloud-fs" target="_blank">GitHub</u-navbar-item>
             <div slot="right">
                 <u-navbar-dropdown style="width: 100px; margin-right: 10px;">
-                    <div slot="title">user</div>
+                    <div slot="title">User</div>
                     <u-navbar-menu>
-                        <u-navbar-menu-item to="/account/info">个人信息</u-navbar-menu-item>
-                        <u-navbar-menu-item>安全退出</u-navbar-menu-item>
+                        <u-navbar-menu-item to="/account/info">Personal Information</u-navbar-menu-item>
+                        <u-navbar-menu-item>Logout</u-navbar-menu-item>
                     </u-navbar-menu>
                 </u-navbar-dropdown>
             </div>
         </u-navbar>
         <u-sidebar slot="side">
-            <u-sidebar-item>总览</u-sidebar-item>
-            <u-sidebar-group title="列表页">
-                <u-sidebar-item>基础列表</u-sidebar-item>
-                <u-sidebar-item>搜索列表</u-sidebar-item>
+            <u-sidebar-item>Overview</u-sidebar-item>
+            <u-sidebar-group title="List Page">
+                <u-sidebar-item>Basic List</u-sidebar-item>
+                <u-sidebar-item>Search List</u-sidebar-item>
             </u-sidebar-group>
-            <u-sidebar-group title="表单页">
-                <u-sidebar-item>基础表单</u-sidebar-item>
-                <u-sidebar-item>步骤表单</u-sidebar-item>
+            <u-sidebar-group title="Form Page">
+                <u-sidebar-item>Basic Form</u-sidebar-item>
+                <u-sidebar-item>Step Form</u-sidebar-item>
             </u-sidebar-group>
-            <u-sidebar-group title="个人页">
-                <u-sidebar-item>个人信息</u-sidebar-item>
+            <u-sidebar-group title="Personal Page">
+                <u-sidebar-item>Personal Information</u-sidebar-item>
             </u-sidebar-group>
         </u-sidebar>
         <u-linear-layout direction="vertical">
             <u-crumb>
-                <u-crumb-item to="/">首页</u-crumb-item>
+                <u-crumb-item to="/">Home</u-crumb-item>
                 <u-crumb-item to="/proto-ui">Prototype Component</u-crumb-item>
                 <u-crumb-item disabled>Navigation</u-crumb-item>
-                <u-crumb-item to="/proto-ui/u-crumb" current>面包屑</u-crumb-item>
+                <u-crumb-item to="/proto-ui/u-crumb" current>Breadcrumbs</u-crumb-item>
             </u-crumb>
             <!--router-view></router-view-->
             <u-form layout="inline">
                 <u-grid-layout>
                     <u-grid-layout-row :repeat="3">
                         <u-grid-layout-column>
-                            <u-form-item label="状态">
+                            <u-form-item label="Status">
                                 <u-select auto-select>
-                                    <u-select-item>认证中</u-select-item>
+                                    <u-select-item>Authenticating</u-select-item>
                                 </u-select>
                             </u-form-item>
                         </u-grid-layout-column>
                         <u-grid-layout-column>
-                            <u-form-item label="备案类型">
+                            <u-form-item label="Record Type">
                                 <u-select auto-select>
-                                    <u-select-item>全部</u-select-item>
+                                    <u-select-item>All</u-select-item>
                                 </u-select>
                             </u-form-item>
                         </u-grid-layout-column>
                         <u-grid-layout-column>
-                            <u-form-item label="备案号">
+                            <u-form-item label="Registration Number">
                                 <u-input maxlength="63"></u-input>
                             </u-form-item>
                         </u-grid-layout-column>
                     </u-grid-layout-row>
                     <u-grid-layout-row :repeat="3">
                         <u-grid-layout-column>
-                            <u-form-item label="用户名">
+                            <u-form-item label="Username">
                                 <u-input maxlength="63"></u-input>
                             </u-form-item>
                         </u-grid-layout-column>
                         <u-grid-layout-column>
-                            <u-form-item label="单位名称">
+                            <u-form-item label="Organization Name">
                                 <u-input maxlength="63"></u-input>
                             </u-form-item>
                         </u-grid-layout-column>
                         <u-grid-layout-column>
                             <u-form-item>
-                                <u-button color="primary">查询</u-button>
+                                <u-button color="primary">Query</u-button>
                             </u-form-item>
                         </u-grid-layout-column>
                     </u-grid-layout-row>
@@ -117,16 +117,16 @@
 
 #### (default)
 
-主内容区。
+Main content area.
 
-#### head
+#### Head
 
-设置顶部内容。
+Set top content.
 
-#### side
+#### Side
 
-设置左侧栏内容。
+Set the left column content.
 
-#### main
+#### Main
 
-重置中间区域内容。包裹在主内容区外。
+Reset the middle area content. Wrapped outside the main content area.

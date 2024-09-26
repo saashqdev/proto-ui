@@ -4,7 +4,7 @@ export const roundToFirst = (num) => {
         return Math.round(num / power) * power;
     } else if (num > 0)
         return +num.toFixed(String(num).match(/^0\.0*/)[0].length - 1);
-    else // 不解决0或负数
+    else // Does not solve for 0 or negative numbers
         return num;
 };
 
