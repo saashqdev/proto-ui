@@ -1,4 +1,4 @@
-## 占位符格式器 PlaceholderFormatter
+## 占位符Formatter PlaceholderFormatter
 
 用于排除传入空数据或异常数据时，出现`NaN`或`[Object object]`等不友好的体验。
 
@@ -33,7 +33,7 @@ export default {
 
 ### Customize
 
-也可以创建自定义的占位符格式器。
+也可以创建自定义的占位符Formatter。
 
 ``` vue
 <template>
@@ -71,7 +71,7 @@ export default {
 | value | Any | | 待格式化的值 |
 | placeholder | String | `'-'` | 占位符 |
 
-## 日期格式器 DateFormatter
+## 日期Formatter DateFormatter
 
 用于将`Date`对象或日期字符串转换为指定的格式。
 
@@ -105,7 +105,7 @@ export default {
 | value | Date, String | | 待格式化的值。可以为日期对象或有效的字符串 |
 | pattern | String | `'YYYY-MM-DD HH:mm:ss'` | 格式化模板 |
 
-## 数字格式器 NumberFormatter
+## 数字Formatter NumberFormatter
 
 可将数字转换为指定格式。
 

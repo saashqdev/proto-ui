@@ -426,7 +426,7 @@
     - name: formatter
       type: string, object, Function, Formatter
       default: placeholder
-      description: 格式器
+      description: Formatter
     - name: "-"
       type: ""
       default: null
@@ -450,11 +450,11 @@
     - name: type
       type: string
       default: null
-      description: 列类型。可选值：`index`表示序号列，`radio`表示单选列，`checkbox`表示多选列，`expander`表示展开列。
+      description: 列类型。可选值：`index`表示Serial Number列，`radio`表示单选列，`checkbox`表示多选列，`expander`表示展开列。
     - name: start-index
       type: number
       default: 1
-      description: 当`type="index"`时的起始序号
+      description: 当`type="index"`时的起始Serial Number
   slots:
     - name: default
       description: 在表格列中插入`<u-table-view-filters>`子组件。

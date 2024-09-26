@@ -709,7 +709,7 @@
   },
   "u-form-table-view-column/formatter": {
     "type": "string, object, Function, Formatter",
-    "description": "格式器"
+    "description": "Formatter"
   },
   "u-form-table-view-column/hidden": {
     "type": "boolean",
@@ -717,7 +717,7 @@
   },
   "u-form-table-view-column/start-index": {
     "type": "number",
-    "description": "当`type=\"index\"`时的起始序号"
+    "description": "当`type=\"index\"`时的起始Serial Number"
   },
   "u-form-table-view-column/label": {
     "type": "string",
@@ -1912,7 +1912,7 @@
   },
   "u-table-view-column/formatter": {
     "type": "string, object, Function, Formatter",
-    "description": "格式器"
+    "description": "Formatter"
   },
   "u-table-view-column/-": {
     "type": "",
@@ -1936,11 +1936,11 @@
   },
   "u-table-view-column/type": {
     "type": "string",
-    "description": "列类型。可选值：`index`表示序号列，`radio`表示单选列，`checkbox`表示多选列，`expander`表示展开列。"
+    "description": "列类型。可选值：`index`表示Serial Number列，`radio`表示单选列，`checkbox`表示多选列，`expander`表示展开列。"
   },
   "u-table-view-column/start-index": {
     "type": "number",
-    "description": "当`type=\"index\"`时的起始序号"
+    "description": "当`type=\"index\"`时的起始Serial Number"
   },
   "u-table/line": {
     "type": "boolean",

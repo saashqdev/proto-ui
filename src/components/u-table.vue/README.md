@@ -22,45 +22,45 @@
     </thead>
     <tbody>
         <tr>
-            <td>张三</td>
+            <td>Homer Simpson</td>
             <td>18612917895</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>2018-05-28 21:52:11</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>小明</td>
+            <td>Marge Simpson</td>
             <td>13727160283</td>
-            <td>Ontario省Fort Erie市Peele江虹路459号英飞特科技园</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>2019-03-12 22:24:36</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李四</td>
+            <td>John Doe</td>
             <td>18897127809</td>
-            <td>Ontario省Fort Erie市Peele秋溢路606号西可科技园</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>2019-05-18 15:45:30</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李华</td>
+            <td>Bart Simpson</td>
             <td>18749261214</td>
-            <td>Ontario省Fort Erie市Peele长河路590号东忠科技园</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>2018-12-10 15:48:01</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>王五</td>
+            <td>Dave Cork</td>
             <td>13579340020</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦二期</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>2018-07-16 01:32:06</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
     </tbody>
 </u-table>
 ```
 
-### 表格线条
+### Table Lines
 
 设置`line="both"`属性，使表格单元格之间由线条隔开。
 
@@ -77,39 +77,39 @@
     </thead>
     <tbody>
         <tr>
-            <td>张三</td>
+            <td>Homer Simpson</td>
             <td>18612917895</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>2018-05-28 21:52:11</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>小明</td>
+            <td>Marge Simpson</td>
             <td>13727160283</td>
-            <td>Ontario省Fort Erie市Peele江虹路459号英飞特科技园</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>2019-03-12 22:24:36</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李四</td>
+            <td>John Doe</td>
             <td>18897127809</td>
-            <td>Ontario省Fort Erie市Peele秋溢路606号西可科技园</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>2019-05-18 15:45:30</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李华</td>
+            <td>Bart Simpson</td>
             <td>18749261214</td>
-            <td>Ontario省Fort Erie市Peele长河路590号东忠科技园</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>2018-12-10 15:48:01</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>王五</td>
+            <td>Dave Cork</td>
             <td>13579340020</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦二期</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>2018-07-16 01:32:06</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
     </tbody>
 </u-table>
@@ -130,45 +130,45 @@
     </thead>
     <tbody>
         <tr>
-            <td>张三</td>
+            <td>Homer Simpson</td>
             <td>18612917895</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>2018-05-28 21:52:11</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>小明</td>
+            <td>Marge Simpson</td>
             <td>13727160283</td>
-            <td>Ontario省Fort Erie市Peele江虹路459号英飞特科技园</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>2019-03-12 22:24:36</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李四</td>
+            <td>John Doe</td>
             <td>18897127809</td>
-            <td>Ontario省Fort Erie市Peele秋溢路606号西可科技园</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>2019-05-18 15:45:30</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李华</td>
+            <td>Bart Simpson</td>
             <td>18749261214</td>
-            <td>Ontario省Fort Erie市Peele长河路590号东忠科技园</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>2018-12-10 15:48:01</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>王五</td>
+            <td>Dave Cork</td>
             <td>13579340020</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦二期</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>2018-07-16 01:32:06</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
     </tbody>
 </u-table>
 ```
 
-### 条纹展示
+### Stripe Display
 
 添加`striped`属性，使表格具有斑马线条纹样式。
 
@@ -185,39 +185,39 @@
     </thead>
     <tbody>
         <tr>
-            <td>张三</td>
+            <td>Homer Simpson</td>
             <td>18612917895</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>2018-05-28 21:52:11</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>小明</td>
+            <td>Marge Simpson</td>
             <td>13727160283</td>
-            <td>Ontario省Fort Erie市Peele江虹路459号英飞特科技园</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>2019-03-12 22:24:36</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李四</td>
+            <td>John Doe</td>
             <td>18897127809</td>
-            <td>Ontario省Fort Erie市Peele秋溢路606号西可科技园</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>2019-05-18 15:45:30</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李华</td>
+            <td>Bart Simpson</td>
             <td>18749261214</td>
-            <td>Ontario省Fort Erie市Peele长河路590号东忠科技园</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>2018-12-10 15:48:01</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>王五</td>
+            <td>Dave Cork</td>
             <td>13579340020</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦二期</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>2018-07-16 01:32:06</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
     </tbody>
 </u-table>
@@ -240,45 +240,45 @@
     </thead>
     <tbody>
         <tr>
-            <td>张三</td>
+            <td>Homer Simpson</td>
             <td>18612917895</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>2018-05-28 21:52:11</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>小明</td>
+            <td>Marge Simpson</td>
             <td>13727160283</td>
-            <td>Ontario省Fort Erie市Peele江虹路459号英飞特科技园</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>2019-03-12 22:24:36</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李四</td>
+            <td>John Doe</td>
             <td>18897127809</td>
-            <td>Ontario省Fort Erie市Peele秋溢路606号西可科技园</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>2019-05-18 15:45:30</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李华</td>
+            <td>Bart Simpson</td>
             <td>18749261214</td>
-            <td>Ontario省Fort Erie市Peele长河路590号东忠科技园</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>2018-12-10 15:48:01</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>王五</td>
+            <td>Dave Cork</td>
             <td>13579340020</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦二期</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>2018-07-16 01:32:06</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
     </tbody>
 </u-table>
 ```
 
-### 单行颜色
+### Single Row Color
 
 在`<tr>`上用`color`属性，可以单独给某一行添加颜色。
 
@@ -295,39 +295,39 @@
     </thead>
     <tbody>
         <tr color="light">
-            <td>张三</td>
+            <td>Homer Simpson</td>
             <td>18612917895</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>2018-05-28 21:52:11</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr color="normal">
-            <td>小明</td>
+            <td>Marge Simpson</td>
             <td>13727160283</td>
-            <td>Ontario省Fort Erie市Peele江虹路459号英飞特科技园</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>2019-03-12 22:24:36</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr color="dark">
-            <td>李四</td>
+            <td>John Doe</td>
             <td>18897127809</td>
-            <td>Ontario省Fort Erie市Peele秋溢路606号西可科技园</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>2019-05-18 15:45:30</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr color="primary">
-            <td>李华</td>
+            <td>Bart Simpson</td>
             <td>18749261214</td>
-            <td>Ontario省Fort Erie市Peele长河路590号东忠科技园</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>2018-12-10 15:48:01</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr color="error">
-            <td>王五</td>
+            <td>Dave Cork</td>
             <td>13579340020</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦二期</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>2018-07-16 01:32:06</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
     </tbody>
 </u-table>
@@ -350,39 +350,39 @@
     </thead>
     <tbody>
         <tr>
-            <td>张三</td>
+            <td>Homer Simpson</td>
             <td>18612917895</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>2018-05-28 21:52:11</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>小明</td>
+            <td>Marge Simpson</td>
             <td>13727160283</td>
-            <td>Ontario省Fort Erie市Peele江虹路459号英飞特科技园</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>2019-03-12 22:24:36</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李四</td>
+            <td>John Doe</td>
             <td>18897127809</td>
-            <td>Ontario省Fort Erie市Peele秋溢路606号西可科技园</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>2019-05-18 15:45:30</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>李华</td>
+            <td>Bart Simpson</td>
             <td>18749261214</td>
-            <td>Ontario省Fort Erie市Peele长河路590号东忠科技园</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>2018-12-10 15:48:01</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
         <tr>
-            <td>王五</td>
+            <td>Dave Cork</td>
             <td>13579340020</td>
-            <td>Ontario省Fort Erie市Peele网商路599号网易大厦二期</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>2018-07-16 01:32:06</td>
-            <td><u-link>详情</u-link>&nbsp;<u-link>设置</u-link></td>
+            <td><u-link>Details</u-link>&nbsp;<u-link>Settings</u-link></td>
         </tr>
     </tbody>
 </u-table>

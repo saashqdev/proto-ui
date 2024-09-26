@@ -14,10 +14,10 @@
     <u-link @click="visible = !visible">展开/收起</u-link>
     <div>
         <u-table-view v-if="visible" striped :data="data" style="max-height: 300px;">
-            <u-table-view-column title="序号" field="id"></u-table-view-column>
-            <u-table-view-column title="姓名" field="name"></u-table-view-column>
-            <u-table-view-column title="省份" field="province"></u-table-view-column>
-            <u-table-view-column title="城市" field="city"></u-table-view-column>
+            <u-table-view-column title="Serial Number" field="id"></u-table-view-column>
+            <u-table-view-column title="Name" field="name"></u-table-view-column>
+            <u-table-view-column title="Province" field="province"></u-table-view-column>
+            <u-table-view-column title="City" field="city"></u-table-view-column>
         </u-table-view>
     </div>
 </div>
@@ -28,16 +28,16 @@ export default {
         return {
             visible: false,
             data: [
-                { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
-                { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-                { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
-                { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
-                { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
-                { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
-                { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-                { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
-                { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
-                { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
+                { id: 1, name: 'Homer Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz, 1931 Norris Avenue', birthday: '19910528' },
+                { id: 2, name: 'Marge Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Skunkhollow Technology Park, 1901 Norris Avenue', birthday: '19920914' },
+                { id: 3, name: 'John Doe', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Camden Science and Technology Park, 29 Barclay Street', birthday: '19900228' },
+                { id: 4, name: 'Bart Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane', birthday: '19891210' },
+                { id: 5, name: 'Dave Cork', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz, 1931 Norris Avenue', birthday: '19930716' },
+                { id: 1, name: 'Homer Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz, 1931 Norris Avenue', birthday: '19910528' },
+                { id: 2, name: 'Marge Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Skunkhollow Technology Park, 1901 Norris Avenue', birthday: '19920914' },
+                { id: 3, name: 'John Doe', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Camden Science and Technology Park, 29 Barclay Street', birthday: '19900228' },
+                { id: 4, name: 'Bart Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane', birthday: '19891210' },
+                { id: 5, name: 'Dave Cork', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz, 1931 Norris Avenue', birthday: '19930716' },
             ],
         };
     },
@@ -53,10 +53,10 @@ export default {
     <u-link @click="visible = !visible">展开/收起</u-link>
     <div>
         <u-table-view v-show="visible" striped :data="data" style="max-height: 300px;">
-            <u-table-view-column title="序号" field="id"></u-table-view-column>
-            <u-table-view-column title="姓名" field="name"></u-table-view-column>
-            <u-table-view-column title="省份" field="province"></u-table-view-column>
-            <u-table-view-column title="城市" field="city"></u-table-view-column>
+            <u-table-view-column title="Serial Number" field="id"></u-table-view-column>
+            <u-table-view-column title="Name" field="name"></u-table-view-column>
+            <u-table-view-column title="Province" field="province"></u-table-view-column>
+            <u-table-view-column title="City" field="city"></u-table-view-column>
         </u-table-view>
     </div>
 </div>
@@ -67,16 +67,16 @@ export default {
         return {
             visible: false,
             data: [
-                { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
-                { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-                { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
-                { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
-                { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
-                { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
-                { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-                { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
-                { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
-                { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
+                { id: 1, name: 'Homer Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz, 1931 Norris Avenue', birthday: '19910528' },
+                { id: 2, name: 'Marge Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Skunkhollow Technology Park, 1901 Norris Avenue', birthday: '19920914' },
+                { id: 3, name: 'John Doe', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Camden Science and Technology Park, 29 Barclay Street', birthday: '19900228' },
+                { id: 4, name: 'Bart Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane', birthday: '19891210' },
+                { id: 5, name: 'Dave Cork', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz, 1931 Norris Avenue', birthday: '19930716' },
+                { id: 1, name: 'Homer Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz, 1931 Norris Avenue', birthday: '19910528' },
+                { id: 2, name: 'Marge Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Skunkhollow Technology Park, 1901 Norris Avenue', birthday: '19920914' },
+                { id: 3, name: 'John Doe', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Camden Science and Technology Park, 29 Barclay Street', birthday: '19900228' },
+                { id: 4, name: 'Bart Simpson', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane', birthday: '19891210' },
+                { id: 5, name: 'Dave Cork', province: 'Ontario', city: 'Fort Erie', district: 'Peele', address: 'Kubeworkz, 1931 Norris Avenue', birthday: '19930716' },
             ],
         };
     },

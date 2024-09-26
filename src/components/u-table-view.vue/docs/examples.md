@@ -1,366 +1,366 @@
-基础Example中展示了如何初步地在表格视图组件中配置数据、修饰样式，以及如何处理数据过多的情况。
+The basic Example shows how to initially configure data, modify styles in the table view component, and how to deal with excessive data.
 
 ### Basic Usage
 
-下面是表格视图组件中的Basic Usage。
+Below is Basic Usage in the table view component.
 
-以列的视角对数据进行配置，`title`为列的标题，`field`是数据中作为唯一识别的字段名。
+Configure data from a column perspective, `title` is the title of the column, and `field` is the uniquely identified field name in the data.
 
-列宽默认会平均分配，可以使用`width`对列宽进行适当调整，支持数值和百分比两种格式。
+Column widths are evenly distributed by default. You can use `width` to adjust the column width appropriately. Both numerical and percentage formats are supported.
 
 ``` html
 <u-table-view :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-### 表格线条
+### Table Lines
 
 ``` html
 <u-table-view line="both" :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-### 条纹展示
+### Stripe Display
 
 ``` html
 <u-table-view striped :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-### 单行颜色
+### Single Row Color
 
-使用`rowColor`字段，可以单独给某一行添加颜色。
+Using the `rowColor` field, you can add color to a row individually.
 
 ``` html
 <u-table-view :data="[
-    { name: '张三', rowColor: 'light', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', rowColor: 'normal', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', rowColor: 'dark', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', rowColor: 'primary', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', rowColor: 'error', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', rowColor: 'light', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', rowColor: 'normal', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', rowColor: 'dark', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', rowColor: 'primary', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', rowColor: 'error', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-### 隐藏头部
+### Hide Header
 
 ``` html
 <u-table-view :show-head="false" :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-### 状态
+### State
 
-表格会根据数据类型自动判断状态。
+The form will automatically determine the status based on the data type.
 
-#### 加载中
+#### Loading
 
 ``` html
 <u-table-view>
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-#### 空态
+#### Empty State
 
 ``` html
 <u-table-view :data="[]">
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-### 格式器
+### Formatter
 
-在表格的列组件中可以配置`formatter`属性，会自动将该列数据做一个格式化处理，类似于 Vue 的 filter。
+You can configure the `formatter` attribute in the column component of the table, which will automatically format the column data, similar to Vue's filter.
 
 ``` html
 <u-table-view :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-支持简单传入一个函数：
+Supports simply passing in a function:
 
 ``` vue
 <template>
 <u-table-view :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address" :formatter="addressFormatter"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address" :formatter="addressFormatter"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 </template>
 <script>
 export default {
     methods: {
         addressFormatter(value) {
-            return value.replace('Ontario省Fort Erie市', '');
+            return value.replace('OntarioFort Erie', '');
         },
     },
 };
 </script>
 ```
 
-### 列插槽
+### Column Slot
 
-如果需要对数据进行更加自定义的展示，可以使用列的`cell`插槽，定制想要的格式。
+If you need a more customized display of the data, you can use the `cell` slot of the column to customize the desired format.
 
-这个插槽为一个作用域插槽，会传入4个参数`item`、`value`、`columnVM`和`index`。
+This slot is a scope slot and will pass in 4 parameters `item`, `value`, `columnVM` and `index`.
 
 ``` html
 <u-table-view :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" field="name" width="20%">
+    <u-table-view-column title="Username" field="name" width="20%">
         <template slot="cell" slot-scope="{ value }">
             <u-link>{{ value }}</u-link>
         </template>
     </u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-### 垂直数据过多
+### Too Much Vertical Data
 
-#### 表头固定
+#### Fixed Header
 
-通过给`<u-table-view>`的样式设置`height`或`max-height`属性，可以限制表格高度。在数据较多的情况下，会自动固定表头。
+You can limit the height of the table by setting the `height` or `max-height` attribute to the `<u-table-view>` style. When there is a large amount of data, the header will be automatically fixed.
 
 ``` html
 <u-table-view striped :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]" style="max-height: 300px;">
-    <u-table-view-column title="用户名" field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-### 水平内容过长
+### Horizontal Content is Too Long
 
-#### 默认多行显示
+#### Default Multi-Line Display
 
-某些情况下，我们会遇到文字过长的问题，默认会进行多行显示。
+In some cases, we will encounter the problem of too long text, and multi-line display will be performed by default.
 
 ``` html
 <u-table-view line="horizontal" striped :data="[
-    { name: '这是一个很长很长很长很长很长很长很长很长的名字', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '名字就是起得这么这么这么这么这么这么长', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'This is a long, long, long, long, long, long, long, long name.', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'The name is just so, so, so, so long.', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" field="name" width="30%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="30%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-#### 单行省略显示
+#### Single Line Omitted Display
 
-这时可以对列设置`ellipsis`属性，使文本单行省略，鼠标悬浮时会有工具提示。
+At this time, you can set the `ellipsis` attribute on the column to omit a single line of text, and there will be a tool tip when the mouse is hovered.
 
 ``` html
 <u-table-view line="horizontal" striped :data="[
-    { name: '这是一个很长很长很长很长很长很长很长很长的名字', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '名字就是起得这么这么这么这么这么这么长', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'This is a long, long, long, long, long, long, long, long name.', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'The name is just so, so, so, so long.', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" ellipsis field="name" width="30%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" ellipsis field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" ellipsis field="name" width="30%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" ellipsis field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-#### 横向滚动
+#### Horizontal Scrolling
 
-有时省略文字并不直观，可以考虑对所以列设置较长的宽度。产生横向滚动。
+Sometimes omitting text is not intuitive, so consider setting a longer width for all columns. Produces horizontal scrolling.
 
 ``` html
 <u-table-view striped :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]" style="max-height: 300px;">
-    <u-table-view-column title="序号" type="index" width="50"></u-table-view-column>
-    <u-table-view-column title="用户名" field="name" width="70"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="160"></u-table-view-column>
+    <u-table-view-column title="Serial Number" type="index" width="50"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="70"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="160"></u-table-view-column>
     <u-table-view-column title="电子邮箱" field="email" width="200"></u-table-view-column>
-    <u-table-view-column title="地址" field="address" width="400"></u-table-view-column>
+    <u-table-view-column title="Address" field="address" width="400"></u-table-view-column>
     <u-table-view-column title="创建时间" field="createdTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
     <u-table-view-column title="操作" width="120">
         <template slot="cell">
-            <u-link>详情</u-link>&nbsp;
-            <u-link>设置</u-link>
+            <u-link>Details</u-link>&nbsp;
+            <u-link>Settings</u-link>
         </template>
     </u-table-view-column>
 </u-table-view>
 ```
 
-#### 固定列
+#### Fixed Columns
 
-也可以对左右边缘重要的列进行固定。
+You can also fix important columns on the left and right edges.
 
 ``` html
 <u-table-view striped :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]" style="max-height: 300px;">
-    <u-table-view-column fixed title="序号" type="index" width="50"></u-table-view-column>
-    <u-table-view-column fixed title="用户名" field="name" width="70"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="160"></u-table-view-column>
+    <u-table-view-column fixed title="Serial Number" type="index" width="50"></u-table-view-column>
+    <u-table-view-column fixed title="Username" field="name" width="70"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="160"></u-table-view-column>
     <u-table-view-column title="电子邮箱" field="email" width="200"></u-table-view-column>
-    <u-table-view-column title="地址" field="address" width="400"></u-table-view-column>
+    <u-table-view-column title="Address" field="address" width="400"></u-table-view-column>
     <u-table-view-column title="创建时间" field="createdTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
     <u-table-view-column fixed title="操作" width="120">
         <template slot="cell">
-            <u-link>详情</u-link>&nbsp;
-            <u-link>设置</u-link>
+            <u-link>Details</u-link>&nbsp;
+            <u-link>Settings</u-link>
         </template>
     </u-table-view-column>
 </u-table-view>
 ```
 
-### 隐藏部分列
+### Hide Some Columns
 
 ``` vue
 <template>
 <u-linear-layout direction="vertical">
     <u-linear-layout display="block">
-        <u-checkbox v-model="columnsVisible[0]">序号</u-checkbox>
-        <u-checkbox v-model="columnsVisible[1]">用户名</u-checkbox>
-        <u-checkbox v-model="columnsVisible[2]">手机号码</u-checkbox>
-        <u-checkbox v-model="columnsVisible[3]">电子邮箱</u-checkbox>
-        <u-checkbox v-model="columnsVisible[4]">地址</u-checkbox>
-        <u-checkbox v-model="columnsVisible[5]">创建时间</u-checkbox>
-        <u-checkbox v-model="columnsVisible[6]">最近登录时间</u-checkbox>
-        <u-checkbox v-model="columnsVisible[7]">操作</u-checkbox>
+        <u-checkbox v-model="columnsVisible[0]">Serial Number</u-checkbox>
+        <u-checkbox v-model="columnsVisible[1]">Username</u-checkbox>
+        <u-checkbox v-model="columnsVisible[2]">Mobile Phone Number</u-checkbox>
+        <u-checkbox v-model="columnsVisible[3]">Email</u-checkbox>
+        <u-checkbox v-model="columnsVisible[4]">Address</u-checkbox>
+        <u-checkbox v-model="columnsVisible[5]">Creation Time</u-checkbox>
+        <u-checkbox v-model="columnsVisible[6]">Last Login Time</u-checkbox>
+        <u-checkbox v-model="columnsVisible[7]">Operation</u-checkbox>
     </u-linear-layout>
     <u-table-view striped :data="[
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]" style="max-height: 300px;">
-        <u-table-view-column :hidden="!columnsVisible[0]" title="序号" type="index" width="50"></u-table-view-column>
-        <u-table-view-column :hidden="!columnsVisible[1]" title="用户名" field="name" width="70"></u-table-view-column>
-        <u-table-view-column :hidden="!columnsVisible[2]" title="手机号码" field="phone" width="160"></u-table-view-column>
+        <u-table-view-column :hidden="!columnsVisible[0]" title="Serial Number" type="index" width="50"></u-table-view-column>
+        <u-table-view-column :hidden="!columnsVisible[1]" title="Username" field="name" width="70"></u-table-view-column>
+        <u-table-view-column :hidden="!columnsVisible[2]" title="Mobile Phone Number" field="phone" width="160"></u-table-view-column>
         <u-table-view-column :hidden="!columnsVisible[3]" title="电子邮箱" field="email" width="200"></u-table-view-column>
-        <u-table-view-column :hidden="!columnsVisible[4]" title="地址" field="address" width="400"></u-table-view-column>
+        <u-table-view-column :hidden="!columnsVisible[4]" title="Address" field="address" width="400"></u-table-view-column>
         <u-table-view-column :hidden="!columnsVisible[5]" title="创建时间" field="createdTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-        <u-table-view-column :hidden="!columnsVisible[6]" title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+        <u-table-view-column :hidden="!columnsVisible[6]" title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
         <u-table-view-column :hidden="!columnsVisible[7]" title="操作" width="120">
             <template slot="cell">
-                <u-link>详情</u-link>&nbsp;
-                <u-link>设置</u-link>
+                <u-link>Details</u-link>&nbsp;
+                <u-link>Settings</u-link>
             </template>
         </u-table-view-column>
     </u-table-view>
@@ -377,121 +377,119 @@ export default {
 </script>
 ```
 
-### 调整列宽
+### Adjust Column Width
 
-开启`resizable`属性，可以调整列宽。
+Turn on the `resizable` attribute to adjust the column width.
 
-根据`resize-remaining`属性，调整列宽有三种效果。`sequence`表示保持总宽不变，优先后一列弥补宽度；`average`表示保持总宽不变，后面所有列平均弥补宽度；`none`表示不做任何处理，表格宽度变化。
+According to the `resize-remaining` attribute, adjusting column width has three effects. `sequence` means to keep the total width unchanged, and give priority to the next column to make up the width; `average` means to keep the total width unchanged, and all subsequent columns to make up the width on average; `none` means no processing is done, and the table width changes.
 
-#### sequence
+#### Sequence
 
 ``` html
 <u-table-view resizable line="horizontal" striped :data="[
-    { name: '这是一个很长很长很长很长很长很长很长很长的名字', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '名字就是起得这么这么这么这么这么这么长', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'This is a long, long, long, long, long, long, long, long name.', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'The name is just so, so, so, so long.', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" ellipsis field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" ellipsis field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" ellipsis field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" ellipsis field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-#### average
+#### Average
 
 ``` html
 <u-table-view resizable resize-remaining="average" line="horizontal" striped :data="[
-    { name: '这是一个很长很长很长很长很长很长很长很长的名字', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '名字就是起得这么这么这么这么这么这么长', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'This is a long, long, long, long, long, long, long, long name.', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'The name is just so, so, so, so long.', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" ellipsis field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" ellipsis field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" ellipsis field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" ellipsis field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-#### none
+#### None
 
 ``` html
 <u-table-view resizable resize-remaining="none" line="horizontal" striped :data="[
-    { name: '这是一个很长很长很长很长很长很长很长很长的名字', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '名字就是起得这么这么这么这么这么这么长', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: 'This is a long, long, long, long, long, long, long, long name.', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, OntarioSkunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: 'The name is just so, so, so, so long.', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
-    <u-table-view-column title="用户名" ellipsis field="name" width="20%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" ellipsis field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" ellipsis field="name" width="20%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" ellipsis field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-### 特殊列
+### Special Columns
 
-UTableView 中内置了一些特殊的列，通过设置`type`来开启。
+There are some special columns built into UTableView, which can be enabled by setting `type`.
 
-#### 序号列
+#### Serial Number Column
 
-添加一个`type="index"`的`<u-table-view-column>`，这个列中会显示每行的序号。设置`start-index`可以改变初始值，默认为`1`。
+Add a `<u-table-view-column>` with `type="index"`, and the Serial Number of each row will be displayed in this column. Setting `start-index` can change the initial value, which defaults to `1`.
 
-> 注意：这种方式只能显示当前页的序号，如果复杂的序号请使用列插槽自定义。
+> Note: This method can only display the Serial Number of the current page. If the Serial Number is complex, please use column slot customization.
 
 ``` html
 <u-table-view striped :data="[
-    { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { id: '07cdcb8ed5e94cec', name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { id: '5cd49be8f65c4738', name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { id: 'f799a0467c494601', name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { id: '40e8ca488a1c4bce', name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { id: '150823cc351642b6', name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
     <u-table-view-column type="index" title="#" width="8%"></u-table-view-column>
-    <u-table-view-column title="用户名" field="name" width="12%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="12%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-#### 单选列
+#### Radio Selection Column
 
-开启`selectable`属性，可以选择行。
+Turn on the `selectable` attribute to select rows.
 
 ``` html
 <u-table-view striped hover selectable :data="[
-    { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { id: '07cdcb8ed5e94cec', name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { id: '5cd49be8f65c4738', name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { id: 'f799a0467c494601', name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { id: '40e8ca488a1c4bce', name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { id: '150823cc351642b6', name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
 ]">
     <u-table-view-column type="index" title="#" width="8%"></u-table-view-column>
-    <u-table-view-column title="用户名" field="name" width="12%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="12%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 ```
 
-也可以添加一个`type="radio"`的`<u-table-view-column>`，这个列中会显示单项选择框，专门用于单选操作。
-
-通过`value-field`属性指定数据中唯一值的字段，然后`v-model`或`:value.sync`对选择值进行Two-Way Binding。
+You can also add a `<u-table-view-column>` with `type="radio"`. A single-item selection box will be displayed in this column, which is specially used for single-selection operations.
 
 ``` vue
 <template>
 <u-table-view striped value-field="id" v-model="selectedValue" :data="data">
-    <u-table-view-column type="radio" title="选择" width="8%"></u-table-view-column>
-    <u-table-view-column title="用户名" field="name" width="12%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column type="radio" title="Select" width="8%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="12%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 </template>
 <script>
@@ -500,11 +498,11 @@ export default {
         return {
             selectedValue: '5cd49be8f65c4738',
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
         };
     },
@@ -512,20 +510,24 @@ export default {
 </script>
 ```
 
-#### 多选列
+#### Multiple Selection Columns
 
-添加一个`type="checkbox"`的`<u-table-view-column>`，这个列中会显示多项选择框，用于多选操作。
+Add a `<u-table-view-column>` with `type="checkbox"`, and multiple selection boxes will be displayed in this column for multi-selection operations.
 
-控制多选有两种方式，一种是设置数据对应行的`checked`属性，该属性会与多项选择框进行Two-Way Binding。`disabled`属性可以禁用多项选择框。
+There are two ways to control multiple selection. One is to set the `checked` attribute of the corresponding row of data. This attribute will perform Two-Way Binding with the multiple selection box. The `disabled` attribute disables the multiple selection box.####Multiple selection columns
+
+Add a `<u-table-view-column>` with `type="checkbox"`, and multiple selection boxes will be displayed in this column for multi-selection operations.
+
+There are two ways to control multiple selection. One is to set the `checked` attribute of the corresponding row of data. This attribute will perform Two-Way Binding with the multiple selection box. The `disabled` attribute disables the multiple selection box.
 
 ``` vue
 <template>
 <u-table-view striped :data="data">
-    <u-table-view-column type="checkbox" title="选择" width="8%"></u-table-view-column>
-    <u-table-view-column title="用户名" field="name" width="12%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column type="checkbox" title="Select" width="8%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="12%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 </template>
 <script>
@@ -533,11 +535,11 @@ export default {
     data() {
         return {
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', checked: true, name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', checked: true, name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', disabled: true, name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', checked: true, name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', checked: true, name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', disabled: true, name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
         };
     },
@@ -545,16 +547,16 @@ export default {
 </script>
 ```
 
-另一种是通过`value-field`属性指定数据中唯一值的字段，再通过`:values.sync`对选择值进行Two-Way Binding。
+The other is to specify the unique value field in the data through the `value-field` attribute, and then perform Two-Way Binding on the selected value through `:values.sync`.
 
 ``` vue
 <template>
 <u-table-view striped value-field="id" :values="values" :data="data">
-    <u-table-view-column type="checkbox" title="选择" width="8%"></u-table-view-column>
-    <u-table-view-column title="用户名" field="name" width="12%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column type="checkbox" title="Select" width="8%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="12%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 </template>
 <script>
@@ -563,11 +565,11 @@ export default {
         return {
             values: ['5cd49be8f65c4738', 'f799a0467c494601'],
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
         };
     },
@@ -575,11 +577,54 @@ export default {
 </script>
 ```
 
-#### 展开列
+#### Expand Columns
 
 ``` vue
 <template>
 <u-table-view :data="data">
+    <u-table-view-column type="expander" title="Expand" width="8%">
+        <div slot="expand-content" slot-scope="{ item }">
+            <u-list type="disc">
+                <u-list-item>{{ item.address }} 1</u-list-item>
+                <u-list-item>{{ item.address }} 2</u-list-item>
+                <u-list-item>{{ item.address }} 3</u-list-item>
+                <u-list-item>{{ item.address }} 4</u-list-item>
+                <u-list-item>{{ item.address }} 5</u-list-item>
+            </u-list>
+        </div>
+    </u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="12%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+</u-table-view>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            data: [
+                { id: '07cdcb8ed5e94cec', name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
+            ],
+        };
+    },
+};
+</script>
+```
+
+It can also be placed at the end of the column.
+
+``` vue
+<template>
+<u-table-view :data="data">
+    <u-table-view-column title="Username" field="name" width="12%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
     <u-table-view-column type="expander" title="展开" width="8%">
         <div slot="expand-content" slot-scope="{ item }">
             <u-list type="disc">
@@ -591,10 +636,6 @@ export default {
             </u-list>
         </div>
     </u-table-view-column>
-    <u-table-view-column title="用户名" field="name" width="12%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
 </u-table-view>
 </template>
 <script>
@@ -602,11 +643,11 @@ export default {
     data() {
         return {
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
         };
     },
@@ -614,54 +655,15 @@ export default {
 </script>
 ```
 
-也可以放到列尾。
-
-``` vue
-<template>
-<u-table-view :data="data">
-    <u-table-view-column title="用户名" field="name" width="12%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-    <u-table-view-column type="expander" title="展开" width="8%">
-        <div slot="expand-content" slot-scope="{ item }">
-            <u-list type="disc">
-                <u-list-item>{{ item.address }} 1</u-list-item>
-                <u-list-item>{{ item.address }} 2</u-list-item>
-                <u-list-item>{{ item.address }} 3</u-list-item>
-                <u-list-item>{{ item.address }} 4</u-list-item>
-                <u-list-item>{{ item.address }} 5</u-list-item>
-            </u-list>
-        </div>
-    </u-table-view-column>
-</u-table-view>
-</template>
-<script>
-export default {
-    data() {
-        return {
-            data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
-            ],
-        };
-    },
-};
-</script>
-```
-
-使用`accordion`属性开启Accordian Mode，在展开一项的同时会收起其他项。
+Use the `accordion` attribute to enable Accordian Mode. When one item is expanded, other items will be collapsed.
 
 ``` vue
 <template>
 <u-table-view :data="data" accordion>
-    <u-table-view-column title="用户名" field="name" width="12%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column title="Username" field="name" width="12%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
     <u-table-view-column type="expander" title="展开" width="8%">
         <div slot="expand-content" slot-scope="{ item }">
             <u-list type="disc">
@@ -680,11 +682,11 @@ export default {
     data() {
         return {
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
         };
     },
@@ -692,17 +694,17 @@ export default {
 </script>
 ```
 
-#### 特殊列与普通功能共用
+#### Special Columns are Shared with Normal Functions
 
-使用`type`设置的特殊列可以与普通的`field`共用。
+Special columns set using `type` can be used with ordinary `field`.
 
 ``` vue
 <template>
 <u-table-view :data="data">
-    <u-table-view-column type="checkbox" title="用户名" field="name" width="15%"></u-table-view-column>
-    <u-table-view-column title="手机号码" field="phone" width="20%"></u-table-view-column>
-    <u-table-view-column title="地址" field="address"></u-table-view-column>
-    <u-table-view-column title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
+    <u-table-view-column type="checkbox" title="Username" field="name" width="15%"></u-table-view-column>
+    <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
+    <u-table-view-column title="Address" field="address"></u-table-view-column>
+    <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
     <u-table-view-column type="expander" title="展开" width="8%">
         <span slot="cell" slot-scope="{ item }">{{ item.name }}</span>
         <div slot="expand-content" slot-scope="{ item }">
@@ -722,11 +724,11 @@ export default {
     data() {
         return {
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: 'Homer Simpson', phone: '18612917895', email: 'hsimpson@gmail.com', address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: 'Marge Simpson', phone: '13727160283', email: 'msimpson@gmail.com', address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: 'John Doe', phone: '18897127809', email: 'jdoe@gmail.com', address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: 'Bart Simpson', phone: '18749261214', email: 'bsimpson@gmail.com', address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: 'Dave Cork', phone: '13579340020', email: 'dcork@gmail.com', address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
         };
     },

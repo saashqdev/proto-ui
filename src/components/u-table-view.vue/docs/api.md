@@ -4,247 +4,247 @@
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| title | String | | 表格标题 |
-| title-alignment | String | `'center'` | 表格标题对齐方式 |
-| border | Boolean | | 是否显示边框 |
-| line | Boolean | `false` | 单元格之间是否显示分隔线条 |
-| striped | Boolean | `false` | 表格行是否按斑马线条纹显示 |
-| hover | Boolean | `false` | 表格行在悬浮时是否高亮显示 |
-| show-head | Boolean | `true` | 是否显示表格头部 |
-| loading | Boolean | | 手动设置是否Loading |
-| loading-text | String | `'Loading'` | Loading的文字 |
-| error | Boolean | | 手动设置是否加载失败 |
-| error-text | String | `'加载失败，请重试'` | 加载失败时的文字 |
-| empty-text | String | `'暂无数据'` | 暂无数据时的文字 |
+| title | String | | Table title |
+| title-alignment | String | `'center'` | Table title alignment |
+| border | Boolean | | Whether to display the border |
+| line | Boolean | `false` | Whether to display separator lines between cells |
+| striped | Boolean | `false` | Whether the table rows are displayed with zebra stripes |
+| hover | Boolean | `false` | Whether the table row is highlighted when hovering |
+| show-head | Boolean | `true` | Whether to display the table header |
+| loading | Boolean | | Manually set whether loading is in progress |
+| loading-text | String | `'Loading'` | The text of the loading text |
+| error | Boolean | | Manually set whether loading failed |
+| error-text | String | `'Loading failed, please try again'` | Text when loading failed |
+| empty-text | String | `'No data yet'` | Text when there is no data |
 | **Data Props/Attrs** |
-| data | Array\<{ \[field\]: string, ... }\> | | 表格数据 |
-| data-source | Object, Function, DataSource | | 多功能数据源 |
-| initial-load | Boolean | `true` | 是否在初始时立即加载 |
-| pageable | Boolean | `false` | 是否需要分页 |
-| page-size.sync | Number | `20` | 分页大小 |
-| page-size-options | Array | `[10, 20, 50]` | 每页大小选项列表 |
-| show-total | Boolean | `false` | 是否显示总条目数 |
-| show-sizer | Boolean | `false` | 是否显示切换每页大小选项 |
-| show-jumper | Boolean | `false` | 是否显示页面跳转输入框 |
-| sorting.sync | Object<{ field: string, order: string, compare: Function }> | `{ field: undefined, order: 'desc' }` | 当前排序字段和顺序 |
-| default-order | String | `'asc'` | 所有列首次点击时的排序顺序 |
-| filtering.sync | Object | | 过滤项 |
-| remote-paging | Boolean | `false` | 是否使用后端分页 |
-| remote-sorting | Boolean | `false` | 是否使用后端排序 |
-| remote-filtering | Boolean | `false` | 是否使用后端过滤 |
+| data | Array\<{ \[field\]: string, ... }\> | | Tabular data |
+| data-source | Object, Function, DataSource | | Multi-function data source |
+| initial-load | Boolean | `true` | Whether to load immediately at the initialization |
+| pageable | Boolean | `false` | Whether paging is required |
+| page-size.sync | Number | `20` | Paging size |
+| page-size-options | Array | `[10, 20, 50]` | List of page size options |
+| show-total | Boolean | `false` | Whether to display the total number of entries |
+| show-sizer | Boolean | `false` | Whether to display the option to switch the size of each page |
+| show-jumper | Boolean | `false` | Whether to display the page jump input box |
+| sorting.sync | Object<{ field: string, order: string, compare: Function }> | `{ field: undefined, order: 'desc' }` | Current sorting field and order |
+| default-order | String | `'asc'` | The sort order of all columns when first clicked |
+| filtering.sync | Object | | Filter item |
+| remote-paging | Boolean | `false` | Whether to use backend paging |
+| remote-sorting | Boolean | `false` | Whether to use backend sorting |
+| remote-filtering | Boolean | `false` | Whether to use backend filtering |
 | **Selection Props/Attrs** |
-| value-field | String | | 在单选和多选操作中，指定数据唯一值的字段 |
-| value.sync, v-model | Any | | 当前选择的值 |
-| values.sync | Array | | 多项选择的值 |
-| selectable | Boolean | `false` | 是否可以选择行 |
-| cancelable | Boolean | `false` | 是否可以取消选择 |
-| readonly | Boolean | `false` | 是否只读 |
-| disabled | Boolean | `false` | 是否禁用 |
+| value-field | String | | In single-select and multi-select operations, the field that specifies the unique value of the data |
+| value.sync, v-model | Any | | The currently selected value |
+| values.sync | Array | | Values of multiple selections |
+| selectable | Boolean | `false` | Whether the row can be selected |
+| cancelable | Boolean | `false` | Whether the selection can be canceled |
+| readonly | Boolean | `false` | Read-only |
+| disabled | Boolean | `false` | Disabled |
 | **Other Props/Attrs** |
-| accordion | Boolean | `false` | 在有`expander`列的情况下，展开一行的同时，是否收起其它行 |
-| resizable | Boolean | `false` | 是否可以调整列宽 |
-| resize-remaining | Boolean | `'sequence'` | 调整列宽效果。可选值：`sequence`表示保持总宽不变，优先后一列弥补宽度；`average`表示保持总宽不变，后面所有列平均弥补宽度；`none`表示不做任何处理，表格宽度变化。 |
+| accordion | Boolean | `false` | When there is an `expander` column, whether to collapse other rows when expanding a row |
+| resizable | Boolean | `false` | Whether the column width can be adjusted |
+| resize-remaining | Boolean | `'sequence'` | Adjust the column width effect. Optional values: `sequence` means keeping the total width unchanged, and the next column will make up the width first; `average` means keeping the total width unchanged, and all the following columns will make up the width evenly; `none` means no processing is done, and the table width changes. |
 
 
 ### Slots
 
 #### (default)
 
-在表格中插入`<u-table-view-column>`子组件。
+Insert the `<u-table-view-column>` child component into the table.
 
-#### loading
+#### Loading
 
-自定义加载中。
+Customization loading.
 
-#### error
+#### Error
 
-自定义错误。
+Custom error.
 
-#### empty
+#### Empty
 
-自定义空态。
+Custom empty state.
 
 ### Data Events
 
 #### @before-load
 
-加载前触发
+Triggered before loading
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止加载流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.preventDefault | Function | Prevent loading process |
+| senderVM | UTableView | Send event instance |
 
 #### @load
 
-加载时触发
+Triggered on load
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | | 空 |
-| senderVM | UTableView | 发送事件实例 |
+| $event | | Empty |
+| senderVM | UTableView | Send event instance |
 
 #### @before-page
 
-切换分页前触发
+Triggered before switching pages
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.size | Number | 分页大小 |
-| $event.oldSize | Number | 分页大小 |
-| $event.number | Number | 当前页数 |
-| $event.oldNumber | Number | 旧的页数 |
-| $event.preventDefault | Function | 阻止切换分页流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.size | Number | Paging size |
+| $event.oldSize | Number | Paging size |
+| $event.number | Number | Current page number |
+| $event.oldNumber | Number | Old page number |
+| $event.preventDefault | Function | Prevent paging process from switching |
+| senderVM | UTableView | Send event instance |
 
 #### @page
 
-切换分页或改变分页大小时触发
+Triggered when switching pages or changing page size
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.size | Number | 分页大小 |
-| $event.oldSize | Number | 分页大小 |
-| $event.number | Number | 当前页数 |
-| $event.oldNumber | Number | 旧的页数 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.size | Number | Paging size |
+| $event.oldSize | Number | Paging size |
+| $event.number | Number | Current page number |
+| $event.oldNumber | Number | Old page number |
+| senderVM | UTableView | Send event instance |
 
 #### @before-sort
 
-排序前触发
+Triggered before sorting
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.field | String | 排序顺序 |
-| $event.order | String | 排序字段 |
-| $event.compare | Function | 排序比较函数 |
-| $event.preventDefault | Function | 阻止排序流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.field | String | Sort order |
+| $event.order | String | Sort field |
+| $event.compare | Function | Sorting comparison function |
+| $event.preventDefault | Function | Prevent the sorting process |
+| senderVM | UTableView | Send event instance |
 
 #### @sort
 
-排序时触发
+Triggered when sorting
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.field | String | 排序顺序 |
-| $event.order | String | 排序字段 |
-| $event.compare | Function | 排序比较函数 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.field | String | Sort order |
+| $event.order | String | Sort field |
+| $event.compare | Function | Sorting comparison function |
+| senderVM | UTableView | Send event instance |
 
 #### @before-filter
 
-过滤前触发
+Trigger before filtering
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.field | Object | 过滤筛选对象 |
-| $event.preventDefault | Function | 阻止过滤流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.field | Object | Filter object |
+| $event.preventDefault | Function | Prevent filtering process |
+| senderVM | UTableView | Send event instance |
 
 #### @filter
 
-过滤时触发
+Triggered when filtering
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | Object | 过滤筛选对象 |
-| senderVM | UTableView | 发送事件实例 |
+| $event | Object | Filter object |
+| senderVM | UTableView | Send event instance |
 
 ### Selection Events
 
 #### @before-select
 
-选择某一项前触发
+Triggered before an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Any | 选择行的值 |
-| $event.oldValue | Any | 旧的值 |
-| $event.item | Object | 选择行相关对象 |
-| $event.oldItem | Object | 旧的选择行相关对象 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.value | Any | Value of the selected row |
+| $event.oldValue | Any | Old value |
+| $event.item | Object | Object related to the selected row |
+| $event.oldItem | Object | Old selected row related object |
+| $event.preventDefault | Function | Prevent the selection process |
+| senderVM | UTableView | Send event instance |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | Any | 选择行的值 |
-| senderVM | UTableView | 发送事件实例 |
+| $event | Any | Select the row's value |
+| senderVM | UTableView | Send event instance |
 
 #### @select
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Any | 改变后的值 |
-| $event.oldValue | Any | 旧的值 |
-| $event.item | Object | 选择行相关对象 |
-| $event.oldItem | Object | 旧的选择行相关对象 |
-| $event.selectedItem | Object | 最终选择行的对象。在`cancelable`的情况下，与`$event.item`不同 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.value | Any | The changed value |
+| $event.oldValue | Any | Old value |
+| $event.item | Object | Object related to the selected row |
+| $event.oldItem | Object | Old selected row related object |
+| $event.selectedItem | Object | The object of the final selected row. Different from `$event.item` in the case of `cancelable` |
+| senderVM | UTableView | Send event instance |
 
 #### @check
 
-多选模式中，选中节点时触发
+In multi-select mode, triggered when a node is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.checked | Boolean | 选中状态 |
-| $event.values | Array | 选择后的值 |
-| $event.oldValues | Array | 旧的值 |
-| $event.item | Object | 选择行相关对象 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.checked | Boolean | Checked state |
+| $event.values   | Array | Selected values   |
+| $event.oldValues   | Array | Old values   |
+| $event.item | Object | Object related to the selected row |
+| senderVM | UTableView | Send event instance |
 
 #### @change
 
-选择值改变时触发
+Fired when the selected value changes
 
-单选模式中：
-
-| Param | Type | Description |
-| ----- | ---- | ----------- |
-| $event.value | Any | 选择行的值 |
-| $event.oldValue | Any | 旧的值 |
-| $event.item | Object | 选择行相关对象 |
-| $event.oldItem | Object | 旧的选择行相关对象 |
-| senderVM | UTableView | 发送事件实例 |
-
-多选模式中：
+In single selection mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.values | Array | 改变后的值 |
-| $event.oldValues | Array | 旧的值 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.value | Any | Value of the selected row |
+| $event.oldValue | Any | Old value |
+| $event.item | Object | Object related to the selected row |
+| $event.oldItem | Object | Old selected row related object |
+| senderVM | UTableView | Send event instance |
+
+In multiple selection mode:
+
+| Param | Type | Description |
+| ----- | ---- | ----------- |
+| $event.values   | Array | The changed value |
+| $event.oldValues   | Array | Old values   |
+| senderVM | UTableView | Send event instance |
 
 #### @resize
 
-调整列宽时触发
+Triggered when the column width is adjusted
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.columnVM | UTableColumnVM | 调整的列实例 |
-| $event.index | Number | 列索引 |
-| width | Number | 调整后的宽度 |
-| oldWidth | Number | 调整前的宽度 |
+| $event.columnVM | UTableColumnVM | The adjusted column instance |
+| $event.index | Number | Column index |
+| width | Number | Adjusted width |
+| oldWidth | Number | Width before adjustment |
 
 ### Methods
 
 #### load()
 
-带缓存地加载
+Loading with cache
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
 
 #### reload()
 
-清除缓存，Reload
+Clear cache and reload
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
@@ -255,53 +255,53 @@
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| title | String | | 列标题 |
-| field | String | | data 中的字段名 |
-| width | String, Number | | 给列指定宽度，可以为数字或百分比 |
-| ellipsis | Boolean | `false` | 是否省略显示。默认文字超出时会换行 |
-| formatter | String, Object, Function, Formatter | `'placeholder'` | 格式器 |
+| title | String | | Column title |
+| field | String | | Field name in data |
+| width | String, Number | | Specify the width of the column, which can be a number or a percentage |
+| ellipsis | Boolean | `false` | Whether to omit the display. By default, the text will wrap when it exceeds the limit |
+| formatter | String, Object, Function, Formatter | `'placeholder'` | Formatter |
 | - |
-| sortable | Boolean | `false` | 该列是否可以排序 |
-| default-order | String | `'asc'` | 该列首次点击时的排序顺序 |
-| filters | Array\<{ text: string, value: any }\> | `'asc'` | 该列首次点击时的排序顺序 |
-| hidden | Boolean | `false` | 是否隐藏 |
-| type | String | | 列类型。可选值：`index`表示序号列，`radio`表示单选列，`checkbox`表示多选列，`expander`表示展开列。 |
-| start-index | Number | `1` | 当`type="index"`时的起始序号 |
+| sortable | Boolean | `false` | Whether the column can be sorted |
+| default-order | String | `'asc'` | The sort order when the column is first clicked |
+| filters | Array\<{ text: string, value: any }\> | `'asc'` | The sort order of the column when it is first clicked |
+| hidden | Boolean | `false` | Is it hidden |
+| type | String | | Column type. Optional values: `index` indicates a serial column, `radio` indicates a single-select column, `checkbox` indicates a multiple-select column, and `expander` indicates an expanded column. |
+| start-index | Number | `1` | Starting number when `type="index"` |
 
 ### Slots
 
 #### (default)
 
-在表格列中插入`<u-table-view-filters>`子组件。
+Insert the `<u-table-view-filters>` child component into the table column.
 
-#### cell
+#### Cell
 
-对单元格数据展示进行自定义。
-
-| Prop/Attr | Type | Description |
-| --------- | ---- | ----------- |
-| item | Object | 循环中的当前项 |
-| value | Any | item 中 field 字段对应的值 |
-| columnVM | String | 该列组件实例 |
-| rowIndex | Number | 行的索引 |
-| columnIndex | Number | 列的索引 |
-
-#### title
-
-对标题进行自定义。
+Customize the display of cell data.
 
 | Prop/Attr | Type | Description |
 | --------- | ---- | ----------- |
-| columnVM | String | 该列组件实例 |
-| columnIndex | Number | 列的索引 |
+| item | Object | Current item in the loop |
+| value | Any | The value of field in item |
+| columnVM | String | The column component instance |
+| rowIndex | Number | The index of the row |
+| columnIndex | Number | Index of the column |
 
-#### expand-content
+#### Title
 
-展开列的内容
+Customize the title.
 
 | Prop/Attr | Type | Description |
 | --------- | ---- | ----------- |
-| item | Object | 循环中的当前项 |
-| value | Any | item 中 field 字段对应的值 |
-| columnVM | String | 该列组件实例 |
-| rowIndex | Number | 行的索引 |
+| columnVM | String | The column component instance |
+| columnIndex | Number | Index of the column |
+
+#### Expand-Content
+
+Expand the contents of a column
+
+| Prop/Attr | Type | Description |
+| --------- | ---- | ----------- |
+| item | Object | Current item in the loop |
+| value | Any | The value of field in item |
+| columnVM | String | The column component instance |
+| rowIndex | Number | The index of the row |
