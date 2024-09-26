@@ -1,10 +1,10 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UTable 表格
+# UTable table
 
-**UI 组件**, **块级展示**
+**UI Components**, **Block Level Display**
 
-对表格样式做了简单的修饰。如果需要横向滚动、固定列、分页、排序、过滤等更多功能，请使用 [UTableView](../u-table-view)。
+The table style has been simply modified. If you need horizontal scrolling, fixed columns, paging, sorting, filtering and more, please use [UTableView](../u-table-view).
 
 ## Example
 ### Basic Usage
@@ -13,11 +13,11 @@
 <u-table>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -62,17 +62,17 @@
 
 ### Table Lines
 
-设置`line="both"`属性，使表格单元格之间由线条隔开。
+Set the `line="both"` attribute so that table cells are separated by lines.
 
 ``` html
 <u-table line="both">
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -115,17 +115,17 @@
 </u-table>
 ```
 
-也可以设置为`"horizontal"`，只显示水平线条。
+It can also be set to `"horizontal"` to display only horizontal lines.
 
 ``` html
 <u-table line="horizontal">
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -170,17 +170,17 @@
 
 ### Stripe Display
 
-添加`striped`属性，使表格具有斑马线条纹样式。
+Add the `striped` attribute to give the table a zebra stripe style.
 
 ``` html
 <u-table striped>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -223,19 +223,19 @@
 </u-table>
 ```
 
-### 悬浮高亮
+### Floating Highlight
 
-添加`hover`属性，使表格行在悬浮时能够高亮显示。
+Add the `hover` attribute so that table rows can be highlighted when hovering.
 
 ``` html
 <u-table hover>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -280,17 +280,17 @@
 
 ### Single Row Color
 
-在`<tr>`上用`color`属性，可以单独给某一行添加颜色。
+You can add color to a line individually by using the `color` attribute on `<tr>`.
 
 ``` html
 <u-table>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -333,19 +333,19 @@
 </u-table>
 ```
 
-### 组合修饰
+### Combination Modification
 
-表格组件的修饰属性可以组合使用。
+Modification properties of table components can be used in combination.
 
 ``` html
 <u-table line="both" striped hover>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -393,12 +393,12 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| line | boolean |  | `false` | 单元格之间是否显示分隔线条 |
-| striped | boolean |  | `false` | 表格行是否按斑马线条纹显示 |
-| hover | boolean |  | `false` | 表格行在悬浮时是否高亮显示 |
+| line | boolean | | `false` | Whether to display separation lines between cells |
+| striped | boolean | | `false` | Whether table rows are displayed in zebra stripes |
+| hover | boolean | | `false` | Whether table rows are highlighted when hovering |
 
 ### Slots
 
 #### (default)
 
-在表格中插入`<thead>`、`<tbody>`、`<tr>`、`<th>`、`<td>`标签。
+Insert `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>` tags into the table.

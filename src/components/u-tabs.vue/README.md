@@ -1,17 +1,17 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- This README.md is automatically generated based on api.yaml and docs/*.md for easy reference on GitHub and NPM. If you need to modify it, please view the source file -->
 
-# UTabs 标签页
-
-**UI 组件**, **路由链接**, **块级展示**
+# UTabs Tab
+s
+**UI Components**, **Routing Links**, **Block-Level Display**
 
 ## Example
-### Basic Usage
+### Basic usage
 
 ``` html
 <u-tabs>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式">样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style">Style Content</u-tab>
+    <u-tab title="Logic">Logical Content</u-tab>
 </u-tabs>
 ```
 
@@ -19,45 +19,45 @@
 
 ``` html
 <u-tabs value="B">
-    <u-tab title="模板" value="A">模板内容</u-tab>
-    <u-tab title="样式" value="B">样式内容</u-tab>
-    <u-tab title="逻辑" value="C">逻辑内容</u-tab>
+    <u-tab title="Template" value="A">Template Content</u-tab>
+    <u-tab title="Style" value="B">Style Content</u-tab>
+    <u-tab title="Logic" value="C">Logical Content</u-tab>
 </u-tabs>
 ```
 
-### Read Only and Disabled
+### Read-only and Disabled
 
 ``` html
 <u-tabs readonly>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式">样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style">Style Content</u-tab>
+    <u-tab title="Logic">Logical Content</u-tab>
 </u-tabs>
 <u-tabs disabled>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式">样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style">Style Content</u-tab>
+    <u-tab title="Logic">Logical Content</u-tab>
 </u-tabs>
 <u-tabs>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式" disabled>样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style" disabled>Style Content</u-tab>
+    <u-tab title="Logic">Logical Content</u-tab>
 </u-tabs>
 ```
 
-### 可关闭
+### Can be Closed
 
 ``` html
 <u-tabs closable>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式">样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
-    <u-tab title="文档">文档内容</u-tab>
-    <u-tab title="资源">资源内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style">Style Content</u-tab>
+    <u-tab title="Logic">Logical Content</u-tab>
+    <u-tab title="Document">Document Contents</u-tab>
+    <u-tab title="Resource">Resource Content</u-tab>
 </u-tabs>
 ```
 
-### 路由
+### Routing
 
 ``` html
 <u-tabs router>
@@ -67,28 +67,28 @@
 </u-tabs>
 ```
 
-### 插槽扩展
+### Slot Expansion
 
-- 在`<u-tabs>`上可以使用`extra`插槽，在右侧添加额外的内容；
-- 在`<u-tab>`上可以使用`title`插槽，自定义标签页的标题。
+- You can use the `extra` slot on `<u-tabs>` to add extra Content on the right;
+- You can use the `title` slot on `<u-tab>` to customize the title of the tab.
 
 <p></p>
 
 ``` html
 <u-tabs value="1">
     <u-tab value="0">
-        <span slot="title">模板 <u-label>1</u-label></span>
-        模板内容
+        <span slot="title">Template <u-label>1</u-label></span>
+        Template Contents
     </u-tab>
     <u-tab value="1">
-        <span slot="title">样式 <u-label>6</u-label></span>
-        样式内容
+        <span slot="title">Style <u-label>6</u-label></span>
+        Style Content
     </u-tab>
     <u-tab value="2">
-        <span slot="title">逻辑 <u-label>3</u-label></span>
-        逻辑内容
+        <span slot="title">Logic <u-label>3</u-label></span>
+        Logical Content
     </u-tab>
-    <u-checkbox slot="extra">全选</u-checkbox>
+    <u-checkbox slot="extra">Select All</u-checkbox>
 </u-tabs>
 ```
 
@@ -97,93 +97,93 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | any |  |  | 选中标签页的值 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
-| closable | boolean |  | `false` | 是否可以关闭 |
-| router | boolean |  | `false` | 是否根据 vue-router 来控制选择哪个标签页 |
+| value.sync, v-model | any | | | The value of the selected tab |
+| readonly | boolean | | `false` | Read-only |
+| disabled | boolean | | `false` | Disabled |
+| closable | boolean | | `false` | Can be closed |
+| router | boolean | | `false` | Whether to control which tab is selected based on vue-router |
 
 ### Slots
 
 #### (default)
 
-插入`<u-tab>`子组件。
+Inserts a `<u-tab>` subcomponent.
 
-#### extra
+#### Extra
 
-在标签右侧可以附加组件。
+Additional components can be added to the right side of the tab.
 
 ### Events
 
 #### @before-select
 
-选择某一页前触发
+Triggered before selecting a page
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选中标签页的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | UTab | 选中标签页实例 |
-| $event.oldVM | UTab | 旧的选中标签页实例 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | UTabs | 发送事件实例 |
+| $event.value | any | The value of the selected tab |
+| $event.oldValue | any | Old value |
+| $event.itemVM | UTab | Selected tab instance |
+| $event.oldVM | UTab | Old selected tab instance |
+| $event.preventDefault | Function | Prevent the selection process |
+| senderVM | UTabs | SendEventInstance |
 
 #### @select
 
-选择某一页时触发
+Triggered when a page is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选中标签页的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | UTab | 选中标签页实例 |
-| $event.oldVM | UTab | 旧的选中标签页实例 |
-| senderVM | UTabs | 发送事件实例 |
+| $event.value | any | The value of the selected tab |
+| $event.oldValue | any | Old value |
+| $event.itemVM | UTab | Selected tab instance |
+| $event.oldVM | UTab | Old selected tab instance |
+| senderVM | UTabs | SendEventInstance |
 
 #### @before-close
 
-关闭某一页前触发
+Triggered before closing a page
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 待关闭标签页的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | UTab | 待关闭的标签页实例 |
-| $event.preventDefault | Function | 阻止关闭流程 |
-| senderVM | UTabs | 发送事件实例 |
+| $event.value | any | The value of the tab to be closed |
+| $event.oldValue | any | Old value |
+| $event.itemVM | UTab | The instance of the tab to be closed |
+| $event.preventDefault | Function | Prevent the shutdown process |
+| senderVM | UTabs | SendEventInstance |
 
 #### @close
 
-关闭某一页时触发
+Triggered when a page is closed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 关闭的标签页的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | UTabs | 关闭的标签页实例 |
-| $event.preventDefault | Function | 阻止关闭后自动选择页的流程 |
-| senderVM | UTabs | 发送事件实例 |
+| $event.value | any | The value of the closed tab |
+| $event.oldValue | any | Old value |
+| $event.itemVM | UTabs | Closed tab instance |
+| $event.preventDefault | Function | Prevent the process of automatically selecting a page after closing |
+| senderVM | UTabs | SendEventInstance |
 
 ## UTab API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 标签页标题 |
-| value | any |  |  | 标签页的值 |
-| disabled | boolean |  | `false` | 是否禁用此标签页 |
-| href | string |  |  | 链接地址 |
-| target | string |  |  | 打开方式 |
-| to | string, Location |  |  | 需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。 |
-| replace | boolean |  | `false` | 需要 vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。 |
-| exact | boolean |  | `false` | 需要 vue-router，与`<router-link>`的`exact`属性相同。是否与路由完全一致时才高亮显示。 |
+| title | string | | | Tab title |
+| value | any | | | Value of the tab |
+| disabled | boolean | | `false` | Whether to disable this tab |
+| href | string | | | Link address |
+| target | string | | | Open method |
+| to | string, Location | | | Requires vue-router, same as `to` property of `<router-link>`. Can be a string or an object describing the target location. |
+| replace | boolean | | `false` | Requires vue-router, same as `replace` property of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation. |
+| exact | boolean | | `false` | Requires vue-router, same as `exact` property of `<router-link>`. Highlights only when it is exactly the same as the route. |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
-#### title
+#### Title
 
-自定义标题文本。
+Customize the title text.

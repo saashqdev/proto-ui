@@ -625,7 +625,7 @@ It can also be placed at the end of the column.
     <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
     <u-table-view-column title="Address" field="address"></u-table-view-column>
     <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-    <u-table-view-column type="expander" title="展开" width="8%">
+    <u-table-view-column type="expander" title="Expand" width="8%">
         <div slot="expand-content" slot-scope="{ item }">
             <u-list type="disc">
                 <u-list-item>{{ item.address }} 1</u-list-item>
@@ -664,7 +664,7 @@ Use the `accordion` attribute to enable Accordian Mode. When one item is expande
     <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
     <u-table-view-column title="Address" field="address"></u-table-view-column>
     <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-    <u-table-view-column type="expander" title="展开" width="8%">
+    <u-table-view-column type="expander" title="Expand" width="8%">
         <div slot="expand-content" slot-scope="{ item }">
             <u-list type="disc">
                 <u-list-item>{{ item.address }} 1</u-list-item>
@@ -705,7 +705,7 @@ Special columns set using `type` can be used with ordinary `field`.
     <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
     <u-table-view-column title="Address" field="address"></u-table-view-column>
     <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-    <u-table-view-column type="expander" title="展开" width="8%">
+    <u-table-view-column type="expander" title="Expand" width="8%">
         <span slot="cell" slot-scope="{ item }">{{ item.name }}</span>
         <div slot="expand-content" slot-scope="{ item }">
             <u-list type="disc">

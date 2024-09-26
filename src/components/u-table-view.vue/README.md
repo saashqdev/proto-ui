@@ -1,17 +1,17 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# UTableView 表格视图
+# UTableView Table View
 
-## 基础Example
-基础Example中展示了如何初步地在表格视图组件中配置数据、修饰样式，以及如何处理数据过多的情况。
+## Basic Example
+The basic Example shows how to initially configure data, modify styles in the table view component, and how to deal with excessive data.
 
 ### Basic Usage
 
-下面是表格视图组件中的Basic Usage。
+Below is Basic Usage in the table view component.
 
-以列的视角对数据进行配置，`title`为列的标题，`field`是数据中作为唯一识别的字段名。
+Configure data from a column perspective, `title` is the title of the column, and `field` is the uniquely identified field name in the data.
 
-列宽默认会平均分配，可以使用`width`对列宽进行适当调整，支持数值和百分比两种格式。
+Column widths are evenly distributed by default. You can use `width` to adjust the column width appropriately. Both numerical and percentage formats are supported.
 
 ``` html
 <u-table-view :data="[
@@ -64,7 +64,7 @@
 
 ### Single Row Color
 
-使用`rowColor`字段，可以单独给某一行添加颜色。
+Using the `rowColor` field, you can add color to a row individually.
 
 ``` html
 <u-table-view :data="[
@@ -100,7 +100,7 @@
 
 ### State
 
-表格会根据数据类型自动判断状态。
+The form will automatically determine the status based on the data type.
 
 #### Loading
 
@@ -126,7 +126,7 @@
 
 ### Formatter
 
-在表格的列组件中可以配置`formatter`属性，会自动将该列数据做一个格式化处理，类似于 Vue 的 filter。
+You can configure the `formatter` attribute in the column component of the table, which will automatically format the column data, similar to Vue's filter.
 
 ``` html
 <u-table-view :data="[
@@ -143,7 +143,7 @@
 </u-table-view>
 ```
 
-支持简单传入一个函数：
+Supports simply passing in a function:
 
 ``` vue
 <template>
@@ -173,9 +173,9 @@ export default {
 
 ### Column Slot
 
-如果需要对数据进行更加自定义的展示，可以使用列的`cell`插槽，定制想要的格式。
+If you need a more customized display of the data, you can use the `cell` slot of the column to customize the desired format.
 
-这个插槽为一个作用域插槽，会传入4个参数`item`、`value`、`columnVM`和`index`。
+This slot is a scope slot and will pass in 4 parameters `item`, `value`, `columnVM` and `index`.
 
 ``` html
 <u-table-view :data="[
@@ -200,7 +200,7 @@ export default {
 
 #### Fixed Header
 
-通过给`<u-table-view>`的样式设置`height`或`max-height`属性，可以限制表格高度。在数据较多的情况下，会自动固定表头。
+You can limit the height of the table by setting the `height` or `max-height` attribute to the `<u-table-view>` style. When there is a large amount of data, the header will be automatically fixed.
 
 ``` html
 <u-table-view striped :data="[
@@ -226,7 +226,7 @@ export default {
 
 #### Default Multi-Line Display
 
-某些情况下，我们会遇到文字过长的问题，默认会进行多行显示。
+In some cases, we will encounter the problem of too long text, and multi-line display will be performed by default.
 
 ``` html
 <u-table-view line="horizontal" striped :data="[
@@ -245,7 +245,7 @@ export default {
 
 #### Single Line Omitted Display
 
-这时可以对列设置`ellipsis`属性，使文本单行省略，鼠标悬浮时会有工具提示。
+At this time, you can set the `ellipsis` attribute on the column to omit a single line of text, and there will be a tool tip when the mouse is hovered.
 
 ``` html
 <u-table-view line="horizontal" striped :data="[
@@ -262,9 +262,9 @@ export default {
 </u-table-view>
 ```
 
-#### 横向滚动
+#### Horizontal Scrolling
 
-有时省略文字并不直观，可以考虑对所以列设置较长的宽度。产生横向滚动。
+Sometimes omitting text is not intuitive, so consider setting a longer width for all columns. Produces horizontal scrolling.
 
 ``` html
 <u-table-view striped :data="[
@@ -295,9 +295,9 @@ export default {
 </u-table-view>
 ```
 
-#### 固定列
+#### Fixed Columns
 
-也可以对左右边缘重要的列进行固定。
+You can also fix important columns on the left and right edges.
 
 ``` html
 <u-table-view striped :data="[
@@ -384,11 +384,11 @@ export default {
 
 ### Adjust Column Width
 
-开启`resizable`属性，可以调整列宽。
+Turn on the `resizable` attribute to adjust the column width.
 
-根据`resize-remaining`属性，调整列宽有三种效果。`sequence`表示保持总宽不变，优先后一列弥补宽度；`average`表示保持总宽不变，后面所有列平均弥补宽度；`none`表示不做任何处理，表格宽度变化。
+According to the `resize-remaining` attribute, adjusting column width has three effects. `sequence` means to keep the total width unchanged, and give priority to the next column to make up the width; `average` means to keep the total width unchanged, and all subsequent columns to make up the width on average; `none` means no processing is done, and the table width changes.
 
-#### sequence
+#### Sequence
 
 ``` html
 <u-table-view resizable line="horizontal" striped :data="[
@@ -405,7 +405,7 @@ export default {
 </u-table-view>
 ```
 
-#### average
+#### Average
 
 ``` html
 <u-table-view resizable resize-remaining="average" line="horizontal" striped :data="[
@@ -422,7 +422,7 @@ export default {
 </u-table-view>
 ```
 
-#### none
+#### None
 
 ``` html
 <u-table-view resizable resize-remaining="none" line="horizontal" striped :data="[
@@ -441,13 +441,13 @@ export default {
 
 ### Special Columns
 
-UTableView 中内置了一些特殊的列，通过设置`type`来开启。
+There are some special columns built into UTableView, which can be enabled by setting `type`.
 
-#### Serial Number列
+#### Serial Number Column
 
-添加一个`type="index"`的`<u-table-view-column>`，这个列中会显示每行的Serial Number。设置`start-index`可以改变初始值，默认为`1`。
+Add a `<u-table-view-column>` with `type="index"`, and the Serial Number of each row will be displayed in this column. Setting `start-index` can change the initial value, which defaults to `1`.
 
-> 注意：这种方式只能显示当前页的Serial Number，如果复杂的Serial Number请使用列插槽自定义。
+> Note: This method can only display the Serial Number of the current page. If the Serial Number is complex, please use column slot customization.
 
 ``` html
 <u-table-view striped :data="[
@@ -465,9 +465,9 @@ UTableView 中内置了一些特殊的列，通过设置`type`来开启。
 </u-table-view>
 ```
 
-#### 单选列
+#### Radio Selection Column
 
-开启`selectable`属性，可以选择行。
+Turn on the `selectable` attribute to select rows.
 
 ``` html
 <u-table-view striped hover selectable :data="[
@@ -485,9 +485,7 @@ UTableView 中内置了一些特殊的列，通过设置`type`来开启。
 </u-table-view>
 ```
 
-也可以添加一个`type="radio"`的`<u-table-view-column>`，这个列中会显示单项选择框，专门用于单选操作。
-
-通过`value-field`属性指定数据中唯一值的字段，然后`v-model`或`:value.sync`对选择值进行Two-Way Binding。
+You can also add a `<u-table-view-column>` with `type="radio"`. A single-item selection box will be displayed in this column, which is specially used for single-selection operations.
 
 ``` vue
 <template>
@@ -517,11 +515,11 @@ export default {
 </script>
 ```
 
-#### 多选列
+#### Multiple Selection Columns
 
-添加一个`type="checkbox"`的`<u-table-view-column>`，这个列中会显示多项选择框，用于多选操作。
+Add a `<u-table-view-column>` with `type="checkbox"`, and multiple selection boxes will be displayed in this column for multi-selection operations.
 
-控制多选有两种方式，一种是设置数据对应行的`checked`属性，该属性会与多项选择框进行Two-Way Binding。`disabled`属性可以禁用多项选择框。
+There are two ways to control multiple selection. One is to set the `checked` attribute of the corresponding row of data. This attribute will perform Two-Way Binding with the multiple selection box. The `disabled` attribute disables the multiple selection box.
 
 ``` vue
 <template>
@@ -550,7 +548,7 @@ export default {
 </script>
 ```
 
-另一种是通过`value-field`属性指定数据中唯一值的字段，再通过`:values.sync`对选择值进行Two-Way Binding。
+The other is to specify the unique value field in the data through the `value-field` attribute, and then perform Two-Way Binding on the selected value through `:values.sync`.
 
 ``` vue
 <template>
@@ -580,12 +578,12 @@ export default {
 </script>
 ```
 
-#### 展开列
+#### Expand Columns
 
 ``` vue
 <template>
 <u-table-view :data="data">
-    <u-table-view-column type="expander" title="展开" width="8%">
+    <u-table-view-column type="expander" title="Expand" width="8%">
         <div slot="expand-content" slot-scope="{ item }">
             <u-list type="disc">
                 <u-list-item>{{ item.address }} 1</u-list-item>
@@ -619,7 +617,7 @@ export default {
 </script>
 ```
 
-也可以放到列尾。
+It can also be placed at the end of the column.
 
 ``` vue
 <template>
@@ -628,7 +626,7 @@ export default {
     <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
     <u-table-view-column title="Address" field="address"></u-table-view-column>
     <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-    <u-table-view-column type="expander" title="展开" width="8%">
+    <u-table-view-column type="expander" title="Expand" width="8%">
         <div slot="expand-content" slot-scope="{ item }">
             <u-list type="disc">
                 <u-list-item>{{ item.address }} 1</u-list-item>
@@ -658,7 +656,7 @@ export default {
 </script>
 ```
 
-使用`accordion`属性开启Accordian Mode，在展开一项的同时会收起其他项。
+Use the `accordion` attribute to enable Accordian Mode. When one item is expanded, other items will be collapsed.
 
 ``` vue
 <template>
@@ -667,7 +665,7 @@ export default {
     <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
     <u-table-view-column title="Address" field="address"></u-table-view-column>
     <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-    <u-table-view-column type="expander" title="展开" width="8%">
+    <u-table-view-column type="expander" title="Expand" width="8%">
         <div slot="expand-content" slot-scope="{ item }">
             <u-list type="disc">
                 <u-list-item>{{ item.address }} 1</u-list-item>
@@ -697,9 +695,9 @@ export default {
 </script>
 ```
 
-#### Special Columns与普通功能共用
+#### Special Columns are Shared with Normal Functions
 
-使用`type`设置的特殊列可以与普通的`field`共用。
+Special columns set using `type` can be used with ordinary `field`.
 
 ``` vue
 <template>
@@ -708,7 +706,7 @@ export default {
     <u-table-view-column title="Mobile Phone Number" field="phone" width="20%"></u-table-view-column>
     <u-table-view-column title="Address" field="address"></u-table-view-column>
     <u-table-view-column title="Last Login Time" field="loginTime" formatter="placeholder | date" width="20%"></u-table-view-column>
-    <u-table-view-column type="expander" title="展开" width="8%">
+    <u-table-view-column type="expander" title="Expand" width="8%">
         <span slot="cell" slot-scope="{ item }">{{ item.name }}</span>
         <div slot="expand-content" slot-scope="{ item }">
             <u-list type="disc">
@@ -740,16 +738,16 @@ export default {
 ```
 
 
-## 数据相关
-### 数据与数据源
+## Data Related
+### Data and Data Sources
 
-当数据量不大时，可以用`data`属性一次性传进来`data`属性的格式为`Array<{ [field]: string, ... }>`，如基础Example中的例子。
+When the amount of data is not large, you can use the `data` attribute to pass it in at once. The format of the `data` attribute is `Array<{ [field]: string, ... }>`, such as the example in the basic Example.
 
-当数据量较大，或需要执行后端分页、排序和过滤等操作时，推荐使用`data-source`。
+It is recommended to use `data-source` when the amount of data is large, or when back-end paging, sorting, filtering and other operations need to be performed.
 
-### 分页
+### Pagination
 
-#### 前端分页
+#### Front-end Paging
 
 ``` vue
 <template>
@@ -788,7 +786,7 @@ export default {
 </script>
 ```
 
-#### Disposable backend data, frontend paging
+#### Disposable Backend Data, Frontend Paging
 
 ``` vue
 <template>
@@ -885,7 +883,7 @@ export default {
 
 #### Page Turner Function
 
-使用`show-total`、`show-sizer`、`show-jumper`这几个属性，可以对应开启翻译器的显示总页数、切换每页大小、页面跳转功能。
+Using the attributes `show-total`, `show-sizer`, and `show-jumper`, you can enable the translator's functions of displaying the total number of pages, switching the size of each page, and page jumping.
 
 ``` vue
 <template>
@@ -936,7 +934,7 @@ export default {
 
 ### Sort
 
-在`<u-table-view-column>`上给可以排序的列添加`sortable`属性，在`<u-table-view>`用`sorting`属性指定默认的排序字段和顺序。
+Add the `sortable` attribute to the sortable column on `<u-table-view-column>`, and use the `sorting` attribute on `<u-table-view>` to specify the default sort field and order.
 
 #### Front-End Sorting
 
@@ -1364,21 +1362,21 @@ export default {
 </script>
 ```
 
-## 常见问题
-### 控制显隐
+## FAQ
+### Control Visibility
 
-如果要对表格组件控制显隐，请尽量使用`v-if`而不要使用`v-show`。
+If you want to control the visibility of table components, please try to use `v-if` instead of `v-show`.
 
-因为有些尺寸是动态计算得出的，初始隐藏时计算的某些值不正确，`v-if`可以通过`mounted`触发`handleResize`方法，而`v-show`则不能。
+Because some sizes are calculated dynamically and some values   calculated during initial hiding are incorrect, `v-if` can trigger the `handleResize` method through `mounted`, but `v-show` cannot.
 
-比如在下面的例子中，使用了`max-height`的情况下,`v-show`会有些小问题。
+For example, in the following example, when `max-height` is used, `v-show` will have some minor problems.
 
 #### v-if
 
 ``` vue
 <template>
 <div>
-    <u-link @click="visible = !visible">展开/收起</u-link>
+    <u-link @click="visible = !visible">Expand/Collapse</u-link>
     <div>
         <u-table-view v-if="visible" striped :data="data" style="max-height: 300px;">
             <u-table-view-column title="Serial Number" field="id"></u-table-view-column>
@@ -1417,7 +1415,7 @@ export default {
 ``` vue
 <template>
 <div>
-    <u-link @click="visible = !visible">展开/收起</u-link>
+    <u-link @click="visible = !visible">Expand/Collapse</u-link>
     <div>
         <u-table-view v-show="visible" striped :data="data" style="max-height: 300px;">
             <u-table-view-column title="Serial Number" field="id"></u-table-view-column>
@@ -1456,244 +1454,244 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 表格标题 |
-| title-alignment | string |  | `'center'` | 表格标题对齐方式 |
-| border | boolean |  |  | 是否显示边框 |
-| line | boolean |  | `false` | 单元格之间是否显示分隔线条 |
-| striped | boolean |  | `false` | 表格行是否按斑马线条纹显示 |
-| hover | boolean |  | `false` | 表格行在悬浮时是否高亮显示 |
-| show-head | boolean |  | `true` | 是否显示表格头部 |
-| loading | boolean |  |  | 手动设置是否Loading |
-| loading-text | string |  | `'Loading'` | Loading的文字 |
-| error | boolean |  |  | 手动设置是否加载失败 |
-| error-text | string |  | `'加载失败，请重试'` | 加载失败时的文字 |
-| empty-text | string |  | `'暂无数据'` | 暂无数据时的文字 |
+| title | string | | | Table title |
+| title-alignment | string | | `'center'` | Table title alignment |
+| border | boolean | | | Whether to display the border |
+| line | boolean | | `false` | Whether to display separator lines between cells |
+| striped | boolean | | `false` | Whether the table rows are displayed with zebra stripes |
+| hover | boolean | | `false` | Whether the table row is highlighted when hovering |
+| show-head | boolean | | `true` | Whether to display the table header |
+| loading | boolean | | | Manually set whether loading is in progress |
+| loading-text | string | | `'Loading'` | Loading text |
+| error | boolean | | | Manually set whether loading failed |
+| error-text | string | | `'Load failed, please try again'` | Text when loading fails |
+| empty-text | string | | `'No data yet'` | Text when there is no data |
 | **Data Props/Attrs** |  |  |  |  |
-| data | Array\<{ \[field\]: string, ... }\> |  |  | 表格数据 |
-| data-source | object, Function, DataSource |  |  | 多功能数据源 |
-| initial-load | boolean |  | `true` | 是否在初始时立即加载 |
-| pageable | boolean |  | `false` | 是否需要分页 |
-| page-size.sync | number |  | `20` | 分页大小 |
-| page-size-options | Array |  | `[10, 20, 50]` | 每页大小选项列表 |
-| show-total | boolean |  | `false` | 是否显示总条目数 |
-| show-sizer | boolean |  | `false` | 是否显示切换每页大小选项 |
-| show-jumper | boolean |  | `false` | 是否显示页面跳转输入框 |
-| sorting.sync | object\<{ field: string, order: string, compare: Function }\> |  | `'{ field: undefined, order: 'desc' }'` | 当前排序字段和顺序 |
-| default-order | string |  | `'asc'` | 所有列首次点击时的排序顺序 |
-| filtering.sync | object |  |  | 过滤项 |
-| remote-paging | boolean |  | `false` | 是否使用后端分页 |
-| remote-sorting | boolean |  | `false` | 是否使用后端排序 |
-| remote-filtering | boolean |  | `false` | 是否使用后端过滤 |
+| data | Array\<{ \[field\]: string, ... }\> | | | Table data |
+| data-source | object, Function, DataSource | | | Multi-function data source |
+| initial-load | boolean | | `true` | Whether to load immediately at the initial time |
+| pageable | boolean | | `false` | Whether paging is required |
+| page-size.sync | number | | `20` | Paging size |
+| page-size-options | Array | | `[10, 20, 50]` | List of page size options |
+| show-total | boolean | | `false` | Whether to display the total number of entries |
+| show-sizer | boolean | | `false` | Whether to display the option to switch the size of each page |
+| show-jumper | boolean | | `false` | Whether to display the page jump input box |
+| sorting.sync | object\<{ field: string, order: string, compare: Function }\> | | `'{ field: undefined, order: 'desc' }'` | Current sorting field and order |
+| default-order | string | | `'asc'` | Sort order of all columns when first clicked |
+| filtering.sync | object | | | Filter item |
+| remote-paging | boolean | | `false` | Whether to use backend paging |
+| remote-sorting | boolean | | `false` | Whether to use backend sorting |
+| remote-filtering | boolean | | `false` | Whether to use backend filtering |
 | **Selection Props/Attrs** |  |  |  |  |
-| value-field | string |  |  | 在单选和多选操作中，指定数据唯一值的字段 |
-| value.sync, v-model | any |  |  | 当前选择的值 |
-| values.sync | Array |  |  | 多项选择的值 |
-| selectable | boolean |  | `false` | 是否可以选择行 |
-| cancelable | boolean |  | `false` | 是否可以取消选择 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value-field | string | | | In single-select and multi-select operations, the field that specifies the unique value of the data |
+| value.sync, v-model | any | | | The currently selected value |
+| values.sync | Array | | | Values of multiple selections |
+| selectable | boolean | | `false` | Whether the row can be selected |
+| cancelable | boolean | | `false` | Whether the selection can be canceled |
+| readonly | boolean | | `false` | Read-only |
+| disabled | boolean | | `false` | Disabled |
 | **Other Props/Attrs** |  |  |  |  |
-| accordion | boolean |  | `false` | 在有`expander`列的情况下，展开一行的同时，是否收起其它行 |
-| resizable | boolean |  | `false` | 是否可以调整列宽 |
-| resize-remaining | boolean |  | `'sequence'` | 调整列宽效果。可选值：`sequence`表示保持总宽不变，优先后一列弥补宽度；`average`表示保持总宽不变，后面所有列平均弥补宽度；`none`表示不做任何处理，表格宽度变化。 |
+| accordion | boolean | | `false` | When there is an `expander` column, whether to collapse other rows when expanding a row |
+| resizable | boolean | | `false` | Whether the column width can be adjusted |
+| resize-remaining | boolean | | `'sequence'` | Adjust the column width effect. Optional values: `sequence` means keeping the total width unchanged, and the next column will make up the width first; `average` means keeping the total width unchanged, and all the following columns will make up the width evenly; `none` means no processing is done, and the table width changes. |
 
 ### Slots
 
 #### (default)
 
-在表格中插入`<u-table-view-column>`子组件。
+Insert the `<u-table-view-column>` child component into the table.
 
-#### loading
+#### Loading
 
-自定义加载中。
+Customization loading.
 
-#### error
+#### Error
 
-自定义错误。
+Custom error.
 
-#### empty
+#### Empty
 
-自定义空态。
+Custom empty state.
 
 ### Events
 
 #### @before-load
 
-加载前触发
+Triggered before loading
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止加载流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.preventDefault | Function | Prevent loading process |
+| senderVM | UTableView | Send event instance |
 
 #### @load
 
-加载时触发
+Triggered on load
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | UTableView | 发送事件实例 |
+| $event | | Empty |
+| senderVM | UTableView | Send event instance |
 
 #### @before-page
 
-切换分页前触发
+Triggered before switching pages
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.size | number | 分页大小 |
-| $event.oldSize | number | 分页大小 |
-| $event.number | number | 当前页数 |
-| $event.oldNumber | number | 旧的页数 |
-| $event.preventDefault | Function | 阻止切换分页流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.size | number | Paging size |
+| $event.oldSize | number | Paging size |
+| $event.number | number | Current page number |
+| $event.oldNumber | number | Old page number |
+| $event.preventDefault | Function | Prevent paging process from switching |
+| senderVM | UTableView | Send event instance |
 
 #### @page
 
-切换分页或改变分页大小时触发
+Triggered when switching pages or changing page size
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.size | number | 分页大小 |
-| $event.oldSize | number | 分页大小 |
-| $event.number | number | 当前页数 |
-| $event.oldNumber | number | 旧的页数 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.size | number | Paging size |
+| $event.oldSize | number | Paging size |
+| $event.number | number | Current page number |
+| $event.oldNumber | number | Old page number |
+| senderVM | UTableView | Send event instance |
 
 #### @before-sort
 
-排序前触发
+Triggered before sorting
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.field | string | 排序顺序 |
-| $event.order | string | 排序字段 |
-| $event.compare | Function | 排序比较函数 |
-| $event.preventDefault | Function | 阻止排序流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.field | string | Sort order |
+| $event.order | string | Sort field |
+| $event.compare | Function | Sorting comparison function |
+| $event.preventDefault | Function | Prevent the sorting process |
+| senderVM | UTableView | Send event instance |
 
 #### @sort
 
-排序时触发
+Triggered when sorting
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.field | string | 排序顺序 |
-| $event.order | string | 排序字段 |
-| $event.compare | Function | 排序比较函数 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.field | string | Sort order |
+| $event.order | string | Sort field |
+| $event.compare | Function | Sorting comparison function |
+| senderVM | UTableView | Send event instance |
 
 #### @before-filter
 
-过滤前触发
+Trigger before filtering
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.field | object | 过滤筛选对象 |
-| $event.preventDefault | Function | 阻止过滤流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.field | object | Filter object |
+| $event.preventDefault | Function | Prevent filtering process |
+| senderVM | UTableView | Send event instance |
 
 #### @filter
 
-过滤时触发
+Triggered when filtering
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | object | 过滤筛选对象 |
-| senderVM | UTableView | 发送事件实例 |
+| $event | object | Filter object |
+| senderVM | UTableView | Send event instance |
 
 #### @before-select
 
-选择某一项前触发
+Triggered before an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择行的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择行相关对象 |
-| $event.oldItem | object | 旧的选择行相关对象 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.value | any | Value of the selected row |
+| $event.oldValue | any | Old value |
+| $event.item | object | Select row related object |
+| $event.oldItem | object | Old selected row related object |
+| $event.preventDefault | Function | Prevent the selection process |
+| senderVM | UTableView | Send event instance |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | any | 选择行的值 |
-| senderVM | UTableView | 发送事件实例 |
+| $event | any | Select the value of the row |
+| senderVM | UTableView | Send event instance |
 
 #### @select
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 改变后的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择行相关对象 |
-| $event.oldItem | object | 旧的选择行相关对象 |
-| $event.selectedItem | object | 最终选择行的对象。在`cancelable`的情况下，与`$event.item`不同 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.value | any | Changed value |
+| $event.oldValue | any | Old value |
+| $event.item | object | Select row related object |
+| $event.oldItem | object | Old selected row related object |
+| $event.selectedItem | object | The object of the final selected row. Different from `$event.item` in the case of `cancelable` |
+| senderVM | UTableView | Send event instance |
 
 #### @check
 
-多选模式中，选中节点时触发
+In multi-select mode, triggered when a node is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.checked | boolean | 选中状态 |
-| $event.values | Array | 选择后的值 |
-| $event.oldValues | Array | 旧的值 |
-| $event.item | object | 选择行相关对象 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.checked | boolean | Checked state |
+| $event.values   | Array | Selected values   |
+| $event.oldValues   | Array | Old values   |
+| $event.item | object | Select row related object |
+| senderVM | UTableView | Send event instance |
 
 #### @change
 
-选择值改变时触发。单选模式中：
+Triggered when the selected value changes. In single selection mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择行的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择行相关对象 |
-| $event.oldItem | object | 旧的选择行相关对象 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.value | any | Value of the selected row |
+| $event.oldValue | any | Old value |
+| $event.item | object | Select row related object |
+| $event.oldItem | object | Old selected row related object |
+| senderVM | UTableView | Send event instance |
 
 #### @change
 
-选择值改变时触发。多选模式中：
+Fired when the selected value changes. In multi-select mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.values | Array | 改变后的值 |
-| $event.oldValues | any | 旧的值 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.values   | Array | The changed value |
+| $event.oldValues   | any | Old value |
+| senderVM | UTableView | Send event instance |
 
 #### @resize
 
-调整列宽时触发
+Triggered when the column width is adjusted
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.columnVM | UTableColumnVM | 调整的列实例 |
-| $event.index | number | 列索引 |
-| width | number | 调整后的宽度 |
-| oldWidth | number | 调整前的宽度 |
+| $event.columnVM | UTableColumnVM | The adjusted column instance |
+| $event.index | number | Column index |
+| width | number | Adjusted width |
+| oldWidth | number | width before adjustment |
 
 ### Methods
 
 #### load()
 
-带缓存地加载
+Loading with cache
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### reload()
 
-清除缓存，Reload
+Clear cache and reload
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
@@ -1703,53 +1701,53 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 列标题 |
-| field | string |  |  | data 中的字段名 |
-| width | string, number |  |  | 给列指定宽度，可以为数字或百分比 |
-| ellipsis | boolean |  | `false` | 是否省略显示。默认文字超出时会换行 |
+| title | string | | | Column title |
+| field | string | | | Field name in data |
+| width | string, number | | | Specify the width of the column, which can be a number or a percentage |
+| ellipsis | boolean | | `false` | Whether to omit the display. By default, the text will wrap when it exceeds the limit |
 | formatter | string, object, Function, Formatter |  | `'placeholder'` | Formatter |
 | - |  |  |  |  |
-| sortable | boolean |  | `false` | 该列是否可以排序 |
-| default-order | string |  | `'asc'` | 该列首次点击时的排序顺序 |
-| filters | Array\<{ text: string, value: any }\> |  | `'asc'` | 该列首次点击时的排序顺序 |
-| hidden | boolean |  | `false` | 是否隐藏 |
-| type | string |  |  | 列类型。可选值：`index`表示Serial Number列，`radio`表示单选列，`checkbox`表示多选列，`expander`表示展开列。 |
-| start-index | number |  | `1` | 当`type="index"`时的起始Serial Number |
+| sortable | boolean | | `false` | Whether the column can be sorted |
+| default-order | string | | `'asc'` | The sort order when the column is first clicked |
+| filters | Array\<{ text: string, value: any }\> | | `'asc'` | The sort order of the column when it is first clicked |
+| hidden | boolean | | `false` | Is it hidden? |
+| type | string | | | Column type. Optional values: `index` indicates serial column, `radio` indicates single-select column, `checkbox` indicates multiple-select column, `expander` indicates expanded column. |
+| start-index | number | | `1` | Starting number when `type="index"` |
 
 ### Slots
 
 #### (default)
 
-在表格列中插入`<u-table-view-filters>`子组件。
+Insert the `<u-table-view-filters>` child component into the table column.
 
-#### cell
+#### Cell
 
-对单元格数据展示进行自定义。
-
-| Prop | Type | Description |
-| ---- | ---- | ----------- |
-| item | object | 循环中的当前项 |
-| value | any | item 中 field 字段对应的值 |
-| columnVM | string | 该列组件实例 |
-| rowIndex | number | 行的索引 |
-| columnIndex | number | 列的索引 |
-
-#### title
-
-对标题进行自定义。
+Customize the display of cell data.
 
 | Prop | Type | Description |
 | ---- | ---- | ----------- |
-| columnVM | string | 该列组件实例 |
-| columnIndex | number | 列的索引 |
+| item | object | Current item in loop |
+| value | any | The value corresponding to the field in item |
+| columnVM | string | The column component instance |
+| rowIndex | number | Row index |
+| columnIndex | number | Column index |
 
-#### expand-content
+#### Title
 
-展开列的内容
+Customize the title.
 
 | Prop | Type | Description |
 | ---- | ---- | ----------- |
-| item | object | 循环中的当前项 |
-| value | any | item 中 field 字段对应的值 |
-| columnVM | string | 该列组件实例 |
-| rowIndex | number | 行的索引 |
+| columnVM | string | The column component instance |
+| columnIndex | number | Column index |
+
+#### Expand-Content
+
+Expand the contents of a column
+
+| Prop | Type | Description |
+| ---- | ---- | ----------- |
+| item | object | Current item in loop |
+| value | any | The value corresponding to the field in item |
+| columnVM | string | The column component instance |
+| rowIndex | number | Row index |

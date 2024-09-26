@@ -2,9 +2,9 @@
 
 ``` html
 <u-tabs>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式">样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style">Style Content</u-tab>
+    <u-tab title="Logic">Logical Content</u-tab>
 </u-tabs>
 ```
 
@@ -12,9 +12,9 @@
 
 ``` html
 <u-tabs value="B">
-    <u-tab title="模板" value="A">模板内容</u-tab>
-    <u-tab title="样式" value="B">样式内容</u-tab>
-    <u-tab title="逻辑" value="C">逻辑内容</u-tab>
+    <u-tab title="Template" value="A">Template Content</u-tab>
+    <u-tab title="Style" value="B">Style Content</u-tab>
+    <u-tab title="Logic" value="C">Logic Content</u-tab>
 </u-tabs>
 ```
 
@@ -22,35 +22,35 @@
 
 ``` html
 <u-tabs readonly>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式">样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style">Style Content</u-tab>
+    <u-tab title="Logic">Logic Content</u-tab>
 </u-tabs>
 <u-tabs disabled>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式">样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style">Style Content</u-tab>
+    <u-tab title="Logic">Logic Content</u-tab>
 </u-tabs>
 <u-tabs>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式" disabled>样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style" disabled>Style Content</u-tab>
+    <u-tab title="Logic">Logic Content</u-tab>
 </u-tabs>
 ```
 
-### 可关闭
+### Can be Closed
 
 ``` html
 <u-tabs closable>
-    <u-tab title="模板">模板内容</u-tab>
-    <u-tab title="样式">样式内容</u-tab>
-    <u-tab title="逻辑">逻辑内容</u-tab>
-    <u-tab title="文档">文档内容</u-tab>
-    <u-tab title="资源">资源内容</u-tab>
+    <u-tab title="Template">Template Content</u-tab>
+    <u-tab title="Style">Style Content</u-tab>
+    <u-tab title="Logic">Logic Content</u-tab>
+    <u-tab title="Document">Document Content</u-tab>
+    <u-tab title="Resource">Resource Content</u-tab>
 </u-tabs>
 ```
 
-### 路由
+### Routing
 
 ``` html
 <u-tabs router>
@@ -60,27 +60,27 @@
 </u-tabs>
 ```
 
-### 插槽扩展
+### Slot Expansion
 
-- 在`<u-tabs>`上可以使用`extra`插槽，在右侧添加额外的内容；
-- 在`<u-tab>`上可以使用`title`插槽，自定义标签页的标题。
+- You can use the `extra` slot on `<u-tabs>` to add extra content on the right;
+- You can use the `title` slot on `<u-tab>` to customize the title of the tab page.
 
 <p></p>
 
 ``` html
 <u-tabs value="1">
     <u-tab value="0">
-        <span slot="title">模板 <u-label>1</u-label></span>
-        模板内容
+        <span slot="title">Template <u-label>1</u-label></span>
+        Template Content
     </u-tab>
     <u-tab value="1">
-        <span slot="title">样式 <u-label>6</u-label></span>
-        样式内容
+        <span slot="title">Style <u-label>6</u-label></span>
+        Style Content
     </u-tab>
     <u-tab value="2">
-        <span slot="title">逻辑 <u-label>3</u-label></span>
-        逻辑内容
+        <span slot="title">Logic <u-label>3</u-label></span>
+        Logic Content
     </u-tab>
-    <u-checkbox slot="extra">全选</u-checkbox>
+    <u-checkbox slot="extra">Select All</u-checkbox>
 </u-tabs>
 ```

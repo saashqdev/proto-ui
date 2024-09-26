@@ -1,17 +1,17 @@
-### 控制显隐
+### Control Visibility
 
-如果要对表格组件控制显隐，请尽量使用`v-if`而不要使用`v-show`。
+If you want to control the visibility of table components, please try to use `v-if` instead of `v-show`.
 
-因为有些尺寸是动态计算得出的，初始隐藏时计算的某些值不正确，`v-if`可以通过`mounted`触发`handleResize`方法，而`v-show`则不能。
+Because some sizes are calculated dynamically and some values   calculated during initial hiding are incorrect, `v-if` can trigger the `handleResize` method through `mounted`, but `v-show` cannot.
 
-比如在下面的例子中，使用了`max-height`的情况下,`v-show`会有些小问题。
+For example, in the following example, when `max-height` is used, `v-show` will have some minor problems.
 
 #### v-if
 
 ``` vue
 <template>
 <div>
-    <u-link @click="visible = !visible">展开/收起</u-link>
+    <u-link @click="visible = !visible">Expand/Collapse</u-link>
     <div>
         <u-table-view v-if="visible" striped :data="data" style="max-height: 300px;">
             <u-table-view-column title="Serial Number" field="id"></u-table-view-column>
@@ -50,7 +50,7 @@ export default {
 ``` vue
 <template>
 <div>
-    <u-link @click="visible = !visible">展开/收起</u-link>
+    <u-link @click="visible = !visible">Expand/Collapse</u-link>
     <div>
         <u-table-view v-show="visible" striped :data="data" style="max-height: 300px;">
             <u-table-view-column title="Serial Number" field="id"></u-table-view-column>

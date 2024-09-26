@@ -4,7 +4,7 @@
 <u-tabs>
     <u-tab v-for="item in list" :key="item" :title="item"></u-tab>
 </u-tabs>
-<u-button @click="add">添加</u-button>
+<u-button @click="add">Add To</u-button>
 </div>
 </template>
 <script>

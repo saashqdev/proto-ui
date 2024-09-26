@@ -1,56 +1,56 @@
 - name: u-table-view
-  title: 表格视图
+  title: Table View
   docs:
-    data: 数据相关
+    data: data related
   attrs:
     - name: title
       type: string
       default: null
-      description: 表格标题
+      description: Table title
     - name: title-alignment
       type: string
       default: center
-      description: 表格标题对齐方式
+      description: Table title alignment
     - name: border
       type: boolean
       default: null
-      description: 是否显示边框
+      description: Whether to display the border
     - name: line
       type: boolean
       default: false
-      description: 单元格之间是否显示分隔线条
+      description: Whether to display separator lines between cells
     - name: striped
       type: boolean
       default: false
-      description: 表格行是否按斑马线条纹显示
+      description: Whether the table rows are displayed as zebra stripes
     - name: hover
       type: boolean
       default: false
-      description: 表格行在悬浮时是否高亮显示
+      description: Whether the table row is highlighted when it is suspended
     - name: show-head
       type: boolean
       default: true
-      description: 是否显示表格头部
+      description: Whether to display the table header
     - name: loading
       type: boolean
       default: null
-      description: 手动设置是否Loading
+      description: Manually set whether loading is in progress
     - name: loading-text
       type: string
-      default: Loading
-      description: Loading的文字
+      default: loading
+      description: The text being loaded
     - name: error
       type: boolean
       default: null
-      description: 手动设置是否加载失败
+      description: Manually set whether loading fails
     - name: error-text
       type: string
-      default: 加载失败，请重试
-      description: 加载失败时的文字
+      default: Load failed, please try again
+      description: text when loading fails
     - name: empty-text
       type: string
-      default: 暂无数据
-      description: 暂无数据时的文字
+      default: No data
+      description: Text when there is no data
     - name: "**Data Props/Attrs**"
       type: ""
       default: null
@@ -58,63 +58,63 @@
     - name: data
       type: "Array<{ [field]: string, ... }>"
       default: null
-      description: 表格数据
+      description: Table data
     - name: data-source
       type: object, Function, DataSource
       default: null
-      description: 多功能数据源
+      description: Multifunctional data source
     - name: initial-load
       type: boolean
       default: true
-      description: 是否在初始时立即加载
+      description: Whether to load immediately at the beginning
     - name: pageable
       type: boolean
       default: false
-      description: 是否需要分页
+      description: Whether paging is required
     - name: page-size.sync
       type: number
       default: 20
-      description: 分页大小
+      description: Paging size
     - name: page-size-options
       type: Array
       default: [10, 20, 50]
-      description: 每页大小选项列表
+      description: A list of page size options
     - name: show-total
       type: boolean
       default: false
-      description: 是否显示总条目数
+      description: Whether to display the total number of entries
     - name: show-sizer
       type: boolean
       default: false
-      description: 是否显示切换每页大小选项
+      description: Whether to display the option to switch the page size
     - name: show-jumper
       type: boolean
       default: false
-      description: 是否显示页面跳转输入框
+      description: Whether to display the page jump input box
     - name: sorting.sync
       type: "object<{ field: string, order: string, compare: Function }>"
       default: "{ field: undefined, order: 'desc' }"
-      description: 当前排序字段和顺序
+      description: Current sorting field and order
     - name: default-order
       type: string
       default: asc
-      description: 所有列首次点击时的排序顺序
+      description: The sort order of all columns when first clicked
     - name: filtering.sync
       type: object
       default: null
-      description: 过滤项
+      description: Filter item
     - name: remote-paging
       type: boolean
       default: false
-      description: 是否使用后端分页
+      description: Whether to use backend paging
     - name: remote-sorting
       type: boolean
       default: false
-      description: 是否使用后端排序
+      description: Whether to use backend sorting
     - name: remote-filtering
       type: boolean
       default: false
-      description: 是否使用后端过滤
+      description: Whether to use backend filtering
     - name: "**Selection Props/Attrs**"
       type: ""
       default: null
@@ -122,31 +122,31 @@
     - name: value-field
       type: string
       default: null
-      description: 在单选和多选操作中，指定数据唯一值的字段
+      description: In single-select and multi-select operations, the field that specifies the unique value of the data
     - name: value.sync, v-model
       type: any
       default: null
-      description: 当前选择的值
+      description: The currently selected value
     - name: values.sync
       type: Array
       default: null
-      description: 多项选择的值
+      description: Multiple choice value
     - name: selectable
       type: boolean
       default: false
-      description: 是否可以选择行
+      description: Whether the row can be selected
     - name: cancelable
       type: boolean
       default: false
-      description: 是否可以取消选择
+      description: Whether the selection can be canceled
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
     - name: "**Other Props/Attrs**"
       type: ""
       default: null
@@ -154,275 +154,275 @@
     - name: accordion
       type: boolean
       default: false
-      description: 在有`expander`列的情况下，展开一行的同时，是否收起其它行
+      description: When there is an `expander` column, when expanding a row, should other rows be collapsed?
     - name: resizable
       type: boolean
       default: false
-      description: 是否可以调整列宽
+      description: Whether the column width can be adjusted
     - name: resize-remaining
       type: boolean
       default: sequence
-      description: 调整列宽效果。可选值：`sequence`表示保持总宽不变，优先后一列弥补宽度；`average`表示保持总宽不变，后面所有列平均弥补宽度；`none`表示不做任何处理，表格宽度变化。
+      description: Adjust the column width. Optional values - `sequence` means keep the total width unchanged, and the next column will make up the width first; `average` means keep the total width unchanged, and all the following columns will make up the width evenly; `none` means no processing is done, and the table width changes.
   slots:
     - name: default
-      description: 在表格中插入`<u-table-view-column>`子组件。
+      description: Inserts a `<u-table-view-column>` subcomponent into the table.
     - name: loading
-      description: 自定义加载中。
+      description: Customization loading.
     - name: error
-      description: 自定义错误。
+      description: Custom error.
     - name: empty
-      description: 自定义空态。
+      description: Custom empty state.
   events:
     - name: before-load
-      description: 加载前触发
+      description: Triggered before loading
       params:
         - name: $event.preventDefault
           type: Function
-          description: 阻止加载流程
+          description: Block loading process
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: load
-      description: 加载时触发
+      description: Triggered when loading
       params:
         - name: $event
           type: ""
           description: Empty
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: before-page
-      description: 切换分页前触发
+      description: Triggered before switching pages
       params:
         - name: $event.size
           type: number
-          description: 分页大小
+          description: Paging size
         - name: $event.oldSize
           type: number
-          description: 分页大小
+          description: Paging size
         - name: $event.number
           type: number
-          description: 当前页数
+          description: Ccurrent page number
         - name: $event.oldNumber
           type: number
-          description: 旧的页数
+          description: Old page number
         - name: $event.preventDefault
           type: Function
-          description: 阻止切换分页流程
+          description: Prevent switching paging process
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: page
-      description: 切换分页或改变分页大小时触发
+      description: Triggered when switching pages or changing page size
       params:
         - name: $event.size
           type: number
-          description: 分页大小
+          description: Paging size
         - name: $event.oldSize
           type: number
-          description: 分页大小
+          description: Paging size
         - name: $event.number
           type: number
-          description: 当前页数
+          description: Current page number
         - name: $event.oldNumber
           type: number
-          description: 旧的页数
+          description: Old page number
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: before-sort
-      description: 排序前触发
+      description: Triggered before sorting
       params:
         - name: $event.field
           type: string
-          description: 排序顺序
+          description: Sort order
         - name: $event.order
           type: string
-          description: 排序字段
+          description: Sort field
         - name: $event.compare
           type: Function
-          description: 排序比较函数
+          description: Sort comparison function
         - name: $event.preventDefault
           type: Function
-          description: 阻止排序流程
+          description: Stop the sorting process
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: sort
-      description: 排序时触发
+      description: Triggered when sorting
       params:
         - name: $event.field
           type: string
-          description: 排序顺序
+          description: Sort order
         - name: $event.order
           type: string
-          description: 排序字段
+          description: Sort field
         - name: $event.compare
           type: Function
-          description: 排序比较函数
+          description: sort comparison function
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: before-filter
-      description: 过滤前触发
+      description: Triggered before filtering
       params:
         - name: $event.field
           type: object
-          description: 过滤筛选对象
+          description: Filter object
         - name: $event.preventDefault
           type: Function
-          description: 阻止过滤流程
+          description: Block filtering process
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: filter
-      description: 过滤时触发
+      description: Triggered when filtering
       params:
         - name: $event
           type: object
-          description: 过滤筛选对象
+          description: Filter object
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: before-select
-      description: 选择某一项前触发
+      description: Triggered before selecting an item
       params:
         - name: $event.value
           type: any
-          description: 选择行的值
+          description: The value of the selected row
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择行相关对象
+          description: Select row related object
         - name: $event.oldItem
           type: object
-          description: 旧的选择行相关对象
+          description: Old selected row related object
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: input
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event
           type: any
-          description: 选择行的值
+          description: The value of the selected row
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event.value
           type: any
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择行相关对象
+          description: Select row related object
         - name: $event.oldItem
           type: object
-          description: 旧的选择行相关对象
+          description: Old selected row related object
         - name: $event.selectedItem
           type: object
-          description: 最终选择行的对象。在`cancelable`的情况下，与`$event.item`不同
+          description: The object of the last selected row. In the case of `cancelable`, it is different from `$event.item`
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: check
-      description: 多选模式中，选中节点时触发
+      description: In multi-select mode, triggered when a node is selected
       params:
         - name: $event.checked
           type: boolean
-          description: 选中状态
+          description: Selected state
         - name: $event.values
           type: Array
-          description: 选择后的值
+          description: The selected value
         - name: $event.oldValues
           type: Array
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择行相关对象
+          description: Select row related object
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 选择值改变时触发。单选模式中：
+      description: Triggered when the selected value changes. In single-select mode:
       params:
         - name: $event.value
           type: any
-          description: 选择行的值
+          description: The value of the selected row
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择行相关对象
+          description: Select row related object
         - name: $event.oldItem
           type: object
-          description: 旧的选择行相关对象
+          description: Old selected row related object
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 选择值改变时触发。多选模式中：
+      description: Triggered when the selected value changes. In multi-select mode:
       params:
         - name: $event.values
           type: Array
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValues
           type: any
-          description: 旧的值
+          description: Old value
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: resize
-      description: 调整列宽时触发
+      description: Triggered when the column width is adjusted
       params:
         - name: $event.columnVM
           type: UTableColumnVM
-          description: 调整的列实例
+          description: The column instance to adjust
         - name: $event.index
           type: number
-          description: 列索引
+          description: Column index
         - name: width
           type: number
-          description: 调整后的宽度
+          description: Adjusted width
         - name: oldWidth
           type: number
-          description: 调整前的宽度
+          description: Width before adjustment
   methods:
     - name: load()
-      description: 带缓存地加载
+      description: Load with cache
       params: []
     - name: reload()
-      description: 清除缓存，Reload
+      description: Clear cache and reload
       params: []
 - name: u-table-view-column
   attrs:
     - name: title
       type: string
       default: null
-      description: 列标题
+      description: Column title
     - name: field
       type: string
       default: null
-      description: data 中的字段名
+      description: Field name in data
     - name: width
       type: string, number
       default: null
-      description: 给列指定宽度，可以为数字或百分比
+      description: Specifies the width of the column, which can be a number or a percentage
     - name: ellipsis
       type: boolean
       default: false
-      description: 是否省略显示。默认文字超出时会换行
+      description: Whether to omit the display. By default, the text will wrap if it exceeds the limit.
     - name: formatter
       type: string, object, Function, Formatter
       default: placeholder
@@ -434,69 +434,69 @@
     - name: sortable
       type: boolean
       default: false
-      description: 该列是否可以排序
+      description: Whether the column can be sorted
     - name: default-order
       type: string
       default: asc
-      description: 该列首次点击时的排序顺序
+      description: The sort order of this column when it is first clicked
     - name: filters
       type: "Array<{ text: string, value: any }>"
       default: asc
-      description: 该列首次点击时的排序顺序
+      description: The sort order of this column when it is first clicked
     - name: hidden
       type: boolean
       default: false
-      description: 是否隐藏
+      description: Whether to hide
     - name: type
       type: string
       default: null
-      description: 列类型。可选值：`index`表示Serial Number列，`radio`表示单选列，`checkbox`表示多选列，`expander`表示展开列。
+      description: Column type. Optional values - `index` indicates a serial column, `radio` indicates a single-select column, `checkbox` indicates a multiple-select column, and `expander` indicates an expanded column.
     - name: start-index
       type: number
       default: 1
-      description: 当`type="index"`时的起始Serial Number
+      description: The starting number when `type="index"`
   slots:
     - name: default
-      description: 在表格列中插入`<u-table-view-filters>`子组件。
+      description: Inserts a `<u-table-view-filters>` subcomponent into a table column.
     - name: cell
-      description: 对单元格数据展示进行自定义。
+      description: Customize the display of cell data.
       props:
         - name: item
           type: object
-          description: 循环中的当前项
+          description: The current item in the loop
         - name: value
           type: any
-          description: item 中 field 字段对应的值
+          description: The value corresponding to the field in item
         - name: columnVM
           type: string
-          description: 该列组件实例
+          description: This column component instance
         - name: rowIndex
           type: number
-          description: 行的索引
+          description: The index of the row
         - name: columnIndex
           type: number
-          description: 列的索引
+          description: The index of the column
     - name: title
-      description: 对标题进行自定义。
+      description: Customize the title.
       props:
         - name: columnVM
           type: string
-          description: 该列组件实例
+          description: This column component instance
         - name: columnIndex
           type: number
-          description: 列的索引
+          description: The index of the column
     - name: expand-content
-      description: 展开列的内容
+      description: The content of the expanded column
       props:
         - name: item
           type: object
-          description: 循环中的当前项
+          description: The current item in the loop
         - name: value
           type: any
-          description: item 中 field 字段对应的值
+          description: The value corresponding to the field in item
         - name: columnVM
           type: string
-          description: 该列组件实例
+          description: This column component instance
         - name: rowIndex
           type: number
-          description: 行的索引
+          description: The index of the row

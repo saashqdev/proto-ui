@@ -4,11 +4,11 @@
 <u-table>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -53,17 +53,17 @@
 
 ### Table Lines
 
-设置`line="both"`属性，使表格单元格之间由线条隔开。
+Set the `line="both"` attribute so that table cells are separated by lines.
 
 ``` html
 <u-table line="both">
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -106,17 +106,17 @@
 </u-table>
 ```
 
-也可以设置为`"horizontal"`，只显示水平线条。
+It can also be set to `"horizontal"` to display only horizontal lines.
 
 ``` html
 <u-table line="horizontal">
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -161,17 +161,17 @@
 
 ### Stripe Display
 
-添加`striped`属性，使表格具有斑马线条纹样式。
+Add the `striped` attribute to give the table a zebra stripe style.
 
 ``` html
 <u-table striped>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -214,19 +214,19 @@
 </u-table>
 ```
 
-### 悬浮高亮
+### Floating Highlight
 
-添加`hover`属性，使表格行在悬浮时能够高亮显示。
+Add the `hover` attribute so that table rows can be highlighted when hovering.
 
 ``` html
 <u-table hover>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -271,17 +271,17 @@
 
 ### Single Row Color
 
-在`<tr>`上用`color`属性，可以单独给某一行添加颜色。
+You can add color to a line individually by using the `color` attribute on `<tr>`.
 
 ``` html
 <u-table>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -324,19 +324,19 @@
 </u-table>
 ```
 
-### 组合修饰
+### Combination Modification
 
-表格组件的修饰属性可以组合使用。
+Modification properties of table components can be used in combination.
 
 ``` html
 <u-table line="both" striped hover>
     <thead>
         <tr>
-            <th width="15%">用户名</th>
-            <th width="15%">手机号码</th>
-            <th>地址</th>
-            <th width="18%">最近登录时间</th>
-            <th width="12%">操作</th>
+            <th width="15%">Username</th>
+            <th width="15%">Mobile Phone Number</th>
+            <th>Address</th>
+            <th width="18%">Last Login Time</th>
+            <th width="12%">Operation</th>
         </tr>
     </thead>
     <tbody>

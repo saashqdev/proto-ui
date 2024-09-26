@@ -283,18 +283,18 @@ export const UTableView = {
                 this.timer = undefined;
                 let rootWidth = this.$el.offsetWidth;
                 if (!rootWidth) {
-                    // 初始表格隐藏时，上面的值为0，需要特殊处理
+                    // When the initial table is hidden, the above value is 0 and requires special processing.
                     let parentEl = this.$el && this.$el.parentElement;
                     while (parentEl && !parentEl.offsetWidth)
                         parentEl = parentEl.parentElement;
                     rootWidth = parentEl ? parentEl.offsetWidth : 0;
                 }
 
-                // 分别获取有百分比、具体数值和无 width 的列
+                // Get columns with percentages, specific values   and no width respectively
                 const percentColumnVMs = [];
                 const valueColumnVMs = [];
                 const noWidthColumnVMs = [];
-                // 统计固定列的数量
+                // Count the number of fixed columns
                 let fixedLeftCount = 0;
                 let fixedRightCount = 0;
                 let lastIsFixed = false;
@@ -320,7 +320,7 @@ export const UTableView = {
                     lastIsFixed = columnVM.fixed;
                 });
 
-                // 全部都是百分数的情况，按比例缩小
+                // All are percentages, scaled down.
                 if (percentColumnVMs.length === this.visibleColumnVMs.length) {
                     const sumWidth = percentColumnVMs.reduce((prev, columnVM) => prev + parseFloat(columnVM.currentWidth), 0);
                     if (sumWidth !== 100) {
@@ -329,8 +329,7 @@ export const UTableView = {
                         });
                     }
                 }
-                // 全部都是数值的情况，按实际大小
-
+                // All are numerical values, based on actual siz
                 const percentWidthSum = percentColumnVMs.reduce((prev, columnVM) => {
                     columnVM.computedWidth = parseFloat(columnVM.currentWidth) * rootWidth / 100;
                     return prev + columnVM.computedWidth;
@@ -346,7 +345,7 @@ export const UTableView = {
                     noWidthColumnVMs.forEach((columnVM) => columnVM.computedWidth = averageWidth);
                 }
 
-                // 如果所有列均有值，则总宽度有超出的可能。否则总宽度为根节点的宽度。
+                // If all columns have values, the total width may be exceeded. Otherwise the total width is the width of the root node.
                 let tableWidth = '';
                 if (this.visibleColumnVMs.every((columnVM) => columnVM.currentWidth)) {
                     tableWidth = this.visibleColumnVMs.reduce((prev, columnVM) => {
@@ -367,7 +366,7 @@ export const UTableView = {
                         width: this.visibleColumnVMs.slice(0, fixedLeftCount).reduce((prev, columnVM) => prev + columnVM.computedWidth, 0),
                     });
                 }
-                if (fixedRightCount && tableWidth > rootWidth) { // 表格太短时，不固定右侧列
+                if (fixedRightCount && tableWidth > rootWidth) { // When the table is too short, the right column is not fixed
                     tableMetaList.push({
                         position: 'right',
                         width: this.visibleColumnVMs.slice(-fixedRightCount).reduce((prev, columnVM) => prev + columnVM.computedWidth, 0),
@@ -376,12 +375,12 @@ export const UTableView = {
                 this.tableMetaList = tableMetaList;
 
                 /**
-                 * 根节点高度优先，头部固定，计算身体高度
+                 * The height of the root node takes priority, the head is fixed, and the body height is calculated.
                  */
                 if (this.$el.style.height !== '' && this.$el.style.height !== 'auto'
                     || this.$el.style.maxHeight !== '' && this.$el.style.maxHeight !== 'auto') {
                     const rootHeight = this.$el.offsetHeight;
-                    if (rootHeight) { // 如果使用 v-show 隐藏了，无法计算
+                    if (rootHeight) { // If it is hidden using v-show, it cannot be calculated.
                         const titleHeight = this.$refs.title ? this.$refs.title.offsetHeight : 0;
                         const headHeight = this.$refs.head[0] ? this.$refs.head[0].offsetHeight : 0;
                         this.bodyHeight = rootHeight - titleHeight - headHeight;
@@ -483,7 +482,7 @@ export const UTableView = {
             this.currentLoading = true;
             this.currentError = false;
             dataSource.load().then((data) => {
-                // 防止同步数据使页面抖动
+                // Prevent synchronized data from causing page jitters
                 // setTimeout(() => this.currentData = data);
                 this.currentLoading = false;
                 if (this.currentDataSource.paging && this.currentDataSource.paging.number > this.currentDataSource.totalPage)

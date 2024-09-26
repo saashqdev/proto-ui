@@ -1,6 +1,6 @@
 .root {
     position: relative;
-    /* 不能加这句，会使分页器的 Select 无法显示！ overflow: hidden; */
+    /* If you cannot add this sentence, the Select of the pager will not be displayed! overflow: hidden; */
 }
 
 .title {
@@ -126,7 +126,7 @@
     position: relative;
     white-space: normal;
     word-break: break-all;
-    /* 解决在火狐浏览器下英文换行显示问题 */
+    /* Solve the problem of line wrapping display in Firefox browser */
     word-wrap: break-word;
 }
 

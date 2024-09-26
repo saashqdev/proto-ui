@@ -396,7 +396,7 @@ export default {
 
 #### 统一操作
 
-UTreeView 有针对选中/取消和展开/收起两个操作的统一处理的方法：`checkAll`和`toggleAll`，方便开发者使用。
+UTreeView 有针对选中/取消和Expand/Collapse两个操作的统一处理的方法：`checkAll`和`toggleAll`，方便开发者使用。
 
 ``` vue
 <template>
