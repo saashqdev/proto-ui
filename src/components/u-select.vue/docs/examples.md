@@ -1,6 +1,6 @@
 ### Basic Usage
 
-默认为单选模式。可以通过`placeholder`属性设置占位符。
+The default is radio mode. Placeholders can be set via the `placeholder` attribute.
 
 ``` html
 <u-linear-layout>
@@ -9,7 +9,7 @@
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
     </u-select>
-    <u-select placeholder="设置占位符">
+    <u-select placeholder="Set placeholder">
         <u-select-item>Water Cup</u-select-item>
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
@@ -19,7 +19,7 @@
 
 ### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行Two-Way Binding。
+Use `v-model` or `:value.sync` for Two-Way Binding.
 
 ``` vue
 <template>
@@ -74,12 +74,12 @@ export default {
 </u-linear-layout>
 ```
 
-#### 为空禁用
+#### Empty to Disable
 
-有时在没有数据的情况下，不希望用户进行选择。使用`empty-disabled`属性自动禁用掉这种情况。
+Sometimes you don't want the user to make a selection when there is no data. Use the `empty-disabled` attribute to automatically disable this situation.
 
 ``` html
-<u-select value="nut" empty-disabled placeholder="暂无选项"></u-select>
+<u-select value="nut" empty-disabled placeholder="No options yet"></u-select>
 ```
 
 ### Separator
@@ -114,7 +114,7 @@ export default {
 </u-select>
 ```
 
-### 可清除
+### Clearable
 
 ``` html
 <u-select value="coffee" clearable>
@@ -124,9 +124,9 @@ export default {
 </u-select>
 ```
 
-### 多选模式
+### Multiple Selection Mode
 
-通过`multiple`属性开启多选模式。Two-Way Binding can be performed using `v-model` or `:value.sync`.
+Enable multiple selection mode through the `multiple` attribute. Two-Way Binding can be performed using `v-model` or `:value.sync`.
 
 ``` vue
 <template>
@@ -149,28 +149,28 @@ export default {
 </script>
 ```
 
-### Tags 风格
+### Tags Style
 
-Tags 过多时如何显示。
+How to display when there are too many Tags.
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select multiple tags-overflow="hidden" v-model="value" placeholder="过多时省略">
+    <u-select multiple tags-overflow="hidden" v-model="value" placeholder="Omit if Too Many">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
         <u-select-item value="towel">Towel</u-select-item>
         <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
-    <u-select multiple tags-overflow="collapse" v-model="value" placeholder="过多时收缩">
+    <u-select multiple tags-overflow="collapse" v-model="value" placeholder="Shrink when Too Much">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
         <u-select-item value="towel">Towel</u-select-item>
         <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
-    <u-select multiple tags-overflow="visible" v-model="value" placeholder="过多时显示">
+    <u-select multiple tags-overflow="visible" v-model="value" placeholder="Display when there are Too Many">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
@@ -191,9 +191,9 @@ export default {
 </script>
 ```
 
-### 可以重复
+### Can be Repeated
 
-设置`duplicated`属性可以让选项重复。
+Setting the `duplicated` attribute allows options to be duplicated.
 
 ``` vue
 <template>

@@ -1,8 +1,8 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# USlider 滑块
+# USlider Slider
 
-**UI 组件**, **表单控件**, **块级展示**
+**UI Component**, **Form Control**, **Block Level Display**
 
 ## Example
 ### Basic Usage
@@ -17,7 +17,7 @@
 <u-slider :value="36" :min="10" :max="50"></u-slider>
 ```
 
-### 连续和间隔
+### Continuous and Interval
 
 ``` html
 <u-grid-layout>
@@ -30,9 +30,9 @@
 </u-grid-layout>
 ```
 
-### 范围
+### Scope
 
-使用`range`可以进一步对`value`限制，通常传入一个数组，第一个值表示范围开始值，第二个值表示范围的结束值。
+Use `range` to further limit `value`, usually passing in an array, the first value represents the starting value of the range, and the second value represents the end value of the range.
 
 ``` html
 <u-grid-layout>
@@ -46,6 +46,7 @@
 ```
 
 ### Read Only and Disabled
+
 ``` html
 <u-grid-layout>
     <u-grid-layout-column :span="6">
@@ -62,43 +63,43 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | number |  | `0` | 滑块的值 |
-| min | number |  | `0` | 最小值 |
-| max | number |  | `100` | 最大值 |
-| step | number |  | `1` | 间隔，表示点击按钮或按上下键所增加或减少的量。`0`表示连续 |
-| precision | number |  | `1` | 精度，表示数字要保留的最小单位，整数、小数均可 |
-| range | Array |  | `[]` | 进一步对`value`限制，通常传入一个数组，第一个值表示范围开始值，第二个值表示范围的结束值。 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value.sync, v-model | number | | `0` | The value of the slider |
+| min | number | | `0` | Minimum value |
+| max | number | | `100` | Maximum value |
+| step | number | | `1` | Interval, indicating the amount increased or decreased by clicking the button or pressing the up and down keys. `0` means continuous |
+| precision | number | | `1` | Precision, indicating the smallest unit of numbers to be retained, either integers or decimals |
+| range | Array | | `[]` | Further restrict `value`, usually passing in an array, the first value represents the start value of the range, and the second value represents the end value of the range. |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Events
 
 #### @input
 
-拖动滑块时触发
+Fires when dragging the slider
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | number | 滑块的值 |
-| senderVM | USlider | 发送事件实例 |
+| $event | number | Slider value |
+| senderVM | USlider | Send event instance |
 
 #### @slide
 
-拖动滑块时触发
+Fires when dragging the slider
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | number | 滑块的值 |
-| $event.oldValue | number | 旧的值 |
-| $event.percent | number | 滑块位置所在的百分比 |
-| senderVM | USlider | 发送事件实例 |
+| $event.value | number | The value of the slider |
+| $event.oldValue | number | Old value |
+| $event.percent | number | The percentage of the slider position |
+| senderVM | USlider | Send event instance |
 
 #### @change
 
-滑块的值改变时触发
+Fires when the slider's value changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | number | 改变后的值 |
-| $event.oldValue | number | 旧的值 |
-| senderVM | USlider | 发送事件实例 |
+| $event.value | number | Changed value |
+| $event.oldValue | number | Old value |
+| senderVM | USlider | Send event instance |

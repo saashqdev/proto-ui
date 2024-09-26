@@ -523,7 +523,7 @@ export default {
 </u-validator>
 ```
 
-### 范围判断
+### Scope判断
 
 #### minLength(min: number) <u-label>blur</u-label>
 

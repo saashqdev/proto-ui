@@ -1,9 +1,9 @@
 
-## 单选模式
+## Radio Selection Mode
 
 ### Basic Usage
 
-默认为单选模式。可以通过`placeholder`属性设置占位符。
+The default is radio mode. Placeholders can be set via the `placeholder` attribute.
 
 ``` html
 <u-linear-layout>
@@ -12,14 +12,14 @@
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
     </u-select>
-    <u-select placeholder="请选择">
+    <u-select placeholder="Please select">
         <u-select-item>Water Cup</u-select-item>
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
     </u-select>
     <u-select>
         <u-select-item>Please select</u-select-item>
-        <u-select-item>兼容 0.3.x</u-select-item>
+        <u-select-item>Compatible with 0.3.x</u-select-item>
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
     </u-select>
@@ -28,7 +28,7 @@
 
 ### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行Two-Way Binding。
+Use `v-model` or `:value.sync` for Two-Way Binding.
 
 ``` vue
 <template>
@@ -115,7 +115,7 @@ export default {
 </u-select>
 ```
 
-### 可清除
+### Clearable
 
 ``` html
 <u-select value="coffee" clearable>
@@ -125,13 +125,13 @@ export default {
 </u-select>
 ```
 
-### 数据源
+### Data Source
 
-#### 异步一次性数据源
+#### Asynchronous One-Time Data Source
 
-#### 异步分页数据源（后端分页）
+#### Asynchronous Paging Data Source (backend paging)
 
-## 多选模式
+## Multiple Selection Mode
 
 ### Basic Usage
 
@@ -142,14 +142,14 @@ export default {
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
     </u-select>
-    <u-select multiple placeholder="请选择">
+    <u-select multiple placeholder="Please select">
         <u-select-item>Water Cup</u-select-item>
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
     </u-select>
     <u-select multiple>
         <u-select-item>Please select</u-select-item>
-        <u-select-item>兼容 0.3.x</u-select-item>
+        <u-select-item>Compatible with 0.3.x</u-select-item>
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
     </u-select>
@@ -158,7 +158,7 @@ export default {
 
 ### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行Two-Way Binding。
+Use `v-model` or `:value.sync` for Two-Way Binding.
 
 ``` vue
 <template>
@@ -191,26 +191,26 @@ export default {
 </script>
 ```
 
-### Tags 风格
+### Tags Style
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select multiple multiple-appearance="tags" v-model="value" placeholder="过多时省略">
+    <u-select multiple multiple-appearance="tags" v-model="value" placeholder="Omit if Too Many">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
         <u-select-item value="towel">Towel</u-select-item>
         <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
-    <u-select multiple multiple-appearance="tags" tags-overflow="collapse" v-model="value" placeholder="过多时收缩">
+    <u-select multiple multiple-appearance="tags" tags-overflow="collapse" v-model="value" placeholder="Shrink when Too Much">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
         <u-select-item value="towel">Towel</u-select-item>
         <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
-    <u-select multiple multiple-appearance="tags" tags-overflow="visible" v-model="value" placeholder="过多时显示">
+    <u-select multiple multiple-appearance="tags" tags-overflow="visible" v-model="value" placeholder="Display when there are Too Many">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
@@ -231,27 +231,27 @@ export default {
 </script>
 ```
 
-#### 对齐和清空问题
+#### Alignment and Clearing Issues
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select clearable multiple multiple-appearance="tags" v-model="value" placeholder="过多时省略">
+    <u-select clearable multiple multiple-appearance="tags" v-model="value" placeholder="Omit if Too Many">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
         <u-select-item value="towel">Towel</u-select-item>
         <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
-    <u-select clearable multiple multiple-appearance="tags" tags-overflow="collapse" v-model="value" placeholder="过多时收缩">
+    <u-select clearable multiple multiple-appearance="tags" tags-overflow="collapse" v-model="value" placeholder="Shrink when Too Much">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
         <u-select-item value="towel">Towel</u-select-item>
         <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
-    <span>与文字对齐</span>
-    <u-select clearable multiple multiple-appearance="tags" tags-overflow="visible" v-model="value" placeholder="过多时显示">
+    <span>Align to Text</span>
+    <u-select clearable multiple multiple-appearance="tags" tags-overflow="visible" v-model="value" placeholder="Display when there are Too Many">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
@@ -274,12 +274,12 @@ export default {
 
 ### Keep Order
 
-开启`keep-order`属性，选项会保持列表中的先后顺序。
+Turn on the `keep-order` attribute, and the options will maintain the order in the list.
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select multiple multiple-appearance="tags" tags-overflow="visible" v-model="value1" placeholder="不Keep Order（默认）">
+    <u-select multiple multiple-appearance="tags" tags-overflow="visible" v-model="value1" placeholder="No Keep Order（default）">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
@@ -309,14 +309,14 @@ export default {
 ```
 
 
-## 过滤模式
+## Filter Mode
 
-### 选项初始值
+### Option Initial Value
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select v-model="value" :data="list" filterable clearable placeholder="前端过滤"></u-select>
+    <u-select v-model="value" :data="list" filterable clearable placeholder="Front-end Filtering"></u-select>
 </u-linear-layout>
 </template>
 
@@ -349,41 +349,41 @@ export default {
 </script>
 ```
 
-### 匹配方式
+### Matching Method
 
-### 区分大小写
+### Case Sensitive
 
-### 数据源
+### Data Source
 
-使用标签或`data`属性添加数据时，均为静态的。如果想要动态更新数据，可以设置数据源属性。数据源为`DataSource`类型或普通函数，要求返回一个`Array<{ text, value }>`格式的数组或一个`Promise`对象。
+When data is added using tags or the `data` attribute, it is static. If you want to dynamically update data, you can set the data source properties. The data source is a `DataSource` type or a normal function, and is required to return an array in the `Array<{ text, value }>` format or a `Promise` object.
 
-#### 同步数据源
+#### Synchronize Data Source
 
-#### 异步数据源
+#### Asynchronous Data Source
 
-#### 异步分页数据源
+#### Asynchronous Paging Data Source
 
-## 多选过滤模式
+## Multiple Selection Filter Mode
 
-### 可过滤
+### Filterable
 
-### 数据源
+### Data Source
 
-#### 异步数据源
+#### Asynchronous Data Source
 
-#### 异步分页数据源
+#### Asynchronous Paging Data Source
 
-#### 清除缓存
+#### Clear Cache
 
-在`data-source`属性中传入`load`方法，用于接收完整的后端数据。
+Pass in the `load` method in the `data-source` attribute to receive complete backend data.
 
-这时开启`filterable`属性可以进行前端过滤。
+At this time, front-end filtering can be performed by turning on the `filterable` attribute.
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select ref="select" :data-source="load" filterable clearable :page-size="20" placeholder="前端过滤"></u-select>
-    <u-button @click="reload">重新加载</u-button>
+    <u-select ref="select" :data-source="load" filterable clearable :page-size="20" placeholder="Front-end Filtering"></u-select>
+    <u-button @click="reload">Reload</u-button>
 </u-linear-layout>
 </template>
 <script>
@@ -396,12 +396,12 @@ export default {
             };
         },
         load() {
-            // 模拟构造远程数据
+            // Simulate the construction of remote data
             const remoteData = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New hampshire', 'New jersey', 'New mexico', 'New york', 'North carolina', 'North dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode island', 'South carolina', 'South dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West virginia', 'Wisconsin', 'Wyoming'].map((text) => ({ text, value: text }));
             if (this.reverse)
                 remoteData.reverse();
 
-            // 这里使用 Promise 和 setTimeout 模拟一个异步请求
+            // Here use Promise and setTimeout to simulate an asynchronous request
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(remoteData);
@@ -417,20 +417,20 @@ export default {
 </script>
 ```
 
-## 其他问题
+## Other Questions
 
-### 列表切换
+### List Switching
 
-#### Tag 方式
+#### Tag Method
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select v-if="!list.length" placeholder="暂无可选的项" disabled></u-select>
+    <u-select v-if="!list.length" placeholder="No options available yet" disabled></u-select>
     <u-select v-else v-model="value">
         <u-select-item v-for="item in list" :key="item.value" :value="item.value">{{ item.text }}</u-select-item>
     </u-select>
-    <u-button @click="switchList">切换</u-button>
+    <u-button @click="switchList">Switch</u-button>
 </u-linear-layout>
 </template>
 <script>
@@ -457,14 +457,14 @@ export default {
 </script>
 ```
 
-#### Data 方式
+#### Data Method
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select v-if="!list.length" placeholder="暂无可选的项" disabled></u-select>
+    <u-select v-if="!list.length" placeholder="No options available yet" disabled></u-select>
     <u-select v-else v-model="value" :data="list"></u-select>
-    <u-button @click="switchList">切换</u-button>
+    <u-button @click="switchList">Switch</u-button>
 </u-linear-layout>
 </template>
 <script>
@@ -491,21 +491,21 @@ export default {
 </script>
 ```
 
-### 列表与 value 同时改变的问题
+### The Problem of Changing List and Value at the Same Time
 
 ``` vue
 <template>
 <div>
     <u-linear-layout direction="vertical">
         <u-linear-layout>
-            <u-text size="normal">可用区</u-text>
+            <u-text size="normal">Available Zone</u-text>
             <u-radios v-model="selectedAz">
-                <u-radio label="azA">可用区A</u-radio>
-                <u-radio label="azB">可用区B</u-radio>
+                <u-radio label="azA">Available Zone A</u-radio>
+                <u-radio label="azB">Available Zone B</u-radio>
             </u-radios>
         </u-linear-layout>
         <u-linear-layout>
-            <u-text size="normal">网络{{ selectedVpc }}</u-text>
+            <u-text size="normal">Network{{ selectedVpc }}</u-text>
             <u-select v-model="selectedVpc">
                 <u-select-item v-for="item in vpcOptions" :key="item.value" :value="item.value">A {{ item.text }}</u-select-item>
             </u-select>

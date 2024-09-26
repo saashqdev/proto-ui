@@ -1,73 +1,73 @@
 - name: u-slider
-  title: 滑块
-  labels: [UI 组件, 表单控件, 块级展示]
+  title: Slider
+  labels: [UI Components, Form Controls, Block-Level Display]
   attrs:
     - name: value.sync, v-model
       type: number
       default: 0
-      description: 滑块的值
+      description: The value of the slider
     - name: min
       type: number
       default: 0
-      description: 最小值
+      description: Minimum value
     - name: max
       type: number
       default: 100
-      description: 最大值
+      description: Maximum value
     - name: step
       type: number
       default: 1
-      description: 间隔，表示点击按钮或按上下键所增加或减少的量。`0`表示连续
+      description: Interval, which indicates the amount of increase or decrease when clicking a button or pressing the up or down key. `0` means continuous
     - name: precision
       type: number
       default: 1
-      description: 精度，表示数字要保留的最小单位，整数、小数均可
+      description: Precision, which indicates the smallest unit to be retained by the number, both integer and decimal are acceptable
     - name: range
       type: Array
       default: []
-      description: 进一步对`value`限制，通常传入一个数组，第一个值表示范围开始值，第二个值表示范围的结束值。
+      description: Further restrict `value`, usually passing in an array, the first value represents the start value of the range, and the second value represents the end value of the range.
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Whether it is read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
   events:
     - name: input
-      description: 拖动滑块时触发
+      description: Triggered when dragging the slider
       params:
         - name: $event
           type: number
-          description: 滑块的值
+          description: The value of the slider
         - name: senderVM
           type: USlider
-          description: 发送事件实例
+          description: Send event instance
     - name: slide
-      description: 拖动滑块时触发
+      description: Triggered when dragging the slider
       params:
         - name: $event.value
           type: number
-          description: 滑块的值
+          description: The value of the slider
         - name: $event.oldValue
           type: number
-          description: 旧的值
+          description: Old value
         - name: $event.percent
           type: number
-          description: 滑块位置所在的百分比
+          description: The percentage of the slider position
         - name: senderVM
           type: USlider
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 滑块的值改变时触发
+      description: Triggered when the slider value changes
       params:
         - name: $event.value
           type: number
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: number
-          description: 旧的值
+          description: Old value
         - name: senderVM
           type: USlider
-          description: 发送事件实例
+          description: Send event instance

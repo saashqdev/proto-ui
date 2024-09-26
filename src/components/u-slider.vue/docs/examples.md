@@ -10,7 +10,7 @@
 <u-slider :value="36" :min="10" :max="50"></u-slider>
 ```
 
-### 连续和间隔
+### Continuous and Interval
 
 ``` html
 <u-grid-layout>
@@ -23,9 +23,9 @@
 </u-grid-layout>
 ```
 
-### 范围
+### Scope
 
-使用`range`可以进一步对`value`限制，通常传入一个数组，第一个值表示范围开始值，第二个值表示范围的结束值。
+Use `range` to further limit `value`, usually passing in an array, the first value represents the starting value of the range, and the second value represents the end value of the range.
 
 ``` html
 <u-grid-layout>

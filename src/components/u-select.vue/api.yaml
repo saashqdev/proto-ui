@@ -1,268 +1,268 @@
 - name: u-select
-  title: 选择框
-  labels: [UI 组件, 表单控件, 行内展示]
-  description: 下拉选择框，支持支持单选、多选、搜索等功能，用于代替原生的选择框。
+  title: Selection Box
+  labels: [UI Components, Form Controls, Inline Display]
+  description: A drop-down selection box that supports single selection, multiple selection, search and other functions, used to replace the native selection box.
   docs:
-    data: 数据相关
+    data: data related
   attrs:
     - name: value.sync, v-model
       type: any
       default: null
-      description: 当前选择的值
+      description: The currently selected value
     - name: field
       type: string
       default: text
-      description: 显示文本字段
+      description: Display text field
     - name: data
       type: Array<{ text, value }>
       default: null
-      description: 列表数据
+      description: List data
     - name: data-source
       type: object, Function, DataSource
       default: null
-      description: 多功能数据源
+      description: Multifunctional data source
     - name: cancelable
       type: boolean
       default: false
-      description: 是否可以取消选择
+      description: Whether the selection can be canceled
     - name: multiple
       type: boolean
       default: false
-      description: 是否可以多选
+      description: Whether multiple selection is possible
     - name: placeholder
       type: boolean
-      default: 请选择
-      description: 选择框的占位符
+      default: Please select
+      description: Placeholder for the selection box
     - name: loading-text
       type: string
-      default: 加载中...
-      description: 加载时的文字。使用分页加载时才会出现
+      default: Loading...
+      description: The text when loading. It will only appear when using paging loading.
     - name: empty-text
       type: string
-      default: 加载中...
-      description: 没有匹配时的文字
+      default: Loading...
+      description: Text if there is no match
     - name: empty-disabled
       type: boolean
       default: false
-      description: 没有数据时，自动禁用
+      description: Automatically disabled when there is no data
     - name: initial-load
       type: boolean
       default: true
-      description: 是否在初始时立即加载
+      description: Whether to load immediately at the beginning
     - name: pageable
       type: boolean
       default: false
-      description: 是否需要分页
+      description: Whether paging is required
     - name: page-size
       type: number
       default: 50
-      description: 分页大小
+      description: Paging size
     - name: remote-paging
       type: boolean
       default: false
-      description: 是否使用后端分页
+      description: Whether to use backend paging
     - name: clearable
       type: boolean
       default: false
-      description: 是否有清除按钮
+      description: Is there a clear button?
     - name: filterable
       type: boolean
       default: false
-      description: 是否使用输入框进行过滤
+      description: Whether to use the input box for filtering
     - name: match-method
       type: string, Function
       default: includes
-      description: 过滤时的匹配方法
+      description: Matching method when filtering
     - name: case-sensitive
       type: string, Function
       default: includes
-      description: 过滤时大小写是否敏感
+      description: Is the filtering case sensitive?
     - name: remote-filtering
       type: boolean
       default: false
-      description: 是否使用后端过滤
+      description: Whether to use backend filtering
     - name: auto-complete
       type: boolean
       default: false
-      description: 是否开启自动补充模式，用于增加列表中没有的项
+      description: Whether to enable the automatic supplement mode, which is used to add items that are not in the list
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Whether it is read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
     - name: opened.sync
       type: boolean
       default: false
-      description: 弹出/关闭状态
+      description: Popup/closed state
   slots:
     - name: default
-      description: 插入`<u-select-item>`、`<u-select-divider>`或`<u-select-group>`子组件。
+      description: Inserts a child component of `<u-select-item>`, `<u-select-divider>` or `<u-select-group>`.
   events:
     - name: before-select
-      description: 选择某一项前触发
+      description: Triggered before selecting an item
       params:
         - name: $event.value
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.itemVM
           type: SelectItem
-          description: 选择项子组件
+          description: Select item subcomponent
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: input
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择某一项时触发。单选模式中：
+      description: Triggered when an item is selected. In single-select mode:
       params:
         - name: $event.value
           type: any
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.oldItem
           type: object
-          description: 旧的选择项相关对象
+          description: Old selection related object
         - name: $event.itemVM
           type: USelectItem
-          description: 选择项子组件
+          description: Select item subcomponent
         - name: $event.oldVM
           type: USelectItem
-          description: 旧的选择项子组件
+          description: The old selection subcomponent
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择某一项时触发。多选模式中：
+      description: Triggered when an item is selected. In multi-select mode:
       params:
         - name: $event.selected
           type: boolean
-          description: 选中还是取消
+          description: Select or cancel
         - name: $event.item
           type: boolean
-          description: 该选中项相关对象
+          description: The object related to the selected item
         - name: $event.itemVM
           type: boolean
-          description: 该选中项子组件
+          description: The selected item subcomponent
         - name: $event.value
           type: Array
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: Array
-          description: 旧的值
+          description: Old value
         - name: $event.items
           type: Array<object>
-          description: 所有选中项相关对象的数组
+          description: An array of all selected items related objects
         - name: $event.oldItems
           type: Array<object>
-          description: 旧的所有选中项相关对象的数组
+          description: An array of all old selected items related objects
         - name: $event.itemVMs
           type: Array<USelectItem>
-          description: 所有选中项子组件的数组
+          description: An array of all selected item subcomponents
         - name: $event.oldVMs
           type: Array<USelectItem>
-          description: 旧的所有选中项子组件的数组
+          description: An array of all old selected item subcomponents
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 选择值改变时触发。单选模式中：
+      description: Triggered when the selected value changes. In single-select mode:
       params:
         - name: $event.value
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.oldItem
           type: object
-          description: 旧的选择项相关对象
+          description: Old selection related object
         - name: $event.itemVM
           type: USelectItem
-          description: 选择项子组件
+          description: Select item subcomponent
         - name: $event.oldVM
           type: USelectItem
-          description: 旧的选择项子组件
+          description: The old selection subcomponent
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 选择值改变时触发。多选模式中：
+      description: Triggered when the selected value changes. In multi-select mode:
       params:
         - name: $event.value
           type: Array
-          description: 所有选中项的值
+          description: The value of all selected items
         - name: $event.items
           type: Array<object>
-          description: 所有选中项相关对象的数组
+          description: An array of all selected items related objects
         - name: $event.itemVMs
           type: Array<USelectItem>
-          description: 所有选中项子组件的数组
+          description: An array of all selected item subcomponents
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: before-open
-      description: 弹出前触发。
+      description: Triggered before popup.
       params:
         - name: $event.preventDefault
           type: Function
-          description: 阻止弹出流程
+          description: Block pop-up process
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: open
-      description: 弹出时触发。
+      description: Triggered when popping up.
       params:
         - name: $event
           type: ""
           description: Empty
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: before-close
-      description: 隐藏前触发。
+      description: Triggered before hiding.
       params:
         - name: $event.preventDefault
           type: Function
-          description: 阻止隐藏流程
+          description: Prevent hidden processes
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: close
-      description: 隐藏时触发。
+      description: Triggered when hidden.
       params:
         - name: $event
           type: ""
-          description: Empty
+          description: empty
         - name: senderVM
           type: USelect
-          description: 发送事件实例
+          description: Send event instance
     - name: before-toggle
       description: "@deprecated"
       params: []
@@ -270,89 +270,89 @@
       description: "@deprecated"
       params: []
     - name: before-load
-      description: 加载前触发
+      description: Triggered before loading
       params:
         - name: $event.preventDefault
           type: Function
-          description: 阻止加载流程
+          description: Block loading process
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
     - name: load
-      description: 加载时触发
+      description: Triggered when loading
       params:
         - name: $event
           type: ""
           description: Empty
         - name: senderVM
           type: UTableView
-          description: 发送事件实例
+          description: Send event instance
   methods:
     - name: open()
-      description: 弹出选择框。
+      description: Popup selection box.
       params: []
     - name: close()
-      description: 关闭选择框。
+      description: Closes the selection box.
       params: []
     - name: toggle(opened?)
-      description: 切换弹出/关闭状态。
+      description: Toggle popup/closed state.
       params:
         - name: opened?
           type: boolean
-          description: 可选。弹出/关闭状态
+          description: Optional. Popup/closed state
     - name: load()
-      description: 带缓存地加载
+      description: Load with cache
       params: []
     - name: reload()
-      description: 清除缓存，重新加载
+      description: Clear cache and reload
       params: []
 - name: u-select-item
   attrs:
     - name: value
       type: any
       default: null
-      description: 此项的值
+      description: The value of this item
     - name: disabled
       type: boolean
       default: false
-      description: 禁用此项
+      description: Disable this option
     - name: item
       type: object
       default: null
-      description: 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发
+      description: Related object. When this option is selected, the thrown event will pass this object, which is convenient for development
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.
   events:
     - name: before-select
-      description: 选择此项前触发
+      description: Triggered before selecting this item
       params:
         - name: $event.value
           type: any
-          description: 此项的值
+          description: The value of this item
         - name: $event.item
           type: object
-          description: 此项的相关对象
+          description: The object associated with this item
         - name: $event.itemVM
           type: SelectItem
-          description: 此组件
+          description: This component
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: USelectItem
-          description: 发送事件实例
+          description: Send event instance
 - name: u-select-group
   attrs:
     - name: title
       type: string
       default: null
-      description: 显示的标题
+      description: The displayed title
   slots:
     - name: default
-      description: 插入`<u-select-item>`或`<u-select-divider>`子组件。
+      description: Inserts a child component of `<u-select-item>` or `<u-select-divider>`.
     - name: title
-      description: 自定义标题文本。
+      description: Custom title text.
     - name: extra
-      description: 在右侧可以附加内容。
+      description: Additional content can be added on the right.
 - name: u-select-divider

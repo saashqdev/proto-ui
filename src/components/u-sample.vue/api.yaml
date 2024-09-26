@@ -1,5 +1,5 @@
 - name: u-sample
-  title: 样本
+  title: Sample
   attrs:
     - name: color
       type: string

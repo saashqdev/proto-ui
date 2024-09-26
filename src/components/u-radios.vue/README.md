@@ -1,8 +1,8 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# URadios 单选组
+# URadios Radio Group
 
-**UI 组件**, **表单控件**, **块级展示**
+**UI Component**, **Form Control**, **Block Level Display**
 
 ## Example
 ### Basic Usage
@@ -46,86 +46,86 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | any |  |  | 当前选择的值 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value.sync, v-model | any | | | Currently selected value |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入`<u-radio>`子组件。
+Insert the `<u-radio>` subcomponent.
 
 ### Events
 
 #### @before-select
 
-选择某一项前触发
+Trigger before selecting an item
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | URadio | 选择项子组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | URadios | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.itemVM | URadio | Selection subcomponent |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | URadios | Send event instance |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | any | 选择项的值 |
-| senderVM | URadios | 发送事件实例 |
+| $event | any | Value of selection |
+| senderVM | URadios | Send event instance |
 
 #### @select
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 改变后的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | URadio | 选择项子组件 |
-| senderVM | URadios | 发送事件实例 |
+| $event.value | any | Changed value |
+| $event.oldValue | any | Old value |
+| $event.itemVM | URadio | Selection subcomponent |
+| senderVM | URadios | Send event instance |
 
 #### @change
 
-选择值改变时触发
+Fires when the selection value changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.itemVM | URadio | 选择项子组件 |
-| senderVM | URadios | 发送事件实例 |
+| $event.value | any | The value of the selection |
+| $event.oldValue | any | Old value |
+| $event.item | object | Object related to selection item |
+| $event.itemVM | URadio | Selection subcomponent |
+| senderVM | URadios | Send event instance |
 
 ## URadio API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| label | any |  |  | 单选框标签。用于关联单选组的值 |
-| readonly | boolean |  | `false` | 禁用只读 |
-| disabled | boolean |  | `false` | 禁用此项 |
+| label | any | | | Radio button label. The value used to associate the radio group |
+| readonly | boolean | | `false` | Disable readonly |
+| disabled | boolean | | `false` | Disable this |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @before-select
 
-选择此项前触发
+Trigger before selecting this
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.label | any | 此项的标签 |
-| $event.itemVM | URadio | 此组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | URadio | 发送事件实例 |
+| $event.label | any | The label for this item |
+| $event.itemVM | URadio | This component |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | URadio | Send event instance |

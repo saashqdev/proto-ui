@@ -1,6 +1,6 @@
 ### Basic Usage
 
-步骤从`0`开始。
+Steps start from `0`.
 
 ``` html
 <u-steps :value="1">
@@ -10,7 +10,7 @@
 </u-steps>
 ```
 
-### Customize标题
+### Customize Title
 
 ``` html
 <u-steps :value="1">
@@ -29,7 +29,7 @@
 </u-steps>
 ```
 
-### 宽度自适应
+### Width Auto
 
 ``` html
 <u-steps :value="1" size="auto">
@@ -39,9 +39,9 @@
 </u-steps>
 ```
 
-### 可选择
+### Optional
 
-将`readonly`属性设置为`false`，可以进行选择。
+Setting the `readonly` attribute to `false` enables selection.
 
 ``` html
 <u-steps :value="1" :readonly="false">

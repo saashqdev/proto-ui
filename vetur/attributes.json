@@ -181,7 +181,7 @@
   },
   "m-dynamic/initial-add": {
     "type": "boolean",
-    "description": "是否自动补充项，如果初始时`data`中的项目数少于`min-count`"
+    "description": "是否Auto Replenish项，如果初始时`data`中的项目数少于`min-count`"
   },
   "m-dynamic/min-count": {
     "type": "number",
@@ -681,7 +681,7 @@
   },
   "u-form-table-view/initial-add": {
     "type": "boolean",
-    "description": "是否自动补充项，如果初始时`data`中的项目数少于`min-count`"
+    "description": "是否Auto Replenish项，如果初始时`data`中的项目数少于`min-count`"
   },
   "u-form-table-view/min-count": {
     "type": "number",
@@ -1576,7 +1576,7 @@
   },
   "u-select/auto-complete": {
     "type": "boolean",
-    "description": "是否开启自动补充模式，用于增加列表中没有的项"
+    "description": "是否开启Auto Replenish模式，用于增加列表中没有的项"
   },
   "u-select/readonly": {
     "type": "boolean",
@@ -1776,11 +1776,11 @@
   },
   "u-table-view/loading": {
     "type": "boolean",
-    "description": "手动设置是否正在加载中"
+    "description": "手动设置是否Loading"
   },
   "u-table-view/loading-text": {
     "type": "string",
-    "description": "正在加载中的文字"
+    "description": "Loading的文字"
   },
   "u-table-view/error": {
     "type": "boolean",

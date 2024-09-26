@@ -13,7 +13,7 @@ This component encapsulates this kind of animation, making it easy to quickly ac
 ## Example
 ### Basic Usage
 
-``` view
+``` vue
 <template>
 <div :class="$style.root">
     <u-button @click="toggle">Expand/Collapse</u-button>

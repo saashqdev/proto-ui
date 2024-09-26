@@ -1,8 +1,8 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# USwitch 开关
+# USwitch Switch
 
-**UI 组件**, **表单控件**, **行内展示**
+**UI Components**, **Form Controls**, **Inline Display**
 
 ## Example
 ### Basic Usage
@@ -11,7 +11,7 @@
 <u-switch></u-switch>
 ```
 
-### Value 绑定
+### Value Binding
 
 ``` vue
 <template>
@@ -40,76 +40,74 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | boolean |  | `false` | 开关状态 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value | boolean | | `false` | Switch status |
+| readonly | boolean | | `false` | Whether it is read-only |
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
+#### Undefined
 
-
-#### undefined
-
-插入文本或HTML
+Insert text or HTML
 
 ### Events
 
 #### @before-toggle
 
-切换开关状态前触发
+Triggered before switching state
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | boolean | 开关状态 |
-| $event.oldValue | boolean | 旧的开关状态 |
-| $event.preventDefault | Function | 阻止切换流程 |
-| senderVM | USwitch | 发送事件实例 |
+| $event.value | boolean | Switch status |
+| $event.oldValue | boolean | Old switch state |
+| $event.preventDefault | Function | Prevent switching process |
+| senderVM | USwitch | Send event instance |
 
 #### @input
 
-切换开关状态时触发
+Triggered when switching state
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | boolean | 切换后的开关状态 |
-| senderVM | USwitch | 发送事件实例 |
+| $event | boolean | Switch state after switching |
+| senderVM | USwitch | Send event instance |
 
 #### @on
 
-开关打开时触发
+Triggered when the switch is turned on
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 无 |
-| senderVM | USwitch | 发送事件实例 |
+| $event | | None |
+| senderVM | USwitch | Send event instance |
 
 #### @off
 
-开关关闭时触发
+Triggered when switch is closed
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 无 |
-| senderVM | USwitch | 发送事件实例 |
+| $event | | None |
+| senderVM | USwitch | Send event instance |
 
 #### @toggle
 
-切换开关状态时触发
+Triggered when switching state
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | boolean | 开关状态 |
-| $event.oldValue | boolean | 旧的开关状态 |
-| senderVM | USwitch | 发送事件实例 |
+| $event.value | boolean | Switch status |
+| $event.oldValue | boolean | Old switch state |
+| senderVM | USwitch | Send event instance |
 
 #### @change
 
-开关状态改变时触发
+Triggered when switch state changes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | boolean | 开关状态 |
-| $event.oldValue | boolean | 旧的开关状态 |
-| senderVM | USwitch | 发送事件实例 |
+| $event.value | boolean | Switch status |
+| $event.oldValue | boolean | Old switch state |
+| senderVM | USwitch | Send event instance |

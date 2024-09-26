@@ -15,7 +15,7 @@ export const USteps = {
         itemVMs: {
             override: true,
             handler() {
-                // Update List之后，原来的选择可以已不存在，这里暂存然后重新查找一遍
+                // After Update List, the original selection may no longer exist. You can temporarily save it here and search again.
                 const value = this.selectedVM ? this.selectedVM.index : this.value;
                 this.selectedVM = undefined;
                 this.watchValue(value);

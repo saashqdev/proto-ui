@@ -2,56 +2,56 @@
 ### Props/Attrs
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| value.sync, v-model | Number | `0` | 当前步骤数 |
-| readonly | Boolean | `false` | 是否只读。非只读的情况下可以选择 |
-| disabled | Boolean | `false` | 是否禁用 |
+| value.sync, v-model | Number | `0` | Current step number |
+| readonly | Boolean | `false` | Whether it is read-only. You can select | if it is not read-only.
+| disabled | Boolean | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入`<u-step>`子组件。
+Insert `<u-step>` subcomponent.
 
 ### Events
 
 #### @before-select
 
-选择某一步骤前触发
+Trigger before selecting a step
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Any | 选中步骤的值 |
-| $event.oldValue | Any | 旧的值 |
-| $event.itemVM | UStep | 选中步骤实例 |
-| $event.oldVM | UStep | 旧的选中步骤实例 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | USteps | 发送事件实例 |
+| $event.value | Any | The value of the selected step |
+| $event.oldValue | Any | Old value |
+| $event.itemVM | UStep | Select step instance |
+| $event.oldVM | UStep | Old selected step instance |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | USteps | Send event instance |
 
 #### @select
 
-选择某一步骤时触发
+Triggered when a step is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Any | 选中步骤的值 |
-| $event.oldValue | Any | 旧的值 |
-| $event.itemVM | UStep | 选中步骤实例 |
-| $event.oldVM | UStep | 旧的选中步骤实例 |
-| senderVM | USteps | 发送事件实例 |
+| $event.value | Any | The value of the selected step |
+| $event.oldValue | Any | Old value |
+| $event.itemVM | UStep | Select step instance |
+| $event.oldVM | UStep | Old selected step instance |
+| senderVM | USteps | Send event instance |
 
 ## UStep
 ### Props/Attrs
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| title | String |  | 步骤名 |
-| disabled | Boolean | `false` | 是否禁用此标签页 |
+| title | String | | Step name |
+| disabled | Boolean | `false` | Whether to disable this tab |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
-#### title
+#### Title
 
-自定义标题文本。
+Custom title text.

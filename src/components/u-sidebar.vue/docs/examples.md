@@ -10,7 +10,7 @@
 </u-sidebar>
 ```
 
-#### value模式
+#### Value Mode
 
 ``` html
 <u-sidebar value="3" :router="false" style="width: 200px;">

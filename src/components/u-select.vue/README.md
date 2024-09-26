@@ -1,15 +1,15 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# USelect 选择框
+# USelect Selection Box
 
-**UI 组件**, **表单控件**, **行内展示**
+**UI Components**, **Form Controls**, **Inline Display**
 
-下拉选择框，支持支持单选、多选、搜索等功能，用于代替原生的选择框。
+The drop-down selection box supports single selection, multiple selection, search and other functions, and is used to replace the native selection box.
 
-## 基础Example
+## Basic Example
 ### Basic Usage
 
-默认为单选模式。可以通过`placeholder`属性设置占位符。
+The default is radio mode. Placeholder can be set through the `placeholder` property.
 
 ``` html
 <u-linear-layout>
@@ -18,7 +18,7 @@
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
     </u-select>
-    <u-select placeholder="设置占位符">
+    <u-select placeholder="Set placeholder">
         <u-select-item>Water Cup</u-select-item>
         <u-select-item>Coffee</u-select-item>
         <u-select-item>Nut</u-select-item>
@@ -28,7 +28,7 @@
 
 ### Two-Way Binding
 
-使用`v-model`或`:value.sync`进行Two-Way Binding。
+Use `v-model` or `:value.sync` for Two-Way Binding.
 
 ``` vue
 <template>
@@ -83,12 +83,12 @@ export default {
 </u-linear-layout>
 ```
 
-#### 为空禁用
+#### Empty to Disable
 
-有时在没有数据的情况下，不希望用户进行选择。使用`empty-disabled`属性自动禁用掉这种情况。
+Sometimes you don't want the user to make a selection when there is no data. Use the `empty-disabled` attribute to automatically disable this situation.
 
 ``` html
-<u-select value="nut" empty-disabled placeholder="暂无选项"></u-select>
+<u-select value="nut" empty-disabled placeholder="No options yet"></u-select>
 ```
 
 ### Separator
@@ -123,7 +123,7 @@ export default {
 </u-select>
 ```
 
-### 可清除
+### Clearable
 
 ``` html
 <u-select value="coffee" clearable>
@@ -133,9 +133,9 @@ export default {
 </u-select>
 ```
 
-### 多选模式
+### Multiple Selection Mode
 
-通过`multiple`属性开启多选模式。Two-Way Binding can be performed using `v-model` or `:value.sync`.
+Enable multiple selection mode through the `multiple` attribute. Two-Way Binding can be performed using `v-model` or `:value.sync`.
 
 ``` vue
 <template>
@@ -158,28 +158,28 @@ export default {
 </script>
 ```
 
-### Tags 风格
+### Tags Style
 
-Tags 过多时如何显示。
+How to display when there are too many Tags.
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select multiple tags-overflow="hidden" v-model="value" placeholder="过多时省略">
+    <u-select multiple tags-overflow="hidden" v-model="value" placeholder="Omit if Too Many">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
         <u-select-item value="towel">Towel</u-select-item>
         <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
-    <u-select multiple tags-overflow="collapse" v-model="value" placeholder="过多时收缩">
+    <u-select multiple tags-overflow="collapse" v-model="value" placeholder="Shrink when Too Much">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
         <u-select-item value="towel">Towel</u-select-item>
         <u-select-item value="sofa">Sofa</u-select-item>
     </u-select>
-    <u-select multiple tags-overflow="visible" v-model="value" placeholder="过多时显示">
+    <u-select multiple tags-overflow="visible" v-model="value" placeholder="Display when there are Too Many">
         <u-select-item value="cup">Water Cup</u-select-item>
         <u-select-item value="coffee">Coffee</u-select-item>
         <u-select-item value="nut">Nut</u-select-item>
@@ -200,9 +200,9 @@ export default {
 </script>
 ```
 
-### 可以重复
+### Can be Repeated
 
-设置`duplicated`属性可以让选项重复。
+Setting the `duplicated` attribute allows options to be duplicated.
 
 ``` vue
 <template>
@@ -225,23 +225,23 @@ export default {
 </script>
 ```
 
-## 数据相关
-### 数据和数据源
+## Data Related
+### Data and Data Sources
 
-基础Example中采用的是标签形式添加数据，适合数据量小、数据操作简单或对模板有定制化的场景。
+The basic Example uses tags to add data, which is suitable for scenarios where the amount of data is small, data operations are simple, or the template is customized.
 
-如果数据量较大，或需要使用过滤等操作时，需要使用`data`或`data-source`属性。`data`属性的格式为`Array<{ text, value }>`，下面简写为`Array<Item>`；`data-source`属性一般接受一个`load`函数，用于异步加载。
+If the amount of data is large, or operations such as filtering are required, the `data` or `data-source` attributes need to be used. The format of the `data` attribute is `Array<{ text, value }>`, which is abbreviated as `Array<Item>` below; the `data-source` attribute generally accepts a `load` function for asynchronous loading.
 
-#### 纯前端数据
+#### Pure Front-End Data
 
-``` vue
+```vue
 <template>
-<u-select :data="data" placeholder="纯前端数据"></u-select>
+<u-select :data="data" placeholder="Pure front-end data"></u-select>
 </template>
 <script>
 export default {
     data() {
-        // 构造数量较多的 100 条数据
+        // Construct a large number of 100 pieces of data
         let data = [];
         for (let i = 1; i <= 100; i++)
             data.push('item' + i);
@@ -253,20 +253,20 @@ export default {
 </script>
 ```
 
-### 分页
+### Pagination
 
-#### 前端分页
+#### Front-End Paging
 
-当数据量较大时，开启`pageable`属性可以进行前端分页，同时可以用`page-size`属性修改默认分页大小。
+When the amount of data is large, front-end paging can be performed by turning on the `pageable` attribute, and the default paging size can be modified with the `page-size` attribute.
 
-``` vue
+```vue
 <template>
-<u-select :data="data" pageable placeholder="前端分页"></u-select>
+    <u-select :data="data" pageable placeholder="Front-end paging"></u-select>
 </template>
 <script>
 export default {
     data() {
-        // 构造数量较多的 500 条数据
+        // Construct a larger number of 500 pieces of data
         let data = [];
         for (let i = 1; i <= 500; i++)
             data.push('item' + i);
@@ -278,26 +278,26 @@ export default {
 </script>
 ```
 
-#### 一次性后端数据，前端分页
+#### One-time back-end data, front-end paging
 
-在`data-source`属性中传入`load`方法，用于接收完整的后端数据。
+Pass in the `load` method in the `data-source` attribute to receive complete backend data.
 
-`load`方法要求返回一个`Promise<Array<Item>>`或`Promise<{ data: Array<Item>, total: Number }>`的格式。该会在组件初始化时会被调用一次，如果不需要可以将`initial-load`属性设置为`false`。
+The `load` method requires returning a `Promise<Array<Item>>` or `Promise<{ data: Array<Item>, total: Number }>` format. This will be called once when the component is initialized. If not needed, the `initial-load` attribute can be set to `false`.
 
-开启`pageable`属性时可以进行前端分页。
+Front-end paging can be performed when the `pageable` attribute is turned on.
 
-``` vue
+```vue
 <template>
-<u-select :data-source="load" pageable :page-size="20" placeholder="前端分页"></u-select>
+    <u-select :data-source="load" pageable :page-size="20" placeholder="Front-end paging"></u-select>
 </template>
 <script>
-// 模拟构造远程数据
+// Simulate the construction of remote data
 const remoteData = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New hampshire', 'New jersey', 'New mexico', 'New york', 'North carolina', 'North dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode island', 'South carolina', 'South dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West virginia', 'Wisconsin', 'Wyoming'].map((text) => ({ text, value: text }));
 
 export default {
     methods: {
         load() {
-            // 这里使用 Promise 和 setTimeout 模拟一个异步请求
+            // Here use Promise and setTimeout to simulate an asynchronous request
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(remoteData);
@@ -309,32 +309,32 @@ export default {
 </script>
 ```
 
-#### 后端分页
+#### Backend Paging
 
-如果需要使用后端分页，在`data-source`属性中传入`load`方法的基础上，开启`remote-paging`功能。
+If you need to use back-end paging, enable the `remote-paging` function after passing the `load` method in the `data-source` attribute.
 
-这时`load`方法会接受一个与分页相关的`paging`参数：
+At this time, the `load` method will accept a `paging` parameter related to paging:
 
 ``` js
 params.paging = {
-    size: Number, // 每页大小
-    number: Number, // 页数。从1开始计
-    offset: Number, // 偏移量：(number - 1) * size
-    limit: Number, // 同 size
+    size: Number, // size of each page
+    number: Number, //Number of pages. Count from 1
+    offset: Number, // offset: (number - 1) * size
+    limit: Number, // same as size
 }
 ```
 
-要求返回一个`Promise<Array<Item>>`或`Promise<{ data: Array<Item>, total: Number }>`的格式。翻页是否到底，根据`total`字段判断，如果没有则根据最后一次数组为空判断。
+It is required to return a `Promise<Array<Item>>` or `Promise<{ data: Array<Item>, total: Number }>` format. Whether the page turns to the end is judged according to the `total` field. If not, it is judged according to the last time the array is empty.
 
 ``` vue
 <template>
 <u-linear-layout>
 <u-select :data-source="load" pageable remote-paging placeholder="后端分页"></u-select>
-<u-select multiple :data-source="load" pageable remote-paging placeholder="后端分页（多选）" style="width: 240px"></u-select>
+<u-select multiple :data-source="load" pageable remote-paging placeholder="后端分页(multiple choice)" style="width: 240px"></u-select>
 </u-linear-layout>
 </template>
 <script>
-// 模拟构造数量较多的 500 条远程数据
+//Simulate the construction of 500 remote data with a large number of
 let remoteData = [];
 for (let i = 1; i <= 500; i++)
     remoteData.push('item' + i);
@@ -343,7 +343,7 @@ remoteData = remoteData.map((text) => ({ text, value: text }));
 export default {
     methods: {
         load({ paging }) {
-            // 这里使用 Promise 和 setTimeout 模拟一个异步请求
+            // Here we use Promise and setTimeout to simulate an asynchronous request
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(remoteData.slice(paging.offset, paging.offset + paging.limit));
@@ -356,17 +356,17 @@ export default {
 ```
 
 
-### 过滤
+### Filter
 
-#### 前端过滤
+#### Front-end Filtering
 
-使用`filterable`属性可以开启过滤功能，用于快速查找选项。
+Use the `filterable` property to enable filtering for quick search options.
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select :data="data" filterable clearable placeholder="前端过滤"></u-select>
-    <u-select multiple :data="data" filterable clearable placeholder="前端过滤（多选）" style="width: 240px"></u-select>
+    <u-select :data="data" filterable clearable placeholder="Front-end Filtering"></u-select>
+    <u-select multiple :data="data" filterable clearable placeholder="Front-end Filtering（Multiple choice）" style="width: 240px"></u-select>
 </u-linear-layout>
 </template>
 
@@ -381,16 +381,16 @@ export default {
 </script>
 ```
 
-#### 匹配方式
+#### Matching Method
 
-在`match-method`属性中可以配置字符串的匹配方式，常见的有`includes`、`startsWith`、`endsWith`，也可以传一个函数。
+In the `match-method` attribute, you can configure the string matching method. Common ones are `includes`, `startsWith`, `endsWith`, and you can also pass a function.
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select :data="data" filterable match-method="includes" placeholder="包括即可（默认）"></u-select>
-    <u-select :data="data" filterable match-method="startsWith" placeholder="只匹配开头"></u-select>
-    <u-select :data="data" filterable match-method="endsWith" placeholder="只匹配结尾"></u-select>
+    <u-select :data="data" filterable match-method="includes" placeholder="Just include (default)"></u-select>
+    <u-select :data="data" filterable match-method="startsWith" placeholder="Only match starts"></u-select>
+    <u-select :data="data" filterable match-method="endsWith" placeholder="Only match ends"></u-select>
 </u-linear-layout>
 </template>
 <script>
@@ -404,15 +404,15 @@ export default {
 </script>
 ```
 
-#### 区分大小写
+#### Case Sensitive
 
-默认不区分大小写，可用`case-sensitive`属性开启。
+By default, it is case-insensitive, which can be enabled with the `case-sensitive` property.
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select :data="data" filterable placeholder="不区分大小写（默认）"></u-select>
-    <u-select :data="data" filterable case-sensitive placeholder="区分大小写"></u-select>
+    <u-select :data="data" filterable placeholder="Case insensitive (default)"></u-select>
+    <u-select :data="data" filterable case-sensitive placeholder="Case Sensitive"></u-select>
 </u-linear-layout>
 </template>
 <script>
@@ -426,24 +426,24 @@ export default {
 </script>
 ```
 
-#### 一次性后端数据，前端过滤
+#### One-time Backend Data, Front-End Filtering
 
-在`data-source`属性中传入`load`方法，用于接收完整的后端数据。
+Pass the `load` method in the `data-source` attribute to receive complete backend data.
 
-这时开启`filterable`属性可以进行前端过滤。
+At this time, turn on the `filterable` property to perform front-end filtering.
 
 ``` vue
 <template>
-<u-select :data-source="load" filterable clearable placeholder="前端过滤"></u-select>
+<u-select :data-source="load" filterable clearable placeholder="Front-end Filtering"></u-select>
 </template>
 <script>
-// 模拟构造远程数据
+//Simulate the construction of remote data
 const remoteData = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New hampshire', 'New jersey', 'New mexico', 'New york', 'North carolina', 'North dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode island', 'South carolina', 'South dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West virginia', 'Wisconsin', 'Wyoming'].map((text) => ({ text, value: text }));
 
 export default {
     methods: {
         load() {
-            // 这里使用 Promise 和 setTimeout 模拟一个异步请求
+            // Here we use Promise and setTimeout to simulate an asynchronous request
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(remoteData);
@@ -455,11 +455,11 @@ export default {
 </script>
 ```
 
-#### 后端过滤，后端分页
+#### Backend Filtering, Backend Paging
 
-如果要使用后端过滤，在`data-source`属性中传入`load`方法的基础上，开启`remote-filtering`功能。
+If you want to use backend filtering, enable the remote-filtering feature based on the data-source attribute passed to the load method.
 
-同时可以配合分页使用。
+It can also be used with paging.
 
 ``` vue
 <template>
@@ -467,17 +467,17 @@ export default {
     <u-select :data-source="load"
               pageable remote-paging
               filterable remote-filtering
-              clearable placeholder="后端过滤，后端分页">
+              clearable placeholder="Backend filtering, backend paging">
     </u-select>
     <u-select multiple :data-source="load"
               pageable remote-paging
               filterable remote-filtering
-              clearable placeholder="后端过滤，后端分页（多选）"
+              clearable placeholder="Backend filtering, backend paging (multiple selections)"
               style="width: 240px"></u-select>
 </u-linear-layout>
 </template>
 <script>
-// 模拟构造数量较多的 500 条远程数据
+//Simulate the construction of 500 remote data with a large number of
 let remoteData = [];
 for (let i = 1; i <= 500; i++) {
     remoteData.push('item' + i);
@@ -491,7 +491,7 @@ export default {
         load({ filterText, paging }) {
             const value = filterText.toLowerCase();
 
-            // 这里使用 Promise 和 setTimeout 模拟一个异步请求
+            // Here we use Promise and setTimeout to simulate an asynchronous request
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(remoteData.filter((item) => item.value.includes(value))
@@ -505,17 +505,17 @@ export default {
 </script>
 ```
 
-### 自动补充
+### Automatic Replenishment
 
-在过滤的基础上，
+Based on the filtering,
 
-使用`auto-complete`属性可以开启过滤功能，用于快速查找选项。
+Use the `auto-complete` attribute to enable filtering for quick search options.
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-select :data="data" filterable clearable auto-complete placeholder="自动补充"></u-select>
-    <u-select multiple :data="data" filterable clearable auto-complete placeholder="自动补充（多选）" style="width: 240px"></u-select>
+    <u-select :data="data" filterable clearable auto-complete placeholder="Auto Replenish"></u-select>
+    <u-select multiple :data="data" filterable clearable auto-complete placeholder="Auto Replenish (multiple choice)" style="width: 240px"></u-select>
 </u-linear-layout>
 </template>
 
@@ -535,151 +535,151 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | any |  |  | 当前选择的值 |
-| field | string |  | `'text'` | 显示文本字段 |
-| data | Array\<{ text, value }\> |  |  | 列表数据 |
-| data-source | object, Function, DataSource |  |  | 多功能数据源 |
-| cancelable | boolean |  | `false` | 是否可以取消选择 |
-| multiple | boolean |  | `false` | 是否可以多选 |
-| placeholder | boolean |  | `'请选择'` | 选择框的占位符 |
-| loading-text | string |  | `'加载中...'` | 加载时的文字。使用分页加载时才会出现 |
-| empty-text | string |  | `'加载中...'` | 没有匹配时的文字 |
-| empty-disabled | boolean |  | `false` | 没有数据时，自动禁用 |
-| initial-load | boolean |  | `true` | 是否在初始时立即加载 |
-| pageable | boolean |  | `false` | 是否需要分页 |
-| page-size | number |  | `50` | 分页大小 |
-| remote-paging | boolean |  | `false` | 是否使用后端分页 |
-| clearable | boolean |  | `false` | 是否有清除按钮 |
-| filterable | boolean |  | `false` | 是否使用输入框进行过滤 |
-| match-method | string, Function |  | `'includes'` | 过滤时的匹配方法 |
-| case-sensitive | string, Function |  | `'includes'` | 过滤时大小写是否敏感 |
-| remote-filtering | boolean |  | `false` | 是否使用后端过滤 |
-| auto-complete | boolean |  | `false` | 是否开启自动补充模式，用于增加列表中没有的项 |
-| readonly | boolean |  | `false` | 是否只读 |
-| disabled | boolean |  | `false` | 是否禁用 |
-| opened.sync | boolean |  | `false` | 弹出/关闭状态 |
+| value.sync, v-model | any | | | The currently selected value |
+| field | string | | `'text'` | Display text field |
+| data | Array\<{ text, value }\> | | | List data |
+| data-source | object, Function, DataSource | | | Multi-function data source |
+| cancelable | boolean | | `false` | Whether the selection can be canceled |
+| multiple | boolean | | `false` | Is it possible to select multiple items? |
+| placeholder | boolean | | `'Please select'` | Placeholder for the select box |
+| loading-text | string | | `'Loading...'` | The text during loading. Appears only when using paging loading |
+| empty-text | string | | `'Loading...'` | Text if no match |
+| empty-disabled | boolean | | `false` | Automatically disabled when no data |
+| initial-load | boolean | | `true` | Whether to load immediately at the initial time |
+| pageable | boolean | | `false` | Whether paging is required |
+| page-size | number | | `50` | Paging size |
+| remote-paging | boolean | | `false` | Whether to use backend paging |
+| clearable | boolean | | `false` | Is there a clear button |
+| filterable | boolean | | `false` | Whether to use the input box for filtering |
+| match-method | string, Function | | `'includes'` | Matching method for filtering |
+| case-sensitive | string, Function | | `'includes'` | Is filtering case sensitive |
+| remote-filtering | boolean | | `false` | Whether to use backend filtering |
+| auto-complete | boolean | | `false` | Whether to enable auto-complete mode to add items that are not in the list |
+| readonly | boolean | | `false` | Read-only |
+| disabled | boolean | | `false` | Disabled |
+| opened.sync | boolean | | `false` | Popup/closed state |
 
 ### Slots
 
 #### (default)
 
-插入`<u-select-item>`、`<u-select-divider>`或`<u-select-group>`子组件。
+Inserts a <u-select-item> , <u-select-divider> , or <u-select-group> child component.
 
 ### Events
 
 #### @before-select
 
-选择某一项前触发
+Triggered before an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.itemVM | SelectItem | 选择项子组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | USelect | 发送事件实例 |
+| $event.value | any | The value of the selected item |
+| $event.oldValue | any | Old value |
+| $event.item | object | Select item related object |
+| $event.itemVM | SelectItem | Select item subcomponent |
+| $event.preventDefault | Function | Prevent the selection process |
+| senderVM | USelect | Send event instance |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | any | 选择项的值 |
-| senderVM | USelect | 发送事件实例 |
+| $event | any | Value of the selection |
+| senderVM | USelect | Send event instance |
 
 #### @select
 
-选择某一项时触发。单选模式中：
+Triggered when an item is selected. In single-select mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 改变后的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | USelectItem | 选择项子组件 |
-| $event.oldVM | USelectItem | 旧的选择项子组件 |
-| senderVM | USelect | 发送事件实例 |
+| $event.value | any | Changed value |
+| $event.oldValue | any | Old value |
+| $event.item | object | Select item related object |
+| $event.oldItem | object | Old selection item related object |
+| $event.itemVM | USelectItem | Select item subcomponent |
+| $event.oldVM | USelectItem | Old selection item subcomponent |
+| senderVM | USelect | Send event instance |
 
 #### @select
 
-选择某一项时触发。多选模式中：
+Triggered when an item is selected. In multi-select mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.selected | boolean | 选中还是取消 |
-| $event.item | boolean | 该选中项相关对象 |
-| $event.itemVM | boolean | 该选中项子组件 |
-| $event.value | Array | 改变后的值 |
-| $event.oldValue | Array | 旧的值 |
-| $event.items | Array\<object\> | 所有选中项相关对象的数组 |
-| $event.oldItems | Array\<object\> | 旧的所有选中项相关对象的数组 |
-| $event.itemVMs | Array\<USelectItem\> | 所有选中项子组件的数组 |
-| $event.oldVMs | Array\<USelectItem\> | 旧的所有选中项子组件的数组 |
-| senderVM | USelect | 发送事件实例 |
+| $event.selected | boolean | Selected or deselected |
+| $event.item | boolean | Object related to the selected item |
+| $event.itemVM | boolean | The selected item subcomponent |
+| $event.value | Array | The changed value |
+| $event.oldValue | Array | Old value |
+| $event.items | Array\<object\> | Array of objects associated with all selected items |
+| $event.oldItems | Array\<object\> | An array of all old selected item related objects |
+| $event.itemVMs | Array\<USelectItem\> | Array of all selected item subcomponents |
+| $event.oldVMs | Array\<USelectItem\> | Array of all old selected item subcomponents |
+| senderVM | USelect | Send event instance |
 
 #### @change
 
-选择值改变时触发。单选模式中：
+Triggered when the selected value changes. In single selection mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选择项的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.item | object | 选择项相关对象 |
-| $event.oldItem | object | 旧的选择项相关对象 |
-| $event.itemVM | USelectItem | 选择项子组件 |
-| $event.oldVM | USelectItem | 旧的选择项子组件 |
-| senderVM | USelect | 发送事件实例 |
+| $event.value | any | The value of the selected item |
+| $event.oldValue | any | Old value |
+| $event.item | object | Select item related object |
+| $event.oldItem | object | Old selection item related object |
+| $event.itemVM | USelectItem | Select item subcomponent |
+| $event.oldVM | USelectItem | Old selection item subcomponent |
+| senderVM | USelect | Send event instance |
 
 #### @change
 
-选择值改变时触发。多选模式中：
+Fired when the selected value changes. In multi-select mode:
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Array | 所有选中项的值 |
-| $event.items | Array\<object\> | 所有选中项相关对象的数组 |
-| $event.itemVMs | Array\<USelectItem\> | 所有选中项子组件的数组 |
-| senderVM | USelect | 发送事件实例 |
+| $event.value | Array | Values of all selected items |
+| $event.items | Array\<object\> | Array of objects associated with all selected items |
+| $event.itemVMs | Array\<USelectItem\> | Array of all selected item subcomponents |
+| senderVM | USelect | Send event instance |
 
 #### @before-open
 
-弹出前触发。
+Fired before popup.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止弹出流程 |
-| senderVM | USelect | 发送事件实例 |
+| $event.preventDefault | Function | Prevent pop-up process |
+| senderVM | USelect | Send event instance |
 
 #### @open
 
-弹出时触发。
+Fired when popping up.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | USelect | 发送事件实例 |
+| $event | | Empty |
+| senderVM | USelect | Send event instance |
 
 #### @before-close
 
-隐藏前触发。
+Fired before hiding.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止隐藏流程 |
-| senderVM | USelect | 发送事件实例 |
+| $event.preventDefault | Function | Prevent hidden process |
+| senderVM | USelect | Send event instance |
 
 #### @close
 
-隐藏时触发。
+Fired when hidden.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | USelect | 发送事件实例 |
+| $event | | Empty |
+| senderVM | USelect | Send event instance |
 
 #### @before-toggle
 
@@ -697,56 +697,56 @@ export default {
 
 #### @before-load
 
-加载前触发
+Triggered before loading
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.preventDefault | Function | 阻止加载流程 |
-| senderVM | UTableView | 发送事件实例 |
+| $event.preventDefault | Function | Prevent loading process |
+| senderVM | UTableView | Send event instance |
 
 #### @load
 
-加载时触发
+Triggered on load
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event |  | 空 |
-| senderVM | UTableView | 发送事件实例 |
+| $event | | Empty |
+| senderVM | UTableView | Send event instance |
 
 ### Methods
 
 #### open()
 
-弹出选择框。
+A selection box pops up.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### close()
 
-关闭选择框。
+Close the selection box.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### toggle(opened?)
 
-切换弹出/关闭状态。
+Toggle popup/closed state.
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
-| opened? | boolean |  | 可选。弹出/关闭状态 |
+| opened? | boolean | | Optional. Popup/closed state |
 
 #### load()
 
-带缓存地加载
+Loading with cache
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
 
 #### reload()
 
-清除缓存，重新加载
+Clear cache and reload
 
 | Param | Type | Default | Description |
 | ----- | ---- | ------- | ----------- |
@@ -756,51 +756,51 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | any |  |  | 此项的值 |
-| disabled | boolean |  | `false` | 禁用此项 |
-| item | object |  |  | 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发 |
+| value | any | | | The value of this item |
+| disabled | boolean | | `false` | Disable this item |
+| item | object | | | Related object. When this option is selected, the thrown event will pass this object, which is convenient for development.
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @before-select
 
-选择此项前触发
+Triggered before selecting this item
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 此项的值 |
-| $event.item | object | 此项的相关对象 |
-| $event.itemVM | SelectItem | 此组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | USelectItem | 发送事件实例 |
+| $event.value | any | The value of this item |
+| $event.item | object | The object associated with this item |
+| $event.itemVM | SelectItem | This component |
+| $event.preventDefault | Function | Prevent the selection process |
+| senderVM | USelectItem | Send event instance |
 
 ## USelectGroup API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 显示的标题 |
+| title | string | | | Displayed title |
 
 ### Slots
 
 #### (default)
 
-插入`<u-select-item>`或`<u-select-divider>`子组件。
+Insert a <u-select-item> or a <u-select-divider> child component.
 
-#### title
+#### Title
 
-自定义标题文本。
+Customize the title text.
 
-#### extra
+#### Extra
 
-在右侧可以附加内容。
+Additional content can be added on the right.
 
 ## USelectDivider API
 
-暂无
+None

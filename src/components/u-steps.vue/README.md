@@ -1,13 +1,13 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# USteps 步骤条
+# USteps Step Bar
 
-**UI 组件**, **块级展示**
+**UI Components**, **Block Level Display**
 
 ## Example
 ### Basic Usage
 
-步骤从`0`开始。
+Steps start from `0`.
 
 ``` html
 <u-steps :value="1">
@@ -17,7 +17,7 @@
 </u-steps>
 ```
 
-### Customize标题
+### Customize Title
 
 ``` html
 <u-steps :value="1">
@@ -36,7 +36,7 @@
 </u-steps>
 ```
 
-### 宽度自适应
+### Width Auto
 
 ``` html
 <u-steps :value="1" size="auto">
@@ -46,9 +46,9 @@
 </u-steps>
 ```
 
-### 可选择
+### Optional
 
-将`readonly`属性设置为`false`，可以进行选择。
+Setting the `readonly` attribute to `false` enables selection.
 
 ``` html
 <u-steps :value="1" :readonly="false">
@@ -73,57 +73,57 @@
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value.sync, v-model | number |  | `0` | 当前步骤数 |
-| readonly | boolean |  | `false` | 是否只读。非只读的情况下可以选择 |
-| disabled | boolean |  | `false` | 是否禁用 |
+| value.sync, v-model | number | | `0` | Current step number |
+| readonly | boolean | | `false` | Whether it is read-only. You can select | if it is not read-only.
+| disabled | boolean | | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入`<u-step>`子组件。
+Insert `<u-step>` subcomponent.
 
 ### Events
 
 #### @before-select
 
-选择某一步骤前触发
+Trigger before selecting a step
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选中步骤的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | UStep | 选中步骤实例 |
-| $event.oldVM | UStep | 旧的选中步骤实例 |
-| $event.preventDefault | Function | 阻止选择流程 |
-| senderVM | USteps | 发送事件实例 |
+| $event.value | any | The value of the selected step |
+| $event.oldValue | any | Old value |
+| $event.itemVM | UStep | Select step instance |
+| $event.oldVM | UStep | Old selected step instance |
+| $event.preventDefault | Function | Prevent selection process |
+| senderVM | USteps | Send event instance |
 
 #### @select
 
-选择某一步骤时触发
+Triggered when a step is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | any | 选中步骤的值 |
-| $event.oldValue | any | 旧的值 |
-| $event.itemVM | UStep | 选中步骤实例 |
-| $event.oldVM | UStep | 旧的选中步骤实例 |
-| senderVM | USteps | 发送事件实例 |
+| $event.value | any | The value of the selected step |
+| $event.oldValue | any | Old value |
+| $event.itemVM | UStep | Select step instance |
+| $event.oldVM | UStep | Old selected step instance |
+| senderVM | USteps | Send event instance |
 
 ## UStep API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 步骤名 |
-| disabled | boolean |  | `false` | 是否禁用此标签页 |
+| title | string | | | Step name |
+| disabled | boolean | | `false` | Whether to disable this tab |
 
 ### Slots
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.
 
-#### title
+#### Title
 
-自定义标题文本。
+Custom title text.

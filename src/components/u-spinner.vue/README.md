@@ -1,14 +1,14 @@
-<!-- 该 README.md 根据 api.yaml 和 docs/*.md 自动生成，为了方便在 GitHub 和 NPM 上查阅。如需修改，请查看源文件 -->
+<!-- The README.md is automatically generated based on api.yaml and docs/*.md for easy viewing on GitHub and NPM. If you need to modify, please view the source file -->
 
-# USpinner 加载图标
+# USpinner Loading Icon
 
-与文字大小相同，一般在行内直接使用。
+The same size as the text, generally used directly within the line.
 
 ## Example
 ### Basic Usage
 
 ``` html
-<u-spinner></u-spinner> 正在加载中...
+<u-spinner></u-spinner> Loading...
 ```
 
 ## API
@@ -16,4 +16,4 @@
 
 #### (default)
 
-插入文本或 HTML。
+Insert text or HTML.

@@ -1,113 +1,113 @@
 - name: u-radios
-  title: 单选组
-  labels: [UI 组件, 表单控件, 块级展示]
+  title: Single Choice Group
+  labels: [UI Components, Form Controls, Block-Level Display]
   attrs:
     - name: value.sync, v-model
       type: any
       default: null
-      description: 当前选择的值
+      description: The currently selected value
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读
+      description: Whether it is read-only
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
   slots:
     - name: default
-      description: 插入`<u-radio>`子组件。
+      description: Inserts a `<u-radio>` subcomponent.
   events:
     - name: before-select
-      description: 选择某一项前触发
+      description: Triggered before selecting an item
       params:
         - name: $event.value
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.itemVM
-          type: URadio
-          description: 选择项子组件
+          type: Done
+          description: Select item subcomponent
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: URadios
-          description: 发送事件实例
+          description: Send event instance
     - name: input
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: senderVM
           type: URadios
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择某一项时触发
+      description: Triggered when an item is selected
       params:
         - name: $event.value
           type: any
-          description: 改变后的值
+          description: The changed value
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.itemVM
-          type: URadio
-          description: 选择项子组件
+          type: Done
+          description: Select item subcomponent
         - name: senderVM
           type: URadios
-          description: 发送事件实例
+          description: Send event instance
     - name: change
-      description: 选择值改变时触发
+      description: Triggered when the selected value changes
       params:
         - name: $event.value
           type: any
-          description: 选择项的值
+          description: The value of the selected item
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.item
           type: object
-          description: 选择项相关对象
+          description: Selection related object
         - name: $event.itemVM
-          type: URadio
-          description: 选择项子组件
+          type: Done
+          description: Select item subcomponent
         - name: senderVM
           type: URadios
-          description: 发送事件实例
+          description: Send event instance
 - name: u-radio
   attrs:
     - name: label
       type: any
       default: null
-      description: 单选框标签。用于关联单选组的值
+      description: Radio button label. Used to associate the value of the radio button group
     - name: readonly
       type: boolean
       default: false
-      description: 禁用只读
+      description: Disable read-only
     - name: disabled
       type: boolean
       default: false
-      description: 禁用此项
+      description: Disable this option
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.
   events:
     - name: before-select
-      description: 选择此项前触发
+      description: Triggered before selecting this item
       params:
         - name: $event.label
           type: any
-          description: 此项的标签
+          description: The label of this item
         - name: $event.itemVM
-          type: URadio
-          description: 此组件
+          type: Done
+          description: This component
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
-          type: URadio
-          description: 发送事件实例
+          type: Done
+          description: Send event instance

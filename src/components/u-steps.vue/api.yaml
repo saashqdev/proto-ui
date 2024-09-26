@@ -1,74 +1,74 @@
 - name: u-steps
-  title: 步骤条
-  labels: [UI 组件, 块级展示]
+  title: Step Bar
+  labels: [UI Component, Block-Level Display]
   attrs:
     - name: value.sync, v-model
       type: number
       default: 0
-      description: 当前步骤数
+      description: Current step number
     - name: readonly
       type: boolean
       default: false
-      description: 是否只读。非只读的情况下可以选择
+      description: Whether it is read-only. You can select it if it is not read-only.
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用
+      description: Whether to disable
   slots:
     - name: default
-      description: 插入`<u-step>`子组件。
+      description: Inserts a `<u-step>` subcomponent.
   events:
     - name: before-select
-      description: 选择某一步骤前触发
+      description: Triggered before selecting a step
       params:
         - name: $event.value
           type: any
-          description: 选中步骤的值
+          description: The value of the selected step
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.itemVM
           type: UStep
-          description: 选中步骤实例
+          description: Selected step instance
         - name: $event.oldVM
           type: UStep
-          description: 旧的选中步骤实例
+          description: The old selected step instance
         - name: $event.preventDefault
           type: Function
-          description: 阻止选择流程
+          description: Prevents the selection process
         - name: senderVM
           type: USteps
-          description: 发送事件实例
+          description: Send event instance
     - name: select
-      description: 选择某一步骤时触发
+      description: Triggered when a step is selected
       params:
         - name: $event.value
           type: any
-          description: 选中步骤的值
+          description: The value of the selected step
         - name: $event.oldValue
           type: any
-          description: 旧的值
+          description: Old value
         - name: $event.itemVM
           type: UStep
-          description: 选中步骤实例
+          description: Selected step instance
         - name: $event.oldVM
           type: UStep
-          description: 旧的选中步骤实例
+          description: The old selected step instance
         - name: senderVM
           type: USteps
-          description: 发送事件实例
+          description: Send event instance
 - name: u-step
   attrs:
     - name: title
       type: string
       default: null
-      description: 步骤名
+      description: Step name
     - name: disabled
       type: boolean
       default: false
-      description: 是否禁用此标签页
+      description: Whether to disable this tab
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.
     - name: title
-      description: 自定义标题文本。
+      description: Custom title text.

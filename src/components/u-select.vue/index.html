@@ -7,7 +7,7 @@
     @keydown.down.prevent="$refs.popper.currentOpened ? shift(+1) : open()"
     @keydown.enter.stop="onEnter"
     @keydown.esc.stop="close(), filterText = ''">
-    <span :class="$style.baseline">b</span><!-- 用于基线对齐 -->
+    <span :class="$style.baseline">b</span><!-- for baseline alignment -->
     <span v-show="!filterText && (multiple ? !selectedVMs.length : !selectedVM)" :class="$style.placeholder">{{ placeholder }}</span>
     <div :class="$style.text" v-ellipsis-title :tags-overflow="tagsOverflow">
         <f-render v-if="!multiple && !filterable" :vnode="selectedVM && selectedVM.$slots.default"></f-render>

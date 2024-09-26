@@ -22,12 +22,12 @@ export const USelect = {
         multipleAppearance: { type: String, default: 'tags' },
         tagsOverflow: { type: String, default: 'visible' },
         autoSelect: { type: Boolean, default: false },
-        placeholder: { type: String, default: '请选择' },
+        placeholder: { type: String, default: 'Please select' },
         clearable: { type: Boolean, default: false },
         filterable: { type: Boolean, default: false },
         matchMethod: { type: [String, Function], default: 'includes' },
         caseSensitive: { type: Boolean, default: false },
-        // @inherit: loadingText: { type: String, default: '加载中...' },
+        // @inherit: loadingText: { type: String, default: 'loading...' },
         emptyText: { type: String, default() { return this.$t('emptyText'); } },
         emptyDisabled: { type: Boolean, default: false },
         // @inherit: initialLoad: { type: Boolean, default: true },
@@ -49,8 +49,8 @@ export const USelect = {
             // @inherit: currentMultiple: this.multiple,
             // @inherit: currentDataSource: undefined,
             // @inherit: loading: false,
-            currentText: '', // 显示文本
-            filterText: '', // 过滤文本，只有 input 时会改变它
+            currentText: '', // display text
+            filterText: '', // filter text, only input will change it
             preventBlur: false,
             inputWidth: 20,
             popperOpened: false,
@@ -169,7 +169,7 @@ export const USelect = {
         },
         onOpen($event) {
             this.popperOpened = true;
-            // 刚打开时，除非是没有加载，否则保留上次的 filter 过的数据
+            // When it is first opened, the last filtered data will be retained unless it is not loaded.
             if (this.filterable && !this.currentDataSource.initialLoaded) {
                 this.load().then(() => {
                     this.ensureFocusedInView(true);
@@ -195,7 +195,7 @@ export const USelect = {
                 return;
             if (this.loading)
                 return Promise.resolve();
-            // @TODO: dataSource 的多次 promise 必须串行
+            // @TODO: Multiple promises of dataSource must be serialized
             // return this.promiseSequence = this.promiseSequence.then(() => {
             this.loading = true;
             return dataSource[more ? 'loadMore' : 'load']().then((data) => {
@@ -225,7 +225,7 @@ export const USelect = {
             if (!this.filterable)
                 return;
 
-            // 这边必须要用 setTimeout，$nextTick 也不行，需要保证在 @select 之后完成
+            // You must use setTimeout here, and $nextTick will not work. You need to ensure that it is completed after @select.
             setTimeout(() => {
                 if (this.preventBlur)
                     return this.preventBlur = false;
@@ -237,7 +237,7 @@ export const USelect = {
                 const oldVMs = this.selectedVMs;
                 const selectedVM = this.itemVMs.find((itemVM) => itemVM.currentText === text);
 
-                // 如果没有匹配项则恢复到上一个状态
+                // If there is no match, revert to the previous state
                 if (!selectedVM && text) {
                     if (this.autoComplete) {
                         this.prependItem(text);
@@ -263,7 +263,7 @@ export const USelect = {
 
                 const selectedVM = this.itemVMs.find((itemVM) => itemVM.currentText === text);
 
-                // 如果没有匹配项则恢复到上一个状态
+                // If there is no match, revert to the previous state
                 if (!selectedVM && text) {
                     if (this.autoComplete) {
                         this.prependItem(text);

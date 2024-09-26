@@ -14,7 +14,7 @@
 
 #### Single Selection Mode
 
-``` view
+``` vue
 <template>
 <m-complex v-model="value">
     <m-complex-item value="cup">Water Cup</m-complex-item>
@@ -37,7 +37,7 @@ export default {
 
 #### Multiple Selection Mode
 
-``` view
+``` vue
 <template>
 <m-complex multiple v-model="values">
     <m-complex-item value="cup">Water Cup</m-complex-item>

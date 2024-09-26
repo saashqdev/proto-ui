@@ -1,5 +1,5 @@
 ### Basic Usage
 
 ``` html
-<u-spinner></u-spinner> 正在加载中...
+<u-spinner></u-spinner> Loading...
 ```

@@ -1,6 +1,6 @@
 - name: u-spinner
-  title: 加载图标
-  description: 与文字大小相同，一般在行内直接使用。
+  title: Loading Icon
+  description: The same size as the text, generally used directly within the line.
   slots:
     - name: default
-      description: 插入文本或 HTML。
+      description: Insert text or HTML.

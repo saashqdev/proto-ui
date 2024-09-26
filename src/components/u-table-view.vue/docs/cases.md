@@ -4,11 +4,11 @@
 
 ``` html
 <u-table-view line="horizontal" striped :data="[
-    { id: 1, name: '张三张三张三张三张三张三张三张三张三张三', address: '浙江省杭州市滨江区网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', address: '浙江省杭州市滨江区江虹路459号英飞特科技园浙江省杭州市滨江区江虹路459号英飞特科技园浙江省杭州市滨江区江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四李四李四李四李四李四李四李四李四李四', address: '浙江省杭州市滨江区秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', address: '浙江省杭州市滨江区长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', address: '浙江省杭州市滨江区网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三张三张三张三张三张三张三张三张三张三', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四李四李四李四李四李四李四李四李四李四', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', birthday: '19930716' },
 ]">
     <u-table-view-column title="序号" field="id" width="10%"></u-table-view-column>
     <u-table-view-column title="姓名" field="name" width="20%"></u-table-view-column>
@@ -21,11 +21,11 @@
 
 ``` html
 <u-table-view line="horizontal" striped :data="[
-    { id: 1, name: '张三张三张三张三张三张三张三张三张三张三', address: '浙江省杭州市滨江区网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', address: '浙江省杭州市滨江区江虹路459号英飞特科技园浙江省杭州市滨江区江虹路459号英飞特科技园浙江省杭州市滨江区江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四李四李四李四李四李四李四李四李四李四', address: '浙江省杭州市滨江区秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', address: '浙江省杭州市滨江区长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', address: '浙江省杭州市滨江区网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三张三张三张三张三张三张三张三张三张三', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园Ontario省Fort Erie市Peele江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四李四李四李四李四李四李四李四李四李四', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', birthday: '19930716' },
 ]">
     <u-table-view-column title="序号" field="id" width="10%"></u-table-view-column>
     <u-table-view-column ellipsis title="姓名" field="name" width="20%"></u-table-view-column>
@@ -40,16 +40,16 @@
 
 ``` html
 <u-table-view striped :data="[
-    { id: 1, name: '张三', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', province: '浙江省', city: '杭州市', district: '滨江区', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四', province: '浙江省', city: '杭州市', district: '滨江区', address: '秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', province: '浙江省', city: '杭州市', district: '滨江区', address: '长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦二期', birthday: '19930716' },
-    { id: 1, name: '张三', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', province: '浙江省', city: '杭州市', district: '滨江区', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四', province: '浙江省', city: '杭州市', district: '滨江区', address: '秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', province: '浙江省', city: '杭州市', district: '滨江区', address: '长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
 ]" style="max-height: 300px;">
     <u-table-view-column title="序号" field="id" width="20%"></u-table-view-column>
     <u-table-view-column title="姓名" field="name" width="20%"></u-table-view-column>
@@ -65,16 +65,16 @@
 
 ``` html
 <u-table-view striped :data="[
-    { id: 1, name: '张三', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', province: '浙江省', city: '杭州市', district: '滨江区', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四', province: '浙江省', city: '杭州市', district: '滨江区', address: '秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', province: '浙江省', city: '杭州市', district: '滨江区', address: '长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦二期', birthday: '19930716' },
-    { id: 1, name: '张三', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', province: '浙江省', city: '杭州市', district: '滨江区', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四', province: '浙江省', city: '杭州市', district: '滨江区', address: '秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', province: '浙江省', city: '杭州市', district: '滨江区', address: '长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
 ]" style="max-height: 300px;">
     <u-table-view-column title="序号" field="id" width="10%"></u-table-view-column>
     <u-table-view-column title="姓名" field="name" width="30%"></u-table-view-column>
@@ -90,16 +90,16 @@
 
 ``` html
 <u-table-view striped :data="[
-    { id: 1, name: '张三', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', province: '浙江省', city: '杭州市', district: '滨江区', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四', province: '浙江省', city: '杭州市', district: '滨江区', address: '秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', province: '浙江省', city: '杭州市', district: '滨江区', address: '长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦二期', birthday: '19930716' },
-    { id: 1, name: '张三', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', province: '浙江省', city: '杭州市', district: '滨江区', address: '江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四', province: '浙江省', city: '杭州市', district: '滨江区', address: '秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', province: '浙江省', city: '杭州市', district: '滨江区', address: '长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', province: '浙江省', city: '杭州市', district: '滨江区', address: '网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', province: 'Ontario省', city: 'Fort Erie市', district: 'Peele', address: '网商路599号网易大厦二期', birthday: '19930716' },
 ]" style="max-height: 300px;">
     <u-table-view-column fixed title="序号" field="id" width="5%"></u-table-view-column>
     <u-table-view-column fixed title="姓名" field="name" width="10%"></u-table-view-column>
@@ -115,11 +115,11 @@
 
 ``` html
 <u-table-view :data="[
-    { id: 1, name: '张三', address: '浙江省杭州市滨江区网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四', address: '浙江省杭州市滨江区秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', address: '浙江省杭州市滨江区长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', address: '浙江省杭州市滨江区网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', birthday: '19930716' },
 ]">
     <u-table-view-column sortable title="序号" field="id" width="20%"></u-table-view-column>
     <u-table-view-column sortable title="姓名" field="name" width="20%"></u-table-view-column>
@@ -132,11 +132,11 @@
 
 ``` html
 <u-table-view :sorting="{ field: 'birthday', order: 'asc' }" :data="[
-    { id: 1, name: '张三', address: '浙江省杭州市滨江区网商路599号网易大厦', birthday: '19910528' },
-    { id: 2, name: '小明', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', birthday: '19920914' },
-    { id: 3, name: '李四', address: '浙江省杭州市滨江区秋溢路606号西可科技园', birthday: '19900228' },
-    { id: 4, name: '李华', address: '浙江省杭州市滨江区长河路590号东忠科技园', birthday: '19891210' },
-    { id: 5, name: '王五', address: '浙江省杭州市滨江区网商路599号网易大厦二期', birthday: '19930716' },
+    { id: 1, name: '张三', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', birthday: '19910528' },
+    { id: 2, name: '小明', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', birthday: '19920914' },
+    { id: 3, name: '李四', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', birthday: '19900228' },
+    { id: 4, name: '李华', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', birthday: '19891210' },
+    { id: 5, name: '王五', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', birthday: '19930716' },
 ]">
     <u-table-view-column sortable title="序号" field="id" width="20%"></u-table-view-column>
     <u-table-view-column sortable title="姓名" field="name" width="20%"></u-table-view-column>
@@ -165,11 +165,11 @@ export default {
         return {
             values: ['5cd49be8f65c4738', 'f799a0467c494601'],
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: '浙江省杭州市滨江区秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: '浙江省杭州市滨江区长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
         };
     },
@@ -206,11 +206,11 @@ export default {
         return {
             values: ['5cd49be8f65c4738', 'f799a0467c494601'],
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: '浙江省杭州市滨江区秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: '浙江省杭州市滨江区长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
         };
     },
@@ -246,11 +246,11 @@ export default {
         return {
             values: ['5cd49be8f65c4738', 'f799a0467c494601'],
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: '浙江省杭州市滨江区秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: '浙江省杭州市滨江区长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
         };
     },
@@ -283,11 +283,11 @@ export default {
         load() {
             setTimeout(() => {
                 this.data = [
-                    { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                    { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                    { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: '浙江省杭州市滨江区秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                    { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: '浙江省杭州市滨江区长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                    { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                    { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
+                    { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
+                    { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
+                    { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
+                    { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
                 ];
             }, 2000);
         },
@@ -309,11 +309,11 @@ export default {
 </template>
 <script>
 const baseData = [
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: '浙江省杭州市滨江区秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: '浙江省杭州市滨江区长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
 ];
 
 // 构造数量较多的 500 条数据
@@ -379,11 +379,11 @@ export default {
     data() {
         return {
             data: [
-                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: '浙江省杭州市滨江区秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: '浙江省杭州市滨江区长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+                { id: '07cdcb8ed5e94cec', name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
+                { id: '5cd49be8f65c4738', name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
+                { id: 'f799a0467c494601', name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
+                { id: '40e8ca488a1c4bce', name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
+                { id: '150823cc351642b6', name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
             ],
             value: 0,
         };
@@ -405,15 +405,15 @@ export default {
 ``` vue
 <template>
 <u-table-view resizable striped :data="data" pageable :page-size="10"
-    :filtering="{ address: '浙江省杭州市滨江区网商路599号网易大厦' }">
+    :filtering="{ address: 'Ontario省Fort Erie市Peele网商路599号网易大厦' }">
     <u-table-view-column sortable title="用户名" field="name" width="15%"></u-table-view-column>
     <u-table-view-column sortable title="手机号码" field="phone" width="20%"></u-table-view-column>
     <u-table-view-column title="地址" field="address" :filters="[
         { text: '全部' },
-        { text: '网易大厦', value: '浙江省杭州市滨江区网商路599号网易大厦' },
-        { text: '网易二期', value: '浙江省杭州市滨江区网商路599号网易大厦二期' },
-        { text: '英飞特科技园', value: '浙江省杭州市滨江区江虹路459号英飞特科技园' },
-        { text: '西可科技园', value: '浙江省杭州市滨江区秋溢路606号西可科技园' },
+        { text: '网易大厦', value: 'Ontario省Fort Erie市Peele网商路599号网易大厦' },
+        { text: '网易二期', value: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期' },
+        { text: '英飞特科技园', value: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园' },
+        { text: '西可科技园', value: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园' },
     ]"></u-table-view-column>
     <u-table-view-column sortable title="最近登录时间" field="loginTime" formatter="placeholder | date" width="20%"
 ></u-table-view-column>
@@ -423,11 +423,11 @@ export default {
 export default {
     data() {
         const baseData = [
-            { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-            { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-            { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: '浙江省杭州市滨江区秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-            { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: '浙江省杭州市滨江区长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-            { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+            { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
+            { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
+            { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
+            { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
+            { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
         ];
 
         // 构造数量较多的 500 条数据
@@ -460,11 +460,11 @@ export default {
 </template>
 <script>
 const baseData = [
-    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
-    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: '浙江省杭州市滨江区江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
-    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: '浙江省杭州市滨江区秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
-    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: '浙江省杭州市滨江区长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
-    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: '浙江省杭州市滨江区网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
+    { name: '张三', phone: '18612917895', email: 'zhangsan@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦', createdTime: 1464421931000, loginTime: 1527515531000 },
+    { name: '小明', phone: '13727160283', email: 'xiaoming@163.com', address: 'Ontario省Fort Erie市Peele江虹路459号英飞特科技园', createdTime: 1520864676000, loginTime: 1552400676000 },
+    { name: '李四', phone: '18897127809', email: 'lisi@163.com', address: 'Ontario省Fort Erie市Peele秋溢路606号西可科技园', createdTime: 1494488730000, loginTime: 1558165530000 },
+    { name: '李华', phone: '18749261214', email: 'lihua@163.com', address: 'Ontario省Fort Erie市Peele长河路590号东忠科技园', createdTime: 1476073921000, loginTime: 1544428081000 },
+    { name: '王五', phone: '13579340020', email: 'wangwu@163.com', address: 'Ontario省Fort Erie市Peele网商路599号网易大厦二期', createdTime: 1468614726000, loginTime: 1531675926000 },
 ];
 
 // 构造数量较多的 500 条数据

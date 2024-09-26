@@ -4,7 +4,7 @@
 <u-switch></u-switch>
 ```
 
-### Value 绑定
+### Value Binding
 
 ``` vue
 <template>

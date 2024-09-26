@@ -11,8 +11,8 @@
 | striped | Boolean | `false` | 表格行是否按斑马线条纹显示 |
 | hover | Boolean | `false` | 表格行在悬浮时是否高亮显示 |
 | show-head | Boolean | `true` | 是否显示表格头部 |
-| loading | Boolean | | 手动设置是否正在加载中 |
-| loading-text | String | `'正在加载中'` | 正在加载中的文字 |
+| loading | Boolean | | 手动设置是否Loading |
+| loading-text | String | `'Loading'` | Loading的文字 |
 | error | Boolean | | 手动设置是否加载失败 |
 | error-text | String | `'加载失败，请重试'` | 加载失败时的文字 |
 | empty-text | String | `'暂无数据'` | 暂无数据时的文字 |
@@ -244,7 +244,7 @@
 
 #### reload()
 
-清除缓存，重新加载
+清除缓存，Reload
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |

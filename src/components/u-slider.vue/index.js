@@ -9,7 +9,7 @@ export const USlider = {
         max: { type: Number, default: 100 },
         step: { type: Number, default: 1 },
         precision: { type: Number, default: 1, validator: (precision) => precision > 0 },
-        // @TODO: 以后再考虑复杂的范围情况
+        // @TODO: Consider complex scope situations later
         range: { type: Array, default() { return []; } },
         readonly: { type: Boolean, default: false },
         disabled: { type: Boolean, default: false },
@@ -78,13 +78,13 @@ export const USlider = {
             return range;
         },
         fix(value) {
-            // 刻度约束
+            // Scale constraints
             this.step && (value = Math.round(value / this.step) * this.step);
-            // 范围约束
+            // Range constraints
             value = Math.min(Math.max(this.currentRange[0], value), this.currentRange[1]);
-            // 最大最小约束
+            // Maximum constraints
             value = Math.min(Math.max(this.min, value), this.max);
-            // 保留小数位数
+            // Keep decimal places
             value = +value.toFixed(this.precision < 1 ? -Math.log10(this.precision) : 0);
             return value;
         },
